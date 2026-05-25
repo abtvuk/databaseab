@@ -15,15 +15,15 @@ module.exports = {
 
   // ── SOURCES ───────────────────────────────
   sources: {
-  iptv:    'https://raw.githubusercontent.com/savvydarknight/databaseab/refs/heads/main/feeds/iptv/live-channels.json',
-  youtube: 'https://raw.githubusercontent.com/savvydarknight/databaseab/refs/heads/main/feeds/youtube/youtube-channels.json',
-  custom:  'https://raw.githubusercontent.com/savvydarknight/databaseab/refs/heads/main/feeds/custom/custom-channels.json',
-},
+    iptv:    'https://raw.githubusercontent.com/savvydarknight/databaseab/refs/heads/main/feeds/iptv/live-channels.json',
+    youtube: 'https://raw.githubusercontent.com/savvydarknight/databaseab/refs/heads/main/feeds/youtube/youtube-channels.json',
+    custom:  'https://raw.githubusercontent.com/savvydarknight/databaseab/refs/heads/main/feeds/custom/custom-channels.json',
+  },
 
-output: {
-  merged: 'feeds/merged/channels.json',
-  dead:   'feeds/merged/dead-channels.json',
-},
+  output: {
+    merged: 'feeds/merged/channels.json',
+    dead:   'feeds/merged/dead-channels.json',
+  },
   
   // ── STREAM CHECKING ───────────────────────
   check: {
