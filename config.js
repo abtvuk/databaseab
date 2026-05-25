@@ -15,17 +15,16 @@ module.exports = {
 
   // ── SOURCES ───────────────────────────────
   sources: {
-    iptv:    'https://raw.githubusercontent.com/savvydarknight/databaseab/refs/heads/main/iptv/live-channels.json',
-    youtube: 'https://raw.githubusercontent.com/savvydarknight/databaseab/refs/heads/main/youtube/youtube-channels.json',
-    custom:  'https://raw.githubusercontent.com/savvydarknight/databaseab/refs/heads/main/custom/custom-channels.json',
-  },
+  iptv:    'https://raw.githubusercontent.com/savvydarknight/databaseab/refs/heads/main/feeds/iptv/live-channels.json',
+  youtube: 'https://raw.githubusercontent.com/savvydarknight/databaseab/refs/heads/main/feeds/youtube/youtube-channels.json',
+  custom:  'https://raw.githubusercontent.com/savvydarknight/databaseab/refs/heads/main/feeds/custom/custom-channels.json',
+},
 
-  // ── OUTPUT PATHS ──────────────────────────
-  output: {
-    merged: 'merged/channels.json',
-    dead:   'merged/dead-channels.json',
-  },
-
+output: {
+  merged: 'feeds/merged/channels.json',
+  dead:   'feeds/merged/dead-channels.json',
+},
+  
   // ── STREAM CHECKING ───────────────────────
   check: {
     // Max seconds ffprobe waits per URL before giving up
