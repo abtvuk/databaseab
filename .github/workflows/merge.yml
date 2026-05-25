@@ -1,4 +1,4 @@
-name: Merge & Check Streams
+name: Build & Check Streams
 
 on:
   push:
@@ -11,14 +11,14 @@ on:
     # Schedule is defined in config.js — update it there, then mirror here.
     # Current value: every 6 hours  →  '0 */6 * * *'
     - cron: '0 */6 * * *'
-  workflow_dispatch:  # allow manual trigger from GitHub UI
+  workflow_dispatch:
 
 jobs:
-  merge-and-check:
+  build:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write  # needed to commit merged output back to repo
+      contents: write
 
     steps:
       - name: Checkout
@@ -29,19 +29,13 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Verify ffprobe is available
-        run: ffprobe -version | head -1
+      - name: Build & check streams
+        run: node scripts/build.js
 
-      - name: Merge sources
-        run: node scripts/merge.js
-
-      - name: Check streams
-        run: node scripts/check-streams.js
-
-      - name: Commit updated merged files
+      - name: Commit updated feeds
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add merged/channels.json merged/dead-channels.json
+          git add feeds/merged/channels.json feeds/merged/dead-channels.json
           git diff --staged --quiet || git commit -m "chore: update merged channels [$(date -u '+%Y-%m-%d %H:%M UTC')]"
           git push
