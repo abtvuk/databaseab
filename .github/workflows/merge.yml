@@ -3,9 +3,9 @@ name: Merge & Check Streams
 on:
   push:
     paths:
-      - 'iptv/**'
-      - 'youtube/**'
-      - 'custom/**'
+      - 'feeds/iptv/**'
+      - 'feeds/youtube/**'
+      - 'feeds/custom/**'
       - 'config.js'
   schedule:
     # Schedule is defined in config.js — update it there, then mirror here.
