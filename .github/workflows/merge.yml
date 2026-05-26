@@ -3,7 +3,6 @@ name: Build & Check Streams
 on:
   push:
     paths:
-      - 'feeds/iptv/**'
       - 'feeds/youtube/**'
       - 'feeds/custom/**'
       - 'config.js'
