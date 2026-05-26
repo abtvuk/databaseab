@@ -289,8 +289,16 @@ async function main() {
   }
 
   // ── Write outputs ───────────────────────────────────────────────────────
+  const seenUrls = new Set()
   const allLive = [...iptvAlive, ...ytAlive, ...customAlive]
-    .sort((a, b) => a.name.localeCompare(b.name))
+  .filter(ch => {
+    const key = ch.ytId ?? ch.urls?.[0]
+    if (!key) return true   // no URL to deduplicate on — keep it
+    if (seenUrls.has(key)) return false
+    seenUrls.add(key)
+    return true
+  })
+  .sort((a, b) => a.name.localeCompare(b.name))
 
   const mergedPath = path.resolve(cfg.output.merged)
   const deadPath   = path.resolve(cfg.output.dead)
