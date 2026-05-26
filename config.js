@@ -27,16 +27,16 @@ module.exports = {
   // ── STREAM CHECKING ───────────────────────
   check: {
     // Max seconds ffprobe waits per URL before giving up
-    timeoutSeconds: 8,
+    timeoutSeconds: 15,
 
     // How many times to retry a URL before marking it dead
     retries: 2,
 
     // How many streams to check at the same time
-    concurrency: 40,
+    concurrency: 20,
 
     // Seconds to wait between retries
-    retryDelaySeconds: 2,
+    retryDelaySeconds: 3,
   },
 
 }
