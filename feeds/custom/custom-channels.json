@@ -1,53 +1,55 @@
 [
   {
-    "id"        : "AkiliTV.ke",
-    "name"      : "Akili TV",
-    "country"   : "KE",
-    "languages" : ["eng", "swa"],
+    "id": "AkiliTV.ke",
+    "name": "Akili TV",
+    "country": "KE",
+    "languages": ["eng", "swa"],
     "categories": ["kids"],
-    "cat"       : "kids",
-    "logo"      : "https://yt3.ggpht.com/41RPSYtJkJfNtFfqSzYhfQ7My1w6S_u3lNK_LM8t2T5JerjECDdiriWkcVmczaQEvyYDJ3H-2uQ=s88-c-k-c0x00ffffff-no-rj",
-    "urls"      : ["https://m6.livecdn.io/akilikids.co.ke/akilikids.smil/playlist.m3u8"]
+    "cat": "kids",
+    "logo": "https://yt3.ggpht.com/41RPSYtJkJfNtFfqSzYhfQ7My1w6S_u3lNK_LM8t2T5JerjECDdiriWkcVmczaQEvyYDJ3H-2uQ=s88-c-k-c0x00ffffff-no-rj",
+    "urls": [
+      "https://m6.livecdn.io/akilikids.co.ke/akilikids.smil/playlist.m3u8"
+    ]
   },
   {
-    "id"        : "kctv.dpkr",
-    "name"      : "Korean Central Television",
-    "country"   : "KP",
-    "languages" : ["kor"],
+    "id": "kctv.dpkr",
+    "name": "Korean Central Television",
+    "country": "KP",
+    "languages": ["kor"],
     "categories": ["general"],
-    "cat"       : "general",
-    "logo"      : "https://yt3.ggpht.com/-b-Juovyv8PxwYy98E_wajQZq3nrHKk8F3t45gsukuznrqUKyAr9UPM5AHy8a70tzUfXTwoh=s88-c-k-c0x00ffffff-no-rj",
-    "urls"      : ["https://tv.intchoson.com/kctv/main_stream.m3u8"]
-  },
-  {
-    "id"        : "FortTv.ug",
-    "name"      : "Fort Tv",
-    "country"   : "UG",
-    "languages" : [""],
-    "categories": ["general"],
-    "cat"       : "general",
-    "logo"      : "https://yt3.ggpht.com/UrZs5eoKkQf_JabYKs8Lqvyjwilyj-rkERsg-QzSXfc7wAxmWWfxuAno_LKjusn9BE6MhTkejQ=s88-c-k-c0x00ffffff-no-rj",
-    "urls"      : ["https://fort.co-works.org/memfs/87017643-274a-4bc0-a786-7767a0d159c2_output_0.m3u8"]
+    "cat": "general",
+    "logo": "https://yt3.ggpht.com/-b-Juovyv8PxwYy98E_wajQZq3nrHKk8F3t45gsukuznrqUKyAr9UPM5AHy8a70tzUfXTwoh=s88-c-k-c0x00ffffff-no-rj",
+    "urls": [
+      "https://tv.intchoson.com/kctv/ed71b723f18c_main_seg54.ts",
+      "https://tv.intchoson.com/kctv/main_stream.m3u8",
+      "https://tv.intchoson.com/kctv/ed71b723f18c_main_seg55.ts",
+      "https://tv.intchoson.com/kctv/index.m3u8",
+      "https://tv.intchoson.com/kctv/ed71b723f18c_main_seg58.ts"
+    ]
   },
   {
     "id"        : "BukeddeTV2.ug",
     "name"      : "Bukedde TV 2",
     "country"   : "UG",
-    "languages" : ["eng"],
+    "languages" : [""],
     "categories": ["general"],
     "cat"       : "general",
     "logo"      : "",
-    "urls"      : ["https://stream.hydeinnovations.com/bukedde2flussonic/tracks-v2a1/mono.m3u8"]
+    "urls"      : [
+      "https://stream.hydeinnovations.com/bukedde2flussonic/tracks-v2a1/mono.m3u8"
+    ]
   },
   {
     "id"        : "BukeddeTV1.ug",
     "name"      : "Bukedde TV 1",
     "country"   : "UG",
-    "languages" : ["eng"],
+    "languages" : [""],
     "categories": ["general"],
     "cat"       : "general",
     "logo"      : "",
-    "urls"      : ["https://stream.hydeinnovations.com/bukedde1flussonic/tracks-v2a1/mono.m3u8"]
+    "urls"      : [
+      "https://stream.hydeinnovations.com/bukedde1flussonic/tracks-v2a1/mono.m3u8"
+    ]
   },
   {
     "id"        : "ebs.et",
@@ -57,16 +59,54 @@
     "categories": ["general"],
     "cat"       : "general",
     "logo"      : "",
-    "urls"      : ["https://rpn.bozztv.com/ebstv/ebstv/tracks-v1a1/mono.ts.m3u8"]
+    "urls"      : [
+      "https://rpn.bozztv.com/ebstv/ebstv/tracks-v1a1/mono.ts.m3u8"
+    ]
   },
   {
-    "id"        : "eritv1.er",
-    "name"      : "ERi TV 1",
-    "country"   : "er",
-    "languages" : ["ara"],
+    "id"        : "上虞1新闻综合.cn",
+    "name"      : "上虞1新闻综合",
+    "country"   : "cn",
+    "languages" : ["zho"],
+    "categories": ["general", ""],
+    "cat"       : "general",
+    "logo"      : "",
+    "urls"      : [
+      "https://l.cztvcloud.com/channels/lantian/SXshangyu1/720p.m3u8"
+    ]
+  },
+  {
+    "id"        : "上虞3新商都.cn",
+    "name"      : "上虞3新商都",
+    "country"   : "cn",
+    "languages" : ["zho"],
     "categories": ["general"],
     "cat"       : "general",
     "logo"      : "",
-    "urls"      : ["https://jmc-live.ercdn.net/eritreatv/eritreatv.m3u8"]
+    "urls"      : [
+      "https://l.cztvcloud.com/channels/lantian/SXshangyu3/720p.m3u8"
+    ]
+  },
+  {
+    "id"        : "餘姚姚江文化.cn",
+    "name"      : "餘姚姚江文化",
+    "country"   : "cn",
+    "languages" : ["zho"],
+    "categories": ["general"],
+    "cat"       : "general",
+    "logo"      : "",
+    "urls"      : [
+      "https://l.cztvcloud.com/channels/lantian/SXyuyao2/720p.m3u8"
+    ]
+  },
+  {
+    "id"        : "",
+    "name"      : "",
+    "country"   : "",
+    "languages" : [""],
+    "categories": ["general"],
+    "cat"       : "general",
+    "logo"      : "",
+    "urls"      : [""]
   }
 ]
