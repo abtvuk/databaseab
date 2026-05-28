@@ -1,21 +1,19 @@
 # DATABASEAB
 
-- An autonomous database of live TV stream channels.
-
-
----
-
-
-## How it works
-
-1. Fetches channel and stream data from iptv-org
-2. Probes each streams checking liveness, response time, and CORS
-3. Validates logo URLs
-4. Commits updated output files
+> Автономная база данных каналов прямого телевещания.
 
 ---
 
-### Channel object
+## Как это работает
+
+1. Получает данные о каналах и потоках от iptv-org
+2. Проверяет каждый поток на доступность, время отклика и CORS
+3. Проверяет корректность URL-адресов логотипов
+4. Фиксирует обновлённые выходные файлы
+
+---
+
+## Объект канала
 
 ```json
 {
@@ -35,25 +33,22 @@
 }
 ```
 
-| Field | Description |
+### Описание полей
+
+| Поле | Описание |
 |---|---|
-| `urls` | HLS stream URLs. Empty if the channel is YouTube-only. |
-| `youtubeUrls` | YouTube fallback URLs, when available alongside HLS. |
-| `ytId` | YouTube channel ID, handle, or video ID. |
-| `altNames` | Alternative names from upstream. |
-| `quality` | Quality hint from upstream (`1080p`, `720p`, etc.). |
-| `uptime` | Rolling uptime percentage across all builds (0–100). |
-| `needsProxy` | `true` if the stream is HTTP-only or referrer-locked. |
-| `slow` | `true` if response time exceeded the slow threshold. |
-| `browserPlayable` | `false` if no CORS header was detected during probing. |
+| `urls` | URL-адреса HLS-потоков. Пусто, если канал доступен только через YouTube. |
+| `youtubeUrls` | Резервные URL-адреса YouTube, если доступны наряду с HLS. |
+| `ytId` | ID канала YouTube, псевдоним или ID видео. |
+| `altNames` | Альтернативные названия из источника. |
+| `quality` | Подсказка о качестве из источника (`1080p`, `720p` и т.д.). |
+| `uptime` | Скользящий процент доступности по всем сборкам (0–100). |
+| `needsProxy` | `true`, если поток работает только по HTTP или требует указания реферера. |
+| `slow` | `true`, если время отклика превысило допустимый порог. |
+| `browserPlayable` | `false`, если при проверке не был обнаружен заголовок CORS. |
 
 ---
 
+## Благодарности
 
-
----
-
-
-## Credits
-
-Stream and channel data sourced from [iptv-org](https://github.com/iptv-org/iptv) under their respective licenses.
+Данные о потоках и каналах предоставлены [iptv-org](https://github.com/iptv-org/iptv) в соответствии с их соответствующими лицензиями.
