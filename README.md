@@ -53,7 +53,7 @@ A self-updating database of live TV stream channels. Every 6 hours, streams are 
 |---|---|
 | [iptv-org](https://github.com/iptv-org/iptv) | Open-source IPTV channel and stream database |
 | `feeds/youtube/youtube-channels.json` | Curated YouTube live channels |
-| `feeds/custom/custom-channels.json` | Hand-picked streams not in iptv-org |
+| `feeds/custom/custom-channels.json` | Hand-picked streams. Absence in iptv-org database is not guaranteed |
 
 ---
 
@@ -61,7 +61,7 @@ A self-updating database of live TV stream channels. Every 6 hours, streams are 
 
 ### YouTube channel
 
-Add an entry to `feeds/youtube/youtube-channels.json`:
+`feeds/youtube/youtube-channels.json` format:
 
 ```json
 {
@@ -80,7 +80,7 @@ Add an entry to `feeds/youtube/youtube-channels.json`:
 
 ### Custom stream channel
 
-Add an entry to `feeds/custom/custom-channels.json`:
+`feeds/custom/custom-channels.json` format:
 
 ```json
 {
@@ -109,12 +109,6 @@ Both files use [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alp
 6. Commits updated output files and a build diff
 
 All tunables — timeout, concurrency, retry, incremental threshold — are in [`config.js`](./config.js).
-
----
-
-## Manual run
-
-**Actions → Build & Check Streams → Run workflow**
 
 ---
 
