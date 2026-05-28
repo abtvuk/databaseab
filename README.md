@@ -3,15 +3,6 @@
 An autonomous database of live TV stream channels.
 ---
 
-## Output files
-
-| File | Description |
-|---|---|
-| `feeds/merged/channels.json` | All live channels from the last build |
-| `feeds/merged/dead-channels.json` | Channels that failed liveness checks, by source |
-| `feeds/merged/diff.json` | IDs added and removed since the previous build |
-| `feeds/merged/uptime-history.json` | Per-channel rolling uptime scores across builds |
-
 ### Channel object
 
 ```json
