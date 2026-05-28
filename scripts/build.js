@@ -587,7 +587,12 @@ async function main() {
       ...ch,
       languages: (ch.languages || []).map(l => l.toLowerCase()).filter(Boolean),
     }))
-    .sort((a, b) => a.name.localeCompare(b.name))
+    .sort((a, b) => {
+    if (a.country && !b.country) return -1
+    if (!a.country && b.country) return 1
+    if (a.country !== b.country) return a.country.localeCompare(b.country)
+    return a.name.localeCompare(b.name)
+    })
 
   // Diff
   const newIds     = new Set(allLive.map(c => c.id))
