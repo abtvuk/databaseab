@@ -1,6 +1,6 @@
 # databaseab
 
-A self-updating database of live TV stream channels. Every 6 hours, streams are fetched from three sources, probed for liveness, and the results are committed back to this repository automatically.
+A self-updating database of live TV stream channels. Every 6 hours, streams are fetched, probed, and the results committed back automatically.
 
 ---
 
@@ -9,33 +9,41 @@ A self-updating database of live TV stream channels. Every 6 hours, streams are 
 | File | Description |
 |---|---|
 | `feeds/merged/channels.json` | All live channels from the last build |
-| `feeds/merged/dead-channels.json` | Channels that failed liveness checks, broken down by source |
+| `feeds/merged/dead-channels.json` | Channels that failed liveness checks, by source |
+| `feeds/merged/diff.json` | IDs added and removed since the previous build |
+| `feeds/merged/uptime-history.json` | Per-channel rolling uptime scores across builds |
 
-### `channels.json` structure
+### Channel object
 
 ```json
 {
-  "generated": "2026-05-26T04:28:20.324Z",
-  "total": 5695,
-  "channels": [
-    {
-      "id": "CNN.us",
-      "name": "CNN",
-      "country": "US",
-      "logo": "https://...",
-      "languages": ["eng"],
-      "categories": ["news"],
-      "urls": ["https://stream.example.com/cnn.m3u8"],
-      "ytId": null,
-      "cat": "news"
-    }
-  ]
+  "id": "CNN.us",
+  "name": "CNN",
+  "altNames": ["CNN International"],
+  "country": "US",
+  "logo": "https://...",
+  "languages": ["eng"],
+  "categories": ["news"],
+  "urls": ["https://stream.example.com/cnn.m3u8"],
+  "youtubeUrls": [],
+  "ytId": null,
+  "cat": "news",
+  "quality": "1080p",
+  "uptime": 94
 }
 ```
 
-- `urls` — HLS stream URLs. Empty array if the channel streams via YouTube.
-- `ytId` — YouTube channel/video ID. Present only for YouTube-based channels.
-- `needsProxy` — present and `true` if the stream requires a proxy (HTTP-only or referrer-locked).
+| Field | Description |
+|---|---|
+| `urls` | HLS stream URLs. Empty if the channel is YouTube-only. |
+| `youtubeUrls` | YouTube fallback URLs, when available alongside HLS. |
+| `ytId` | YouTube channel ID, handle, or video ID. |
+| `altNames` | Alternative names from upstream. |
+| `quality` | Quality hint from upstream (`1080p`, `720p`, etc.). |
+| `uptime` | Rolling uptime percentage across all builds (0–100). |
+| `needsProxy` | `true` if the stream is HTTP-only or referrer-locked. |
+| `slow` | `true` if response time exceeded the slow threshold. |
+| `browserPlayable` | `false` if no CORS header was detected during probing. |
 
 ---
 
@@ -43,8 +51,8 @@ A self-updating database of live TV stream channels. Every 6 hours, streams are 
 
 | Source | Description |
 |---|---|
-| [iptv-org](https://github.com/iptv-org/iptv) | Large open-source IPTV channel and stream database |
-| `feeds/youtube/youtube-channels.json` | Curated list of YouTube live channels |
+| [iptv-org](https://github.com/iptv-org/iptv) | Open-source IPTV channel and stream database |
+| `feeds/youtube/youtube-channels.json` | Curated YouTube live channels |
 | `feeds/custom/custom-channels.json` | Hand-picked streams not in iptv-org |
 
 ---
@@ -52,6 +60,7 @@ A self-updating database of live TV stream channels. Every 6 hours, streams are 
 ## Adding a channel
 
 ### YouTube channel
+
 Add an entry to `feeds/youtube/youtube-channels.json`:
 
 ```json
@@ -67,9 +76,10 @@ Add an entry to `feeds/youtube/youtube-channels.json`:
 }
 ```
 
-`ytId` can be a channel ID (`UCxxxxxxx`), a handle (`@channelname`), or a video ID for a permanent livestream.
+`ytId` accepts a channel ID (`UCxxxxxxx`), a handle (`@channelname`), or a video ID for a permanent livestream.
 
 ### Custom stream channel
+
 Add an entry to `feeds/custom/custom-channels.json`:
 
 ```json
@@ -92,17 +102,19 @@ Both files use [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alp
 ## How it works
 
 1. Fetches channel and stream data from iptv-org
-2. Probes every stream URL with a HEAD request (GET fallback) within a timeout window
-3. Merges surviving streams with the curated YouTube and custom lists
-4. Commits updated `channels.json` and `dead-channels.json` back to the repo
+2. Probes each stream with HEAD (GET fallback), checking liveness, response time, and CORS
+3. Skips channels stable across recent builds; re-probes recently-dead ones
+4. Merges surviving streams with the curated YouTube and custom lists
+5. Validates logo URLs and nulls any that are broken
+6. Commits updated output files and a build diff
 
-Build settings (timeout, concurrency, retry) are all in [`config.js`](./config.js).
+All tunables — timeout, concurrency, retry, incremental threshold — are in [`config.js`](./config.js).
 
 ---
 
 ## Manual run
 
-Go to **Actions → Build & Check Streams → Run workflow** to trigger a build outside the schedule.
+**Actions → Build & Check Streams → Run workflow**
 
 ---
 
