@@ -647,7 +647,7 @@ async function main() {
   // ── Write outputs ───────────────────────────────────────────────────────
   // Cross-build URL deduplication (add prev build's URLs to seenUrls so same
   // stream appearing under a new channel ID doesn't duplicate)
-  const seenUrls = new Set(prevUrls)
+  const seenUrls = new Set()
 
   const allLive = [...iptvAlive, ...ytAlive, ...customAlive]
     .filter(ch => {
