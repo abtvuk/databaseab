@@ -1,8 +1,20 @@
 # databaseab
-```
-An autonomous database of live TV stream channels.
 
-```
+- An autonomous database of live TV stream channels.
+
+
+---
+
+
+## How it works
+
+1. Fetches channel and stream data from iptv-org
+2. Probes each streams checking liveness, response time, and CORS
+3. Validates logo URLs
+4. Commits updated output files
+
+---
+
 ### Channel object
 
 ```json
@@ -41,15 +53,6 @@ An autonomous database of live TV stream channels.
 
 ---
 
-## How it works
-
-1. Fetches channel and stream data from iptv-org
-2. Probes each streams checking liveness, response time, and CORS
-3. Validates logo URLs
-4. Commits updated output files
-
-
----
 
 ## Credits
 
