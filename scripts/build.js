@@ -1,8 +1,8 @@
 // scripts/build.js
 // Fetches iptv-org channels + streams, probes every stream with HEAD/GET,
-// merges curated youtube + custom lists (also probed), writes:
+// merges curated youtube list (also probed), writes:
 //   feeds/merged/channels.json      — all live channels
-//   feeds/merged/dead-channels.json — dead by source (iptv / youtube / custom)
+//   feeds/merged/dead-channels.json — dead by source (iptv / youtube)
 //   feeds/merged/diff.json          — channels added/removed vs previous build
 //
 // Improvements over v1:
@@ -271,18 +271,6 @@ function loadPrevChannelIds() {
   } catch { return new Set() }
 }
 
-function loadPrevChannelUrls() {
-  try {
-    const prev = JSON.parse(fs.readFileSync(path.resolve(cfg.output.merged), 'utf8'))
-    const urls = new Set()
-    for (const c of (prev.channels || [])) {
-      if (c.ytId) urls.add(c.ytId)
-      else if (c.urls?.[0]) urls.add(c.urls[0])
-    }
-    return urls
-  } catch { return new Set() }
-}
-
 function loadRecentDeadIds() {
   // Returns channel stubs from dead-channels.json for resurrection probing
   try {
@@ -290,7 +278,6 @@ function loadRecentDeadIds() {
     const all = [
       ...(dead.iptv?.channels   || []),
       ...(dead.youtube?.channels|| []),
-      ...(dead.custom?.channels || []),
     ]
     return all
   } catch { return [] }
@@ -327,7 +314,6 @@ async function main() {
 
   const history      = loadHistory()
   const prevIds      = loadPrevChannelIds()
-  const prevUrls     = loadPrevChannelUrls()
   const recentDead   = loadRecentDeadIds()
 
   // ── 1. Fetch iptv-org data ──────────────────────────────────────────────
@@ -570,71 +556,10 @@ async function main() {
     console.warn(`  Could not load youtube list: ${e.message}`)
   }
 
-  // ── 4. Probe custom channels ────────────────────────────────────────────
-  console.log('\n── [4/4] Probing custom channels ──')
-  const t4 = Date.now()
-  const customAlive = [], customDead = []
-
-  try {
-    const customList = JSON.parse(fs.readFileSync(path.resolve(cfg.sources.custom.replace('https://raw.githubusercontent.com/savvydarknight/databaseab/refs/heads/main/', '')), 'utf8'))
-    const customCandidates = customList.filter(c => c.id && c.urls?.length && !isBlocked(c.id, c.name) && !seenIds.has(c.id))
-    console.log(`  Candidates: ${customCandidates.length}`)
-    let customDone = 0
-
-    const customTasks = customCandidates.map(c => async () => {
-      if (isStable(history, c.id) && prevIds.has(c.id)) {
-        const uptime = uptimeScore(history, c.id)
-        customAlive.push({ id: c.id, name: c.name, altNames: c.altNames || [],
-          country: normaliseCountry(c.country || '', c.languages, c.urls?.[0]),
-          logo: c.logo || null, languages: c.languages || [],
-          categories: c.categories || [c.cat || 'general'],
-          urls: c.urls, youtubeUrls: [], ytId: null,
-          cat: c.cat || 'general', uptime, _skipped: true,
-          ...(c.needsProxy && { needsProxy: true }) })
-        seenIds.add(c.id)
-        return
-      }
-
-      const result = await isAlive(c.urls[0], null, UA)
-      customDone++
-      if (customDone % 10 === 0 || customDone === customCandidates.length) {
-        console.log(`  [custom] ${customDone}/${customCandidates.length} — ✓ ${customAlive.length}  ✗ ${customDead.length}`)
-      }
-      const ch = {
-        id: c.id, name: c.name, altNames: c.altNames || [],
-        country: normaliseCountry(c.country || '', c.languages, c.urls?.[0]),
-        logo: c.logo || null,
-        languages: c.languages || [],
-        categories: c.categories || [c.cat || 'general'],
-        urls: c.urls, youtubeUrls: [], ytId: null,
-        cat: c.cat || 'general',
-        ...(c.needsProxy && { needsProxy: true }),
-      }
-      if (result.alive) {
-        recordAlive(history, c.id)
-        seenIds.add(c.id)
-        customAlive.push({
-          ...ch,
-          uptime: uptimeScore(history, c.id),
-          ...(result.responseMs > (slowThresholdMs || 8000) && { slow: true }),
-          ...(!result.cors && { browserPlayable: false }),
-        })
-      } else {
-        recordDead(history, c.id)
-        customDead.push(ch)
-      }
-    })
-
-    await runWithConcurrency(customTasks, concurrency)
-    console.log(`  custom done — alive: ${customAlive.length}  dead: ${customDead.length}  (${Date.now() - t4} ms)`)
-  } catch (e) {
-    console.warn(`  Could not load custom list: ${e.message}`)
-  }
-
-  // ── 5. Logo validation ──────────────────────────────────────────────────
+  // ── 4. Logo validation ──────────────────────────────────────────────────
   console.log('\n── [5/5] Validating logos ──')
   const t5 = Date.now()
-  const allCandidatesForLogos = [...iptvAlive, ...ytAlive, ...customAlive].filter(c => c.logo)
+  const allCandidatesForLogos = [...iptvAlive, ...ytAlive].filter(c => c.logo)
   console.log(`  Logos to check: ${allCandidatesForLogos.length}`)
 
   const logoTasks = allCandidatesForLogos.map(ch => async () => {
@@ -649,7 +574,7 @@ async function main() {
   // stream appearing under a new channel ID doesn't duplicate)
   const seenUrls = new Set()
 
-  const allLive = [...iptvAlive, ...ytAlive, ...customAlive]
+  const allLive = [...iptvAlive, ...ytAlive]
     .filter(ch => {
       const key = ch.ytId ?? ch.urls?.[0]
       if (!key) return true
@@ -658,7 +583,10 @@ async function main() {
       return true
     })
     // Strip internal build flags before writing
-    .map(({ _skipped, _resurrected, ...ch }) => ch)
+    .map(({ _skipped, _resurrected, ...ch }) => ({
+      ...ch,
+      languages: (ch.languages || []).map(l => l.toLowerCase()).filter(Boolean),
+    }))
     .sort((a, b) => a.name.localeCompare(b.name))
 
   // Diff
@@ -679,10 +607,9 @@ async function main() {
 
   fs.writeFileSync(deadPath, JSON.stringify({
     generated: new Date().toISOString(),
-    total: iptvDead.length + ytDead.length + customDead.length,
+    total: iptvDead.length + ytDead.length,
     iptv:    { total: iptvDead.length,    channels: iptvDead },
     youtube: { total: ytDead.length,      channels: ytDead },
-    custom:  { total: customDead.length,  channels: customDead },
   }, null, 2))
 
   fs.writeFileSync(diffPath, JSON.stringify({
@@ -695,7 +622,7 @@ async function main() {
 
   console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
   console.log(`  LIVE    ${allLive.length} channels → ${cfg.output.merged}`)
-  console.log(`  DEAD    iptv: ${iptvDead.length}  youtube: ${ytDead.length}  custom: ${customDead.length} → ${cfg.output.dead}`)
+  console.log(`  DEAD    iptv: ${iptvDead.length}  youtube: ${ytDead.length} → ${cfg.output.dead}`)
   console.log(`  DIFF    +${added.length} added  -${removed.length} removed → ${cfg.output.diff}`)
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
 }
