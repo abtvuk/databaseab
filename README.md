@@ -43,13 +43,10 @@ An autonomous database of live TV stream channels.
 ## How it works
 
 1. Fetches channel and stream data from iptv-org
-2. Probes each stream with HEAD (GET fallback), checking liveness, response time, and CORS
-3. Skips channels stable across recent builds; re-probes recently-dead ones
-4. Merges surviving streams with the curated YouTube and custom lists
-5. Validates logo URLs and nulls any that are broken
-6. Commits updated output files and a build diff
+2. Probes each streams checking liveness, response time, and CORS
+3. Validates logo URLs
+4. Commits updated output files
 
-All tunables — timeout, concurrency, retry, incremental threshold — are in [`config.js`](./config.js).
 
 ---
 
