@@ -22,8 +22,9 @@ module.exports = {
   output: {
     merged: 'feeds/merged/channels.json',
     dead:   'feeds/merged/dead-channels.json',
+    diff:   'feeds/merged/diff.json',
   },
-  
+
   // ── STREAM CHECKING ───────────────────────
   check: {
     // Max seconds ffprobe waits per URL before giving up
@@ -37,6 +38,33 @@ module.exports = {
 
     // Seconds to wait between retries
     retryDelaySeconds: 3,
+
+    // Max ms a stream response may take before being flagged as slow
+    // Slow streams are still included but tagged { slow: true }
+    slowThresholdMs: 8000,
   },
+
+  // ── INCREMENTAL PROBING ───────────────────
+  // Channels confirmed alive for this many consecutive builds are
+  // skipped on the current build and carried forward unchanged.
+  // Set to 0 to always probe everything.
+  stableBuildsThreshold: 3,
+
+  // ── DEAD-CHANNEL RESURRECTION ─────────────
+  // Channels that died within this many builds ago are re-probed
+  // even if they are absent from the current upstream fetch.
+  resurrecAfterBuilds: 3,
+
+  // ── LOGO VALIDATION ───────────────────────
+  // HEAD-check logo URLs and null them out if dead.
+  // Adds one extra HEAD request per channel with a logo.
+  checkLogos: true,
+
+  // ── NAME BLOCKLIST ────────────────────────
+  // Channel names containing any of these strings (case-insensitive)
+  // are excluded regardless of source. Extend as needed.
+  nameBlocklist: [
+    'ABN', 'NTD',
+  ],
 
 }
