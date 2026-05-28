@@ -1,7 +1,6 @@
 # databaseab
 
-A self-updating database of live TV stream channels. Every 6 hours, streams are fetched, probed, and the results committed back automatically.
-
+An autonomous database of live TV stream channels.
 ---
 
 ## Output files
@@ -47,55 +46,7 @@ A self-updating database of live TV stream channels. Every 6 hours, streams are 
 
 ---
 
-## Sources
 
-| Source | Description |
-|---|---|
-| [iptv-org](https://github.com/iptv-org/iptv) | Open-source IPTV channel and stream database |
-| `feeds/youtube/youtube-channels.json` | Curated YouTube live channels |
-| `feeds/custom/custom-channels.json` | Hand-picked streams. Absence in iptv-org database is not guaranteed |
-
----
-
-## Adding a channel
-
-### YouTube channel
-
-`feeds/youtube/youtube-channels.json` format:
-
-```json
-{
-  "id": "ChannelName.countrycode",
-  "name": "Channel Name",
-  "ytId": "UCxxxxxxxxxxxxxxxxxxxxxxxx",
-  "country": "KE",
-  "languages": ["eng"],
-  "categories": ["news", "youtube"],
-  "cat": "news",
-  "logo": "https://..."
-}
-```
-
-`ytId` accepts a channel ID (`UCxxxxxxx`), a handle (`@channelname`), or a video ID for a permanent livestream.
-
-### Custom stream channel
-
-`feeds/custom/custom-channels.json` format:
-
-```json
-{
-  "id": "ChannelName.countrycode",
-  "name": "Channel Name",
-  "country": "KE",
-  "languages": ["eng"],
-  "categories": ["general"],
-  "cat": "general",
-  "logo": "https://...",
-  "urls": ["https://stream.example.com/live.m3u8"]
-}
-```
-
-Both files use [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes and [ISO 639-3](https://en.wikipedia.org/wiki/ISO_639-3) language codes.
 
 ---
 
