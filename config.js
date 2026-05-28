@@ -16,7 +16,6 @@ module.exports = {
   // ── SOURCES ───────────────────────────────
   sources: {
     youtube: 'https://raw.githubusercontent.com/savvydarknight/databaseab/refs/heads/main/feeds/youtube/youtube-channels.json',
-    custom:  'https://raw.githubusercontent.com/savvydarknight/databaseab/refs/heads/main/feeds/custom/custom-channels.json',
   },
 
   output: {
@@ -53,7 +52,7 @@ module.exports = {
   // ── DEAD-CHANNEL RESURRECTION ─────────────
   // Channels that died within this many builds ago are re-probed
   // even if they are absent from the current upstream fetch.
-  resurrecAfterBuilds: 3,
+  resurrectAfterBuilds: 3,
 
   // ── LOGO VALIDATION ───────────────────────
   // HEAD-check logo URLs and null them out if dead.
