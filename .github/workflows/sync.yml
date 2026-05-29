@@ -1,0 +1,37 @@
+name: Sync from iptv-org
+
+# ── Schedule ──────────────────────────────────────────────────────────────────
+# Mirrors config.js → schedules.sync
+# Change the cron here AND in config.js to keep them in sync.
+# Current: every Monday at 02:00 UTC
+on:
+  schedule:
+    - cron: '0 2 * * 1'
+  workflow_dispatch: # allow manual trigger any time
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Sync from iptv-org
+        run: node scripts/sync.js
+
+      - name: Commit updated channel list
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add feeds/merged/channels.json
+          git diff --staged --quiet || git commit -m "chore: sync channels from iptv-org [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+          git push

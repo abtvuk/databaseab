@@ -1,0 +1,44 @@
+name: Check Alive Channels
+
+# ── Schedule ──────────────────────────────────────────────────────────────────
+# Runs every 5 hours as the base cadence.
+# Individual channels are skipped if their uptime score says they're not due yet.
+# Mirrors config.js → schedules.checkAlive and probeFrequency.
+#
+# Effective per-channel probe intervals (from config.js):
+#   no history  → every run (always)
+#   score < 70% → every 5h
+#   score 70–79%→ every 8h
+#   score 80–84%→ every 12h
+#   score ≥ 85% → every 24h
+on:
+  schedule:
+    - cron: '0 */5 * * *'
+  workflow_dispatch:
+
+jobs:
+  check-alive:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check alive channels
+        run: node scripts/check-alive.js
+
+      - name: Commit results
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add feeds/merged/channels.json
+          git diff --staged --quiet || git commit -m "chore: check alive channels [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+          git push
