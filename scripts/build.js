@@ -272,14 +272,26 @@ function loadPrevChannelIds() {
 }
 
 function loadRecentDeadIds() {
-  // Returns channel stubs from dead-channels.json for resurrection probing
+  // Returns channel stubs from dead-channels.json for resurrection probing.
+  // Only includes channels that died within resurrectAfterBuilds build-cycles ago,
+  // estimated by comparing lastSeen in uptime-history against now.
   try {
     const dead = JSON.parse(fs.readFileSync(path.resolve(cfg.output.dead), 'utf8'))
     const all = [
       ...(dead.iptv?.channels   || []),
       ...(dead.youtube?.channels|| []),
     ]
-    return all
+    const maxBuilds = cfg.resurrectAfterBuilds || 3
+    const history = loadHistory()
+    // Approximate one build cycle as 6 hours
+    const scheduleMs = 6 * 60 * 60 * 1000
+    const cutoffMs   = maxBuilds * scheduleMs
+    return all.filter(c => {
+      if (!c.id) return false
+      const h = history[c.id]
+      if (!h?.lastSeen) return true // no history — include it (safe default)
+      return (Date.now() - new Date(h.lastSeen).getTime()) <= cutoffMs
+    })
   } catch { return [] }
 }
 
@@ -525,8 +537,10 @@ async function main() {
         return
       }
 
-      const embedUrl = `https://www.youtube.com/embed/${c.ytId}`
-      const result   = await isAlive(embedUrl, null, UA)
+      // Use YouTube oEmbed API — returns 404 for deleted/private/terminated channels,
+      // unlike embed pages which always return 200.
+      const oEmbedUrl = `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${c.ytId}&format=json`
+      const result    = await isAlive(oEmbedUrl, null, UA)
       ytDone++
       if (ytDone % 50 === 0 || ytDone === ytCandidates.length) {
         console.log(`  [youtube] ${ytDone}/${ytCandidates.length} — ✓ ${ytAlive.length}  ✗ ${ytDead.length}`)
@@ -557,9 +571,11 @@ async function main() {
   }
 
   // ── 4. Logo validation ──────────────────────────────────────────────────
-  console.log('\n── [5/5] Validating logos ──')
+  console.log('\n── [4/4] Validating logos ──')
   const t5 = Date.now()
-  const allCandidatesForLogos = [...iptvAlive, ...ytAlive].filter(c => c.logo)
+  // Only validate logos for channels that are new or weren't in the previous build —
+  // stable/carried-forward channels keep their last-known logo without re-checking.
+  const allCandidatesForLogos = [...iptvAlive, ...ytAlive].filter(c => c.logo && !prevIds.has(c.id))
   console.log(`  Logos to check: ${allCandidatesForLogos.length}`)
 
   const logoTasks = allCandidatesForLogos.map(ch => async () => {
