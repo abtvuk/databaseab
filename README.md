@@ -8,7 +8,7 @@ Powered by automated workflows that sync weekly from upstream sources, verify st
 
 ## What's inside
 
-**37,000+ entries** across three media types, all in one file:
+**Entries** across three media types, all in one file:
 
 - Live TV channels (HLS streams + YouTube live)
 - Radio stations
