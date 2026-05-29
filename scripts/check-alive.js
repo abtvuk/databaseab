@@ -41,7 +41,7 @@ async function main() {
   const channels = data.channels || []
 
   // Candidates: alive + probe enabled + due for a check
-  const candidates = channels.filter(c => c.alive === true && c.probe !== false && isDueForProbe(c.uptime))
+  const candidates = channels.filter(c => c.alive === true && c.probe !== false && !c.ytId && isDueForProbe(c.uptime))
   const skipped    = channels.filter(c => c.alive === true && c.probe !== false && !isDueForProbe(c.uptime))
   const excluded   = channels.filter(c => c.alive === true && c.probe === false)
 
