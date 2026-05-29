@@ -395,6 +395,33 @@ function mergeYouTubeList(channels, logoMap) {
   return Array.from(channelMap.values())
 }
 
+// ── Deduplicate YouTube channels — famelack wins over hand-curated ────────────
+// If two entries share the same ytId, keep the famelack one.
+// Also removes entries with no ytId from this pool (shouldn't happen, safety net).
+
+function deduplicateYouTube(channels) {
+  const nonYt  = channels.filter(c => !c.ytId)
+  const ytChs  = channels.filter(c => c.ytId)
+
+  const byYtId = new Map()
+  for (const ch of ytChs) {
+    const existing = byYtId.get(ch.ytId)
+    if (!existing) {
+      byYtId.set(ch.ytId, ch)
+    } else {
+      // famelack beats hand-curated (source: null); otherwise keep first seen
+      if (existing.source !== 'famelack' && ch.source === 'famelack') {
+        byYtId.set(ch.ytId, ch)
+      }
+    }
+  }
+
+  const deduped   = Array.from(byYtId.values())
+  const removed   = ytChs.length - deduped.length
+  console.log(`  YouTube dedup: ${deduped.length} kept, ${removed} duplicates removed`)
+  return [...nonYt, ...deduped]
+}
+
 // ── Sort ──────────────────────────────────────────────────────────────────────
 
 function sortChannels(channels) {
@@ -486,6 +513,8 @@ async function main() {
   // ── 5. Merge curated YouTube list ───────────────────────────────────────────
   console.log('\n── [5/5] Merging YouTube list ──')
   synced = mergeYouTubeList(synced, logoMap)
+  console.log('\n── Deduplicating YouTube channels ──')
+  synced = deduplicateYouTube(synced)
 
   // ── Write ───────────────────────────────────────────────────────────────────
   const sorted = sortChannels(synced)
