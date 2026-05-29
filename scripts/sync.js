@@ -128,7 +128,8 @@ function mirrorFields(existing, iptvChannel, streamMap, logoMap) {
   }
 
   // Always-mirrored fields
-  mirrored.channelLogo = iptvChannel.logo || logoMap[iptvChannel.id] || existing.channelLogo || null
+  mirrored.channelLogo = iptvChannel.logo || logoMap[iptvChannel.id] || existing.channelLogo || existing.logo || null
+  delete mirrored.logo
   mirrored.streamUrls  = streamMap[iptvChannel.id] || existing.streamUrls || []
   mirrored.country     = iptvChannel.country     || existing.country     || ''
   mirrored.categories  = iptvChannel.categories  || existing.categories  || []
@@ -207,7 +208,8 @@ function mergeYouTubeList(channels, logoMap) {
       entry.ytId      = yt.ytId
       entry.country   = country   || existing.country   || ''
       entry.languages = languages.length ? languages : (existing.languages || [])
-      entry.channelLogo = channelLogo || existing.channelLogo || null
+      entry.channelLogo = channelLogo || existing.channelLogo || existing.logo || null
+      delete entry.logo
       entry.categories = categories.length ? categories : (existing.categories || [])
       entry.tv    = tv
       entry.radio = radio
