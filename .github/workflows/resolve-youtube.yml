@@ -1,0 +1,45 @@
+name: Resolve YouTube Channels (One-Time)
+
+# ── Manual trigger only ───────────────────────────────────────────────────────
+# Run this once per day for ~4 days until all channels are resolved.
+# Progress is saved to resolve-progress.json between runs.
+# The script deletes itself and the progress file when fully complete.
+#
+# Before first run:
+#   1. Go to your repo → Settings → Secrets and variables → Actions
+#   2. Add a secret named YOUTUBE_API_KEY with your API key value
+#   3. Come back here and click "Run workflow" once per day
+on:
+  workflow_dispatch:
+
+jobs:
+  resolve-youtube:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Resolve YouTube channel IDs
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: node scripts/resolve-youtube.js
+
+      - name: Commit results
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add feeds/merged/channels.json
+          git add resolve-progress.json 2>/dev/null || true
+          git rm --cached resolve-progress.json 2>/dev/null || true
+          git rm --cached scripts/resolve-youtube.js 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "chore: resolve YouTube channels [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+          git push
