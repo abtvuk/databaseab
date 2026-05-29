@@ -17,7 +17,7 @@ Powered by automated workflows that sync from upstream sources, verify stream av
 
 Three independent workflows run on schedule:
 
-Channels pull from sources, mirrors updated fields, adds new entries, and probe them.
+Channels pull from sources, mirrors updated fields, adds new entries, and probes them.
 
 All workflows commit directly to this repo. No manual steps required.
 
