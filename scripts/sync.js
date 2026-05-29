@@ -144,6 +144,9 @@ function mirrorFields(existing, iptvChannel, streamMap, logoMap) {
 }
 
 // ── Merge curated YouTube list ────────────────────────────────────────────────
+// Every YouTube channel gets the full channel schema — same fields as iptv-org
+// channels. Fields that don't apply (streamUrls, website, replaced_by) are set
+// to safe empty values. country is uppercased. blank entries are skipped.
 
 function mergeYouTubeList(channels, logoMap) {
   const channelMap = new Map(channels.map(c => [c.id, c]))
@@ -156,28 +159,35 @@ function mergeYouTubeList(channels, logoMap) {
     return channels
   }
 
-  let added = 0, updated = 0
+  let added = 0, updated = 0, skippedCount = 0
 
   for (const yt of ytList) {
-    if (!yt.id || !yt.ytId) continue
-    if (isNameBlocked(yt.name)) continue
+    // Skip blank/incomplete entries
+    if (!yt.id || !yt.ytId || !yt.name) { skippedCount++; continue }
+    if (isNameBlocked(yt.name)) { skippedCount++; continue }
+
+    const country   = yt.country ? yt.country.toUpperCase() : ''
+    const languages = (yt.languages || []).map(l => l.toLowerCase()).filter(Boolean)
+    const categories = [...new Set([...(yt.categories || []).filter(Boolean), 'youtube'])]
+    const { tv, radio } = mediaFlags(categories)
+    const logo = yt.logo || logoMap[yt.id] || null
 
     if (!channelMap.has(yt.id)) {
-      // New YouTube channel
       channelMap.set(yt.id, {
-        id:         yt.id,
-        name:       yt.name,
-        editName:   yt.editName  ?? cfg.sync.defaults.editName,
-        alive:      yt.alive     ?? cfg.sync.defaults.alive,
-        probe:      yt.probe     ?? cfg.sync.defaults.probe,
-        tv:         yt.tv        ?? true,
-        radio:      yt.radio     ?? false,
-        country:    yt.country   || '',
-        logo:       yt.logo || logoMap[yt.id] || null,
-        categories: [...new Set([...(yt.categories || []), 'youtube'])],
-        streamUrls: [],
-        ytId:       yt.ytId,
-        website:    yt.website   || null,
+        id:          yt.id,
+        name:        yt.name,
+        editName:    yt.editName   ?? cfg.sync.defaults.editName,
+        alive:       yt.alive      ?? cfg.sync.defaults.alive,
+        probe:       yt.probe      ?? cfg.sync.defaults.probe,
+        tv,
+        radio,
+        country,
+        logo,
+        languages,
+        categories,
+        streamUrls:  [],
+        ytId:        yt.ytId,
+        website:     yt.website    || null,
         replaced_by: null,
         uptime: {
           aliveCount:       0,
@@ -190,23 +200,38 @@ function mergeYouTubeList(channels, logoMap) {
       })
       added++
     } else {
-      // Existing YouTube channel — mirror name if editName allows, update ytId/logo
       const existing = channelMap.get(yt.id)
-      const updated_entry = { ...existing }
-      if (existing.editName !== false) updated_entry.name = yt.name
-      updated_entry.ytId = yt.ytId
-      if (yt.logo) updated_entry.logo = yt.logo
-      if (!updated_entry.categories.includes('youtube')) {
-        updated_entry.categories = [...updated_entry.categories, 'youtube']
+      const entry = { ...existing }
+
+      if (existing.editName !== false) entry.name = yt.name
+      entry.ytId      = yt.ytId
+      entry.country   = country   || existing.country   || ''
+      entry.languages = languages.length ? languages : (existing.languages || [])
+      entry.logo      = logo      || existing.logo      || null
+      entry.categories = categories.length ? categories : (existing.categories || [])
+      entry.tv    = tv
+      entry.radio = radio
+      if (yt.website) entry.website = yt.website
+
+      // Ensure all uptime fields exist for older entries that might be missing them
+      entry.uptime = {
+        aliveCount:       existing.uptime?.aliveCount       ?? 0,
+        totalCount:       existing.uptime?.totalCount       ?? 0,
+        consecutiveAlive: existing.uptime?.consecutiveAlive ?? 0,
+        lastSeen:         existing.uptime?.lastSeen         ?? null,
+        lastProbed:       existing.uptime?.lastProbed       ?? null,
+        score:            existing.uptime?.score            ?? null,
       }
-      channelMap.set(yt.id, updated_entry)
+
+      channelMap.set(yt.id, entry)
       updated++
     }
   }
 
-  console.log(`  YouTube: ${added} added, ${updated} updated`)
+  console.log(`  YouTube: ${added} added, ${updated} updated, ${skippedCount} skipped (blank/blocked)`)
   return Array.from(channelMap.values())
 }
+
 
 // ── Sort ──────────────────────────────────────────────────────────────────────
 // Primary: country asc (blank last), secondary: name asc
