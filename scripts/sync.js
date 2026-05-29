@@ -1,13 +1,15 @@
 // scripts/sync.js
 // ─────────────────────────────────────────────────────────────────────────────
-//  Weekly sync from iptv-org.
+//  Weekly sync from iptv-org + famelack.
 //
 //  What it does:
-//    1. Fetches channels.json + streams.json + logos.json from iptv-org
-//    2. Adds brand-new channels (by ID) to your list with alive: false
-//    3. Mirrors allowed fields on existing channels (name only if editName: true)
-//    4. Merges your curated YouTube list (adds new entries, mirrors fields)
-//    5. Writes the single unified channels.json
+//    1. Fetches iptv-org channels, streams, logos, blocklist
+//    2. Fetches famelack TV + radio from GitHub
+//    3. Syncs iptv-org channels (mirror fields, add new ones)
+//    4. Merges famelack TV channels (unique ones not already in DB by name)
+//    5. Merges famelack radio stations (full import, radio: true)
+//    6. Merges your curated YouTube list
+//    7. Writes single unified channels.json
 //
 //  What it never does:
 //    • Probe any stream URL
@@ -54,8 +56,18 @@ function isNameBlocked(name) {
   return (cfg.nameBlocklist || []).some(b => lc.includes(b.toLowerCase()))
 }
 
-// ── Build a stream URL map from iptv-org streams.json ────────────────────────
-// Keyed by channel id → array of stream URLs (up to 3, HLS first)
+function emptyUptime() {
+  return {
+    aliveCount:       0,
+    totalCount:       0,
+    consecutiveAlive: 0,
+    lastSeen:         null,
+    lastProbed:       null,
+    score:            null,
+  }
+}
+
+// ── Build stream URL map from iptv-org streams.json ──────────────────────────
 
 function buildStreamMap(streams, blockedIds) {
   const map = {}
@@ -69,7 +81,7 @@ function buildStreamMap(streams, blockedIds) {
   return map
 }
 
-// ── Build logo map from logos.json ───────────────────────────────────────────
+// ── Build logo map from iptv-org logos.json ───────────────────────────────────
 
 function buildLogoMap(logos) {
   const map = {}
@@ -79,7 +91,7 @@ function buildLogoMap(logos) {
   return map
 }
 
-// ── Determine radio/tv flags from categories ──────────────────────────────────
+// ── Derive tv/radio flags from categories ─────────────────────────────────────
 
 function mediaFlags(categories) {
   const cats = (categories || []).map(c => c.toLowerCase())
@@ -87,10 +99,32 @@ function mediaFlags(categories) {
   return { tv: !radio, radio }
 }
 
-// ── Build a new channel entry for a brand-new iptv-org channel ───────────────
+// ── Generate a unique ID for famelack channels (no iptv-org ID exists) ────────
+// Format: <slug>.<countrycode>  e.g. "bbcnews.uk"
 
-function newChannelEntry(c, streamMap, logoMap) {
-  const streamUrls = streamMap[c.id] || []
+function generateId(name, country, existingIds) {
+  const slug = (name || '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '')
+    .slice(0, 20)
+  const cc = (country || 'xx').toLowerCase()
+  let id = slug ? `${slug}.${cc}` : `famelack.${cc}`
+  let suffix = 1
+  while (existingIds.has(id)) { id = `${slug}${suffix++}.${cc}` }
+  return id
+}
+
+// ── Extract YouTube video ID from famelack embed URLs ─────────────────────────
+// e.g. https://www.youtube-nocookie.com/embed/HxEcfPpyLMA → HxEcfPpyLMA
+
+function extractYtId(url) {
+  const m = (url || '').match(/\/embed\/([A-Za-z0-9_-]{10,12})/)
+  return m ? m[1] : null
+}
+
+// ── New iptv-org channel entry ────────────────────────────────────────────────
+
+function newIptvEntry(c, streamMap, logoMap) {
   const { tv, radio } = mediaFlags(c.categories)
   return {
     id:          c.id,
@@ -101,57 +135,179 @@ function newChannelEntry(c, streamMap, logoMap) {
     tv,
     radio,
     country:     c.country     || '',
-    channelLogo:  c.logo || logoMap[c.id] || null,
+    channelLogo: c.logo || logoMap[c.id] || null,
+    languages:   [],
     categories:  c.categories  || [],
-    streamUrls,
+    streamUrls:  streamMap[c.id] || [],
+    ytId:        null,
     website:     c.website     || null,
     replaced_by: c.replaced_by || null,
-    uptime: {
-      aliveCount:       0,
-      totalCount:       0,
-      consecutiveAlive: 0,
-      lastSeen:         null,
-      lastProbed:       null,
-      score:            null,
-    },
+    geoBlocked:  false,
+    source:      'iptv',
+    nanoid:      null,
+    uptime:      emptyUptime(),
   }
 }
 
-// ── Mirror allowed fields onto an existing channel entry ─────────────────────
+// ── Mirror iptv-org fields onto an existing channel ───────────────────────────
 
-function mirrorFields(existing, iptvChannel, streamMap, logoMap) {
-  const mirrored = { ...existing }
+function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
+  const ch = { ...existing }
 
-  // Name — only if editName is not explicitly false
-  if (existing.editName !== false) {
-    mirrored.name = iptvChannel.name
+  if (ch.editName !== false) ch.name = iptvCh.name
+
+  ch.channelLogo = iptvCh.logo || logoMap[iptvCh.id] || existing.channelLogo || null
+  delete ch.logo   // remove old field name if present
+  ch.streamUrls  = streamMap[iptvCh.id] || existing.streamUrls || []
+  ch.country     = iptvCh.country     || existing.country     || ''
+  ch.categories  = iptvCh.categories  || existing.categories  || []
+  ch.website     = iptvCh.website     || existing.website     || null
+  ch.replaced_by = iptvCh.replaced_by || existing.replaced_by || null
+
+  const { tv, radio } = mediaFlags(ch.categories)
+  ch.tv    = tv
+  ch.radio = radio
+
+  // Backfill new fields on existing channels that predate them
+  if (!('geoBlocked' in ch)) ch.geoBlocked = false
+  if (!('source'     in ch)) ch.source      = 'iptv'
+  if (!('nanoid'     in ch)) ch.nanoid      = null
+  if (!('languages'  in ch)) ch.languages   = []
+
+  return ch
+}
+
+// ── Merge famelack TV channels ────────────────────────────────────────────────
+
+function mergeFamelackTV(channels, famelackTV) {
+  const byName     = new Map(channels.map(c => [c.name.toLowerCase().trim(), true]))
+  const existingIds = new Set(channels.map(c => c.id))
+
+  let addedHLS = 0, addedYT = 0, skipped = 0
+
+  for (const fc of famelackTV) {
+    const nameLower = (fc.name || '').toLowerCase().trim()
+    if (!nameLower || isNameBlocked(fc.name)) { skipped++; continue }
+    if (byName.has(nameLower))                { skipped++; continue }
+
+    const hasHLS = (fc.stream_urls   || []).length > 0
+    const hasYT  = (fc.youtube_urls  || []).length > 0
+    if (!hasHLS && !hasYT) { skipped++; continue }
+
+    const country   = (fc.country || '').toUpperCase()
+    const languages = (fc.languages || []).map(l => l.toLowerCase()).filter(Boolean)
+    const id        = generateId(fc.name, fc.country, existingIds)
+    existingIds.add(id)
+    byName.set(nameLower, true)
+
+    if (hasHLS) {
+      channels.push({
+        id,
+        name:        fc.name,
+        editName:    true,
+        alive:       true,   // famelack already validated
+        probe:       true,
+        tv:          true,
+        radio:       false,
+        country,
+        channelLogo: null,
+        languages,
+        categories:  [],
+        streamUrls:  fc.stream_urls,
+        ytId:        null,
+        website:     null,
+        replaced_by: null,
+        geoBlocked:  !!fc.isGeoBlocked,
+        source:      'famelack',
+        nanoid:      fc.nanoid || null,
+        uptime:      emptyUptime(),
+      })
+      addedHLS++
+    } else {
+      const ytId = extractYtId(fc.youtube_urls[0])
+      if (!ytId) { skipped++; continue }
+      channels.push({
+        id,
+        name:        fc.name,
+        editName:    true,
+        alive:       true,
+        probe:       true,
+        tv:          true,
+        radio:       false,
+        country,
+        channelLogo: null,
+        languages,
+        categories:  ['youtube'],
+        streamUrls:  [],
+        ytId,
+        website:     null,
+        replaced_by: null,
+        geoBlocked:  !!fc.isGeoBlocked,
+        source:      'famelack',
+        nanoid:      fc.nanoid || null,
+        uptime:      emptyUptime(),
+      })
+      addedYT++
+    }
   }
 
-  // Always-mirrored fields
-  mirrored.channelLogo = iptvChannel.logo || logoMap[iptvChannel.id] || existing.channelLogo || existing.logo || null
-  delete mirrored.logo
-  mirrored.streamUrls  = streamMap[iptvChannel.id] || existing.streamUrls || []
-  mirrored.country     = iptvChannel.country     || existing.country     || ''
-  mirrored.categories  = iptvChannel.categories  || existing.categories  || []
-  mirrored.website     = iptvChannel.website     || existing.website     || null
-  mirrored.replaced_by = iptvChannel.replaced_by || existing.replaced_by || null
+  console.log(`  TV HLS added:     ${addedHLS}`)
+  console.log(`  TV YouTube added: ${addedYT}`)
+  console.log(`  TV skipped:       ${skipped} (already in DB, no URL, or blocked)`)
+  return channels
+}
 
-  // Re-derive tv/radio from updated categories
-  const { tv, radio } = mediaFlags(mirrored.categories)
-  mirrored.tv    = tv
-  mirrored.radio = radio
+// ── Merge famelack radio stations ─────────────────────────────────────────────
 
-  return mirrored
+function mergeFamelackRadio(channels, famelackRadio) {
+  const existingIds = new Set(channels.map(c => c.id))
+  let added = 0, skipped = 0
+
+  for (const fr of famelackRadio) {
+    if (!fr.name || !(fr.stream_urls || []).length) { skipped++; continue }
+    if (isNameBlocked(fr.name)) { skipped++; continue }
+
+    const country   = (fr.country || '').toUpperCase()
+    const languages = (fr.languages || []).map(l => l.toLowerCase()).filter(Boolean)
+    let id = `r-${generateId(fr.name, fr.country, existingIds)}`
+    // generateId already handles uniqueness but we passed existingIds above
+    existingIds.add(id)
+
+    channels.push({
+      id,
+      name:        fr.name,
+      editName:    true,
+      alive:       true,
+      probe:       true,
+      tv:          false,
+      radio:       true,
+      country,
+      channelLogo: null,
+      languages,
+      categories:  ['radio'],
+      streamUrls:  fr.stream_urls,
+      ytId:        null,
+      website:     null,
+      replaced_by: null,
+      geoBlocked:  !!fr.isGeoBlocked,
+      source:      'famelack',
+      nanoid:      fr.nanoid || null,
+      uptime:      emptyUptime(),
+    })
+    added++
+  }
+
+  console.log(`  Radio added:   ${added}`)
+  console.log(`  Radio skipped: ${skipped}`)
+  return channels
 }
 
 // ── Merge curated YouTube list ────────────────────────────────────────────────
-// Every YouTube channel gets the full channel schema — same fields as iptv-org
-// channels. Fields that don't apply (streamUrls, website, replaced_by) are set
-// to safe empty values. country is uppercased. blank entries are skipped.
 
 function mergeYouTubeList(channels, logoMap) {
-  const channelMap = new Map(channels.map(c => [c.id, c]))
+  if (!cfg.sources.youtube) return channels
 
+  const channelMap = new Map(channels.map(c => [c.id, c]))
   let ytList = []
   try {
     ytList = JSON.parse(fs.readFileSync(path.resolve(cfg.sources.youtube), 'utf8'))
@@ -163,12 +319,11 @@ function mergeYouTubeList(channels, logoMap) {
   let added = 0, updated = 0, skippedCount = 0
 
   for (const yt of ytList) {
-    // Skip blank/incomplete entries
     if (!yt.id || !yt.ytId || !yt.name) { skippedCount++; continue }
-    if (isNameBlocked(yt.name)) { skippedCount++; continue }
+    if (isNameBlocked(yt.name))          { skippedCount++; continue }
 
-    const country   = yt.country ? yt.country.toUpperCase() : ''
-    const languages = (yt.languages || []).map(l => l.toLowerCase()).filter(Boolean)
+    const country    = yt.country ? yt.country.toUpperCase() : ''
+    const languages  = (yt.languages || []).map(l => l.toLowerCase()).filter(Boolean)
     const categories = [...new Set([...(yt.categories || []).filter(Boolean), 'youtube'])]
     const { tv, radio } = mediaFlags(categories)
     const channelLogo = yt.logo || logoMap[yt.id] || null
@@ -177,9 +332,9 @@ function mergeYouTubeList(channels, logoMap) {
       channelMap.set(yt.id, {
         id:          yt.id,
         name:        yt.name,
-        editName:    yt.editName   ?? cfg.sync.defaults.editName,
-        alive:       yt.alive      ?? cfg.sync.defaults.alive,
-        probe:       yt.probe      ?? cfg.sync.defaults.probe,
+        editName:    yt.editName ?? cfg.sync.defaults.editName,
+        alive:       yt.alive   ?? cfg.sync.defaults.alive,
+        probe:       yt.probe   ?? cfg.sync.defaults.probe,
         tv,
         radio,
         country,
@@ -188,34 +343,30 @@ function mergeYouTubeList(channels, logoMap) {
         categories,
         streamUrls:  [],
         ytId:        yt.ytId,
-        website:     yt.website    || null,
+        website:     yt.website || null,
         replaced_by: null,
-        uptime: {
-          aliveCount:       0,
-          totalCount:       0,
-          consecutiveAlive: 0,
-          lastSeen:         null,
-          lastProbed:       null,
-          score:            null,
-        },
+        geoBlocked:  false,
+        source:      null,   // hand-curated
+        nanoid:      null,
+        uptime:      emptyUptime(),
       })
       added++
     } else {
       const existing = channelMap.get(yt.id)
       const entry = { ...existing }
-
       if (existing.editName !== false) entry.name = yt.name
-      entry.ytId      = yt.ytId
-      entry.country   = country   || existing.country   || ''
-      entry.languages = languages.length ? languages : (existing.languages || [])
-      entry.channelLogo = channelLogo || existing.channelLogo || existing.logo || null
+      entry.ytId        = yt.ytId
+      entry.country     = country     || existing.country     || ''
+      entry.languages   = languages.length ? languages : (existing.languages || [])
+      entry.channelLogo = channelLogo || existing.channelLogo || null
       delete entry.logo
-      entry.categories = categories.length ? categories : (existing.categories || [])
+      entry.categories  = categories.length ? categories : (existing.categories || [])
       entry.tv    = tv
       entry.radio = radio
       if (yt.website) entry.website = yt.website
-
-      // Ensure all uptime fields exist for older entries that might be missing them
+      if (!('geoBlocked' in entry)) entry.geoBlocked = false
+      if (!('source'     in entry)) entry.source     = null
+      if (!('nanoid'     in entry)) entry.nanoid     = null
       entry.uptime = {
         aliveCount:       existing.uptime?.aliveCount       ?? 0,
         totalCount:       existing.uptime?.totalCount       ?? 0,
@@ -224,19 +375,16 @@ function mergeYouTubeList(channels, logoMap) {
         lastProbed:       existing.uptime?.lastProbed       ?? null,
         score:            existing.uptime?.score            ?? null,
       }
-
       channelMap.set(yt.id, entry)
       updated++
     }
   }
 
-  console.log(`  YouTube: ${added} added, ${updated} updated, ${skippedCount} skipped (blank/blocked)`)
+  console.log(`  YouTube: ${added} added, ${updated} updated, ${skippedCount} skipped`)
   return Array.from(channelMap.values())
 }
 
-
 // ── Sort ──────────────────────────────────────────────────────────────────────
-// Primary: country asc (blank last), secondary: name asc
 
 function sortChannels(channels) {
   return channels.slice().sort((a, b) => {
@@ -254,26 +402,31 @@ async function main() {
   console.log('  databaseab — sync.js')
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
 
-  // ── 1. Fetch iptv-org ───────────────────────────────────────────────────────
-  console.log('── [1/3] Fetching iptv-org sources ──')
+  // ── 1. Fetch all sources in parallel ───────────────────────────────────────
+  console.log('── [1/5] Fetching all sources ──')
   const t1 = Date.now()
-  let iptvChannels, streams, blocklist, logos
+
+  let iptvChannels, streams, blocklist, logos, famelackTV, famelackRadio
 
   try {
-    ;[iptvChannels, streams, blocklist, logos] = await Promise.all([
+    ;[iptvChannels, streams, blocklist, logos, famelackTV, famelackRadio] = await Promise.all([
       fetchJSON(cfg.sources.iptvChannels),
       fetchJSON(cfg.sources.iptvStreams),
       fetchJSON(cfg.sources.iptvBlocklist).catch(() => []),
       fetchJSON(cfg.sources.iptvLogos).catch(() => []),
+      fetchJSON(cfg.sources.famelackTV).catch(() => { console.warn('  ⚠ famelack TV fetch failed'); return [] }),
+      fetchJSON(cfg.sources.famelackRadio).catch(() => { console.warn('  ⚠ famelack radio fetch failed'); return [] }),
     ])
   } catch (err) {
-    console.error(`  ✗ iptv-org fetch failed: ${err.message}`)
+    console.error(`  ✗ Fetch failed: ${err.message}`)
     process.exit(1)
   }
 
-  console.log(`  channels:  ${iptvChannels.length}`)
-  console.log(`  streams:   ${streams.length}`)
-  console.log(`  logos:     ${logos.length}`)
+  console.log(`  iptv-org channels: ${iptvChannels.length}`)
+  console.log(`  iptv-org streams:  ${streams.length}`)
+  console.log(`  iptv-org logos:    ${logos.length}`)
+  console.log(`  famelack TV:       ${famelackTV.length}`)
+  console.log(`  famelack radio:    ${famelackRadio.length}`)
   console.log(`  took ${Date.now() - t1} ms`)
 
   const blockedIds = new Set(blocklist.filter(b => b.reason === 'nsfw').map(b => b.channel))
@@ -283,48 +436,57 @@ async function main() {
   const streamMap = buildStreamMap(streams, allBlocked)
   const logoMap   = buildLogoMap(logos)
 
-  // Index iptv-org channels by id for fast lookup
   const iptvMap = new Map(
     iptvChannels
       .filter(c => c.id && c.name && !allBlocked.has(c.id) && !isNameBlocked(c.name))
       .map(c => [c.id, c])
   )
 
-  // ── 2. Sync against your existing list ─────────────────────────────────────
-  console.log('\n── [2/3] Syncing channel list ──')
-  const existing = loadChannels()
+  // ── 2. Sync iptv-org channels ───────────────────────────────────────────────
+  console.log('\n── [2/5] Syncing iptv-org channels ──')
+  const existing    = loadChannels()
   const existingMap = new Map(existing.map(c => [c.id, c]))
+  let iptvMirrored  = 0, iptvAdded = 0
 
-  let added = 0, mirrored = 0
-
-  const synced = existing.map(ch => {
+  let synced = existing.map(ch => {
     const iptvCh = iptvMap.get(ch.id)
-    if (!iptvCh) return ch // your channel, not in iptv-org — leave untouched
-    mirrored++
-    return mirrorFields(ch, iptvCh, streamMap, logoMap)
+    if (!iptvCh) return ch
+    iptvMirrored++
+    return mirrorIptvFields(ch, iptvCh, streamMap, logoMap)
   })
 
-  // Add brand-new iptv-org channels not yet in your list
   for (const [id, iptvCh] of iptvMap) {
     if (existingMap.has(id)) continue
-    if (!streamMap[id]?.length) continue // skip channels with no streams at all
-    synced.push(newChannelEntry(iptvCh, streamMap, logoMap))
-    added++
+    if (!streamMap[id]?.length) continue
+    synced.push(newIptvEntry(iptvCh, streamMap, logoMap))
+    iptvAdded++
   }
 
-  console.log(`  Existing channels mirrored: ${mirrored}`)
-  console.log(`  New channels added:         ${added}`)
+  console.log(`  Mirrored: ${iptvMirrored}  |  Added: ${iptvAdded}`)
 
-  // ── 3. Merge YouTube list ───────────────────────────────────────────────────
-  console.log('\n── [3/3] Merging YouTube list ──')
-  const withYt = mergeYouTubeList(synced, logoMap)
+  // ── 3. Merge famelack TV ────────────────────────────────────────────────────
+  console.log('\n── [3/5] Merging famelack TV channels ──')
+  synced = mergeFamelackTV(synced, famelackTV)
+
+  // ── 4. Merge famelack radio ─────────────────────────────────────────────────
+  console.log('\n── [4/5] Merging famelack radio stations ──')
+  synced = mergeFamelackRadio(synced, famelackRadio)
+
+  // ── 5. Merge curated YouTube list ───────────────────────────────────────────
+  console.log('\n── [5/5] Merging YouTube list ──')
+  synced = mergeYouTubeList(synced, logoMap)
 
   // ── Write ───────────────────────────────────────────────────────────────────
-  const sorted = sortChannels(withYt)
+  const sorted = sortChannels(synced)
   saveChannels(sorted)
 
+  const tvCount    = sorted.filter(c => c.tv && !c.radio).length
+  const radioCount = sorted.filter(c => c.radio).length
+  const ytCount    = sorted.filter(c => c.ytId).length
+
   console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-  console.log(`  DONE  ${sorted.length} total channels → ${cfg.output.channels}`)
+  console.log(`  DONE  ${sorted.length} total → ${cfg.output.channels}`)
+  console.log(`  TV: ${tvCount}  |  Radio: ${radioCount}  |  YouTube: ${ytCount}`)
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
 }
 
