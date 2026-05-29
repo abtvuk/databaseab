@@ -76,7 +76,11 @@ function buildStreamMap(streams, blockedIds) {
     if (blockedIds.has(s.channel)) continue
     if (!map[s.channel]) map[s.channel] = []
     if (map[s.channel].length >= 3) continue
-    map[s.channel].push(s.url)
+    map[s.channel].push({
+      url:       s.url,
+      referrer:  s.http_referrer || null,
+      userAgent: s.user_agent    || null,
+    })
   }
   return map
 }
@@ -138,7 +142,10 @@ function newIptvEntry(c, streamMap, logoMap) {
     channelLogo: c.logo || logoMap[c.id] || null,
     languages:   [],
     categories:  c.categories  || [],
-    streamUrls:  streamMap[c.id] || [],
+    streamUrls:  (streamMap[c.id] || []).map(s => s.url),
+    referrer:    streamMap[c.id]?.[0]?.referrer  || null,
+    userAgent:   streamMap[c.id]?.[0]?.userAgent || null,
+    needsProxy:  !!(streamMap[c.id]?.[0]?.referrer || streamMap[c.id]?.[0]?.userAgent),
     ytId:        null,
     website:     c.website     || null,
     replaced_by: c.replaced_by || null,
@@ -158,7 +165,11 @@ function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
 
   ch.channelLogo = iptvCh.logo || logoMap[iptvCh.id] || existing.channelLogo || null
   delete ch.logo   // remove old field name if present
-  ch.streamUrls  = streamMap[iptvCh.id] || existing.streamUrls || []
+  const streams  = streamMap[iptvCh.id] || []
+    ch.streamUrls  = streams.length ? streams.map(s => s.url) : existing.streamUrls || []
+    ch.referrer    = streams[0]?.referrer  || existing.referrer  || null
+    ch.userAgent   = streams[0]?.userAgent || existing.userAgent || null
+    ch.needsProxy  = !!(ch.referrer || ch.userAgent)
   ch.country     = iptvCh.country     || existing.country     || ''
   ch.categories  = iptvCh.categories  || existing.categories  || []
   ch.website     = iptvCh.website     || existing.website     || null
