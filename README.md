@@ -2,7 +2,7 @@
 
 > A unified, self-updating database of live TV channels and radio stations from around the world.
 
-Powered by automated workflows that sync weekly from upstream sources, verify stream availability, and maintain a single structured dataset — all without manual intervention.
+Powered by automated workflows that sync from upstream sources, verify stream availability, and maintain a single structured dataset — all without manual intervention.
 
 ---
 
@@ -20,15 +20,9 @@ Powered by automated workflows that sync weekly from upstream sources, verify st
 
 Three independent workflows run on schedule:
 
-Channels pull from sources, mirrors updated fields, adds new entries, Channels probe separating live and dead ones.
+Channels pull from sources, mirrors updated fields, adds new entries, probe separating live and dead ones.
 
 All workflows commit directly to this repo. No manual steps required.
-
----
-
-## Output
-
-Everything lives in one file: `feeds/merged/channels.json`
 
 ---
 
