@@ -1,67 +1,84 @@
-// ─────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
 //  databaseab — central configuration
-//  All tunables live here. Touch nothing else.
-// ─────────────────────────────────────────────
+//  All tunables live here. Every value here maps to a workflow behaviour.
+//  Change a value, commit — the next run picks it up automatically.
+// ─────────────────────────────────────────────────────────────────────────────
 
 module.exports = {
 
-  // ── SCHEDULE ──────────────────────────────
-  // How often the merge + check workflow runs.
-  // Standard cron syntax (UTC).
-  // '0 */6 * * *'  = every 6 hours
-  // '0 */12 * * *' = every 12 hours
-  // '0 2 * * *'    = once daily at 02:00 UTC
-  schedule: '0 */6 * * *',
-
-  // ── SOURCES ───────────────────────────────
+  // ── SOURCES ────────────────────────────────────────────────────────────────
   sources: {
-    youtube: 'https://raw.githubusercontent.com/savvydarknight/databaseab/refs/heads/main/feeds/youtube/youtube-channels.json',
+    // iptv-org public API endpoints (do not change unless iptv-org moves them)
+    iptvChannels:  'https://iptv-org.github.io/api/channels.json',
+    iptvStreams:   'https://iptv-org.github.io/api/streams.json',
+    iptvBlocklist: 'https://iptv-org.github.io/api/blocklist.json',
+    iptvLogos:     'https://iptv-org.github.io/api/logos.json',
+
+    // Your curated YouTube-only channel list (merged into the main list)
+    youtube: 'feeds/youtube/youtube-channels.json',
   },
 
+  // ── OUTPUT ─────────────────────────────────────────────────────────────────
   output: {
-    merged: 'feeds/merged/channels.json',
-    dead:   'feeds/merged/dead-channels.json',
-    diff:   'feeds/merged/diff.json',
+    // Single unified channel list — the only output file
+    channels: 'feeds/merged/channels.json',
   },
 
-  // ── STREAM CHECKING ───────────────────────
-  check: {
-    // Max seconds ffprobe waits per URL before giving up
-    timeoutSeconds: 15,
-
-    // How many times to retry a URL before marking it dead
-    retries: 2,
-
-    // How many streams to check at the same time
-    concurrency: 20,
-
-    // Seconds to wait between retries
-    retryDelaySeconds: 3,
-
-    // Max ms a stream response may take before being flagged as slow
-    // Slow streams are still included but tagged { slow: true }
-    slowThresholdMs: 8000,
+  // ── SCHEDULES (cron, UTC) ──────────────────────────────────────────────────
+  // Change any of these and mirror the value in the corresponding .yml file.
+  // '0 2 * * 1'    = every Monday at 02:00 UTC
+  // '0 */4 * * *'  = every 4 hours
+  // '0 */8 * * *'  = every 8 hours
+  // '0 */12 * * *' = every 12 hours
+  // '0 3 * * *'    = once daily at 03:00 UTC
+  schedules: {
+    sync:       '0 2 * * 1',   // weekly sync from iptv-org (Monday 02:00 UTC)
+    resurrect:  '0 */4 * * *', // dead channel resurrection — every 4 hours
+    checkAlive: '0 */5 * * *', // alive channel check — every 5 hours (base cadence)
+                               // individual channels override this via uptime score below
   },
 
-  // ── INCREMENTAL PROBING ───────────────────
-  // Channels confirmed alive for this many consecutive builds are
-  // skipped on the current build and carried forward unchanged.
-  // Set to 0 to always probe everything.
-  stableBuildsThreshold: 3,
+  // ── PROBE SETTINGS ─────────────────────────────────────────────────────────
+  probe: {
+    timeoutSeconds:    10,  // seconds before a stream probe is aborted
+    retries:            1,  // retry attempts after first failure (0 = no retry)
+    retryDelaySeconds:  2,  // seconds to wait between retries
+    concurrency:       25,  // simultaneous probes
+    slowThresholdMs:  8000, // ms above which a channel is flagged { slow: true }
+  },
 
-  // ── DEAD-CHANNEL RESURRECTION ─────────────
-  // Channels that died within this many builds ago are re-probed
-  // even if they are absent from the current upstream fetch.
-  resurrectAfterBuilds: 3,
+  // ── UPTIME-BASED PROBE FREQUENCY ───────────────────────────────────────────
+  // Controls how often alive channels are re-probed based on their uptime score.
+  // Score = (aliveCount / totalCount) * 100, null if no history yet.
+  // Channels with no history are always probed (can't trust without data).
+  // Hours are "minimum gap since lastProbed before probing again".
+  probeFrequency: {
+    noHistory:       0,   // always probe (no history = no trust)
+    below70:         5,   // score < 70%  → probe if last check was > 5h ago
+    from70to80:      8,   // score 70–79% → probe if last check was > 8h ago
+    from80to85:     12,   // score 80–84% → probe if last check was > 12h ago
+    above85:        24,   // score ≥ 85%  → probe if last check was > 24h ago
+  },
 
-  // ── LOGO VALIDATION ───────────────────────
-  // HEAD-check logo URLs and null them out if dead.
-  // Adds one extra HEAD request per channel with a logo.
-  checkLogos: true,
+  // ── SYNC BEHAVIOUR ─────────────────────────────────────────────────────────
+  sync: {
+    // Fields mirrored from iptv-org on every sync run (for all channels)
+    mirroredFields: ['logo', 'streamUrls', 'country', 'categories', 'website', 'replaced_by'],
 
-  // ── NAME BLOCKLIST ────────────────────────
-  // Channel names containing any of these strings (case-insensitive)
-  // are excluded regardless of source. Extend as needed.
+    // Fields mirrored only when editName: true on the channel
+    nameField: 'name',
+
+    // Default values assigned to brand-new channels added from iptv-org
+    defaults: {
+      alive:    false,  // new channels start unverified
+      probe:    true,   // probed by default; set false manually to exclude
+      editName: true,   // iptv-org can update the name; set false to lock your edit
+    },
+  },
+
+  // ── NSFW / NAME BLOCKLIST ──────────────────────────────────────────────────
+  // Channels whose name contains any of these strings are excluded entirely.
+  // Case-insensitive. Extend as needed.
   nameBlocklist: [
     'ABN', 'NTD',
   ],
