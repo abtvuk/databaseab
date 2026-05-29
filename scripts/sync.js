@@ -101,7 +101,7 @@ function newChannelEntry(c, streamMap, logoMap) {
     tv,
     radio,
     country:     c.country     || '',
-    logo:        c.logo || logoMap[c.id] || null,
+    channelLogo:  c.logo || logoMap[c.id] || null,
     categories:  c.categories  || [],
     streamUrls,
     website:     c.website     || null,
@@ -128,7 +128,7 @@ function mirrorFields(existing, iptvChannel, streamMap, logoMap) {
   }
 
   // Always-mirrored fields
-  mirrored.logo        = iptvChannel.logo || logoMap[iptvChannel.id] || existing.logo || null
+  mirrored.channelLogo = iptvChannel.logo || logoMap[iptvChannel.id] || existing.channelLogo || null
   mirrored.streamUrls  = streamMap[iptvChannel.id] || existing.streamUrls || []
   mirrored.country     = iptvChannel.country     || existing.country     || ''
   mirrored.categories  = iptvChannel.categories  || existing.categories  || []
@@ -170,7 +170,7 @@ function mergeYouTubeList(channels, logoMap) {
     const languages = (yt.languages || []).map(l => l.toLowerCase()).filter(Boolean)
     const categories = [...new Set([...(yt.categories || []).filter(Boolean), 'youtube'])]
     const { tv, radio } = mediaFlags(categories)
-    const logo = yt.logo || logoMap[yt.id] || null
+    const channelLogo = yt.logo || logoMap[yt.id] || null
 
     if (!channelMap.has(yt.id)) {
       channelMap.set(yt.id, {
@@ -182,7 +182,7 @@ function mergeYouTubeList(channels, logoMap) {
         tv,
         radio,
         country,
-        logo,
+        channelLogo,
         languages,
         categories,
         streamUrls:  [],
@@ -207,7 +207,7 @@ function mergeYouTubeList(channels, logoMap) {
       entry.ytId      = yt.ytId
       entry.country   = country   || existing.country   || ''
       entry.languages = languages.length ? languages : (existing.languages || [])
-      entry.logo      = logo      || existing.logo      || null
+      entry.channelLogo = channelLogo || existing.channelLogo || null
       entry.categories = categories.length ? categories : (existing.categories || [])
       entry.tv    = tv
       entry.radio = radio
