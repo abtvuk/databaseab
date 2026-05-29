@@ -13,9 +13,6 @@ module.exports = {
     iptvStreams:   'https://iptv-org.github.io/api/streams.json',
     iptvBlocklist: 'https://iptv-org.github.io/api/blocklist.json',
     iptvLogos:     'https://iptv-org.github.io/api/logos.json',
-
-    // Your curated YouTube-only channel list (merged into the main list)
-    youtube: 'feeds/youtube/youtube-channels.json',
   },
 
   // ── OUTPUT ─────────────────────────────────────────────────────────────────
