@@ -8,7 +8,7 @@ Powered by automated workflows that sync from upstream sources, verify stream av
 
 ## What's inside
 
-**Entries** across three media types, all in one file:
+**Entries** are across three media types:
 
 - Live TV channels (HLS streams + YouTube live)
 - Radio stations
