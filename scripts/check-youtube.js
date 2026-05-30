@@ -12,7 +12,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 const cfg  = require('../config')
-const { runWithConcurrency, recordAlive, recordDead } = require('./probe')
+const { runWithConcurrency, recordAlive, recordDead, progressBar } = require('./probe')
 const fs   = require('fs')
 const path = require('path')
 
@@ -86,9 +86,7 @@ async function main() {
     const result = await probeYtId(ch.ytId)
     done++
 
-    if (done % 100 === 0 || done === total) {
-      console.log(`  [check-youtube] ${done}/${total} — ✓ ${passed}  ✗ ${failed}`)
-    }
+    progressBar(done, total)
 
     const entry = channelMap.get(ch.id)
     if (!entry) return
