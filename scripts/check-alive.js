@@ -65,10 +65,7 @@ async function main() {
 
   const tasks = candidates.map(ch => async () => {
     let result
-
-    if (ch.ytId) {
-      result = await probeYouTube(ch.ytId)
-    } else {
+    
       const url = (ch.streamUrls || [])[0]
       if (!url) {
         // No URL to probe — leave alive as-is, just update lastProbed
@@ -78,7 +75,6 @@ async function main() {
         return
       }
       result = await probeUrl(url)
-    }
 
     done++
     if (done % 100 === 0 || done === total) {
