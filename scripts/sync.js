@@ -114,7 +114,7 @@ function generateId(name, country, existingIds) {
   const cc = (country || 'xx').toLowerCase()
   let id = slug ? `${slug}.${cc}` : `famelack.${cc}`
   let suffix = 1
-  while (existingIds.has(id)) { id = `${slug}${suffix++}.${cc}` }
+  while (existingIds.has(id)) { id = `${slug ? slug : 'famelack'}${suffix++}.${cc}` }
   return id
 }
 
@@ -289,17 +289,20 @@ function mergeFamelackTV(channels, famelackTV) {
 // ── Merge famelack radio stations ─────────────────────────────────────────────
 
 function mergeFamelackRadio(channels, famelackRadio) {
+  const byName      = new Map(channels.map(c => [c.name.toLowerCase().trim(), true]))
   const existingIds = new Set(channels.map(c => c.id))
   let added = 0, skipped = 0
 
   for (const fr of famelackRadio) {
     if (!fr.name || !(fr.stream_urls || []).length) { skipped++; continue }
     if (isNameBlocked(fr.name)) { skipped++; continue }
+    if (byName.has((fr.name || '').toLowerCase().trim())) { skipped++; continue }
 
     const country   = (fr.country   || '').toUpperCase()
     const languages = (fr.languages || []).map(l => l.toLowerCase()).filter(Boolean)
     const id        = `r-${generateId(fr.name, fr.country, existingIds)}`
     existingIds.add(id)
+    byName.set((fr.name || '').toLowerCase().trim(), true)
 
     channels.push({
       id,
