@@ -53,7 +53,7 @@ async function probeOnce(url, referrer, userAgent) {
 
 // ── Probe with retries ────────────────────────────────────────────────────────
 
-async function probeUrl(url) {
+async function probeUrl(url, referrer, userAgent) {
   let last = { alive: false, responseMs: 0, cors: false }
   for (let i = 0; i <= cfg.probe.retries; i++) {
     if (i > 0) await sleep(cfg.probe.retryDelaySeconds * 1000)
