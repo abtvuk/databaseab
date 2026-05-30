@@ -3,63 +3,97 @@
 //  Shared stream probing utilities used by check-alive.js and resurrect.js
 // ─────────────────────────────────────────────────────────────────────────────
 
-const cfg = require('../config')
+const cfg  = require('../config')
+const { execFile } = require('child_process')
 
-const TIMEOUT_MS = cfg.probe.timeoutSeconds * 1000
-const UA = 'abtv-probe/1.0'
+const TIMEOUT_S = cfg.probe.timeoutSeconds
+const UA        = 'abtv-probe/1.0'
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)) }
 
-// ── Single probe attempt — HEAD with GET fallback ─────────────────────────────
+// ── ffprobe stream probe ──────────────────────────────────────────────────────
+// Uses ffprobe to actually connect and read stream data.
+// Handles HLS, RTSP, RTMP natively. Confirms packets are flowing.
 // Returns { alive, responseMs, cors }
 
-async function probeOnce(url, referrer, userAgent) {
-  const headers = { 'User-Agent': userAgent || UA, ...(referrer ? { 'Referer': referrer } : {}) }
-  const t0 = Date.now()
+function probeOnce(url, referrer, userAgent) {
+  return new Promise(resolve => {
+    const t0   = Date.now()
+    const args = [
+      '-v',          'error',
+      '-timeout',    String(TIMEOUT_S * 1_000_000), // ffprobe timeout in microseconds
+      '-user_agent', userAgent || UA,
+      ...(referrer ? ['-headers', `Referer: ${referrer}\r\n`] : []),
+      '-select_streams', 'v:0',       // look for at least one video stream
+      '-show_entries',   'stream=codec_type',
+      '-of',             'csv=p=0',
+      url,
+    ]
 
-  // HEAD first
-  try {
-    const ctrl = new AbortController()
-    const t = setTimeout(() => ctrl.abort(), TIMEOUT_MS)
-    const res = await fetch(url, { method: 'HEAD', signal: ctrl.signal, headers })
-    clearTimeout(t)
-    const responseMs = Date.now() - t0
-    if (res.status < 400) {
-      const cors = res.headers.get('access-control-allow-origin')
-      return { alive: true, responseMs, cors: !!cors }
-    }
-    if (res.status !== 405) return { alive: false, responseMs, cors: false }
-  } catch (e) {
-    if (e.name !== 'AbortError') return { alive: false, responseMs: Date.now() - t0, cors: false }
-  }
+    const child = execFile('ffprobe', args, { timeout: (TIMEOUT_S + 5) * 1000 }, (err, stdout) => {
+      const responseMs = Date.now() - t0
+      if (err) return resolve({ alive: false, responseMs, cors: false })
 
-  // GET fallback with Range header
-  try {
-    const ctrl = new AbortController()
-    const t = setTimeout(() => ctrl.abort(), TIMEOUT_MS)
-    const res = await fetch(url, {
-      method: 'GET',
-      signal: ctrl.signal,
-      headers: { ...headers, Range: 'bytes=0-0' },
+      // stdout contains 'video' if a video stream was found
+      // For radio/audio-only streams, retry with audio stream check
+      const hasVideo = stdout.trim().includes('video')
+      resolve({ alive: hasVideo, responseMs, cors: false })
     })
-    clearTimeout(t)
-    const responseMs = Date.now() - t0
-    const cors = res.headers.get('access-control-allow-origin')
-    return { alive: res.status === 200 || res.status === 206, responseMs, cors: !!cors }
-  } catch {
-    return { alive: false, responseMs: Date.now() - t0, cors: false }
-  }
+
+    // Hard kill if execFile timeout doesn't fire in time
+    setTimeout(() => {
+      try { child.kill('SIGKILL') } catch {}
+    }, (TIMEOUT_S + 6) * 1000)
+  })
+}
+
+// ── Audio-only fallback probe ─────────────────────────────────────────────────
+// For streams where no video stream is found — checks for audio (radio stations).
+
+function probeAudioOnce(url, referrer, userAgent) {
+  return new Promise(resolve => {
+    const t0   = Date.now()
+    const args = [
+      '-v',          'error',
+      '-timeout',    String(TIMEOUT_S * 1_000_000),
+      '-user_agent', userAgent || UA,
+      ...(referrer ? ['-headers', `Referer: ${referrer}\r\n`] : []),
+      '-select_streams', 'a:0',
+      '-show_entries',   'stream=codec_type',
+      '-of',             'csv=p=0',
+      url,
+    ]
+
+    const child = execFile('ffprobe', args, { timeout: (TIMEOUT_S + 5) * 1000 }, (err, stdout) => {
+      const responseMs = Date.now() - t0
+      if (err) return resolve({ alive: false, responseMs, cors: false })
+      resolve({ alive: stdout.trim().includes('audio'), responseMs, cors: false })
+    })
+
+    setTimeout(() => {
+      try { child.kill('SIGKILL') } catch {}
+    }, (TIMEOUT_S + 6) * 1000)
+  })
 }
 
 // ── Probe with retries ────────────────────────────────────────────────────────
 
 async function probeUrl(url, referrer, userAgent) {
   let last = { alive: false, responseMs: 0, cors: false }
+
   for (let i = 0; i <= cfg.probe.retries; i++) {
     if (i > 0) await sleep(cfg.probe.retryDelaySeconds * 1000)
+
     last = await probeOnce(url, referrer, userAgent)
     if (last.alive) return last
+
+    // If no video stream found, check for audio (radio/audio-only streams)
+    if (!last.alive) {
+      const audioResult = await probeAudioOnce(url, referrer, userAgent)
+      if (audioResult.alive) return audioResult
+    }
   }
+
   return last
 }
 
