@@ -11,7 +11,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 const cfg = require('../config')
-const { probeUrl, probeYouTube, runWithConcurrency, recordAlive, recordDead } = require('./probe')
+const { probeUrl, runWithConcurrency, recordAlive, recordDead } = require('./probe')
 const fs   = require('fs')
 const path = require('path')
 
@@ -56,10 +56,7 @@ async function main() {
 
   const tasks = candidates.map(ch => async () => {
     let result
-
-    if (ch.ytId) {
-      result = await probeYouTube(ch.ytId)
-    } else {
+    
       const url = (ch.streamUrls || [])[0]
       if (!url) {
         // No URL — can't probe, just leave it dead
@@ -72,7 +69,6 @@ async function main() {
     done++
     if (done % 100 === 0 || done === total) {
       console.log(`  [resurrect] ${done}/${total} — ✓ ${resurrected} resurrected  ✗ ${stillDead} still dead`)
-    }
 
     const entry = channelMap.get(ch.id)
     if (!entry) return
