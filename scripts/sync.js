@@ -8,8 +8,7 @@
 //    3. Syncs iptv-org channels (mirror fields, add new ones)
 //    4. Merges famelack TV channels (unique ones not already in DB by name)
 //    5. Merges famelack radio stations (full import, radio: true)
-//    6. Merges your curated YouTube list
-//    7. Writes single unified channels.json
+//    6. Writes channels.json
 //
 //  What it never does:
 //    • Probe any stream URL
@@ -317,119 +316,6 @@ function mergeFamelackRadio(channels, famelackRadio) {
   return channels
 }
 
-// ── Merge curated YouTube list ────────────────────────────────────────────────
-
-function mergeYouTubeList(channels, logoMap) {
-  if (!cfg.sources.youtube) return channels
-
-  const channelMap = new Map(channels.map(c => [c.id, c]))
-  let ytList = []
-  try {
-    ytList = JSON.parse(fs.readFileSync(path.resolve(cfg.sources.youtube), 'utf8'))
-  } catch {
-    console.warn('  ⚠ Could not load YouTube list — skipping.')
-    return channels
-  }
-
-  let added = 0, updated = 0, skippedCount = 0
-
-  for (const yt of ytList) {
-    if (!yt.id || !yt.ytId || !yt.name) { skippedCount++; continue }
-    if (isNameBlocked(yt.name))          { skippedCount++; continue }
-
-    const country    = yt.country ? yt.country.toUpperCase() : ''
-    const languages  = (yt.languages || []).map(l => l.toLowerCase()).filter(Boolean)
-    const categories = [...new Set([...(yt.categories || []).filter(Boolean), 'youtube'])]
-    const { tv, radio } = mediaFlags(categories)
-    const channelLogo = yt.logo || logoMap[yt.id] || null
-
-    if (!channelMap.has(yt.id)) {
-      channelMap.set(yt.id, {
-        id:          yt.id,
-        name:        yt.name,
-        editName:    yt.editName ?? cfg.sync.defaults.editName,
-        alive:       yt.alive   ?? cfg.sync.defaults.alive,
-        probe:       yt.probe   ?? cfg.sync.defaults.probe,
-        tv,
-        radio,
-        country,
-        channelLogo,
-        editChannelLogo: true,
-        languages,
-        categories,
-        streamUrls:  [],
-        ytId:        yt.ytId,
-        website:     yt.website || null,
-        replaced_by: null,
-        geoBlocked:  false,
-        source:      null,   // hand-curated
-        nanoid:      null,
-        uptime:      emptyUptime(),
-      })
-      added++
-    } else {
-      const existing = channelMap.get(yt.id)
-      const entry = { ...existing }
-      if (existing.editName !== false) entry.name = yt.name
-      entry.ytId        = yt.ytId
-      entry.country     = country     || existing.country     || ''
-      entry.languages   = languages.length ? languages : (existing.languages || [])
-      if (entry.editChannelLogo !== false) {
-        entry.channelLogo = channelLogo || existing.channelLogo || null
-      }
-      if (!('editChannelLogo' in entry)) entry.editChannelLogo = true
-      delete entry.logo
-      entry.categories  = categories.length ? categories : (existing.categories || [])
-      entry.tv    = tv
-      entry.radio = radio
-      if (yt.website) entry.website = yt.website
-      if (!('geoBlocked' in entry)) entry.geoBlocked = false
-      if (!('source'     in entry)) entry.source     = null
-      if (!('nanoid'     in entry)) entry.nanoid     = null
-      entry.uptime = {
-        aliveCount:       existing.uptime?.aliveCount       ?? 0,
-        totalCount:       existing.uptime?.totalCount       ?? 0,
-        consecutiveAlive: existing.uptime?.consecutiveAlive ?? 0,
-        lastSeen:         existing.uptime?.lastSeen         ?? null,
-        lastProbed:       existing.uptime?.lastProbed       ?? null,
-        score:            existing.uptime?.score            ?? null,
-      }
-      channelMap.set(yt.id, entry)
-      updated++
-    }
-  }
-
-  console.log(`  YouTube: ${added} added, ${updated} updated, ${skippedCount} skipped`)
-  return Array.from(channelMap.values())
-}
-
-// ── Deduplicate YouTube channels — famelack wins over hand-curated ────────────
-// If two entries share the same ytId, keep the famelack one.
-// Also removes entries with no ytId from this pool (shouldn't happen, safety net).
-
-function deduplicateYouTube(channels) {
-  const nonYt  = channels.filter(c => !c.ytId)
-  const ytChs  = channels.filter(c => c.ytId)
-
-  const byYtId = new Map()
-  for (const ch of ytChs) {
-    const existing = byYtId.get(ch.ytId)
-    if (!existing) {
-      byYtId.set(ch.ytId, ch)
-    } else {
-      // famelack beats hand-curated (source: null); otherwise keep first seen
-      if (existing.source !== 'famelack' && ch.source === 'famelack') {
-        byYtId.set(ch.ytId, ch)
-      }
-    }
-  }
-
-  const deduped   = Array.from(byYtId.values())
-  const removed   = ytChs.length - deduped.length
-  console.log(`  YouTube dedup: ${deduped.length} kept, ${removed} duplicates removed`)
-  return [...nonYt, ...deduped]
-}
-
 // ── Sort ──────────────────────────────────────────────────────────────────────
 
 function sortChannels(channels) {
@@ -515,14 +401,8 @@ async function main() {
   synced = mergeFamelackTV(synced, famelackTV)
 
   // ── 4. Merge famelack radio ─────────────────────────────────────────────────
-  console.log('\n── [4/5] Merging famelack radio stations ──')
+  console.log('\n── [4/4] Merging famelack radio stations ──')
   synced = mergeFamelackRadio(synced, famelackRadio)
-
-  // ── 5. Merge curated YouTube list ───────────────────────────────────────────
-  console.log('\n── [5/5] Merging YouTube list ──')
-  synced = mergeYouTubeList(synced, logoMap)
-  console.log('\n── Deduplicating YouTube channels ──')
-  synced = deduplicateYouTube(synced)
 
   // ── Write ───────────────────────────────────────────────────────────────────
   const sorted = sortChannels(synced)
