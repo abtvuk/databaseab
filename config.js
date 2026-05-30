@@ -17,9 +17,6 @@ module.exports = {
     // famelack public dataset (MIT licensed)
     famelackTV:    'https://raw.githubusercontent.com/famelack/famelack-data/main/tv/raw/categories/all.json',
     famelackRadio: 'https://raw.githubusercontent.com/famelack/famelack-data/main/radio/raw/categories/all.json',
-
-    // Your curated YouTube-only channel list (merged into the main list)
-    youtube: 'feeds/youtube/youtube-channels.json',
   },
 
   // ── OUTPUT ─────────────────────────────────────────────────────────────────
