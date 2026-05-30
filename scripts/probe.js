@@ -97,15 +97,6 @@ async function probeUrl(url, referrer, userAgent) {
   return last
 }
 
-// ── YouTube oEmbed check ──────────────────────────────────────────────────────
-// Returns true if the channel/video is still publicly accessible.
-
-async function probeYouTube(ytId) {
-  const url = `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${ytId}&format=json`
-  const result = await probeUrl(url)
-  return result
-}
-
 // ── Concurrency pool ──────────────────────────────────────────────────────────
 
 async function runWithConcurrency(tasks, limit) {
@@ -175,4 +166,4 @@ function progressBar(done, total) {
   if (done === total) process.stdout.write('\n')
 }
 
-module.exports = { probeUrl, probeYouTube, runWithConcurrency, recordAlive, recordDead, isDueForProbe, progressBar }
+module.exports = { probeUrl, runWithConcurrency, recordAlive, recordDead, isDueForProbe, progressBar }
