@@ -16,7 +16,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 const cfg = require('../config')
-const { probeUrl, probeYouTube, runWithConcurrency, recordAlive, recordDead, isDueForProbe } = require('./probe')
+const { probeUrl, probeYouTube, runWithConcurrency, recordAlive, recordDead, isDueForProbe, progressBar } = require('./probe')
 const fs   = require('fs')
 const path = require('path')
 
@@ -77,9 +77,7 @@ async function main() {
       result = await probeUrl(url, ch.referrer, ch.userAgent)
 
     done++
-    if (done % 100 === 0 || done === total) {
-      console.log(`  [check-alive] ${done}/${total} — ✓ ${passed}  ✗ ${failed}`)
-    }
+    progressBar(done, total)
 
     const entry = channelMap.get(ch.id)
     if (!entry) return
