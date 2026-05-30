@@ -28,9 +28,6 @@ function saveChannels(data) {
 }
 
 async function main() {
-  console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-  console.log('  databaseab — resurrect.js')
-  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
 
   const data     = loadChannels()
   const channels = data.channels || []
@@ -92,7 +89,7 @@ async function main() {
   saveChannels(data)
 
   console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-  console.log(`  RESURRECTED  ${resurrected}  (flipped to alive: true)`)
+  console.log(`  RESURRECTED  ${resurrected} `)
   console.log(`  STILL DEAD   ${stillDead}`)
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
 }
