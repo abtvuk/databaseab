@@ -35,7 +35,7 @@ async function main() {
   const data     = loadChannels()
   const channels = data.channels || []
 
-  const candidates = channels.filter(c => c.alive === false && c.probe !== false && !c.ytId)
+  const candidates = channels.filter(c => c.alive === false && c.probe !== false && !c.ytId && !c.radio)
   const excluded   = channels.filter(c => c.alive === false && c.probe === false)
 
   console.log(`  Total dead channels:    ${channels.filter(c => !c.alive).length}`)
