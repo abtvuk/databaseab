@@ -165,15 +165,15 @@ function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
 
   ch.channelLogo = iptvCh.logo || logoMap[iptvCh.id] || existing.channelLogo || null
   delete ch.logo   // remove old field name if present
-  const streams  = streamMap[iptvCh.id] || []
+    const streams  = streamMap[iptvCh.id] || []
     ch.streamUrls  = streams.length ? streams.map(s => s.url) : existing.streamUrls || []
     ch.referrer    = streams[0]?.referrer  || existing.referrer  || null
     ch.userAgent   = streams[0]?.userAgent || existing.userAgent || null
     ch.needsProxy  = !!(ch.referrer || ch.userAgent)
-  ch.country     = iptvCh.country     || existing.country     || ''
-  ch.categories  = iptvCh.categories  || existing.categories  || []
-  ch.website     = iptvCh.website     || existing.website     || null
-  ch.replaced_by = iptvCh.replaced_by || existing.replaced_by || null
+    ch.country     = iptvCh.country     || existing.country     || ''
+    ch.categories  = iptvCh.categories  || existing.categories  || []
+    ch.website     = iptvCh.website     || existing.website     || null
+    ch.replaced_by = iptvCh.replaced_by || existing.replaced_by || null
 
   const { tv, radio } = mediaFlags(ch.categories)
   ch.tv    = tv
