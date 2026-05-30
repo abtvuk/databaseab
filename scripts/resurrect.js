@@ -63,7 +63,7 @@ async function main() {
         done++
         return
       }
-      result = await probeUrl(url)
+      result = await probeUrl(url, ch.referrer, ch.userAgent)
     }
 
     done++
