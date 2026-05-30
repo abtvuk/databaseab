@@ -36,9 +36,13 @@ All workflows commit directly to this repo. No manual steps required.
   "radio": false,
   "country": "US",
   "channelLogo": "https://...",
+  "editChannelLogo": true,
   "languages": ["eng"],
   "categories": ["news"],
   "streamUrls": ["https://stream.example.com/cnn.m3u8"],
+  "referrer": null,
+  "userAgent": null,
+  "needsProxy": false,
   "ytId": null,
   "website": "https://cnn.com",
   "replaced_by": null,
@@ -69,9 +73,13 @@ All workflows commit directly to this repo. No manual steps required.
 | `radio` | boolean | `true` for radio stations. |
 | `country` | string | ISO 3166-1 alpha-2 country code. |
 | `channelLogo` | string \| null | Logo URL. |
+| `editChannelLogo` | boolean | `false` locks the logo from being overwritten during sync. |
 | `languages` | string[] | ISO 639-3 language codes. |
 | `categories` | string[] | Content categories (e.g. `news`, `sports`, `radio`, `youtube`). |
 | `streamUrls` | string[] | HLS stream URLs. Empty for YouTube-only channels. |
+| `referrer` | string \| null | HTTP Referer header required by some stream servers. |
+| `userAgent` | string \| null | Custom User-Agent required by some stream servers. |
+| `needsProxy` | boolean | `true` if the stream requires a referrer or custom user-agent to respond. |
 | `ytId` | string \| null | YouTube video or stream ID. Set for YouTube channels. |
 | `website` | string \| null | Official channel website. |
 | `replaced_by` | string \| null | ID of the channel that replaced this one, if applicable. |
