@@ -13,8 +13,8 @@ function sleep(ms) { return new Promise(r => setTimeout(r, ms)) }
 // ── Single probe attempt — HEAD with GET fallback ─────────────────────────────
 // Returns { alive, responseMs, cors }
 
-async function probeOnce(url) {
-  const headers = { 'User-Agent': UA }
+async function probeOnce(url, referrer, userAgent) {
+  const headers = { 'User-Agent': userAgent || UA, ...(referrer ? { 'Referer': referrer } : {}) }
   const t0 = Date.now()
 
   // HEAD first
@@ -57,7 +57,7 @@ async function probeUrl(url) {
   let last = { alive: false, responseMs: 0, cors: false }
   for (let i = 0; i <= cfg.probe.retries; i++) {
     if (i > 0) await sleep(cfg.probe.retryDelaySeconds * 1000)
-    last = await probeOnce(url)
+    last = await probeOnce(url, referrer, userAgent)
     if (last.alive) return last
   }
   return last
