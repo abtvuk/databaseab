@@ -140,6 +140,7 @@ function newIptvEntry(c, streamMap, logoMap) {
     radio,
     country:     c.country     || '',
     channelLogo: c.logo || logoMap[c.id] || null,
+    editChannelLogo: true,
     languages:   [],
     categories:  c.categories  || [],
     streamUrls:  (streamMap[c.id] || []).map(s => s.url),
@@ -163,8 +164,11 @@ function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
 
   if (ch.editName !== false) ch.name = iptvCh.name
 
+  if (ch.editChannelLogo !== false) {
   ch.channelLogo = iptvCh.logo || logoMap[iptvCh.id] || existing.channelLogo || null
-  delete ch.logo   // remove old field name if present
+  }
+  delete ch.logo
+  if (!('editChannelLogo' in ch)) ch.editChannelLogo = true
     const streams  = streamMap[iptvCh.id] || []
     ch.streamUrls  = streams.length ? streams.map(s => s.url) : existing.streamUrls || []
     ch.referrer    = streams[0]?.referrer  || existing.referrer  || null
@@ -350,6 +354,7 @@ function mergeYouTubeList(channels, logoMap) {
         radio,
         country,
         channelLogo,
+        editChannelLogo: true,
         languages,
         categories,
         streamUrls:  [],
@@ -369,7 +374,10 @@ function mergeYouTubeList(channels, logoMap) {
       entry.ytId        = yt.ytId
       entry.country     = country     || existing.country     || ''
       entry.languages   = languages.length ? languages : (existing.languages || [])
-      entry.channelLogo = channelLogo || existing.channelLogo || null
+      if (entry.editChannelLogo !== false) {
+        entry.channelLogo = channelLogo || existing.channelLogo || null
+      }
+      if (!('editChannelLogo' in entry)) entry.editChannelLogo = true
       delete entry.logo
       entry.categories  = categories.length ? categories : (existing.categories || [])
       entry.tv    = tv
