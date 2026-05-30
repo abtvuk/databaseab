@@ -56,19 +56,19 @@ async function main() {
 
   const tasks = candidates.map(ch => async () => {
     let result
-    
-      const url = (ch.streamUrls || [])[0]
-      if (!url) {
-        // No URL — can't probe, just leave it dead
-        done++
-        return
-      }
-      result = await probeUrl(url, ch.referrer, ch.userAgent)
+
+    const url = (ch.streamUrls || [])[0]
+    if (!url) {
+      // No URL — can't probe, just leave it dead
+      done++
+      return
     }
+    result = await probeUrl(url, ch.referrer, ch.userAgent)
 
     done++
     if (done % 100 === 0 || done === total) {
       console.log(`  [resurrect] ${done}/${total} — ✓ ${resurrected} resurrected  ✗ ${stillDead} still dead`)
+    }
 
     const entry = channelMap.get(ch.id)
     if (!entry) return
