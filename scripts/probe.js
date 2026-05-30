@@ -130,4 +130,14 @@ function isDueForProbe(uptime) {
   return hoursSince >= minHours
 }
 
-module.exports = { probeUrl, probeYouTube, runWithConcurrency, recordAlive, recordDead, isDueForProbe }
+// ── Progress bar ──────────────────────────────────────────────────────────────
+
+function progressBar(done, total) {
+  const pct = Math.round((done / total) * 100)
+  const filled = Math.round(pct / 4)
+  const bar = '█'.repeat(filled) + '░'.repeat(25 - filled)
+  process.stdout.write(`\r  [${bar}] ${pct}%`)
+  if (done === total) process.stdout.write('\n')
+}
+
+module.exports = { probeUrl, probeYouTube, runWithConcurrency, recordAlive, recordDead, isDueForProbe, progressBar }
