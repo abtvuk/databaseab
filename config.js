@@ -36,6 +36,7 @@ module.exports = {
     sync:       '0 2 * * 1',   // weekly sync from iptv-org (Monday 02:00 UTC)
     resurrect:  '0 */4 * * *', // dead channel resurrection — every 4 hours
     checkAlive: '0 */5 * * *', // alive channel check — every 5 hours (base cadence)
+    checkYoutube: '0 */12 * * *',
                                // individual channels override this via uptime score below
   },
 
