@@ -11,7 +11,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 const cfg = require('../config')
-const { probeUrl, runWithConcurrency, recordAlive, recordDead } = require('./probe')
+const { probeUrl, runWithConcurrency, recordAlive, recordDead, progressBar } = require('./probe')
 const fs   = require('fs')
 const path = require('path')
 
@@ -28,6 +28,9 @@ function saveChannels(data) {
 }
 
 async function main() {
+  console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+  console.log('  databaseab — resurrect.js')
+  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
 
   const data     = loadChannels()
   const channels = data.channels || []
@@ -63,9 +66,7 @@ async function main() {
     result = await probeUrl(url, ch.referrer, ch.userAgent)
 
     done++
-    if (done % 100 === 0 || done === total) {
-      console.log(`  [resurrect] ${done}/${total} — ✓ ${resurrected} resurrected  ✗ ${stillDead} still dead`)
-    }
+    progressBar(done, total)
 
     const entry = channelMap.get(ch.id)
     if (!entry) return
@@ -89,7 +90,7 @@ async function main() {
   saveChannels(data)
 
   console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-  console.log(`  RESURRECTED  ${resurrected} `)
+  console.log(`  RESURRECTED  ${resurrected}  (flipped to alive: true)`)
   console.log(`  STILL DEAD   ${stillDead}`)
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
 }
