@@ -133,6 +133,7 @@ function isDueForProbe(uptime) {
 // ── Progress bar ──────────────────────────────────────────────────────────────
 
 function progressBar(done, total) {
+  if (done % 100 !== 0 && done !== total) return
   const pct = Math.round((done / total) * 100)
   const filled = Math.round(pct / 4)
   const bar = '█'.repeat(filled) + '░'.repeat(25 - filled)
