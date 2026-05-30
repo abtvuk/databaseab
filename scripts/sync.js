@@ -66,7 +66,8 @@ function emptyUptime() {
   }
 }
 
-// ── Build stream URL map from iptv-org streams.json ──────────────────────────
+// ── Build stream map from iptv-org streams.json ───────────────────────────────
+// Carries url, referrer, and userAgent per stream entry.
 
 function buildStreamMap(streams, blockedIds) {
   const map = {}
@@ -129,30 +130,31 @@ function extractYtId(url) {
 
 function newIptvEntry(c, streamMap, logoMap) {
   const { tv, radio } = mediaFlags(c.categories)
+  const streams = streamMap[c.id] || []
   return {
-    id:          c.id,
-    name:        c.name,
-    editName:    cfg.sync.defaults.editName,
-    alive:       cfg.sync.defaults.alive,
-    probe:       cfg.sync.defaults.probe,
+    id:              c.id,
+    name:            c.name,
+    editName:        cfg.sync.defaults.editName,
+    alive:           cfg.sync.defaults.alive,
+    probe:           cfg.sync.defaults.probe,
     tv,
     radio,
-    country:     c.country     || '',
-    channelLogo: c.logo || logoMap[c.id] || null,
+    country:         c.country     || '',
+    channelLogo:     c.logo || logoMap[c.id] || null,
     editChannelLogo: true,
-    languages:   [],
-    categories:  c.categories  || [],
-    streamUrls:  (streamMap[c.id] || []).map(s => s.url),
-    referrer:    streamMap[c.id]?.[0]?.referrer  || null,
-    userAgent:   streamMap[c.id]?.[0]?.userAgent || null,
-    needsProxy:  !!(streamMap[c.id]?.[0]?.referrer || streamMap[c.id]?.[0]?.userAgent),
-    ytId:        null,
-    website:     c.website     || null,
-    replaced_by: c.replaced_by || null,
-    geoBlocked:  false,
-    source:      'iptv',
-    nanoid:      null,
-    uptime:      emptyUptime(),
+    languages:       [],
+    categories:      c.categories  || [],
+    streamUrls:      streams.map(s => s.url),
+    referrer:        streams[0]?.referrer  || null,
+    userAgent:       streams[0]?.userAgent || null,
+    needsProxy:      !!(streams[0]?.referrer || streams[0]?.userAgent),
+    ytId:            null,
+    website:         c.website     || null,
+    replaced_by:     c.replaced_by || null,
+    geoBlocked:      false,
+    source:          'iptv',
+    nanoid:          null,
+    uptime:          emptyUptime(),
   }
 }
 
@@ -164,29 +166,34 @@ function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
   if (ch.editName !== false) ch.name = iptvCh.name
 
   if (ch.editChannelLogo !== false) {
-  ch.channelLogo = iptvCh.logo || logoMap[iptvCh.id] || existing.channelLogo || null
+    ch.channelLogo = iptvCh.logo || logoMap[iptvCh.id] || existing.channelLogo || null
   }
   delete ch.logo
   if (!('editChannelLogo' in ch)) ch.editChannelLogo = true
-    const streams  = streamMap[iptvCh.id] || []
-    ch.streamUrls  = streams.length ? streams.map(s => s.url) : existing.streamUrls || []
-    ch.referrer    = streams[0]?.referrer  || existing.referrer  || null
-    ch.userAgent   = streams[0]?.userAgent || existing.userAgent || null
-    ch.needsProxy  = !!(ch.referrer || ch.userAgent)
-    ch.country     = iptvCh.country     || existing.country     || ''
-    ch.categories  = iptvCh.categories  || existing.categories  || []
-    ch.website     = iptvCh.website     || existing.website     || null
-    ch.replaced_by = iptvCh.replaced_by || existing.replaced_by || null
+
+  const streams  = streamMap[iptvCh.id] || []
+  ch.streamUrls  = streams.length ? streams.map(s => s.url) : existing.streamUrls || []
+  ch.referrer    = streams[0]?.referrer  || existing.referrer  || null
+  ch.userAgent   = streams[0]?.userAgent || existing.userAgent || null
+  ch.needsProxy  = !!(ch.referrer || ch.userAgent)
+  ch.country     = iptvCh.country     || existing.country     || ''
+  ch.categories  = iptvCh.categories  || existing.categories  || []
+  ch.website     = iptvCh.website     || existing.website     || null
+  ch.replaced_by = iptvCh.replaced_by || existing.replaced_by || null
 
   const { tv, radio } = mediaFlags(ch.categories)
   ch.tv    = tv
   ch.radio = radio
 
-  // Backfill new fields on existing channels that predate them
-  if (!('geoBlocked' in ch)) ch.geoBlocked = false
-  if (!('source'     in ch)) ch.source      = 'iptv'
-  if (!('nanoid'     in ch)) ch.nanoid      = null
-  if (!('languages'  in ch)) ch.languages   = []
+  // Backfill fields on existing channels that predate them
+  if (!('geoBlocked'      in ch)) ch.geoBlocked      = false
+  if (!('source'          in ch)) ch.source           = 'iptv'
+  if (!('nanoid'          in ch)) ch.nanoid           = null
+  if (!('languages'       in ch)) ch.languages        = []
+  if (!('referrer'        in ch)) ch.referrer         = null
+  if (!('userAgent'       in ch)) ch.userAgent        = null
+  if (!('needsProxy'      in ch)) ch.needsProxy       = false
+  if (!('editChannelLogo' in ch)) ch.editChannelLogo  = true
 
   return ch
 }
@@ -194,7 +201,7 @@ function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
 // ── Merge famelack TV channels ────────────────────────────────────────────────
 
 function mergeFamelackTV(channels, famelackTV) {
-  const byName     = new Map(channels.map(c => [c.name.toLowerCase().trim(), true]))
+  const byName      = new Map(channels.map(c => [c.name.toLowerCase().trim(), true]))
   const existingIds = new Set(channels.map(c => c.id))
 
   let addedHLS = 0, addedYT = 0, skipped = 0
@@ -204,11 +211,11 @@ function mergeFamelackTV(channels, famelackTV) {
     if (!nameLower || isNameBlocked(fc.name)) { skipped++; continue }
     if (byName.has(nameLower))                { skipped++; continue }
 
-    const hasHLS = (fc.stream_urls   || []).length > 0
-    const hasYT  = (fc.youtube_urls  || []).length > 0
+    const hasHLS = (fc.stream_urls  || []).length > 0
+    const hasYT  = (fc.youtube_urls || []).length > 0
     if (!hasHLS && !hasYT) { skipped++; continue }
 
-    const country   = (fc.country || '').toUpperCase()
+    const country   = (fc.country   || '').toUpperCase()
     const languages = (fc.languages || []).map(l => l.toLowerCase()).filter(Boolean)
     const id        = generateId(fc.name, fc.country, existingIds)
     existingIds.add(id)
@@ -217,24 +224,28 @@ function mergeFamelackTV(channels, famelackTV) {
     if (hasHLS) {
       channels.push({
         id,
-        name:        fc.name,
-        editName:    true,
-        alive:       true,   // famelack already validated
-        probe:       true,
-        tv:          true,
-        radio:       false,
+        name:            fc.name,
+        editName:        true,
+        alive:           true,
+        probe:           true,
+        tv:              true,
+        radio:           false,
         country,
-        channelLogo: null,
+        channelLogo:     null,
+        editChannelLogo: true,
         languages,
-        categories:  [],
-        streamUrls:  fc.stream_urls,
-        ytId:        null,
-        website:     null,
-        replaced_by: null,
-        geoBlocked:  !!fc.isGeoBlocked,
-        source:      'famelack',
-        nanoid:      fc.nanoid || null,
-        uptime:      emptyUptime(),
+        categories:      [],
+        streamUrls:      fc.stream_urls,
+        referrer:        null,
+        userAgent:       null,
+        needsProxy:      false,
+        ytId:            null,
+        website:         null,
+        replaced_by:     null,
+        geoBlocked:      !!fc.isGeoBlocked,
+        source:          'famelack',
+        nanoid:          fc.nanoid || null,
+        uptime:          emptyUptime(),
       })
       addedHLS++
     } else {
@@ -242,24 +253,28 @@ function mergeFamelackTV(channels, famelackTV) {
       if (!ytId) { skipped++; continue }
       channels.push({
         id,
-        name:        fc.name,
-        editName:    true,
-        alive:       true,
-        probe:       true,
-        tv:          true,
-        radio:       false,
+        name:            fc.name,
+        editName:        true,
+        alive:           true,
+        probe:           true,
+        tv:              true,
+        radio:           false,
         country,
-        channelLogo: null,
+        channelLogo:     null,
+        editChannelLogo: true,
         languages,
-        categories:  ['youtube'],
-        streamUrls:  [],
+        categories:      ['youtube'],
+        streamUrls:      [],
+        referrer:        null,
+        userAgent:       null,
+        needsProxy:      false,
         ytId,
-        website:     null,
-        replaced_by: null,
-        geoBlocked:  !!fc.isGeoBlocked,
-        source:      'famelack',
-        nanoid:      fc.nanoid || null,
-        uptime:      emptyUptime(),
+        website:         null,
+        replaced_by:     null,
+        geoBlocked:      !!fc.isGeoBlocked,
+        source:          'famelack',
+        nanoid:          fc.nanoid || null,
+        uptime:          emptyUptime(),
       })
       addedYT++
     }
@@ -281,32 +296,35 @@ function mergeFamelackRadio(channels, famelackRadio) {
     if (!fr.name || !(fr.stream_urls || []).length) { skipped++; continue }
     if (isNameBlocked(fr.name)) { skipped++; continue }
 
-    const country   = (fr.country || '').toUpperCase()
+    const country   = (fr.country   || '').toUpperCase()
     const languages = (fr.languages || []).map(l => l.toLowerCase()).filter(Boolean)
-    let id = `r-${generateId(fr.name, fr.country, existingIds)}`
-    // generateId already handles uniqueness but we passed existingIds above
+    const id        = `r-${generateId(fr.name, fr.country, existingIds)}`
     existingIds.add(id)
 
     channels.push({
       id,
-      name:        fr.name,
-      editName:    true,
-      alive:       true,
-      probe:       true,
-      tv:          false,
-      radio:       true,
+      name:            fr.name,
+      editName:        true,
+      alive:           true,
+      probe:           true,
+      tv:              false,
+      radio:           true,
       country,
-      channelLogo: null,
+      channelLogo:     null,
+      editChannelLogo: true,
       languages,
-      categories:  ['radio'],
-      streamUrls:  fr.stream_urls,
-      ytId:        null,
-      website:     null,
-      replaced_by: null,
-      geoBlocked:  !!fr.isGeoBlocked,
-      source:      'famelack',
-      nanoid:      fr.nanoid || null,
-      uptime:      emptyUptime(),
+      categories:      ['radio'],
+      streamUrls:      fr.stream_urls,
+      referrer:        null,
+      userAgent:       null,
+      needsProxy:      false,
+      ytId:            null,
+      website:         null,
+      replaced_by:     null,
+      geoBlocked:      !!fr.isGeoBlocked,
+      source:          'famelack',
+      nanoid:          fr.nanoid || null,
+      uptime:          emptyUptime(),
     })
     added++
   }
@@ -335,7 +353,7 @@ async function main() {
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
 
   // ── 1. Fetch all sources in parallel ───────────────────────────────────────
-  console.log('── [1/5] Fetching all sources ──')
+  console.log('── [1/4] Fetching all sources ──')
   const t1 = Date.now()
 
   let iptvChannels, streams, blocklist, logos, famelackTV, famelackRadio
@@ -375,7 +393,7 @@ async function main() {
   )
 
   // ── 2. Sync iptv-org channels ───────────────────────────────────────────────
-  console.log('\n── [2/5] Syncing iptv-org channels ──')
+  console.log('\n── [2/4] Syncing iptv-org channels ──')
   const existing    = loadChannels()
   const existingMap = new Map(existing.map(c => [c.id, c]))
   let iptvMirrored  = 0, iptvAdded = 0
@@ -397,7 +415,7 @@ async function main() {
   console.log(`  Mirrored: ${iptvMirrored}  |  Added: ${iptvAdded}`)
 
   // ── 3. Merge famelack TV ────────────────────────────────────────────────────
-  console.log('\n── [3/5] Merging famelack TV channels ──')
+  console.log('\n── [3/4] Merging famelack TV channels ──')
   synced = mergeFamelackTV(synced, famelackTV)
 
   // ── 4. Merge famelack radio ─────────────────────────────────────────────────
