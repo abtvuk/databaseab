@@ -31,9 +31,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          
+
       - name: Install ffmpeg
-        run: sudo apt-get install -y ffmpeg
+        run: sudo apt-get install -y --fix-missing ffmpeg
 
       - name: Check alive channels
         run: node scripts/check-alive.js
