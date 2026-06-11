@@ -23,14 +23,14 @@ async function corsCheck(url, referrer, userAgent) {
       method: 'HEAD',
       signal: ctrl.signal,
       headers: {
-        'Origin':     'https://abtv.app',
+        'Origin':     'https://abtv.cictehro.space',
         'User-Agent': userAgent || UA,
         ...(referrer ? { 'Referer': referrer } : {}),
       },
     })
     clearTimeout(timer)
     const acao = res.headers.get('access-control-allow-origin')
-    return acao === '*' || acao === 'https://abtv.app'
+    return acao === '*' || acao === 'https://abtv.cictehro.space'
   } catch {
     // Network error / timeout — can't confirm CORS, treat as blocked
     return false
