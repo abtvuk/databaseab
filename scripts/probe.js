@@ -9,6 +9,34 @@ const { execFile } = require('child_process')
 const TIMEOUT_S = cfg.probe.timeoutSeconds
 const UA        = 'abtv-probe/1.0'
 
+// ── Browser CORS check ────────────────────────────────────────────────────────
+// Sends a HEAD request with an Origin header mimicking a browser.
+// If the server doesn't respond with Access-Control-Allow-Origin, the stream
+// will be blocked by browsers even if ffprobe can reach it.
+// Returns true if browser-playable, false if CORS-blocked.
+
+async function corsCheck(url, referrer, userAgent) {
+  try {
+    const ctrl = new AbortController()
+    const timer = setTimeout(() => ctrl.abort(), 8000)
+    const res = await fetch(url, {
+      method: 'HEAD',
+      signal: ctrl.signal,
+      headers: {
+        'Origin':     'https://abtv.app',
+        'User-Agent': userAgent || UA,
+        ...(referrer ? { 'Referer': referrer } : {}),
+      },
+    })
+    clearTimeout(timer)
+    const acao = res.headers.get('access-control-allow-origin')
+    return acao === '*' || acao === 'https://abtv.app'
+  } catch {
+    // Network error / timeout — can't confirm CORS, treat as blocked
+    return false
+  }
+}
+
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)) }
 
 // ── ffprobe stream probe ──────────────────────────────────────────────────────
@@ -85,12 +113,21 @@ async function probeUrl(url, referrer, userAgent) {
     if (i > 0) await sleep(cfg.probe.retryDelaySeconds * 1000)
 
     last = await probeOnce(url, referrer, userAgent)
-    if (last.alive) return last
+    if (last.alive) {
+      // Stream is reachable — now check if a browser can actually play it
+      const browserOk = await corsCheck(url, referrer, userAgent)
+      if (!browserOk) return { alive: false, responseMs: last.responseMs, cors: false }
+      return last
+    }
 
     // If no video stream found, check for audio (radio/audio-only streams)
     if (!last.alive) {
       const audioResult = await probeAudioOnce(url, referrer, userAgent)
-      if (audioResult.alive) return audioResult
+      if (audioResult.alive) {
+        const browserOk = await corsCheck(url, referrer, userAgent)
+        if (!browserOk) return { alive: false, responseMs: audioResult.responseMs, cors: false }
+        return audioResult
+      }
     }
   }
 
