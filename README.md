@@ -84,8 +84,8 @@ All workflows commit directly to this repo. No manual steps required.
 | `website` | string \| null | Official channel website. |
 | `replaced_by` | string \| null | ID of the channel that replaced this one, if applicable. |
 | `geoBlocked` | boolean | `true` if the stream is region-restricted. |
-| `source` | string \| null | Where the channel came from: `"iptv"`, `"famelack"`, or `null` for hand-curated entries. |
-| `nanoid` | string \| null | Famelack's internal ID. Present only on famelack-sourced channels. |
+| `source` | string \| null | Where the channel came from: `"iptv"` or `null` for hand-curated entries. |
+| `nanoid` | string \| null | Legacy field. Unused. |
 | `uptime.score` | number \| null | Rolling availability percentage (0–100). `null` if not yet probed. |
 | `uptime.lastProbed` | string \| null | ISO timestamp of the last probe attempt. |
 | `uptime.lastSeen` | string \| null | ISO timestamp of the last successful probe. |
@@ -97,4 +97,3 @@ All workflows commit directly to this repo. No manual steps required.
 Our channels and stream data is a beneficiary of the larger community (-ies):
 
 - [iptv-org](https://github.com/iptv-org/iptv) — the largest open-source IPTV channel database, maintained by a global community.
-- [Famelack](https://github.com/famelack/famelack-data) — a curated dataset of live TV and radio stations powering [famelack.com](https://famelack.com), released under the MIT License.
