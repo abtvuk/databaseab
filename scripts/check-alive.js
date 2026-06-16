@@ -41,14 +41,14 @@ async function main() {
   const channels = data.channels || []
 
   // YouTube channels are handled by check-youtube.js
-  // Radio channels share the same HLS probe path as TV — included here
   const candidates = channels.filter(c =>
     c.alive === true &&
     c.probe !== false &&
+    !c.radio &&
     !c.ytId &&
     isDueForProbe(c.uptime)
   )
-  const skipped  = channels.filter(c => c.alive === true && c.probe !== false && !c.ytId && !isDueForProbe(c.uptime))
+  const skipped  = channels.filter(c => c.alive === true && c.probe !== false && !c.radio && !c.ytId && !isDueForProbe(c.uptime))
   const excluded = channels.filter(c => c.alive === true && c.probe === false)
 
   console.log(`  Total alive channels:  ${channels.filter(c => c.alive).length}`)
