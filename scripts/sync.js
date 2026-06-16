@@ -6,10 +6,10 @@
 //    1. Fetches iptv-org channels, streams, logos, blocklist
 //    2. Strips any radio entries from the existing DB (one-time cleanup)
 //    3. Syncs iptv-org channels (mirror fields, add new ones)
-//    4. Writes channels.json (TV only) + youtube.json (ytId channels only)
+//    4. Writes channels.json (HLS TV only) + cleans youtube.json (managed independently)
 //
 //  What it never does:
-//    • Fetch or import from any external source other than iptv-org
+//    • Fetch or import from famelack
 //    • Add radio stations
 //    • Probe any stream URL
 //    • Remove TV channels you already have
@@ -177,16 +177,34 @@ function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
 
 // ── Save youtube.json (ytId channels extracted from main list) ────────────────
 
-function saveYoutube(channels) {
-  const ytChannels = channels.filter(c => c.ytId)
+function saveYoutube() {
+  let ytChannels = []
+  try {
+    const raw = fs.readFileSync(path.resolve(cfg.output.youtube), 'utf8')
+    ytChannels = JSON.parse(raw).channels || []
+  } catch { return 0 }
+
+  const clean = ytChannels.map(c => ({
+    id:          c.id,
+    name:        c.name,
+    country:     c.country     || '',
+    languages:   c.languages   || [],
+    categories:  c.categories  || [],
+    channelLogo: c.channelLogo || null,
+    ytId:        c.ytId,
+    alive:       c.alive       ?? false,
+    probe:       c.probe       ?? true,
+    uptime:      c.uptime      || emptyUptime(),
+  }))
+
   const out = path.resolve(cfg.output.youtube)
   fs.mkdirSync(path.dirname(out), { recursive: true })
   fs.writeFileSync(out, JSON.stringify({
     generated: new Date().toISOString(),
-    total: ytChannels.length,
-    channels: ytChannels,
+    total: clean.length,
+    channels: clean,
   }, null, 2))
-  return ytChannels.length
+  return clean.length
 }
 
 // ── Sort ──────────────────────────────────────────────────────────────────────
@@ -245,7 +263,7 @@ async function main() {
 
   // ── 2. Strip radio + sync iptv-org channels ─────────────────────────────────
   console.log('\n── [2/3] Stripping radio, syncing iptv-org channels ──')
-  const existing    = loadChannels().filter(c => !c.radio)  // drop all radio entries
+  const existing    = loadChannels().filter(c => !c.radio && !c.ytId)  // drop radio + YouTube (managed separately)
   const existingMap = new Map(existing.map(c => [c.id, c]))
   let iptvMirrored  = 0, iptvAdded = 0
 
@@ -269,7 +287,7 @@ async function main() {
   console.log('\n── [3/3] Writing output files ──')
   const sorted  = sortChannels(synced)
   saveChannels(sorted)
-  const ytCount = saveYoutube(sorted)
+  const ytCount = saveYoutube()
 
   console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
   console.log(`  DONE  ${sorted.length} TV channels → ${cfg.output.channels}`)
