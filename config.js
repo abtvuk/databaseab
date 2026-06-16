@@ -14,15 +14,12 @@ module.exports = {
     iptvBlocklist: 'https://iptv-org.github.io/api/blocklist.json',
     iptvLogos:     'https://iptv-org.github.io/api/logos.json',
 
-    // famelack public dataset (MIT licensed)
-    famelackTV:    'https://raw.githubusercontent.com/famelack/famelack-data/main/tv/raw/categories/all.json',
-    famelackRadio: 'https://raw.githubusercontent.com/famelack/famelack-data/main/radio/raw/categories/all.json',
   },
 
   // ── OUTPUT ─────────────────────────────────────────────────────────────────
   output: {
-    // Single unified channel list — the only output file
     channels: 'feeds/merged/channels.json',
+    youtube:  'feeds/merged/youtube.json',
   },
 
   // ── SCHEDULES (cron, UTC) ──────────────────────────────────────────────────
