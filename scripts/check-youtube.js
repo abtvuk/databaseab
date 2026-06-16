@@ -54,6 +54,19 @@ function saveChannels(data) {
   )
 }
 
+// ── Save youtube.json ─────────────────────────────────────────────────────────
+
+function saveYoutube(channels) {
+  const ytChannels = channels.filter(c => c.ytId)
+  const out = path.resolve(cfg.output.youtube)
+  fs.mkdirSync(path.dirname(out), { recursive: true })
+  fs.writeFileSync(out, JSON.stringify({
+    generated: new Date().toISOString(),
+    total: ytChannels.length,
+    channels: ytChannels,
+  }, null, 2))
+}
+
 // ── Main ──────────────────────────────────────────────────────────────────────
 
 async function main() {
@@ -106,6 +119,7 @@ async function main() {
 
   data.channels = channels.map(c => channelMap.get(c.id) || c)
   saveChannels(data)
+  saveYoutube(data.channels)
 
   console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
   console.log(`  ALIVE  ${passed}`)
