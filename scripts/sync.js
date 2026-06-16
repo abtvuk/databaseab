@@ -9,7 +9,7 @@
 //    4. Writes channels.json (TV only) + youtube.json (ytId channels only)
 //
 //  What it never does:
-//    • Fetch or import from famelack
+//    • Fetch or import from any external source other than iptv-org
 //    • Add radio stations
 //    • Probe any stream URL
 //    • Remove TV channels you already have
