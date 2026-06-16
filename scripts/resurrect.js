@@ -72,8 +72,9 @@ async function main() {
     if (!entry) return
 
     if (result.alive) {
-      entry.uptime = recordAlive(entry.uptime)
-      entry.alive  = true
+      entry.uptime     = recordAlive(entry.uptime)
+      entry.alive      = true
+      entry.needsProxy = result.needsProxy ? true : (entry.needsProxy || false)
       const slow = result.responseMs > (cfg.probe.slowThresholdMs || 8000)
       if (slow) entry.slow = true
       else delete entry.slow
