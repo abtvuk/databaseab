@@ -44,6 +44,7 @@ module.exports = {
     retryDelaySeconds:  2,  // seconds to wait between retries
     concurrency:       25,  // simultaneous probes
     slowThresholdMs:  8000, // ms above which a channel is flagged { slow: true }
+    uptimeScoreMin:    60,  // channels with score below this are hidden from consumers (null = no history, always shown)
   },
 
   // ── UPTIME-BASED PROBE FREQUENCY ───────────────────────────────────────────
