@@ -42,16 +42,9 @@ async function probeYtId(ytId) {
 
 // ── Load / save ───────────────────────────────────────────────────────────────
 
-function loadChannels() {
-  const raw = fs.readFileSync(path.resolve(cfg.output.channels), 'utf8')
+function loadYoutube() {
+  const raw = fs.readFileSync(path.resolve(cfg.output.youtube), 'utf8')
   return JSON.parse(raw)
-}
-
-function saveChannels(data) {
-  fs.writeFileSync(
-    path.resolve(cfg.output.channels),
-    JSON.stringify({ ...data, generated: new Date().toISOString() }, null, 2)
-  )
 }
 
 // ── Save youtube.json ─────────────────────────────────────────────────────────
@@ -74,7 +67,7 @@ async function main() {
   console.log('  databaseab — check-youtube.js')
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
 
-  const data     = loadChannels()
+  const data     = loadYoutube()
   const channels = data.channels || []
 
   const candidates = channels.filter(c => c.ytId && c.probe !== false)
@@ -118,7 +111,6 @@ async function main() {
   await runWithConcurrency(tasks, cfg.probe.concurrency)
 
   data.channels = channels.map(c => channelMap.get(c.id) || c)
-  saveChannels(data)
   saveYoutube(data.channels)
 
   console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
