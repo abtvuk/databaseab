@@ -1,6 +1,6 @@
 {
-  "generated": "2026-06-18T04:17:41.100Z",
-  "total": 9886,
+  "generated": "2026-06-18T04:19:20.053Z",
+  "total": 9887,
   "channels": [
     {
       "id": "AndorraTV.ad",
@@ -171804,7 +171804,7 @@
       "id": "RamogiTV.ke",
       "name": "Ramogi TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -171829,10 +171829,10 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 0,
-        "totalCount": 72,
+        "totalCount": 0,
         "consecutiveAlive": 0,
         "lastSeen": null,
-        "lastProbed": "2026-06-17T18:45:54.604Z",
+        "lastProbed": null,
         "score": 0
       }
     },
@@ -355837,6 +355837,29 @@
         "lastProbed": "2026-06-17T19:13:41.487Z",
         "score": 0
       }
+    },
+    {
+      "id": "Inoorotv.ke",
+      "name": "Inooro",
+      "country": "KE",
+      "channelLogo": "",
+      "languages": [],
+      "categories": [],
+      "alive": true,
+      "probe": true,
+      "uptime": {
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null,
+        "score": null
+      },
+      "tv": true,
+      "radio": false,
+      "streamUrls": [
+        "https://live-onesignal.royalmedia.co.ke/live/-gEXRHc6nSl5aFegh5MrOg.m3u8"
+      ]
     }
   ]
 }
