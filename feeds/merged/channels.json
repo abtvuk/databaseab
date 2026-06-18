@@ -1,6 +1,6 @@
 {
-  "generated": "2026-06-18T04:21:37.072Z",
-  "total": 9886,
+  "generated": "2026-06-18T04:23:47.750Z",
+  "total": 9887,
   "channels": [
     {
       "id": "AndorraTV.ad",
@@ -171307,11 +171307,10 @@
       "tv": true,
       "radio": false,
       "country": "KE",
-      "channelLogo": "https://upload.wikimedia.org/wikipedia/en/5/59/K24_TV_Logo_Variant.jpg",
-      "editChannelLogo": false,
+      "channelLogo": null,
+      "editChannelLogo": true,
       "languages": [
-        "eng",
-        "swa"
+        "eng"
       ],
       "categories": [],
       "streamUrls": [
@@ -355838,6 +355837,33 @@
         "lastProbed": "2026-06-17T19:13:41.487Z",
         "score": 0
       }
+    },
+    {
+      "id": "Inoorotv.ke",
+      "name": "Inooro",
+      "country": "KE",
+      "channelLogo": "https://yt3.ggpht.com/-7KyJe8abxH2UV5egD5fd9VNT2BI-nHnJJT9JCVcSrzJeIcD2DrkSaBt4waEzlXByeazYqUBXHU=s88-c-k-c0x00ffffff-no-rj",
+      "languages": [],
+      "categories": [
+        "general",
+        "entertainment",
+        "news"
+      ],
+      "alive": true,
+      "probe": true,
+      "uptime": {
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null,
+        "score": null
+      },
+      "tv": true,
+      "radio": false,
+      "streamUrls": [
+        "https://live-onesignal.royalmedia.co.ke/live/-gEXRHc6nSl5aFegh5MrOg.m3u8"
+      ]
     }
   ]
 }
