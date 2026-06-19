@@ -68,9 +68,9 @@ async function main() {
   const total = candidates.length
 
   const tasks = candidates.map(ch => async () => {
-    const url = (ch.streamUrls || [])[0]
+    const urls = ch.streamUrls || []
 
-    if (!url) {
+    if (!urls.length) {
       // No URL to probe — leave alive as-is, just update lastProbed
       const entry = channelMap.get(ch.id)
       if (entry) entry.uptime = { ...(entry.uptime || {}), lastProbed: new Date().toISOString() }
@@ -79,7 +79,14 @@ async function main() {
       return
     }
 
-    const result = await probeUrl(url, ch.referrer, ch.userAgent)
+    // Try each URL in order; stop at first live one
+    let result = { alive: false, needsProxy: false, responseMs: 0 }
+    let liveIndex = -1
+    for (let i = 0; i < urls.length; i++) {
+      result = await probeUrl(urls[i], ch.referrer, ch.userAgent)
+      if (result.alive) { liveIndex = i; break }
+    }
+
     done++
     progressBar(done, total)
 
@@ -87,6 +94,10 @@ async function main() {
     if (!entry) return
 
     if (result.alive) {
+      // Bubble the working URL to front so the player hits it first
+      if (liveIndex > 0) {
+        entry.streamUrls = [urls[liveIndex], ...urls.filter((_, i) => i !== liveIndex)]
+      }
       entry.uptime      = recordAlive(entry.uptime)
       entry.alive       = true
       entry.needsProxy  = result.needsProxy ? true : (entry.needsProxy || false)

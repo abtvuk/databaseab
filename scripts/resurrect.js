@@ -35,7 +35,9 @@ async function main() {
   const data     = loadChannels()
   const channels = data.channels || []
 
-  const candidates = channels.filter(c => c.alive === false && c.probe !== false && !c.ytId && !c.radio)
+  const candidates = channels
+    .filter(c => c.alive === false && c.probe !== false && !c.ytId && !c.radio)
+    .sort((a, b) => (b.uptime?.score ?? -1) - (a.uptime?.score ?? -1))
   const excluded   = channels.filter(c => c.alive === false && c.probe === false)
 
   console.log(`  Total dead channels:    ${channels.filter(c => !c.alive).length}`)
@@ -55,15 +57,20 @@ async function main() {
   const total = candidates.length
 
   const tasks = candidates.map(ch => async () => {
-    let result
-
-    const url = (ch.streamUrls || [])[0]
-    if (!url) {
+    const urls = ch.streamUrls || []
+    if (!urls.length) {
       // No URL — can't probe, just leave it dead
       done++
       return
     }
-    result = await probeUrl(url, ch.referrer, ch.userAgent)
+
+    // Try each URL in order; stop at first live one
+    let result = { alive: false, needsProxy: false, responseMs: 0 }
+    let liveIndex = -1
+    for (let i = 0; i < urls.length; i++) {
+      result = await probeUrl(urls[i], ch.referrer, ch.userAgent)
+      if (result.alive) { liveIndex = i; break }
+    }
 
     done++
     progressBar(done, total)
@@ -72,6 +79,10 @@ async function main() {
     if (!entry) return
 
     if (result.alive) {
+      // Bubble the working URL to front so the player hits it first
+      if (liveIndex > 0) {
+        entry.streamUrls = [urls[liveIndex], ...urls.filter((_, i) => i !== liveIndex)]
+      }
       entry.uptime     = recordAlive(entry.uptime)
       entry.alive      = true
       entry.needsProxy = result.needsProxy ? true : (entry.needsProxy || false)
