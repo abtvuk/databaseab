@@ -124,7 +124,7 @@ function newIptvEntry(c, streamMap, logoMap) {
     streamUrls:      streams.map(s => s.url),
     referrer:        streams[0]?.referrer  || null,
     userAgent:       streams[0]?.userAgent || null,
-    needsProxy:      !!(streams[0]?.referrer || streams[0]?.userAgent),
+    needsProxy:      false, // determined by probing, not inferred from referrer
     ytId:            null,
     website:         c.website     || null,
     replaced_by:     c.replaced_by || null,
@@ -152,7 +152,7 @@ function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
   ch.streamUrls  = streams.length ? streams.map(s => s.url) : existing.streamUrls || []
   ch.referrer    = streams[0]?.referrer  || existing.referrer  || null
   ch.userAgent   = streams[0]?.userAgent || existing.userAgent || null
-  ch.needsProxy  = !!(ch.referrer || ch.userAgent)
+  ch.needsProxy  = existing.needsProxy || false // preserve probe result; don't infer from referrer
   ch.country     = iptvCh.country     || existing.country     || ''
   ch.categories  = iptvCh.categories  || existing.categories  || []
   ch.website     = iptvCh.website     || existing.website     || null
