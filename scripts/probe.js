@@ -55,6 +55,85 @@ async function corsCheck(url, referrer, userAgent) {
   }
 }
 
+// ── Unplayable domain check ──────────────────────────────────────────────────
+// Returns true if the URL's hostname matches a known token-expiry or
+// structurally-unplayable CDN that always passes probing but never plays.
+
+function isUnplayableDomain(url) {
+  const blocked = cfg.unplayableDomains || []
+  if (!blocked.length) return false
+  try {
+    const hostname = new URL(url).hostname
+    return blocked.some(d => hostname === d || hostname.endsWith('.' + d))
+  } catch {
+    return false
+  }
+}
+
+// ── Segment-level probe ───────────────────────────────────────────────────────
+// Called only when corsCheck returns needsProxy:true.
+// Fetches the manifest, extracts the first segment/child URL, then fetches
+// that segment with a browser UA + Origin to confirm real playability.
+// Returns { playable: boolean }
+//
+// Catches:
+//   - jmp2.uk-style redirect chains that browsers can't follow
+//   - bozztv-style segment-level origin enforcement
+//   - Any CDN that gates segments differently from the manifest
+
+async function segmentProbe(url, referrer, userAgent) {
+  try {
+    const ctrl = new AbortController()
+    const timer = setTimeout(() => ctrl.abort(), 10000)
+    const res = await fetch(url, {
+      signal: ctrl.signal,
+      headers: {
+        'User-Agent': userAgent || BROWSER_UA,
+        'Origin': ORIGIN,
+        ...(referrer ? { 'Referer': referrer } : {}),
+      },
+      redirect: 'follow',
+    })
+    clearTimeout(timer)
+
+    if (!res.ok) return { playable: false }
+
+    const text = await res.text()
+
+    // Extract first non-comment, non-empty line that looks like a URL or path
+    const lines = text.split('\n').map(l => l.trim()).filter(l => l && !l.startsWith('#'))
+    const firstSegment = lines[0]
+    if (!firstSegment) return { playable: false }
+
+    // Resolve relative URLs against the manifest URL
+    let segmentUrl
+    try {
+      segmentUrl = new URL(firstSegment).href
+    } catch {
+      segmentUrl = new URL(firstSegment, url).href
+    }
+
+    // Fetch the segment/child manifest
+    const ctrl2 = new AbortController()
+    const timer2 = setTimeout(() => ctrl2.abort(), 10000)
+    const segRes = await fetch(segmentUrl, {
+      method: 'HEAD',
+      signal: ctrl2.signal,
+      headers: {
+        'User-Agent': BROWSER_UA,
+        'Origin': ORIGIN,
+        ...(referrer ? { 'Referer': referrer } : {}),
+      },
+      redirect: 'follow',
+    })
+    clearTimeout(timer2)
+
+    return { playable: segRes.ok }
+  } catch {
+    return { playable: false }
+  }
+}
+
 // ── ffprobe stream probe ──────────────────────────────────────────────────────
 // Uses ffprobe to actually connect and read stream data.
 // Tries with the channel's own UA/referrer first, then falls back to a
@@ -126,7 +205,22 @@ async function probeUrl(url, referrer, userAgent) {
     const result = await probeWithFallback(url, referrer, userAgent)
 
     if (result.alive) {
+      // Check against known token-expiry / structurally-unplayable CDNs first
+      if (isUnplayableDomain(url)) {
+        return { alive: true, needsProxy: false, browserUnplayable: true, responseMs: result.responseMs }
+      }
+
       const { browserOk, needsProxy } = await corsCheck(url, referrer, userAgent)
+
+      if (!browserOk && needsProxy) {
+        // Proxy is needed — but verify it actually plays at segment level
+        const { playable } = await segmentProbe(url, referrer, userAgent)
+        if (!playable) {
+          // Manifest responds but segments don't — alive for bookkeeping but unplayable
+          return { alive: true, needsProxy: false, browserUnplayable: true, responseMs: result.responseMs }
+        }
+      }
+
       return { alive: true, needsProxy: !browserOk, responseMs: result.responseMs }
     }
 

@@ -83,9 +83,11 @@ async function main() {
       if (liveIndex > 0) {
         entry.streamUrls = [urls[liveIndex], ...urls.filter((_, i) => i !== liveIndex)]
       }
-      entry.uptime     = recordAlive(entry.uptime)
-      entry.alive      = true
-      entry.needsProxy = result.needsProxy ? true : (entry.needsProxy || false)
+      entry.uptime            = recordAlive(entry.uptime)
+      entry.alive             = true
+      entry.needsProxy        = result.needsProxy ? true : (entry.needsProxy || false)
+      entry.browserUnplayable = result.browserUnplayable || false
+      if (!entry.browserUnplayable) delete entry.browserUnplayable
       const slow = result.responseMs > (cfg.probe.slowThresholdMs || 8000)
       if (slow) entry.slow = true
       else delete entry.slow

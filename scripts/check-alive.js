@@ -98,10 +98,12 @@ async function main() {
       if (liveIndex > 0) {
         entry.streamUrls = [urls[liveIndex], ...urls.filter((_, i) => i !== liveIndex)]
       }
-      entry.uptime      = recordAlive(entry.uptime)
-      entry.alive       = true
-      entry.needsProxy  = result.needsProxy ? true : (entry.needsProxy || false)
-      entry.slow        = result.responseMs > (cfg.probe.slowThresholdMs || 8000) ? true : undefined
+      entry.uptime             = recordAlive(entry.uptime)
+      entry.alive              = true
+      entry.needsProxy         = result.needsProxy ? true : (entry.needsProxy || false)
+      entry.browserUnplayable  = result.browserUnplayable || false
+      if (!entry.browserUnplayable) delete entry.browserUnplayable
+      entry.slow               = result.responseMs > (cfg.probe.slowThresholdMs || 8000) ? true : undefined
       if (!entry.slow) delete entry.slow
       passed++
     } else {
