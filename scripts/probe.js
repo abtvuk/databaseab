@@ -70,6 +70,24 @@ function isUnplayableDomain(url) {
   }
 }
 
+// ── Segment concurrency semaphore ────────────────────────────────────────────
+// Limits simultaneous segment probes independently of the main probe concurrency.
+// Prevents OOM/runner-death on CI when many channels need proxy verification.
+
+const SEGMENT_CONCURRENCY = cfg.probe.segmentConcurrency || 8
+let _segmentActive = 0
+const _segmentQueue = []
+function acquireSegmentSlot() {
+  return new Promise(resolve => {
+    if (_segmentActive < SEGMENT_CONCURRENCY) { _segmentActive++; resolve() }
+    else _segmentQueue.push(resolve)
+  })
+}
+function releaseSegmentSlot() {
+  if (_segmentQueue.length) { _segmentQueue.shift()() }
+  else _segmentActive--
+}
+
 // ── Segment-level probe ───────────────────────────────────────────────────────
 // Called only when corsCheck returns needsProxy:true.
 // Fetches the manifest, extracts the first segment/child URL, then fetches
@@ -82,6 +100,7 @@ function isUnplayableDomain(url) {
 //   - Any CDN that gates segments differently from the manifest
 
 async function segmentProbe(url, referrer, userAgent) {
+  await acquireSegmentSlot()
   try {
     const ctrl = new AbortController()
     const timer = setTimeout(() => ctrl.abort(), 10000)
@@ -128,8 +147,11 @@ async function segmentProbe(url, referrer, userAgent) {
     })
     clearTimeout(timer2)
 
-    return { playable: segRes.ok }
+    const ok = segRes.ok
+    releaseSegmentSlot()
+    return { playable: ok }
   } catch {
+    releaseSegmentSlot()
     return { playable: false }
   }
 }
