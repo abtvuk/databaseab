@@ -83,4 +83,14 @@ module.exports = {
     'ABN', 'NTD',
   ],
 
+  // ── UNPLAYABLE DOMAIN BLOCKLIST ────────────────────────────────────────────
+  // Domains that use token-expiry, signed URLs, or other mechanisms that make
+  // streams appear alive at probe time but always fail in a real browser.
+  // Channels on these domains are flagged { browserUnplayable: true } regardless
+  // of probe result. Add domains here as new patterns are discovered.
+  unplayableDomains: [
+    'ncdn.telewebion.ir',   // token-expiry signed URLs — expire before user clicks
+    'telewebion.com',       // same CDN network
+  ],
+
 }
