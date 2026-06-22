@@ -23,7 +23,7 @@ const { execSync } = require('child_process')
 
 const CHECKPOINT_EVERY = 500 // commit progress every N channels probed
 
-function checkpoint(data, channels, channelMap, label) {
+function checkpoint(data, channels, channelMap, label, done, total) {
   data.channels = channels.map(c => channelMap.get(c.id) || c)
   saveChannels(data)
   try {
@@ -110,7 +110,7 @@ async function main() {
 
     done++
     progressBar(done, total)
-    if (done % CHECKPOINT_EVERY === 0) checkpoint(data, channels, channelMap, 'check alive')
+    if (done % CHECKPOINT_EVERY === 0) checkpoint(data, channels, channelMap, 'check alive', done, total)
 
     const entry = channelMap.get(ch.id)
     if (!entry) return
