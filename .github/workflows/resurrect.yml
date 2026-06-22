@@ -11,6 +11,7 @@ on:
 jobs:
   resurrect:
     runs-on: ubuntu-latest
+    timeout-minutes: 220
 
     permissions:
       contents: write
