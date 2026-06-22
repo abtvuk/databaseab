@@ -43,6 +43,7 @@ module.exports = {
     retries:            1,  // retry attempts after first failure (0 = no retry)
     retryDelaySeconds:  2,  // seconds to wait between retries
     concurrency:       25,  // simultaneous probes
+    segmentConcurrency: 8,  // simultaneous segment probes (lower = safer on CI)
     slowThresholdMs:  8000, // ms above which a channel is flagged { slow: true }
     uptimeScoreMin:    60,  // channels with score below this are hidden from consumers (null = no history, always shown)
   },
@@ -79,7 +80,9 @@ module.exports = {
   // ── NSFW / NAME BLOCKLIST ──────────────────────────────────────────────────
   // Channels whose name contains any of these strings are excluded entirely.
   // Case-insensitive. Extend as needed.
-  nameBlocklist: [],
+  nameBlocklist: [
+    'ABN', 'NTD',
+  ],
 
   // ── UNPLAYABLE DOMAIN BLOCKLIST ────────────────────────────────────────────
   // Domains that use token-expiry, signed URLs, or other mechanisms that make
