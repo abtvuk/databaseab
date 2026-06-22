@@ -1,6 +1,6 @@
 {
-  "generated": "2026-06-22T06:15:40.215Z",
-  "total": 9888,
+  "generated": "2026-06-22T06:20:00.673Z",
+  "total": 9889,
   "channels": [
     {
       "id": "AndorraTV.ad",
@@ -355713,6 +355713,29 @@
       "radio": false,
       "streamUrls": [
         "http://live.cnnindonesia.com/livecnn/smil:cnntv.smil/playlist.m3u8"
+      ]
+    },
+    {
+      "id": "CNN.usa",
+      "name": "CNN",
+      "country": "US",
+      "channelLogo": "",
+      "languages": [],
+      "categories": [],
+      "alive": true,
+      "probe": true,
+      "uptime": {
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null,
+        "score": null
+      },
+      "tv": true,
+      "radio": false,
+      "streamUrls": [
+        "https://turnerlive.warnermediacdn.com/hls/live/586495/cnngo/cnn_slate/VIDEO_0_3564000.m3u8"
       ]
     }
   ]
