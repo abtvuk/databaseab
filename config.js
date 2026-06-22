@@ -79,9 +79,7 @@ module.exports = {
   // ── NSFW / NAME BLOCKLIST ──────────────────────────────────────────────────
   // Channels whose name contains any of these strings are excluded entirely.
   // Case-insensitive. Extend as needed.
-  nameBlocklist: [
-    'ABN', 'NTD',
-  ],
+  nameBlocklist: [],
 
   // ── UNPLAYABLE DOMAIN BLOCKLIST ────────────────────────────────────────────
   // Domains that use token-expiry, signed URLs, or other mechanisms that make
