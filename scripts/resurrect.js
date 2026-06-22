@@ -18,7 +18,7 @@ const { execSync } = require('child_process')
 
 const CHECKPOINT_EVERY = 500 // commit progress every N channels probed
 
-function checkpoint(data, channels, channelMap, label) {
+function checkpoint(data, channels, channelMap, label, done, total) {
   data.channels = channels.map(c => channelMap.get(c.id) || c)
   saveChannels(data)
   try {
@@ -67,7 +67,7 @@ async function main() {
   console.log()
 
   if (candidates.length === 0) {
-    console.log('  No dead channels to resurrect. Exiting.')
+    console.log('  No dead channels to resurrect. Exiting. 😏')
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
     return
   }
@@ -95,7 +95,7 @@ async function main() {
 
     done++
     progressBar(done, total)
-    if (done % CHECKPOINT_EVERY === 0) checkpoint(data, channels, channelMap, 'resurrect')
+    if (done % CHECKPOINT_EVERY === 0) checkpoint(data, channels, channelMap, 'resurrect', done, total)
 
     const entry = channelMap.get(ch.id)
     if (!entry) return
