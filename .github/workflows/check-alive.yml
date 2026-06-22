@@ -19,6 +19,7 @@ on:
 jobs:
   check-alive:
     runs-on: ubuntu-latest
+    timeout-minutes: 340
 
     permissions:
       contents: write
