@@ -14,6 +14,27 @@ const cfg = require('../config')
 const { probeUrl, runWithConcurrency, recordAlive, recordDead, progressBar } = require('./probe')
 const fs   = require('fs')
 const path = require('path')
+const { execSync } = require('child_process')
+
+const CHECKPOINT_EVERY = 500 // commit progress every N channels probed
+
+function checkpoint(data, channels, channelMap, label) {
+  data.channels = channels.map(c => channelMap.get(c.id) || c)
+  saveChannels(data)
+  try {
+    execSync('git config user.name "github-actions[bot]"', { stdio: 'ignore' })
+    execSync('git config user.email "github-actions[bot]@users.noreply.github.com"', { stdio: 'ignore' })
+    execSync(`git add ${require('path').resolve(require('../config').output.channels)}`, { stdio: 'ignore' })
+    execSync(`git diff --staged --quiet || git commit -m "chore: ${label} checkpoint [$(date -u '+%Y-%m-%d %H:%M UTC')]"`, { shell: true, stdio: 'ignore' })
+    execSync('git pull --rebase --autostash', { stdio: 'ignore' })
+    execSync('git push', { stdio: 'ignore' })
+    console.log(`  [checkpoint] saved & pushed at ${done}/${total}`)
+  } catch (e) {
+    console.warn(`  [checkpoint] git error (non-fatal): ${e.message}`)
+  }
+}
+
+
 
 function loadChannels() {
   const raw = fs.readFileSync(path.resolve(cfg.output.channels), 'utf8')
@@ -74,6 +95,7 @@ async function main() {
 
     done++
     progressBar(done, total)
+    if (done % CHECKPOINT_EVERY === 0) checkpoint(data, channels, channelMap, 'resurrect')
 
     const entry = channelMap.get(ch.id)
     if (!entry) return
