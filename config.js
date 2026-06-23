@@ -124,6 +124,7 @@ module.exports = {
   unplayableDomains: [
     'ncdn.telewebion.ir',   // token-expiry signed URLs — expire before user clicks
     'telewebion.com',       // same CDN network
+    'liveingesta318.cdnmedia.tv',
   ],
 
 }
