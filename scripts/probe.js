@@ -103,11 +103,9 @@ function releaseSegmentSlot() {
 
 async function segmentProbe(url, referrer, userAgent) {
   await acquireSegmentSlot()
-
   try {
     const ctrl = new AbortController()
     const timer = setTimeout(() => ctrl.abort(), 10000)
-
     const res = await fetch(url, {
       signal: ctrl.signal,
       headers: {
@@ -117,33 +115,28 @@ async function segmentProbe(url, referrer, userAgent) {
       },
       redirect: 'follow',
     })
-
     clearTimeout(timer)
 
     if (!res.ok) return { playable: false }
 
     const text = await res.text()
 
-    const lines = text
-      .split('\\n')
-      .map(l => l.trim())
-      .filter(l => l && !l.startsWith('#'))
-
+    // Extract first non-comment, non-empty line that looks like a URL or path
+    const lines = text.split('\n').map(l => l.trim()).filter(l => l && !l.startsWith('#'))
     const firstSegment = lines[0]
-
     if (!firstSegment) return { playable: false }
 
+    // Resolve relative URLs against the manifest URL
     let segmentUrl
-
     try {
       segmentUrl = new URL(firstSegment).href
     } catch {
       segmentUrl = new URL(firstSegment, url).href
     }
 
+    // Fetch the segment/child manifest
     const ctrl2 = new AbortController()
     const timer2 = setTimeout(() => ctrl2.abort(), 10000)
-
     const segRes = await fetch(segmentUrl, {
       method: 'HEAD',
       signal: ctrl2.signal,
@@ -154,16 +147,14 @@ async function segmentProbe(url, referrer, userAgent) {
       },
       redirect: 'follow',
     })
-
     clearTimeout(timer2)
 
-    return { playable: segRes.ok }
-
-  } catch {
-    return { playable: false }
-
-  } finally {
+    const ok = segRes.ok
     releaseSegmentSlot()
+    return { playable: ok }
+  } catch {
+    releaseSegmentSlot()
+    return { playable: false }
   }
 }
 
