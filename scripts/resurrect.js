@@ -17,7 +17,7 @@ const path = require('path')
 const fs   = require('fs')
 const { probeUrl, runWithConcurrency, recordAlive, recordDead, isDueForResurrect, checkpoint, progressBar } = require('./probe')
 
-const CHECKPOINT_EVERY = 500
+const CHECKPOINT_EVERY = 1000
 const OUTPUT_PATH      = path.resolve(cfg.output.channels)
 
 function loadChannels() {

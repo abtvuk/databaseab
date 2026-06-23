@@ -16,12 +16,11 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 const cfg = require('../config')
-const { probeUrl, runWithConcurrency, recordAlive, recordDead, isDueForProbe, checkpoint, progressBar } = require('./probe')
+const { probeUrl, runWithConcurrency, recordAlive, recordDead, isDueForProbe, progressBar } = require('./probe')
 const fs   = require('fs')
 const path = require('path')
 
-const CHECKPOINT_EVERY = 500
-const OUTPUT_PATH      = path.resolve(cfg.output.channels)
+const OUTPUT_PATH = path.resolve(cfg.output.channels)
 
 
 
@@ -94,7 +93,6 @@ async function main() {
 
     done++
     progressBar(done, total)
-    if (done % CHECKPOINT_EVERY === 0) checkpoint(data, channels, channelMap, OUTPUT_PATH, 'check alive', done, total)
 
     const entry = channelMap.get(ch.id)
     if (!entry) return
