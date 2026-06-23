@@ -43,7 +43,7 @@ module.exports = {
     retries:            0,  // retry attempts after first failure (0 = no retry)
     retryDelaySeconds:  2,  // seconds to wait between retries
     concurrency:       35,  // simultaneous probes
-    segmentConcurrency: 8,  // simultaneous segment probes (lower = safer on CI)
+    segmentConcurrency: 3,  // simultaneous segment probes (lower = safer on CI)
     slowThresholdMs:  8000, // ms above which a channel is flagged { slow: true }
     uptimeScoreMin:    60,  // channels with score below this are hidden from consumers (null = no history, always shown)
   },
