@@ -115,12 +115,12 @@ async function segmentProbe(url, referrer, userAgent) {
       },
       redirect: 'follow',
     })
-    clearTimeout(timer)
 
-    if (!res.ok) return { playable: false }
+    if (!res.ok) { clearTimeout(timer); releaseSegmentSlot(); return { playable: false } }
 
     const text = await res.text()
-
+    clearTimeout(timer)
+    
     // Extract first non-comment, non-empty line that looks like a URL or path
     const lines = text.split('\n').map(l => l.trim()).filter(l => l && !l.startsWith('#'))
     const firstSegment = lines[0]
