@@ -39,10 +39,10 @@ module.exports = {
 
   // ── PROBE SETTINGS ─────────────────────────────────────────────────────────
   probe: {
-    timeoutSeconds:    10,  // seconds before a stream probe is aborted
-    retries:            1,  // retry attempts after first failure (0 = no retry)
+    timeoutSeconds:    7,  // seconds before a stream probe is aborted
+    retries:            0,  // retry attempts after first failure (0 = no retry)
     retryDelaySeconds:  2,  // seconds to wait between retries
-    concurrency:       25,  // simultaneous probes
+    concurrency:       35,  // simultaneous probes
     segmentConcurrency: 8,  // simultaneous segment probes (lower = safer on CI)
     slowThresholdMs:  8000, // ms above which a channel is flagged { slow: true }
     uptimeScoreMin:    60,  // channels with score below this are hidden from consumers (null = no history, always shown)
@@ -99,6 +99,15 @@ module.exports = {
       editName: true,   // iptv-org can update the name; set false to lock your edit
     },
   },
+
+  // ── MANUAL CHANNEL BLOCKLIST ───────────────────────────────────────────────
+  // Hand-picked channel IDs to never serve to users, regardless of alive status.
+  // Use iptv-org channel IDs (e.g. 'PlutoTV.us', 'CNN.us').
+  // These are merged with the NSFW blocklist at sync time.
+  manualBlocklist: [
+    // 'PlutoTV.us',
+    // 'ExampleChannel.uk',
+  ],
 
   // ── NSFW / NAME BLOCKLIST ──────────────────────────────────────────────────
   // Channels whose name contains any of these strings are excluded entirely.
