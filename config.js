@@ -61,6 +61,29 @@ module.exports = {
     above85:        24,   // score ≥ 85%  → probe if last check was > 24h ago
   },
 
+  // ── RESURRECT PROBE FREQUENCY ──────────────────────────────────────────────
+  // Controls how often dead channels are retried based on their history.
+  // Channels with no history are always tried (brand-new / first-seen dead).
+  // Hours are "minimum gap since lastProbed before trying again".
+  // This prevents the 4-hour resurrect run from re-probing 3000+ hopeless
+  // channels every single time — the worst offenders get throttled way back.
+  resurrectFrequency: {
+    noHistory:          0,   // always try (no data = give it a chance)
+    scoreAbove50:       8,   // score ≥ 50% — recently degraded, check often
+    scoreAbove20:      24,   // score 20–49% — struggling, once a day
+    scoreAbove0:       48,   // score 1–19%  — almost always dead, every 2 days
+    scoreZeroFewData:  24,   // score 0%, totalCount ≤ 10 — too early to write off
+    scoreZeroManyData: 72,   // score 0%, totalCount > 10 — consistently dead, every 3 days
+  },
+
+  // ── SCORE RECENCY WINDOW ───────────────────────────────────────────────────
+  // How many of the most recent probe results to weight more heavily when
+  // computing a channel's effective score. Older results still count but at
+  // half weight, so a channel dead for the last 50 checks doesn't hide behind
+  // a good distant history.
+  // Set to 0 to disable recency weighting (use raw ratio).
+  scoreRecencyWindow: 20,
+
   // ── SYNC BEHAVIOUR ─────────────────────────────────────────────────────────
   sync: {
     // Fields mirrored from iptv-org on every sync run (for all channels)
