@@ -36,17 +36,19 @@ async function corsCheck(url, referrer, userAgent) {
     })
     clearTimeout(timer)
 
-    // 403 with a referrer channel — try without to distinguish geo-block from referrer-lock
-    if (res.status === 403 && !referrer) {
-      return { browserOk: false, needsProxy: false } // hard block, proxy won't help
+    // Hard error codes that a proxy cannot fix — stream is dead or geo-blocked
+    if (res.status === 403 || res.status === 404 || res.status === 410 || res.status === 451) {
+      return { browserOk: false, needsProxy: false }
     }
 
     const acao = res.headers.get('access-control-allow-origin')
     const browserOk = acao === '*' || acao === ORIGIN
 
-    // Stream responded but CORS missing → proxy can bridge it
-    if (!browserOk && res.ok) return { browserOk: false, needsProxy: true }
-    if (!browserOk)           return { browserOk: false, needsProxy: true } // non-2xx but alive, try proxy
+    // Stream responded (2xx) but CORS missing → proxy can bridge it
+    if (res.ok && !browserOk) return { browserOk: false, needsProxy: true }
+
+    // Non-2xx, non-hard-error (e.g. 401, 5xx) — stream may be proxy-able
+    if (!res.ok) return { browserOk: false, needsProxy: true }
 
     return { browserOk: true, needsProxy: false }
   } catch {
@@ -267,6 +269,37 @@ async function runWithConcurrency(tasks, limit) {
   return results
 }
 
+// ── Recency-weighted score ────────────────────────────────────────────────────
+// The raw aliveCount/totalCount ratio is misleading for channels with long
+// histories: a channel alive 900/1000 times historically but dead the last
+// 50 checks still shows score:90. We weight the most recent N results at
+// full value and older results at half, so recent degradation shows up faster.
+//
+// With scoreRecencyWindow:0 this degrades to the plain ratio.
+
+function computeScore(uptime) {
+  const window = cfg.scoreRecencyWindow || 0
+  const { aliveCount, totalCount } = uptime
+  if (!totalCount) return null
+  if (!window || totalCount <= window) {
+    return Math.round((aliveCount / totalCount) * 100)
+  }
+  // We don't store the individual results, so we approximate:
+  // recent window is implied by consecutiveAlive + the last N probes.
+  // Best we can do without a history array: weight the last `window` results
+  // by tracking them via consecutiveAlive as a lower-bound proxy.
+  // Approximation: split into "recent" (last `window` probes) and "old" (rest).
+  // We infer recent aliveCount from consecutiveAlive (capped at window).
+  const recentAlive = Math.min(uptime.consecutiveAlive ?? 0, window)
+  const recentTotal = window
+  const oldTotal    = totalCount - window
+  const oldAlive    = aliveCount - recentAlive
+  // Recent results at weight 1.0, old results at weight 0.5
+  const weightedAlive = recentAlive * 1.0 + Math.max(0, oldAlive) * 0.5
+  const weightedTotal = recentTotal * 1.0 + oldTotal * 0.5
+  return Math.round((weightedAlive / weightedTotal) * 100)
+}
+
 // ── Uptime helpers ────────────────────────────────────────────────────────────
 
 function recordAlive(uptime) {
@@ -276,7 +309,7 @@ function recordAlive(uptime) {
   u.consecutiveAlive++
   u.lastSeen   = new Date().toISOString()
   u.lastProbed = new Date().toISOString()
-  u.score = Math.round((u.aliveCount / u.totalCount) * 100)
+  u.score = computeScore(u)
   return u
 }
 
@@ -285,12 +318,12 @@ function recordDead(uptime) {
   u.totalCount++
   u.consecutiveAlive = 0
   u.lastProbed = new Date().toISOString()
-  u.score = u.totalCount > 0 ? Math.round((u.aliveCount / u.totalCount) * 100) : null
+  u.score = computeScore(u)
   return u
 }
 
 // ── Probe frequency check ─────────────────────────────────────────────────────
-// Returns true if this channel is due for a probe based on its uptime score.
+// Returns true if this alive channel is due for a re-probe.
 
 function isDueForProbe(uptime) {
   const pf = cfg.probeFrequency
@@ -298,16 +331,64 @@ function isDueForProbe(uptime) {
   const lastProbed = uptime?.lastProbed ? new Date(uptime.lastProbed) : null
   const hoursSince = lastProbed ? (Date.now() - lastProbed.getTime()) / 3600000 : Infinity
 
-  // No history at all → always probe
   if (score === null || uptime?.totalCount === 0) return true
 
   let minHours
-  if      (score >= 85)              minHours = pf.above85
-  else if (score >= 80)              minHours = pf.from80to85
-  else if (score >= 70)              minHours = pf.from70to80
-  else                               minHours = pf.below70
+  if      (score >= 85) minHours = pf.above85
+  else if (score >= 80) minHours = pf.from80to85
+  else if (score >= 70) minHours = pf.from70to80
+  else                  minHours = pf.below70
 
   return hoursSince >= minHours
+}
+
+// ── Resurrect frequency check ─────────────────────────────────────────────────
+// Returns true if this dead channel is worth retrying now.
+// Channels with a long history of 0% get throttled way back.
+
+function isDueForResurrect(uptime) {
+  const rf = cfg.resurrectFrequency
+  const score      = uptime?.score ?? null
+  const total      = uptime?.totalCount ?? 0
+  const lastProbed = uptime?.lastProbed ? new Date(uptime.lastProbed) : null
+  const hoursSince = lastProbed ? (Date.now() - lastProbed.getTime()) / 3600000 : Infinity
+
+  // No history at all → always try
+  if (score === null || total === 0) return true
+
+  let minHours
+  if (score === 0) {
+    minHours = total > 10 ? rf.scoreZeroManyData : rf.scoreZeroFewData
+  } else if (score >= 50) {
+    minHours = rf.scoreAbove50
+  } else if (score >= 20) {
+    minHours = rf.scoreAbove20
+  } else {
+    minHours = rf.scoreAbove0
+  }
+
+  return hoursSince >= minHours
+}
+
+// ── Checkpoint (shared) ───────────────────────────────────────────────────────
+// Saves current state and pushes to git. Used by check-alive and resurrect.
+
+function checkpoint(data, channels, channelMap, outputPath, label, done, total) {
+  const { execSync } = require('child_process')
+  data.channels = channels.map(c => channelMap.get(c.id) || c)
+  const json = JSON.stringify({ ...data, generated: new Date().toISOString() }, null, 2)
+  require('fs').writeFileSync(outputPath, json)
+  try {
+    execSync('git config user.name "github-actions[bot]"', { stdio: 'ignore' })
+    execSync('git config user.email "github-actions[bot]@users.noreply.github.com"', { stdio: 'ignore' })
+    execSync(`git add ${outputPath}`, { stdio: 'ignore' })
+    execSync(`git diff --staged --quiet || git commit -m "chore: ${label} checkpoint [$(date -u '+%Y-%m-%d %H:%M UTC')]"`, { shell: true, stdio: 'ignore' })
+    execSync('git pull --rebase --autostash', { stdio: 'ignore' })
+    execSync('git push', { stdio: 'ignore' })
+    console.log(`  [checkpoint] saved & pushed at ${done}/${total}`)
+  } catch (e) {
+    console.warn(`  [checkpoint] git error (non-fatal): ${e.message}`)
+  }
 }
 
 // ── Progress bar ──────────────────────────────────────────────────────────────
@@ -321,4 +402,4 @@ function progressBar(done, total) {
   if (done === total) process.stdout.write('\n')
 }
 
-module.exports = { probeUrl, runWithConcurrency, recordAlive, recordDead, isDueForProbe, progressBar }
+module.exports = { probeUrl, runWithConcurrency, recordAlive, recordDead, isDueForProbe, isDueForResurrect, checkpoint, progressBar }

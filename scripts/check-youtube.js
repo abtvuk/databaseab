@@ -19,12 +19,26 @@ const path = require('path')
 const TIMEOUT_MS = (cfg.probe.timeoutSeconds || 10) * 1000
 const UA = 'abtv-probe/1.0'
 
-// ── YouTube oEmbed probe ──────────────────────────────────────────────────────
-// Returns { alive: bool }
-// oEmbed returns 200 for live/accessible videos, 404 for dead/private/deleted.
+// ── YouTube availability probe ────────────────────────────────────────────────
+// ytId can be:
+//   - A video/stream ID (11 chars, e.g. "dQw4w9WgXcQ") → use oEmbed
+//   - A channel ID (starts with "UC")                  → use channel page
+//   - A handle (starts with "@")                       → use handle page
+//
+// oEmbed only works for video IDs — it always 404s for channel IDs and handles,
+// which would cause them to be incorrectly marked dead on every check.
 
 async function probeYtId(ytId) {
-  const url  = `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${ytId}&format=json`
+  let url
+  if (ytId.startsWith('UC')) {
+    url = `https://www.youtube.com/channel/${ytId}`
+  } else if (ytId.startsWith('@')) {
+    url = `https://www.youtube.com/${ytId}`
+  } else {
+    // Video/stream ID — oEmbed is the lightest check
+    url = `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${ytId}&format=json`
+  }
+
   try {
     const ctrl = new AbortController()
     const t    = setTimeout(() => ctrl.abort(), TIMEOUT_MS)
@@ -34,6 +48,7 @@ async function probeYtId(ytId) {
       headers: { 'User-Agent': UA },
     })
     clearTimeout(t)
+    // 200 = exists, 404 = deleted/terminated, 302→login = private
     return { alive: res.status === 200 }
   } catch {
     return { alive: false }

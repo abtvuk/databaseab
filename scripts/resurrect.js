@@ -6,46 +6,27 @@
 //  On pass: sets alive: true, updates uptime
 //  On fail: updates uptime, alive stays false
 //
-//  No frequency filter here — dead channels are always worth checking.
-//  The 4-hour schedule in the workflow already controls how often this runs.
+//  Frequency filter: channels with a long history of failures are throttled
+//  back via isDueForResurrect() — score:0 with 10+ data points waits 72h
+//  between retries instead of running every 4 hours. This prevents the
+//  workflow from probing 3000+ hopeless channels on every run.
 // ─────────────────────────────────────────────────────────────────────────────
 
-const cfg = require('../config')
-const { probeUrl, runWithConcurrency, recordAlive, recordDead, progressBar } = require('./probe')
-const fs   = require('fs')
+const cfg  = require('../config')
 const path = require('path')
-const { execSync } = require('child_process')
+const fs   = require('fs')
+const { probeUrl, runWithConcurrency, recordAlive, recordDead, isDueForResurrect, checkpoint, progressBar } = require('./probe')
 
-const CHECKPOINT_EVERY = 500 // commit progress every N channels probed
-
-function checkpoint(data, channels, channelMap, label, done, total) {
-  data.channels = channels.map(c => channelMap.get(c.id) || c)
-  saveChannels(data)
-  try {
-    execSync('git config user.name "github-actions[bot]"', { stdio: 'ignore' })
-    execSync('git config user.email "github-actions[bot]@users.noreply.github.com"', { stdio: 'ignore' })
-    execSync(`git add ${require('path').resolve(require('../config').output.channels)}`, { stdio: 'ignore' })
-    execSync(`git diff --staged --quiet || git commit -m "chore: ${label} checkpoint [$(date -u '+%Y-%m-%d %H:%M UTC')]"`, { shell: true, stdio: 'ignore' })
-    execSync('git pull --rebase --autostash', { stdio: 'ignore' })
-    execSync('git push', { stdio: 'ignore' })
-    console.log(`  [checkpoint] saved & pushed at ${done}/${total}`)
-  } catch (e) {
-    console.warn(`  [checkpoint] git error (non-fatal): ${e.message}`)
-  }
-}
-
-
+const CHECKPOINT_EVERY = 500
+const OUTPUT_PATH      = path.resolve(cfg.output.channels)
 
 function loadChannels() {
-  const raw = fs.readFileSync(path.resolve(cfg.output.channels), 'utf8')
+  const raw = fs.readFileSync(OUTPUT_PATH, 'utf8')
   return JSON.parse(raw)
 }
 
 function saveChannels(data) {
-  fs.writeFileSync(
-    path.resolve(cfg.output.channels),
-    JSON.stringify({ ...data, generated: new Date().toISOString() }, null, 2)
-  )
+  fs.writeFileSync(OUTPUT_PATH, JSON.stringify({ ...data, generated: new Date().toISOString() }, null, 2))
 }
 
 async function main() {
@@ -56,32 +37,39 @@ async function main() {
   const data     = loadChannels()
   const channels = data.channels || []
 
-  const candidates = channels
-    .filter(c => c.alive === false && c.probe !== false && !c.ytId && !c.radio)
-    .sort((a, b) => (b.uptime?.score ?? -1) - (a.uptime?.score ?? -1))
-  const excluded   = channels.filter(c => c.alive === false && c.probe === false)
+  const dead = channels.filter(c => c.alive === false && c.probe !== false && !c.ytId && !c.radio)
 
-  console.log(`  Total dead channels:    ${channels.filter(c => !c.alive).length}`)
+  const candidates = dead
+    .filter(c => isDueForResurrect(c.uptime))
+    .sort((a, b) => (b.uptime?.score ?? -1) - (a.uptime?.score ?? -1))
+
+  const throttled = dead.length - candidates.length
+  const excluded  = channels.filter(c => c.alive === false && c.probe === false)
+
+  console.log(`  Total dead channels:    ${dead.length}`)
+  console.log(`  Throttled (not due):    ${throttled}`)
   console.log(`  Candidates to probe:    ${candidates.length}`)
   console.log(`  Excluded (probe:false): ${excluded.length}`)
   console.log()
 
   if (candidates.length === 0) {
-    console.log('  No dead channels to resurrect. Exiting. 😏')
+    console.log('  No dead channels due for retry. Exiting. 😏')
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
     return
   }
 
   const channelMap = new Map(channels.map(c => [c.id, c]))
-
   let resurrected = 0, stillDead = 0, done = 0
   const total = candidates.length
 
   const tasks = candidates.map(ch => async () => {
     const urls = ch.streamUrls || []
     if (!urls.length) {
-      // No URL — can't probe, just leave it dead
+      // No URL — record the attempt so throttle advances, leave dead
+      const entry = channelMap.get(ch.id)
+      if (entry) entry.uptime = recordDead(entry.uptime)
       done++
+      progressBar(done, total)
       return
     }
 
@@ -95,13 +83,12 @@ async function main() {
 
     done++
     progressBar(done, total)
-    if (done % CHECKPOINT_EVERY === 0) checkpoint(data, channels, channelMap, 'resurrect', done, total)
+    if (done % CHECKPOINT_EVERY === 0) checkpoint(data, channels, channelMap, OUTPUT_PATH, 'resurrect', done, total)
 
     const entry = channelMap.get(ch.id)
     if (!entry) return
 
     if (result.alive) {
-      // Bubble the working URL to front so the player hits it first
       if (liveIndex > 0) {
         entry.streamUrls = [urls[liveIndex], ...urls.filter((_, i) => i !== liveIndex)]
       }
@@ -128,6 +115,7 @@ async function main() {
   console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
   console.log(`  RESURRECTED  ${resurrected}  (flipped to alive: true)`)
   console.log(`  STILL DEAD   ${stillDead}`)
+  console.log(`  THROTTLED    ${throttled}  (not due yet)`)
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
 }
 
