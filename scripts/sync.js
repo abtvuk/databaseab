@@ -248,9 +248,10 @@ async function main() {
   console.log(`  iptv-org logos:    ${logos.length}`)
   console.log(`  took ${Date.now() - t1} ms`)
 
-  const blockedIds = new Set(blocklist.filter(b => b.reason === 'nsfw').map(b => b.channel))
-  const nsfwIds    = new Set(iptvChannels.filter(c => c.is_nsfw).map(c => c.id))
-  const allBlocked = new Set([...blockedIds, ...nsfwIds])
+  const blockedIds   = new Set(blocklist.filter(b => b.reason === 'nsfw').map(b => b.channel))
+  const nsfwIds      = new Set(iptvChannels.filter(c => c.is_nsfw).map(c => c.id))
+  const manualIds    = new Set(cfg.manualBlocklist || [])
+  const allBlocked   = new Set([...blockedIds, ...nsfwIds, ...manualIds])
 
   const streamMap = buildStreamMap(streams, allBlocked)
   const logoMap   = buildLogoMap(logos)
