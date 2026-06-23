@@ -180,9 +180,12 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
 
     const child = execFile('ffprobe', args, { timeout: (TIMEOUT_S + 5) * 1000 }, (err, stdout) => {
       const responseMs = Date.now() - t0
-      if (err) return resolve({ alive: false, responseMs })
+      if (err) {
+        const timedOut = responseMs >= (TIMEOUT_S + 4) * 1000
+        return resolve({ alive: false, responseMs, timedOut })
+      }
       const out = stdout.trim()
-      resolve({ alive: out.includes('video') || out.includes('audio'), responseMs })
+      resolve({ alive: out.includes('video') || out.includes('audio'), responseMs, timedOut: false })
     })
 
     setTimeout(() => { try { child.kill('SIGKILL') } catch {} }, (TIMEOUT_S + 6) * 1000)
@@ -190,24 +193,25 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
 }
 
 // ── Probe with browser UA fallback ────────────────────────────────────────────
-// Some servers block ffprobe's default UA. Try browser UA as fallback.
+// Fails fast on timeout — if the server is unreachable, don't waste time
+// running 3 more probes. Only tries browser UA if the server actually responded.
 
 async function probeWithFallback(url, referrer, userAgent) {
-  // First attempt: channel's own referrer/UA
-  let result = await probeOnce(url, referrer, userAgent, 'v:0')
-  if (result.alive) return result
+  const r1 = await probeOnce(url, referrer, userAgent, 'v:0')
+  if (r1.alive) return r1
+  if (r1.timedOut) return { alive: false, responseMs: r1.responseMs }
 
-  // Audio fallback (radio/audio-only)
-  result = await probeOnce(url, referrer, userAgent, 'a:0')
-  if (result.alive) return result
+  const r2 = await probeOnce(url, referrer, userAgent, 'a:0')
+  if (r2.alive) return r2
+  if (r2.timedOut) return { alive: false, responseMs: r2.responseMs }
 
-  // Second attempt: browser UA (catches UA-blocking servers)
   if (!userAgent || userAgent !== BROWSER_UA) {
-    result = await probeOnce(url, referrer, BROWSER_UA, 'v:0')
-    if (result.alive) return result
+    const r3 = await probeOnce(url, referrer, BROWSER_UA, 'v:0')
+    if (r3.alive) return r3
+    if (r3.timedOut) return { alive: false, responseMs: r3.responseMs }
 
-    result = await probeOnce(url, referrer, BROWSER_UA, 'a:0')
-    if (result.alive) return result
+    const r4 = await probeOnce(url, referrer, BROWSER_UA, 'a:0')
+    if (r4.alive) return r4
   }
 
   return { alive: false, responseMs: 0 }
