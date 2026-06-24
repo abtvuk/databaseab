@@ -288,15 +288,10 @@ function computeScore(uptime) {
   if (!window || totalCount <= window) {
     return Math.round((aliveCount / totalCount) * 100)
   }
-  // We don't store the individual results, so we approximate:
-  // recent window is implied by consecutiveAlive + the last N probes.
-  // Best we can do without a history array: weight the last `window` results
-  // by tracking them via consecutiveAlive as a lower-bound proxy.
-  // Approximation: split into "recent" (last `window` probes) and "old" (rest).
-  // We infer recent aliveCount from consecutiveAlive (capped at window).
-  const recentAlive = Math.min(uptime.consecutiveAlive ?? 0, window)
-  const recentTotal = window
-  const oldTotal    = totalCount - window
+const recent      = uptime.recentResults || []
+  const recentAlive = recent.reduce((s, v) => s + v, 0)
+  const recentTotal = recent.length
+  const oldTotal    = totalCount - recentTotal
   const oldAlive    = aliveCount - recentAlive
   // Recent results at weight 1.0, old results at weight 0.5
   const weightedAlive = recentAlive * 1.0 + Math.max(0, oldAlive) * 0.5
@@ -313,6 +308,8 @@ function recordAlive(uptime) {
   u.consecutiveAlive++
   u.lastSeen   = new Date().toISOString()
   u.lastProbed = new Date().toISOString()
+  const w = cfg.scoreRecencyWindow || 0
+  if (w) { u.recentResults = u.recentResults || []; u.recentResults.push(1); if (u.recentResults.length > w) u.recentResults.shift() }
   u.score = computeScore(u)
   return u
 }
@@ -322,6 +319,8 @@ function recordDead(uptime) {
   u.totalCount++
   u.consecutiveAlive = 0
   u.lastProbed = new Date().toISOString()
+  const w = cfg.scoreRecencyWindow || 0
+  if (w) { u.recentResults = u.recentResults || []; u.recentResults.push(0); if (u.recentResults.length > w) u.recentResults.shift() }
   u.score = computeScore(u)
   return u
 }
