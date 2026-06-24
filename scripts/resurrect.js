@@ -94,7 +94,7 @@ async function main() {
       }
       entry.uptime            = recordAlive(entry.uptime)
       entry.alive             = true
-      entry.needsProxy        = result.needsProxy ? true : (entry.needsProxy || false)
+      entry.needsProxy         = result.needsProxy === true
       entry.browserUnplayable = result.browserUnplayable || false
       if (!entry.browserUnplayable) delete entry.browserUnplayable
       const slow = result.responseMs > (cfg.probe.slowThresholdMs || 8000)
