@@ -53,7 +53,7 @@ async function main() {
   console.log()
 
   if (candidates.length === 0) {
-    console.log('  No dead channels due for retry. Exiting. 😏')
+    console.log('  No channels due for retry. Exiting. 😏')
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
     return
   }
