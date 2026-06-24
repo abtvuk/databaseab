@@ -288,14 +288,19 @@ function computeScore(uptime) {
   if (!window || totalCount <= window) {
     return Math.round((aliveCount / totalCount) * 100)
   }
-const recent      = uptime.recentResults || []
+  
+  const recent      = uptime.recentResults || []
   const recentAlive = recent.reduce((s, v) => s + v, 0)
   const recentTotal = recent.length
   const oldTotal    = totalCount - recentTotal
   const oldAlive    = aliveCount - recentAlive
+  // Cap old history to window×4 so ancient data can't permanently bury a recovered channel
+  const oldCap          = window * 4
+  const oldTotalCapped  = Math.min(oldTotal, oldCap)
+  const oldAliveCapped  = oldTotal > 0 ? Math.round(oldAlive * (oldTotalCapped / oldTotal)) : 0
   // Recent results at weight 1.0, old results at weight 0.5
-  const weightedAlive = recentAlive * 1.0 + Math.max(0, oldAlive) * 0.5
-  const weightedTotal = recentTotal * 1.0 + oldTotal * 0.5
+  const weightedAlive = recentAlive * 1.0 + oldAliveCapped * 0.5
+  const weightedTotal = recentTotal * 1.0 + oldTotalCapped * 0.5
   return Math.round((weightedAlive / weightedTotal) * 100)
 }
 
