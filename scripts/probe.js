@@ -52,8 +52,8 @@ async function corsCheck(url, referrer, userAgent) {
 
     return { browserOk: true, needsProxy: false }
 } catch {
-    // Network error / timeout on CORS check — can't confirm proxy helps, don't assume
-    return { browserOk: false, needsProxy: false }
+    // Network error / timeout — uncertain, let segmentProbe decide
+    return { browserOk: false, needsProxy: false, corsTimedOut: true }
   }
 }
 
@@ -238,9 +238,9 @@ async function probeUrl(url, referrer, userAgent) {
         return { alive: true, needsProxy: false, browserUnplayable: true, responseMs: result.responseMs }
       }
 
-      const { browserOk, needsProxy } = await corsCheck(url, referrer, userAgent)
+      const { browserOk, needsProxy, corsTimedOut } = await corsCheck(url, referrer, userAgent)
 
-      if (!browserOk && needsProxy) {
+      if (!browserOk && (needsProxy || corsTimedOut)) {
         // Proxy is needed — but verify it actually plays at segment level
         const { playable } = await segmentProbe(url, referrer, userAgent)
         if (!playable) {
