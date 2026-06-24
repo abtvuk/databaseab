@@ -12,7 +12,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 const cfg  = require('../config')
-const { runWithConcurrency, recordAlive, recordDead, progressBar } = require('./probe')
+const { runWithConcurrency, recordAlive, recordDead, isDueForProbe, progressBar } = require('./probe')
 const fs   = require('fs')
 const path = require('path')
 
@@ -30,6 +30,8 @@ const UA = 'abtv-probe/1.0'
 
 async function probeYtId(ytId) {
   let url
+  
+const isVideoId = !ytId.startsWith('UC') && !ytId.startsWith('@')
   if (ytId.startsWith('UC')) {
     url = `https://www.youtube.com/channel/${ytId}`
   } else if (ytId.startsWith('@')) {
@@ -43,7 +45,7 @@ async function probeYtId(ytId) {
     const ctrl = new AbortController()
     const t    = setTimeout(() => ctrl.abort(), TIMEOUT_MS)
     const res  = await fetch(url, {
-      method:  'GET',
+      method:  isVideoId ? 'GET' : 'HEAD',
       signal:  ctrl.signal,
       headers: { 'User-Agent': UA },
     })
@@ -51,7 +53,7 @@ async function probeYtId(ytId) {
     // 200 = exists, 404 = deleted/terminated, 302→login = private
     return { alive: res.status === 200 }
   } catch {
-    return { alive: false }
+    return { alive: null }  // transient error — don't flip dead
   }
 }
 
@@ -85,11 +87,13 @@ async function main() {
   const data     = loadYoutube()
   const channels = data.channels || []
 
-  const candidates = channels.filter(c => c.ytId && c.probe !== false)
+  const candidates = channels.filter(c => c.ytId && c.probe !== false && isDueForProbe(c.uptime))
+  const skipped    = channels.filter(c => c.ytId && c.probe !== false && !isDueForProbe(c.uptime))
   const excluded   = channels.filter(c => c.ytId && c.probe === false)
 
   console.log(`  Total YouTube channels: ${channels.filter(c => c.ytId).length}`)
   console.log(`  Candidates to probe:    ${candidates.length}`)
+  console.log(`  Skipped (not due yet):  ${skipped.length}`)
   console.log(`  Excluded (probe:false): ${excluded.length}`)
   console.log()
 
@@ -112,18 +116,19 @@ async function main() {
     const entry = channelMap.get(ch.id)
     if (!entry) return
 
-    if (result.alive) {
+    if (result.alive === true) {
       entry.uptime = recordAlive(entry.uptime)
       entry.alive  = true
       passed++
-    } else {
+    } else if (result.alive === false) {
       entry.uptime = recordDead(entry.uptime)
       entry.alive  = false
       failed++
     }
+    // null = transient error, leave alive/uptime untouched
   })
 
-  await runWithConcurrency(tasks, cfg.probe.concurrency)
+  await runWithConcurrency(tasks, cfg.probe.youtubeConcurrency || 6)
 
   data.channels = channels.map(c => channelMap.get(c.id) || c)
   saveYoutube(data.channels)
