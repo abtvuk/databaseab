@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-23T21:43:30.950Z",
+  "generated": "2026-06-24T01:51:53.081Z",
   "total": 10624,
   "channels": [
     {
@@ -1994,11 +1994,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 31,
+        "totalCount": 32,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T08:56:10.236Z",
-        "lastProbed": "2026-06-23T17:42:54.296Z",
-        "score": 51
+        "lastProbed": "2026-06-24T01:51:38.376Z",
+        "score": 50
       }
     },
     {
@@ -2220,7 +2220,7 @@
       "id": "AlpoTV.al",
       "name": "Alpo TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -2244,12 +2244,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 7,
-        "totalCount": 8,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T03:54:50.993Z",
-        "lastProbed": "2026-06-23T17:11:47.021Z",
-        "score": 88
+        "aliveCount": 8,
+        "totalCount": 9,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:30.121Z",
+        "lastProbed": "2026-06-24T01:50:30.121Z",
+        "score": 89
       }
     },
     {
@@ -3531,7 +3531,7 @@
       "id": "BragadoTV.ar",
       "name": "Bragado TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -3543,8 +3543,8 @@
         "general"
       ],
       "streamUrls": [
-        "https://mp.panelchs.com:1936/8028/ngrp:8028_all/playlist.m3u8",
-        "https://srv1053170.hstgr.cloud/hls/bragadotv.m3u8"
+        "https://srv1053170.hstgr.cloud/hls/bragadotv.m3u8",
+        "https://mp.panelchs.com:1936/8028/ngrp:8028_all/playlist.m3u8"
       ],
       "referrer": null,
       "userAgent": null,
@@ -3556,13 +3556,14 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 11,
-        "totalCount": 15,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-23T01:02:57.300Z",
-        "lastProbed": "2026-06-23T17:12:01.580Z",
-        "score": 73
-      }
+        "aliveCount": 12,
+        "totalCount": 16,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:43.515Z",
+        "lastProbed": "2026-06-24T01:50:43.515Z",
+        "score": 75
+      },
+      "slow": true
     },
     {
       "id": "BravoTV.ar",
@@ -3696,11 +3697,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 31,
+        "totalCount": 32,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T08:56:13.318Z",
-        "lastProbed": "2026-06-23T17:42:53.072Z",
-        "score": 51
+        "lastProbed": "2026-06-24T01:51:37.188Z",
+        "score": 50
       }
     },
     {
@@ -5392,7 +5393,7 @@
       "id": "CarasTV.ar",
       "name": "Caras TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -5416,12 +5417,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 7,
-        "totalCount": 8,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T03:54:54.947Z",
-        "lastProbed": "2026-06-23T17:11:21.510Z",
-        "score": 88
+        "aliveCount": 8,
+        "totalCount": 9,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:31.824Z",
+        "lastProbed": "2026-06-24T01:50:31.824Z",
+        "score": 89
       }
     },
     {
@@ -7320,11 +7321,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 44,
-        "totalCount": 55,
+        "totalCount": 56,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T12:09:40.491Z",
-        "lastProbed": "2026-06-23T17:42:52.506Z",
-        "score": 59
+        "lastProbed": "2026-06-24T01:50:37.468Z",
+        "score": 58
       }
     },
     {
@@ -7356,11 +7357,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 7,
-        "totalCount": 8,
+        "totalCount": 9,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:54:53.808Z",
-        "lastProbed": "2026-06-23T17:11:24.968Z",
-        "score": 88
+        "lastProbed": "2026-06-24T01:50:26.385Z",
+        "score": 78
       }
     },
     {
@@ -7888,7 +7889,7 @@
       "id": "TVPublicaMarcosPaz.ar",
       "name": "TV Publica Marcos Paz",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -7912,12 +7913,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 7,
-        "totalCount": 13,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-23T01:03:04.736Z",
-        "lastProbed": "2026-06-23T17:11:25.942Z",
-        "score": 54
+        "aliveCount": 8,
+        "totalCount": 14,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:52.465Z",
+        "lastProbed": "2026-06-24T01:50:52.465Z",
+        "score": 57
       }
     },
     {
@@ -8208,7 +8209,7 @@
       "id": "VillaManteroTV.ar",
       "name": "Villa Mantero TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -8230,12 +8231,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 7,
-        "totalCount": 8,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T03:54:55.622Z",
-        "lastProbed": "2026-06-23T17:11:27.542Z",
-        "score": 88
+        "aliveCount": 8,
+        "totalCount": 9,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:28.507Z",
+        "lastProbed": "2026-06-24T01:50:28.507Z",
+        "score": 89
       }
     },
     {
@@ -9287,10 +9288,10 @@
       "nanoid": "hUh8zOVsiGJwtZ",
       "uptime": {
         "aliveCount": 40,
-        "totalCount": 51,
+        "totalCount": 52,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-23T01:04:08.376Z",
-        "lastProbed": "2026-06-23T17:11:37.945Z",
+        "lastProbed": "2026-06-24T01:50:54.430Z",
         "score": 56
       },
       "slow": true
@@ -9903,11 +9904,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 53,
-        "totalCount": 75,
+        "totalCount": 76,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-23T01:03:25.289Z",
-        "lastProbed": "2026-06-23T17:11:38.433Z",
-        "score": 56
+        "lastProbed": "2026-06-24T01:50:54.718Z",
+        "score": 55
       },
       "slow": true
     },
@@ -9940,11 +9941,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 54,
-        "totalCount": 77,
+        "totalCount": 78,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-23T01:03:25.944Z",
-        "lastProbed": "2026-06-23T17:11:38.593Z",
-        "score": 56
+        "lastProbed": "2026-06-24T01:50:55.100Z",
+        "score": 55
       },
       "slow": true
     },
@@ -9977,11 +9978,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 53,
-        "totalCount": 75,
+        "totalCount": 76,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-23T01:03:26.445Z",
-        "lastProbed": "2026-06-23T17:11:38.657Z",
-        "score": 56
+        "lastProbed": "2026-06-24T01:50:55.285Z",
+        "score": 55
       },
       "slow": true
     },
@@ -10772,11 +10773,11 @@
       "nanoid": "7UCxQXCWlbGvPF",
       "uptime": {
         "aliveCount": 46,
-        "totalCount": 57,
+        "totalCount": 58,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-23T01:04:45.173Z",
-        "lastProbed": "2026-06-23T17:11:39.029Z",
-        "score": 60
+        "lastProbed": "2026-06-24T01:50:37.157Z",
+        "score": 59
       },
       "slow": true
     },
@@ -11417,11 +11418,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 48,
-        "totalCount": 60,
+        "totalCount": 61,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-23T01:03:37.157Z",
-        "lastProbed": "2026-06-23T17:11:39.718Z",
-        "score": 60
+        "lastProbed": "2026-06-24T01:50:38.388Z",
+        "score": 59
       },
       "slow": true
     },
@@ -12893,11 +12894,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 11,
-        "totalCount": 14,
+        "totalCount": 15,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:55:09.247Z",
-        "lastProbed": "2026-06-23T17:11:42.360Z",
-        "score": 79
+        "lastProbed": "2026-06-24T01:50:36.695Z",
+        "score": 73
       },
       "slow": true
     },
@@ -16152,11 +16153,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 7,
-        "totalCount": 8,
+        "totalCount": 9,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:55:11.636Z",
-        "lastProbed": "2026-06-23T17:11:46.540Z",
-        "score": 88
+        "lastProbed": "2026-06-24T01:50:36.659Z",
+        "score": 78
       },
       "slow": true
     },
@@ -16226,11 +16227,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 53,
-        "totalCount": 73,
+        "totalCount": 74,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-23T01:03:39.025Z",
-        "lastProbed": "2026-06-23T17:12:03.612Z",
-        "score": 57
+        "lastProbed": "2026-06-24T01:51:07.450Z",
+        "score": 56
       }
     },
     {
@@ -26573,7 +26574,7 @@
       "id": "SBTInterior.br",
       "name": "SBT Interior",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -26597,12 +26598,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 39,
-        "totalCount": 57,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-23T01:04:17.250Z",
-        "lastProbed": "2026-06-23T17:11:55.132Z",
-        "score": 51
+        "aliveCount": 40,
+        "totalCount": 58,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:38.490Z",
+        "lastProbed": "2026-06-24T01:51:38.490Z",
+        "score": 53
       }
     },
     {
@@ -28534,7 +28535,7 @@
       "id": "TVFuturo.br",
       "name": "TV Futuro",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -28558,12 +28559,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 31,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T08:57:10.764Z",
-        "lastProbed": "2026-06-23T17:42:55.381Z",
-        "score": 51
+        "aliveCount": 27,
+        "totalCount": 32,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:41.787Z",
+        "lastProbed": "2026-06-24T01:51:41.787Z",
+        "score": 54
       }
     },
     {
@@ -30862,7 +30863,7 @@
       "id": "Belarus3.by",
       "name": "Belarus-3",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -30886,12 +30887,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 55,
-        "totalCount": 80,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-23T01:04:48.171Z",
-        "lastProbed": "2026-06-23T17:11:58.424Z",
-        "score": 55
+        "aliveCount": 56,
+        "totalCount": 81,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:59.598Z",
+        "lastProbed": "2026-06-24T01:50:59.598Z",
+        "score": 56
       },
       "slow": true
     },
@@ -36561,7 +36562,7 @@
       "id": "SooriyanTV.ca",
       "name": "Sooriyan TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -36585,12 +36586,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 47,
-        "totalCount": 61,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-23T01:04:56.142Z",
-        "lastProbed": "2026-06-23T17:11:57.696Z",
-        "score": 58
+        "aliveCount": 48,
+        "totalCount": 62,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:39.028Z",
+        "lastProbed": "2026-06-24T01:50:39.028Z",
+        "score": 60
       }
     },
     {
@@ -39791,11 +39792,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 46,
-        "totalCount": 56,
+        "totalCount": 57,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-23T01:05:37.176Z",
-        "lastProbed": "2026-06-23T17:12:11.218Z",
-        "score": 61
+        "lastProbed": "2026-06-24T01:50:36.732Z",
+        "score": 60
       },
       "slow": true
     },
@@ -39826,11 +39827,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 30,
+        "totalCount": 31,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:55:26.877Z",
-        "lastProbed": "2026-06-23T17:12:11.247Z",
-        "score": 52
+        "lastProbed": "2026-06-24T01:51:41.687Z",
+        "score": 51
       },
       "slow": true
     },
@@ -41548,11 +41549,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 48,
-        "totalCount": 76,
+        "totalCount": 77,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-23T01:05:18.938Z",
-        "lastProbed": "2026-06-23T17:12:02.116Z",
-        "score": 50
+        "lastProbed": "2026-06-24T01:51:40.601Z",
+        "score": 49
       }
     },
     {
@@ -42319,7 +42320,7 @@
       "id": "TVLaCapitale.ci",
       "name": "TV La Capitale",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -42343,14 +42344,13 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 53,
-        "totalCount": 69,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-23T01:05:22.884Z",
-        "lastProbed": "2026-06-23T17:12:03.805Z",
-        "score": 60
-      },
-      "browserUnplayable": true
+        "aliveCount": 54,
+        "totalCount": 70,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:30.708Z",
+        "lastProbed": "2026-06-24T01:50:30.708Z",
+        "score": 61
+      }
     },
     {
       "id": "13Festival.cl",
@@ -46251,11 +46251,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 28,
-        "totalCount": 32,
+        "totalCount": 33,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:55:24.599Z",
-        "lastProbed": "2026-06-23T17:12:06.606Z",
-        "score": 54
+        "lastProbed": "2026-06-24T01:50:54.811Z",
+        "score": 53
       }
     },
     {
@@ -54403,7 +54403,7 @@
       "id": "1.cn",
       "name": "上虞1新闻综合",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -54425,14 +54425,13 @@
       "source": "famelack",
       "nanoid": "PQS6mmZySzL6Rf",
       "uptime": {
-        "aliveCount": 44,
-        "totalCount": 53,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T03:55:43.889Z",
-        "lastProbed": "2026-06-23T17:12:20.414Z",
-        "score": 60
-      },
-      "slow": true
+        "aliveCount": 45,
+        "totalCount": 54,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:33.407Z",
+        "lastProbed": "2026-06-24T01:50:33.407Z",
+        "score": 62
+      }
     },
     {
       "id": "3.cn",
@@ -54473,7 +54472,7 @@
       "id": "famelack.cn",
       "name": "上虞經濟文化",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -54495,14 +54494,13 @@
       "source": "famelack",
       "nanoid": "ZMTYKvEKk1dmYw",
       "uptime": {
-        "aliveCount": 49,
-        "totalCount": 61,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-23T01:06:32.346Z",
-        "lastProbed": "2026-06-23T17:12:20.440Z",
-        "score": 60
-      },
-      "slow": true
+        "aliveCount": 50,
+        "totalCount": 62,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:34.370Z",
+        "lastProbed": "2026-06-24T01:50:34.370Z",
+        "score": 62
+      }
     },
     {
       "id": "2.cn",
@@ -54542,7 +54540,7 @@
       "id": "4.cn",
       "name": "余姚姚江文化",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -54564,20 +54562,19 @@
       "source": "famelack",
       "nanoid": "4gpT2C61YO4gJy",
       "uptime": {
-        "aliveCount": 36,
-        "totalCount": 42,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T03:55:36.366Z",
-        "lastProbed": "2026-06-23T17:12:20.449Z",
-        "score": 58
-      },
-      "slow": true
+        "aliveCount": 37,
+        "totalCount": 43,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:40.358Z",
+        "lastProbed": "2026-06-24T01:50:40.358Z",
+        "score": 60
+      }
     },
     {
       "id": "5.cn",
       "name": "余姚新闻综合",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -54599,14 +54596,13 @@
       "source": "famelack",
       "nanoid": "Z6LINyrJx59mNs",
       "uptime": {
-        "aliveCount": 35,
-        "totalCount": 41,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T03:55:42.352Z",
-        "lastProbed": "2026-06-23T17:12:20.568Z",
-        "score": 57
-      },
-      "slow": true
+        "aliveCount": 36,
+        "totalCount": 42,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:43.316Z",
+        "lastProbed": "2026-06-24T01:50:43.316Z",
+        "score": 60
+      }
     },
     {
       "id": "6.cn",
@@ -54919,7 +54915,7 @@
       "id": "15.cn",
       "name": "新昌休闲影视",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -54941,14 +54937,13 @@
       "source": "famelack",
       "nanoid": "LWZapZpACANZ13",
       "uptime": {
-        "aliveCount": 51,
-        "totalCount": 65,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-23T01:06:23.321Z",
-        "lastProbed": "2026-06-23T17:12:20.674Z",
-        "score": 60
-      },
-      "slow": true
+        "aliveCount": 52,
+        "totalCount": 66,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:35.994Z",
+        "lastProbed": "2026-06-24T01:50:35.994Z",
+        "score": 62
+      }
     },
     {
       "id": "16.cn",
@@ -55465,7 +55460,7 @@
       "id": "26.cn",
       "name": "萧山新闻综合",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -55487,19 +55482,19 @@
       "source": "famelack",
       "nanoid": "HGBni7wKrtguXm",
       "uptime": {
-        "aliveCount": 49,
-        "totalCount": 62,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-23T01:06:28.999Z",
-        "lastProbed": "2026-06-23T17:12:20.727Z",
-        "score": 60
+        "aliveCount": 50,
+        "totalCount": 63,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:35.963Z",
+        "lastProbed": "2026-06-24T01:50:35.963Z",
+        "score": 61
       }
     },
     {
       "id": "27.cn",
       "name": "蕭山生活頻道",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -55521,12 +55516,12 @@
       "source": "famelack",
       "nanoid": "hlJLT7eqdRNqcv",
       "uptime": {
-        "aliveCount": 49,
-        "totalCount": 60,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-23T01:06:29.018Z",
-        "lastProbed": "2026-06-23T17:12:20.780Z",
-        "score": 61
+        "aliveCount": 50,
+        "totalCount": 61,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:31.299Z",
+        "lastProbed": "2026-06-24T01:50:31.299Z",
+        "score": 63
       }
     },
     {
@@ -55669,7 +55664,7 @@
       "id": "32.cn",
       "name": "餘姚姚江文化",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -55691,14 +55686,13 @@
       "source": "famelack",
       "nanoid": "6nQrzZYDFKwB5C",
       "uptime": {
-        "aliveCount": 44,
-        "totalCount": 53,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T03:55:42.841Z",
-        "lastProbed": "2026-06-23T17:12:20.802Z",
-        "score": 60
-      },
-      "slow": true
+        "aliveCount": 45,
+        "totalCount": 54,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:34.320Z",
+        "lastProbed": "2026-06-24T01:50:34.320Z",
+        "score": 62
+      }
     },
     {
       "id": "AmagaTelevision.co",
@@ -62826,7 +62820,7 @@
       "id": "CubavisionInternacional.cu",
       "name": "Cubavision Internacional",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -62850,14 +62844,13 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 29,
-        "totalCount": 34,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T03:55:45.161Z",
-        "lastProbed": "2026-06-23T17:12:26.884Z",
-        "score": 54
-      },
-      "slow": true
+        "aliveCount": 30,
+        "totalCount": 35,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:53.782Z",
+        "lastProbed": "2026-06-24T01:50:53.782Z",
+        "score": 56
+      }
     },
     {
       "id": "Multivision.cu",
@@ -66073,11 +66066,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 53,
-        "totalCount": 79,
+        "totalCount": 80,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-23T01:07:15.501Z",
-        "lastProbed": "2026-06-23T17:12:32.111Z",
-        "score": 54
+        "lastProbed": "2026-06-24T01:51:05.868Z",
+        "score": 53
       },
       "slow": true
     },
@@ -66110,11 +66103,11 @@
       "nanoid": "LW180mFtaK1hEs",
       "uptime": {
         "aliveCount": 8,
-        "totalCount": 11,
+        "totalCount": 12,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-23T01:07:15.480Z",
-        "lastProbed": "2026-06-23T17:12:29.995Z",
-        "score": 73
+        "lastProbed": "2026-06-24T01:50:36.716Z",
+        "score": 67
       },
       "slow": true
     },
@@ -67396,11 +67389,11 @@
       "nanoid": "ptE116wUMswJaQ",
       "uptime": {
         "aliveCount": 55,
-        "totalCount": 72,
+        "totalCount": 73,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-23T01:07:37.740Z",
-        "lastProbed": "2026-06-23T17:12:30.998Z",
-        "score": 60
+        "lastProbed": "2026-06-24T01:50:42.713Z",
+        "score": 59
       },
       "slow": true
     },
@@ -68585,11 +68578,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 31,
+        "totalCount": 32,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T08:58:50.351Z",
-        "lastProbed": "2026-06-23T17:42:52.295Z",
-        "score": 51
+        "lastProbed": "2026-06-24T01:51:37.140Z",
+        "score": 50
       }
     },
     {
@@ -81035,7 +81028,7 @@
       "id": "CamuTV.do",
       "name": "Camu TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -81059,12 +81052,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 49,
-        "totalCount": 66,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T21:11:13.251Z",
-        "lastProbed": "2026-06-23T17:42:52.373Z",
-        "score": 57
+        "aliveCount": 50,
+        "totalCount": 67,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:41.256Z",
+        "lastProbed": "2026-06-24T01:50:41.256Z",
+        "score": 59
       }
     },
     {
@@ -81323,7 +81316,7 @@
       "id": "CanalMultivision.do",
       "name": "Canal Multivision",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -81347,12 +81340,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 41,
-        "totalCount": 52,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-23T01:08:39.151Z",
-        "lastProbed": "2026-06-23T17:12:32.661Z",
-        "score": 57
+        "aliveCount": 42,
+        "totalCount": 53,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:40.874Z",
+        "lastProbed": "2026-06-24T01:50:40.874Z",
+        "score": 59
       }
     },
     {
@@ -82838,7 +82831,7 @@
       "id": "EntunoTV.do",
       "name": "Entuno TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -82862,12 +82855,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 49,
-        "totalCount": 60,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-23T01:09:03.274Z",
-        "lastProbed": "2026-06-23T17:12:55.588Z",
-        "score": 61
+        "aliveCount": 50,
+        "totalCount": 61,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:28.499Z",
+        "lastProbed": "2026-06-24T01:50:28.499Z",
+        "score": 63
       }
     },
     {
@@ -84062,7 +84055,7 @@
       "id": "LaVozdelTropico.do",
       "name": "La Voz del Tropico",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -84086,12 +84079,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 36,
-        "totalCount": 50,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-23T01:09:10.581Z",
-        "lastProbed": "2026-06-23T17:12:35.480Z",
-        "score": 51
+        "aliveCount": 37,
+        "totalCount": 51,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:39.187Z",
+        "lastProbed": "2026-06-24T01:51:39.187Z",
+        "score": 54
       }
     },
     {
@@ -85966,11 +85959,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 37,
-        "totalCount": 44,
+        "totalCount": 45,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:56:06.709Z",
-        "lastProbed": "2026-06-23T17:13:06.227Z",
-        "score": 58
+        "lastProbed": "2026-06-24T01:51:05.142Z",
+        "score": 57
       }
     },
     {
@@ -87307,7 +87300,7 @@
       "id": "Telenord10.do",
       "name": "Telenord 10",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -87331,12 +87324,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 39,
-        "totalCount": 46,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T03:56:07.642Z",
-        "lastProbed": "2026-06-23T17:12:49.892Z",
-        "score": 59
+        "aliveCount": 40,
+        "totalCount": 47,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:37.338Z",
+        "lastProbed": "2026-06-24T01:50:37.338Z",
+        "score": 61
       }
     },
     {
@@ -89148,7 +89141,7 @@
       "id": "ZonavisionTV.do",
       "name": "Zonavision TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -89172,12 +89165,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 44,
-        "totalCount": 61,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-23T01:09:43.788Z",
-        "lastProbed": "2026-06-23T17:12:40.549Z",
-        "score": 54
+        "aliveCount": 45,
+        "totalCount": 62,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:52.988Z",
+        "lastProbed": "2026-06-24T01:50:52.988Z",
+        "score": 56
       }
     },
     {
@@ -92788,7 +92781,7 @@
       "id": "ETV.ee",
       "name": "ETV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -92812,20 +92805,19 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 38,
-        "totalCount": 46,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-23T01:10:07.728Z",
-        "lastProbed": "2026-06-23T17:12:53.695Z",
-        "score": 58
-      },
-      "slow": true
+        "aliveCount": 39,
+        "totalCount": 47,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:44.096Z",
+        "lastProbed": "2026-06-24T01:50:44.096Z",
+        "score": 60
+      }
     },
     {
       "id": "ETV2.ee",
       "name": "ETV 2",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -92850,19 +92842,19 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 38,
-        "totalCount": 46,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-23T01:10:06.435Z",
-        "lastProbed": "2026-06-23T17:12:53.751Z",
-        "score": 58
+        "aliveCount": 39,
+        "totalCount": 47,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:45.053Z",
+        "lastProbed": "2026-06-24T01:50:45.053Z",
+        "score": 60
       }
     },
     {
       "id": "ETVPlus.ee",
       "name": "ETV+",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -92886,12 +92878,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 38,
-        "totalCount": 46,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-23T01:10:07.025Z",
-        "lastProbed": "2026-06-23T17:12:53.784Z",
-        "score": 58
+        "aliveCount": 39,
+        "totalCount": 47,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:45.059Z",
+        "lastProbed": "2026-06-24T01:50:45.059Z",
+        "score": 60
       }
     },
     {
@@ -95009,11 +95001,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 32,
+        "totalCount": 33,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T08:59:35.277Z",
-        "lastProbed": "2026-06-23T17:42:52.221Z",
-        "score": 50
+        "lastProbed": "2026-06-24T01:51:38.718Z",
+        "score": 49
       },
       "slow": true
     },
@@ -95046,11 +95038,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 31,
+        "totalCount": 32,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T08:59:29.627Z",
-        "lastProbed": "2026-06-23T17:42:51.918Z",
-        "score": 51
+        "lastProbed": "2026-06-24T01:51:37.202Z",
+        "score": 50
       }
     },
     {
@@ -98400,11 +98392,11 @@
       "nanoid": "awUBqlQNui5V6X",
       "uptime": {
         "aliveCount": 7,
-        "totalCount": 8,
+        "totalCount": 9,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:56:17.281Z",
-        "lastProbed": "2026-06-23T17:12:57.396Z",
-        "score": 88
+        "lastProbed": "2026-06-24T01:50:36.662Z",
+        "score": 78
       }
     },
     {
@@ -101874,10 +101866,10 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 44,
-        "totalCount": 61,
+        "totalCount": 62,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-23T01:10:49.577Z",
-        "lastProbed": "2026-06-23T17:13:02.877Z",
+        "lastProbed": "2026-06-24T01:51:05.267Z",
         "score": 54
       }
     },
@@ -103399,7 +103391,7 @@
       "id": "TelevisionAranda.es",
       "name": "Television Aranda",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -103421,12 +103413,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 27,
-        "totalCount": 32,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T03:56:18.252Z",
-        "lastProbed": "2026-06-23T17:12:54.897Z",
-        "score": 52
+        "aliveCount": 28,
+        "totalCount": 33,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:33.755Z",
+        "lastProbed": "2026-06-24T01:51:33.755Z",
+        "score": 55
       }
     },
     {
@@ -103846,11 +103838,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 45,
-        "totalCount": 67,
+        "totalCount": 68,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-23T01:11:02.742Z",
-        "lastProbed": "2026-06-23T17:12:51.969Z",
-        "score": 52
+        "lastProbed": "2026-06-24T01:51:30.540Z",
+        "score": 51
       }
     },
     {
@@ -103986,11 +103978,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 50,
-        "totalCount": 61,
+        "totalCount": 62,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-23T01:11:05.869Z",
-        "lastProbed": "2026-06-23T17:13:03.533Z",
-        "score": 62
+        "lastProbed": "2026-06-24T01:50:36.729Z",
+        "score": 61
       }
     },
     {
@@ -104588,11 +104580,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 30,
+        "totalCount": 31,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:56:20.142Z",
-        "lastProbed": "2026-06-23T17:13:22.750Z",
-        "score": 52
+        "lastProbed": "2026-06-24T01:51:33.099Z",
+        "score": 51
       }
     },
     {
@@ -105811,11 +105803,11 @@
       "nanoid": "CECa40HPlHGlAI",
       "uptime": {
         "aliveCount": 7,
-        "totalCount": 8,
+        "totalCount": 9,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:56:25.171Z",
-        "lastProbed": "2026-06-23T17:13:06.505Z",
-        "score": 88
+        "lastProbed": "2026-06-24T01:50:36.666Z",
+        "score": 78
       }
     },
     {
@@ -115774,10 +115766,10 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 42,
-        "totalCount": 52,
+        "totalCount": 53,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T03:55:13.522Z",
-        "lastProbed": "2026-06-23T17:42:52.555Z",
+        "lastProbed": "2026-06-24T01:50:38.464Z",
         "score": 58
       }
     },
@@ -115854,7 +115846,7 @@
       "id": "QTVGambia.gm",
       "name": "QTV Gambia",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -115878,12 +115870,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 37,
-        "totalCount": 46,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-23T03:39:38.909Z",
-        "lastProbed": "2026-06-23T17:13:18.509Z",
-        "score": 56
+        "aliveCount": 38,
+        "totalCount": 47,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:50.159Z",
+        "lastProbed": "2026-06-24T01:50:50.159Z",
+        "score": 58
       }
     },
     {
@@ -116616,7 +116608,7 @@
       "id": "AlphaTV.gr",
       "name": "Alpha TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -116640,12 +116632,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 37,
-        "totalCount": 46,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-23T03:39:51.772Z",
-        "lastProbed": "2026-06-23T17:13:12.580Z",
-        "score": 56
+        "aliveCount": 38,
+        "totalCount": 47,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:54.168Z",
+        "lastProbed": "2026-06-24T01:50:54.168Z",
+        "score": 58
       },
       "slow": true
     },
@@ -121658,7 +121650,7 @@
       "id": "RTHKTV31.hk",
       "name": "RTHK TV 31",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -121681,14 +121673,13 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 54,
-        "totalCount": 84,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-23T03:40:24.872Z",
-        "lastProbed": "2026-06-23T17:13:11.059Z",
-        "score": 52
-      },
-      "slow": true
+        "aliveCount": 55,
+        "totalCount": 85,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:37.337Z",
+        "lastProbed": "2026-06-24T01:51:37.337Z",
+        "score": 53
+      }
     },
     {
       "id": "RTHKTV32.hk",
@@ -124128,10 +124119,10 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 60,
-        "totalCount": 93,
+        "totalCount": 94,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-23T03:40:29.804Z",
-        "lastProbed": "2026-06-23T17:13:12.812Z",
+        "lastProbed": "2026-06-24T01:51:06.484Z",
         "score": 53
       }
     },
@@ -133011,10 +133002,10 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 50,
-        "totalCount": 72,
+        "totalCount": 73,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-23T03:41:32.838Z",
-        "lastProbed": "2026-06-23T17:13:29.953Z",
+        "lastProbed": "2026-06-24T01:51:04.757Z",
         "score": 54
       },
       "slow": true
@@ -133381,11 +133372,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 41,
-        "totalCount": 62,
+        "totalCount": 63,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T02:13:26.390Z",
-        "lastProbed": "2026-06-23T17:42:52.689Z",
-        "score": 50
+        "lastProbed": "2026-06-24T01:51:39.176Z",
+        "score": 49
       }
     },
     {
@@ -133808,7 +133799,7 @@
       "id": "RinjaniTV.id",
       "name": "Rinjani TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -133832,12 +133823,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 49,
-        "totalCount": 67,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-23T03:41:29.156Z",
-        "lastProbed": "2026-06-23T17:13:46.827Z",
-        "score": 56
+        "aliveCount": 50,
+        "totalCount": 68,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:46.820Z",
+        "lastProbed": "2026-06-24T01:50:46.820Z",
+        "score": 58
       }
     },
     {
@@ -134761,11 +134752,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 30,
+        "totalCount": 31,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:56:49.926Z",
-        "lastProbed": "2026-06-23T17:13:23.048Z",
-        "score": 52
+        "lastProbed": "2026-06-24T01:51:31.973Z",
+        "score": 51
       }
     },
     {
@@ -134944,7 +134935,7 @@
       "id": "TheIndonesiaChannel.id",
       "name": "The Indonesia Channel",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -134969,12 +134960,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 10,
-        "totalCount": 18,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-23T03:41:39.255Z",
-        "lastProbed": "2026-06-23T17:13:26.540Z",
-        "score": 56
+        "aliveCount": 11,
+        "totalCount": 19,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:49.381Z",
+        "lastProbed": "2026-06-24T01:50:49.381Z",
+        "score": 58
       }
     },
     {
@@ -137172,11 +137163,11 @@
       "nanoid": "bxBN5jknhS0mp6",
       "uptime": {
         "aliveCount": 19,
-        "totalCount": 20,
+        "totalCount": 21,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:02:04.423Z",
-        "lastProbed": "2026-06-23T17:13:43.456Z",
-        "score": 95
+        "lastProbed": "2026-06-24T01:50:36.630Z",
+        "score": 46
       },
       "slow": true
     },
@@ -137535,10 +137526,10 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 43,
-        "totalCount": 62,
+        "totalCount": 63,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T02:13:38.937Z",
-        "lastProbed": "2026-06-23T17:13:42.294Z",
+        "lastProbed": "2026-06-24T01:51:42.485Z",
         "score": 52
       },
       "slow": true
@@ -137644,11 +137635,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 44,
-        "totalCount": 55,
+        "totalCount": 56,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T21:11:44.926Z",
-        "lastProbed": "2026-06-23T17:13:43.990Z",
-        "score": 59
+        "lastProbed": "2026-06-24T01:50:48.088Z",
+        "score": 58
       },
       "slow": true
     },
@@ -137690,7 +137681,7 @@
       "id": "Now14.il",
       "name": "Now 14",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -137714,12 +137705,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:01:16.107Z",
-        "lastProbed": "2026-06-23T17:13:44.289Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:03.301Z",
+        "lastProbed": "2026-06-24T01:51:03.301Z",
+        "score": 56
       }
     },
     {
@@ -138126,7 +138117,7 @@
       "id": "6TVTelugu.in",
       "name": "6 TV Telugu",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -138150,12 +138141,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 30,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T16:30:54.100Z",
-        "lastProbed": "2026-06-23T17:13:45.029Z",
-        "score": 52
+        "aliveCount": 27,
+        "totalCount": 31,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:40.917Z",
+        "lastProbed": "2026-06-24T01:51:40.917Z",
+        "score": 55
       },
       "slow": true
     },
@@ -138354,7 +138345,7 @@
       "id": "9XM.in",
       "name": "9XM",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -138380,12 +138371,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:03:22.812Z",
-        "lastProbed": "2026-06-23T17:14:00.697Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:05.379Z",
+        "lastProbed": "2026-06-24T01:51:05.379Z",
+        "score": 56
       },
       "slow": true
     },
@@ -139593,11 +139584,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:01:46.212Z",
-        "lastProbed": "2026-06-23T17:14:20.536Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:30.823Z",
+        "score": 52
       },
       "slow": true
     },
@@ -139630,11 +139621,11 @@
       "nanoid": "uSctDmIPr59SNQ",
       "uptime": {
         "aliveCount": 19,
-        "totalCount": 20,
+        "totalCount": 21,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:02:03.158Z",
-        "lastProbed": "2026-06-23T17:13:56.627Z",
-        "score": 95
+        "lastProbed": "2026-06-24T01:50:36.633Z",
+        "score": 46
       },
       "slow": true
     },
@@ -139741,11 +139732,11 @@
       "nanoid": "rPGG0rcVL2rrED",
       "uptime": {
         "aliveCount": 29,
-        "totalCount": 35,
+        "totalCount": 36,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T16:30:57.705Z",
-        "lastProbed": "2026-06-23T17:13:56.993Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:07.088Z",
+        "score": 52
       },
       "slow": true
     },
@@ -139778,11 +139769,11 @@
       "nanoid": "83bELtOWkOgf7Z",
       "uptime": {
         "aliveCount": 41,
-        "totalCount": 52,
+        "totalCount": 53,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T16:31:28.684Z",
-        "lastProbed": "2026-06-23T17:13:57.033Z",
-        "score": 57
+        "lastProbed": "2026-06-24T01:50:50.907Z",
+        "score": 56
       },
       "slow": true
     },
@@ -139815,10 +139806,10 @@
       "nanoid": "FsfSE0G8OVXa73",
       "uptime": {
         "aliveCount": 50,
-        "totalCount": 67,
+        "totalCount": 68,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T21:11:59.143Z",
-        "lastProbed": "2026-06-23T17:13:57.051Z",
+        "lastProbed": "2026-06-24T01:50:51.032Z",
         "score": 57
       }
     },
@@ -139901,7 +139892,7 @@
       "id": "AnjanTV.in",
       "name": "Anjan TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -139926,12 +139917,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:01:33.855Z",
-        "lastProbed": "2026-06-23T17:14:09.479Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:06.112Z",
+        "lastProbed": "2026-06-24T01:51:06.112Z",
+        "score": 56
       },
       "slow": true
     },
@@ -140120,7 +140111,7 @@
       "id": "AradanaTV.in",
       "name": "Aradana TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -140144,12 +140135,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 30,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T16:30:56.080Z",
-        "lastProbed": "2026-06-23T17:13:58.831Z",
-        "score": 52
+        "aliveCount": 27,
+        "totalCount": 31,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:41.235Z",
+        "lastProbed": "2026-06-24T01:51:41.235Z",
+        "score": 55
       },
       "slow": true
     },
@@ -140750,7 +140741,7 @@
       "id": "B4UMusic.in",
       "name": "B4U Music",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -140774,12 +140765,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:01:38.417Z",
-        "lastProbed": "2026-06-23T17:14:02.329Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:05.795Z",
+        "lastProbed": "2026-06-24T01:51:05.795Z",
+        "score": 56
       },
       "slow": true
     },
@@ -140899,7 +140890,7 @@
       "id": "BhakthiTV.in",
       "name": "Bhakthi TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -140923,12 +140914,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:01:40.475Z",
-        "lastProbed": "2026-06-23T17:14:03.654Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:05.604Z",
+        "lastProbed": "2026-06-24T01:51:05.604Z",
+        "score": 56
       },
       "slow": true
     },
@@ -141307,7 +141298,7 @@
       "id": "BRKNews.in",
       "name": "BRK News",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -141331,12 +141322,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:01:40.268Z",
-        "lastProbed": "2026-06-23T17:14:07.481Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:06.583Z",
+        "lastProbed": "2026-06-24T01:51:06.583Z",
+        "score": 56
       },
       "slow": true
     },
@@ -141836,18 +141827,18 @@
       "nanoid": "K25KgteyFNxzKh",
       "uptime": {
         "aliveCount": 19,
-        "totalCount": 20,
+        "totalCount": 21,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:01:42.708Z",
-        "lastProbed": "2026-06-23T17:13:57.769Z",
-        "score": 95
+        "lastProbed": "2026-06-24T01:50:25.154Z",
+        "score": 46
       }
     },
     {
       "id": "CNBCAwaaz.in",
       "name": "CNBC Awaaz",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -141871,12 +141862,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 30,
-        "totalCount": 34,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:01:42.970Z",
-        "lastProbed": "2026-06-23T17:14:09.291Z",
-        "score": 56
+        "aliveCount": 31,
+        "totalCount": 35,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:54.119Z",
+        "lastProbed": "2026-06-24T01:50:54.119Z",
+        "score": 58
       },
       "slow": true
     },
@@ -141909,11 +141900,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:01:45.608Z",
-        "lastProbed": "2026-06-23T17:14:09.773Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:08.721Z",
+        "score": 52
       },
       "slow": true
     },
@@ -141946,11 +141937,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:01:48.461Z",
-        "lastProbed": "2026-06-23T17:14:10.736Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:08.789Z",
+        "score": 52
       },
       "slow": true
     },
@@ -141983,11 +141974,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:01:50.458Z",
-        "lastProbed": "2026-06-23T17:14:10.835Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:08.957Z",
+        "score": 52
       },
       "slow": true
     },
@@ -142640,11 +142631,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 29,
-        "totalCount": 33,
+        "totalCount": 34,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:01:48.507Z",
-        "lastProbed": "2026-06-23T17:14:23.163Z",
-        "score": 55
+        "lastProbed": "2026-06-24T01:51:12.726Z",
+        "score": 54
       },
       "slow": true
     },
@@ -142762,7 +142753,7 @@
       "id": "CVROMSpiritual.in",
       "name": "CVR OM Spiritual",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -142786,12 +142777,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 30,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T16:30:58.525Z",
-        "lastProbed": "2026-06-23T17:14:11.853Z",
-        "score": 52
+        "aliveCount": 27,
+        "totalCount": 31,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:41.281Z",
+        "lastProbed": "2026-06-24T01:51:41.281Z",
+        "score": 55
       },
       "slow": true
     },
@@ -146551,11 +146542,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 48,
-        "totalCount": 60,
+        "totalCount": 61,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:58:04.787Z",
-        "lastProbed": "2026-06-23T17:14:49.630Z",
-        "score": 60
+        "lastProbed": "2026-06-24T01:50:58.913Z",
+        "score": 59
       },
       "slow": true
     },
@@ -149078,7 +149069,7 @@
       "id": "KalikaTV.in",
       "name": "Kalika TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -149102,12 +149093,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 40,
-        "totalCount": 48,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T03:57:09.484Z",
-        "lastProbed": "2026-06-23T17:14:36.900Z",
-        "score": 59
+        "aliveCount": 41,
+        "totalCount": 49,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:38.325Z",
+        "lastProbed": "2026-06-24T01:50:38.325Z",
+        "score": 61
       }
     },
     {
@@ -150910,11 +150901,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 30,
+        "totalCount": 31,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:02:19.145Z",
-        "lastProbed": "2026-06-23T17:14:56.083Z",
-        "score": 52
+        "lastProbed": "2026-06-24T01:51:42.827Z",
+        "score": 51
       }
     },
     {
@@ -151909,7 +151900,7 @@
       "id": "NDTVMarathi.in",
       "name": "NDTV Marathi",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -151933,12 +151924,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 49,
-        "totalCount": 60,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T03:57:26.047Z",
-        "lastProbed": "2026-06-23T17:15:01.858Z",
-        "score": 61
+        "aliveCount": 50,
+        "totalCount": 61,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:36.101Z",
+        "lastProbed": "2026-06-24T01:50:36.101Z",
+        "score": 63
       },
       "slow": true
     },
@@ -151983,7 +151974,7 @@
       "id": "NDTVRajasthan.in",
       "name": "NDTV Rajasthan",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -152007,12 +151998,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 42,
-        "totalCount": 50,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T16:31:06.883Z",
-        "lastProbed": "2026-06-23T17:15:02.583Z",
-        "score": 60
+        "aliveCount": 43,
+        "totalCount": 51,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:40.292Z",
+        "lastProbed": "2026-06-24T01:50:40.292Z",
+        "score": 62
       },
       "slow": true
     },
@@ -152614,7 +152605,7 @@
       "id": "News18AssamNorthEast.in",
       "name": "News18 Assam North-East",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -152638,12 +152629,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:02:42.932Z",
-        "lastProbed": "2026-06-23T17:15:06.211Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:09.017Z",
+        "lastProbed": "2026-06-24T01:51:09.017Z",
+        "score": 56
       },
       "slow": true
     },
@@ -152676,11 +152667,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 30,
+        "totalCount": 31,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:02:29.039Z",
-        "lastProbed": "2026-06-23T17:15:06.333Z",
-        "score": 52
+        "lastProbed": "2026-06-24T01:51:42.927Z",
+        "score": 51
       },
       "slow": true
     },
@@ -152713,11 +152704,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 30,
+        "totalCount": 31,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:02:29.079Z",
-        "lastProbed": "2026-06-23T17:15:06.772Z",
-        "score": 52
+        "lastProbed": "2026-06-24T01:51:43.005Z",
+        "score": 51
       },
       "slow": true
     },
@@ -152750,11 +152741,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:02:43.564Z",
-        "lastProbed": "2026-06-23T17:15:07.227Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:09.650Z",
+        "score": 52
       },
       "slow": true
     },
@@ -152787,11 +152778,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 30,
+        "totalCount": 31,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:02:44.055Z",
-        "lastProbed": "2026-06-23T17:15:07.698Z",
-        "score": 52
+        "lastProbed": "2026-06-24T01:51:43.059Z",
+        "score": 51
       },
       "slow": true
     },
@@ -152824,11 +152815,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 30,
+        "totalCount": 31,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:02:25.621Z",
-        "lastProbed": "2026-06-23T17:15:07.791Z",
-        "score": 52
+        "lastProbed": "2026-06-24T01:51:43.629Z",
+        "score": 51
       },
       "slow": true
     },
@@ -152861,11 +152852,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:02:29.952Z",
-        "lastProbed": "2026-06-23T17:15:07.981Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:10.527Z",
+        "score": 52
       },
       "slow": true
     },
@@ -152936,11 +152927,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:02:29.587Z",
-        "lastProbed": "2026-06-23T17:15:08.718Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:10.726Z",
+        "score": 52
       },
       "slow": true
     },
@@ -152973,11 +152964,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:02:31.713Z",
-        "lastProbed": "2026-06-23T17:15:08.753Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:10.916Z",
+        "score": 52
       },
       "slow": true
     },
@@ -153010,11 +153001,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:02:29.798Z",
-        "lastProbed": "2026-06-23T17:15:10.659Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:11.602Z",
+        "score": 52
       },
       "slow": true
     },
@@ -153022,7 +153013,7 @@
       "id": "News18PunjabHaryanaHimachal.in",
       "name": "News18 Punjab/Haryana/Himachal",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -153046,12 +153037,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 30,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:02:30.497Z",
-        "lastProbed": "2026-06-23T17:15:10.773Z",
-        "score": 52
+        "aliveCount": 27,
+        "totalCount": 31,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:42.491Z",
+        "lastProbed": "2026-06-24T01:51:42.491Z",
+        "score": 55
       },
       "slow": true
     },
@@ -153084,11 +153075,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:02:33.166Z",
-        "lastProbed": "2026-06-23T17:15:10.947Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:11.863Z",
+        "score": 52
       },
       "slow": true
     },
@@ -153121,11 +153112,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:02:27.698Z",
-        "lastProbed": "2026-06-23T17:15:11.449Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:11.932Z",
+        "score": 52
       },
       "slow": true
     },
@@ -153158,11 +153149,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 48,
-        "totalCount": 59,
+        "totalCount": 60,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:57:25.478Z",
-        "lastProbed": "2026-06-23T17:15:13.507Z",
-        "score": 61
+        "lastProbed": "2026-06-24T01:50:36.739Z",
+        "score": 60
       },
       "slow": true
     },
@@ -153170,7 +153161,7 @@
       "id": "News18UttarPradeshUttarakhand.in",
       "name": "News18 Uttar Pradesh Uttarakhand",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -153194,12 +153185,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:02:33.682Z",
-        "lastProbed": "2026-06-23T17:15:13.645Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:13.036Z",
+        "lastProbed": "2026-06-24T01:51:13.036Z",
+        "score": 56
       },
       "slow": true
     },
@@ -153755,7 +153746,7 @@
       "id": "OnkarOnlyTruthTV.in",
       "name": "Onkar Only Truth TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -153779,12 +153770,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 30,
-        "totalCount": 36,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:02:32.404Z",
-        "lastProbed": "2026-06-23T17:15:16.699Z",
-        "score": 54
+        "aliveCount": 31,
+        "totalCount": 37,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:59.928Z",
+        "lastProbed": "2026-06-24T01:50:59.928Z",
+        "score": 56
       }
     },
     {
@@ -154996,7 +154987,7 @@
       "id": "PunjabiHits.in",
       "name": "Punjabi Hits",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -155008,12 +154999,12 @@
         "music"
       ],
       "streamUrls": [
-        "https://stream.ottlive.co.in/punjabihits/index.m3u8",
-        "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/punjabi-hits/index.m3u8?ads.vf=QAmA4r77J0G"
+        "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/punjabi-hits/index.m3u8?ads.vf=QAmA4r77J0G",
+        "https://stream.ottlive.co.in/punjabihits/index.m3u8"
       ],
       "referrer": null,
       "userAgent": null,
-      "needsProxy": false,
+      "needsProxy": true,
       "ytId": null,
       "website": null,
       "replaced_by": null,
@@ -155021,12 +155012,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 30,
-        "totalCount": 34,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:02:44.098Z",
-        "lastProbed": "2026-06-23T17:15:35.153Z",
-        "score": 56
+        "aliveCount": 31,
+        "totalCount": 35,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:08.834Z",
+        "lastProbed": "2026-06-24T01:51:08.834Z",
+        "score": 58
       },
       "slow": true
     },
@@ -155456,7 +155447,7 @@
       "id": "RajMusixTelugu.in",
       "name": "Raj Musix Telugu",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -155480,12 +155471,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 30,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T16:31:10.917Z",
-        "lastProbed": "2026-06-23T17:15:25.797Z",
-        "score": 52
+        "aliveCount": 27,
+        "totalCount": 31,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:42.391Z",
+        "lastProbed": "2026-06-24T01:51:42.391Z",
+        "score": 55
       },
       "slow": true
     },
@@ -156978,10 +156969,10 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 44,
-        "totalCount": 54,
+        "totalCount": 55,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T21:12:14.251Z",
-        "lastProbed": "2026-06-23T17:15:29.789Z",
+        "lastProbed": "2026-06-24T01:50:47.856Z",
         "score": 59
       }
     },
@@ -157501,7 +157492,7 @@
       "id": "SatsangTV.in",
       "name": "Satsang TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -157525,12 +157516,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:02:50.967Z",
-        "lastProbed": "2026-06-23T17:15:34.668Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:10.445Z",
+        "lastProbed": "2026-06-24T01:51:10.445Z",
+        "score": 56
       },
       "slow": true
     },
@@ -159470,7 +159461,7 @@
       "id": "StudioOnePlus.in",
       "name": "Studio One +",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -159494,12 +159485,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:02:57.614Z",
-        "lastProbed": "2026-06-23T17:15:45.282Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:11.869Z",
+        "lastProbed": "2026-06-24T01:51:11.869Z",
+        "score": 56
       },
       "slow": true
     },
@@ -160975,11 +160966,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:02:56.304Z",
-        "lastProbed": "2026-06-23T17:16:01.000Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:25.536Z",
+        "score": 52
       },
       "slow": true
     },
@@ -161200,7 +161191,7 @@
       "id": "ThalaaTV.in",
       "name": "Thalaa TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -161224,12 +161215,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 53,
-        "totalCount": 81,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T03:57:29.414Z",
-        "lastProbed": "2026-06-23T17:15:49.339Z",
-        "score": 52
+        "aliveCount": 54,
+        "totalCount": 82,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:38.177Z",
+        "lastProbed": "2026-06-24T01:51:38.177Z",
+        "score": 54
       }
     },
     {
@@ -163858,7 +163849,7 @@
       "id": "ZBCinema.in",
       "name": "ZB Cinema",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -163883,19 +163874,19 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 39,
-        "totalCount": 56,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T16:21:08.625Z",
-        "lastProbed": "2026-06-23T17:15:53.793Z",
-        "score": 51
+        "aliveCount": 40,
+        "totalCount": 57,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:43.132Z",
+        "lastProbed": "2026-06-24T01:51:43.132Z",
+        "score": 53
       }
     },
     {
       "id": "ZBMusic.in",
       "name": "ZB Music",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -163919,12 +163910,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 42,
-        "totalCount": 62,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T02:13:30.961Z",
-        "lastProbed": "2026-06-23T17:15:53.788Z",
-        "score": 51
+        "aliveCount": 43,
+        "totalCount": 63,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:43.131Z",
+        "lastProbed": "2026-06-24T01:51:43.131Z",
+        "score": 53
       }
     },
     {
@@ -164138,11 +164129,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 30,
-        "totalCount": 35,
+        "totalCount": 36,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T13:28:47.563Z",
-        "lastProbed": "2026-06-23T17:16:02.062Z",
-        "score": 55
+        "lastProbed": "2026-06-24T01:51:04.298Z",
+        "score": 54
       },
       "slow": true
     },
@@ -164556,7 +164547,7 @@
       "id": "ZeeDelhiNCRHaryana.in",
       "name": "Zee Delhi NCR Haryana",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -164580,12 +164571,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 29,
-        "totalCount": 34,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T03:57:38.115Z",
-        "lastProbed": "2026-06-23T17:16:02.343Z",
-        "score": 54
+        "aliveCount": 30,
+        "totalCount": 35,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:04.795Z",
+        "lastProbed": "2026-06-24T01:51:04.795Z",
+        "score": 56
       },
       "slow": true
     },
@@ -164726,11 +164717,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:03:08.257Z",
-        "lastProbed": "2026-06-23T17:16:03.152Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:16.547Z",
+        "score": 52
       },
       "slow": true
     },
@@ -164849,7 +164840,7 @@
       "id": "ZeePunjabHaryanaHimachal.in",
       "name": "Zee Punjab Haryana Himachal",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -164873,12 +164864,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:03:07.413Z",
-        "lastProbed": "2026-06-23T17:16:03.843Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:14.588Z",
+        "lastProbed": "2026-06-24T01:51:14.588Z",
+        "score": 56
       },
       "slow": true
     },
@@ -166787,11 +166778,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:03:13.205Z",
-        "lastProbed": "2026-06-23T17:16:11.745Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:16.302Z",
+        "score": 52
       },
       "slow": true
     },
@@ -166824,11 +166815,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 27,
-        "totalCount": 31,
+        "totalCount": 32,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:03:13.199Z",
-        "lastProbed": "2026-06-23T17:16:11.824Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:16.760Z",
+        "score": 52
       },
       "slow": true
     },
@@ -166861,11 +166852,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:03:13.241Z",
-        "lastProbed": "2026-06-23T17:16:12.018Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:16.800Z",
+        "score": 52
       },
       "slow": true
     },
@@ -168987,7 +168978,7 @@
       "id": "iFilmArabic.ir",
       "name": "iFilm Arabic",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -169011,12 +169002,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:03:14.146Z",
-        "lastProbed": "2026-06-23T17:16:18.809Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:12.818Z",
+        "lastProbed": "2026-06-24T01:51:12.818Z",
+        "score": 56
       }
     },
     {
@@ -173543,11 +173534,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:03:14.260Z",
-        "lastProbed": "2026-06-23T17:16:43.344Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:06.477Z",
+        "score": 52
       }
     },
     {
@@ -173588,7 +173579,7 @@
       "id": "DITV80.it",
       "name": "DI.TV 80",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -173612,12 +173603,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 53,
-        "totalCount": 80,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T03:57:59.261Z",
-        "lastProbed": "2026-06-23T17:16:55.141Z",
-        "score": 53
+        "aliveCount": 54,
+        "totalCount": 81,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:09.958Z",
+        "lastProbed": "2026-06-24T01:51:09.958Z",
+        "score": 54
       }
     },
     {
@@ -174274,7 +174265,7 @@
       "id": "GRPVERATV.it",
       "name": "GRP VERATV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -174298,12 +174289,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:03:18.317Z",
-        "lastProbed": "2026-06-23T17:16:48.792Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:10.158Z",
+        "lastProbed": "2026-06-24T01:51:10.158Z",
+        "score": 56
       }
     },
     {
@@ -177434,7 +177425,7 @@
       "id": "rakutentvasiancinema.it",
       "name": "Rakuten TV Asian Cinema Italy",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -177448,7 +177439,7 @@
       ],
       "referrer": null,
       "userAgent": null,
-      "needsProxy": false,
+      "needsProxy": true,
       "ytId": null,
       "website": null,
       "replaced_by": null,
@@ -177456,12 +177447,12 @@
       "source": "famelack",
       "nanoid": "LEHhe8FljTY3bK",
       "uptime": {
-        "aliveCount": 6,
-        "totalCount": 8,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T03:58:04.465Z",
-        "lastProbed": "2026-06-23T17:17:12.428Z",
-        "score": 75
+        "aliveCount": 7,
+        "totalCount": 9,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:34.714Z",
+        "lastProbed": "2026-06-24T01:50:34.714Z",
+        "score": 78
       },
       "slow": true
     },
@@ -177469,7 +177460,7 @@
       "id": "rakutentvcrimeseries.it",
       "name": "Rakuten TV Crime Series Italy",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -177483,7 +177474,7 @@
       ],
       "referrer": null,
       "userAgent": null,
-      "needsProxy": false,
+      "needsProxy": true,
       "ytId": null,
       "website": null,
       "replaced_by": null,
@@ -177491,13 +177482,14 @@
       "source": "famelack",
       "nanoid": "NnyzHhJkjsfZ3n",
       "uptime": {
-        "aliveCount": 19,
-        "totalCount": 20,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:03:28.478Z",
-        "lastProbed": "2026-06-23T17:17:12.473Z",
-        "score": 95
-      }
+        "aliveCount": 20,
+        "totalCount": 21,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:34.513Z",
+        "lastProbed": "2026-06-24T01:50:34.513Z",
+        "score": 51
+      },
+      "slow": true
     },
     {
       "id": "rakutentvromancemovi.it",
@@ -180087,7 +180079,7 @@
       "id": "Telepavia.it",
       "name": "Telepavia",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -180111,12 +180103,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 50,
-        "totalCount": 63,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T21:13:04.061Z",
-        "lastProbed": "2026-06-23T17:17:16.903Z",
-        "score": 60
+        "aliveCount": 51,
+        "totalCount": 64,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:37.039Z",
+        "lastProbed": "2026-06-24T01:50:37.039Z",
+        "score": 62
       }
     },
     {
@@ -181280,7 +181272,7 @@
       "id": "Value24TV.it",
       "name": "Value 24 TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -181304,12 +181296,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 9,
-        "totalCount": 14,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T02:13:29.263Z",
-        "lastProbed": "2026-06-23T17:17:44.610Z",
-        "score": 64
+        "aliveCount": 10,
+        "totalCount": 15,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:29.779Z",
+        "lastProbed": "2026-06-24T01:50:29.779Z",
+        "score": 67
       }
     },
     {
@@ -181351,7 +181343,7 @@
       "id": "vevo90s00sitaly.it",
       "name": "Vevo '90s & '00s Italy",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -181373,20 +181365,19 @@
       "source": "famelack",
       "nanoid": "N3tn7hDt2eE6Rz",
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:03:42.191Z",
-        "lastProbed": "2026-06-23T17:17:28.912Z",
-        "score": 53
-      },
-      "slow": true
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:13.625Z",
+        "lastProbed": "2026-06-24T01:51:13.625Z",
+        "score": 56
+      }
     },
     {
       "id": "vevopopitaly.it",
       "name": "Vevo Pop Italy",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -181408,14 +181399,13 @@
       "source": "famelack",
       "nanoid": "cW8klSRZaF9tAq",
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:03:41.993Z",
-        "lastProbed": "2026-06-23T17:17:29.065Z",
-        "score": 53
-      },
-      "slow": true
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:14.103Z",
+        "lastProbed": "2026-06-24T01:51:14.103Z",
+        "score": 56
+      }
     },
     {
       "id": "VideoRola.it",
@@ -187909,10 +187899,10 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 51,
-        "totalCount": 74,
+        "totalCount": 75,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:58:22.347Z",
-        "lastProbed": "2026-06-23T17:17:32.555Z",
+        "lastProbed": "2026-06-24T01:50:56.078Z",
         "score": 54
       },
       "slow": true
@@ -188146,7 +188136,7 @@
       "id": "ArirangUN.kr",
       "name": "Arirang UN",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -188170,12 +188160,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:03:44.271Z",
-        "lastProbed": "2026-06-23T17:17:41.700Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:10.759Z",
+        "lastProbed": "2026-06-24T01:51:10.759Z",
+        "score": 56
       }
     },
     {
@@ -188652,7 +188642,7 @@
       "id": "FGTV.kr",
       "name": "FGTV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -188676,12 +188666,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:03:57.111Z",
-        "lastProbed": "2026-06-23T17:17:43.985Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:19.164Z",
+        "lastProbed": "2026-06-24T01:51:19.164Z",
+        "score": 56
       },
       "slow": true
     },
@@ -188942,7 +188932,7 @@
       "id": "HLAJDTV.kr",
       "name": "HLAJ-DTV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -188966,12 +188956,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 47,
-        "totalCount": 68,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T21:13:23.024Z",
-        "lastProbed": "2026-06-23T17:17:36.733Z",
-        "score": 53
+        "aliveCount": 48,
+        "totalCount": 69,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:10.823Z",
+        "lastProbed": "2026-06-24T01:51:10.823Z",
+        "score": 55
       }
     },
     {
@@ -189590,7 +189580,7 @@
       "id": "HLKJDTV.kr",
       "name": "HLKJ-DTV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -189614,12 +189604,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 46,
-        "totalCount": 57,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T03:58:13.940Z",
-        "lastProbed": "2026-06-23T17:17:43.790Z",
-        "score": 60
+        "aliveCount": 47,
+        "totalCount": 58,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:38.660Z",
+        "lastProbed": "2026-06-24T01:50:38.660Z",
+        "score": 62
       }
     },
     {
@@ -189770,7 +189760,7 @@
       "id": "HyundaiHomeShoppingPlusShop.kr",
       "name": "Hyundai Home Shopping + Shop",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -189794,12 +189784,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:04:20.206Z",
-        "lastProbed": "2026-06-23T17:17:49.111Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:17.673Z",
+        "lastProbed": "2026-06-24T01:51:17.673Z",
+        "score": 56
       },
       "slow": true
     },
@@ -189942,11 +189932,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:03:53.455Z",
-        "lastProbed": "2026-06-23T17:17:38.406Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:08.216Z",
+        "score": 52
       }
     },
     {
@@ -190202,7 +190192,7 @@
       "id": "NationalAssemblyTV.kr",
       "name": "National Assembly TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -190226,12 +190216,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:04:19.589Z",
-        "lastProbed": "2026-06-23T17:17:49.451Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:19.502Z",
+        "lastProbed": "2026-06-24T01:51:19.502Z",
+        "score": 56
       },
       "slow": true
     },
@@ -191859,11 +191849,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 44,
-        "totalCount": 53,
+        "totalCount": 54,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:03:59.635Z",
-        "lastProbed": "2026-06-23T17:17:45.538Z",
-        "score": 60
+        "lastProbed": "2026-06-24T01:50:37.140Z",
+        "score": 59
       }
     },
     {
@@ -194756,11 +194746,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 30,
+        "totalCount": 31,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:04:16.192Z",
-        "lastProbed": "2026-06-23T17:18:05.560Z",
-        "score": 52
+        "lastProbed": "2026-06-24T01:51:44.232Z",
+        "score": 51
       },
       "slow": true
     },
@@ -195122,10 +195112,10 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 42,
-        "totalCount": 56,
+        "totalCount": 57,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T21:13:42.533Z",
-        "lastProbed": "2026-06-23T17:18:06.282Z",
+        "lastProbed": "2026-06-24T01:51:01.283Z",
         "score": 55
       },
       "slow": true
@@ -198882,11 +198872,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:04:11.929Z",
-        "lastProbed": "2026-06-23T17:18:37.747Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:37.462Z",
+        "score": 52
       }
     },
     {
@@ -199096,11 +199086,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 31,
+        "totalCount": 32,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T16:31:11.953Z",
-        "lastProbed": "2026-06-23T17:18:10.275Z",
-        "score": 51
+        "lastProbed": "2026-06-24T01:51:38.399Z",
+        "score": 50
       }
     },
     {
@@ -199422,11 +199412,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:04:13.260Z",
-        "lastProbed": "2026-06-23T17:18:10.932Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:09.690Z",
+        "score": 52
       }
     },
     {
@@ -214388,7 +214378,7 @@
       "id": "OmropFryslan.nl",
       "name": "Omrop Fryslan",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -214412,14 +214402,13 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:05:01.395Z",
-        "lastProbed": "2026-06-23T17:19:09.182Z",
-        "score": 53
-      },
-      "slow": true
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:13.766Z",
+        "lastProbed": "2026-06-24T01:51:13.766Z",
+        "score": 56
+      }
     },
     {
       "id": "OOGTV.nl",
@@ -215227,11 +215216,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 31,
+        "totalCount": 32,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:59:04.887Z",
-        "lastProbed": "2026-06-23T17:19:11.236Z",
-        "score": 51
+        "lastProbed": "2026-06-24T01:51:49.341Z",
+        "score": 50
       },
       "slow": true
     },
@@ -215262,11 +215251,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 36,
-        "totalCount": 42,
+        "totalCount": 43,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:59:05.384Z",
-        "lastProbed": "2026-06-23T17:19:11.540Z",
-        "score": 58
+        "lastProbed": "2026-06-24T01:50:49.144Z",
+        "score": 57
       },
       "slow": true
     },
@@ -215967,7 +215956,7 @@
       "id": "RTVVeluwezoomTV.nl",
       "name": "RTV Veluwezoom TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -215989,13 +215978,14 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 31,
-        "totalCount": 36,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T03:59:02.980Z",
-        "lastProbed": "2026-06-23T17:19:14.095Z",
-        "score": 55
-      }
+        "aliveCount": 32,
+        "totalCount": 37,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:01.224Z",
+        "lastProbed": "2026-06-24T01:51:01.224Z",
+        "score": 58
+      },
+      "slow": true
     },
     {
       "id": "RTVWesterwolde.nl",
@@ -216340,11 +216330,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 30,
+        "totalCount": 31,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:04:52.562Z",
-        "lastProbed": "2026-06-23T17:19:15.157Z",
-        "score": 52
+        "lastProbed": "2026-06-24T01:51:44.587Z",
+        "score": 51
       },
       "slow": true
     },
@@ -216811,7 +216801,7 @@
       "id": "TweedeKamerAlettaJacobszaal.nl",
       "name": "Tweede Kamer: Aletta Jacobszaal",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -216836,12 +216826,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:04:46.484Z",
-        "lastProbed": "2026-06-23T17:19:53.216Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:16.863Z",
+        "lastProbed": "2026-06-24T01:51:16.863Z",
+        "score": 56
       }
     },
     {
@@ -216884,7 +216874,7 @@
       "id": "TweedeKamerGroenvanPrinstererzaal.nl",
       "name": "Tweede Kamer: Groen van Prinstererzaal",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -216908,12 +216898,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:04:46.583Z",
-        "lastProbed": "2026-06-23T17:19:17.451Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:14.395Z",
+        "lastProbed": "2026-06-24T01:51:14.395Z",
+        "score": 56
       }
     },
     {
@@ -216990,7 +216980,7 @@
       "id": "TweedeKamerPlenairezaal.nl",
       "name": "Tweede Kamer: Plenaire zaal",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -217015,12 +217005,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:04:47.255Z",
-        "lastProbed": "2026-06-23T17:19:53.225Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:14.304Z",
+        "lastProbed": "2026-06-24T01:51:14.304Z",
+        "score": 56
       }
     },
     {
@@ -217063,7 +217053,7 @@
       "id": "TweedeKamerThorbeckezaal.nl",
       "name": "Tweede Kamer: Thorbeckezaal",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -217088,12 +217078,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:04:47.968Z",
-        "lastProbed": "2026-06-23T17:19:53.221Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:14.887Z",
+        "lastProbed": "2026-06-24T01:51:14.887Z",
+        "score": 56
       }
     },
     {
@@ -217137,7 +217127,7 @@
       "id": "TweedeKamerTroelstrazaal.nl",
       "name": "Tweede Kamer: Troelstrazaal",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -217161,12 +217151,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:04:47.584Z",
-        "lastProbed": "2026-06-23T17:19:18.436Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:15.820Z",
+        "lastProbed": "2026-06-24T01:51:15.820Z",
+        "score": 56
       }
     },
     {
@@ -218285,11 +218275,11 @@
       "nanoid": "ve52QQObZcRJaq",
       "uptime": {
         "aliveCount": 19,
-        "totalCount": 20,
+        "totalCount": 21,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:05:14.271Z",
-        "lastProbed": "2026-06-23T17:19:21.680Z",
-        "score": 95
+        "lastProbed": "2026-06-24T01:50:36.637Z",
+        "score": 46
       },
       "slow": true
     },
@@ -225323,7 +225313,7 @@
       "id": "VNP.pe",
       "name": "VNP",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -225347,12 +225337,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:04:56.037Z",
-        "lastProbed": "2026-06-23T17:19:20.748Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:11.719Z",
+        "lastProbed": "2026-06-24T01:51:11.719Z",
+        "score": 56
       }
     },
     {
@@ -227442,11 +227432,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 48,
-        "totalCount": 64,
+        "totalCount": 65,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T21:14:39.486Z",
-        "lastProbed": "2026-06-23T17:19:33.493Z",
-        "score": 57
+        "lastProbed": "2026-06-24T01:50:51.038Z",
+        "score": 56
       },
       "slow": true
     },
@@ -227782,7 +227772,7 @@
       "id": "GodStandsTV.pk",
       "name": "God Stands TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -227808,12 +227798,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 31,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T03:59:07.833Z",
-        "lastProbed": "2026-06-23T17:20:46.561Z",
-        "score": 51
+        "aliveCount": 27,
+        "totalCount": 32,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:40.394Z",
+        "lastProbed": "2026-06-24T01:51:40.394Z",
+        "score": 54
       }
     },
     {
@@ -228170,11 +228160,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 30,
+        "totalCount": 31,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T12:12:28.281Z",
-        "lastProbed": "2026-06-23T17:19:23.411Z",
-        "score": 52
+        "lastProbed": "2026-06-24T01:51:33.383Z",
+        "score": 51
       }
     },
     {
@@ -229741,11 +229731,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:05:01.665Z",
-        "lastProbed": "2026-06-23T17:19:30.102Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:13.469Z",
+        "score": 52
       }
     },
     {
@@ -229996,7 +229986,7 @@
       "id": "ZindagiTV.pk",
       "name": "Zindagi TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -230018,12 +230008,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 38,
-        "totalCount": 47,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T16:31:15.913Z",
-        "lastProbed": "2026-06-23T17:19:39.745Z",
-        "score": 57
+        "aliveCount": 39,
+        "totalCount": 48,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:43.095Z",
+        "lastProbed": "2026-06-24T01:50:43.095Z",
+        "score": 59
       }
     },
     {
@@ -230414,11 +230404,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 6,
-        "totalCount": 8,
+        "totalCount": 9,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:05:06.414Z",
-        "lastProbed": "2026-06-23T17:19:56.695Z",
-        "score": 75
+        "lastProbed": "2026-06-24T01:50:52.796Z",
+        "score": 67
       }
     },
     {
@@ -230450,11 +230440,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 6,
-        "totalCount": 7,
+        "totalCount": 8,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:59:11.790Z",
-        "lastProbed": "2026-06-23T17:19:56.752Z",
-        "score": 86
+        "lastProbed": "2026-06-24T01:50:52.750Z",
+        "score": 75
       }
     },
     {
@@ -230487,11 +230477,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 6,
-        "totalCount": 7,
+        "totalCount": 8,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:59:11.906Z",
-        "lastProbed": "2026-06-23T17:19:56.982Z",
-        "score": 86
+        "lastProbed": "2026-06-24T01:50:52.760Z",
+        "score": 75
       }
     },
     {
@@ -230987,11 +230977,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 6,
-        "totalCount": 7,
+        "totalCount": 8,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:59:14.024Z",
-        "lastProbed": "2026-06-23T17:20:00.860Z",
-        "score": 86
+        "lastProbed": "2026-06-24T01:50:52.770Z",
+        "score": 75
       }
     },
     {
@@ -231096,11 +231086,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 6,
-        "totalCount": 7,
+        "totalCount": 8,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:59:13.771Z",
-        "lastProbed": "2026-06-23T17:20:00.991Z",
-        "score": 86
+        "lastProbed": "2026-06-24T01:50:52.782Z",
+        "score": 75
       }
     },
     {
@@ -231168,11 +231158,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 6,
-        "totalCount": 7,
+        "totalCount": 8,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:59:15.312Z",
-        "lastProbed": "2026-06-23T17:20:01.447Z",
-        "score": 86
+        "lastProbed": "2026-06-24T01:50:52.777Z",
+        "score": 75
       }
     },
     {
@@ -231472,7 +231462,7 @@
       "id": "EWTNPoland.pl",
       "name": "EWTN Poland",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -231496,13 +231486,14 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:05:07.196Z",
-        "lastProbed": "2026-06-23T17:19:47.539Z",
-        "score": 53
-      }
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:19.687Z",
+        "lastProbed": "2026-06-24T01:51:19.687Z",
+        "score": 56
+      },
+      "slow": true
     },
     {
       "id": "ExtremeSportsChannelPolska.pl",
@@ -231569,11 +231560,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 6,
-        "totalCount": 7,
+        "totalCount": 8,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:59:15.766Z",
-        "lastProbed": "2026-06-23T17:20:03.643Z",
-        "score": 86
+        "lastProbed": "2026-06-24T01:50:52.787Z",
+        "score": 75
       }
     },
     {
@@ -234799,7 +234790,7 @@
       "id": "TVPuls.pl",
       "name": "TV Puls",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -234822,12 +234813,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 7,
-        "totalCount": 9,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:05:08.746Z",
-        "lastProbed": "2026-06-23T17:20:18.140Z",
-        "score": 78
+        "aliveCount": 8,
+        "totalCount": 10,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:27.485Z",
+        "lastProbed": "2026-06-24T01:50:27.485Z",
+        "score": 80
       }
     },
     {
@@ -237455,11 +237446,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 51,
-        "totalCount": 73,
+        "totalCount": 74,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T21:14:48.337Z",
-        "lastProbed": "2026-06-23T17:20:28.384Z",
-        "score": 55
+        "lastProbed": "2026-06-24T01:51:01.385Z",
+        "score": 54
       },
       "slow": true
     },
@@ -238107,11 +238098,11 @@
       "nanoid": "k9YVnaB9vAhdV8",
       "uptime": {
         "aliveCount": 48,
-        "totalCount": 60,
+        "totalCount": 61,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:59:43.246Z",
-        "lastProbed": "2026-06-23T17:20:30.067Z",
-        "score": 60
+        "lastProbed": "2026-06-24T01:50:46.517Z",
+        "score": 59
       },
       "slow": true
     },
@@ -238446,7 +238437,7 @@
       "id": "KuriakosKids.pt",
       "name": "Kuriakos Kids",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -238472,13 +238463,14 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:05:20.776Z",
-        "lastProbed": "2026-06-23T17:20:29.582Z",
-        "score": 53
-      }
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:19.570Z",
+        "lastProbed": "2026-06-24T01:51:19.570Z",
+        "score": 56
+      },
+      "slow": true
     },
     {
       "id": "KuriakosMusic.pt",
@@ -240022,11 +240014,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 51,
-        "totalCount": 75,
+        "totalCount": 76,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:59:24.450Z",
-        "lastProbed": "2026-06-23T17:20:29.744Z",
-        "score": 54
+        "lastProbed": "2026-06-24T01:50:57.100Z",
+        "score": 53
       }
     },
     {
@@ -240250,7 +240242,7 @@
       "id": "Canal8VisionTV.py",
       "name": "Canal 8 Vision TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -240274,12 +240266,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 38,
-        "totalCount": 50,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T02:13:14.673Z",
-        "lastProbed": "2026-06-23T17:20:38.790Z",
-        "score": 54
+        "aliveCount": 39,
+        "totalCount": 51,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:56.717Z",
+        "lastProbed": "2026-06-24T01:50:56.717Z",
+        "score": 56
       }
     },
     {
@@ -240431,7 +240423,7 @@
       "id": "DismarRadioTV.py",
       "name": "Dismar Radio TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -240455,19 +240447,19 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 41,
-        "totalCount": 51,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T03:59:21.918Z",
-        "lastProbed": "2026-06-23T17:20:53.546Z",
-        "score": 58
+        "aliveCount": 42,
+        "totalCount": 52,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:39.034Z",
+        "lastProbed": "2026-06-24T01:50:39.034Z",
+        "score": 60
       }
     },
     {
       "id": "E40.py",
       "name": "E40",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -240491,12 +240483,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 38,
-        "totalCount": 50,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T03:59:23.405Z",
-        "lastProbed": "2026-06-23T17:20:55.124Z",
-        "score": 54
+        "aliveCount": 39,
+        "totalCount": 51,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:56.952Z",
+        "lastProbed": "2026-06-24T01:50:56.952Z",
+        "score": 56
       }
     },
     {
@@ -240614,7 +240606,7 @@
       "id": "GOTV.py",
       "name": "GO TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -240639,12 +240631,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 49,
-        "totalCount": 66,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T21:14:41.056Z",
-        "lastProbed": "2026-06-23T17:20:55.774Z",
-        "score": 57
+        "aliveCount": 50,
+        "totalCount": 67,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:42.425Z",
+        "lastProbed": "2026-06-24T01:50:42.425Z",
+        "score": 59
       }
     },
     {
@@ -241110,11 +241102,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:05:26.102Z",
-        "lastProbed": "2026-06-23T17:20:33.753Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:14.822Z",
+        "score": 52
       }
     },
     {
@@ -241375,7 +241367,7 @@
       "id": "RadioNacionaldelParaguay.py",
       "name": "Radio Nacional del Paraguay",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -241399,12 +241391,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:05:33.049Z",
-        "lastProbed": "2026-06-23T17:20:43.696Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:15.690Z",
+        "lastProbed": "2026-06-24T01:51:15.690Z",
+        "score": 56
       }
     },
     {
@@ -241627,7 +241619,7 @@
       "id": "RepublicaTV.py",
       "name": "Republica TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -241651,12 +241643,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 49,
-        "totalCount": 63,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T21:14:44.720Z",
-        "lastProbed": "2026-06-23T17:21:02.167Z",
-        "score": 59
+        "aliveCount": 50,
+        "totalCount": 64,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:38.903Z",
+        "lastProbed": "2026-06-24T01:50:38.903Z",
+        "score": 61
       }
     },
     {
@@ -242451,11 +242443,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:05:33.616Z",
-        "lastProbed": "2026-06-23T17:20:48.317Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:22.826Z",
+        "score": 52
       }
     },
     {
@@ -243265,11 +243257,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:05:36.821Z",
-        "lastProbed": "2026-06-23T17:20:47.300Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:15.189Z",
+        "score": 52
       }
     },
     {
@@ -243849,10 +243841,10 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 35,
-        "totalCount": 42,
+        "totalCount": 43,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:59:52.102Z",
-        "lastProbed": "2026-06-23T17:21:27.356Z",
+        "lastProbed": "2026-06-24T01:51:25.654Z",
         "score": 56
       },
       "slow": true
@@ -243884,11 +243876,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 42,
-        "totalCount": 55,
+        "totalCount": 56,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T21:14:52.588Z",
-        "lastProbed": "2026-06-23T17:20:50.382Z",
-        "score": 56
+        "lastProbed": "2026-06-24T01:50:50.599Z",
+        "score": 55
       }
     },
     {
@@ -244900,11 +244892,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:05:48.880Z",
-        "lastProbed": "2026-06-23T17:21:01.141Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:23.606Z",
+        "score": 52
       },
       "slow": true
     },
@@ -249034,11 +249026,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:05:47.620Z",
-        "lastProbed": "2026-06-23T17:21:13.148Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:23.722Z",
+        "score": 52
       }
     },
     {
@@ -249330,7 +249322,7 @@
       "id": "360News.ru",
       "name": "360° News",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -249354,12 +249346,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 30,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T12:12:58.333Z",
-        "lastProbed": "2026-06-23T17:21:14.177Z",
-        "score": 52
+        "aliveCount": 27,
+        "totalCount": 31,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:41.855Z",
+        "lastProbed": "2026-06-24T01:51:41.855Z",
+        "score": 55
       },
       "slow": true
     },
@@ -249367,7 +249359,7 @@
       "id": "365daysTV.ru",
       "name": "365 days TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -249391,14 +249383,13 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:05:53.969Z",
-        "lastProbed": "2026-06-23T17:21:14.203Z",
-        "score": 53
-      },
-      "slow": true
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:16.060Z",
+        "lastProbed": "2026-06-24T01:51:16.060Z",
+        "score": 56
+      }
     },
     {
       "id": "3ABNRussia.ru",
@@ -249514,7 +249505,7 @@
       "id": "A1.ru",
       "name": "A1",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -249538,14 +249529,13 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:05:55.037Z",
-        "lastProbed": "2026-06-23T17:21:14.559Z",
-        "score": 53
-      },
-      "slow": true
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:19.001Z",
+        "lastProbed": "2026-06-24T01:51:19.001Z",
+        "score": 56
+      }
     },
     {
       "id": "A2.ru",
@@ -249576,11 +249566,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:06:44.888Z",
-        "lastProbed": "2026-06-23T17:21:15.123Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:23.936Z",
+        "score": 52
       },
       "slow": true
     },
@@ -249908,18 +249898,18 @@
       "nanoid": "3VqJp1fO3TYTIw",
       "uptime": {
         "aliveCount": 40,
-        "totalCount": 48,
+        "totalCount": 49,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T03:59:52.420Z",
-        "lastProbed": "2026-06-23T17:21:17.264Z",
-        "score": 59
+        "lastProbed": "2026-06-24T01:50:49.279Z",
+        "score": 58
       }
     },
     {
       "id": "Ani.ru",
       "name": "Ani",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -249943,14 +249933,13 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:06:15.812Z",
-        "lastProbed": "2026-06-23T17:21:17.272Z",
-        "score": 53
-      },
-      "slow": true
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:16.018Z",
+        "lastProbed": "2026-06-24T01:51:16.018Z",
+        "score": 56
+      }
     },
     {
       "id": "Aris24.ru",
@@ -250210,7 +250199,7 @@
       "id": "BabyTime.ru",
       "name": "Baby Time",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -250235,12 +250224,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 12,
-        "totalCount": 14,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T04:00:39.930Z",
-        "lastProbed": "2026-06-23T17:21:19.829Z",
-        "score": 86
+        "aliveCount": 13,
+        "totalCount": 15,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:35.451Z",
+        "lastProbed": "2026-06-24T01:50:35.451Z",
+        "score": 87
       },
       "slow": true
     },
@@ -250456,11 +250445,11 @@
       "nanoid": "RkE4eVl7ofwaod",
       "uptime": {
         "aliveCount": 30,
-        "totalCount": 34,
+        "totalCount": 35,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:06:02.904Z",
-        "lastProbed": "2026-06-23T17:21:22.080Z",
-        "score": 56
+        "lastProbed": "2026-06-24T01:50:58.522Z",
+        "score": 55
       },
       "slow": true
     },
@@ -250505,7 +250494,7 @@
       "id": "BRIDGE.ru",
       "name": "BRIDGE",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -250529,20 +250518,19 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:06:02.622Z",
-        "lastProbed": "2026-06-23T17:21:22.331Z",
-        "score": 53
-      },
-      "slow": true
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:17.687Z",
+        "lastProbed": "2026-06-24T01:51:17.687Z",
+        "score": 56
+      }
     },
     {
       "id": "BRIDGEClassic.ru",
       "name": "BRIDGE Classic",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -250567,14 +250555,13 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:05:58.805Z",
-        "lastProbed": "2026-06-23T17:21:22.432Z",
-        "score": 53
-      },
-      "slow": true
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:15.491Z",
+        "lastProbed": "2026-06-24T01:51:15.491Z",
+        "score": 56
+      }
     },
     {
       "id": "BRIDGEDeluxe.ru",
@@ -250617,7 +250604,7 @@
       "id": "BRIDGEHits.ru",
       "name": "BRIDGE Hits",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -250641,14 +250628,13 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:06:01.964Z",
-        "lastProbed": "2026-06-23T17:21:23.495Z",
-        "score": 53
-      },
-      "slow": true
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:17.530Z",
+        "lastProbed": "2026-06-24T01:51:17.530Z",
+        "score": 56
+      }
     },
     {
       "id": "BST.ru",
@@ -253453,11 +253439,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:06:13.254Z",
-        "lastProbed": "2026-06-23T17:21:38.369Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:25.629Z",
+        "score": 52
       },
       "slow": true
     },
@@ -253465,7 +253451,7 @@
       "id": "India.ru",
       "name": "India",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -253489,14 +253475,13 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:06:23.984Z",
-        "lastProbed": "2026-06-23T17:21:38.483Z",
-        "score": 53
-      },
-      "slow": true
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:16.850Z",
+        "lastProbed": "2026-06-24T01:51:16.850Z",
+        "score": 56
+      }
     },
     {
       "id": "IndiyskoyeKino.ru",
@@ -253670,11 +253655,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:06:40.856Z",
-        "lastProbed": "2026-06-23T17:21:39.998Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:26.108Z",
+        "score": 52
       },
       "slow": true
     },
@@ -253973,7 +253958,7 @@
       "id": "KinoTV.ru",
       "name": "Kino TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -253999,13 +253984,14 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:06:10.372Z",
-        "lastProbed": "2026-06-23T17:21:58.594Z",
-        "score": 53
-      }
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:24.598Z",
+        "lastProbed": "2026-06-24T01:51:24.598Z",
+        "score": 56
+      },
+      "slow": true
     },
     {
       "id": "KinoHit.ru",
@@ -254146,11 +254132,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:06:30.896Z",
-        "lastProbed": "2026-06-23T17:21:42.206Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:26.399Z",
+        "score": 52
       },
       "slow": true
     },
@@ -254363,11 +254349,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:06:29.709Z",
-        "lastProbed": "2026-06-23T17:21:42.481Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:26.592Z",
+        "score": 52
       },
       "slow": true
     },
@@ -254411,7 +254397,7 @@
       "id": "KukhnyaTV.ru",
       "name": "Kukhnya TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -254435,12 +254421,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:06:18.600Z",
-        "lastProbed": "2026-06-23T17:21:43.206Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:24.873Z",
+        "lastProbed": "2026-06-24T01:51:24.873Z",
+        "score": 56
       },
       "slow": true
     },
@@ -254509,11 +254495,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:06:20.408Z",
-        "lastProbed": "2026-06-23T17:21:44.072Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:26.891Z",
+        "score": 52
       },
       "slow": true
     },
@@ -254767,11 +254753,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:06:33.992Z",
-        "lastProbed": "2026-06-23T17:21:44.710Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:27.192Z",
+        "score": 52
       },
       "slow": true
     },
@@ -254816,7 +254802,7 @@
       "id": "MatchBoets.ru",
       "name": "Match! Boets",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -254840,12 +254826,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:06:22.036Z",
-        "lastProbed": "2026-06-23T17:21:45.737Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:27.730Z",
+        "lastProbed": "2026-06-24T01:51:27.730Z",
+        "score": 56
       },
       "slow": true
     },
@@ -255539,11 +255525,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:06:23.936Z",
-        "lastProbed": "2026-06-23T17:21:49.583Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:27.694Z",
+        "score": 52
       },
       "slow": true
     },
@@ -256127,11 +256113,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:06:28.398Z",
-        "lastProbed": "2026-06-23T17:21:52.946Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:27.823Z",
+        "score": 52
       },
       "slow": true
     },
@@ -256175,7 +256161,7 @@
       "id": "NovyVek.ru",
       "name": "Novy Vek",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -256199,14 +256185,13 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 43,
-        "totalCount": 53,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T21:15:37.878Z",
-        "lastProbed": "2026-06-23T17:21:53.113Z",
-        "score": 59
-      },
-      "slow": true
+        "aliveCount": 44,
+        "totalCount": 54,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:44.559Z",
+        "lastProbed": "2026-06-24T01:50:44.559Z",
+        "score": 61
+      }
     },
     {
       "id": "NovyiRusskii.ru",
@@ -258328,11 +258313,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:06:36.903Z",
-        "lastProbed": "2026-06-23T17:22:04.646Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:28.022Z",
+        "score": 52
       },
       "slow": true
     },
@@ -258340,7 +258325,7 @@
       "id": "RusskiyBestseller.ru",
       "name": "Russkiy Bestseller",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -258364,12 +258349,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:06:41.917Z",
-        "lastProbed": "2026-06-23T17:22:04.955Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:25.160Z",
+        "lastProbed": "2026-06-24T01:51:25.160Z",
+        "score": 56
       },
       "slow": true
     },
@@ -258402,11 +258387,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:07:25.618Z",
-        "lastProbed": "2026-06-23T17:22:05.120Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:28.306Z",
+        "score": 52
       },
       "slow": true
     },
@@ -258830,11 +258815,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:06:45.372Z",
-        "lastProbed": "2026-06-23T17:22:08.701Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:28.551Z",
+        "score": 52
       },
       "slow": true
     },
@@ -258865,11 +258850,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:06:43.679Z",
-        "lastProbed": "2026-06-23T17:22:08.734Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:28.767Z",
+        "score": 52
       },
       "slow": true
     },
@@ -260221,7 +260206,7 @@
       "id": "Teatr.ru",
       "name": "Teatr",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -260246,12 +260231,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:06:51.664Z",
-        "lastProbed": "2026-06-23T17:22:26.178Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:27.623Z",
+        "lastProbed": "2026-06-24T01:51:27.623Z",
+        "score": 56
       },
       "slow": true
     },
@@ -260334,7 +260319,7 @@
       "id": "Teleputeshestviya.ru",
       "name": "Teleputeshestviya",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -260358,12 +260343,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:06:48.630Z",
-        "lastProbed": "2026-06-23T17:22:15.170Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:27.742Z",
+        "lastProbed": "2026-06-24T01:51:27.742Z",
+        "score": 56
       },
       "slow": true
     },
@@ -260394,11 +260379,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 49,
-        "totalCount": 78,
+        "totalCount": 79,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T04:00:13.264Z",
-        "lastProbed": "2026-06-23T17:22:15.385Z",
-        "score": 50
+        "lastProbed": "2026-06-24T01:51:49.665Z",
+        "score": 49
       },
       "slow": true
     },
@@ -260735,7 +260720,7 @@
       "id": "TochkaTV.ru",
       "name": "Tochka TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -260757,12 +260742,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:06:53.474Z",
-        "lastProbed": "2026-06-23T17:22:17.126Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:28.216Z",
+        "lastProbed": "2026-06-24T01:51:28.216Z",
+        "score": 56
       },
       "slow": true
     },
@@ -260830,11 +260815,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T09:06:55.190Z",
-        "lastProbed": "2026-06-23T17:22:17.214Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:29.534Z",
+        "score": 52
       },
       "slow": true
     },
@@ -261778,7 +261763,7 @@
       "id": "Volga.ru",
       "name": "Volga",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -261800,12 +261785,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:07:02.771Z",
-        "lastProbed": "2026-06-23T17:22:22.943Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:19.807Z",
+        "lastProbed": "2026-06-24T01:51:19.807Z",
+        "score": 56
       }
     },
     {
@@ -262100,7 +262085,7 @@
       "id": "ZdorovoeTV.ru",
       "name": "Zdorovoe TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -262112,8 +262097,8 @@
         "lifestyle"
       ],
       "streamUrls": [
-        "http://de.russkoe-iptv.com:88/s/s-e3dc39e0/zdorovoe-tv-hd.m3u8",
-        "http://31.148.48.15/Zdorovoe_TV/index.m3u8"
+        "http://31.148.48.15/Zdorovoe_TV/index.m3u8",
+        "http://de.russkoe-iptv.com:88/s/s-e3dc39e0/zdorovoe-tv-hd.m3u8"
       ],
       "referrer": null,
       "userAgent": null,
@@ -262125,12 +262110,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:07:28.203Z",
-        "lastProbed": "2026-06-23T17:22:28.788Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:30.480Z",
+        "lastProbed": "2026-06-24T01:51:30.480Z",
+        "score": 56
       },
       "slow": true
     },
@@ -262138,7 +262123,7 @@
       "id": "Zhara.ru",
       "name": "Zhara",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -262162,12 +262147,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:06:58.541Z",
-        "lastProbed": "2026-06-23T17:22:27.226Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:28.640Z",
+        "lastProbed": "2026-06-24T01:51:28.640Z",
+        "score": 56
       },
       "slow": true
     },
@@ -262175,7 +262160,7 @@
       "id": "ZhivayaPlaneta.ru",
       "name": "Zhivaya Planeta",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -262197,12 +262182,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:07:00.965Z",
-        "lastProbed": "2026-06-23T17:22:27.326Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:30.803Z",
+        "lastProbed": "2026-06-24T01:51:30.803Z",
+        "score": 56
       },
       "slow": true
     },
@@ -262247,7 +262232,7 @@
       "id": "ZooTV.ru",
       "name": "Zoo TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -262269,12 +262254,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T09:07:43.190Z",
-        "lastProbed": "2026-06-23T17:22:27.462Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:31.625Z",
+        "lastProbed": "2026-06-24T01:51:31.625Z",
+        "score": 56
       },
       "slow": true
     },
@@ -268081,11 +268066,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 50,
-        "totalCount": 66,
+        "totalCount": 67,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T21:16:39.720Z",
-        "lastProbed": "2026-06-23T17:22:43.259Z",
-        "score": 58
+        "lastProbed": "2026-06-24T01:50:49.344Z",
+        "score": 57
       },
       "slow": true
     },
@@ -271555,11 +271540,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 35,
-        "totalCount": 45,
+        "totalCount": 46,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T16:21:01.412Z",
-        "lastProbed": "2026-06-23T17:22:41.005Z",
-        "score": 54
+        "lastProbed": "2026-06-24T01:50:54.480Z",
+        "score": 53
       }
     },
     {
@@ -274596,11 +274581,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 30,
+        "totalCount": 31,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T13:28:24.852Z",
-        "lastProbed": "2026-06-23T17:23:06.927Z",
-        "score": 52
+        "lastProbed": "2026-06-24T01:51:53.078Z",
+        "score": 51
       }
     },
     {
@@ -275805,7 +275790,7 @@
       "id": "Futbol.tj",
       "name": "Futbol",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -275829,13 +275814,14 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T12:13:57.846Z",
-        "lastProbed": "2026-06-23T17:23:06.086Z",
-        "score": 53
-      }
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:29.684Z",
+        "lastProbed": "2026-06-24T01:51:29.684Z",
+        "score": 56
+      },
+      "slow": true
     },
     {
       "id": "IlmvaTabiat.tj",
@@ -276830,7 +276816,7 @@
       "id": "ASpor.tr",
       "name": "A Spor",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -276854,13 +276840,14 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 6,
-        "totalCount": 7,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T04:00:34.975Z",
-        "lastProbed": "2026-06-23T17:23:13.422Z",
-        "score": 86
-      }
+        "aliveCount": 7,
+        "totalCount": 8,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:36.085Z",
+        "lastProbed": "2026-06-24T01:50:36.085Z",
+        "score": 88
+      },
+      "slow": true
     },
     {
       "id": "ATurk.tr",
@@ -281035,11 +281022,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T12:15:08.777Z",
-        "lastProbed": "2026-06-23T17:23:24.656Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:31.694Z",
+        "score": 52
       },
       "slow": true
     },
@@ -281915,7 +281902,7 @@
       "id": "NOWTV.tr",
       "name": "NOW TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -281940,14 +281927,13 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T12:15:01.479Z",
-        "lastProbed": "2026-06-23T17:23:55.825Z",
-        "score": 53
-      },
-      "slow": true
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:28.383Z",
+        "lastProbed": "2026-06-24T01:51:28.383Z",
+        "score": 56
+      }
     },
     {
       "id": "NTV.tr",
@@ -282593,11 +282579,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T12:15:03.053Z",
-        "lastProbed": "2026-06-23T17:23:32.151Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:36.368Z",
+        "score": 52
       },
       "slow": true
     },
@@ -283508,11 +283494,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 30,
-        "totalCount": 38,
+        "totalCount": 39,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T04:00:41.097Z",
-        "lastProbed": "2026-06-23T17:23:22.046Z",
-        "score": 52
+        "lastProbed": "2026-06-24T01:51:34.160Z",
+        "score": 51
       }
     },
     {
@@ -283659,7 +283645,7 @@
       "id": "TRTCocuk.tr",
       "name": "TRT Cocuk",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -283683,12 +283669,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 43,
-        "totalCount": 55,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T21:16:35.915Z",
-        "lastProbed": "2026-06-23T17:23:22.527Z",
-        "score": 57
+        "aliveCount": 44,
+        "totalCount": 56,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:45.711Z",
+        "lastProbed": "2026-06-24T01:50:45.711Z",
+        "score": 59
       }
     },
     {
@@ -284947,11 +284933,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T12:14:57.685Z",
-        "lastProbed": "2026-06-23T17:23:39.046Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:35.611Z",
+        "score": 52
       },
       "slow": true
     },
@@ -287992,7 +287978,7 @@
       "id": "MEGOGOSport.ua",
       "name": "MEGOGO Sport",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -288016,12 +288002,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 13,
-        "totalCount": 18,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T02:13:16.101Z",
-        "lastProbed": "2026-06-23T17:23:47.431Z",
-        "score": 72
+        "aliveCount": 14,
+        "totalCount": 19,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:27.404Z",
+        "lastProbed": "2026-06-24T01:50:27.404Z",
+        "score": 74
       }
     },
     {
@@ -289843,11 +289829,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T12:15:08.654Z",
-        "lastProbed": "2026-06-23T17:23:46.500Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:27.339Z",
+        "score": 52
       }
     },
     {
@@ -290090,11 +290076,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T12:15:06.251Z",
-        "lastProbed": "2026-06-23T17:23:45.424Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:26.341Z",
+        "score": 52
       }
     },
     {
@@ -290643,7 +290629,7 @@
       "id": "BukeddeTV1.ug",
       "name": "Bukedde TV 1",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -290667,12 +290653,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T12:15:16.570Z",
-        "lastProbed": "2026-06-23T17:23:49.015Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:35.230Z",
+        "lastProbed": "2026-06-24T01:51:35.230Z",
+        "score": 56
       },
       "slow": true
     },
@@ -290680,7 +290666,7 @@
       "id": "BukeddeTV2.ug",
       "name": "Bukedde TV 2",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -290704,12 +290690,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 50,
-        "totalCount": 74,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T04:01:01.783Z",
-        "lastProbed": "2026-06-23T17:23:49.668Z",
-        "score": 53
+        "aliveCount": 51,
+        "totalCount": 75,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:35.421Z",
+        "lastProbed": "2026-06-24T01:51:35.421Z",
+        "score": 55
       },
       "slow": true
     },
@@ -294679,7 +294665,7 @@
       "id": "DunyaNewsUK.uk",
       "name": "Dunya News UK",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -294703,12 +294689,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T12:15:23.229Z",
-        "lastProbed": "2026-06-23T17:24:03.348Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:36.312Z",
+        "lastProbed": "2026-06-24T01:51:36.312Z",
+        "score": 56
       },
       "slow": true
     },
@@ -295209,11 +295195,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 34,
-        "totalCount": 43,
+        "totalCount": 44,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T16:31:27.557Z",
-        "lastProbed": "2026-06-23T17:23:53.360Z",
-        "score": 54
+        "lastProbed": "2026-06-24T01:50:55.085Z",
+        "score": 53
       }
     },
     {
@@ -297484,11 +297470,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 33,
-        "totalCount": 40,
+        "totalCount": 41,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T04:01:04.490Z",
-        "lastProbed": "2026-06-23T17:24:07.931Z",
-        "score": 55
+        "lastProbed": "2026-06-24T01:51:01.478Z",
+        "score": 54
       },
       "slow": true
     },
@@ -297521,11 +297507,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 52,
-        "totalCount": 70,
+        "totalCount": 71,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T21:16:54.820Z",
-        "lastProbed": "2026-06-23T17:24:08.107Z",
-        "score": 58
+        "lastProbed": "2026-06-24T01:50:49.474Z",
+        "score": 57
       },
       "slow": true
     },
@@ -297558,11 +297544,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T12:15:43.307Z",
-        "lastProbed": "2026-06-23T17:24:08.322Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:37.542Z",
+        "score": 52
       },
       "slow": true
     },
@@ -297595,11 +297581,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T12:15:45.252Z",
-        "lastProbed": "2026-06-23T17:24:08.369Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:37.636Z",
+        "score": 52
       },
       "slow": true
     },
@@ -297632,11 +297618,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T12:15:45.542Z",
-        "lastProbed": "2026-06-23T17:24:08.522Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:37.660Z",
+        "score": 52
       },
       "slow": true
     },
@@ -297669,11 +297655,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 42,
-        "totalCount": 51,
+        "totalCount": 52,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T04:01:16.912Z",
-        "lastProbed": "2026-06-23T17:24:08.553Z",
-        "score": 59
+        "lastProbed": "2026-06-24T01:50:48.666Z",
+        "score": 58
       },
       "slow": true
     },
@@ -297706,10 +297692,10 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 38,
-        "totalCount": 45,
+        "totalCount": 46,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T04:03:14.799Z",
-        "lastProbed": "2026-06-23T17:24:08.639Z",
+        "lastProbed": "2026-06-24T01:50:49.578Z",
         "score": 58
       },
       "slow": true
@@ -297743,11 +297729,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 29,
-        "totalCount": 33,
+        "totalCount": 34,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T12:15:50.314Z",
-        "lastProbed": "2026-06-23T17:24:08.786Z",
-        "score": 55
+        "lastProbed": "2026-06-24T01:51:01.582Z",
+        "score": 54
       },
       "slow": true
     },
@@ -298010,7 +297996,7 @@
       "id": "NickelodeonGlobal.uk",
       "name": "Nickelodeon Global",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -298035,12 +298021,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T12:15:29.248Z",
-        "lastProbed": "2026-06-23T17:24:37.884Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:32.228Z",
+        "lastProbed": "2026-06-24T01:51:32.228Z",
+        "score": 56
       }
     },
     {
@@ -301705,7 +301691,7 @@
       "id": "30AGolfKingdom.us",
       "name": "30A Golf Kingdom",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -301729,19 +301715,19 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 30,
-        "totalCount": 36,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T04:01:02.769Z",
-        "lastProbed": "2026-06-23T17:24:20.528Z",
-        "score": 54
+        "aliveCount": 31,
+        "totalCount": 37,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:58.722Z",
+        "lastProbed": "2026-06-24T01:50:58.722Z",
+        "score": 56
       }
     },
     {
       "id": "30AInvestmentPitch.us",
       "name": "30A Investment Pitch",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -301766,12 +301752,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T12:15:39.211Z",
-        "lastProbed": "2026-06-23T17:24:32.565Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:33.950Z",
+        "lastProbed": "2026-06-24T01:51:33.950Z",
+        "score": 56
       }
     },
     {
@@ -301851,7 +301837,7 @@
       "id": "30ALuxeLifeDiscovered.us",
       "name": "30A Luxe Life Discovered",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -301875,12 +301861,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T12:15:39.207Z",
-        "lastProbed": "2026-06-23T17:24:20.646Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:31.000Z",
+        "lastProbed": "2026-06-24T01:51:31.000Z",
+        "score": 56
       }
     },
     {
@@ -301997,7 +301983,7 @@
       "id": "30ATelevisionChannel.us",
       "name": "30A Television Channel",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -302021,12 +302007,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T12:15:38.751Z",
-        "lastProbed": "2026-06-23T17:24:21.240Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:30.452Z",
+        "lastProbed": "2026-06-24T01:51:30.452Z",
+        "score": 56
       }
     },
     {
@@ -302069,7 +302055,7 @@
       "id": "30ATVClassicMovies.us",
       "name": "30A TV Classic Movies",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -302093,12 +302079,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T12:15:39.882Z",
-        "lastProbed": "2026-06-23T17:24:25.568Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:31.054Z",
+        "lastProbed": "2026-06-24T01:51:31.054Z",
+        "score": 56
       }
     },
     {
@@ -305550,7 +305536,7 @@
       "id": "AlkarmaTVNorthAmericaCanada.us",
       "name": "Alkarma TV North America & Canada",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -305574,12 +305560,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T12:15:51.349Z",
-        "lastProbed": "2026-06-23T17:24:32.888Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:32.582Z",
+        "lastProbed": "2026-06-24T01:51:32.582Z",
+        "score": 56
       }
     },
     {
@@ -311494,7 +311480,7 @@
       "id": "BXCulture.us",
       "name": "BX Culture",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -311518,19 +311504,19 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T12:16:04.169Z",
-        "lastProbed": "2026-06-23T17:24:35.488Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:29.231Z",
+        "lastProbed": "2026-06-24T01:51:29.231Z",
+        "score": 56
       }
     },
     {
       "id": "BXInform.us",
       "name": "BX Inform",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -311555,12 +311541,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T12:16:04.861Z",
-        "lastProbed": "2026-06-23T17:24:35.530Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:29.978Z",
+        "lastProbed": "2026-06-24T01:51:29.978Z",
+        "score": 56
       }
     },
     {
@@ -311604,7 +311590,7 @@
       "id": "BXOmni.us",
       "name": "BX Omni",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -311628,12 +311614,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T12:16:04.667Z",
-        "lastProbed": "2026-06-23T17:24:35.723Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:29.652Z",
+        "lastProbed": "2026-06-24T01:51:29.652Z",
+        "score": 56
       }
     },
     {
@@ -311881,11 +311867,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 28,
-        "totalCount": 33,
+        "totalCount": 34,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T12:16:06.001Z",
-        "lastProbed": "2026-06-23T17:24:37.204Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:29.317Z",
+        "score": 52
       }
     },
     {
@@ -311917,11 +311903,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 29,
-        "totalCount": 35,
+        "totalCount": 36,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T04:01:04.711Z",
-        "lastProbed": "2026-06-23T17:24:37.238Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:29.297Z",
+        "score": 52
       }
     },
     {
@@ -319282,7 +319268,7 @@
       "id": "documentaryinternati.us",
       "name": "Documentary+ International",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -319298,7 +319284,7 @@
       ],
       "referrer": null,
       "userAgent": null,
-      "needsProxy": false,
+      "needsProxy": true,
       "ytId": null,
       "website": null,
       "replaced_by": null,
@@ -319306,14 +319292,13 @@
       "source": "famelack",
       "nanoid": "2fMuVMErYSbQJN",
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T12:16:32.624Z",
-        "lastProbed": "2026-06-23T17:25:02.526Z",
-        "score": 53
-      },
-      "slow": true
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:30.814Z",
+        "lastProbed": "2026-06-24T01:51:30.814Z",
+        "score": 56
+      }
     },
     {
       "id": "documentaryus.us",
@@ -324885,7 +324870,7 @@
       "id": "goldenboy.us",
       "name": "Golden Boy",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -324907,14 +324892,13 @@
       "source": "famelack",
       "nanoid": "ishWkeWiqFuHWJ",
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T12:16:42.325Z",
-        "lastProbed": "2026-06-23T17:25:13.220Z",
-        "score": 53
-      },
-      "slow": true
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:35.950Z",
+        "lastProbed": "2026-06-24T01:51:35.950Z",
+        "score": 56
+      }
     },
     {
       "id": "GolfChannel.us",
@@ -330098,11 +330082,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T12:16:43.013Z",
-        "lastProbed": "2026-06-23T17:25:12.248Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:28.428Z",
+        "score": 52
       }
     },
     {
@@ -330970,11 +330954,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T12:16:48.914Z",
-        "lastProbed": "2026-06-23T17:25:13.268Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:28.439Z",
+        "score": 52
       }
     },
     {
@@ -333441,7 +333425,7 @@
       "id": "LacrosseTV.us",
       "name": "Lacrosse TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -333465,12 +333449,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 48,
-        "totalCount": 60,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T21:17:01.104Z",
-        "lastProbed": "2026-06-23T17:25:19.274Z",
-        "score": 60
+        "aliveCount": 49,
+        "totalCount": 61,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:37.573Z",
+        "lastProbed": "2026-06-24T01:50:37.573Z",
+        "score": 62
       }
     },
     {
@@ -337586,11 +337570,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T12:16:59.598Z",
-        "lastProbed": "2026-06-23T17:25:26.706Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:30.179Z",
+        "score": 52
       }
     },
     {
@@ -337699,11 +337683,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T12:17:11.786Z",
-        "lastProbed": "2026-06-23T17:25:37.512Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:40.433Z",
+        "score": 52
       },
       "slow": true
     },
@@ -354316,7 +354300,7 @@
       "id": "RCTV3.us",
       "name": "RCTV3",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -354340,12 +354324,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T12:17:32.369Z",
-        "lastProbed": "2026-06-23T17:26:24.103Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:30.924Z",
+        "lastProbed": "2026-06-24T01:51:30.924Z",
+        "score": 56
       }
     },
     {
@@ -356033,11 +356017,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T12:17:36.942Z",
-        "lastProbed": "2026-06-23T17:25:58.966Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:28.657Z",
+        "score": 52
       }
     },
     {
@@ -356565,11 +356549,11 @@
       "nanoid": "InJPCwBqhoHK5v",
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T12:18:18.389Z",
-        "lastProbed": "2026-06-23T17:26:11.614Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:40.647Z",
+        "score": 52
       },
       "slow": true
     },
@@ -360177,7 +360161,7 @@
       "id": "TBNPacific.us",
       "name": "TBN Pacific",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -360199,12 +360183,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 36,
-        "totalCount": 44,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T17:15:03.333Z",
-        "lastProbed": "2026-06-23T17:26:19.050Z",
-        "score": 56
+        "aliveCount": 37,
+        "totalCount": 45,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:57.644Z",
+        "lastProbed": "2026-06-24T01:50:57.644Z",
+        "score": 58
       },
       "slow": true
     },
@@ -369734,7 +369718,7 @@
       "id": "WCOT.us",
       "name": "WCOT",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -369758,12 +369742,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 29,
-        "totalCount": 38,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-22T04:01:38.071Z",
-        "lastProbed": "2026-06-23T17:27:02.165Z",
-        "score": 50
+        "aliveCount": 30,
+        "totalCount": 39,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:42.793Z",
+        "lastProbed": "2026-06-24T01:51:42.793Z",
+        "score": 53
       }
     },
     {
@@ -373342,7 +373326,7 @@
       "id": "WPSTV.us",
       "name": "WPS-TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -373366,12 +373350,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T12:18:12.438Z",
-        "lastProbed": "2026-06-23T17:26:40.692Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:29.228Z",
+        "lastProbed": "2026-06-24T01:51:29.228Z",
+        "score": 56
       }
     },
     {
@@ -376137,7 +376121,7 @@
       "id": "FTV.uz",
       "name": "FTV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -376161,12 +376145,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T12:18:45.650Z",
-        "lastProbed": "2026-06-23T17:26:57.056Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:39.083Z",
+        "lastProbed": "2026-06-24T01:51:39.083Z",
+        "score": 56
       },
       "slow": true
     },
@@ -376608,7 +376592,7 @@
       "id": "Qaraqalpaqstan.uz",
       "name": "Qaraqalpaqstan",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -376632,14 +376616,13 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T12:18:29.692Z",
-        "lastProbed": "2026-06-23T17:26:58.906Z",
-        "score": 53
-      },
-      "slow": true
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:37.655Z",
+        "lastProbed": "2026-06-24T01:51:37.655Z",
+        "score": 56
+      }
     },
     {
       "id": "RenessansTV.uz",
@@ -377609,10 +377592,10 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 51,
-        "totalCount": 78,
+        "totalCount": 79,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T04:01:39.432Z",
-        "lastProbed": "2026-06-23T17:26:53.229Z",
+        "lastProbed": "2026-06-24T01:51:35.340Z",
         "score": 52
       }
     },
@@ -378779,7 +378762,7 @@
       "id": "TRT.ve",
       "name": "TRT",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -378803,12 +378786,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 52,
-        "totalCount": 72,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T21:17:24.041Z",
-        "lastProbed": "2026-06-23T17:26:55.304Z",
-        "score": 57
+        "aliveCount": 53,
+        "totalCount": 73,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:43.598Z",
+        "lastProbed": "2026-06-24T01:50:43.598Z",
+        "score": 58
       }
     },
     {
@@ -378984,11 +378967,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 44,
-        "totalCount": 62,
+        "totalCount": 63,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-20T21:22:56.874Z",
-        "lastProbed": "2026-06-23T17:42:52.369Z",
-        "score": 54
+        "lastProbed": "2026-06-24T01:50:55.163Z",
+        "score": 53
       }
     },
     {
@@ -379031,7 +379014,7 @@
       "id": "UN24.ve",
       "name": "UN24",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -379055,12 +379038,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 31,
-        "totalCount": 37,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T16:31:32.382Z",
-        "lastProbed": "2026-06-23T17:26:55.881Z",
-        "score": 54
+        "aliveCount": 32,
+        "totalCount": 38,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:50:56.784Z",
+        "lastProbed": "2026-06-24T01:50:56.784Z",
+        "score": 57
       }
     },
     {
@@ -379285,7 +379268,7 @@
       "id": "CBNGospel.vg",
       "name": "CBN Gospel",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -379309,14 +379292,13 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T12:18:37.785Z",
-        "lastProbed": "2026-06-23T17:27:06.604Z",
-        "score": 53
-      },
-      "slow": true
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:31.628Z",
+        "lastProbed": "2026-06-24T01:51:31.628Z",
+        "score": 56
+      }
     },
     {
       "id": "CBNTV.vg",
@@ -379643,7 +379625,7 @@
       "id": "CaoBangTV.vn",
       "name": "Cao Bang TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -379667,12 +379649,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 26,
-        "totalCount": 29,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-06-21T12:18:36.689Z",
-        "lastProbed": "2026-06-23T17:27:07.012Z",
-        "score": 53
+        "aliveCount": 27,
+        "totalCount": 30,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-06-24T01:51:39.583Z",
+        "lastProbed": "2026-06-24T01:51:39.583Z",
+        "score": 56
       },
       "slow": true
     },
@@ -381325,11 +381307,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 13,
-        "totalCount": 17,
+        "totalCount": 18,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T21:17:33.097Z",
-        "lastProbed": "2026-06-23T17:27:06.760Z",
-        "score": 76
+        "lastProbed": "2026-06-24T01:50:43.278Z",
+        "score": 72
       },
       "slow": true
     },
@@ -381586,11 +381568,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 12,
-        "totalCount": 20,
+        "totalCount": 21,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T04:01:55.426Z",
-        "lastProbed": "2026-06-23T17:27:10.714Z",
-        "score": 60
+        "lastProbed": "2026-06-24T01:50:54.804Z",
+        "score": 29
       },
       "slow": true
     },
@@ -382514,11 +382496,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T12:18:48.136Z",
-        "lastProbed": "2026-06-23T17:27:03.727Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:29.825Z",
+        "score": 52
       },
       "slow": true
     },
@@ -382551,11 +382533,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T12:19:07.348Z",
-        "lastProbed": "2026-06-23T17:27:15.670Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:41.539Z",
+        "score": 52
       },
       "slow": true
     },
@@ -382624,11 +382606,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 26,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-21T12:18:50.784Z",
-        "lastProbed": "2026-06-23T17:27:04.487Z",
-        "score": 53
+        "lastProbed": "2026-06-24T01:51:30.023Z",
+        "score": 52
       },
       "slow": true
     },
@@ -383157,11 +383139,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 32,
-        "totalCount": 37,
+        "totalCount": 38,
         "consecutiveAlive": 0,
         "lastSeen": "2026-06-22T04:01:56.480Z",
-        "lastProbed": "2026-06-23T17:27:17.359Z",
-        "score": 56
+        "lastProbed": "2026-06-24T01:50:59.859Z",
+        "score": 55
       },
       "slow": true
     },
