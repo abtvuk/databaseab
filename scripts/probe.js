@@ -51,9 +51,9 @@ async function corsCheck(url, referrer, userAgent) {
     if (!res.ok) return { browserOk: false, needsProxy: true }
 
     return { browserOk: true, needsProxy: false }
-  } catch {
-    // Network error / timeout on CORS check — stream may still be proxy-able
-    return { browserOk: false, needsProxy: true }
+} catch {
+    // Network error / timeout on CORS check — can't confirm proxy helps, don't assume
+    return { browserOk: false, needsProxy: false }
   }
 }
 
