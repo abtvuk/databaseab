@@ -295,7 +295,7 @@ function computeScore(uptime) {
   const oldTotal    = totalCount - recentTotal
   const oldAlive    = aliveCount - recentAlive
   // Cap old history to window×4 so ancient data can't permanently bury a recovered channel
-  const oldCap          = window * 4
+  const oldCap = Math.max(window * 4, Math.round(oldTotal * 0.1))
   const oldTotalCapped  = Math.min(oldTotal, oldCap)
   const oldAliveCapped  = oldTotal > 0 ? Math.round(oldAlive * (oldTotalCapped / oldTotal)) : 0
   // Recent results at weight 1.0, old results at weight 0.5
