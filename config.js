@@ -1,14 +1,7 @@
-// ─────────────────────────────────────────────────────────────────────────────
-//  databaseab — central configuration
-//  All tunables live here. Every value here maps to a workflow behaviour.
-//  Change a value, commit — the next run picks it up automatically.
-// ─────────────────────────────────────────────────────────────────────────────
-
 module.exports = {
 
   // ── SOURCES ────────────────────────────────────────────────────────────────
   sources: {
-    // iptv-org public API endpoints (do not change unless iptv-org moves them)
     iptvChannels:  'https://iptv-org.github.io/api/channels.json',
     iptvStreams:   'https://iptv-org.github.io/api/streams.json',
     iptvBlocklist: 'https://iptv-org.github.io/api/blocklist.json',
@@ -34,15 +27,14 @@ module.exports = {
     resurrect:  '0 */4 * * *', // dead channel resurrection — every 4 hours
     checkAlive: '0 */5 * * *', // alive channel check — every 5 hours (base cadence)
     checkYoutube: '0 */12 * * *',
-                               // individual channels override this via uptime score below
   },
 
   // ── PROBE SETTINGS ─────────────────────────────────────────────────────────
   probe: {
     timeoutSeconds:    7,  // seconds before a stream probe is aborted
-    retries:            1,  // retry attempts after first failure (0 = no retry)
-    retryDelaySeconds:  2,  // seconds to wait between retries
-    concurrency:       30,  // simultaneous probes
+    retries:            1,
+    retryDelaySeconds:  2,
+    concurrency:       20,  // simultaneous probes
     segmentConcurrency: 8, 
     youtubeConcurrency: 6,
     slowThresholdMs:  8000, // ms above which a channel is flagged { slow: true }
@@ -95,33 +87,24 @@ module.exports = {
 
     // Default values assigned to brand-new channels added from iptv-org
     defaults: {
-      alive:    false,  // new channels start unverified
-      probe:    true,   // probed by default; set false manually to exclude
-      editName: true,   // iptv-org can update the name; set false to lock your edit
+      alive:    false,
+      probe:    true,
+      editName: true,
     },
   },
 
   // ── MANUAL CHANNEL BLOCKLIST ───────────────────────────────────────────────
-  // Hand-picked channel IDs to never serve to users, regardless of alive status.
-  // Use iptv-org channel IDs (e.g. 'PlutoTV.us', 'CNN.us').
-  // These are merged with the NSFW blocklist at sync time.
   manualBlocklist: [
     // 'PlutoTV.us',
     // 'ExampleChannel.uk',
   ],
 
   // ── NSFW / NAME BLOCKLIST ──────────────────────────────────────────────────
-  // Channels whose name contains any of these strings are excluded entirely.
-  // Case-insensitive. Extend as needed.
   nameBlocklist: [
-    'ABN', 'NTD',
+  //  'ABN', 'NTD',
   ],
 
   // ── UNPLAYABLE DOMAIN BLOCKLIST ────────────────────────────────────────────
-  // Domains that use token-expiry, signed URLs, or other mechanisms that make
-  // streams appear alive at probe time but always fail in a real browser.
-  // Channels on these domains are flagged { browserUnplayable: true } regardless
-  // of probe result. Add domains here as new patterns are discovered.
   unplayableDomains: [
     'ncdn.telewebion.ir',   // token-expiry signed URLs — expire before user clicks
     'telewebion.com',       // same CDN network
