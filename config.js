@@ -31,14 +31,14 @@ module.exports = {
 
   // ── PROBE SETTINGS ─────────────────────────────────────────────────────────
   probe: {
-    timeoutSeconds: 10,
-    retries:         1,
-    retryDelaySeconds:  2,
-    concurrency:       25,
+    timeoutSeconds:     10,
+    retries:            2,
+    retryDelaySeconds:  4,
+    concurrency:        25,
     segmentConcurrency: 8, 
     youtubeConcurrency: 6,
-    slowThresholdMs:  8000, // ms above which a channel is flagged { slow: true }
-    uptimeScoreMin:    60,  // channels with score below this are hidden from consumers (null = no history, always shown)
+    slowThresholdMs:    8000, // ms above which a channel is flagged { slow: true }
+    uptimeScoreMin:     60,  // channels with score below this are hidden from consumers (null = no history, always shown)
   },
 
   // ── UPTIME-BASED PROBE FREQUENCY ───────────────────────────────────────────
