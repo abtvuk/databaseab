@@ -69,12 +69,12 @@ module.exports = {
   // This prevents the 4-hour resurrect run from re-probing 3000+ hopeless
   // channels every single time — the worst offenders get throttled way back.
   resurrectFrequency: {
-    noHistory:          0,   // always try (no data = give it a chance)
-    scoreAbove50:       8,   // score ≥ 50% — recently degraded, check often
-    scoreAbove20:      24,   // score 20–49% — struggling, once a day
-    scoreAbove0:       36,   // score 1–19%  — almost always dead, every 2 days
-    scoreZeroFewData:  24,   // score 0%, totalCount ≤ 10 — too early to write off
-    scoreZeroManyData: 60,   // score 0%, totalCount > 10 — consistently dead, every 3 days
+    noHistory:          0,   // always try
+    scoreAbove50:       10,   // score ≥ 50% 
+    scoreAbove20:      30,   // score 20–49%
+    scoreAbove0:       40,   // score 1–19% 
+    scoreZeroFewData:  30,   // score 0%, totalCount ≤ 10  
+    scoreZeroManyData: 168,  // confirmed zombies
   },
 
   // ── SCORE RECENCY WINDOW ───────────────────────────────────────────────────
