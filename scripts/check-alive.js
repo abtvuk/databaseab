@@ -4,7 +4,7 @@
 //
 //  Targets: channels where alive: true AND probe: true AND not a YouTube channel
 //  Skips:   channels not due for a probe based on their uptime score + lastProbed
-//  On fail: sets alive: false, updates uptime
+//  // On fail: increments consecutiveFailures; marks dead after 3 failures
 //  On pass: updates uptime, alive stays true
 //
 //  Probe frequency (configurable in config.js → probeFrequency):
@@ -111,10 +111,17 @@ async function main() {
       if (!entry.slow) delete entry.slow
       passed++
     } else {
-      entry.uptime = recordDead(entry.uptime)
-      entry.alive  = false
-      failed++
-    }
+  entry.uptime = recordDead(entry.uptime)
+
+  const failures =
+    entry.uptime?.consecutiveFailures || 0
+
+  if (failures >= 3) {
+    entry.alive = false
+  }
+
+  failed++
+}
   })
 
   await runWithConcurrency(tasks, cfg.probe.concurrency)
