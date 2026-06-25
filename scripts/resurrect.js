@@ -103,6 +103,9 @@ async function main() {
       resurrected++
     } else {
       entry.uptime = recordDead(entry.uptime)
+      if (entry.uptime.totalCount > 100 && entry.uptime.aliveCount === 0) {
+        entry.probe = false 
+      }
       stillDead++
     }
   })
