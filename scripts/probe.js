@@ -198,22 +198,21 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
 
 async function probeWithFallback(url, referrer, userAgent) {
   const r1 = await probeOnce(url, referrer, userAgent, 'v:0')
-if (r1.alive) return r1
+  if (r1.alive) return r1
 
-const r2 = await probeOnce(url, referrer, userAgent, 'a:0')
-if (r2.alive) return r2
+  const r2 = await probeOnce(url, referrer, userAgent, 'a:0')
+  if (r2.alive) return r2
 
-if (!userAgent || userAgent !== BROWSER_UA) {
-  const r3 = await probeOnce(url, referrer, BROWSER_UA, 'v:0')
-  if (r3.alive) return r3
+  if (!userAgent || userAgent !== BROWSER_UA) {
+    const r3 = await probeOnce(url, referrer, BROWSER_UA, 'v:0')
+    if (r3.alive) return r3
 
-  const r4 = await probeOnce(url, referrer, BROWSER_UA, 'a:0')
-  if (r4.alive) return r4
+    const r4 = await probeOnce(url, referrer, BROWSER_UA, 'a:0')
+    if (r4.alive) return r4
   }
 
   return { alive: false, responseMs: 0 }
 }
-
 // ── Probe with retries ────────────────────────────────────────────────────────
 // Returns { alive, needsProxy, responseMs }
 //
