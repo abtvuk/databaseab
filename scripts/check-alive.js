@@ -112,8 +112,20 @@ async function main() {
       passed++
     } else {
       entry.uptime = recordDead(entry.uptime)
-      entry.alive  = false
-      failed++
+      // Require 2 consecutive failures before killing a channel with history.
+      // consecutiveAlive is already reset to 0 by recordDead above.
+      // A brand-new channel (totalCount<=3) or one already on its second miss gets killed immediately.
+      const hasHistory = entry.uptime.totalCount > 3
+      const firstMiss  = hasHistory && entry.uptime.consecutiveAlive === 0
+                         && (entry.uptime.totalCount - 1) > 0
+                         && (entry.uptime.recentResults?.slice(-2,-1)[0] === 1)
+      if (firstMiss) {
+        // Leave alive — one more chance next run
+        entry.alive = true
+      } else {
+        entry.alive = false
+        failed++
+      }
     }
   })
 
