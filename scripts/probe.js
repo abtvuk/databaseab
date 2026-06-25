@@ -304,10 +304,11 @@ function computeScore(uptime) {
 // ── Uptime helpers ────────────────────────────────────────────────────────────
 
 function recordAlive(uptime) {
-  const u = uptime || { aliveCount: 0, totalCount: 0, consecutiveAlive: 0, lastSeen: null, lastProbed: null, score: null }
+  const u = uptime || { aliveCount: 0, totalCount: 0, consecutiveAlive: 0, consecutiveFailures: 0, lastSeen: null, lastProbed: null, score: null }
   u.aliveCount++
   u.totalCount++
   u.consecutiveAlive++
+  u.consecutiveFailures = 0
   u.lastSeen   = new Date().toISOString()
   u.lastProbed = new Date().toISOString()
   const w = cfg.scoreRecencyWindow || 0
@@ -317,9 +318,10 @@ function recordAlive(uptime) {
 }
 
 function recordDead(uptime) {
-  const u = uptime || { aliveCount: 0, totalCount: 0, consecutiveAlive: 0, lastSeen: null, lastProbed: null, score: null }
+  const u = uptime || { aliveCount: 0, totalCount: 0, consecutiveAlive: 0, consecutiveFailures: 0, lastSeen: null, lastProbed: null, score: null }
   u.totalCount++
   u.consecutiveAlive = 0
+  u.consecutiveFailures = (u.consecutiveFailures || 0) + 1
   u.lastProbed = new Date().toISOString()
   const w = cfg.scoreRecencyWindow || 0
   if (w) { u.recentResults = u.recentResults || []; u.recentResults.push(0); if (u.recentResults.length > w) u.recentResults.shift() }
