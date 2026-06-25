@@ -112,16 +112,8 @@ async function main() {
       passed++
     } else {
       entry.uptime = recordDead(entry.uptime)
-      // Kill immediately only if: no real history, OR the previous probe also failed.
-      // If the channel was passing before (prev recentResult = 1), give it one more run.
-      const prev = entry.uptime.recentResults
-      const prevWasAlive = prev && prev.length >= 2 && prev[prev.length - 2] === 1
-      if (prevWasAlive) {
-        entry.alive = true   // first miss — stay alive, re-checked next run
-      } else {
-        entry.alive = false
-        failed++
-      }
+      entry.alive  = false
+      failed++
     }
   })
 
