@@ -62,7 +62,7 @@ module.exports = {
   // channels every single time — the worst offenders get throttled way back.
   resurrectFrequency: {
     noHistory:          0,   // always try
-    scoreAbove50:       10,   // score ≥ 50% 
+    scoreAbove50:       1,   // score ≥ 50% 
     scoreAbove20:      30,   // score 20–49%
     scoreAbove0:       40,   // score 1–19% 
     scoreZeroFewData:  30,   // score 0%, totalCount ≤ 10  
