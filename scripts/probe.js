@@ -199,6 +199,7 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
 async function probeWithFallback(url, referrer, userAgent) {
   const r1 = await probeOnce(url, referrer, userAgent, 'v:0')
   if (r1.alive) return r1
+  if (r1.timedOut) return { alive: false, responseMs: r1.responseMs, timedOut: true }
 
   const r2 = await probeOnce(url, referrer, userAgent, 'a:0')
   if (r2.alive) return r2
