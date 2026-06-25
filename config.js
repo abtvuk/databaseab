@@ -31,10 +31,10 @@ module.exports = {
 
   // ── PROBE SETTINGS ─────────────────────────────────────────────────────────
   probe: {
-    timeoutSeconds:    7,  // seconds before a stream probe is aborted
-    retries:            1,
+    timeoutSeconds: 10,
+    retries:         1,
     retryDelaySeconds:  2,
-    concurrency:       20,  // simultaneous probes
+    concurrency:       25,
     segmentConcurrency: 8, 
     youtubeConcurrency: 6,
     slowThresholdMs:  8000, // ms above which a channel is flagged { slow: true }
