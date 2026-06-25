@@ -40,9 +40,9 @@ module.exports = {
   // ── PROBE SETTINGS ─────────────────────────────────────────────────────────
   probe: {
     timeoutSeconds:    7,  // seconds before a stream probe is aborted
-    retries:            0,  // retry attempts after first failure (0 = no retry)
+    retries:            1,  // retry attempts after first failure (0 = no retry)
     retryDelaySeconds:  2,  // seconds to wait between retries
-    concurrency:       35,  // simultaneous probes
+    concurrency:       30,  // simultaneous probes
     segmentConcurrency: 8, 
     youtubeConcurrency: 6,
     slowThresholdMs:  8000, // ms above which a channel is flagged { slow: true }
@@ -72,9 +72,9 @@ module.exports = {
     noHistory:          0,   // always try (no data = give it a chance)
     scoreAbove50:       8,   // score ≥ 50% — recently degraded, check often
     scoreAbove20:      24,   // score 20–49% — struggling, once a day
-    scoreAbove0:       48,   // score 1–19%  — almost always dead, every 2 days
+    scoreAbove0:       36,   // score 1–19%  — almost always dead, every 2 days
     scoreZeroFewData:  24,   // score 0%, totalCount ≤ 10 — too early to write off
-    scoreZeroManyData: 72,   // score 0%, totalCount > 10 — consistently dead, every 3 days
+    scoreZeroManyData: 60,   // score 0%, totalCount > 10 — consistently dead, every 3 days
   },
 
   // ── SCORE RECENCY WINDOW ───────────────────────────────────────────────────
