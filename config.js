@@ -13,10 +13,16 @@ module.exports = {
   output: {
     channels: 'feeds/merged/channels.json',
     youtube:  'feeds/merged/youtube.json',
+    archive:  'feeds/merged/archive.json',  // retired channels (0% score, 6+ months dead)
+    dead:     'feeds/merged/dead.json',     // pruned channels (100+ consecutive failures)
   },
 
   // ── SCHEDULES (cron, UTC) ──────────────────────────────────────────────────
-  // Change any of these and mirror the value in the corresponding .yml file.
+  // THIS IS THE SINGLE SOURCE OF TRUTH for all workflow schedules.
+  // After changing any value here, run:  node scripts/update-schedules.js
+  // That script patches the cron lines in all .github/workflows/*.yml files.
+  // Never edit cron lines in YML files manually.
+  //
   // '0 2 * * 1'    = every Monday at 02:00 UTC
   // '0 */4 * * *'  = every 4 hours
   // '0 */8 * * *'  = every 8 hours
@@ -91,6 +97,29 @@ module.exports = {
       probe:    true,
       editName: true,
     },
+  },
+
+  // ── DEAD CHANNEL MANAGEMENT ───────────────────────────────────────────────
+  //
+  // retirement: channels with score:0 AND dead for this many days move to
+  //   feeds/merged/archive.json and are removed from channels.json entirely.
+  //   Consumers can still reference archive.json for historical records.
+  //
+  // pruning: after this many consecutive failures a channel is moved to
+  //   feeds/merged/dead.json (stays in channels.json with alive:false but
+  //   probe:false so it is no longer probed). It can be manually re-enabled
+  //   by setting probe:true. Set to 0 to disable.
+  //
+  retirement: {
+    enabled:       true,
+    score0DaysMin: 180,  // days at score:0 before archiving (≈6 months)
+    output:        'feeds/merged/archive.json',
+  },
+
+  pruning: {
+    enabled:                  true,
+    consecutiveFailuresLimit: 100, // after this many consecutive fails → dead.json + probe:false
+    output:                   'feeds/merged/dead.json',
   },
 
   // ── MANUAL CHANNEL BLOCKLIST ───────────────────────────────────────────────

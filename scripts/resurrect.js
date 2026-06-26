@@ -15,7 +15,8 @@
 const cfg  = require('../config')
 const path = require('path')
 const fs   = require('fs')
-const { probeUrl, runWithConcurrency, recordAlive, recordDead, isDueForResurrect, checkpoint, progressBar } = require('./probe')
+const { probeUrl, runWithConcurrency, recordAlive, recordDead, isDueForResurrect,
+        checkpoint, progressBar, applyRetirementAndPruning, classifyFailSource } = require('./probe')
 
 const CHECKPOINT_EVERY = 1000
 const OUTPUT_PATH      = path.resolve(cfg.output.channels)
@@ -61,7 +62,8 @@ async function main() {
   const channelMap = new Map(channels.map(c => [c.id, c]))
   let resurrected = 0, stillDead = 0, done = 0
   const total = candidates.length
-  const failureCounts = {}
+  const failureCounts  = {}
+  const failureBySource = { stream: 0, runner: 0, unknown: 0 }
 
   const tasks = candidates.map(ch => async () => {
     const urls = ch.streamUrls || []
@@ -106,19 +108,27 @@ async function main() {
       entry.uptime = recordDead(entry.uptime)
       const reason = result.failReason || 'other'
       failureCounts[reason] = (failureCounts[reason] || 0) + 1
+      const source = classifyFailSource(reason)
+      failureBySource[source] = (failureBySource[source] || 0) + 1
       stillDead++
     }
   })
 
   await runWithConcurrency(tasks, cfg.probe.concurrency)
 
-  data.channels = channels.map(c => channelMap.get(c.id) || c)
+  // ── Points 1 & 2: retirement and pruning ────────────────────────────────────
+  const allChannels = channels.map(c => channelMap.get(c.id) || c)
+  const { retired, pruned } = applyRetirementAndPruning(allChannels)
+
+  data.channels = allChannels
   saveChannels(data)
 
   console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
   console.log(`  RESURRECTED  ${resurrected}  (flipped to alive: true)`)
   console.log(`  STILL DEAD   ${stillDead}`)
   console.log(`  THROTTLED    ${throttled}  (not due yet)`)
+  if (retired) console.log(`  ARCHIVED     ${retired}  → ${cfg.retirement.output}`)
+  if (pruned)  console.log(`  PRUNED       ${pruned}  → ${cfg.pruning.output} (probe:false)`)
   if (stillDead > 0) {
     console.log('\n  Failure breakdown (still-dead):')
     const sorted = Object.entries(failureCounts).sort((a, b) => b[1] - a[1])
@@ -126,6 +136,10 @@ async function main() {
       const pct = ((count / stillDead) * 100).toFixed(1)
       console.log(`    ${reason.padEnd(12)}  ${String(count).padStart(5)}  (${pct}%)`)
     }
+    console.log('\n  By source (stream-side vs runner/network):')
+    console.log(`    stream   ${String(failureBySource.stream).padStart(5)}  — stream returned hard error (4xx / no data)`)
+    console.log(`    runner   ${String(failureBySource.runner).padStart(5)}  — timeout / DNS / connection refused`)
+    console.log(`    unknown  ${String(failureBySource.unknown).padStart(5)}`)
   }
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
 }

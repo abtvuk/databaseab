@@ -432,4 +432,131 @@ function progressBar(done, total) {
   if (done === total) process.stdout.write('\n')
 }
 
-module.exports = { probeUrl, runWithConcurrency, recordAlive, recordDead, isDueForProbe, isDueForResurrect, checkpoint, progressBar }
+// ── Failure source classification ─────────────────────────────────────────────
+// Distinguishes between "the stream is dead" vs "the runner couldn't reach it".
+// This addresses the gap where 3,425 channels can fail and you don't know if
+// it's a stream problem or a CI runner/network problem.
+//
+// failSource values:
+//   'stream'  — the stream itself returned a hard error (4xx, no_stream, invalid)
+//               These are stream-side failures; the channel is likely actually dead.
+//   'runner'  — timeout, DNS, or connection refused.
+//               These MIGHT be runner/network issues, not necessarily a dead stream.
+//   'unknown' — could not determine
+
+function classifyFailSource(failReason) {
+  if (!failReason) return 'unknown'
+  if (['http_403', 'http_404', 'http_401', 'http_4xx', 'http_5xx', 'no_stream', 'invalid'].includes(failReason)) return 'stream'
+  if (['timeout', 'dns', 'refused'].includes(failReason)) return 'runner'
+  return 'unknown'
+}
+
+// ── Retirement check ──────────────────────────────────────────────────────────
+// Returns true if a channel qualifies for archival:
+//   - score is 0 (or null with enough history to be certain)
+//   - has been dead (lastSeen is old or null) for retirement.score0DaysMin days
+
+function isDueForRetirement(uptime) {
+  const ret = cfg.retirement
+  if (!ret?.enabled) return false
+  const score = uptime?.score ?? null
+  if (score !== 0) return false
+  const total = uptime?.totalCount ?? 0
+  if (total < 10) return false  // not enough data to be sure
+  const lastSeen = uptime?.lastSeen ? new Date(uptime.lastSeen) : null
+  if (!lastSeen) {
+    // Never seen alive — check if we have enough probe history
+    const lastProbed = uptime?.lastProbed ? new Date(uptime.lastProbed) : null
+    if (!lastProbed) return false
+    const daysSinceProbed = (Date.now() - lastProbed.getTime()) / 86400000
+    return daysSinceProbed >= (ret.score0DaysMin || 180)
+  }
+  const daysDead = (Date.now() - lastSeen.getTime()) / 86400000
+  return daysDead >= (ret.score0DaysMin || 180)
+}
+
+// ── Pruning check ─────────────────────────────────────────────────────────────
+// Returns true if a channel has hit the consecutive-failure limit and should
+// be moved to dead.json and have probe:false set.
+
+function isDueForPruning(uptime) {
+  const prun = cfg.pruning
+  if (!prun?.enabled || !prun.consecutiveFailuresLimit) return false
+  const failures = uptime?.consecutiveFailures ?? 0
+  return failures >= prun.consecutiveFailuresLimit
+}
+
+// ── Archive helpers ───────────────────────────────────────────────────────────
+// Load/save archive.json and dead.json. These are append-only logs —
+// channels that were moved out of channels.json.
+
+function loadFeed(outputPath) {
+  const p = require('path').resolve(outputPath)
+  try {
+    return JSON.parse(require('fs').readFileSync(p, 'utf8'))
+  } catch {
+    return { generated: null, total: 0, channels: [] }
+  }
+}
+
+function saveFeed(outputPath, channels) {
+  const p = require('path').resolve(outputPath)
+  require('fs').mkdirSync(require('path').dirname(p), { recursive: true })
+  require('fs').writeFileSync(p, JSON.stringify({
+    generated: new Date().toISOString(),
+    total: channels.length,
+    channels,
+  }, null, 2))
+}
+
+// ── Run retirement + pruning pass ─────────────────────────────────────────────
+// Called from check-alive and resurrect after probing is complete.
+// Mutates the channels array in-place (removes retired/pruned channels).
+// Returns { retired, pruned } counts.
+
+function applyRetirementAndPruning(channels) {
+  const retireCfg = cfg.retirement
+  const prunCfg   = cfg.pruning
+
+  const toRetire = []
+  const toPrune  = []
+  const toKeep   = []
+
+  for (const ch of channels) {
+    if (retireCfg?.enabled && isDueForRetirement(ch.uptime)) {
+      toRetire.push({ ...ch, retiredAt: new Date().toISOString() })
+    } else if (prunCfg?.enabled && ch.alive === false && isDueForPruning(ch.uptime)) {
+      toPrune.push({ ...ch, prunedAt: new Date().toISOString() })
+      // Keep in channels.json but with probe:false — it's documented but no longer probed
+      toKeep.push({ ...ch, probe: false })
+    } else {
+      toKeep.push(ch)
+    }
+  }
+
+  if (toRetire.length) {
+    const archivePath = retireCfg.output || cfg.output.archive
+    const existing = loadFeed(archivePath)
+    const existingIds = new Set(existing.channels.map(c => c.id))
+    const newEntries = toRetire.filter(c => !existingIds.has(c.id))
+    saveFeed(archivePath, [...existing.channels, ...newEntries])
+    console.log(`  [retire] Archived ${toRetire.length} channel(s) to ${archivePath}`)
+  }
+
+  if (toPrune.length) {
+    const deadPath = prunCfg.output || cfg.output.dead
+    const existing = loadFeed(deadPath)
+    const existingIds = new Set(existing.channels.map(c => c.id))
+    const newEntries = toPrune.filter(c => !existingIds.has(c.id))
+    saveFeed(deadPath, [...existing.channels, ...newEntries])
+    console.log(`  [prune]  Moved ${toPrune.length} channel(s) to ${deadPath} (probe:false)`)
+  }
+
+  // Replace the channels array contents in-place
+  channels.length = 0
+  for (const ch of toKeep) channels.push(ch)
+
+  return { retired: toRetire.length, pruned: toPrune.length }
+}
+
+module.exports = { probeUrl, runWithConcurrency, recordAlive, recordDead, isDueForProbe, isDueForResurrect, checkpoint, progressBar, classifyFailSource, isDueForRetirement, isDueForPruning, applyRetirementAndPruning }
