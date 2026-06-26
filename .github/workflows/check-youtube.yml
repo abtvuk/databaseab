@@ -1,7 +1,7 @@
 name: Check YouTube Channels
 
 # ── Schedule ──────────────────────────────────────────────────────────────────
-# Probes all YouTube channels (ytId set, probe: true) every 12 hours.
+# Mirrors config.js → schedules.checkYoutube  (every 12 hours)
 # YouTube channels are more stable than HLS streams so 12h is sufficient.
 on:
   schedule:
@@ -16,13 +16,8 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
+      - name: Setup databaseab
+        uses: ./.github/actions/setup-abtv
 
       - name: Check YouTube channels
         run: node scripts/check-youtube.js
@@ -31,6 +26,6 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add feeds/merged/channels.json feeds/merged/youtube.json
+          git add feeds/merged/youtube.json
           git diff --staged --quiet || git commit -m "chore: check YouTube channels [$(date -u '+%Y-%m-%d %H:%M UTC')]"
           git push

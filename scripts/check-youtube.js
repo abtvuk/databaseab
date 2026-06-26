@@ -122,8 +122,13 @@ async function main() {
       passed++
     } else if (result.alive === false) {
       entry.uptime = recordDead(entry.uptime)
-      entry.alive  = false
-      failed++
+      // ── Point 6: don't flip dead on a single failure — require 3 consecutive
+      const failures = entry.uptime?.consecutiveFailures || 0
+      if (failures >= 3) {
+        entry.alive = false
+        failed++
+      }
+      // alive stays true until 3 failures accumulate
     }
     // null = transient error, leave alive/uptime untouched
   })
