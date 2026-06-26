@@ -1,23 +1,8 @@
-// scripts/update-schedules.js
-// ─────────────────────────────────────────────────────────────────────────────
-//  Single source of truth for cron schedules.
-//
-//  Reads config.js → schedules and patches the cron expressions in the
-//  corresponding workflow YML files. Run this whenever you change a schedule
-//  in config.js so the workflows stay in sync automatically.
-//
-//  Usage:
-//    node scripts/update-schedules.js
-//
-//  This is the fix for the schedule-duplication problem: config.js owns the
-//  schedules; the YML files are derived. Never edit cron lines in YML manually.
-// ─────────────────────────────────────────────────────────────────────────────
-
 const cfg  = require('../config')
 const fs   = require('fs')
 const path = require('path')
 
-// Map config.js schedule key → workflow file
+// Map config.js schedule key -> workflow file
 const SCHEDULE_MAP = [
   { key: 'sync',         file: '.github/workflows/sync.yml'          },
   { key: 'resurrect',    file: '.github/workflows/resurrect.yml'     },
