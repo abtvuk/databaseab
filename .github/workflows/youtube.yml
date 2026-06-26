@@ -17,7 +17,7 @@ jobs:
         uses: ./.github/actions/setup-abtv
 
       - name: Check YouTube channels
-        run: node scripts/check-youtube.js
+        run: node scripts/youtube.js
 
       - name: Commit results
         run: |

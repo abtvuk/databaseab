@@ -24,7 +24,7 @@ jobs:
           install-ffprobe: 'true'
 
       - name: Check alive channels
-        run: node scripts/check-alive.js
+        run: node scripts/alive.js
 
       - name: Commit results
         run: |
