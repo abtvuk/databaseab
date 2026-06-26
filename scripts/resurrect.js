@@ -61,6 +61,7 @@ async function main() {
   const channelMap = new Map(channels.map(c => [c.id, c]))
   let resurrected = 0, stillDead = 0, done = 0
   const total = candidates.length
+  const failureCounts = {}
 
   const tasks = candidates.map(ch => async () => {
     const urls = ch.streamUrls || []
@@ -103,6 +104,8 @@ async function main() {
       resurrected++
     } else {
       entry.uptime = recordDead(entry.uptime)
+      const reason = result.failReason || 'other'
+      failureCounts[reason] = (failureCounts[reason] || 0) + 1
       stillDead++
     }
   })
@@ -116,6 +119,14 @@ async function main() {
   console.log(`  RESURRECTED  ${resurrected}  (flipped to alive: true)`)
   console.log(`  STILL DEAD   ${stillDead}`)
   console.log(`  THROTTLED    ${throttled}  (not due yet)`)
+  if (stillDead > 0) {
+    console.log('\n  Failure breakdown (still-dead):')
+    const sorted = Object.entries(failureCounts).sort((a, b) => b[1] - a[1])
+    for (const [reason, count] of sorted) {
+      const pct = ((count / stillDead) * 100).toFixed(1)
+      console.log(`    ${reason.padEnd(12)}  ${String(count).padStart(5)}  (${pct}%)`)
+    }
+  }
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
 }
 

@@ -164,6 +164,26 @@ async function segmentProbe(url, referrer, userAgent) {
 // browser UA — catches servers that block non-browser agents.
 // Returns { alive, responseMs }
 
+// ── Failure classification ────────────────────────────────────────────────────
+// Parses ffprobe stderr + error object into a human-readable category.
+// Categories: timeout | dns | refused | http_403 | http_404 | http_4xx |
+//             http_5xx | no_stream | invalid | other
+
+function classifyFailure(timedOut, err, stderr) {
+  if (timedOut || err?.killed) return 'timeout'
+  const s = ((stderr || '') + ' ' + (err?.message || '')).toLowerCase()
+  if (s.includes('name or service not known') || s.includes('temporary failure in name resolution') || s.includes('nodename nor servname provided')) return 'dns'
+  if (s.includes('connection refused'))  return 'refused'
+  if (s.includes('connection timed out') || s.includes('operation timed out')) return 'timeout'
+  if (s.includes('http error 403') || s.includes('403 forbidden'))  return 'http_403'
+  if (s.includes('http error 404') || s.includes('404 not found'))  return 'http_404'
+  if (s.includes('http error 401'))                                  return 'http_401'
+  if (/http error 5\d\d/.test(s))                                    return 'http_5xx'
+  if (s.includes('http error 4'))                                    return 'http_4xx'
+  if (s.includes('invalid data') || s.includes('no such file') || s.includes('moov atom not found')) return 'invalid'
+  return 'other'
+}
+
 function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
   return new Promise(resolve => {
     const t0   = Date.now()
@@ -178,11 +198,12 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
       url,
     ]
 
-    const child = execFile('ffprobe', args, { timeout: (TIMEOUT_S + 5) * 1000 }, (err, stdout) => {
+    const child = execFile('ffprobe', args, { timeout: (TIMEOUT_S + 5) * 1000 }, (err, stdout, stderr) => {
       const responseMs = Date.now() - t0
       if (err) {
         const timedOut = responseMs >= (TIMEOUT_S + 4) * 1000
-        return resolve({ alive: false, responseMs, timedOut })
+        const failReason = classifyFailure(timedOut, err, stderr)
+        return resolve({ alive: false, responseMs, timedOut, failReason })
       }
       const out = stdout.trim()
       resolve({ alive: out.includes('video') || out.includes('audio'), responseMs, timedOut: false })
@@ -199,7 +220,7 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
 async function probeWithFallback(url, referrer, userAgent) {
   const r1 = await probeOnce(url, referrer, userAgent, 'v:0')
   if (r1.alive) return r1
-  if (r1.timedOut) return { alive: false, responseMs: r1.responseMs, timedOut: true }
+  if (r1.timedOut) return { alive: false, responseMs: r1.responseMs, timedOut: true, failReason: r1.failReason }
 
   const r2 = await probeOnce(url, referrer, userAgent, 'a:0')
   if (r2.alive) return r2
@@ -210,9 +231,10 @@ async function probeWithFallback(url, referrer, userAgent) {
 
     const r4 = await probeOnce(url, referrer, BROWSER_UA, 'a:0')
     if (r4.alive) return r4
+    return { alive: false, responseMs: r4.responseMs, failReason: r4.failReason }
   }
 
-  return { alive: false, responseMs: 0 }
+  return { alive: false, responseMs: r2.responseMs, failReason: r2.failReason }
 }
 // ── Probe with retries ────────────────────────────────────────────────────────
 // Returns { alive, needsProxy, responseMs }
@@ -249,7 +271,7 @@ async function probeUrl(url, referrer, userAgent) {
       return { alive: true, needsProxy: !browserOk, responseMs: result.responseMs }
     }
 
-    last = { alive: false, needsProxy: false, responseMs: result.responseMs }
+    last = { alive: false, needsProxy: false, responseMs: result.responseMs, failReason: result.failReason }
   }
 
   return last
