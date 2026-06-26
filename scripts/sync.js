@@ -62,8 +62,6 @@ function buildStreamMap(streams, blockedIds) {
   return map
 }
 
-// ── Build logo map from iptv-org logos.json ───────────────────────────────────
-
 function buildLogoMap(logos) {
   const map = {}
   for (const l of logos) {
@@ -71,8 +69,6 @@ function buildLogoMap(logos) {
   }
   return map
 }
-
-// ── Derive tv/radio flags from categories ─────────────────────────────────────
 
 function mediaFlags(categories) {
   const cats = (categories || []).map(c => c.toLowerCase())
@@ -110,8 +106,6 @@ function newIptvEntry(c, streamMap, logoMap) {
   }
 }
 
-// ── Mirror iptv-org fields onto an existing channel ───────────────────────────
-
 function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
   const ch = { ...existing }
 
@@ -127,7 +121,7 @@ function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
   ch.streamUrls  = streams.length ? streams.map(s => s.url) : existing.streamUrls || []
   ch.referrer    = streams[0]?.referrer  || existing.referrer  || null
   ch.userAgent   = streams[0]?.userAgent || existing.userAgent || null
-  ch.needsProxy  = existing.needsProxy || false // preserve probe result; don't infer from referrer
+  ch.needsProxy  = existing.needsProxy || false
   ch.country     = iptvCh.country     || existing.country     || ''
   ch.categories  = iptvCh.categories  || existing.categories  || []
   ch.website     = iptvCh.website     || existing.website     || null
@@ -137,7 +131,6 @@ function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
   ch.tv    = tv
   ch.radio = radio
 
-  // Backfill fields on existing channels that predate them
   if (!('geoBlocked'      in ch)) ch.geoBlocked      = false
   if (!('source'          in ch)) ch.source           = 'iptv'
   if (!('nanoid'          in ch)) ch.nanoid           = null
@@ -149,8 +142,6 @@ function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
 
   return ch
 }
-
-// ── Save youtube.json (ytId channels extracted from main list) ────────────────
 
 function saveYoutube() {
   let ytChannels = []
@@ -182,8 +173,6 @@ function saveYoutube() {
   return clean.length
 }
 
-// ── Sort ──────────────────────────────────────────────────────────────────────
-
 function sortChannels(channels) {
   return channels.slice().sort((a, b) => {
     if (a.country && !b.country) return -1
@@ -193,15 +182,7 @@ function sortChannels(channels) {
   })
 }
 
-// ── Main ──────────────────────────────────────────────────────────────────────
-
 async function main() {
-  console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-  console.log('  databaseab — sync.js')
-  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
-
-  // ── 1. Fetch iptv-org sources ───────────────────────────────────────────────
-  console.log('── [1/3] Fetching iptv-org sources ──')
   const t1 = Date.now()
 
   let iptvChannels, streams, blocklist, logos
@@ -214,19 +195,16 @@ async function main() {
       fetchJSON(cfg.sources.iptvLogos).catch(() => []),
     ])
   } catch (err) {
-    console.error(`  ✗ Fetch failed: ${err.message}`)
+    console.error(`fetch failed: ${err.message}`)
     process.exit(1)
   }
 
-  console.log(`  iptv-org channels: ${iptvChannels.length}`)
-  console.log(`  iptv-org streams:  ${streams.length}`)
-  console.log(`  iptv-org logos:    ${logos.length}`)
-  console.log(`  took ${Date.now() - t1} ms`)
+  console.log(`fetched: ${iptvChannels.length} channels  ${streams.length} streams  ${logos.length} logos  (${Date.now() - t1}ms)`)
 
-  const blockedIds   = new Set(blocklist.filter(b => b.reason === 'nsfw').map(b => b.channel))
-  const nsfwIds      = new Set(iptvChannels.filter(c => c.is_nsfw).map(c => c.id))
-  const manualIds    = new Set(cfg.manualBlocklist || [])
-  const allBlocked   = new Set([...blockedIds, ...nsfwIds, ...manualIds])
+  const blockedIds = new Set(blocklist.filter(b => b.reason === 'nsfw').map(b => b.channel))
+  const nsfwIds    = new Set(iptvChannels.filter(c => c.is_nsfw).map(c => c.id))
+  const manualIds  = new Set(cfg.manualBlocklist || [])
+  const allBlocked = new Set([...blockedIds, ...nsfwIds, ...manualIds])
 
   const streamMap = buildStreamMap(streams, allBlocked)
   const logoMap   = buildLogoMap(logos)
@@ -237,9 +215,7 @@ async function main() {
       .map(c => [c.id, c])
   )
 
-  // ── 2. Strip radio + sync iptv-org channels ─────────────────────────────────
-  console.log('\n── [2/3] Stripping radio, syncing iptv-org channels ──')
-  const existing    = loadChannels().filter(c => !c.radio && !c.ytId)  // drop radio + YouTube (managed separately)
+  const existing    = loadChannels().filter(c => !c.radio && !c.ytId)
   const existingMap = new Map(existing.map(c => [c.id, c]))
   let iptvMirrored  = 0, iptvAdded = 0
 
@@ -257,18 +233,13 @@ async function main() {
     iptvAdded++
   }
 
-  console.log(`  Mirrored: ${iptvMirrored}  |  Added: ${iptvAdded}`)
+  console.log(`mirrored: ${iptvMirrored}  added: ${iptvAdded}`)
 
-  // ── 3. Write channels.json + youtube.json ───────────────────────────────────
-  console.log('\n── [3/3] Writing output files ──')
   const sorted  = sortChannels(synced)
   saveChannels(sorted)
   const ytCount = saveYoutube()
 
-  console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-  console.log(`  DONE  ${sorted.length} TV channels → ${cfg.output.channels}`)
-  console.log(`  YouTube: ${ytCount} channels → ${cfg.output.youtube}`)
-  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
+  console.log(`done: ${sorted.length} TV channels  ${ytCount} YouTube channels`)
 }
 
 main().catch(err => { console.error(err); process.exit(1) })
