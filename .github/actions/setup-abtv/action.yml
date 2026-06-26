@@ -1,15 +1,9 @@
-# .github/actions/setup-abtv/action.yml
-# ─────────────────────────────────────────────────────────────────────────────
-# Composite action: Node.js + optional ffprobe.
-# NOTE: checkout must happen in the workflow BEFORE calling this action,
-# because the action file itself isn't available until after checkout.
-# ─────────────────────────────────────────────────────────────────────────────
 name: Setup databaseab
 description: Set up Node 20 and optionally install ffprobe
 
 inputs:
   install-ffprobe:
-    description: 'Whether to install ffprobe (needed for HLS probing workflows)'
+    description: 'Whether to install ffprobe'
     required: false
     default: 'false'
 
