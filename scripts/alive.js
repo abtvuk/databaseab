@@ -1,24 +1,3 @@
-// scripts/check-alive.js
-// ─────────────────────────────────────────────────────────────────────────────
-//  Alive channel checker.
-//
-//  Targets: channels where alive: true AND probe: true AND not a YouTube channel
-//  Skips:   channels not due for a probe based on their uptime score + lastProbed
-//  On fail: increments consecutiveFailures; marks dead after 3 consecutive failures
-//  On pass: updates uptime, alive stays true
-//
-//  After probing:
-//    - Channels with score:0 dead ≥ 6 months → archive.json (retirement)
-//    - Channels with consecutiveFailures ≥ 100 → dead.json + probe:false (pruning)
-//
-//  Probe frequency (config.js → probeFrequency):
-//    no history     → always probe
-//    score < 70%    → probe if last check was > 5h ago
-//    score 70–79%   → probe if last check was > 8h ago
-//    score 80–84%   → probe if last check was > 12h ago
-//    score ≥ 85%    → probe if last check was > 24h ago
-// ─────────────────────────────────────────────────────────────────────────────
-
 const cfg = require('../config')
 const { probeUrl, runWithConcurrency, recordAlive, recordDead, isDueForProbe,
         progressBar, applyRetirementAndPruning, classifyFailSource } = require('./probe')
@@ -40,14 +19,13 @@ function saveChannels(data) {
 }
 
 async function main() {
-  console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-  console.log('  databaseab — check-alive.js')
-  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
+  console.log('\n━━━━━━━━━━━━━━━━━━━')
+  console.log('  databaseab — alive.js')
+  console.log('━━━━━━━━━━━━━━━━━━━\n')
 
   const data     = loadChannels()
   const channels = data.channels || []
 
-  // YouTube channels are handled by check-youtube.js
   const candidates = channels.filter(c =>
     c.alive === true &&
     c.probe !== false &&
@@ -66,14 +44,13 @@ async function main() {
 
   if (candidates.length === 0) {
     console.log('  Nothing to probe. Exiting.')
-    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
     return
   }
 
   const channelMap = new Map(channels.map(c => [c.id, c]))
   let passed = 0, failed = 0, flippedDead = 0, done = 0
   const total = candidates.length
-  // ── Point 7: failure breakdown by reason and source ─────────────────────────
+  
   const failureCounts  = {}  // by reason: timeout, dns, http_403, …
   const failureBySource = { stream: 0, runner: 0, unknown: 0 }
 
@@ -81,7 +58,7 @@ async function main() {
     const urls = ch.streamUrls || []
 
     if (!urls.length) {
-      // No URL to probe — leave alive as-is, just update lastProbed
+      // No URL to probe — just update lastProbed
       const entry = channelMap.get(ch.id)
       if (entry) entry.uptime = { ...(entry.uptime || {}), lastProbed: new Date().toISOString() }
       done++
@@ -89,7 +66,7 @@ async function main() {
       return
     }
 
-    // Try each URL in order; stop at first live one
+    // Try each URL in order, stop at first live one
     let result = { alive: false, needsProxy: false, responseMs: 0 }
     let liveIndex = -1
     for (let i = 0; i < urls.length; i++) {
@@ -104,7 +81,7 @@ async function main() {
     if (!entry) return
 
     if (result.alive) {
-      // Bubble the working URL to front so the player hits it first
+      // Bubble the working URL to front for player to hit it first
       if (liveIndex > 0) {
         entry.streamUrls = [urls[liveIndex], ...urls.filter((_, i) => i !== liveIndex)]
       }
@@ -119,13 +96,11 @@ async function main() {
     } else {
       entry.uptime = recordDead(entry.uptime)
 
-      // ── Point 7: track failure reason and source ───────────────────────────
       const reason = result.failReason || 'other'
       failureCounts[reason] = (failureCounts[reason] || 0) + 1
       const source = classifyFailSource(reason)
       failureBySource[source] = (failureBySource[source] || 0) + 1
 
-      // ── Point 6: flip dead only after 3 consecutive failures ───────────────
       const failures = entry.uptime?.consecutiveFailures || 0
       if (failures >= 3) {
         entry.alive = false
@@ -138,7 +113,7 @@ async function main() {
 
   await runWithConcurrency(tasks, cfg.probe.concurrency)
 
-  // ── Points 1 & 2: retirement and pruning ────────────────────────────────────
+  // ─ retirement and pruning─
   const allChannels = channels.map(c => channelMap.get(c.id) || c)
   const { retired, pruned } = applyRetirementAndPruning(allChannels)
 
