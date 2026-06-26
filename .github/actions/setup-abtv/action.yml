@@ -1,12 +1,11 @@
 # .github/actions/setup-abtv/action.yml
 # ─────────────────────────────────────────────────────────────────────────────
-# Composite action: checkout + Node.js + ffprobe.
-# Used by check-alive, resurrect — any workflow that needs ffprobe.
-# For ffprobe-free workflows (sync, check-youtube) just use this without
-# the install-ffprobe input set to true, or omit it and use plain setup-node.
+# Composite action: Node.js + optional ffprobe.
+# NOTE: checkout must happen in the workflow BEFORE calling this action,
+# because the action file itself isn't available until after checkout.
 # ─────────────────────────────────────────────────────────────────────────────
 name: Setup databaseab
-description: Checkout repo, set up Node 20, optionally install ffprobe
+description: Set up Node 20 and optionally install ffprobe
 
 inputs:
   install-ffprobe:
@@ -17,9 +16,6 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
