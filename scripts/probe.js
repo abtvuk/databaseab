@@ -1,8 +1,3 @@
-// scripts/probe.js
-// ─────────────────────────────────────────────────────────────────────────────
-//  Shared stream probing utilities used by check-alive.js and resurrect.js
-// ─────────────────────────────────────────────────────────────────────────────
-
 const cfg  = require('../config')
 const { execFile } = require('child_process')
 
@@ -12,14 +7,6 @@ const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
 const ORIGIN     = 'https://abtv.cictehro.space'
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)) }
-
-// ── CORS check ────────────────────────────────────────────────────────────────
-// Returns { browserOk, needsProxy }
-// browserOk   = stream is directly playable in a browser
-// needsProxy  = stream is alive but needs the server-side proxy to bypass CORS
-//
-// Key insight: if ffprobe reached the stream but CORS is missing/wrong,
-// the stream is ALIVE — it just needs the proxy. We must not mark it dead.
 
 async function corsCheck(url, referrer, userAgent) {
   try {
@@ -36,7 +23,6 @@ async function corsCheck(url, referrer, userAgent) {
     })
     clearTimeout(timer)
 
-    // Hard error codes that a proxy cannot fix — stream is dead or geo-blocked
     if (res.status === 403 || res.status === 404 || res.status === 410 || res.status === 451) {
       return { browserOk: false, needsProxy: false }
     }
@@ -44,22 +30,14 @@ async function corsCheck(url, referrer, userAgent) {
     const acao = res.headers.get('access-control-allow-origin')
     const browserOk = acao === '*' || acao === ORIGIN
 
-    // Stream responded (2xx) but CORS missing → proxy can bridge it
     if (res.ok && !browserOk) return { browserOk: false, needsProxy: true }
-
-    // Non-2xx, non-hard-error (e.g. 401, 5xx) — stream may be proxy-able
     if (!res.ok) return { browserOk: false, needsProxy: true }
 
     return { browserOk: true, needsProxy: false }
-} catch {
-    // Network error / timeout — uncertain, let segmentProbe decide
+  } catch {
     return { browserOk: false, needsProxy: false, corsTimedOut: true }
   }
 }
-
-// ── Unplayable domain check ──────────────────────────────────────────────────
-// Returns true if the URL's hostname matches a known token-expiry or
-// structurally-unplayable CDN that always passes probing but never plays.
 
 function isUnplayableDomain(url) {
   const blocked = cfg.unplayableDomains || []
@@ -71,10 +49,6 @@ function isUnplayableDomain(url) {
     return false
   }
 }
-
-// ── Segment concurrency semaphore ────────────────────────────────────────────
-// Limits simultaneous segment probes independently of the main probe concurrency.
-// Prevents OOM/runner-death on CI when many channels need proxy verification.
 
 const SEGMENT_CONCURRENCY = cfg.probe.segmentConcurrency || 8
 let _segmentActive = 0
@@ -89,17 +63,6 @@ function releaseSegmentSlot() {
   if (_segmentQueue.length) { _segmentQueue.shift()() }
   else _segmentActive--
 }
-
-// ── Segment-level probe ───────────────────────────────────────────────────────
-// Called only when corsCheck returns needsProxy:true.
-// Fetches the manifest, extracts the first segment/child URL, then fetches
-// that segment with a browser UA + Origin to confirm real playability.
-// Returns { playable: boolean }
-//
-// Catches:
-//   - jmp2.uk-style redirect chains that browsers can't follow
-//   - bozztv-style segment-level origin enforcement
-//   - Any CDN that gates segments differently from the manifest
 
 async function segmentProbe(url, referrer, userAgent) {
   await acquireSegmentSlot()
@@ -120,13 +83,11 @@ async function segmentProbe(url, referrer, userAgent) {
 
     const text = await res.text()
     clearTimeout(timer)
-    
-    // Extract first non-comment, non-empty line that looks like a URL or path
+
     const lines = text.split('\n').map(l => l.trim()).filter(l => l && !l.startsWith('#'))
     const firstSegment = lines[0]
     if (!firstSegment) return { playable: false }
 
-    // Resolve relative URLs against the manifest URL
     let segmentUrl
     try {
       segmentUrl = new URL(firstSegment).href
@@ -134,7 +95,6 @@ async function segmentProbe(url, referrer, userAgent) {
       segmentUrl = new URL(firstSegment, url).href
     }
 
-    // Fetch the segment/child manifest
     const ctrl2 = new AbortController()
     const timer2 = setTimeout(() => ctrl2.abort(), 10000)
     const segRes = await fetch(segmentUrl, {
@@ -157,17 +117,6 @@ async function segmentProbe(url, referrer, userAgent) {
     return { playable: false }
   }
 }
-
-// ── ffprobe stream probe ──────────────────────────────────────────────────────
-// Uses ffprobe to actually connect and read stream data.
-// Tries with the channel's own UA/referrer first, then falls back to a
-// browser UA — catches servers that block non-browser agents.
-// Returns { alive, responseMs }
-
-// ── Failure classification ────────────────────────────────────────────────────
-// Parses ffprobe stderr + error object into a human-readable category.
-// Categories: timeout | dns | refused | http_403 | http_404 | http_4xx |
-//             http_5xx | no_stream | invalid | other
 
 function classifyFailure(timedOut, err, stderr) {
   if (timedOut || err?.killed) return 'timeout'
@@ -214,10 +163,6 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
   })
 }
 
-// ── Probe with browser UA fallback ────────────────────────────────────────────
-// Fails fast on timeout — if the server is unreachable, don't waste time
-// running 3 more probes. Only tries browser UA if the server actually responded.
-
 async function probeWithFallback(url, referrer, userAgent) {
   const r1 = await probeOnce(url, referrer, userAgent, 'v:0')
   if (r1.alive) return r1
@@ -237,12 +182,6 @@ async function probeWithFallback(url, referrer, userAgent) {
 
   return { alive: false, responseMs: r2.responseMs, failReason: r2.failReason }
 }
-// ── Probe with retries ────────────────────────────────────────────────────────
-// Returns { alive, needsProxy, responseMs }
-//
-// alive      = stream has reachable, decodable content
-// needsProxy = alive but browser can't play it directly (CORS/referrer lock)
-//              → caller should set needsProxy: true on the channel
 
 async function probeUrl(url, referrer, userAgent) {
   let last = { alive: false, needsProxy: false, responseMs: 0 }
@@ -253,7 +192,6 @@ async function probeUrl(url, referrer, userAgent) {
     const result = await probeWithFallback(url, referrer, userAgent)
 
     if (result.alive) {
-      // Check against known token-expiry / structurally-unplayable CDNs first
       if (isUnplayableDomain(url)) {
         return { alive: true, needsProxy: false, browserUnplayable: true, responseMs: result.responseMs }
       }
@@ -261,10 +199,8 @@ async function probeUrl(url, referrer, userAgent) {
       const { browserOk, needsProxy, corsTimedOut } = await corsCheck(url, referrer, userAgent)
 
       if (!browserOk && (needsProxy || corsTimedOut)) {
-        // Proxy is needed — but verify it actually plays at segment level
         const { playable } = await segmentProbe(url, referrer, userAgent)
         if (!playable) {
-          // Manifest responds but segments don't — alive for bookkeeping but unplayable
           return { alive: true, needsProxy: false, browserUnplayable: true, responseMs: result.responseMs }
         }
       }
@@ -277,8 +213,6 @@ async function probeUrl(url, referrer, userAgent) {
 
   return last
 }
-
-// ── Concurrency pool ──────────────────────────────────────────────────────────
 
 async function runWithConcurrency(tasks, limit) {
   let i = 0
@@ -293,14 +227,6 @@ async function runWithConcurrency(tasks, limit) {
   return results
 }
 
-// ── Recency-weighted score ────────────────────────────────────────────────────
-// The raw aliveCount/totalCount ratio is misleading for channels with long
-// histories: a channel alive 900/1000 times historically but dead the last
-// 50 checks still shows score:90. We weight the most recent N results at
-// full value and older results at half, so recent degradation shows up faster.
-//
-// With scoreRecencyWindow:0 this degrades to the plain ratio.
-
 function computeScore(uptime) {
   const window = cfg.scoreRecencyWindow || 0
   const { aliveCount, totalCount } = uptime
@@ -308,23 +234,19 @@ function computeScore(uptime) {
   if (!window || totalCount <= window) {
     return Math.round((aliveCount / totalCount) * 100)
   }
-  
+
   const recent      = uptime.recentResults || []
   const recentAlive = recent.reduce((s, v) => s + v, 0)
   const recentTotal = recent.length
   const oldTotal    = totalCount - recentTotal
   const oldAlive    = aliveCount - recentAlive
-  // Cap old history to window×4 so ancient data can't permanently bury a recovered channel
   const oldCap = Math.max(window * 4, Math.round(oldTotal * 0.1))
   const oldTotalCapped  = Math.min(oldTotal, oldCap)
   const oldAliveCapped  = oldTotal > 0 ? Math.round(oldAlive * (oldTotalCapped / oldTotal)) : 0
-  // Recent results at weight 1.0, old results at weight 0.5
   const weightedAlive = recentAlive * 1.0 + oldAliveCapped * 0.5
   const weightedTotal = recentTotal * 1.0 + oldTotalCapped * 0.5
   return Math.round((weightedAlive / weightedTotal) * 100)
 }
-
-// ── Uptime helpers ────────────────────────────────────────────────────────────
 
 function recordAlive(uptime) {
   const u = uptime || { aliveCount: 0, totalCount: 0, consecutiveAlive: 0, consecutiveFailures: 0, lastSeen: null, lastProbed: null, score: null }
@@ -352,9 +274,6 @@ function recordDead(uptime) {
   return u
 }
 
-// ── Probe frequency check ─────────────────────────────────────────────────────
-// Returns true if this alive channel is due for a re-probe.
-
 function isDueForProbe(uptime) {
   const pf = cfg.probeFrequency
   const score = uptime?.score ?? null
@@ -372,10 +291,6 @@ function isDueForProbe(uptime) {
   return hoursSince >= minHours
 }
 
-// ── Resurrect frequency check ─────────────────────────────────────────────────
-// Returns true if this dead channel is worth retrying now.
-// Channels with a long history of 0% get throttled way back.
-
 function isDueForResurrect(uptime) {
   const rf = cfg.resurrectFrequency
   const score      = uptime?.score ?? null
@@ -383,7 +298,6 @@ function isDueForResurrect(uptime) {
   const lastProbed = uptime?.lastProbed ? new Date(uptime.lastProbed) : null
   const hoursSince = lastProbed ? (Date.now() - lastProbed.getTime()) / 3600000 : Infinity
 
-  // No history at all → always try
   if (score === null || total === 0) return true
 
   let minHours
@@ -400,9 +314,6 @@ function isDueForResurrect(uptime) {
   return hoursSince >= minHours
 }
 
-// ── Checkpoint (shared) ───────────────────────────────────────────────────────
-// Saves current state and pushes to git. Used by check-alive and resurrect.
-
 function checkpoint(data, channels, channelMap, outputPath, label, done, total) {
   const { execSync } = require('child_process')
   data.channels = channels.map(c => channelMap.get(c.id) || c)
@@ -415,13 +326,10 @@ function checkpoint(data, channels, channelMap, outputPath, label, done, total) 
     execSync(`git diff --staged --quiet || git commit -m "chore: ${label} checkpoint [$(date -u '+%Y-%m-%d %H:%M UTC')]"`, { shell: true, stdio: 'ignore' })
     execSync('git pull --rebase --autostash', { stdio: 'ignore' })
     execSync('git push', { stdio: 'ignore' })
-    console.log(`  [checkpoint] saved & pushed at ${done}/${total}`)
   } catch (e) {
     console.warn(`  [checkpoint] git error (non-fatal): ${e.message}`)
   }
 }
-
-// ── Progress bar ──────────────────────────────────────────────────────────────
 
 function progressBar(done, total) {
   if (done % 100 !== 0 && done !== total) return
@@ -432,18 +340,6 @@ function progressBar(done, total) {
   if (done === total) process.stdout.write('\n')
 }
 
-// ── Failure source classification ─────────────────────────────────────────────
-// Distinguishes between "the stream is dead" vs "the runner couldn't reach it".
-// This addresses the gap where 3,425 channels can fail and you don't know if
-// it's a stream problem or a CI runner/network problem.
-//
-// failSource values:
-//   'stream'  — the stream itself returned a hard error (4xx, no_stream, invalid)
-//               These are stream-side failures; the channel is likely actually dead.
-//   'runner'  — timeout, DNS, or connection refused.
-//               These MIGHT be runner/network issues, not necessarily a dead stream.
-//   'unknown' — could not determine
-
 function classifyFailSource(failReason) {
   if (!failReason) return 'unknown'
   if (['http_403', 'http_404', 'http_401', 'http_4xx', 'http_5xx', 'no_stream', 'invalid'].includes(failReason)) return 'stream'
@@ -451,21 +347,15 @@ function classifyFailSource(failReason) {
   return 'unknown'
 }
 
-// ── Retirement check ──────────────────────────────────────────────────────────
-// Returns true if a channel qualifies for archival:
-//   - score is 0 (or null with enough history to be certain)
-//   - has been dead (lastSeen is old or null) for retirement.score0DaysMin days
-
 function isDueForRetirement(uptime) {
   const ret = cfg.retirement
   if (!ret?.enabled) return false
   const score = uptime?.score ?? null
   if (score !== 0) return false
   const total = uptime?.totalCount ?? 0
-  if (total < 10) return false  // not enough data to be sure
+  if (total < 10) return false
   const lastSeen = uptime?.lastSeen ? new Date(uptime.lastSeen) : null
   if (!lastSeen) {
-    // Never seen alive — check if we have enough probe history
     const lastProbed = uptime?.lastProbed ? new Date(uptime.lastProbed) : null
     if (!lastProbed) return false
     const daysSinceProbed = (Date.now() - lastProbed.getTime()) / 86400000
@@ -475,20 +365,12 @@ function isDueForRetirement(uptime) {
   return daysDead >= (ret.score0DaysMin || 180)
 }
 
-// ── Pruning check ─────────────────────────────────────────────────────────────
-// Returns true if a channel has hit the consecutive-failure limit and should
-// be moved to dead.json and have probe:false set.
-
 function isDueForPruning(uptime) {
   const prun = cfg.pruning
   if (!prun?.enabled || !prun.consecutiveFailuresLimit) return false
   const failures = uptime?.consecutiveFailures ?? 0
   return failures >= prun.consecutiveFailuresLimit
 }
-
-// ── Archive helpers ───────────────────────────────────────────────────────────
-// Load/save archive.json and dead.json. These are append-only logs —
-// channels that were moved out of channels.json.
 
 function loadFeed(outputPath) {
   const p = require('path').resolve(outputPath)
@@ -509,11 +391,6 @@ function saveFeed(outputPath, channels) {
   }, null, 2))
 }
 
-// ── Run retirement + pruning pass ─────────────────────────────────────────────
-// Called from check-alive and resurrect after probing is complete.
-// Mutates the channels array in-place (removes retired/pruned channels).
-// Returns { retired, pruned } counts.
-
 function applyRetirementAndPruning(channels) {
   const retireCfg = cfg.retirement
   const prunCfg   = cfg.pruning
@@ -527,7 +404,6 @@ function applyRetirementAndPruning(channels) {
       toRetire.push({ ...ch, retiredAt: new Date().toISOString() })
     } else if (prunCfg?.enabled && ch.alive === false && isDueForPruning(ch.uptime)) {
       toPrune.push({ ...ch, prunedAt: new Date().toISOString() })
-      // Keep in channels.json but with probe:false — it's documented but no longer probed
       toKeep.push({ ...ch, probe: false })
     } else {
       toKeep.push(ch)
@@ -540,7 +416,6 @@ function applyRetirementAndPruning(channels) {
     const existingIds = new Set(existing.channels.map(c => c.id))
     const newEntries = toRetire.filter(c => !existingIds.has(c.id))
     saveFeed(archivePath, [...existing.channels, ...newEntries])
-    console.log(`  [retire] Archived ${toRetire.length} channel(s) to ${archivePath}`)
   }
 
   if (toPrune.length) {
@@ -549,10 +424,8 @@ function applyRetirementAndPruning(channels) {
     const existingIds = new Set(existing.channels.map(c => c.id))
     const newEntries = toPrune.filter(c => !existingIds.has(c.id))
     saveFeed(deadPath, [...existing.channels, ...newEntries])
-    console.log(`  [prune]  Moved ${toPrune.length} channel(s) to ${deadPath} (probe:false)`)
   }
 
-  // Replace the channels array contents in-place
   channels.length = 0
   for (const ch of toKeep) channels.push(ch)
 

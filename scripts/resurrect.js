@@ -1,17 +1,3 @@
-// scripts/resurrect.js
-// ─────────────────────────────────────────────────────────────────────────────
-//  Dead channel resurrection.
-//
-//  Targets: channels where alive: false AND probe: true
-//  On pass: sets alive: true, updates uptime
-//  On fail: updates uptime, alive stays false
-//
-//  Frequency filter: channels with a long history of failures are throttled
-//  back via isDueForResurrect() — score:0 with 10+ data points waits 72h
-//  between retries instead of running every 4 hours. This prevents the
-//  workflow from probing 3000+ hopeless channels on every run.
-// ─────────────────────────────────────────────────────────────────────────────
-
 const cfg  = require('../config')
 const path = require('path')
 const fs   = require('fs')
@@ -31,10 +17,6 @@ function saveChannels(data) {
 }
 
 async function main() {
-  console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-  console.log('  databaseab — resurrect.js')
-  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
-
   const data     = loadChannels()
   const channels = data.channels || []
 
@@ -45,30 +27,20 @@ async function main() {
     .sort((a, b) => (b.uptime?.score ?? -1) - (a.uptime?.score ?? -1))
 
   const throttled = dead.length - candidates.length
-  const excluded  = channels.filter(c => c.alive === false && c.probe === false)
 
-  console.log(`  Total dead channels:    ${dead.length}`)
-  console.log(`  Throttled (not due):    ${throttled}`)
-  console.log(`  Candidates to probe:    ${candidates.length}`)
-  console.log(`  Excluded (probe:false): ${excluded.length}`)
-  console.log()
+  console.log(`dead: ${dead.length}  throttled: ${throttled}  candidates: ${candidates.length}`)
 
-  if (candidates.length === 0) {
-    console.log('  No channels due for retry. Exiting. 😏')
-    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
-    return
-  }
+  if (candidates.length === 0) return
 
   const channelMap = new Map(channels.map(c => [c.id, c]))
   let resurrected = 0, stillDead = 0, done = 0
   const total = candidates.length
-  const failureCounts  = {}
+  const failureCounts   = {}
   const failureBySource = { stream: 0, runner: 0, unknown: 0 }
 
   const tasks = candidates.map(ch => async () => {
     const urls = ch.streamUrls || []
     if (!urls.length) {
-      // No URL — record the attempt so throttle advances, leave dead
       const entry = channelMap.get(ch.id)
       if (entry) entry.uptime = recordDead(entry.uptime)
       done++
@@ -76,7 +48,6 @@ async function main() {
       return
     }
 
-    // Try each URL in order; stop at first live one
     let result = { alive: false, needsProxy: false, responseMs: 0 }
     let liveIndex = -1
     for (let i = 0; i < urls.length; i++) {
@@ -97,7 +68,7 @@ async function main() {
       }
       entry.uptime            = recordAlive(entry.uptime)
       entry.alive             = true
-      entry.needsProxy         = result.needsProxy === true
+      entry.needsProxy        = result.needsProxy === true
       entry.browserUnplayable = result.browserUnplayable || false
       if (!entry.browserUnplayable) delete entry.browserUnplayable
       const slow = result.responseMs > (cfg.probe.slowThresholdMs || 8000)
@@ -116,32 +87,23 @@ async function main() {
 
   await runWithConcurrency(tasks, cfg.probe.concurrency)
 
-  // ── Points 1 & 2: retirement and pruning ────────────────────────────────────
   const allChannels = channels.map(c => channelMap.get(c.id) || c)
   const { retired, pruned } = applyRetirementAndPruning(allChannels)
 
   data.channels = allChannels
   saveChannels(data)
 
-  console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-  console.log(`  RESURRECTED  ${resurrected}  (flipped to alive: true)`)
-  console.log(`  STILL DEAD   ${stillDead}`)
-  console.log(`  THROTTLED    ${throttled}  (not due yet)`)
-  if (retired) console.log(`  ARCHIVED     ${retired}  → ${cfg.retirement.output}`)
-  if (pruned)  console.log(`  PRUNED       ${pruned}  → ${cfg.pruning.output} (probe:false)`)
+  console.log(`resurrected: ${resurrected}  still dead: ${stillDead}  throttled: ${throttled}`)
+  if (retired) console.log(`archived: ${retired}`)
+  if (pruned)  console.log(`pruned: ${pruned}`)
+
   if (stillDead > 0) {
-    console.log('\n  Failure breakdown (still-dead):')
     const sorted = Object.entries(failureCounts).sort((a, b) => b[1] - a[1])
     for (const [reason, count] of sorted) {
-      const pct = ((count / stillDead) * 100).toFixed(1)
-      console.log(`    ${reason.padEnd(12)}  ${String(count).padStart(5)}  (${pct}%)`)
+      console.log(`  ${reason.padEnd(12)} ${String(count).padStart(5)}  (${((count / stillDead) * 100).toFixed(1)}%)`)
     }
-    console.log('\n  By source (stream-side vs runner/network):')
-    console.log(`    stream   ${String(failureBySource.stream).padStart(5)}  — stream returned hard error (4xx / no data)`)
-    console.log(`    runner   ${String(failureBySource.runner).padStart(5)}  — timeout / DNS / connection refused`)
-    console.log(`    unknown  ${String(failureBySource.unknown).padStart(5)}`)
+    console.log(`  stream: ${failureBySource.stream}  runner: ${failureBySource.runner}  unknown: ${failureBySource.unknown}`)
   }
-  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
 }
 
 main().catch(err => { console.error(err); process.exit(1) })
