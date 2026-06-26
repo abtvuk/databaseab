@@ -1,7 +1,4 @@
 name: Resurrect Dead Channels
-
-# ── Schedule ──────────────────────────────────────────────────────────────────
-# Mirrors config.js → schedules.resurrect  (every 4 hours)
 on:
   schedule:
     - cron: '0 */4 * * *'
@@ -15,11 +12,12 @@ jobs:
   resurrect:
     runs-on: ubuntu-latest
     timeout-minutes: 220
-
     permissions:
       contents: write
-
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Setup databaseab
         uses: ./.github/actions/setup-abtv
         with:
