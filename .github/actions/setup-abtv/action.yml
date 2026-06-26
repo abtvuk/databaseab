@@ -19,7 +19,5 @@ runs:
       if: inputs.install-ffprobe == 'true'
       shell: bash
       run: |
-        wget -q https://github.com/BtbN/FFmpeg-Builds/releases/download/autobuild-2026-06-23-13-52/ffmpeg-master-latest-linux64-gpl.tar.xz
-        tar -xf ffmpeg-master-latest-linux64-gpl.tar.xz
-        sudo mv ffmpeg-master-latest-linux64-gpl/bin/ffprobe /usr/local/bin/ffprobe
+        sudo apt-get install -y --no-install-recommends ffmpeg
         ffprobe -version
