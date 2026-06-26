@@ -206,7 +206,8 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
         return resolve({ alive: false, responseMs, timedOut, failReason })
       }
       const out = stdout.trim()
-      resolve({ alive: out.includes('video') || out.includes('audio'), responseMs, timedOut: false })
+      const alive = out.includes('video') || out.includes('audio')
+      resolve({ alive, responseMs, timedOut: false, failReason: alive ? undefined : 'no_stream' })
     })
 
     setTimeout(() => { try { child.kill('SIGKILL') } catch {} }, (TIMEOUT_S + 6) * 1000)
