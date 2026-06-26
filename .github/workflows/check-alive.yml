@@ -1,13 +1,4 @@
 name: Check Alive Channels
-
-# ── Schedule ──────────────────────────────────────────────────────────────────
-# Mirrors config.js → schedules.checkAlive  (every 5 hours)
-# Effective per-channel probe intervals (from config.js → probeFrequency):
-#   no history  → every run (always)
-#   score < 70% → every 5h
-#   score 70–79%→ every 8h
-#   score 80–84%→ every 12h
-#   score ≥ 85% → every 24h
 on:
   schedule:
     - cron: '0 */5 * * *'
@@ -21,11 +12,12 @@ jobs:
   check-alive:
     runs-on: ubuntu-latest
     timeout-minutes: 340
-
     permissions:
       contents: write
-
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Setup databaseab
         uses: ./.github/actions/setup-abtv
         with:

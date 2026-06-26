@@ -1,8 +1,4 @@
 name: Check YouTube Channels
-
-# ── Schedule ──────────────────────────────────────────────────────────────────
-# Mirrors config.js → schedules.checkYoutube  (every 12 hours)
-# YouTube channels are more stable than HLS streams so 12h is sufficient.
 on:
   schedule:
     - cron: '0 */12 * * *'
@@ -11,11 +7,12 @@ on:
 jobs:
   check-youtube:
     runs-on: ubuntu-latest
-
     permissions:
       contents: write
-
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Setup databaseab
         uses: ./.github/actions/setup-abtv
 
