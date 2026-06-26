@@ -8,10 +8,10 @@ module.exports = {
   },
 
   output: {
-    channels: 'feeds/merged/channels.json',
-    youtube:  'feeds/merged/youtube.json',
-    archive:  'feeds/merged/archive.json',
-    dead:     'feeds/merged/dead.json',
+    channels: 'feeds/channels.json',
+    youtube:  'feeds/youtube.json',
+    archive:  'feeds/archive.json',
+    dead:     'feeds/dead.json',
   },
 
   schedules: {
@@ -64,13 +64,13 @@ module.exports = {
   retirement: {
     enabled:       true,
     score0DaysMin: 180,
-    output:        'feeds/merged/archive.json',
+    output:        'feeds/archive.json',
   },
 
   pruning: {
     enabled:                  true,
     consecutiveFailuresLimit: 100,
-    output:                   'feeds/merged/dead.json',
+    output:                   'feeds/dead.json',
   },
 
   manualBlocklist: [],
