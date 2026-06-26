@@ -1,28 +1,8 @@
-// scripts/sync.js
-// ─────────────────────────────────────────────────────────────────────────────
-//  Weekly sync from iptv-org only.
-//
-//  What it does:
-//    1. Fetches iptv-org channels, streams, logos, blocklist
-//    2. Strips any radio entries from the existing DB (one-time cleanup)
-//    3. Syncs iptv-org channels (mirror fields, add new ones)
-//    4. Writes channels.json (HLS TV only) + cleans youtube.json (managed independently)
-//
-//  What it never does:
-//    • Fetch or import from famelack
-//    • Add radio stations
-//    • Probe any stream URL
-//    • Remove TV channels you already have
-//    • Touch alive, probe, uptime, or editName fields
-// ─────────────────────────────────────────────────────────────────────────────
-
 const cfg  = require('../config')
 const fs   = require('fs')
 const path = require('path')
 
 const UA = 'abtv-sync/1.0'
-
-// ── Helpers ───────────────────────────────────────────────────────────────────
 
 async function fetchJSON(url) {
   const res = await fetch(url, { headers: { 'User-Agent': UA } })
@@ -66,9 +46,6 @@ function emptyUptime() {
   }
 }
 
-// ── Build stream map from iptv-org streams.json ───────────────────────────────
-// Carries url, referrer, and userAgent per stream entry.
-
 function buildStreamMap(streams, blockedIds) {
   const map = {}
   for (const s of streams) {
@@ -103,8 +80,6 @@ function mediaFlags(categories) {
   return { tv: !radio, radio }
 }
 
-// ── New iptv-org channel entry ────────────────────────────────────────────────
-
 function newIptvEntry(c, streamMap, logoMap) {
   const { tv, radio } = mediaFlags(c.categories)
   const streams = streamMap[c.id] || []
@@ -124,7 +99,7 @@ function newIptvEntry(c, streamMap, logoMap) {
     streamUrls:      streams.map(s => s.url),
     referrer:        streams[0]?.referrer  || null,
     userAgent:       streams[0]?.userAgent || null,
-    needsProxy:      false, // determined by probing, not inferred from referrer
+    needsProxy:      false,
     ytId:            null,
     website:         c.website     || null,
     replaced_by:     c.replaced_by || null,
