@@ -29,7 +29,7 @@ module.exports = {
     segmentConcurrency: 8,
     youtubeConcurrency: 6,
     slowThresholdMs:    8000,
-    uptimeScoreMin:     60,
+    uptimeScoreMin:     50,
   },
 
   probeFrequency: {
