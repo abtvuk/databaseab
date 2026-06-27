@@ -77,9 +77,6 @@ async function main() {
       entry.alive  = true
       passed++
     } else {
-      // result.alive is false (HTTP non-200) or null (timeout/network error).
-      // Both must be treated as a failed probe so timeouts can't hide from
-      // scoring and consecutiveFailures/retirement/pruning logic.
       if (result.alive === null) timedOut++
       entry.uptime = recordDead(entry.uptime)
       const failures = entry.uptime?.consecutiveFailures || 0
