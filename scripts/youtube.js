@@ -61,7 +61,7 @@ async function main() {
   if (candidates.length === 0) return
 
   const channelMap = new Map(channels.map(c => [c.id, c]))
-  let passed = 0, failed = 0, done = 0
+  let passed = 0, failed = 0, timedOut = 0, done = 0
   const total = candidates.length
 
   const tasks = candidates.map(ch => async () => {
@@ -76,7 +76,11 @@ async function main() {
       entry.uptime = recordAlive(entry.uptime)
       entry.alive  = true
       passed++
-    } else if (result.alive === false) {
+    } else {
+      // result.alive is false (HTTP non-200) or null (timeout/network error).
+      // Both must be treated as a failed probe so timeouts can't hide from
+      // scoring and consecutiveFailures/retirement/pruning logic.
+      if (result.alive === null) timedOut++
       entry.uptime = recordDead(entry.uptime)
       const failures = entry.uptime?.consecutiveFailures || 0
       if (failures >= 3) {
@@ -91,7 +95,7 @@ async function main() {
   data.channels = channels.map(c => channelMap.get(c.id) || c)
   saveYoutube(data.channels)
 
-  console.log(`alive: ${passed}  dead: ${failed}`)
+  console.log(`alive: ${passed}  dead: ${failed}  timedOut: ${timedOut}`)
 }
 
 main().catch(err => { console.error(err); process.exit(1) })
