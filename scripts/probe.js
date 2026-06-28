@@ -27,8 +27,9 @@ async function corsCheck(url, referrer, userAgent) {
       return { browserOk: false, needsProxy: false }
     }
 
+    const sentOrigin = referrer ? (() => { try { return new URL(referrer).origin } catch { return ORIGIN } })() : ORIGIN
     const acao = res.headers.get('access-control-allow-origin')
-    const browserOk = acao === '*' || acao === ORIGIN
+    const browserOk = acao === '*' || acao === ORIGIN || acao === sentOrigin
 
     if (res.ok && !browserOk) return { browserOk: false, needsProxy: true }
     if (!res.ok) return { browserOk: false, needsProxy: true }
@@ -136,14 +137,15 @@ function classifyFailure(timedOut, err, stderr) {
 function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
   return new Promise(resolve => {
     const t0   = Date.now()
+    const streamArgs = streamType !== null
+      ? ['-select_streams', streamType, '-show_entries', 'stream=codec_type', '-of', 'csv=p=0']
+      : ['-show_entries', 'format=nb_streams', '-of', 'csv=p=0']
     const args = [
       '-v',          'error',
       '-timeout',    String(TIMEOUT_S * 1_000_000),
       '-user_agent', userAgent || UA,
       ...(referrer ? ['-headers', `Referer: ${referrer}\r\nOrigin: ${(() => { try { return new URL(referrer).origin } catch { return referrer } })()}\r\n`] : []),
-      '-select_streams', streamType,
-      '-show_entries',   'stream=codec_type',
-      '-of',             'csv=p=0',
+      ...streamArgs,
       url,
     ]
 
@@ -155,7 +157,9 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
         return resolve({ alive: false, responseMs, timedOut, failReason })
       }
       const out = stdout.trim()
-      const alive = out.includes('video') || out.includes('audio')
+      const alive = streamType !== null
+        ? (out.includes('video') || out.includes('audio'))
+        : parseInt(out, 10) > 0
       resolve({ alive, responseMs, timedOut: false, failReason: alive ? undefined : 'no_stream' })
     })
 
@@ -166,18 +170,38 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
 async function probeWithFallback(url, referrer, userAgent) {
   const r1 = await probeOnce(url, referrer, userAgent, 'v:0')
   if (r1.alive) return r1
-  if (r1.timedOut) return { alive: false, responseMs: r1.responseMs, timedOut: true, failReason: r1.failReason }
+
+  if (r1.timedOut) {
+    if (userAgent === BROWSER_UA) return { alive: false, responseMs: r1.responseMs, timedOut: true, failReason: r1.failReason }
+    const r3 = await probeOnce(url, referrer, BROWSER_UA, 'v:0')
+    if (r3.alive) return r3
+    if (r3.timedOut) return { alive: false, responseMs: r3.responseMs, timedOut: true, failReason: r3.failReason }
+    const r4 = await probeOnce(url, referrer, BROWSER_UA, 'a:0')
+    if (r4.alive) return r4
+    return { alive: false, responseMs: r4.responseMs, failReason: r4.failReason }
+  }
 
   const r2 = await probeOnce(url, referrer, userAgent, 'a:0')
   if (r2.alive) return r2
 
-  if (!userAgent || userAgent !== BROWSER_UA) {
+  if (userAgent !== BROWSER_UA) {
     const r3 = await probeOnce(url, referrer, BROWSER_UA, 'v:0')
     if (r3.alive) return r3
 
     const r4 = await probeOnce(url, referrer, BROWSER_UA, 'a:0')
     if (r4.alive) return r4
+
+    if (r2.failReason === 'no_stream' && r4.failReason === 'no_stream') {
+      const r5 = await probeOnce(url, referrer, BROWSER_UA, null)
+      if (r5.alive) return r5
+    }
+
     return { alive: false, responseMs: r4.responseMs, failReason: r4.failReason }
+  }
+
+  if (r1.failReason === 'no_stream' && r2.failReason === 'no_stream') {
+    const r5 = await probeOnce(url, referrer, BROWSER_UA, null)
+    if (r5.alive) return r5
   }
 
   return { alive: false, responseMs: r2.responseMs, failReason: r2.failReason }
@@ -342,8 +366,8 @@ function progressBar(done, total) {
 
 function classifyFailSource(failReason) {
   if (!failReason) return 'unknown'
-  if (['http_403', 'http_404', 'http_401', 'http_4xx', 'http_5xx', 'no_stream', 'invalid'].includes(failReason)) return 'stream'
-  if (['timeout', 'dns', 'refused'].includes(failReason)) return 'runner'
+  if (['http_403', 'http_404', 'http_401', 'http_4xx', 'http_5xx', 'no_stream', 'invalid', 'dns'].includes(failReason)) return 'stream'
+  if (['timeout', 'refused'].includes(failReason)) return 'runner'
   return 'unknown'
 }
 
