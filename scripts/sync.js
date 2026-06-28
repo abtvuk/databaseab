@@ -93,6 +93,7 @@ function newIptvEntry(c, streamMap, logoMap) {
     languages:       [],
     categories:      c.categories  || [],
     streamUrls:      streams.map(s => s.url),
+    ...(streams.some(s => s.referrer || s.userAgent) ? { streamMeta: streams.map(s => ({ referrer: s.referrer || null, userAgent: s.userAgent || null })) } : {}),
     referrer:        streams[0]?.referrer  || null,
     userAgent:       streams[0]?.userAgent || null,
     needsProxy:      false,
@@ -118,7 +119,19 @@ function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
   if (!('editChannelLogo' in ch)) ch.editChannelLogo = true
 
   const streams  = streamMap[iptvCh.id] || []
-  ch.streamUrls  = streams.length ? streams.map(s => s.url) : existing.streamUrls || []
+  if (streams.length) {
+    const newUrls    = streams.map(s => s.url)
+    const newUrlSet  = new Set(newUrls)
+    const preserved  = (existing.streamUrls || []).filter(u => newUrlSet.has(u))
+    const added      = newUrls.filter(u => !preserved.includes(u))
+    ch.streamUrls    = [...preserved, ...added]
+  } else {
+    ch.streamUrls    = existing.streamUrls || []
+  }
+  const metaByUrl  = Object.fromEntries(streams.map(s => [s.url, { referrer: s.referrer || null, userAgent: s.userAgent || null }]))
+  const rawMeta    = ch.streamUrls.map(u => metaByUrl[u] || { referrer: null, userAgent: null })
+  if (rawMeta.some(m => m.referrer || m.userAgent)) ch.streamMeta = rawMeta
+  else delete ch.streamMeta
   ch.referrer    = streams[0]?.referrer  || existing.referrer  || null
   ch.userAgent   = streams[0]?.userAgent || existing.userAgent || null
   ch.needsProxy  = existing.needsProxy || false

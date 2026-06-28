@@ -43,6 +43,7 @@ async function main() {
 
   const tasks = candidates.map(ch => async () => {
     const urls = ch.streamUrls || []
+    const meta = ch.streamMeta || []
 
     if (!urls.length) {
       const entry = channelMap.get(ch.id)
@@ -55,7 +56,9 @@ async function main() {
     let result = { alive: false, needsProxy: false, responseMs: 0 }
     let liveIndex = -1
     for (let i = 0; i < urls.length; i++) {
-      result = await probeUrl(urls[i], ch.referrer, ch.userAgent)
+      const ref = meta[i]?.referrer  ?? ch.referrer
+      const ua  = meta[i]?.userAgent ?? ch.userAgent
+      result = await probeUrl(urls[i], ref, ua)
       if (result.alive) { liveIndex = i; break }
     }
 
@@ -68,6 +71,7 @@ async function main() {
     if (result.alive) {
       if (liveIndex > 0) {
         entry.streamUrls = [urls[liveIndex], ...urls.filter((_, i) => i !== liveIndex)]
+        if (meta.length) entry.streamMeta = [meta[liveIndex], ...meta.filter((_, i) => i !== liveIndex)]
       }
       entry.uptime            = recordAlive(entry.uptime)
       entry.alive             = true
