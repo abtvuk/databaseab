@@ -252,24 +252,12 @@ async function runWithConcurrency(tasks, limit) {
 }
 
 function computeScore(uptime) {
-  const window = cfg.scoreRecencyWindow || 0
   const { aliveCount, totalCount } = uptime
   if (!totalCount) return null
-  if (!window || totalCount <= window) {
-    return Math.round((aliveCount / totalCount) * 100)
-  }
-
-  const recent      = uptime.recentResults || []
-  const recentAlive = recent.reduce((s, v) => s + v, 0)
-  const recentTotal = recent.length
-  const oldTotal    = totalCount - recentTotal
-  const oldAlive    = aliveCount - recentAlive
-  const oldCap = Math.max(window * 4, Math.round(oldTotal * 0.1))
-  const oldTotalCapped  = Math.min(oldTotal, oldCap)
-  const oldAliveCapped  = oldTotal > 0 ? Math.round(oldAlive * (oldTotalCapped / oldTotal)) : 0
-  const weightedAlive = recentAlive * 1.0 + oldAliveCapped * 0.5
-  const weightedTotal = recentTotal * 1.0 + oldTotalCapped * 0.5
-  return Math.round((weightedAlive / weightedTotal) * 100)
+  const recent = (uptime.recentResults || []).slice(-10)
+  if (!recent.length) return Math.round((aliveCount / totalCount) * 100)
+  const alive  = recent.reduce((s, v) => s + v, 0)
+  return Math.round((alive / recent.length) * 100)
 }
 
 function recordAlive(uptime) {
