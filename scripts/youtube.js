@@ -22,12 +22,12 @@ async function probeYtId(ytId) {
     const t    = setTimeout(() => ctrl.abort(), TIMEOUT_MS)
     const res  = await fetch(url, { signal: ctrl.signal, headers: { 'User-Agent': UA } })
     clearTimeout(t)
-    if (res.status === 200) return { alive: true }
-    if (res.status === 401) return { alive: false }
-    if (res.status === 404) return { alive: false }
-    return { alive: null }
+    if (res.status === 200) return { alive: true,  status: 200 }
+    if (res.status === 401) return { alive: false, status: 401 }
+    if (res.status === 404) return { alive: false, status: 404 }
+    return { alive: null, status: res.status }
   } catch {
-    return { alive: null }
+    return { alive: null, status: 0 }
   }
 }
 
@@ -61,11 +61,13 @@ async function main() {
   const channelMap = new Map(channels.map(c => [c.id, c]))
   let passed = 0, failed = 0, timedOut = 0, done = 0
   const total = candidates.length
+  const statusCounts = {}
 
   const tasks = candidates.map(ch => async () => {
     const result = await probeYtId(ch.ytId)
     done++
     progressBar(done, total)
+    statusCounts[result.status] = (statusCounts[result.status] || 0) + 1
 
     const entry = channelMap.get(ch.id)
     if (!entry) return
@@ -91,6 +93,10 @@ async function main() {
   saveYoutube(data.channels)
 
   console.log(`alive: ${passed}  dead: ${failed}  timedOut: ${timedOut}`)
+  for (const [status, count] of Object.entries(statusCounts).sort((a, b) => b[1] - a[1])) {
+    const label = status === '0' ? 'timeout' : status
+    console.log(`  ${label.padEnd(7)}  ${count}`)
+  }
 }
 
 main().catch(err => { console.error(err); process.exit(1) })
