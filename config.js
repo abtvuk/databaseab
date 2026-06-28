@@ -29,7 +29,7 @@ module.exports = {
     segmentConcurrency: 8,
     youtubeConcurrency: 6,
     slowThresholdMs:    8000,
-    uptimeScoreMin:     50,
+    uptimeScoreMin:     30,
   },
 
   probeFrequency: {
@@ -49,7 +49,7 @@ module.exports = {
     scoreZeroManyData:  60,
   },
 
-  scoreRecencyWindow: 20,
+  scoreRecencyWindow: 100,
 
   sync: {
     mirroredFields: ['logo', 'streamUrls', 'country', 'categories', 'website', 'replaced_by'],
