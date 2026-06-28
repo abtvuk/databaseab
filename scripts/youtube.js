@@ -9,11 +9,10 @@ const UA = 'abtv-probe/1.0'
 async function probeYtId(ytId) {
   let url
 
-  const isVideoId = !ytId.startsWith('UC') && !ytId.startsWith('@')
   if (ytId.startsWith('UC')) {
-    url = `https://www.youtube.com/channel/${ytId}`
+    url = `https://www.youtube.com/oembed?url=https://www.youtube.com/channel/${ytId}/live&format=json`
   } else if (ytId.startsWith('@')) {
-    url = `https://www.youtube.com/${ytId}`
+    url = `https://www.youtube.com/oembed?url=https://www.youtube.com/${ytId}/live&format=json`
   } else {
     url = `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${ytId}&format=json`
   }
@@ -21,13 +20,12 @@ async function probeYtId(ytId) {
   try {
     const ctrl = new AbortController()
     const t    = setTimeout(() => ctrl.abort(), TIMEOUT_MS)
-    const res  = await fetch(url, {
-      method:  isVideoId ? 'GET' : 'HEAD',
-      signal:  ctrl.signal,
-      headers: { 'User-Agent': UA },
-    })
+    const res  = await fetch(url, { signal: ctrl.signal, headers: { 'User-Agent': UA } })
     clearTimeout(t)
-    return { alive: res.status === 200 }
+    if (res.status === 200) return { alive: true }
+    if (res.status === 401) return { alive: false }
+    if (res.status === 404) return { alive: false }
+    return { alive: null }
   } catch {
     return { alive: null }
   }
