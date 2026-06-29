@@ -12,12 +12,6 @@ function watchUrlFor(ytId) {
   return `https://www.youtube.com/watch?v=${ytId}`
 }
 
-// Pulls ytInitialPlayerResponse out of the page and reads videoDetails.isLive
-// from it specifically. Scanning the raw HTML for "isLiveNow"/live-badge
-// markers anywhere on the page is unreliable: watch/channel pages also embed
-// sidebar "recommended" videos, and if any of those happen to be live, the
-// marker shows up on the page even though the channel/video being probed
-// isn't streaming at all. That's what was causing dead channels to pass.
 function extractPlayerResponse(html) {
   const marker = '"playerResponse":'
   let idx = html.indexOf('ytInitialPlayerResponse')
@@ -59,8 +53,6 @@ async function probeYtId(ytId) {
 
     const html = await res.text()
 
-    // Channel/handle /live with nothing currently streaming redirects to
-    // the channel home/videos tab, not a watch page - no player response.
     if ((ytId.startsWith('UC') || ytId.startsWith('@')) && !/"videoId":"/.test(html)) {
       return { alive: false, status: 200 }
     }
@@ -69,9 +61,6 @@ async function probeYtId(ytId) {
     if (!player) return { alive: null, status: res.status }
 
     const status = player.playabilityStatus?.status
-    // Explicit unavailable/error states ("This channel doesn't have a live
-    // stream", deleted/private video, etc.) - always dead, regardless of
-    // anything else on the page.
     if (status && status !== 'OK' && status !== 'LIVE_STREAM_OFFLINE') {
       return { alive: false, status: res.status }
     }
