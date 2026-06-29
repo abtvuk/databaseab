@@ -82,6 +82,14 @@ async function segmentProbe(url, referrer, userAgent) {
 
     if (!res.ok) { clearTimeout(timer); releaseSegmentSlot(); return { playable: false } }
 
+    const ct = (res.headers.get('content-type') || '').toLowerCase()
+    if (ct.includes('video/mp2t') || ct.includes('video/mpeg') || ct.includes('application/octet-stream')) {
+      clearTimeout(timer)
+      res.body?.cancel()
+      releaseSegmentSlot()
+      return { playable: false }
+    }
+
     const text = await res.text()
     clearTimeout(timer)
 
