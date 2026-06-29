@@ -18,7 +18,7 @@ module.exports = {
     sync:         '0 2 * * 1',
     resurrect:    '0 */4 * * *',
     checkAlive:   '0 */5 * * *',
-    checkYoutube: '0 */12 * * *',
+    checkYoutube: '0 */6 * * *',
   },
 
   probe: {
