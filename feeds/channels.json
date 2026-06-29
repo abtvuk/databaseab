@@ -1,6 +1,6 @@
 {
-  "generated": "2026-06-29T10:07:24.135Z",
-  "total": 10973,
+  "generated": "2026-06-29T13:07:05.308Z",
+  "total": 10972,
   "channels": [
     {
       "id": "AndorraTV.ad",
@@ -3514,63 +3514,6 @@
       ]
     },
     {
-      "id": "tolotv.af",
-      "name": "Tolo TV",
-      "editName": true,
-      "alive": true,
-      "probe": true,
-      "tv": true,
-      "radio": false,
-      "country": "AF",
-      "channelLogo": null,
-      "editChannelLogo": true,
-      "languages": [
-        "pus"
-      ],
-      "categories": [],
-      "streamUrls": [
-        "https://tgn.bozztv.com/eshgtv-dvrfl05/gin-tolohd/index.m3u8"
-      ],
-      "referrer": null,
-      "userAgent": null,
-      "needsProxy": true,
-      "ytId": null,
-      "website": null,
-      "replaced_by": null,
-      "geoBlocked": false,
-      "source": "famelack",
-      "nanoid": "qkByZOw6O9MPFi",
-      "uptime": {
-        "aliveCount": 48,
-        "totalCount": 74,
-        "consecutiveAlive": 8,
-        "lastSeen": "2026-06-28T21:01:16.863Z",
-        "lastProbed": "2026-06-28T21:01:16.863Z",
-        "score": 80,
-        "recentResults": [
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1
-        ],
-        "consecutiveFailures": 0
-      }
-    },
-    {
       "id": "ToloTV.af",
       "name": "Tolo TV",
       "editName": true,
@@ -3581,12 +3524,15 @@
       "country": "AF",
       "channelLogo": "https://upload.wikimedia.org/wikipedia/en/c/ca/TOLO_TV_logo_2016.png",
       "editChannelLogo": true,
-      "languages": [],
+      "languages": [
+        "pus"
+      ],
       "categories": [
         "general"
       ],
       "streamUrls": [
-        "https://tgn.bozztv.com/eshgtv-dvrfl05/gin-tolohd/tracks-v1a1/mono.m3u8"
+        "https://tgn.bozztv.com/eshgtv-dvrfl05/gin-tolohd/tracks-v1a1/mono.m3u8",
+        "https://tgn.bozztv.com/eshgtv-dvrfl05/gin-tolohd/index.m3u8"
       ],
       "referrer": null,
       "userAgent": null,
