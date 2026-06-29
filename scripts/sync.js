@@ -120,17 +120,24 @@ function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
 
   const streams  = streamMap[iptvCh.id] || []
   if (streams.length) {
-    const newUrls    = streams.map(s => s.url)
-    const newUrlSet  = new Set(newUrls)
-    const preserved  = (existing.streamUrls || []).filter(u => newUrlSet.has(u))
-    const added      = newUrls.filter(u => !preserved.includes(u))
-    ch.streamUrls    = [...preserved, ...added]
+    const existingUrls     = existing.streamUrls || []
+    const newUrls          = streams.map(s => s.url)
+    const newUrlSet        = new Set(newUrls)
+    const existingMeta2    = existing.streamMeta || []
+    const existingMetaMap2 = Object.fromEntries(existingUrls.map((u, i) => [u, existingMeta2[i] || {}]))
+    const preserved        = existingUrls.filter(u => newUrlSet.has(u))
+    const manual           = existingUrls.filter(u => !newUrlSet.has(u) && existingMetaMap2[u]?.source !== 'iptv')
+    const added            = newUrls.filter(u => !existingUrls.includes(u))
+    ch.streamUrls          = [...preserved, ...added, ...manual]
   } else {
     ch.streamUrls    = existing.streamUrls || []
   }
-  const metaByUrl  = Object.fromEntries(streams.map(s => [s.url, { referrer: s.referrer || null, userAgent: s.userAgent || null }]))
-  const rawMeta    = ch.streamUrls.map(u => metaByUrl[u] || { referrer: null, userAgent: null })
-  if (rawMeta.some(m => m.referrer || m.userAgent)) ch.streamMeta = rawMeta
+  const existingMeta    = existing.streamMeta || []
+  const existingUrls    = existing.streamUrls || []
+  const existingMetaMap = Object.fromEntries(existingUrls.map((u, i) => [u, existingMeta[i] || {}]))
+  const metaByUrl       = Object.fromEntries(streams.map(s => [s.url, { source: 'iptv', referrer: s.referrer || null, userAgent: s.userAgent || null }]))
+  const rawMeta         = ch.streamUrls.map(u => ({ ...(existingMetaMap[u] || {}), ...(metaByUrl[u] || {}) }))
+  if (rawMeta.some(m => m.referrer || m.userAgent || m.source)) ch.streamMeta = rawMeta
   else delete ch.streamMeta
   ch.referrer    = streams[0]?.referrer  || existing.referrer  || null
   ch.userAgent   = streams[0]?.userAgent || existing.userAgent || null
