@@ -95,11 +95,12 @@ function saveYoutube(channels) {
 async function main() {
   const data     = loadYoutube()
   const channels = data.channels || []
+  const forceAll = process.env.FORCE_ALL === 'true'
 
-  const candidates = channels.filter(c => c.ytId && c.probe !== false && isDueForProbe(c.uptime))
-  const skipped    = channels.filter(c => c.ytId && c.probe !== false && !isDueForProbe(c.uptime))
+  const candidates = channels.filter(c => c.ytId && c.probe !== false && (forceAll || isDueForProbe(c.uptime)))
+  const skipped    = channels.filter(c => c.ytId && c.probe !== false && !forceAll && !isDueForProbe(c.uptime))
 
-  console.log(`youtube: ${channels.filter(c => c.ytId).length}  due: ${candidates.length}  skipped: ${skipped.length}`)
+  console.log(`youtube: ${channels.filter(c => c.ytId).length}  due: ${candidates.length}  skipped: ${skipped.length}${forceAll ? '  (forced: all)' : ''}`)
 
   if (candidates.length === 0) return
 
