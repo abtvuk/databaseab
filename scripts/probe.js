@@ -184,40 +184,12 @@ async function probeWithFallback(url, referrer, userAgent) {
   const r1 = await probeOnce(url, referrer, userAgent, 'v:0')
   if (r1.alive) return r1
 
-  if (r1.timedOut) {
-    if (userAgent === BROWSER_UA) return { alive: false, responseMs: r1.responseMs, timedOut: true, failReason: r1.failReason }
-    const r3 = await probeOnce(url, referrer, BROWSER_UA, 'v:0')
-    if (r3.alive) return r3
-    if (r3.timedOut) return { alive: false, responseMs: r3.responseMs, timedOut: true, failReason: r3.failReason }
-    const r4 = await probeOnce(url, referrer, BROWSER_UA, 'a:0')
-    if (r4.alive) return r4
-    return { alive: false, responseMs: r4.responseMs, failReason: r4.failReason }
+  if (userAgent === BROWSER_UA) {
+    return { alive: false, responseMs: r1.responseMs, timedOut: r1.timedOut, failReason: r1.failReason }
   }
 
-  const r2 = await probeOnce(url, referrer, userAgent, 'a:0')
-  if (r2.alive) return r2
-
-  if (userAgent !== BROWSER_UA) {
-    const r3 = await probeOnce(url, referrer, BROWSER_UA, 'v:0')
-    if (r3.alive) return r3
-
-    const r4 = await probeOnce(url, referrer, BROWSER_UA, 'a:0')
-    if (r4.alive) return r4
-
-    if (r2.failReason === 'no_stream' && r4.failReason === 'no_stream') {
-      const r5 = await probeOnce(url, referrer, BROWSER_UA, null)
-      if (r5.alive) return r5
-    }
-
-    return { alive: false, responseMs: r4.responseMs, failReason: r4.failReason }
-  }
-
-  if (r1.failReason === 'no_stream' && r2.failReason === 'no_stream') {
-    const r5 = await probeOnce(url, referrer, BROWSER_UA, null)
-    if (r5.alive) return r5
-  }
-
-  return { alive: false, responseMs: r2.responseMs, failReason: r2.failReason }
+  const r2 = await probeOnce(url, referrer, BROWSER_UA, 'v:0')
+  return r2
 }
 
 async function probeUrl(url, referrer, userAgent) {
