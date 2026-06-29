@@ -146,7 +146,7 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
   return new Promise(resolve => {
     const t0   = Date.now()
     const streamArgs = streamType !== null
-      ? ['-select_streams', streamType, '-show_entries', 'stream=codec_type', '-of', 'csv=p=0']
+      ? ['-select_streams', streamType, '-read_intervals', '%+3', '-count_frames', '-show_entries', 'stream=codec_type,nb_read_frames', '-of', 'csv=p=0']
       : ['-show_entries', 'format=nb_streams', '-of', 'csv=p=0']
     const args = [
       '-v',          'error',
@@ -165,9 +165,14 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
         return resolve({ alive: false, responseMs, timedOut, failReason })
       }
       const out = stdout.trim()
-      const alive = streamType !== null
-        ? (out.includes('video') || out.includes('audio'))
-        : parseInt(out, 10) > 0
+      if (streamType !== null) {
+        const [codecType, frameCount] = out.split(',')
+        const hasStream = codecType === 'video' || codecType === 'audio'
+        const hasFrames = parseInt(frameCount, 10) > 0
+        const alive = hasStream && hasFrames
+        return resolve({ alive, responseMs, timedOut: false, failReason: alive ? undefined : (hasStream ? 'no_frames' : 'no_stream') })
+      }
+      const alive = parseInt(out, 10) > 0
       resolve({ alive, responseMs, timedOut: false, failReason: alive ? undefined : 'no_stream' })
     })
 
