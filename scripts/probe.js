@@ -54,6 +54,29 @@ function isUnplayableDomain(url) {
   }
 }
 
+function checkVideoCodec(url, referrer, userAgent) {
+  return new Promise(resolve => {
+    const bad = (cfg.unsupportedVideoCodecs || []).map(c => c.toLowerCase())
+    if (!bad.length) return resolve(false)
+    const args = [
+      '-v',          'error',
+      '-timeout',    String(TIMEOUT_S * 1_000_000),
+      '-user_agent', userAgent || UA,
+      ...(referrer ? ['-headers', `Referer: ${referrer}\r\nOrigin: ${(() => { try { return new URL(referrer).origin } catch { return referrer } })()}\r\n`] : []),
+      '-select_streams', 'v:0',
+      '-show_entries',   'stream=codec_name',
+      '-of',              'csv=p=0',
+      url,
+    ]
+    const child = execFile('ffprobe', args, { timeout: (TIMEOUT_S + 5) * 1000 }, (err, stdout) => {
+      if (err) return resolve(false)
+      const codec = stdout.trim().toLowerCase()
+      resolve(bad.includes(codec))
+    })
+    setTimeout(() => { try { child.kill('SIGKILL') } catch {} }, (TIMEOUT_S + 6) * 1000)
+  })
+}
+
 const SEGMENT_CONCURRENCY = cfg.probe.segmentConcurrency || 8
 let _segmentActive = 0
 const _segmentQueue = []
@@ -207,6 +230,11 @@ async function probeUrl(url, referrer, userAgent) {
 
     if (result.alive) {
       if (isUnplayableDomain(url)) {
+        return { alive: true, needsProxy: false, browserUnplayable: true, responseMs: result.responseMs }
+      }
+
+      const badCodec = await checkVideoCodec(url, referrer, userAgent)
+      if (badCodec) {
         return { alive: true, needsProxy: false, browserUnplayable: true, responseMs: result.responseMs }
       }
 
