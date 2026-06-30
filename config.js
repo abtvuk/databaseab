@@ -90,5 +90,12 @@ module.exports = {
     '103.72.101.252',
   ],
 
+  unsupportedVideoCodecs: [
+    'hevc', 'h265',
+    'mpeg2video', 'mpeg1video',
+    'vc1', 'wmv1', 'wmv2', 'wmv3',
+    'msmpeg4v1', 'msmpeg4v2', 'msmpeg4v3',
+    'flv1', 'rv10', 'rv20', 'rv30', 'rv40',
+  ],
 
 }
