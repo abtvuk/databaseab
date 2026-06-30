@@ -34,16 +34,16 @@ module.exports = {
 
   probeFrequency: {
     noHistory:   0,
-    below70:     5,
-    from70to80:  8,
-    from80to85:  12,
-    above85:     24,
+    below70:     6,
+    from70to80:  9,
+    from80to85:  11,
+    above85:     13,
   },
 
   resurrectFrequency: {
     noHistory:          0,
-    scoreAbove50:       8,
-    scoreAbove20:       12,
+    scoreAbove50:       10,
+    scoreAbove20:       20,
     scoreAbove0:        40,
     scoreZeroFewData:   30,
     scoreZeroManyData:  60,
