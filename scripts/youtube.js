@@ -6,71 +6,47 @@ const path = require('path')
 const TIMEOUT_MS = (cfg.probe.timeoutSeconds || 10) * 1000
 const UA = 'abtv-probe/1.0'
 
-function watchUrlFor(ytId) {
-  if (ytId.startsWith('UC')) return `https://www.youtube.com/channel/${ytId}/live`
-  if (ytId.startsWith('@'))  return `https://www.youtube.com/${ytId}/live`
-  return `https://www.youtube.com/watch?v=${ytId}`
+function liveOembedUrlFor(ytId) {
+  if (ytId.startsWith('UC')) return `https://www.youtube.com/oembed?url=${encodeURIComponent(`https://www.youtube.com/channel/${ytId}/live`)}&format=json`
+  if (ytId.startsWith('@'))  return `https://www.youtube.com/oembed?url=${encodeURIComponent(`https://www.youtube.com/${ytId}/live`)}&format=json`
+  return `https://www.youtube.com/oembed?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${ytId}`)}&format=json`
 }
 
-function extractPlayerResponse(html) {
-  const marker = '"playerResponse":'
-  let idx = html.indexOf('ytInitialPlayerResponse')
-  if (idx === -1) idx = html.indexOf(marker)
-  if (idx === -1) return null
-
-  const braceStart = html.indexOf('{', idx)
-  if (braceStart === -1) return null
-
-  let depth = 0
-  for (let i = braceStart; i < html.length; i++) {
-    if (html[i] === '{') depth++
-    else if (html[i] === '}') {
-      depth--
-      if (depth === 0) {
-        const jsonStr = html.slice(braceStart, i + 1)
-        try { return JSON.parse(jsonStr) } catch { return null }
+async function fetchWithRetry(url, opts, retries) {
+  for (let i = 0; i <= retries; i++) {
+    const ctrl = new AbortController()
+    const t    = setTimeout(() => ctrl.abort(), TIMEOUT_MS)
+    try {
+      const res = await fetch(url, { ...opts, signal: ctrl.signal })
+      clearTimeout(t)
+      if (res.status === 429 && i < retries) {
+        const retryAfter = parseInt(res.headers.get('retry-after'), 10)
+        const backoffMs  = Number.isFinite(retryAfter) ? retryAfter * 1000 : (500 * Math.pow(2, i) + Math.random() * 250)
+        await new Promise(r => setTimeout(r, backoffMs))
+        continue
       }
+      return res
+    } catch (err) {
+      clearTimeout(t)
+      if (i === retries) throw err
+      await new Promise(r => setTimeout(r, 300 * Math.pow(2, i)))
     }
   }
-  return null
 }
 
 async function probeYtId(ytId) {
-  const url = watchUrlFor(ytId)
+  const url = liveOembedUrlFor(ytId)
 
   try {
-    const ctrl = new AbortController()
-    const t    = setTimeout(() => ctrl.abort(), TIMEOUT_MS)
-    const res  = await fetch(url, {
-      signal: ctrl.signal,
+    const res = await fetchWithRetry(url, {
       headers: { 'User-Agent': UA, 'Accept-Language': 'en-US,en;q=0.9' },
       redirect: 'follow',
-    })
-    clearTimeout(t)
+    }, 2)
 
+    if (res.status === 200) return { alive: true,  status: 200 }
+    if (res.status === 401) return { alive: false, status: 401 }
     if (res.status === 404) return { alive: false, status: 404 }
-    if (res.status !== 200) return { alive: null, status: res.status }
-
-    const html = await res.text()
-
-    if ((ytId.startsWith('UC') || ytId.startsWith('@')) && !/"videoId":"/.test(html)) {
-      return { alive: false, status: 200 }
-    }
-
-    const player = extractPlayerResponse(html)
-    if (!player) return { alive: null, status: res.status }
-
-    const status = player.playabilityStatus?.status
-    if (status && status !== 'OK' && status !== 'LIVE_STREAM_OFFLINE') {
-      return { alive: false, status: res.status }
-    }
-
-    const details  = player.videoDetails || {}
-    const isLiveNow =
-      details.isLive === true ||
-      player.microformat?.playerMicroformatRenderer?.liveBroadcastDetails?.isLiveNow === true
-
-    return { alive: !!isLiveNow, status: res.status }
+    return { alive: null, status: res.status }
   } catch {
     return { alive: null, status: 0 }
   }
