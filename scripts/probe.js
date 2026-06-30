@@ -12,15 +12,18 @@ async function corsCheck(url, referrer, userAgent) {
   try {
     const ctrl  = new AbortController()
     const timer = setTimeout(() => ctrl.abort(), 8000)
-    const res   = await fetch(url, {
-      method: 'HEAD',
-      signal: ctrl.signal,
-      headers: {
-        'Origin':     ORIGIN,
-        'User-Agent': userAgent || BROWSER_UA,
-        ...(referrer ? { 'Referer': referrer, 'Origin': new URL(referrer).origin } : {}),
-      },
-    })
+    const reqHeaders = {
+      'Origin':     ORIGIN,
+      'User-Agent': userAgent || BROWSER_UA,
+      ...(referrer ? { 'Referer': referrer, 'Origin': new URL(referrer).origin } : {}),
+    }
+    let res = await fetch(url, { method: 'HEAD', signal: ctrl.signal, headers: reqHeaders })
+
+    if (res.status === 405) {
+      res.body?.cancel()
+      res = await fetch(url, { method: 'GET', signal: ctrl.signal, headers: { ...reqHeaders, 'Range': 'bytes=0-1023' } })
+      res.body?.cancel()
+    }
     clearTimeout(timer)
 
     if (res.status === 403 || res.status === 404 || res.status === 410 || res.status === 451) {
@@ -107,18 +110,20 @@ async function segmentProbe(url, referrer, userAgent) {
     const ctrl2 = new AbortController()
     const timer2 = setTimeout(() => ctrl2.abort(), 10000)
     const segRes = await fetch(segmentUrl, {
-      method: 'HEAD',
+      method: 'GET',
       signal: ctrl2.signal,
       headers: {
         'User-Agent': BROWSER_UA,
         'Origin': ORIGIN,
+        'Range': 'bytes=0-1023',
         ...(referrer ? { 'Referer': referrer } : {}),
       },
       redirect: 'follow',
     })
     clearTimeout(timer2)
+    segRes.body?.cancel()
 
-    const ok = segRes.ok
+    const ok = segRes.ok || segRes.status === 206
     releaseSegmentSlot()
     return { playable: ok }
   } catch {
