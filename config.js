@@ -42,8 +42,8 @@ module.exports = {
 
   resurrectFrequency: {
     noHistory:          0,
-    scoreAbove50:       10,
-    scoreAbove20:       30,
+    scoreAbove50:       8,
+    scoreAbove20:       12,
     scoreAbove0:        40,
     scoreZeroFewData:   30,
     scoreZeroManyData:  60,
