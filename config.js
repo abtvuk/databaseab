@@ -88,6 +88,7 @@ module.exports = {
     '91.146.94.234',
     '103.175.73.12',
     '103.72.101.252', // Timeout
+    '212.70.131.37',
   ],
 
   unsupportedVideoCodecs: [
