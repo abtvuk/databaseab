@@ -143,7 +143,7 @@ function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
   ch.userAgent   = streams[0]?.userAgent || existing.userAgent || null
   ch.needsProxy  = existing.needsProxy || false
   ch.country     = iptvCh.country     || existing.country     || ''
-  ch.categories  = iptvCh.categories  || existing.categories  || []
+  if (!existing.categories?.length) ch.categories = iptvCh.categories || []
   ch.website     = iptvCh.website     || existing.website     || null
   ch.replaced_by = iptvCh.replaced_by || existing.replaced_by || null
 
