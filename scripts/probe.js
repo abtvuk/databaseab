@@ -154,8 +154,7 @@ async function segmentProbe(url, referrer, userAgent) {
       method:  'GET',
       signal:  ctrl2.signal,
       headers: {
-        'User-Agent': BROWSER_UA,
-        'Origin':     ORIGIN,
+        'User-Agent': UA,
         'Range':      'bytes=0-1023',
         ...(referrer ? { 'Referer': referrer } : {}),
       },
