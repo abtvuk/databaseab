@@ -91,16 +91,26 @@ function releaseSegmentSlot() {
   else _segmentActive--
 }
 
+async function resolveStreamUrl(url, body) {
+  const trimmed = body.trim()
+  if (/^https?:\/\//i.test(trimmed) && !trimmed.includes('\n')) return trimmed
+  const m3u8 = body.match(/https?:\/\/[^\s"'<>]+\.m3u8[^\s"'<>]*/i)
+  if (m3u8) return m3u8[0]
+  const seg = body.match(/https?:\/\/[^\s"'<>]+\.(ts|mp4|aac|mp2t)[^\s"'<>]*/i)
+  if (seg)  return seg[0]
+  return null
+}
+
 async function segmentProbe(url, referrer, userAgent) {
   await acquireSegmentSlot()
   try {
-    const ctrl = new AbortController()
+    const ctrl  = new AbortController()
     const timer = setTimeout(() => ctrl.abort(), 10000)
-    const res = await fetch(url, {
-      signal: ctrl.signal,
+    const res   = await fetch(url, {
+      signal:  ctrl.signal,
       headers: {
         'User-Agent': userAgent || BROWSER_UA,
-        'Origin': ORIGIN,
+        'Origin':     ORIGIN,
         ...(referrer ? { 'Referer': referrer } : {}),
       },
       redirect: 'follow',
@@ -109,6 +119,7 @@ async function segmentProbe(url, referrer, userAgent) {
     if (!res.ok) { clearTimeout(timer); releaseSegmentSlot(); return { playable: false } }
 
     const ct = (res.headers.get('content-type') || '').toLowerCase()
+
     if (ct.includes('video/mp2t')) {
       clearTimeout(timer)
       res.body?.cancel()
@@ -116,29 +127,36 @@ async function segmentProbe(url, referrer, userAgent) {
       return { playable: false }
     }
 
-    const text = await res.text()
+    const text  = await res.text()
     clearTimeout(timer)
 
-    const lines = text.split('\n').map(l => l.trim()).filter(l => l && !l.startsWith('#'))
-    const firstSegment = lines[0]
-    if (!firstSegment) return { playable: false }
-
-    let segmentUrl
-    try {
-      segmentUrl = new URL(firstSegment).href
-    } catch {
-      segmentUrl = new URL(firstSegment, url).href
+    // PHP/resolver URLs return a body containing the real stream URL rather than
+    // an HLS manifest — extract and re-probe instead of parsing as M3U8.
+    const isHls = ct.includes('mpegurl') || /\.m3u8?(\?|$)/i.test(url)
+    if (!isHls) {
+      const resolved = await resolveStreamUrl(url, text)
+      releaseSegmentSlot()
+      if (resolved && resolved !== url) return segmentProbe(resolved, referrer, userAgent)
+      return { playable: false }
     }
 
-    const ctrl2 = new AbortController()
+    const lines        = text.split('\n').map(l => l.trim()).filter(l => l && !l.startsWith('#'))
+    const firstSegment = lines[0]
+    if (!firstSegment) { releaseSegmentSlot(); return { playable: false } }
+
+    let segmentUrl
+    try        { segmentUrl = new URL(firstSegment).href }
+    catch      { segmentUrl = new URL(firstSegment, url).href }
+
+    const ctrl2  = new AbortController()
     const timer2 = setTimeout(() => ctrl2.abort(), 10000)
     const segRes = await fetch(segmentUrl, {
-      method: 'GET',
-      signal: ctrl2.signal,
+      method:  'GET',
+      signal:  ctrl2.signal,
       headers: {
         'User-Agent': BROWSER_UA,
-        'Origin': ORIGIN,
-        'Range': 'bytes=0-1023',
+        'Origin':     ORIGIN,
+        'Range':      'bytes=0-1023',
         ...(referrer ? { 'Referer': referrer } : {}),
       },
       redirect: 'follow',
