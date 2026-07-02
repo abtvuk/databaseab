@@ -78,18 +78,18 @@ module.exports = {
   nameBlocklist: [],
 
   unplayableDomains: [
+    'liveingesta318.cdnmedia.tv',
     'ncdn.telewebion.ir',
     'telewebion.com',
-    'liveingesta318.cdnmedia.tv',
-    '213.91.179.28',
     '77.46.130.252',
-    '83.228.75.166',
-    '185.9.2.18',
-    '91.146.94.234',
-    '103.175.73.12',
-    '103.72.101.252', // Timeout
-    '212.70.131.37',
     '78.108.244.134',
+    '83.228.75.166',
+    '91.146.94.234',
+    '103.72.101.252',
+    '103.175.73.12',
+    '185.9.2.18',
+    '212.70.131.37',
+    '213.91.179.28',
   ],
 
   unsupportedVideoCodecs: [
