@@ -91,7 +91,7 @@ async function main() {
       failureBySource[source] = (failureBySource[source] || 0) + 1
 
       const failures = entry.uptime?.consecutiveFailures || 0
-      if (failures >= 3) {
+      if (failures >= 2) {
         entry.alive = false
         flippedDead++
       }
