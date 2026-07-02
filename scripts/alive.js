@@ -58,8 +58,9 @@ async function main() {
     for (let i = 0; i < urls.length; i++) {
       const ref = meta[i]?.referrer  ?? ch.referrer
       const ua  = meta[i]?.userAgent ?? ch.userAgent
-      result = await probeUrl(urls[i], ref, ua)
-      if (result.alive) { liveIndex = i; break }
+      const r   = await probeUrl(urls[i], ref, ua)
+      if (r.alive && !r.browserUnplayable) { result = r; liveIndex = i; break }
+      if (r.alive && liveIndex === -1)      { result = r; liveIndex = i }
     }
 
     done++
