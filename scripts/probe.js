@@ -120,13 +120,6 @@ async function segmentProbe(url, referrer, userAgent) {
 
     const ct = (res.headers.get('content-type') || '').toLowerCase()
 
-    // Raw MPEG-TS (.ts) segments ARE playable in a browser — hls.js, Shaka Player,
-    // Safari's native HLS, and mobile OS-level HLS handling all transmux/consume
-    // video/mp2t via MSE. A bare <video src="x.ts"> can't play it directly, but that
-    // is not how any real HLS player works, so this content-type alone must not be
-    // treated as a failure. We still verify the bytes are actually fetchable with a
-    // ranged request, mirroring the rigor applied to real HLS segments below —
-    // the point is to stop lying about codec/format, not to skip verification.
     if (ct.includes('video/mp2t')) {
       clearTimeout(timer)
       res.body?.cancel()
