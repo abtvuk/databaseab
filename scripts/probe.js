@@ -120,31 +120,11 @@ async function segmentProbe(url, referrer, userAgent) {
 
     const ct = (res.headers.get('content-type') || '').toLowerCase()
 
-    if (ct.includes('video/mp2t')) {
+    if (ct.startsWith('video/') || ct.startsWith('audio/')) {
       clearTimeout(timer)
       res.body?.cancel()
-      const ctrl3  = new AbortController()
-      const timer3 = setTimeout(() => ctrl3.abort(), 10000)
-      try {
-        const rangeRes = await fetch(url, {
-          method:  'GET',
-          signal:  ctrl3.signal,
-          headers: {
-            'User-Agent': userAgent || BROWSER_UA,
-            'Range':      'bytes=0-1023',
-            ...(referrer ? { 'Referer': referrer } : {}),
-          },
-          redirect: 'follow',
-        })
-        clearTimeout(timer3)
-        rangeRes.body?.cancel()
-        releaseSegmentSlot()
-        return { playable: rangeRes.ok || rangeRes.status === 206 }
-      } catch {
-        clearTimeout(timer3)
-        releaseSegmentSlot()
-        return { playable: false }
-      }
+      releaseSegmentSlot()
+      return { playable: true }
     }
 
     const text  = await res.text()
@@ -280,7 +260,7 @@ async function probeUrl(url, referrer, userAgent) {
       if (!browserOk && (needsProxy || corsTimedOut)) {
         const { playable } = await segmentProbe(url, referrer, userAgent)
         if (!playable) {
-          return { alive: true, needsProxy: false, browserUnplayable: true, responseMs: result.responseMs }
+          return { alive: true, needsProxy: true, browserUnplayable: false, responseMs: result.responseMs }
         }
       }
 
