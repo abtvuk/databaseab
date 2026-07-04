@@ -23,7 +23,7 @@ module.exports = {
 
   probe: {
     timeoutSeconds:     15,
-    retries:            1,
+    retries:            2,
     retryDelaySeconds:  3,
     concurrency:        25,
     segmentConcurrency: 8,
