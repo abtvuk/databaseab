@@ -78,6 +78,7 @@ module.exports = {
   nameBlocklist: [],
 
   unplayableDomains: [
+    'jmp2.uk',
     'liveingesta318.cdnmedia.tv',
     'ncdn.telewebion.ir',
     'telewebion.com',
