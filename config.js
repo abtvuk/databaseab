@@ -34,10 +34,10 @@ module.exports = {
 
   probeFrequency: {
     noHistory:   0,
-    below70:     6,
-    from70to80:  9,
-    from80to85:  11,
-    above85:     13,
+    below70:     5,
+    from70to80:  7,
+    from80to85:  8,
+    above85:     10,
   },
 
   resurrectFrequency: {
