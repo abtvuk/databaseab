@@ -43,18 +43,6 @@ async function corsCheck(url, referrer, userAgent) {
   }
 }
 
-function ffmpegSafeUrl(url) {
-  try {
-    const u = new URL(url)
-    if (u.pathname.includes(':')) {
-      u.pathname = u.pathname.split('/').map(seg => seg.replace(/:/g, '%3A')).join('/')
-    }
-    return u.toString()
-  } catch {
-    return url
-  }
-}
-
 function isUnplayableDomain(url) {
   const blocked = cfg.unplayableDomains || []
   if (!blocked.length) return false
@@ -76,7 +64,7 @@ function probeCodecName(url, referrer, userAgent) {
       '-select_streams', 'v:0',
       '-show_entries',   'stream=codec_name',
       '-of',              'csv=p=0',
-      ffmpegSafeUrl(url),
+      url,
     ]
     const child = execFile('ffprobe', args, { timeout: (TIMEOUT_S + 5) * 1000 }, (err, stdout) => {
       if (err) return resolve(null)
@@ -250,7 +238,7 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0', timeoutS = TIME
       '-user_agent', userAgent || UA,
       ...(referrer ? ['-headers', `Referer: ${referrer}\r\nOrigin: ${(() => { try { return new URL(referrer).origin } catch { return referrer } })()}\r\n`] : []),
       ...streamArgs,
-      ffmpegSafeUrl(url),
+      url,
     ]
 
     const child = execFile('ffprobe', args, { timeout: (timeoutS + 5) * 1000 }, (err, stdout, stderr) => {
