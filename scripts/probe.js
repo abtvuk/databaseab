@@ -54,8 +54,10 @@ function isUnplayableDomain(url) {
   }
 }
 
-function probeCodecName(url, referrer, userAgent) {
+function checkVideoCodec(url, referrer, userAgent) {
   return new Promise(resolve => {
+    const bad = (cfg.unsupportedVideoCodecs || []).map(c => c.toLowerCase())
+    if (!bad.length) return resolve(false)
     const args = [
       '-v',          'error',
       '-timeout',    String(TIMEOUT_S * 1_000_000),
@@ -67,53 +69,12 @@ function probeCodecName(url, referrer, userAgent) {
       url,
     ]
     const child = execFile('ffprobe', args, { timeout: (TIMEOUT_S + 5) * 1000 }, (err, stdout) => {
-      if (err) return resolve(null)
-      resolve(stdout.trim().toLowerCase() || null)
+      if (err) return resolve(false)
+      const codec = stdout.trim().toLowerCase()
+      resolve(bad.includes(codec))
     })
     setTimeout(() => { try { child.kill('SIGKILL') } catch {} }, (TIMEOUT_S + 6) * 1000)
   })
-}
-
-async function getVariantUrls(url, referrer, userAgent) {
-  try {
-    const ctrl  = new AbortController()
-    const timer = setTimeout(() => ctrl.abort(), 8000)
-    const res = await fetch(url, {
-      signal: ctrl.signal,
-      headers: {
-        'User-Agent': userAgent || BROWSER_UA,
-        ...(referrer ? { 'Referer': referrer } : {}),
-      },
-    })
-    clearTimeout(timer)
-    if (!res.ok) return [url]
-    const text = await res.text()
-    const lines = text.split('\n').map(l => l.trim())
-    const variants = []
-    for (let i = 0; i < lines.length; i++) {
-      if (lines[i].startsWith('#EXT-X-STREAM-INF')) {
-        const uri = lines[i + 1]
-        if (uri && !uri.startsWith('#')) {
-          try { variants.push(new URL(uri, url).href) } catch { /* skip malformed */ }
-        }
-      }
-    }
-    return variants.length ? variants : [url]
-  } catch {
-    return [url]
-  }
-}
-
-async function checkVideoCodec(url, referrer, userAgent) {
-  const bad = (cfg.unsupportedVideoCodecs || []).map(c => c.toLowerCase())
-  if (!bad.length) return false
-
-  const variants = await getVariantUrls(url, referrer, userAgent)
-  const codecs = await Promise.all(variants.slice(0, 6).map(v => probeCodecName(v, referrer, userAgent)))
-  const detected = codecs.filter(Boolean)
-  if (!detected.length) return false
-
-  return detected.every(c => bad.includes(c))
 }
 
 const SEGMENT_CONCURRENCY = cfg.probe.segmentConcurrency || 8
