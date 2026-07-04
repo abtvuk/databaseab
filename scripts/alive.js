@@ -36,7 +36,7 @@ async function main() {
   if (candidates.length === 0) return
 
   const channelMap = new Map(channels.map(c => [c.id, c]))
-  let passed = 0, failed = 0, flippedDead = 0, done = 0
+  let passed = 0, failed = 0, flippedDead = 0, done = 0, geoBlockedFailed = 0
   const total = candidates.length
   const failureCounts   = {}
   const failureBySource = { stream: 0, runner: 0, unknown: 0 }
@@ -83,6 +83,13 @@ async function main() {
       if (!entry.slow) delete entry.slow
       passed++
     } else {
+      if (entry.geoBlocked) {
+        entry.uptime = { ...(entry.uptime || {}), lastProbed: new Date().toISOString(), consecutiveGeoFailures: (entry.uptime?.consecutiveGeoFailures || 0) + 1 }
+        geoBlockedFailed++
+        failed++
+        return
+      }
+
       entry.uptime = recordDead(entry.uptime)
 
       const reason = result.failReason || 'other'
@@ -108,7 +115,7 @@ async function main() {
   data.channels = allChannels
   saveChannels(data)
 
-  console.log(`passed: ${passed}  failed: ${failed}  flipped: ${flippedDead}  skipped: ${skipped.length}`)
+  console.log(`passed: ${passed}  failed: ${failed}  flipped: ${flippedDead}  geoBlocked: ${geoBlockedFailed}  skipped: ${skipped.length}`)
   if (retired) console.log(`archived: ${retired}`)
   if (pruned)  console.log(`pruned: ${pruned}`)
 
