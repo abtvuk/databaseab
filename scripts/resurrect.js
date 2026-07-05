@@ -57,6 +57,7 @@ async function main() {
       const r   = await probeUrl(urls[i], ref, ua)
       if (r.alive && !r.browserUnplayable) { result = r; liveIndex = i; break }
       if (r.alive && liveIndex === -1)      { result = r; liveIndex = i }
+      if (!r.alive && liveIndex === -1)     result = r
     }
 
     done++
@@ -86,6 +87,7 @@ async function main() {
       failureCounts[reason] = (failureCounts[reason] || 0) + 1
       const source = classifyFailSource(reason)
       failureBySource[source] = (failureBySource[source] || 0) + 1
+      console.log(`[fail] ${ch.id}  ${urls[0]}  reason=${reason}  ms=${result.responseMs}  ${result.rawError || ''}`)
       stillDead++
     }
   })
