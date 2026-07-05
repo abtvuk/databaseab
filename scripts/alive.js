@@ -62,6 +62,7 @@ async function main() {
       const r   = await probeUrl(urls[i], ref, ua)
       if (r.alive && !r.browserUnplayable) { result = r; liveIndex = i; break }
       if (r.alive && liveIndex === -1)      { result = r; liveIndex = i }
+      if (!r.alive && liveIndex === -1)     result = r
     }
 
     done++
@@ -104,6 +105,8 @@ async function main() {
         entry.alive = false
         flippedDead++
       }
+
+      console.log(`[fail] ${ch.id}  ${urls[0]}  reason=${reason}  ms=${result.responseMs}  ${result.rawError || ''}`)
 
       failed++
     }
