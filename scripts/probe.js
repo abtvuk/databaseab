@@ -282,8 +282,7 @@ async function probeUrl(url, referrer, userAgent) {
   for (let i = 0; i <= cfg.probe.retries; i++) {
     if (i > 0) await sleep(cfg.probe.retryDelaySeconds * 1000)
 
-    const timeoutS = TIMEOUT_S + i * 10
-    const result = await probeWithFallback(url, referrer, userAgent, timeoutS)
+    const result = await probeWithFallback(url, referrer, userAgent, TIMEOUT_S)
 
     if (result.alive) {
       if (isUnplayableDomain(url)) {
