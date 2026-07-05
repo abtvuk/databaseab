@@ -1,6 +1,6 @@
 const cfg = require('../config')
 const { probeUrl, runWithConcurrency, recordAlive, recordDead, isDueForProbe,
-        progressBar, applyRetirementAndPruning, classifyFailSource } = require('./probe')
+        progressBar, applyRetirementAndPruning, classifyFailSource, checkpoint } = require('./probe')
 const fs   = require('fs')
 const path = require('path')
 
@@ -87,6 +87,7 @@ async function main() {
         entry.uptime = { ...(entry.uptime || {}), lastProbed: new Date().toISOString(), consecutiveGeoFailures: (entry.uptime?.consecutiveGeoFailures || 0) + 1 }
         geoBlockedFailed++
         failed++
+        if (done % 1000 === 0) checkpoint(data, channels, channelMap, OUTPUT_PATH, 'check-alive', done, total)
         return
       }
 
@@ -105,6 +106,8 @@ async function main() {
 
       failed++
     }
+
+    if (done % 1000 === 0) checkpoint(data, channels, channelMap, OUTPUT_PATH, 'check-alive', done, total)
   })
 
   await runWithConcurrency(tasks, cfg.probe.concurrency)
