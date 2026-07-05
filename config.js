@@ -82,6 +82,7 @@ module.exports = {
     'liveingesta318.cdnmedia.tv',
     'ncdn.telewebion.ir',
     'telewebion.com',
+    'tglmp04',
     '77.46.130.252',
     '78.108.244.134',
     '83.228.75.166',
