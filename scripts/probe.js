@@ -54,8 +54,10 @@ function isUnplayableDomain(url) {
   }
 }
 
-function probeCodecName(url, referrer, userAgent) {
+function checkVideoCodec(url, referrer, userAgent) {
   return new Promise(resolve => {
+    const bad = (cfg.unsupportedVideoCodecs || []).map(c => c.toLowerCase())
+    if (!bad.length) return resolve(false)
     const args = [
       '-v',          'error',
       '-timeout',    String(TIMEOUT_S * 1_000_000),
@@ -67,53 +69,12 @@ function probeCodecName(url, referrer, userAgent) {
       url,
     ]
     const child = execFile('ffprobe', args, { timeout: (TIMEOUT_S + 5) * 1000 }, (err, stdout) => {
-      if (err) return resolve(null)
-      resolve(stdout.trim().toLowerCase() || null)
+      if (err) return resolve(false)
+      const codec = stdout.trim().toLowerCase()
+      resolve(bad.includes(codec))
     })
     setTimeout(() => { try { child.kill('SIGKILL') } catch {} }, (TIMEOUT_S + 6) * 1000)
   })
-}
-
-async function getVariantUrls(url, referrer, userAgent) {
-  try {
-    const ctrl  = new AbortController()
-    const timer = setTimeout(() => ctrl.abort(), 8000)
-    const res = await fetch(url, {
-      signal: ctrl.signal,
-      headers: {
-        'User-Agent': userAgent || BROWSER_UA,
-        ...(referrer ? { 'Referer': referrer } : {}),
-      },
-    })
-    clearTimeout(timer)
-    if (!res.ok) return [url]
-    const text = await res.text()
-    const lines = text.split('\n').map(l => l.trim())
-    const variants = []
-    for (let i = 0; i < lines.length; i++) {
-      if (lines[i].startsWith('#EXT-X-STREAM-INF')) {
-        const uri = lines[i + 1]
-        if (uri && !uri.startsWith('#')) {
-          try { variants.push(new URL(uri, url).href) } catch { /* skip malformed */ }
-        }
-      }
-    }
-    return variants.length ? variants : [url]
-  } catch {
-    return [url]
-  }
-}
-
-async function checkVideoCodec(url, referrer, userAgent) {
-  const bad = (cfg.unsupportedVideoCodecs || []).map(c => c.toLowerCase())
-  if (!bad.length) return false
-
-  const variants = await getVariantUrls(url, referrer, userAgent)
-  const codecs = await Promise.all(variants.slice(0, 6).map(v => probeCodecName(v, referrer, userAgent)))
-  const detected = codecs.filter(Boolean)
-  if (!detected.length) return false
-
-  return detected.every(c => bad.includes(c))
 }
 
 const SEGMENT_CONCURRENCY = cfg.probe.segmentConcurrency || 8
@@ -226,7 +187,7 @@ function classifyFailure(timedOut, err, stderr) {
   return 'other'
 }
 
-function probeOnce(url, referrer, userAgent, streamType = 'v:0', timeoutS = TIMEOUT_S) {
+function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
   return new Promise(resolve => {
     const t0   = Date.now()
     const streamArgs = streamType !== null
@@ -234,17 +195,17 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0', timeoutS = TIME
       : ['-show_entries', 'format=nb_streams', '-of', 'csv=p=0']
     const args = [
       '-v',          'error',
-      '-timeout',    String(timeoutS * 1_000_000),
+      '-timeout',    String(TIMEOUT_S * 1_000_000),
       '-user_agent', userAgent || UA,
       ...(referrer ? ['-headers', `Referer: ${referrer}\r\nOrigin: ${(() => { try { return new URL(referrer).origin } catch { return referrer } })()}\r\n`] : []),
       ...streamArgs,
       url,
     ]
 
-    const child = execFile('ffprobe', args, { timeout: (timeoutS + 5) * 1000 }, (err, stdout, stderr) => {
+    const child = execFile('ffprobe', args, { timeout: (TIMEOUT_S + 5) * 1000 }, (err, stdout, stderr) => {
       const responseMs = Date.now() - t0
       if (err) {
-        const timedOut = responseMs >= (timeoutS + 4) * 1000
+        const timedOut = responseMs >= (TIMEOUT_S + 4) * 1000
         const failReason = classifyFailure(timedOut, err, stderr)
         return resolve({ alive: false, responseMs, timedOut, failReason })
       }
@@ -260,19 +221,19 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0', timeoutS = TIME
       resolve({ alive, responseMs, timedOut: false, failReason: alive ? undefined : 'no_stream' })
     })
 
-    setTimeout(() => { try { child.kill('SIGKILL') } catch {} }, (timeoutS + 6) * 1000)
+    setTimeout(() => { try { child.kill('SIGKILL') } catch {} }, (TIMEOUT_S + 6) * 1000)
   })
 }
 
-async function probeWithFallback(url, referrer, userAgent, timeoutS) {
-  const r1 = await probeOnce(url, referrer, userAgent, 'v:0', timeoutS)
+async function probeWithFallback(url, referrer, userAgent) {
+  const r1 = await probeOnce(url, referrer, userAgent, 'v:0')
   if (r1.alive) return r1
 
   if (userAgent === BROWSER_UA) {
     return { alive: false, responseMs: r1.responseMs, timedOut: r1.timedOut, failReason: r1.failReason }
   }
 
-  const r2 = await probeOnce(url, referrer, BROWSER_UA, 'v:0', timeoutS)
+  const r2 = await probeOnce(url, referrer, BROWSER_UA, 'v:0')
   return r2
 }
 
@@ -282,7 +243,7 @@ async function probeUrl(url, referrer, userAgent) {
   for (let i = 0; i <= cfg.probe.retries; i++) {
     if (i > 0) await sleep(cfg.probe.retryDelaySeconds * 1000)
 
-    const result = await probeWithFallback(url, referrer, userAgent, TIMEOUT_S)
+    const result = await probeWithFallback(url, referrer, userAgent)
 
     if (result.alive) {
       if (isUnplayableDomain(url)) {
