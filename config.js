@@ -81,6 +81,7 @@ module.exports = {
     'jmp2.uk',
     'liveingesta318.cdnmedia.tv',
     'ncdn.telewebion.ir',
+    'ott.watch',
     'telewebion.com',
     'tglmp04',
     '77.46.130.252',
