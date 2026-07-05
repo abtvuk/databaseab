@@ -1,6 +1,6 @@
 const cfg = require('../config')
 const { probeUrl, runWithConcurrency, recordAlive, recordDead, isDueForProbe,
-        progressBar, applyRetirementAndPruning, classifyFailSource, checkpoint } = require('./probe')
+        progressBar, applyRetirementAndPruning, classifyFailSource, checkpoint, isUnplayableDomain } = require('./probe')
 const fs   = require('fs')
 const path = require('path')
 
@@ -27,9 +27,10 @@ async function main() {
     c.probe !== false &&
     !c.radio &&
     !c.ytId &&
+    !isUnplayableDomain(c.streamUrls?.[0] || '') &&
     isDueForProbe(c.uptime)
   )
-  const skipped  = channels.filter(c => c.alive === true && c.probe !== false && !c.radio && !c.ytId && !isDueForProbe(c.uptime))
+  const skipped  = channels.filter(c => c.alive === true && c.probe !== false && !c.radio && !c.ytId && !isUnplayableDomain(c.streamUrls?.[0] || '') && !isDueForProbe(c.uptime))
 
   console.log(`alive: ${channels.filter(c => c.alive).length}  due: ${candidates.length}  skipped: ${skipped.length}`)
 
