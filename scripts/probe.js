@@ -207,7 +207,7 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
       if (err) {
         const timedOut = responseMs >= (TIMEOUT_S + 4) * 1000
         const failReason = classifyFailure(timedOut, err, stderr)
-        return resolve({ alive: false, responseMs, timedOut, failReason })
+        return resolve({ alive: false, responseMs, timedOut, failReason, rawError: (stderr || err.message || '').trim().slice(0, 300) })
       }
       const out = stdout.trim()
       if (streamType !== null) {
@@ -230,7 +230,7 @@ async function probeWithFallback(url, referrer, userAgent) {
   if (r1.alive) return r1
 
   if (userAgent === BROWSER_UA) {
-    return { alive: false, responseMs: r1.responseMs, timedOut: r1.timedOut, failReason: r1.failReason }
+    return { alive: false, responseMs: r1.responseMs, timedOut: r1.timedOut, failReason: r1.failReason, rawError: r1.rawError }
   }
 
   const r2 = await probeOnce(url, referrer, BROWSER_UA, 'v:0')
@@ -267,7 +267,7 @@ async function probeUrl(url, referrer, userAgent) {
       return { alive: true, needsProxy: !browserOk, responseMs: result.responseMs }
     }
 
-    last = { alive: false, needsProxy: false, responseMs: result.responseMs, failReason: result.failReason }
+    last = { alive: false, needsProxy: false, responseMs: result.responseMs, failReason: result.failReason, rawError: result.rawError }
   }
 
   return last
