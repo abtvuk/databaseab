@@ -1,5 +1,5 @@
 const cfg  = require('../config')
-const { runWithConcurrency, recordAlive, recordDead, isDueForProbe, progressBar } = require('./probe')
+const { runWithConcurrency, recordAlive, isDueForProbe, progressBar } = require('./probe')
 const fs   = require('fs')
 const path = require('path')
 
@@ -84,7 +84,7 @@ async function main() {
   if (candidates.length === 0) return
 
   const channelMap = new Map(channels.map(c => [c.id, c]))
-  let passed = 0, failed = 0, timedOut = 0, done = 0
+  let passed = 0, unconfirmed = 0, done = 0
   const total = candidates.length
   const statusCounts = {}
 
@@ -102,14 +102,7 @@ async function main() {
       entry.alive  = true
       passed++
     } else {
-      if (result.alive === null) timedOut++
-      entry.uptime = recordDead(entry.uptime)
-      const failures = entry.uptime?.consecutiveFailures || 0
-      console.log(`[fail] ${ch.id}  ${ch.ytId}  status=${result.status}  consecutiveFailures=${failures}`)
-      if (failures >= 3) {
-        entry.alive = false
-        failed++
-      }
+      unconfirmed++
     }
   })
 
@@ -118,7 +111,7 @@ async function main() {
   data.channels = channels.map(c => channelMap.get(c.id) || c)
   saveYoutube(data.channels)
 
-  console.log(`alive: ${passed}  dead: ${failed}  timedOut: ${timedOut}`)
+  console.log(`alive: ${passed}  unconfirmed: ${unconfirmed}`)
   for (const [status, count] of Object.entries(statusCounts).sort((a, b) => b[1] - a[1])) {
     const label = status === '0' ? 'timeout' : status
     console.log(`  ${label.padEnd(7)}  ${count}`)
