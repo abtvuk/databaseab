@@ -36,12 +36,15 @@ async function fetchWithRetry(url, opts, retries) {
 
 async function probeYtId(ytId) {
   const url = liveOembedUrlFor(ytId)
+  const opts = { headers: { 'User-Agent': UA, 'Accept-Language': 'en-US,en;q=0.9' }, redirect: 'follow' }
 
   try {
-    const res = await fetchWithRetry(url, {
-      headers: { 'User-Agent': UA, 'Accept-Language': 'en-US,en;q=0.9' },
-      redirect: 'follow',
-    }, 2)
+    let res = await fetchWithRetry(url, opts, 2)
+
+    if (res.status === 401) {
+      await new Promise(r => setTimeout(r, 20000))
+      res = await fetchWithRetry(url, opts, 2)
+    }
 
     if (res.status === 200) return { alive: true,  status: 200 }
     if (res.status === 401) return { alive: false, status: 401 }
@@ -102,6 +105,7 @@ async function main() {
       if (result.alive === null) timedOut++
       entry.uptime = recordDead(entry.uptime)
       const failures = entry.uptime?.consecutiveFailures || 0
+      console.log(`[fail] ${ch.id}  ${ch.ytId}  status=${result.status}  consecutiveFailures=${failures}`)
       if (failures >= 3) {
         entry.alive = false
         failed++
