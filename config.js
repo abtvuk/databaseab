@@ -106,7 +106,6 @@ module.exports = {
   ],
 
   criticalChannels: [
-    'cna.dz',
     'live.elheddaftv.com',
     'livesstream.work.gd',
   ],
