@@ -22,6 +22,15 @@ async function main() {
   const data     = loadChannels()
   const channels = data.channels || []
 
+  let sweepFlagged = 0, sweepCleared = 0
+  for (const c of channels) {
+    if (c.alive !== true) continue
+    const unplayable = isUnplayableDomain(c.streamUrls?.[0] || '')
+    if (unplayable && !c.browserUnplayable) { c.browserUnplayable = true; sweepFlagged++ }
+    if (!unplayable && c.browserUnplayable) { delete c.browserUnplayable; sweepCleared++ }
+  }
+  if (sweepFlagged || sweepCleared) console.log(`[sweep] browserUnplayable flagged: ${sweepFlagged}  cleared: ${sweepCleared}`)
+
   const candidates = channels.filter(c =>
     c.alive === true &&
     c.probe !== false &&
