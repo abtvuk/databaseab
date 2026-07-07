@@ -1,5 +1,5 @@
 const cfg = require('../config')
-const { probeUrl, runWithConcurrency, recordAlive, recordDead, isDueForProbe,
+const { probeUrl, probeUrlThorough, isCriticalChannel, runWithConcurrency, recordAlive, recordDead, isDueForProbe,
         progressBar, applyRetirementAndPruning, classifyFailSource, checkpoint,
         isUnplayableDomain, isNameBlocked, isManualBlocked, loadFeed, saveFeed } = require('./probe')
 const fs   = require('fs')
@@ -105,12 +105,13 @@ async function main() {
       return
     }
 
+    const critical = isCriticalChannel(ch.id, urls[0] || '')
     let result = { alive: false, needsProxy: false, responseMs: 0 }
     let liveIndex = -1
     for (let i = 0; i < urls.length; i++) {
       const ref = meta[i]?.referrer  ?? ch.referrer
       const ua  = meta[i]?.userAgent ?? ch.userAgent
-      const r   = await probeUrl(urls[i], ref, ua)
+      const r   = critical ? await probeUrlThorough(urls[i], ref, ua) : await probeUrl(urls[i], ref, ua)
       if (r.alive && !r.browserUnplayable) { result = r; liveIndex = i; break }
       if (r.alive && liveIndex === -1)      { result = r; liveIndex = i }
       if (!r.alive && liveIndex === -1)     result = r
