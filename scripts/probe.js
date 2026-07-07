@@ -247,6 +247,18 @@ async function probeWithFallback(url, referrer, userAgent) {
   return r2
 }
 
+function isCriticalChannel(id, url) {
+  const list = cfg.criticalChannels || []
+  if (!list.length) return false
+  return list.some(entry => id === entry || (url && url.includes(entry)))
+}
+
+async function probeUrlThorough(url, referrer, userAgent) {
+  const result = await probeUrl(url, referrer, userAgent)
+  const { playable } = await segmentProbe(url, referrer, userAgent)
+  return { ...result, alive: playable }
+}
+
 async function probeUrl(url, referrer, userAgent) {
   let last = { alive: false, needsProxy: false, responseMs: 0 }
 
@@ -494,4 +506,4 @@ function applyRetirementAndPruning(channels) {
   return { retired: toRetire.length, pruned: toPrune.length }
 }
 
-module.exports = { probeUrl, runWithConcurrency, recordAlive, recordDead, isDueForProbe, isDueForResurrect, checkpoint, progressBar, classifyFailSource, isDueForRetirement, isDueForPruning, applyRetirementAndPruning, isUnplayableDomain, isNameBlocked, isManualBlocked, loadFeed, saveFeed }
+module.exports = { probeUrl, probeUrlThorough, isCriticalChannel, runWithConcurrency, recordAlive, recordDead, isDueForProbe, isDueForResurrect, checkpoint, progressBar, classifyFailSource, isDueForRetirement, isDueForPruning, applyRetirementAndPruning, isUnplayableDomain, isNameBlocked, isManualBlocked, loadFeed, saveFeed }
