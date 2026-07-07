@@ -85,6 +85,7 @@ module.exports = {
     'ott.watch',
     'telewebion.com',
     'tglmp04',
+    'tglmp04.akamaized.net',
     '77.46.130.252',
     '78.108.244.134',
     '83.228.75.166',
