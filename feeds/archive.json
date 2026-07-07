@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-07T08:23:13.387Z",
-  "total": 1262,
+  "generated": "2026-07-07T12:27:15.936Z",
+  "total": 1264,
   "channels": [
     {
       "id": "AbuDhabiTV.ae",
@@ -75658,6 +75658,126 @@
           "userAgent": null
         }
       ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "RaiNews24.it",
+      "name": "Rai News 24",
+      "editName": true,
+      "alive": true,
+      "probe": true,
+      "tv": true,
+      "radio": false,
+      "country": "IT",
+      "channelLogo": "https://i.imgur.com/n2u57y3.png",
+      "editChannelLogo": true,
+      "languages": [],
+      "categories": [
+        "news"
+      ],
+      "streamUrls": [
+        "http://91.146.94.234:10001/play/a135",
+        "https://rainews1-live.akamaized.net/hls/live/598326/rainews1/rainews1/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+      "needsProxy": false,
+      "ytId": null,
+      "website": "https://www.rainews.it/",
+      "replaced_by": null,
+      "geoBlocked": false,
+      "source": "iptv",
+      "nanoid": null,
+      "uptime": {
+        "aliveCount": 1,
+        "totalCount": 92,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-07-07T11:05:42.118Z",
+        "lastProbed": "2026-07-07T11:05:42.118Z",
+        "score": 20,
+        "consecutiveFailures": 0,
+        "recentResults": [
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+        },
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null
+        }
+      ],
+      "browserUnplayable": true,
+      "slow": true,
+      "unplayableArchived": true
+    },
+    {
+      "id": "TGCom24.it",
+      "name": "TGCom24",
+      "editName": true,
+      "alive": true,
+      "probe": true,
+      "tv": true,
+      "radio": false,
+      "country": "IT",
+      "channelLogo": "https://i.imgur.com/fPmvbGH.png",
+      "editChannelLogo": true,
+      "languages": [],
+      "categories": [
+        "news"
+      ],
+      "streamUrls": [
+        "http://91.146.94.234:10001/play/a08t",
+        "https://live2-mediaset-it.akamaized.net/Content/hls_h0_clr_vos/live/channel(kf)/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+      "needsProxy": false,
+      "ytId": null,
+      "website": "https://www.tgcom24.mediaset.it/",
+      "replaced_by": null,
+      "geoBlocked": false,
+      "source": "iptv",
+      "nanoid": null,
+      "uptime": {
+        "aliveCount": 1,
+        "totalCount": 92,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-07-07T11:05:56.697Z",
+        "lastProbed": "2026-07-07T11:05:56.697Z",
+        "score": 20,
+        "consecutiveFailures": 0,
+        "recentResults": [
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+        },
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null
+        }
+      ],
+      "browserUnplayable": true,
+      "slow": true,
       "unplayableArchived": true
     }
   ]
