@@ -12,6 +12,7 @@ module.exports = {
     youtube:  'feeds/youtube.json',
     archive:  'feeds/archive.json',
     dead:     'feeds/dead.json',
+    blocked:  'feeds/blocked.json',
   },
 
   schedules: {
@@ -81,9 +82,7 @@ module.exports = {
     'jmp2.uk',
     'liveingesta318.cdnmedia.tv',
     'ncdn.telewebion.ir',
-    'ott.watch',
     'telewebion.com',
-    'tglmp04',
     '77.46.130.252',
     '78.108.244.134',
     '83.228.75.166',
@@ -91,7 +90,6 @@ module.exports = {
     '103.72.101.252',
     '103.175.73.12',
     '185.9.2.18',
-    '202.169.224.202',
     '212.70.131.37',
     '213.91.179.28',
   ],
