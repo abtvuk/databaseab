@@ -43,6 +43,16 @@ async function corsCheck(url, referrer, userAgent) {
   }
 }
 
+function isNameBlocked(name) {
+  if (!name) return false
+  const lc = name.toLowerCase()
+  return (cfg.nameBlocklist || []).some(b => lc.includes(b.toLowerCase()))
+}
+
+function isManualBlocked(id) {
+  return (cfg.manualBlocklist || []).includes(id)
+}
+
 function isUnplayableDomain(url) {
   const blocked = cfg.unplayableDomains || []
   if (!blocked.length) return false
@@ -484,4 +494,4 @@ function applyRetirementAndPruning(channels) {
   return { retired: toRetire.length, pruned: toPrune.length }
 }
 
-module.exports = { probeUrl, runWithConcurrency, recordAlive, recordDead, isDueForProbe, isDueForResurrect, checkpoint, progressBar, classifyFailSource, isDueForRetirement, isDueForPruning, applyRetirementAndPruning, isUnplayableDomain }
+module.exports = { probeUrl, runWithConcurrency, recordAlive, recordDead, isDueForProbe, isDueForResurrect, checkpoint, progressBar, classifyFailSource, isDueForRetirement, isDueForPruning, applyRetirementAndPruning, isUnplayableDomain, isNameBlocked, isManualBlocked, loadFeed, saveFeed }
