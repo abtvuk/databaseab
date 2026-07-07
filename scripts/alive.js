@@ -1,6 +1,7 @@
 const cfg = require('../config')
 const { probeUrl, runWithConcurrency, recordAlive, recordDead, isDueForProbe,
-        progressBar, applyRetirementAndPruning, classifyFailSource, checkpoint, isUnplayableDomain } = require('./probe')
+        progressBar, applyRetirementAndPruning, classifyFailSource, checkpoint,
+        isUnplayableDomain, isNameBlocked, isManualBlocked, loadFeed, saveFeed } = require('./probe')
 const fs   = require('fs')
 const path = require('path')
 
@@ -20,16 +21,57 @@ function saveChannels(data) {
 
 async function main() {
   const data     = loadChannels()
-  const channels = data.channels || []
+  let   channels = data.channels || []
 
-  let sweepFlagged = 0, sweepCleared = 0
-  for (const c of channels) {
-    if (c.alive !== true) continue
-    const unplayable = isUnplayableDomain(c.streamUrls?.[0] || '')
-    if (unplayable && !c.browserUnplayable) { c.browserUnplayable = true; sweepFlagged++ }
-    if (!unplayable && c.browserUnplayable) { delete c.browserUnplayable; sweepCleared++ }
+  const blockedFeed = loadFeed(cfg.output.blocked)
+  const stillBlocked = []
+  const restoredFromBlocked = []
+  for (const c of blockedFeed.channels) {
+    if (isNameBlocked(c.name) || isManualBlocked(c.id)) stillBlocked.push(c)
+    else restoredFromBlocked.push(c)
   }
-  if (sweepFlagged || sweepCleared) console.log(`[sweep] browserUnplayable flagged: ${sweepFlagged}  cleared: ${sweepCleared}`)
+  if (restoredFromBlocked.length) {
+    saveFeed(cfg.output.blocked, stillBlocked)
+    channels = [...channels, ...restoredFromBlocked]
+    console.log(`[sweep] restored from blocked.json: ${restoredFromBlocked.length}`)
+  }
+
+  const archiveFeed = loadFeed(cfg.output.archive)
+  const stillArchived = []
+  const restoredFromArchive = []
+  for (const c of archiveFeed.channels) {
+    if (c.unplayableArchived && !isUnplayableDomain(c.streamUrls?.[0] || '')) {
+      const { unplayableArchived, ...clean } = c
+      restoredFromArchive.push(clean)
+    } else {
+      stillArchived.push(c)
+    }
+  }
+  if (restoredFromArchive.length) {
+    saveFeed(cfg.output.archive, stillArchived)
+    channels = [...channels, ...restoredFromArchive]
+    console.log(`[sweep] restored from archive.json: ${restoredFromArchive.length}`)
+  }
+
+  const toBlocked = channels.filter(c => isNameBlocked(c.name) || isManualBlocked(c.id))
+  const toArchive = channels.filter(c => !toBlocked.includes(c) && isUnplayableDomain(c.streamUrls?.[0] || ''))
+
+  if (toBlocked.length) {
+    const existing = loadFeed(cfg.output.blocked)
+    const existingIds = new Set(existing.channels.map(c => c.id))
+    saveFeed(cfg.output.blocked, [...existing.channels, ...toBlocked.filter(c => !existingIds.has(c.id))])
+    console.log(`[sweep] moved to blocked.json: ${toBlocked.length}`)
+  }
+  if (toArchive.length) {
+    const existing = loadFeed(cfg.output.archive)
+    const existingIds = new Set(existing.channels.map(c => c.id))
+    saveFeed(cfg.output.archive, [...existing.channels, ...toArchive.filter(c => !existingIds.has(c.id)).map(c => ({ ...c, unplayableArchived: true }))])
+    console.log(`[sweep] moved to archive.json: ${toArchive.length}`)
+  }
+
+  const removedIds = new Set([...toBlocked, ...toArchive].map(c => c.id))
+  channels = channels.filter(c => !removedIds.has(c.id))
+  data.channels = channels
 
   const candidates = channels.filter(c =>
     c.alive === true &&
