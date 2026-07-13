@@ -83,6 +83,7 @@ module.exports = {
     'liveingesta318.cdnmedia.tv',
     'ncdn.telewebion.ir',
     'ott.watch',
+    'srs.unsj.edu.ar',
     'telewebion.com',
     'tglmp04',
     'tglmp04.akamaized.net',
