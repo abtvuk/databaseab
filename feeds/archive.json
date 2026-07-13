@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-12T07:28:45.316Z",
-  "total": 1271,
+  "generated": "2026-07-13T08:16:58.438Z",
+  "total": 1272,
   "channels": [
     {
       "id": "AbuDhabiTV.ae",
@@ -76416,6 +76416,47 @@
           "userAgent": null
         }
       ],
+      "browserUnplayable": true,
+      "slow": true,
+      "unplayableArchived": true
+    },
+    {
+      "id": "TV8.it",
+      "name": "TV8",
+      "editName": true,
+      "alive": true,
+      "probe": true,
+      "tv": true,
+      "radio": false,
+      "country": "IT",
+      "channelLogo": "https://upload.wikimedia.org/wikipedia/it/thumb/6/6d/TV8_Logo_2016.svg/500px-TV8_Logo_2016.svg.png",
+      "editChannelLogo": true,
+      "languages": [],
+      "categories": [],
+      "streamUrls": [
+        "http://91.146.94.234:10001/play/a03b"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "needsProxy": false,
+      "ytId": null,
+      "website": "https://tv8.it/",
+      "replaced_by": null,
+      "geoBlocked": false,
+      "source": "iptv",
+      "nanoid": null,
+      "uptime": {
+        "aliveCount": 1,
+        "totalCount": 1,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-07-13T06:51:59.006Z",
+        "lastProbed": "2026-07-13T06:51:59.006Z",
+        "score": 100,
+        "consecutiveFailures": 0,
+        "recentResults": [
+          1
+        ]
+      },
       "browserUnplayable": true,
       "slow": true,
       "unplayableArchived": true
