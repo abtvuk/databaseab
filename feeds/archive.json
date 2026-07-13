@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-13T17:12:48.074Z",
-  "total": 1273,
+  "generated": "2026-07-13T20:56:50.524Z",
+  "total": 1274,
   "channels": [
     {
       "id": "AbuDhabiTV.ae",
@@ -76538,6 +76538,93 @@
           "userAgent": null
         }
       ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "ComedyCentral.us",
+      "name": "Comedy Central",
+      "editName": true,
+      "alive": true,
+      "probe": true,
+      "tv": true,
+      "radio": false,
+      "country": "US",
+      "channelLogo": "https://images.pluto.tv/channels/64f8a408bd341e000818fcda/colorLogoPNG.png",
+      "editChannelLogo": true,
+      "languages": [],
+      "categories": [
+        "comedy"
+      ],
+      "streamUrls": [
+        "https://jmp2.uk/plu-64f8a408bd341e000818fcda.m3u8",
+        "http://23.237.104.106:8080/USA_COMEDY_CENTRAL/index.m3u8",
+        "http://rezofoot.tv/COMEDY-CENTRAL/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "needsProxy": false,
+      "ytId": null,
+      "website": "https://pluto.tv/live-tv/comedy-central-ca/details",
+      "replaced_by": null,
+      "geoBlocked": false,
+      "source": "iptv",
+      "nanoid": null,
+      "uptime": {
+        "aliveCount": 54,
+        "totalCount": 56,
+        "consecutiveAlive": 54,
+        "lastSeen": "2026-07-13T17:56:43.439Z",
+        "lastProbed": "2026-07-13T17:56:43.439Z",
+        "score": 100,
+        "recentResults": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "consecutiveFailures": 0
+      },
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null
+        },
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null
+        },
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null
+        }
+      ],
+      "browserUnplayable": true,
       "unplayableArchived": true
     }
   ]
