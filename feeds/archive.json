@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-13T08:16:58.438Z",
-  "total": 1272,
+  "generated": "2026-07-13T17:12:48.074Z",
+  "total": 1273,
   "channels": [
     {
       "id": "AbuDhabiTV.ae",
@@ -76459,6 +76459,85 @@
       },
       "browserUnplayable": true,
       "slow": true,
+      "unplayableArchived": true
+    },
+    {
+      "id": "XamaTV.ar",
+      "name": "Xama TV",
+      "editName": true,
+      "alive": true,
+      "probe": true,
+      "tv": true,
+      "radio": false,
+      "country": "AR",
+      "channelLogo": "https://i.imgur.com/dcNzVNN.png",
+      "editChannelLogo": true,
+      "languages": [],
+      "categories": [],
+      "streamUrls": [
+        "https://srs.unsj.edu.ar/live/xama/xama.flv"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "needsProxy": true,
+      "ytId": null,
+      "website": "https://www.xama.tv/",
+      "replaced_by": null,
+      "geoBlocked": false,
+      "source": "iptv",
+      "nanoid": null,
+      "uptime": {
+        "aliveCount": 31,
+        "totalCount": 50,
+        "consecutiveAlive": 4,
+        "lastSeen": "2026-07-13T08:17:07.081Z",
+        "lastProbed": "2026-07-13T08:17:07.081Z",
+        "score": 40,
+        "recentResults": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "consecutiveFailures": 0
+      },
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null
+        }
+      ],
       "unplayableArchived": true
     }
   ]
