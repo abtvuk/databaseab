@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-13T20:56:50.524Z",
-  "total": 1274,
+  "generated": "2026-07-14T20:59:44.833Z",
+  "total": 1275,
   "channels": [
     {
       "id": "AbuDhabiTV.ae",
@@ -76625,6 +76625,74 @@
         }
       ],
       "browserUnplayable": true,
+      "unplayableArchived": true
+    },
+    {
+      "id": "BBCFirst.uk",
+      "name": "BBC First",
+      "editName": true,
+      "alive": true,
+      "probe": true,
+      "tv": true,
+      "radio": false,
+      "country": "UK",
+      "channelLogo": "https://i.imgur.com/UBoBYUI.png",
+      "editChannelLogo": true,
+      "languages": [],
+      "categories": [
+        "entertainment"
+      ],
+      "streamUrls": [
+        "http://91.146.94.234:10001/play/a087",
+        "http://81.15.109.89:8001/play/BBCFirst"
+      ],
+      "referrer": null,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3",
+      "needsProxy": false,
+      "ytId": null,
+      "website": "https://www.bbcchannels.com/",
+      "replaced_by": null,
+      "geoBlocked": false,
+      "source": "iptv",
+      "nanoid": null,
+      "uptime": {
+        "aliveCount": 1,
+        "totalCount": 14,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-07-14T17:01:02.704Z",
+        "lastProbed": "2026-07-14T17:01:02.704Z",
+        "score": 10,
+        "recentResults": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "consecutiveFailures": 0
+      },
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null
+        },
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3"
+        }
+      ],
+      "browserUnplayable": true,
+      "slow": true,
       "unplayableArchived": true
     }
   ]
