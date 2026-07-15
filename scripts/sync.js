@@ -1,6 +1,16 @@
 const cfg  = require('../config')
 const fs   = require('fs')
 const path = require('path')
+const { loadFeed } = require('./probe')
+
+let deadLinkSet = null
+function isDeadLink(channelId, url) {
+  if (!deadLinkSet) {
+    const dead = loadFeed(cfg.output.deadLinks)
+    deadLinkSet = new Set((dead.channels || []).map(l => `${l.channelId}|${l.url}`))
+  }
+  return deadLinkSet.has(`${channelId}|${url}`)
+}
 
 const UA = 'abtv-sync/1.0'
 
@@ -119,21 +129,12 @@ function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
   if (!('editChannelLogo' in ch)) ch.editChannelLogo = true
 
   const streams  = streamMap[iptvCh.id] || []
-  if (streams.length) {
-    const existingUrls     = existing.streamUrls || []
-    const newUrls          = streams.map(s => s.url)
-    const newUrlSet        = new Set(newUrls)
-    const existingMeta2    = existing.streamMeta || []
-    const existingMetaMap2 = Object.fromEntries(existingUrls.map((u, i) => [u, existingMeta2[i] || {}]))
-    const preserved        = existingUrls.filter(u => newUrlSet.has(u))
-    const manual           = existingUrls.filter(u => !newUrlSet.has(u) && existingMetaMap2[u]?.source !== 'iptv')
-    const added            = newUrls.filter(u => !existingUrls.includes(u))
-    ch.streamUrls          = [...preserved, ...added, ...manual]
-  } else {
-    ch.streamUrls    = existing.streamUrls || []
-  }
+  const existingUrls = existing.streamUrls || []
+  const newUrls  = streams
+    .map(s => s.url)
+    .filter(u => !existingUrls.includes(u) && !isDeadLink(iptvCh.id, u))
+  ch.streamUrls  = [...existingUrls, ...newUrls]
   const existingMeta    = existing.streamMeta || []
-  const existingUrls    = existing.streamUrls || []
   const existingMetaMap = Object.fromEntries(existingUrls.map((u, i) => [u, existingMeta[i] || {}]))
   const metaByUrl       = Object.fromEntries(streams.map(s => [s.url, { source: 'iptv', referrer: s.referrer || null, userAgent: s.userAgent || null }]))
   const rawMeta         = ch.streamUrls.map(u => ({ ...(existingMetaMap[u] || {}), ...(metaByUrl[u] || {}) }))
