@@ -446,6 +446,46 @@ function isDueForPruning(uptime) {
   return failures >= prun.consecutiveFailuresLimit
 }
 
+function recordLinkResult(meta, alive) {
+  meta.linkTotalCount = (meta.linkTotalCount || 0) + 1
+  if (alive) meta.linkAliveCount = (meta.linkAliveCount || 0) + 1
+  return meta
+}
+
+function isDueForLinkRemoval(meta) {
+  const lp = cfg.linkPruning
+  if (!lp?.enabled) return false
+  const total = meta?.linkTotalCount || 0
+  if (total < lp.minProbes) return false
+  const alive = meta?.linkAliveCount || 0
+  return (alive / total) * 100 < lp.aliveScoreMax
+}
+
+function pruneChannelLinks(entry, removedLinks) {
+  const urls = entry.streamUrls || []
+  if (urls.length <= 1) return
+  const metaArr = entry.streamMeta || []
+  const keepIdx = []
+  urls.forEach((u, i) => {
+    if (isDueForLinkRemoval(metaArr[i])) {
+      removedLinks.push({ channelId: entry.id, url: u, removedAt: new Date().toISOString() })
+    } else {
+      keepIdx.push(i)
+    }
+  })
+  if (keepIdx.length === urls.length) return
+  entry.streamUrls  = keepIdx.map(i => urls[i])
+  entry.streamMeta  = keepIdx.map(i => metaArr[i] || {})
+}
+
+function saveDeadLinks(removedLinks) {
+  if (!removedLinks.length) return
+  const existing = loadFeed(cfg.output.deadLinks)
+  const seen = new Set((existing.channels || []).map(l => `${l.channelId}|${l.url}`))
+  const merged = [...(existing.channels || []), ...removedLinks.filter(l => !seen.has(`${l.channelId}|${l.url}`))]
+  saveFeed(cfg.output.deadLinks, merged)
+}
+
 function loadFeed(outputPath) {
   const p = require('path').resolve(outputPath)
   try {
@@ -506,4 +546,4 @@ function applyRetirementAndPruning(channels) {
   return { retired: toRetire.length, pruned: toPrune.length }
 }
 
-module.exports = { probeUrl, probeUrlThorough, isCriticalChannel, runWithConcurrency, recordAlive, recordDead, isDueForProbe, isDueForResurrect, checkpoint, progressBar, classifyFailSource, isDueForRetirement, isDueForPruning, applyRetirementAndPruning, isUnplayableDomain, isNameBlocked, isManualBlocked, loadFeed, saveFeed }
+module.exports = { probeUrl, probeUrlThorough, isCriticalChannel, runWithConcurrency, recordAlive, recordDead, isDueForProbe, isDueForResurrect, checkpoint, progressBar, classifyFailSource, isDueForRetirement, isDueForPruning, applyRetirementAndPruning, isUnplayableDomain, isNameBlocked, isManualBlocked, loadFeed, saveFeed, recordLinkResult, pruneChannelLinks, saveDeadLinks }

@@ -1,7 +1,8 @@
 const cfg = require('../config')
 const { probeUrl, probeUrlThorough, isCriticalChannel, runWithConcurrency, recordAlive, recordDead, isDueForProbe,
         progressBar, applyRetirementAndPruning, classifyFailSource, checkpoint,
-        isUnplayableDomain, isNameBlocked, isManualBlocked, loadFeed, saveFeed } = require('./probe')
+        isUnplayableDomain, isNameBlocked, isManualBlocked, loadFeed, saveFeed,
+        recordLinkResult, pruneChannelLinks, saveDeadLinks } = require('./probe')
 const fs   = require('fs')
 const path = require('path')
 
@@ -92,6 +93,7 @@ async function main() {
   const total = candidates.length
   const failureCounts   = {}
   const failureBySource = { stream: 0, runner: 0, unknown: 0 }
+  const removedLinks    = []
 
   const tasks = candidates.map(ch => async () => {
     const urls = ch.streamUrls || []
@@ -112,6 +114,7 @@ async function main() {
       const ref = meta[i]?.referrer  ?? ch.referrer
       const ua  = meta[i]?.userAgent ?? ch.userAgent
       const r   = critical ? await probeUrlThorough(urls[i], ref, ua) : await probeUrl(urls[i], ref, ua)
+      meta[i] = recordLinkResult(meta[i] || {}, r.alive)
       if (r.alive && !r.browserUnplayable) { result = r; liveIndex = i; break }
       if (r.alive && liveIndex === -1)      { result = r; liveIndex = i }
       if (!r.alive && liveIndex === -1)     result = r
@@ -122,6 +125,8 @@ async function main() {
 
     const entry = channelMap.get(ch.id)
     if (!entry) return
+
+    entry.streamMeta = meta
 
     if (result.alive) {
       if (liveIndex > 0) {
@@ -163,10 +168,15 @@ async function main() {
       failed++
     }
 
+    pruneChannelLinks(entry, removedLinks)
+
     if (done % 1000 === 0) checkpoint(data, channels, channelMap, OUTPUT_PATH, 'check-alive', done, total)
   })
 
   await runWithConcurrency(tasks, cfg.probe.concurrency)
+
+  saveDeadLinks(removedLinks)
+  if (removedLinks.length) console.log(`links removed: ${removedLinks.length}`)
 
   const allChannels = channels.map(c => channelMap.get(c.id) || c)
   const { retired, pruned } = applyRetirementAndPruning(allChannels)
