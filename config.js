@@ -13,6 +13,7 @@ module.exports = {
     archive:  'feeds/archive.json',
     dead:     'feeds/dead.json',
     blocked:  'feeds/blocked.json',
+    deadLinks: 'feeds/deadLinks.json',
   },
 
   schedules: {
@@ -72,6 +73,12 @@ module.exports = {
     enabled:                  true,
     consecutiveFailuresLimit: 100,
     output:                   'feeds/dead.json',
+  },
+
+  linkPruning: {
+    enabled:       true,
+    minProbes:     80,
+    aliveScoreMax: 10,
   },
 
   manualBlocklist: [],
