@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-15T12:01:43.689Z",
+  "generated": "2026-07-15T13:03:25.675Z",
   "total": 10630,
   "channels": [
     {
@@ -8205,11 +8205,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 63,
-        "totalCount": 102,
+        "totalCount": 103,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-13T17:13:30.955Z",
-        "lastProbed": "2026-07-15T01:04:35.082Z",
-        "score": 50,
+        "lastProbed": "2026-07-15T13:01:10.873Z",
+        "score": 40,
         "recentResults": [
           1,
           0,
@@ -8258,15 +8258,17 @@
           1,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 3
+        "consecutiveFailures": 4
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ],
       "slow": true
@@ -19515,11 +19517,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 55,
-        "totalCount": 95,
+        "totalCount": 96,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-10T21:06:41.897Z",
-        "lastProbed": "2026-07-14T16:58:25.019Z",
-        "score": 30,
+        "lastProbed": "2026-07-15T13:01:06.647Z",
+        "score": 20,
         "recentResults": [
           0,
           0,
@@ -19562,15 +19564,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 7
+        "consecutiveFailures": 8
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -27045,7 +27049,7 @@
       "id": "angeltvaustralia.au",
       "name": "Angel TV Australia",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -27069,11 +27073,11 @@
       "source": "famelack",
       "nanoid": "7UCxQXCWlbGvPF",
       "uptime": {
-        "aliveCount": 60,
-        "totalCount": 102,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-07-14T01:08:39.147Z",
-        "lastProbed": "2026-07-14T16:16:11.602Z",
+        "aliveCount": 61,
+        "totalCount": 103,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-07-15T13:02:31.245Z",
+        "lastProbed": "2026-07-15T13:02:31.245Z",
         "score": 30,
         "recentResults": [
           0,
@@ -27119,11 +27123,18 @@
           0,
           1,
           0,
-          0
+          0,
+          1
         ],
-        "consecutiveFailures": 2
+        "consecutiveFailures": 0
       },
-      "slow": true
+      "slow": true,
+      "streamMeta": [
+        {
+          "linkTotalCount": 1,
+          "linkAliveCount": 1
+        }
+      ]
     },
     {
       "id": "AusbizTV.au",
@@ -49503,15 +49514,16 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 1,
-        "totalCount": 8,
+        "totalCount": 9,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-07T17:49:28.192Z",
-        "lastProbed": "2026-07-13T20:46:03.025Z",
-        "score": 13,
-        "consecutiveFailures": 6,
+        "lastProbed": "2026-07-15T13:01:14.952Z",
+        "score": 11,
+        "consecutiveFailures": 7,
         "recentResults": [
           0,
           1,
+          0,
           0,
           0,
           0,
@@ -49524,7 +49536,8 @@
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -50216,7 +50229,7 @@
       "id": "TVShowOruro.bo",
       "name": "TV Show Oruro",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -50240,13 +50253,13 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 9,
-        "totalCount": 17,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-07-11T07:13:52.118Z",
-        "lastProbed": "2026-07-14T16:58:24.780Z",
+        "aliveCount": 10,
+        "totalCount": 18,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-07-15T13:01:03.971Z",
+        "lastProbed": "2026-07-15T13:01:03.971Z",
         "score": 30,
-        "consecutiveFailures": 6,
+        "consecutiveFailures": 0,
         "recentResults": [
           1,
           1,
@@ -50264,14 +50277,17 @@
           0,
           0,
           0,
-          0
+          0,
+          1
         ]
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1,
+          "linkAliveCount": 1
         }
       ]
     },
@@ -92244,11 +92260,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 68,
-        "totalCount": 112,
+        "totalCount": 113,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-13T08:17:05.889Z",
-        "lastProbed": "2026-07-15T01:04:31.304Z",
-        "score": 60,
+        "lastProbed": "2026-07-15T13:01:07.934Z",
+        "score": 50,
         "recentResults": [
           1,
           0,
@@ -92301,15 +92317,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 4
+        "consecutiveFailures": 5
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -97487,10 +97505,10 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 49,
-        "totalCount": 61,
+        "totalCount": 62,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-11T02:36:42.524Z",
-        "lastProbed": "2026-07-14T16:58:24.162Z",
+        "lastProbed": "2026-07-15T13:01:05.910Z",
         "score": 30,
         "recentResults": [
           1,
@@ -97523,15 +97541,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 6
+        "consecutiveFailures": 7
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -99399,11 +99419,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 46,
-        "totalCount": 62,
+        "totalCount": 63,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-11T06:04:40.735Z",
-        "lastProbed": "2026-07-14T16:58:28.325Z",
-        "score": 20,
+        "lastProbed": "2026-07-15T13:01:05.892Z",
+        "score": 10,
         "recentResults": [
           0,
           1,
@@ -99434,15 +99454,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 5
+        "consecutiveFailures": 6
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -118833,7 +118855,7 @@
       "id": "AcerfiTV.cm",
       "name": "Acerfi TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -118857,13 +118879,13 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 3,
-        "totalCount": 13,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-07-14T01:07:07.662Z",
-        "lastProbed": "2026-07-14T16:14:59.381Z",
+        "aliveCount": 4,
+        "totalCount": 14,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-07-15T13:01:06.407Z",
+        "lastProbed": "2026-07-15T13:01:06.407Z",
         "score": 20,
-        "consecutiveFailures": 2,
+        "consecutiveFailures": 0,
         "recentResults": [
           0,
           1,
@@ -118877,14 +118899,17 @@
           0,
           1,
           0,
-          0
+          0,
+          1
         ]
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1,
+          "linkAliveCount": 1
         }
       ]
     },
@@ -119205,10 +119230,10 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 48,
-        "totalCount": 60,
+        "totalCount": 61,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-11T11:06:24.576Z",
-        "lastProbed": "2026-07-14T16:58:24.091Z",
+        "lastProbed": "2026-07-15T13:01:05.900Z",
         "score": 30,
         "recentResults": [
           1,
@@ -119240,15 +119265,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 5
+        "consecutiveFailures": 6
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -186389,11 +186416,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 64,
-        "totalCount": 92,
+        "totalCount": 93,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-14T01:07:08.086Z",
-        "lastProbed": "2026-07-14T16:15:08.462Z",
-        "score": 40,
+        "lastProbed": "2026-07-15T13:01:10.624Z",
+        "score": 30,
         "recentResults": [
           0,
           0,
@@ -186440,15 +186467,17 @@
           0,
           1,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 2
+        "consecutiveFailures": 3
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -187901,11 +187930,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 76,
-        "totalCount": 110,
+        "totalCount": 111,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-14T11:25:25.973Z",
-        "lastProbed": "2026-07-15T02:26:47.593Z",
-        "score": 50,
+        "lastProbed": "2026-07-15T13:01:07.186Z",
+        "score": 40,
         "recentResults": [
           0,
           0,
@@ -187954,15 +187983,17 @@
           1,
           1,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 2
+        "consecutiveFailures": 3
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -207272,11 +207303,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 47,
-        "totalCount": 63,
+        "totalCount": 64,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-09T17:27:00.340Z",
-        "lastProbed": "2026-07-14T16:58:25.446Z",
-        "score": 20,
+        "lastProbed": "2026-07-15T13:01:08.631Z",
+        "score": 10,
         "recentResults": [
           1,
           0,
@@ -207309,15 +207340,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 8
+        "consecutiveFailures": 9
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -228124,11 +228157,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 47,
-        "totalCount": 58,
+        "totalCount": 59,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-09T17:27:47.404Z",
-        "lastProbed": "2026-07-14T16:58:28.723Z",
-        "score": 20,
+        "lastProbed": "2026-07-15T13:01:08.616Z",
+        "score": 10,
         "recentResults": [
           1,
           1,
@@ -228157,15 +228190,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 8
+        "consecutiveFailures": 9
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -288309,11 +288344,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 8,
-        "totalCount": 24,
+        "totalCount": 25,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-14T12:57:33.114Z",
-        "lastProbed": "2026-07-15T02:28:00.091Z",
-        "score": 50,
+        "lastProbed": "2026-07-15T13:02:05.854Z",
+        "score": 40,
         "recentResults": [
           0,
           0,
@@ -288336,15 +288371,17 @@
           0,
           1,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 2
+        "consecutiveFailures": 3
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3"
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3",
+          "linkTotalCount": 1
         }
       ]
     },
@@ -289503,10 +289540,10 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 30,
-        "totalCount": 51,
+        "totalCount": 52,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-02T06:58:56.296Z",
-        "lastProbed": "2026-07-13T20:47:03.372Z",
+        "lastProbed": "2026-07-15T13:02:15.055Z",
         "score": 10,
         "recentResults": [
           1,
@@ -289530,15 +289567,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 8
+        "consecutiveFailures": 9
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -289622,10 +289661,10 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 30,
-        "totalCount": 51,
+        "totalCount": 52,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-02T06:58:58.081Z",
-        "lastProbed": "2026-07-13T20:47:03.676Z",
+        "lastProbed": "2026-07-15T13:02:18.255Z",
         "score": 10,
         "recentResults": [
           1,
@@ -289649,15 +289688,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 8
+        "consecutiveFailures": 9
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -289688,10 +289729,10 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 30,
-        "totalCount": 51,
+        "totalCount": 52,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-02T06:58:58.535Z",
-        "lastProbed": "2026-07-13T20:47:04.758Z",
+        "lastProbed": "2026-07-15T13:02:19.925Z",
         "score": 10,
         "recentResults": [
           1,
@@ -289715,15 +289756,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 8
+        "consecutiveFailures": 9
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -289903,10 +289946,10 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 30,
-        "totalCount": 51,
+        "totalCount": 52,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-02T06:58:58.409Z",
-        "lastProbed": "2026-07-13T20:48:08.653Z",
+        "lastProbed": "2026-07-15T13:03:25.665Z",
         "score": 10,
         "recentResults": [
           1,
@@ -289930,20 +289973,23 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 8
+        "consecutiveFailures": 9
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         },
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -290831,10 +290877,10 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 30,
-        "totalCount": 51,
+        "totalCount": 52,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-02T06:58:58.302Z",
-        "lastProbed": "2026-07-13T20:47:06.297Z",
+        "lastProbed": "2026-07-15T13:02:22.705Z",
         "score": 10,
         "recentResults": [
           1,
@@ -290858,15 +290904,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 8
+        "consecutiveFailures": 9
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -291045,11 +291093,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 8,
-        "totalCount": 24,
+        "totalCount": 25,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-14T12:57:38.669Z",
-        "lastProbed": "2026-07-15T02:28:00.459Z",
-        "score": 50,
+        "lastProbed": "2026-07-15T13:02:05.841Z",
+        "score": 40,
         "recentResults": [
           0,
           0,
@@ -291072,15 +291120,17 @@
           0,
           1,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 2
+        "consecutiveFailures": 3
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3"
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3",
+          "linkTotalCount": 1
         }
       ],
       "slow": true
@@ -291112,11 +291162,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 8,
-        "totalCount": 24,
+        "totalCount": 25,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-14T12:57:37.901Z",
-        "lastProbed": "2026-07-15T02:28:00.553Z",
-        "score": 50,
+        "lastProbed": "2026-07-15T13:02:05.855Z",
+        "score": 40,
         "recentResults": [
           0,
           0,
@@ -291139,15 +291189,17 @@
           0,
           1,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 2
+        "consecutiveFailures": 3
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3"
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3",
+          "linkTotalCount": 1
         }
       ]
     },
@@ -291398,11 +291450,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 55,
-        "totalCount": 74,
+        "totalCount": 75,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-09T17:30:10.628Z",
-        "lastProbed": "2026-07-14T16:58:31.407Z",
-        "score": 20,
+        "lastProbed": "2026-07-15T13:01:11.760Z",
+        "score": 10,
         "recentResults": [
           1,
           0,
@@ -291444,15 +291496,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 8
+        "consecutiveFailures": 9
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -296743,7 +296797,7 @@
       "id": "JogjaTV.id",
       "name": "Jogja TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -296767,12 +296821,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 53,
-        "totalCount": 134,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-07-14T12:57:40.250Z",
-        "lastProbed": "2026-07-15T02:27:08.001Z",
-        "score": 50,
+        "aliveCount": 54,
+        "totalCount": 135,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-07-15T13:01:19.069Z",
+        "lastProbed": "2026-07-15T13:01:19.069Z",
+        "score": 60,
         "recentResults": [
           0,
           0,
@@ -296820,18 +296874,20 @@
           0,
           1,
           0,
-          0
+          0,
+          1
         ],
-        "consecutiveFailures": 2
+        "consecutiveFailures": 0
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1,
+          "linkAliveCount": 1
         }
-      ],
-      "slow": true
+      ]
     },
     {
       "id": "JTV.id",
@@ -298732,10 +298788,10 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 63,
-        "totalCount": 118,
+        "totalCount": 119,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-14T01:07:35.108Z",
-        "lastProbed": "2026-07-14T16:16:42.233Z",
+        "lastProbed": "2026-07-15T13:02:28.937Z",
         "score": 20,
         "recentResults": [
           0,
@@ -298782,16 +298838,18 @@
           0,
           1,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 2
+        "consecutiveFailures": 3
       },
       "slow": true,
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -299921,11 +299979,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 68,
-        "totalCount": 133,
+        "totalCount": 134,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-14T11:26:15.921Z",
-        "lastProbed": "2026-07-15T02:28:03.707Z",
-        "score": 50,
+        "lastProbed": "2026-07-15T13:02:05.921Z",
+        "score": 40,
         "recentResults": [
           0,
           1,
@@ -299975,15 +300033,17 @@
           0,
           1,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 2
+        "consecutiveFailures": 3
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ],
       "slow": true
@@ -314331,11 +314391,11 @@
       "nanoid": "Y8xJ84u4oD4WFi",
       "uptime": {
         "aliveCount": 27,
-        "totalCount": 59,
+        "totalCount": 60,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-14T01:07:25.001Z",
-        "lastProbed": "2026-07-14T16:16:55.434Z",
-        "score": 30,
+        "lastProbed": "2026-07-15T13:02:25.418Z",
+        "score": 20,
         "recentResults": [
           0,
           0,
@@ -314373,11 +314433,17 @@
           0,
           1,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 2
+        "consecutiveFailures": 3
       },
-      "slow": true
+      "slow": true,
+      "streamMeta": [
+        {
+          "linkTotalCount": 1
+        }
+      ]
     },
     {
       "id": "angeltveurope.in",
@@ -314408,10 +314474,10 @@
       "nanoid": "rPGG0rcVL2rrED",
       "uptime": {
         "aliveCount": 40,
-        "totalCount": 76,
+        "totalCount": 77,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-09T07:27:11.374Z",
-        "lastProbed": "2026-07-13T20:47:30.787Z",
+        "lastProbed": "2026-07-15T13:02:45.546Z",
         "score": 10,
         "recentResults": [
           0,
@@ -314453,11 +314519,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 5
+        "consecutiveFailures": 6
       },
-      "slow": true
+      "slow": true,
+      "streamMeta": [
+        {
+          "linkTotalCount": 1
+        }
+      ]
     },
     {
       "id": "angeltvfareast.in",
@@ -318738,10 +318810,10 @@
       "nanoid": "QOIZJPX9rM5gGM",
       "uptime": {
         "aliveCount": 18,
-        "totalCount": 89,
+        "totalCount": 90,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-07T01:31:10.341Z",
-        "lastProbed": "2026-07-13T20:46:14.781Z",
+        "lastProbed": "2026-07-15T13:02:25.922Z",
         "score": 10,
         "recentResults": [
           0,
@@ -318760,11 +318832,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 6
+        "consecutiveFailures": 7
       },
-      "slow": true
+      "slow": true,
+      "streamMeta": [
+        {
+          "linkTotalCount": 1
+        }
+      ]
     },
     {
       "id": "Chithiram.in",
@@ -336740,11 +336818,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 56,
-        "totalCount": 73,
+        "totalCount": 74,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-13T03:05:51.884Z",
-        "lastProbed": "2026-07-15T01:04:29.643Z",
-        "score": 60,
+        "lastProbed": "2026-07-15T13:02:05.735Z",
+        "score": 50,
         "recentResults": [
           0,
           0,
@@ -336789,16 +336867,18 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 4
+        "consecutiveFailures": 5
       },
       "slow": true,
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -347276,11 +347356,11 @@
       "nanoid": "Lj0jcKEiUbdUoD",
       "uptime": {
         "aliveCount": 56,
-        "totalCount": 73,
+        "totalCount": 74,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-13T03:06:48.077Z",
-        "lastProbed": "2026-07-15T01:04:29.661Z",
-        "score": 60,
+        "lastProbed": "2026-07-15T13:02:05.735Z",
+        "score": 50,
         "recentResults": [
           0,
           0,
@@ -347325,11 +347405,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 4
+        "consecutiveFailures": 5
       },
-      "slow": true
+      "slow": true,
+      "streamMeta": [
+        {
+          "linkTotalCount": 1
+        }
+      ]
     },
     {
       "id": "punjabitv.in",
@@ -347358,11 +347444,11 @@
       "nanoid": "bgKDA0WTNFHCAZ",
       "uptime": {
         "aliveCount": 55,
-        "totalCount": 73,
+        "totalCount": 74,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-13T03:06:49.018Z",
-        "lastProbed": "2026-07-15T01:04:29.635Z",
-        "score": 60,
+        "lastProbed": "2026-07-15T13:02:05.916Z",
+        "score": 50,
         "recentResults": [
           0,
           0,
@@ -347407,11 +347493,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 4
+        "consecutiveFailures": 5
       },
-      "slow": true
+      "slow": true,
+      "streamMeta": [
+        {
+          "linkTotalCount": 1
+        }
+      ]
     },
     {
       "id": "PunjabiZindabadTV.in",
@@ -399425,7 +399517,7 @@
       "id": "MelodyFM.jo",
       "name": "Melody FM",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -399449,12 +399541,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 43,
-        "totalCount": 127,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-07-14T11:26:12.330Z",
-        "lastProbed": "2026-07-15T02:27:32.447Z",
-        "score": 50,
+        "aliveCount": 44,
+        "totalCount": 128,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-07-15T13:01:04.242Z",
+        "lastProbed": "2026-07-15T13:01:04.242Z",
+        "score": 60,
         "recentResults": [
           0,
           0,
@@ -399496,15 +399588,18 @@
           0,
           1,
           0,
-          0
+          0,
+          1
         ],
-        "consecutiveFailures": 2
+        "consecutiveFailures": 0
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1,
+          "linkAliveCount": 1
         }
       ]
     },
@@ -442245,7 +442340,7 @@
       "id": "CaliforniaMediosTV.mx",
       "name": "California Medios TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -442269,12 +442364,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 30,
-        "totalCount": 114,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-07-06T14:48:30.279Z",
-        "lastProbed": "2026-07-13T20:46:18.571Z",
-        "score": 10,
+        "aliveCount": 31,
+        "totalCount": 115,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-07-15T13:01:27.483Z",
+        "lastProbed": "2026-07-15T13:01:27.483Z",
+        "score": 20,
         "recentResults": [
           0,
           1,
@@ -442301,15 +442396,18 @@
           0,
           0,
           0,
-          0
+          0,
+          1
         ],
-        "consecutiveFailures": 7
+        "consecutiveFailures": 0
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1,
+          "linkAliveCount": 1
         }
       ]
     },
@@ -455406,11 +455504,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 50,
-        "totalCount": 76,
+        "totalCount": 77,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-09T21:30:16.051Z",
-        "lastProbed": "2026-07-14T16:58:41.844Z",
-        "score": 20,
+        "lastProbed": "2026-07-15T13:01:22.504Z",
+        "score": 10,
         "recentResults": [
           0,
           0,
@@ -455458,15 +455556,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 8
+        "consecutiveFailures": 9
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ],
       "slow": true
@@ -455500,11 +455600,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 50,
-        "totalCount": 76,
+        "totalCount": 77,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-09T21:30:32.388Z",
-        "lastProbed": "2026-07-14T16:58:41.847Z",
-        "score": 20,
+        "lastProbed": "2026-07-15T13:01:22.500Z",
+        "score": 10,
         "recentResults": [
           0,
           0,
@@ -455552,15 +455652,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 8
+        "consecutiveFailures": 9
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ],
       "slow": true
@@ -455594,11 +455696,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 52,
-        "totalCount": 77,
+        "totalCount": 78,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-09T21:30:18.303Z",
-        "lastProbed": "2026-07-14T16:58:41.840Z",
-        "score": 20,
+        "lastProbed": "2026-07-15T13:01:22.508Z",
+        "score": 10,
         "recentResults": [
           1,
           0,
@@ -455645,15 +455747,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 8
+        "consecutiveFailures": 9
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ],
       "slow": true
@@ -487994,7 +488098,7 @@
       "id": "JuntosTV.pe",
       "name": "Juntos TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -488006,8 +488110,8 @@
         "general"
       ],
       "streamUrls": [
-        "https://live-evg8.tv360.bitel.com.pe/bitel/juntostvSRT/playlist.m3u8",
-        "http://bantel-cdn1.iptvperu.tv:1935/btnscrtn/juntos_tv.stream/playlist.m3u8"
+        "http://bantel-cdn1.iptvperu.tv:1935/btnscrtn/juntos_tv.stream/playlist.m3u8",
+        "https://live-evg8.tv360.bitel.com.pe/bitel/juntostvSRT/playlist.m3u8"
       ],
       "referrer": null,
       "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
@@ -488019,13 +488123,13 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 7,
-        "totalCount": 15,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-07-09T17:43:45.262Z",
-        "lastProbed": "2026-07-14T16:58:38.417Z",
+        "aliveCount": 8,
+        "totalCount": 16,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-07-15T13:01:19.411Z",
+        "lastProbed": "2026-07-15T13:01:19.411Z",
         "score": 20,
-        "consecutiveFailures": 8,
+        "consecutiveFailures": 0,
         "recentResults": [
           1,
           1,
@@ -488041,19 +488145,23 @@
           0,
           0,
           0,
-          0
+          0,
+          1
         ]
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+          "linkTotalCount": 1,
+          "linkAliveCount": 1
         },
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -530021,11 +530129,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 79,
-        "totalCount": 110,
+        "totalCount": 111,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-13T13:54:03.518Z",
-        "lastProbed": "2026-07-15T01:04:33.311Z",
-        "score": 50,
+        "lastProbed": "2026-07-15T13:01:10.077Z",
+        "score": 40,
         "recentResults": [
           1,
           0,
@@ -530070,15 +530178,17 @@
           1,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 3
+        "consecutiveFailures": 4
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -552366,10 +552476,10 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 39,
-        "totalCount": 60,
+        "totalCount": 61,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-11T02:38:49.052Z",
-        "lastProbed": "2026-07-14T16:59:49.606Z",
+        "lastProbed": "2026-07-15T13:02:30.218Z",
         "score": 20,
         "recentResults": [
           0,
@@ -552401,15 +552511,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 5
+        "consecutiveFailures": 6
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ],
       "slow": true
@@ -555017,7 +555129,7 @@
       "id": "BRIDGEHits.ru",
       "name": "BRIDGE Hits",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -555041,11 +555153,11 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 36,
-        "totalCount": 56,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-07-14T01:08:20.091Z",
-        "lastProbed": "2026-07-14T16:17:54.693Z",
+        "aliveCount": 37,
+        "totalCount": 57,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-07-15T13:01:25.753Z",
+        "lastProbed": "2026-07-15T13:01:25.753Z",
         "score": 30,
         "recentResults": [
           1,
@@ -555073,15 +555185,18 @@
           0,
           1,
           0,
-          0
+          0,
+          1
         ],
-        "consecutiveFailures": 2
+        "consecutiveFailures": 0
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1,
+          "linkAliveCount": 1
         }
       ],
       "slow": true
@@ -560569,7 +560684,7 @@
       "id": "FeniksplusKino.ru",
       "name": "Feniks plus Kino",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -560593,12 +560708,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 73,
-        "totalCount": 113,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-07-11T02:39:11.596Z",
-        "lastProbed": "2026-07-14T16:59:49.924Z",
-        "score": 20,
+        "aliveCount": 74,
+        "totalCount": 114,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-07-15T13:02:45.713Z",
+        "lastProbed": "2026-07-15T13:02:45.713Z",
+        "score": 30,
         "recentResults": [
           0,
           1,
@@ -560638,15 +560753,18 @@
           0,
           0,
           0,
-          0
+          0,
+          1
         ],
-        "consecutiveFailures": 5
+        "consecutiveFailures": 0
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1,
+          "linkAliveCount": 1
         }
       ],
       "slow": true
@@ -575827,7 +575945,7 @@
       "id": "RussianExtreme.ru",
       "name": "Russian Extreme",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -575851,12 +575969,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 43,
-        "totalCount": 63,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-07-11T02:38:49.473Z",
-        "lastProbed": "2026-07-14T16:59:50.439Z",
-        "score": 20,
+        "aliveCount": 44,
+        "totalCount": 64,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-07-15T13:02:28.432Z",
+        "lastProbed": "2026-07-15T13:02:28.432Z",
+        "score": 30,
         "recentResults": [
           1,
           1,
@@ -575890,16 +576008,19 @@
           0,
           0,
           0,
-          0
+          0,
+          1
         ],
-        "consecutiveFailures": 5
+        "consecutiveFailures": 0
       },
       "slow": true,
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1,
+          "linkAliveCount": 1
         }
       ]
     },
@@ -585430,7 +585551,7 @@
       "id": "Vremya.ru",
       "name": "Vremya",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -585454,12 +585575,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 24,
-        "totalCount": 122,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-07-11T02:39:08.355Z",
-        "lastProbed": "2026-07-14T17:00:47.495Z",
-        "score": 20,
+        "aliveCount": 25,
+        "totalCount": 123,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-07-15T13:02:49.194Z",
+        "lastProbed": "2026-07-15T13:02:49.194Z",
+        "score": 30,
         "recentResults": [
           1,
           0,
@@ -585497,15 +585618,18 @@
           0,
           0,
           0,
-          0
+          0,
+          1
         ],
-        "consecutiveFailures": 5
+        "consecutiveFailures": 0
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1,
+          "linkAliveCount": 1
         },
         {
           "source": "iptv",
@@ -586347,7 +586471,7 @@
       "id": "ZooTV.ru",
       "name": "Zoo TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -586369,12 +586493,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 40,
-        "totalCount": 64,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-07-11T02:39:09.450Z",
-        "lastProbed": "2026-07-14T16:59:51.763Z",
-        "score": 20,
+        "aliveCount": 41,
+        "totalCount": 65,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-07-15T13:02:35.812Z",
+        "lastProbed": "2026-07-15T13:02:35.812Z",
+        "score": 30,
         "recentResults": [
           0,
           0,
@@ -586409,15 +586533,18 @@
           0,
           0,
           0,
-          0
+          0,
+          1
         ],
-        "consecutiveFailures": 5
+        "consecutiveFailures": 0
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1,
+          "linkAliveCount": 1
         }
       ],
       "slow": true
@@ -587292,7 +587419,7 @@
       "id": "BPlusTV.rw",
       "name": "B+ TV",
       "editName": true,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "tv": true,
       "radio": false,
@@ -587316,12 +587443,12 @@
       "source": "iptv",
       "nanoid": null,
       "uptime": {
-        "aliveCount": 57,
-        "totalCount": 113,
-        "consecutiveAlive": 0,
-        "lastSeen": "2026-07-14T01:07:05.647Z",
-        "lastProbed": "2026-07-14T16:16:38.287Z",
-        "score": 30,
+        "aliveCount": 58,
+        "totalCount": 114,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-07-15T13:01:04.440Z",
+        "lastProbed": "2026-07-15T13:01:04.440Z",
+        "score": 40,
         "recentResults": [
           1,
           0,
@@ -587368,15 +587495,18 @@
           0,
           1,
           0,
-          0
+          0,
+          1
         ],
-        "consecutiveFailures": 2
+        "consecutiveFailures": 0
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1,
+          "linkAliveCount": 1
         }
       ]
     },
@@ -615928,10 +616058,10 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 37,
-        "totalCount": 89,
+        "totalCount": 90,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-07T21:17:07.678Z",
-        "lastProbed": "2026-07-13T20:46:33.416Z",
+        "lastProbed": "2026-07-15T13:01:36.272Z",
         "score": 10,
         "recentResults": [
           0,
@@ -615946,20 +616076,23 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 5
+        "consecutiveFailures": 6
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         },
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -630051,11 +630184,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 16,
-        "totalCount": 111,
+        "totalCount": 112,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-05T11:38:43.536Z",
-        "lastProbed": "2026-07-13T20:46:52.364Z",
-        "score": 10,
+        "lastProbed": "2026-07-15T13:01:47.635Z",
+        "score": 0,
         "recentResults": [
           1,
           1,
@@ -630079,20 +630212,23 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 9
+        "consecutiveFailures": 10
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         },
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -665146,10 +665282,10 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 30,
-        "totalCount": 52,
+        "totalCount": 53,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-02T06:58:58.587Z",
-        "lastProbed": "2026-07-13T20:47:36.689Z",
+        "lastProbed": "2026-07-15T13:02:39.562Z",
         "score": 10,
         "recentResults": [
           1,
@@ -665173,15 +665309,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 8
+        "consecutiveFailures": 9
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -690174,11 +690312,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 21,
-        "totalCount": 29,
+        "totalCount": 30,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-09T17:53:55.117Z",
-        "lastProbed": "2026-07-14T16:59:28.054Z",
-        "score": 20,
+        "lastProbed": "2026-07-15T13:02:13.378Z",
+        "score": 10,
         "recentResults": [
           1,
           1,
@@ -690207,15 +690345,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 8
+        "consecutiveFailures": 9
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -734838,11 +734978,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 25,
-        "totalCount": 35,
+        "totalCount": 36,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-09T17:55:55.161Z",
-        "lastProbed": "2026-07-14T16:58:33.277Z",
-        "score": 20,
+        "lastProbed": "2026-07-15T13:01:16.625Z",
+        "score": 10,
         "recentResults": [
           0,
           0,
@@ -734877,15 +735017,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 8
+        "consecutiveFailures": 9
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
@@ -752061,11 +752203,11 @@
       "nanoid": null,
       "uptime": {
         "aliveCount": 62,
-        "totalCount": 100,
+        "totalCount": 101,
         "consecutiveAlive": 0,
         "lastSeen": "2026-07-12T16:36:01.724Z",
-        "lastProbed": "2026-07-15T01:04:32.535Z",
-        "score": 50,
+        "lastProbed": "2026-07-15T13:01:08.857Z",
+        "score": 40,
         "recentResults": [
           1,
           0,
@@ -752106,15 +752248,17 @@
           0,
           0,
           0,
+          0,
           0
         ],
-        "consecutiveFailures": 5
+        "consecutiveFailures": 6
       },
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
-          "userAgent": null
+          "userAgent": null,
+          "linkTotalCount": 1
         }
       ]
     },
