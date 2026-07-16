@@ -71,13 +71,13 @@ module.exports = {
 
   pruning: {
     enabled:                  true,
-    consecutiveFailuresLimit: 100,
+    consecutiveFailuresLimit: 80,
     output:                   'feeds/dead.json',
   },
 
   linkPruning: {
     enabled:       true,
-    minProbes:     80,
+    minProbes:     70,
     aliveScoreMax: 10,
   },
 
