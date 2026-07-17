@@ -33,6 +33,7 @@ jobs:
           git add feeds/channels.json
           [ -f feeds/archive.json ] && git add feeds/archive.json || true
           [ -f feeds/dead.json ] && git add feeds/dead.json || true
+          [ -f feeds/deadLinks.json ] && git add feeds/deadLinks.json || true
           git diff --staged --quiet || git commit -m "chore: check alive channels [$(date -u '+%Y-%m-%d %H:%M UTC')]"
           git pull --rebase
           git push
