@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-15T16:21:38.949Z",
-  "total": 1285,
+  "generated": "2026-07-19T11:08:42.799Z",
+  "total": 1286,
   "channels": [
     {
       "id": "AbuDhabiTV.ae",
@@ -77352,6 +77352,112 @@
       ],
       "browserUnplayable": true,
       "slow": true,
+      "unplayableArchived": true
+    },
+    {
+      "id": "SkyNews.ie",
+      "name": "Sky News",
+      "editName": true,
+      "alive": true,
+      "probe": true,
+      "tv": true,
+      "radio": false,
+      "country": "IE",
+      "channelLogo": "https://d2n0069hmnqmmx.cloudfront.net/epgdata/1.0/newchanlogos/512/512/skychb1404.png",
+      "editChannelLogo": true,
+      "languages": [],
+      "categories": [
+        "news"
+      ],
+      "streamUrls": [
+        "https://jmp2.uk/plu-55b285cd2665de274553d66f.m3u8",
+        "http://41.205.77.102/SKYNEWS/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "needsProxy": false,
+      "ytId": null,
+      "website": null,
+      "replaced_by": null,
+      "geoBlocked": false,
+      "source": "iptv",
+      "nanoid": null,
+      "uptime": {
+        "aliveCount": 54,
+        "totalCount": 63,
+        "consecutiveAlive": 40,
+        "lastSeen": "2026-07-19T07:29:58.260Z",
+        "lastProbed": "2026-07-19T07:29:58.260Z",
+        "score": 100,
+        "recentResults": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "consecutiveFailures": 0
+      },
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 1,
+          "linkAliveCount": 1
+        },
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 8,
+          "linkAliveCount": 7
+        }
+      ],
+      "browserUnplayable": true,
       "unplayableArchived": true
     }
   ]
