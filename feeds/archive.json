@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-19T11:08:42.799Z",
-  "total": 1286,
+  "generated": "2026-07-20T07:58:11.780Z",
+  "total": 1288,
   "channels": [
     {
       "id": "AbuDhabiTV.ae",
@@ -77457,6 +77457,102 @@
           "linkAliveCount": 7
         }
       ],
+      "browserUnplayable": true,
+      "unplayableArchived": true
+    },
+    {
+      "id": "SkyShowtime1.fi",
+      "name": "SkyShowtime 1",
+      "editName": true,
+      "alive": true,
+      "probe": true,
+      "tv": true,
+      "radio": false,
+      "country": "FI",
+      "channelLogo": "https://i.imgur.com/Dw9Yv9P.png",
+      "editChannelLogo": true,
+      "languages": [],
+      "categories": [],
+      "streamUrls": [
+        "http://91.146.94.234:10001/play/a0bg"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "needsProxy": false,
+      "ytId": null,
+      "website": null,
+      "replaced_by": null,
+      "geoBlocked": false,
+      "source": "iptv",
+      "nanoid": null,
+      "uptime": {
+        "aliveCount": 1,
+        "totalCount": 1,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-07-20T06:39:09.416Z",
+        "lastProbed": "2026-07-20T06:39:09.416Z",
+        "score": 100,
+        "consecutiveFailures": 0,
+        "recentResults": [
+          1
+        ]
+      },
+      "streamMeta": [
+        {
+          "linkTotalCount": 1,
+          "linkAliveCount": 1
+        }
+      ],
+      "browserUnplayable": true,
+      "unplayableArchived": true
+    },
+    {
+      "id": "PublicFirst.in",
+      "name": "Public First",
+      "editName": true,
+      "alive": true,
+      "probe": true,
+      "tv": true,
+      "radio": false,
+      "country": "IN",
+      "channelLogo": "https://jiotvimages.cdn.jio.com/dare_images/images/Public_First.png",
+      "editChannelLogo": true,
+      "languages": [],
+      "categories": [
+        "news"
+      ],
+      "streamUrls": [
+        "http://103.175.73.12:8080/live/237/master.m3u8"
+      ],
+      "streamMeta": [
+        {
+          "referrer": null,
+          "userAgent": "#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+          "linkTotalCount": 1,
+          "linkAliveCount": 1
+        }
+      ],
+      "referrer": null,
+      "userAgent": "#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "needsProxy": false,
+      "ytId": null,
+      "website": "https://publicfirstnews.com/live-tv/",
+      "replaced_by": null,
+      "geoBlocked": false,
+      "source": "iptv",
+      "nanoid": null,
+      "uptime": {
+        "aliveCount": 1,
+        "totalCount": 1,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-07-20T06:40:18.963Z",
+        "lastProbed": "2026-07-20T06:40:18.963Z",
+        "score": 100,
+        "consecutiveFailures": 0,
+        "recentResults": [
+          1
+        ]
+      },
       "browserUnplayable": true,
       "unplayableArchived": true
     }
