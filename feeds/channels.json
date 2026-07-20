@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-20T13:54:27.150Z",
-  "total": 11825,
+  "generated": "2026-07-20T14:15:52.786Z",
+  "total": 10647,
   "channels": [
     {
       "id": "AndorraTV.ad",
@@ -265854,120 +265854,6 @@
           "userAgent": null
         }
       ]
-    },
-    {
-      "id": "EuronewsItalian.fr",
-      "name": "Euronews Italian",
-      "editName": true,
-      "alive": true,
-      "probe": true,
-      "tv": true,
-      "radio": false,
-      "country": "FR",
-      "channelLogo": "https://i.imgur.com/8t9mdg9.png",
-      "editChannelLogo": true,
-      "languages": [],
-      "categories": [
-        "news"
-      ],
-      "streamUrls": [
-        "https://acb6ca89.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmxheHhUVi1ldV9FdXJvbmV3c0l0YWxpYW5vX0hMUw/playlist.m3u8",
-        "https://cdn-euronews.akamaized.net/live/eds/euronews-it/25085/index.m3u8",
-        "https://jmp2.uk/plu-61b86ea479a4390007c6d5fc.m3u8"
-      ],
-      "referrer": null,
-      "userAgent": null,
-      "needsProxy": true,
-      "ytId": null,
-      "website": "https://it.euronews.com/",
-      "replaced_by": null,
-      "geoBlocked": false,
-      "source": "iptv",
-      "nanoid": null,
-      "uptime": {
-        "aliveCount": 71,
-        "totalCount": 82,
-        "consecutiveAlive": 43,
-        "lastSeen": "2026-07-20T03:04:41.959Z",
-        "lastProbed": "2026-07-20T03:04:41.959Z",
-        "score": 100,
-        "recentResults": [
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1
-        ],
-        "consecutiveFailures": 0
-      },
-      "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 10,
-          "linkAliveCount": 10
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null
-        }
-      ],
-      "slow": true
     },
     {
       "id": "EuronewsPortuguese.fr",
@@ -915181,6 +915067,120 @@
           "linkAliveCount": 9
         }
       ]
+    },
+    {
+      "id": "euronewsitalian.fr",
+      "name": "Euronews Italian",
+      "editName": true,
+      "alive": true,
+      "probe": true,
+      "tv": true,
+      "radio": false,
+      "country": "FR",
+      "channelLogo": "https://i.imgur.com/8t9mdg9.png",
+      "editChannelLogo": true,
+      "languages": [],
+      "categories": [
+        "news"
+      ],
+      "streamUrls": [
+        "https://acb6ca89.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmxheHhUVi1ldV9FdXJvbmV3c0l0YWxpYW5vX0hMUw/playlist.m3u8",
+        "https://cdn-euronews.akamaized.net/live/eds/euronews-it/25085/index.m3u8",
+        "https://jmp2.uk/plu-61b86ea479a4390007c6d5fc.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "needsProxy": true,
+      "ytId": null,
+      "website": "https://it.euronews.com/",
+      "replaced_by": null,
+      "geoBlocked": false,
+      "source": "iptv",
+      "nanoid": null,
+      "uptime": {
+        "aliveCount": 71,
+        "totalCount": 82,
+        "consecutiveAlive": 43,
+        "lastSeen": "2026-07-20T03:04:41.959Z",
+        "lastProbed": "2026-07-20T03:04:41.959Z",
+        "score": 100,
+        "recentResults": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "consecutiveFailures": 0
+      },
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 10,
+          "linkAliveCount": 10
+        },
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null
+        },
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null
+        }
+      ],
+      "slow": true
     }
   ]
 }
