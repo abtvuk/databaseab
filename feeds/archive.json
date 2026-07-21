@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-21T02:38:45.824Z",
-  "total": 1292,
+  "generated": "2026-07-21T11:46:46.622Z",
+  "total": 1293,
   "channels": [
     {
       "id": "AbuDhabiTV.ae",
@@ -77854,6 +77854,94 @@
           "referrer": null,
           "userAgent": null,
           "linkTotalCount": 1
+        }
+      ],
+      "browserUnplayable": true,
+      "unplayableArchived": true
+    },
+    {
+      "id": "TVP2.pl",
+      "name": "TVP2",
+      "editName": true,
+      "alive": true,
+      "probe": true,
+      "tv": true,
+      "radio": false,
+      "country": "PL",
+      "channelLogo": "https://i.imgur.com/XxCc32B.png",
+      "editChannelLogo": true,
+      "languages": [],
+      "categories": [],
+      "streamUrls": [
+        "http://91.146.94.234:10001/play/a09f",
+        "https://estreams.tv.nej.cz/dash/CH_TVP2_Portable.ism/playlist.mpd",
+        "https://tvpi.travny.workers.dev/tvp2.m3u"
+      ],
+      "referrer": null,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+      "needsProxy": false,
+      "ytId": null,
+      "website": "https://tvp2.tvp.pl/",
+      "replaced_by": null,
+      "geoBlocked": false,
+      "source": "iptv",
+      "nanoid": null,
+      "uptime": {
+        "aliveCount": 29,
+        "totalCount": 55,
+        "consecutiveAlive": 1,
+        "lastSeen": "2026-07-21T10:12:18.947Z",
+        "lastProbed": "2026-07-21T10:12:18.947Z",
+        "score": 10,
+        "recentResults": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "consecutiveFailures": 0
+      },
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 1,
+          "linkAliveCount": 1
+        },
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 3
+        },
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+          "linkTotalCount": 3
         }
       ],
       "browserUnplayable": true,
