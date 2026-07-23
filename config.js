@@ -83,10 +83,9 @@ module.exports = {
 
   manualBlocklist: [],
 
-  nameBlocklist: [],
+  nameBlocklist: ['Pluto TV'],
 
   unplayableDomains: [
-    'jmp2.uk',
     'liveingesta318.cdnmedia.tv',
     'ncdn.telewebion.ir',
     'ott.watch',
