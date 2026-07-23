@@ -440,11 +440,12 @@ function isDueForRetirement(uptime) {
   return daysDead >= (ret.score0DaysMin || 180)
 }
 
-function isDueForPruning(uptime) {
+function isChannelDeadForever(uptime) {
   const prun = cfg.pruning
-  if (!prun?.enabled || !prun.consecutiveFailuresLimit) return false
-  const failures = uptime?.consecutiveFailures ?? 0
-  return failures >= prun.consecutiveFailuresLimit
+  if (!prun?.enabled) return false
+  const total = uptime?.totalCount || 0
+  if (total < prun.minProbes) return false
+  return (uptime?.aliveCount || 0) === 0
 }
 
 function recordLinkResult(meta, alive) {
@@ -515,11 +516,13 @@ function applyRetirementAndPruning(channels) {
   const toKeep   = []
 
   for (const ch of channels) {
+    const urls = ch.streamUrls || []
     if (retireCfg?.enabled && isDueForRetirement(ch.uptime)) {
       toRetire.push({ ...ch, retiredAt: new Date().toISOString() })
-    } else if (prunCfg?.enabled && ch.alive === false && isDueForPruning(ch.uptime)) {
+    } else if (prunCfg?.enabled && ch.alive === false && urls.length === 0) {
       toPrune.push({ ...ch, prunedAt: new Date().toISOString() })
-      toKeep.push({ ...ch, probe: false })
+    } else if (prunCfg?.enabled && ch.alive === false && urls.length === 1 && isChannelDeadForever(ch.uptime)) {
+      toPrune.push({ ...ch, prunedAt: new Date().toISOString() })
     } else {
       toKeep.push(ch)
     }
@@ -547,4 +550,4 @@ function applyRetirementAndPruning(channels) {
   return { retired: toRetire.length, pruned: toPrune.length }
 }
 
-module.exports = { probeUrl, probeUrlThorough, isCriticalChannel, runWithConcurrency, recordAlive, recordDead, isDueForProbe, isDueForResurrect, checkpoint, progressBar, classifyFailSource, isDueForRetirement, isDueForPruning, applyRetirementAndPruning, isUnplayableDomain, isNameBlocked, isManualBlocked, loadFeed, saveFeed, recordLinkResult, pruneChannelLinks, saveDeadLinks }
+module.exports = { probeUrl, probeUrlThorough, isCriticalChannel, runWithConcurrency, recordAlive, recordDead, isDueForProbe, isDueForResurrect, checkpoint, progressBar, classifyFailSource, isDueForRetirement, isChannelDeadForever, applyRetirementAndPruning, isUnplayableDomain, isNameBlocked, isManualBlocked, loadFeed, saveFeed, recordLinkResult, pruneChannelLinks, saveDeadLinks }

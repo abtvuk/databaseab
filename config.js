@@ -70,9 +70,9 @@ module.exports = {
   },
 
   pruning: {
-    enabled:                  true,
-    consecutiveFailuresLimit: 80,
-    output:                   'feeds/dead.json',
+    enabled:   true,
+    minProbes: 80,
+    output:    'feeds/dead.json',
   },
 
   linkPruning: {
