@@ -77,7 +77,7 @@ module.exports = {
 
   linkPruning: {
     enabled:       true,
-    minProbes:     70,
+    minProbes:     80,
     aliveScoreMax: 10,
   },
 
