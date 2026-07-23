@@ -1,7 +1,7 @@
 const cfg  = require('../config')
 const fs   = require('fs')
 const path = require('path')
-const { loadFeed } = require('./probe')
+const { loadFeed, saveFeed, saveDeadLinks } = require('./probe')
 
 let deadLinkSet = null
 function isDeadLink(channelId, url) {
@@ -238,7 +238,7 @@ async function main() {
 
   const existing    = loadChannels().filter(c => !c.radio && !c.ytId)
   const existingMap = new Map(existing.map(c => [c.id, c]))
-  let iptvMirrored  = 0, iptvAdded = 0
+  let iptvMirrored  = 0, iptvAdded = 0, iptvRevived = 0
 
   let synced = existing.map(ch => {
     const iptvCh = iptvMap.get(ch.id)
@@ -247,14 +247,44 @@ async function main() {
     return mirrorIptvFields(ch, iptvCh, streamMap, logoMap)
   })
 
+  const deadFeed     = loadFeed(cfg.pruning.output || cfg.output.dead)
+  const revivedIds   = new Set()
+  const blacklistNow = []
+
+  for (const deadCh of deadFeed.channels || []) {
+    if (existingMap.has(deadCh.id)) continue
+    const iptvCh = iptvMap.get(deadCh.id)
+    if (!iptvCh) continue
+    const streams = streamMap[deadCh.id] || []
+    if (!streams.length) continue
+
+    const oldUrls   = new Set(deadCh.streamUrls || [])
+    const freshOnly = streams.filter(s => !oldUrls.has(s.url) && !isDeadLink(deadCh.id, s.url))
+    if (!freshOnly.length) continue
+
+    for (const u of (deadCh.streamUrls || [])) {
+      blacklistNow.push({ channelId: deadCh.id, url: u, removedAt: new Date().toISOString() })
+    }
+
+    const revived = newIptvEntry(iptvCh, { [deadCh.id]: freshOnly }, logoMap)
+    synced.push(revived)
+    revivedIds.add(deadCh.id)
+    iptvRevived++
+  }
+
+  if (revivedIds.size) {
+    saveFeed(cfg.pruning.output || cfg.output.dead, (deadFeed.channels || []).filter(c => !revivedIds.has(c.id)))
+  }
+  saveDeadLinks(blacklistNow)
+
   for (const [id, iptvCh] of iptvMap) {
-    if (existingMap.has(id)) continue
+    if (existingMap.has(id) || revivedIds.has(id)) continue
     if (!streamMap[id]?.length) continue
     synced.push(newIptvEntry(iptvCh, streamMap, logoMap))
     iptvAdded++
   }
 
-  console.log(`mirrored: ${iptvMirrored}  added: ${iptvAdded}`)
+  console.log(`mirrored: ${iptvMirrored}  added: ${iptvAdded}  revived: ${iptvRevived}`)
 
   const sorted  = sortChannels(synced)
   saveChannels(sorted)
