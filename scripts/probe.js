@@ -200,14 +200,15 @@ function classifyFailure(timedOut, err, stderr) {
 function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
   return new Promise(resolve => {
     const t0   = Date.now()
+    const isHttp = /^https?:\/\//i.test(url)
     const streamArgs = streamType !== null
       ? ['-select_streams', streamType, '-read_intervals', '%+3', '-count_frames', '-show_entries', 'stream=codec_type,nb_read_frames', '-of', 'csv=p=0']
       : ['-show_entries', 'format=nb_streams', '-of', 'csv=p=0']
     const args = [
       '-v',          'error',
       '-timeout',    String(TIMEOUT_S * 1_000_000),
-      '-user_agent', userAgent || UA,
-      ...(referrer ? ['-headers', `Referer: ${referrer}\r\nOrigin: ${(() => { try { return new URL(referrer).origin } catch { return referrer } })()}\r\n`] : []),
+      ...(isHttp ? ['-user_agent', userAgent || UA] : []),
+      ...(isHttp && referrer ? ['-headers', `Referer: ${referrer}\r\nOrigin: ${(() => { try { return new URL(referrer).origin } catch { return referrer } })()}\r\n`] : []),
       ...streamArgs,
       url,
     ]
@@ -458,7 +459,7 @@ function isDueForLinkRemoval(meta) {
   const total = meta?.linkTotalCount || 0
   if (total < lp.minProbes) return false
   const alive = meta?.linkAliveCount || 0
-  return (alive / total) * 100 < lp.aliveScoreMax
+  return alive === 0
 }
 
 function pruneChannelLinks(entry, removedLinks) {
