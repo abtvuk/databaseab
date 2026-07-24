@@ -256,6 +256,7 @@ function isCriticalChannel(id, url) {
 
 async function probeUrlThorough(url, referrer, userAgent) {
   const result = await probeUrl(url, referrer, userAgent)
+  if (!/^https?:\/\//i.test(url)) return result
   const { playable } = await segmentProbe(url, referrer, userAgent)
   return { ...result, alive: playable }
 }
