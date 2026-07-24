@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-24T07:40:59.164Z",
-  "total": 1680,
+  "generated": "2026-07-24T17:12:08.089Z",
+  "total": 1689,
   "channels": [
     {
       "id": "OSNMoviesAction.ae",
@@ -99509,6 +99509,470 @@
       },
       "prunedAt": "2026-07-23T16:47:20.749Z",
       "hide": false
+    },
+    {
+      "id": "101tvMalaga.es",
+      "name": "101tv Malaga",
+      "editName": true,
+      "alive": false,
+      "probe": true,
+      "tv": true,
+      "radio": false,
+      "country": "ES",
+      "channelLogo": "https://i.imgur.com/GzI3RC4.png",
+      "editChannelLogo": true,
+      "languages": [],
+      "categories": [
+        "news"
+      ],
+      "streamUrls": [
+        "https://liveingesta318.cdnmedia.tv/101weblive/smil:malaga.smil/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "needsProxy": false,
+      "ytId": null,
+      "website": "https://www.101tv.es/endirecto101tv/",
+      "replaced_by": null,
+      "geoBlocked": false,
+      "source": "iptv",
+      "nanoid": null,
+      "uptime": {
+        "aliveCount": 0,
+        "totalCount": 91,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": "2026-07-04T21:03:19.140Z",
+        "score": 0,
+        "consecutiveFailures": 4,
+        "recentResults": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null
+        }
+      ],
+      "hide": false,
+      "prunedAt": "2026-07-24T17:12:08.075Z"
+    },
+    {
+      "id": "101tvSevilla.es",
+      "name": "101tv Sevilla",
+      "editName": true,
+      "alive": false,
+      "probe": true,
+      "tv": true,
+      "radio": false,
+      "country": "ES",
+      "channelLogo": "https://i.imgur.com/GzI3RC4.png",
+      "editChannelLogo": true,
+      "languages": [],
+      "categories": [
+        "general"
+      ],
+      "streamUrls": [
+        "https://liveingesta318.cdnmedia.tv/101weblive/smil:sevilla.smil/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "needsProxy": false,
+      "ytId": null,
+      "website": "https://www.101tv.es/",
+      "replaced_by": null,
+      "geoBlocked": false,
+      "source": "iptv",
+      "nanoid": null,
+      "uptime": {
+        "aliveCount": 0,
+        "totalCount": 91,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": "2026-07-04T21:03:20.605Z",
+        "score": 0,
+        "consecutiveFailures": 4,
+        "recentResults": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null
+        }
+      ],
+      "hide": false,
+      "prunedAt": "2026-07-24T17:12:08.075Z"
+    },
+    {
+      "id": "CanalReusTV.es",
+      "name": "Canal Reus TV",
+      "editName": true,
+      "alive": false,
+      "probe": true,
+      "tv": true,
+      "radio": false,
+      "country": "ES",
+      "channelLogo": "https://i.imgur.com/HYRc9sJ.png",
+      "editChannelLogo": true,
+      "languages": [],
+      "categories": [
+        "general"
+      ],
+      "streamUrls": [
+        "https://liveingesta318.cdnmedia.tv/canalreustvlive/smil:live.smil/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160",
+      "needsProxy": true,
+      "ytId": null,
+      "website": "https://www.canalreustv.cat/",
+      "replaced_by": null,
+      "geoBlocked": false,
+      "source": "iptv",
+      "nanoid": null,
+      "uptime": {
+        "aliveCount": 0,
+        "totalCount": 91,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": "2026-07-04T21:03:54.559Z",
+        "score": 0,
+        "consecutiveFailures": 4,
+        "recentResults": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160"
+        }
+      ],
+      "hide": false,
+      "prunedAt": "2026-07-24T17:12:08.075Z"
+    },
+    {
+      "id": "CugatTV.es",
+      "name": "Cugat TV",
+      "editName": true,
+      "alive": false,
+      "probe": true,
+      "tv": true,
+      "radio": false,
+      "country": "ES",
+      "channelLogo": "https://i.imgur.com/0WQC25N.png",
+      "editChannelLogo": true,
+      "languages": [],
+      "categories": [
+        "general"
+      ],
+      "streamUrls": [
+        "https://liveingesta318.cdnmedia.tv/cugatcatlive/smil:rtmp01.smil/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160",
+      "needsProxy": true,
+      "ytId": null,
+      "website": "https://www.cugat.cat/",
+      "replaced_by": null,
+      "geoBlocked": false,
+      "source": "iptv",
+      "nanoid": null,
+      "uptime": {
+        "aliveCount": 0,
+        "totalCount": 91,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": "2026-07-04T21:04:11.573Z",
+        "score": 0,
+        "consecutiveFailures": 4,
+        "recentResults": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160"
+        }
+      ],
+      "hide": false,
+      "prunedAt": "2026-07-24T17:12:08.075Z"
+    },
+    {
+      "id": "El9TV.es",
+      "name": "El 9 TV",
+      "editName": true,
+      "alive": false,
+      "probe": true,
+      "tv": true,
+      "radio": false,
+      "country": "ES",
+      "channelLogo": "https://i.imgur.com/QyW5VyW.png",
+      "editChannelLogo": true,
+      "languages": [],
+      "categories": [
+        "general"
+      ],
+      "streamUrls": [
+        "https://liveingesta318.cdnmedia.tv/9tvlive/smil:live.smil/playlist.m3u8?DVR="
+      ],
+      "referrer": null,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160",
+      "needsProxy": true,
+      "ytId": null,
+      "website": "https://el9nou.cat/el9tv/",
+      "replaced_by": null,
+      "geoBlocked": false,
+      "source": "iptv",
+      "nanoid": null,
+      "uptime": {
+        "aliveCount": 0,
+        "totalCount": 91,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": "2026-07-04T21:04:18.964Z",
+        "score": 0,
+        "consecutiveFailures": 4,
+        "recentResults": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160"
+        }
+      ],
+      "hide": false,
+      "prunedAt": "2026-07-24T17:12:08.075Z"
+    },
+    {
+      "id": "MataroTelevisio.es",
+      "name": "Mataro Televisio",
+      "editName": true,
+      "alive": false,
+      "probe": true,
+      "tv": true,
+      "radio": false,
+      "country": "ES",
+      "channelLogo": "https://i.imgur.com/FTGbu8A.png",
+      "editChannelLogo": true,
+      "languages": [],
+      "categories": [
+        "general"
+      ],
+      "streamUrls": [
+        "https://liveingesta318.cdnmedia.tv/m1tvlive/smil:live.smil/playlist.m3u8?DVR="
+      ],
+      "referrer": null,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160",
+      "needsProxy": true,
+      "ytId": null,
+      "website": "https://mataroaudiovisual.alacarta.cat/directe",
+      "replaced_by": null,
+      "geoBlocked": false,
+      "source": "iptv",
+      "nanoid": null,
+      "uptime": {
+        "aliveCount": 0,
+        "totalCount": 91,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": "2026-07-04T21:04:55.795Z",
+        "score": 0,
+        "consecutiveFailures": 4,
+        "recentResults": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160"
+        }
+      ],
+      "hide": false,
+      "prunedAt": "2026-07-24T17:12:08.075Z"
+    },
+    {
+      "id": "RTVElVendrell.es",
+      "name": "RTV El Vendrell",
+      "editName": true,
+      "alive": false,
+      "probe": true,
+      "tv": true,
+      "radio": false,
+      "country": "ES",
+      "channelLogo": "https://i.imgur.com/x9CgczD.png",
+      "editChannelLogo": true,
+      "languages": [],
+      "categories": [],
+      "streamUrls": [
+        "https://liveingesta318.cdnmedia.tv/tvvendrelllive/smil:live.smil/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160",
+      "needsProxy": true,
+      "ytId": null,
+      "website": "https://www.rtvelvendrell.cat/directes/televisio/",
+      "replaced_by": null,
+      "geoBlocked": false,
+      "source": "iptv",
+      "nanoid": null,
+      "uptime": {
+        "aliveCount": 0,
+        "totalCount": 91,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": "2026-07-04T21:05:25.594Z",
+        "score": 0,
+        "consecutiveFailures": 4,
+        "recentResults": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160"
+        }
+      ],
+      "hide": false,
+      "prunedAt": "2026-07-24T17:12:08.075Z"
+    },
+    {
+      "id": "TVBergueda.es",
+      "name": "TV Bergueda",
+      "editName": true,
+      "alive": false,
+      "probe": true,
+      "tv": true,
+      "radio": false,
+      "country": "ES",
+      "channelLogo": "https://i.imgur.com/U5OVi3L.png",
+      "editChannelLogo": true,
+      "languages": [],
+      "categories": [],
+      "streamUrls": [
+        "https://liveingesta318.cdnmedia.tv/berguedatvlive/smil:migracion.smil/playlist.m3u8?DVR="
+      ],
+      "referrer": null,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160",
+      "needsProxy": true,
+      "ytId": null,
+      "website": "https://tvbergueda.alacarta.cat/",
+      "replaced_by": null,
+      "geoBlocked": false,
+      "source": "iptv",
+      "nanoid": null,
+      "uptime": {
+        "aliveCount": 0,
+        "totalCount": 91,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": "2026-07-04T21:05:41.420Z",
+        "score": 0,
+        "consecutiveFailures": 4,
+        "recentResults": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160"
+        }
+      ],
+      "hide": false,
+      "prunedAt": "2026-07-24T17:12:08.075Z"
+    },
+    {
+      "id": "TVRipolles.es",
+      "name": "TV Ripolles",
+      "editName": true,
+      "alive": false,
+      "probe": true,
+      "tv": true,
+      "radio": false,
+      "country": "ES",
+      "channelLogo": "https://i.imgur.com/S5KB9DS.png",
+      "editChannelLogo": true,
+      "languages": [],
+      "categories": [
+        "general"
+      ],
+      "streamUrls": [
+        "https://liveingesta318.cdnmedia.tv/tvripolleslive/smil:live.smil/playlist.m3u8?DVR="
+      ],
+      "referrer": null,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160",
+      "needsProxy": true,
+      "ytId": null,
+      "website": "https://televisiodelripolles.alacarta.cat/",
+      "replaced_by": null,
+      "geoBlocked": false,
+      "source": "iptv",
+      "nanoid": null,
+      "uptime": {
+        "aliveCount": 0,
+        "totalCount": 91,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": "2026-07-04T21:05:44.535Z",
+        "score": 0,
+        "consecutiveFailures": 4,
+        "recentResults": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160"
+        }
+      ],
+      "hide": false,
+      "prunedAt": "2026-07-24T17:12:08.075Z"
     }
   ]
 }
