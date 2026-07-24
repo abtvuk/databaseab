@@ -116,6 +116,7 @@ module.exports = {
   criticalChannels: [
     'live.elheddaftv.com',
     'livesstream.work.gd',
+    'jmp2.uk',
   ],
 
 }
