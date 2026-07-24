@@ -24,10 +24,10 @@ module.exports = {
   },
 
   probe: {
-    timeoutSeconds:     15,
+    timeoutSeconds:     12,
     retries:            1,
     retryDelaySeconds:  3,
-    concurrency:        25,
+    concurrency:        20,
     segmentConcurrency: 8,
     youtubeConcurrency: 6,
     slowThresholdMs:    8000,
