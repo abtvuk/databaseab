@@ -27,7 +27,7 @@ async function corsCheck(url, referrer, userAgent) {
     clearTimeout(timer)
 
     if (res.status === 403 || res.status === 404 || res.status === 410 || res.status === 451) {
-      return { browserOk: false, needsProxy: false }
+      return { browserOk: false, needsProxy: false, hardBlocked: true, failReason: `cors_http_${res.status}` }
     }
 
     const sentOrigin = referrer ? (() => { try { return new URL(referrer).origin } catch { return ORIGIN } })() : ORIGIN
@@ -89,11 +89,12 @@ function checkVideoCodec(url, referrer, userAgent) {
   return new Promise(resolve => {
     const bad = (cfg.unsupportedVideoCodecs || []).map(c => c.toLowerCase())
     if (!bad.length) return resolve(false)
+    const isHttp = /^https?:\/\//i.test(url)
     const args = [
       '-v',          'error',
       '-timeout',    String(TIMEOUT_S * 1_000_000),
-      '-user_agent', userAgent || UA,
-      ...(referrer ? ['-headers', `Referer: ${referrer}\r\nOrigin: ${(() => { try { return new URL(referrer).origin } catch { return referrer } })()}\r\n`] : []),
+      ...(isHttp ? ['-user_agent', userAgent || UA] : []),
+      ...(isHttp && referrer ? ['-headers', `Referer: ${referrer}\r\nOrigin: ${(() => { try { return new URL(referrer).origin } catch { return referrer } })()}\r\n`] : []),
       '-select_streams', 'v:0',
       '-show_entries',   'stream=codec_name',
       '-of',              'csv=p=0',
@@ -132,74 +133,119 @@ async function resolveStreamUrl(url, body) {
   return null
 }
 
+function resolveAgainst(candidate, baseUrl) {
+  try { return new URL(candidate).href } catch {}
+  try { return new URL(candidate, baseUrl).href } catch { return null }
+}
+
+function isMasterPlaylist(lines) {
+  return lines.some(l => l.startsWith('#EXT-X-STREAM-INF'))
+}
+
+function extractVariants(lines) {
+  const variants = []
+  for (let i = 0; i < lines.length; i++) {
+    if (lines[i].startsWith('#EXT-X-STREAM-INF') && lines[i + 1] && !lines[i + 1].startsWith('#')) {
+      variants.push(lines[i + 1])
+    }
+  }
+  return variants
+}
+
+async function fetchManifest(url, referrer, userAgent) {
+  const ctrl  = new AbortController()
+  const timer = setTimeout(() => ctrl.abort(), 10000)
+  try {
+    const res = await fetch(url, {
+      signal:   ctrl.signal,
+      headers:  { 'User-Agent': userAgent || BROWSER_UA, 'Origin': ORIGIN, ...(referrer ? { 'Referer': referrer } : {}) },
+      redirect: 'follow',
+    })
+    clearTimeout(timer)
+    if (!res.ok) { res.body?.cancel(); return { ok: false, transient: res.status >= 500, failReason: `manifest_http_${res.status}` } }
+    const ct = (res.headers.get('content-type') || '').toLowerCase()
+    if (ct.startsWith('video/') || ct.startsWith('audio/')) { res.body?.cancel(); return { ok: true, direct: true } }
+    const text = await res.text()
+    return { ok: true, text, contentType: ct, finalUrl: res.url }
+  } catch (e) {
+    clearTimeout(timer)
+    const timedOut = e.name === 'AbortError'
+    return { ok: false, transient: timedOut, failReason: timedOut ? 'manifest_timeout' : 'manifest_error' }
+  }
+}
+
+async function fetchSegmentBytes(segmentUrl, referrer) {
+  const ctrl  = new AbortController()
+  const timer = setTimeout(() => ctrl.abort(), 10000)
+  try {
+    const res = await fetch(segmentUrl, {
+      method:   'GET',
+      signal:   ctrl.signal,
+      headers:  { 'User-Agent': UA, 'Range': 'bytes=0-1023', ...(referrer ? { 'Referer': referrer } : {}) },
+      redirect: 'follow',
+    })
+    clearTimeout(timer)
+    res.body?.cancel()
+    if (res.ok || res.status === 206) return { ok: true }
+    if (res.status >= 500) return { ok: false, transient: true, failReason: 'segment_5xx' }
+    return { ok: false, failReason: `segment_http_${res.status}` }
+  } catch (e) {
+    clearTimeout(timer)
+    const timedOut = e.name === 'AbortError'
+    return { ok: false, transient: timedOut, failReason: timedOut ? 'segment_timeout' : 'segment_error' }
+  }
+}
+
+async function segmentProbeOnce(url, referrer, userAgent, depth = 0) {
+  if (depth > 3) return { playable: false, failReason: 'manifest_too_deep' }
+
+  const manifest = await fetchManifest(url, referrer, userAgent)
+  if (!manifest.ok) return { playable: false, failReason: manifest.failReason, transient: manifest.transient }
+  if (manifest.direct) return { playable: true }
+
+  const isHls = manifest.contentType.includes('mpegurl') || /\.m3u8?(\?|$)/i.test(url)
+  if (!isHls) {
+    const resolved = await resolveStreamUrl(url, manifest.text)
+    if (resolved && resolved !== url) return segmentProbeOnce(resolved, referrer, userAgent, depth + 1)
+    return { playable: false, failReason: 'unrecognized_manifest' }
+  }
+
+  const lines = manifest.text.split('\n').map(l => l.trim()).filter(Boolean)
+
+  if (isMasterPlaylist(lines)) {
+    const variants = extractVariants(lines)
+    if (!variants.length) return { playable: false, failReason: 'master_no_variants' }
+    let lastReason = 'master_variant_unreachable', lastTransient = false
+    for (const v of variants.slice(0, 2)) {
+      const variantUrl = resolveAgainst(v, manifest.finalUrl)
+      if (!variantUrl) continue
+      const r = await segmentProbeOnce(variantUrl, referrer, userAgent, depth + 1)
+      if (r.playable) return r
+      lastReason    = r.failReason || lastReason
+      lastTransient = !!r.transient
+    }
+    return { playable: false, failReason: lastReason, transient: lastTransient }
+  }
+
+  const firstSegment = lines.find(l => !l.startsWith('#'))
+  if (!firstSegment) return { playable: false, failReason: 'media_no_segments' }
+
+  const segmentUrl = resolveAgainst(firstSegment, manifest.finalUrl)
+  if (!segmentUrl) return { playable: false, failReason: 'segment_url_unresolvable' }
+
+  const seg = await fetchSegmentBytes(segmentUrl, referrer)
+  return { playable: seg.ok, failReason: seg.ok ? undefined : seg.failReason, transient: seg.transient }
+}
+
 async function segmentProbe(url, referrer, userAgent) {
   await acquireSegmentSlot()
   try {
-    const ctrl  = new AbortController()
-    const timer = setTimeout(() => ctrl.abort(), 10000)
-    const res   = await fetch(url, {
-      signal:  ctrl.signal,
-      headers: {
-        'User-Agent': userAgent || BROWSER_UA,
-        'Origin':     ORIGIN,
-        ...(referrer ? { 'Referer': referrer } : {}),
-      },
-      redirect: 'follow',
-    })
-
-    if (!res.ok) { clearTimeout(timer); releaseSegmentSlot(); return { playable: false } }
-
-    const ct = (res.headers.get('content-type') || '').toLowerCase()
-
-    if (ct.startsWith('video/') || ct.startsWith('audio/')) {
-      clearTimeout(timer)
-      res.body?.cancel()
-      releaseSegmentSlot()
-      return { playable: true }
-    }
-
-    const text  = await res.text()
-    clearTimeout(timer)
-
-    // PHP/resolver URLs return a body containing the real stream URL rather than
-    // an HLS manifest — extract and re-probe instead of parsing as M3U8.
-    const isHls = ct.includes('mpegurl') || /\.m3u8?(\?|$)/i.test(url)
-    if (!isHls) {
-      const resolved = await resolveStreamUrl(url, text)
-      releaseSegmentSlot()
-      if (resolved && resolved !== url) return segmentProbe(resolved, referrer, userAgent)
-      return { playable: false }
-    }
-
-    const lines        = text.split('\n').map(l => l.trim()).filter(l => l && !l.startsWith('#'))
-    const firstSegment = lines[0]
-    if (!firstSegment) { releaseSegmentSlot(); return { playable: false } }
-
-    let segmentUrl
-    try        { segmentUrl = new URL(firstSegment).href }
-    catch      { segmentUrl = new URL(firstSegment, url).href }
-
-    const ctrl2  = new AbortController()
-    const timer2 = setTimeout(() => ctrl2.abort(), 10000)
-    const segRes = await fetch(segmentUrl, {
-      method:  'GET',
-      signal:  ctrl2.signal,
-      headers: {
-        'User-Agent': UA,
-        'Range':      'bytes=0-1023',
-        ...(referrer ? { 'Referer': referrer } : {}),
-      },
-      redirect: 'follow',
-    })
-    clearTimeout(timer2)
-    segRes.body?.cancel()
-
-    const ok = segRes.ok || segRes.status === 206
+    const first = await segmentProbeOnce(url, referrer, userAgent)
+    if (first.playable || !first.transient) return { playable: first.playable, failReason: first.failReason }
+    const retry = await segmentProbeOnce(url, referrer, userAgent)
+    return { playable: retry.playable, failReason: retry.failReason }
+  } finally {
     releaseSegmentSlot()
-    return { playable: ok }
-  } catch {
-    releaseSegmentSlot()
-    return { playable: false }
   }
 }
 
@@ -275,11 +321,29 @@ function isCriticalChannel(id, url) {
   return list.some(entry => id === entry || (url && url.includes(entry)))
 }
 
-async function probeUrlThorough(url, referrer, userAgent) {
-  const result = await probeUrl(url, referrer, userAgent)
-  if (!/^https?:\/\//i.test(url)) return result
-  const { playable } = await segmentProbe(url, referrer, userAgent)
-  return { ...result, alive: playable }
+async function evaluateUrl(url, referrer, userAgent) {
+  const ff = await probeWithFallback(url, referrer, userAgent)
+  if (!ff.alive) return { ffAlive: false, responseMs: ff.responseMs, failReason: ff.failReason, rawError: ff.rawError }
+
+  if (isUnplayableDomain(url)) {
+    return { ffAlive: true, responseMs: ff.responseMs, browserUnplayable: true, failReason: 'unplayable_domain' }
+  }
+  const badCodec = await checkVideoCodec(url, referrer, userAgent)
+  if (badCodec) {
+    return { ffAlive: true, responseMs: ff.responseMs, browserUnplayable: true, failReason: 'unsupported_codec' }
+  }
+  if (!/^https?:\/\//i.test(url)) {
+    return { ffAlive: true, responseMs: ff.responseMs, nonHttp: true }
+  }
+
+  const cors = await corsCheck(url, referrer, userAgent)
+  if (cors.hardBlocked) {
+    return { ffAlive: true, responseMs: ff.responseMs, browserUnplayable: true, failReason: cors.failReason }
+  }
+  if (cors.browserOk) {
+    return { ffAlive: true, responseMs: ff.responseMs, browserOk: true }
+  }
+  return { ffAlive: true, responseMs: ff.responseMs, browserOk: false, needsProxy: true }
 }
 
 async function probeUrl(url, referrer, userAgent) {
@@ -288,31 +352,40 @@ async function probeUrl(url, referrer, userAgent) {
   for (let i = 0; i <= cfg.probe.retries; i++) {
     if (i > 0) await sleep(cfg.probe.retryDelaySeconds * 1000)
 
-    const result = await probeWithFallback(url, referrer, userAgent)
+    const ev = await evaluateUrl(url, referrer, userAgent)
 
-    if (result.alive) {
-      if (isUnplayableDomain(url)) {
-        return { alive: true, needsProxy: false, browserUnplayable: true, responseMs: result.responseMs }
-      }
+    if (ev.ffAlive) {
+      if (ev.browserUnplayable) return { alive: true, needsProxy: false, browserUnplayable: true, responseMs: ev.responseMs }
+      if (ev.nonHttp || ev.browserOk) return { alive: true, needsProxy: false, responseMs: ev.responseMs }
 
-      const badCodec = await checkVideoCodec(url, referrer, userAgent)
-      if (badCodec) {
-        return { alive: true, needsProxy: false, browserUnplayable: true, responseMs: result.responseMs }
-      }
-
-      const { browserOk, needsProxy, corsTimedOut } = await corsCheck(url, referrer, userAgent)
-
-      if (!browserOk && (needsProxy || corsTimedOut)) {
-        const { playable } = await segmentProbe(url, referrer, userAgent)
-        if (!playable) {
-          return { alive: true, needsProxy: true, browserUnplayable: false, responseMs: result.responseMs }
-        }
-      }
-
-      return { alive: true, needsProxy: !browserOk, responseMs: result.responseMs }
+      await segmentProbe(url, referrer, userAgent)
+      return { alive: true, needsProxy: true, browserUnplayable: false, responseMs: ev.responseMs }
     }
 
-    last = { alive: false, needsProxy: false, responseMs: result.responseMs, failReason: result.failReason, rawError: result.rawError }
+    last = { alive: false, needsProxy: false, responseMs: ev.responseMs, failReason: ev.failReason, rawError: ev.rawError }
+  }
+
+  return last
+}
+
+async function probeUrlThorough(url, referrer, userAgent) {
+  let last = { alive: false, needsProxy: false, responseMs: 0 }
+
+  for (let i = 0; i <= cfg.probe.retries; i++) {
+    if (i > 0) await sleep(cfg.probe.retryDelaySeconds * 1000)
+
+    const ev = await evaluateUrl(url, referrer, userAgent)
+
+    if (!ev.ffAlive) {
+      last = { alive: false, needsProxy: false, responseMs: ev.responseMs, failReason: ev.failReason, rawError: ev.rawError }
+      continue
+    }
+    if (ev.browserUnplayable) return { alive: false, needsProxy: false, responseMs: ev.responseMs, failReason: ev.failReason }
+    if (ev.nonHttp || ev.browserOk) return { alive: true, needsProxy: false, responseMs: ev.responseMs }
+
+    const seg = await segmentProbe(url, referrer, userAgent)
+    if (seg.playable) return { alive: true, needsProxy: true, responseMs: ev.responseMs }
+    return { alive: false, needsProxy: false, responseMs: ev.responseMs, failReason: seg.failReason || 'segment_unplayable' }
   }
 
   return last
