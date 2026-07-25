@@ -303,11 +303,13 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
   })
 }
 
+const UA_INSENSITIVE_REASONS = new Set(['dns', 'refused', 'timeout', 'invalid', 'http_404', 'http_5xx'])
+
 async function probeWithFallback(url, referrer, userAgent) {
   const r1 = await probeOnce(url, referrer, userAgent, 'v:0')
   if (r1.alive) return r1
 
-  if (userAgent === BROWSER_UA) {
+  if (userAgent === BROWSER_UA || UA_INSENSITIVE_REASONS.has(r1.failReason)) {
     return { alive: false, responseMs: r1.responseMs, timedOut: r1.timedOut, failReason: r1.failReason, rawError: r1.rawError }
   }
 
@@ -358,8 +360,8 @@ async function probeUrl(url, referrer, userAgent) {
       if (ev.browserUnplayable) return { alive: true, needsProxy: false, browserUnplayable: true, responseMs: ev.responseMs }
       if (ev.nonHttp || ev.browserOk) return { alive: true, needsProxy: false, responseMs: ev.responseMs }
 
-      await segmentProbe(url, referrer, userAgent)
-      return { alive: true, needsProxy: true, browserUnplayable: false, responseMs: ev.responseMs }
+      const seg = await segmentProbe(url, referrer, userAgent)
+      return { alive: true, needsProxy: true, browserUnplayable: false, responseMs: ev.responseMs, segmentFailReason: seg.playable ? undefined : seg.failReason }
     }
 
     last = { alive: false, needsProxy: false, responseMs: ev.responseMs, failReason: ev.failReason, rawError: ev.rawError }
