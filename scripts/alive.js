@@ -1,7 +1,7 @@
 const cfg = require('../config')
 const { probeUrl, probeUrlThorough, isCriticalChannel, runWithConcurrency, recordAlive, recordDead, isDueForProbe,
         progressBar, applyRetirementAndPruning, classifyFailSource, checkpoint,
-        isUnplayableDomain, isNameBlocked, isManualBlocked, loadFeed, saveFeed,
+        isUnplayableDomain, stripUnplayableLinks, restoreUnplayableLinks, isNameBlocked, isManualBlocked, loadFeed, saveFeed,
         recordLinkResult, pruneChannelLinks, saveDeadLinks } = require('./probe')
 const fs   = require('fs')
 const path = require('path')
@@ -37,11 +37,33 @@ async function main() {
     console.log(`[sweep] restored from blocked.json: ${restoredFromBlocked.length}`)
   }
 
+  let restoredLinkCount = 0
+  for (const c of channels) {
+    if (!c.domainBlockedLinks?.length) continue
+    const { stillBlocked, restored } = restoreUnplayableLinks(c)
+    if (!restored.length) continue
+    c.streamUrls = [...(c.streamUrls || []), ...restored]
+    c.streamMeta = c.streamUrls.map((u, i) => (c.streamMeta || [])[i] || {})
+    if (stillBlocked.length) c.domainBlockedLinks = stillBlocked
+    else delete c.domainBlockedLinks
+    restoredLinkCount += restored.length
+  }
+  if (restoredLinkCount) console.log(`[sweep] restored domain-blocked links: ${restoredLinkCount}`)
+
   const archiveFeed = loadFeed(cfg.output.archive)
   const stillArchived = []
   const restoredFromArchive = []
   for (const c of archiveFeed.channels) {
-    if (c.unplayableArchived && !isUnplayableDomain(c.streamUrls?.[0] || '')) {
+    if (!c.unplayableArchived) { stillArchived.push(c); continue }
+    if (c.domainBlockedLinks?.length) {
+      const { stillBlocked, restored } = restoreUnplayableLinks(c)
+      if (!restored.length) { stillArchived.push(c); continue }
+      const { unplayableArchived, domainBlockedLinks, ...rest } = c
+      const revivedUrls = [...(c.streamUrls || []), ...restored]
+      const revived = { ...rest, streamUrls: revivedUrls, streamMeta: revivedUrls.map((u, i) => (c.streamMeta || [])[i] || {}) }
+      if (stillBlocked.length) revived.domainBlockedLinks = stillBlocked
+      restoredFromArchive.push(revived)
+    } else if (!isUnplayableDomain(c.streamUrls?.[0] || '')) {
       const { unplayableArchived, ...clean } = c
       restoredFromArchive.push(clean)
     } else {
@@ -54,8 +76,25 @@ async function main() {
     console.log(`[sweep] restored from archive.json: ${restoredFromArchive.length}`)
   }
 
-  const toBlocked = channels.filter(c => isNameBlocked(c.name) || isManualBlocked(c.id))
-  const toArchive = channels.filter(c => !toBlocked.includes(c) && isUnplayableDomain(c.streamUrls?.[0] || ''))
+  const toBlocked   = channels.filter(c => isNameBlocked(c.name) || isManualBlocked(c.id))
+  const toBlockedIds = new Set(toBlocked.map(c => c.id))
+  const toArchive   = []
+  let trimmedCount  = 0
+
+  for (const ch of channels) {
+    if (toBlockedIds.has(ch.id)) continue
+    const urls = ch.streamUrls || []
+    if (!urls.length || !urls.some(u => isUnplayableDomain(u))) continue
+    const { keepUrls, keepMeta, blocked } = stripUnplayableLinks(ch)
+    if (keepUrls.length) {
+      ch.streamUrls = keepUrls
+      ch.streamMeta = keepMeta
+      ch.domainBlockedLinks = [...(ch.domainBlockedLinks || []), ...blocked]
+      trimmedCount++
+    } else {
+      toArchive.push({ ...ch, streamUrls: [], domainBlockedLinks: [...(ch.domainBlockedLinks || []), ...blocked] })
+    }
+  }
 
   if (toBlocked.length) {
     const existing = loadFeed(cfg.output.blocked)
@@ -63,11 +102,13 @@ async function main() {
     saveFeed(cfg.output.blocked, [...existing.channels, ...toBlocked.filter(c => !existingIds.has(c.id))])
     console.log(`[sweep] moved to blocked.json: ${toBlocked.length}`)
   }
+  if (toArchive.length || trimmedCount) {
+    console.log(`[sweep] moved to archive.json: ${toArchive.length}  trimmed (kept active): ${trimmedCount}`)
+  }
   if (toArchive.length) {
     const existing = loadFeed(cfg.output.archive)
     const existingIds = new Set(existing.channels.map(c => c.id))
     saveFeed(cfg.output.archive, [...existing.channels, ...toArchive.filter(c => !existingIds.has(c.id)).map(c => ({ ...c, unplayableArchived: true }))])
-    console.log(`[sweep] moved to archive.json: ${toArchive.length}`)
   }
 
   const removedIds = new Set([...toBlocked, ...toArchive].map(c => c.id))
