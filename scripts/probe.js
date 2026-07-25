@@ -64,6 +64,27 @@ function isUnplayableDomain(url) {
   }
 }
 
+function stripUnplayableLinks(ch) {
+  const urls = ch.streamUrls || []
+  const meta = ch.streamMeta || []
+  const keepUrls = [], keepMeta = [], blocked = []
+  urls.forEach((u, i) => {
+    if (isUnplayableDomain(u)) blocked.push({ url: u, blockedAt: new Date().toISOString() })
+    else { keepUrls.push(u); keepMeta.push(meta[i] || {}) }
+  })
+  return { keepUrls, keepMeta, blocked }
+}
+
+function restoreUnplayableLinks(ch) {
+  const blocked = ch.domainBlockedLinks || []
+  const stillBlocked = [], restored = []
+  for (const b of blocked) {
+    if (isUnplayableDomain(b.url)) stillBlocked.push(b)
+    else restored.push(b.url)
+  }
+  return { stillBlocked, restored }
+}
+
 function checkVideoCodec(url, referrer, userAgent) {
   return new Promise(resolve => {
     const bad = (cfg.unsupportedVideoCodecs || []).map(c => c.toLowerCase())
@@ -551,4 +572,4 @@ function applyRetirementAndPruning(channels) {
   return { retired: toRetire.length, pruned: toPrune.length }
 }
 
-module.exports = { probeUrl, probeUrlThorough, isCriticalChannel, runWithConcurrency, recordAlive, recordDead, isDueForProbe, isDueForResurrect, checkpoint, progressBar, classifyFailSource, isDueForRetirement, isChannelDeadForever, applyRetirementAndPruning, isUnplayableDomain, isNameBlocked, isManualBlocked, loadFeed, saveFeed, recordLinkResult, pruneChannelLinks, saveDeadLinks }
+module.exports = { probeUrl, probeUrlThorough, isCriticalChannel, runWithConcurrency, recordAlive, recordDead, isDueForProbe, isDueForResurrect, checkpoint, progressBar, classifyFailSource, isDueForRetirement, isChannelDeadForever, applyRetirementAndPruning, isUnplayableDomain, stripUnplayableLinks, restoreUnplayableLinks, isNameBlocked, isManualBlocked, loadFeed, saveFeed, recordLinkResult, pruneChannelLinks, saveDeadLinks }
