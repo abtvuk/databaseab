@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-24T17:12:08.089Z",
-  "total": 1689,
+  "generated": "2026-07-25T02:41:18.051Z",
+  "total": 1691,
   "channels": [
     {
       "id": "OSNMoviesAction.ae",
@@ -99973,6 +99973,136 @@
       ],
       "hide": false,
       "prunedAt": "2026-07-24T17:12:08.075Z"
+    },
+    {
+      "id": "MTV.in",
+      "name": "MTV",
+      "editName": true,
+      "alive": false,
+      "probe": true,
+      "tv": true,
+      "radio": false,
+      "country": "IN",
+      "channelLogo": "https://dtil.tmsimg.com/assets/s143558_ld_h15_aa.png?lock=720x540",
+      "editChannelLogo": true,
+      "languages": [],
+      "categories": [
+        "entertainment"
+      ],
+      "streamUrls": [
+        "http://149.71.34.166:8000/play/a00p/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "needsProxy": false,
+      "ytId": null,
+      "website": "http://www.mtvindia.com/",
+      "replaced_by": null,
+      "geoBlocked": false,
+      "source": "iptv",
+      "nanoid": null,
+      "uptime": {
+        "aliveCount": 0,
+        "totalCount": 98,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": "2026-07-23T06:45:46.564Z",
+        "score": 0,
+        "consecutiveFailures": 11,
+        "recentResults": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 4
+        }
+      ],
+      "domainBlockedLinks": [
+        {
+          "url": "http://103.72.101.252:8080/live/248.m3u8",
+          "blockedAt": "2026-07-25T02:36:41.963Z"
+        }
+      ],
+      "prunedAt": "2026-07-25T02:41:18.025Z"
+    },
+    {
+      "id": "ZeeCinemalu.in",
+      "name": "Zee Cinemalu",
+      "editName": true,
+      "alive": false,
+      "probe": true,
+      "tv": true,
+      "radio": false,
+      "country": "IN",
+      "channelLogo": "https://dtil.tmsimg.com/assets/GNLZZGG0022ZEQ9.png?lock=720x540",
+      "editChannelLogo": true,
+      "languages": [],
+      "categories": [
+        "movies"
+      ],
+      "streamUrls": [
+        "https://mumbai-edge.smartplaytv.in/ZeeCinemaluHD/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "needsProxy": false,
+      "ytId": null,
+      "website": "http://www.zeecinemalu.com/",
+      "replaced_by": null,
+      "geoBlocked": false,
+      "source": "iptv",
+      "nanoid": null,
+      "uptime": {
+        "aliveCount": 0,
+        "totalCount": 98,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": "2026-07-23T06:45:47.810Z",
+        "score": 0,
+        "consecutiveFailures": 11,
+        "recentResults": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 4
+        }
+      ],
+      "domainBlockedLinks": [
+        {
+          "url": "http://103.72.101.252:8080/live/413.m3u8",
+          "blockedAt": "2026-07-25T02:36:41.964Z"
+        }
+      ],
+      "prunedAt": "2026-07-25T02:41:18.025Z"
     }
   ]
 }
