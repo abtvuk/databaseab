@@ -27,7 +27,7 @@ module.exports = {
     timeoutSeconds:     12,
     retries:            1,
     retryDelaySeconds:  3,
-    concurrency:        20,
+    concurrency:        22,
     segmentConcurrency: 8,
     youtubeConcurrency: 6,
     slowThresholdMs:    8000,
