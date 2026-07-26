@@ -307,7 +307,7 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
   })
 }
 
-const UA_INSENSITIVE_REASONS = new Set(['dns', 'refused', 'timeout', 'invalid', 'http_404', 'http_5xx'])
+const UA_INSENSITIVE_REASONS = new Set(['dns', 'refused', 'timeout', 'invalid', 'http_5xx'])
 
 async function probeWithFallback(url, referrer, userAgent) {
   const r1 = await probeOnce(url, referrer, userAgent, 'v:0')

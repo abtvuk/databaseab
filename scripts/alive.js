@@ -55,19 +55,18 @@ async function main() {
   const restoredFromArchive = []
   for (const c of archiveFeed.channels) {
     if (!c.unplayableArchived) { stillArchived.push(c); continue }
-    if (c.domainBlockedLinks?.length) {
-      const { stillBlocked, restored } = restoreUnplayableLinks(c)
-      if (!restored.length) { stillArchived.push(c); continue }
+
+    const originalUrls = [...(c.streamUrls || []), ...(c.domainBlockedLinks || []).map(b => b.url)]
+    const originalMeta = [...(c.streamMeta || []), ...(c.domainBlockedLinks || []).map(() => ({}))]
+    const { keepUrls, keepMeta, blocked } = stripUnplayableLinks({ streamUrls: originalUrls, streamMeta: originalMeta })
+
+    if (keepUrls.length) {
       const { unplayableArchived, domainBlockedLinks, ...rest } = c
-      const revivedUrls = [...(c.streamUrls || []), ...restored]
-      const revived = { ...rest, streamUrls: revivedUrls, streamMeta: revivedUrls.map((u, i) => (c.streamMeta || [])[i] || {}) }
-      if (stillBlocked.length) revived.domainBlockedLinks = stillBlocked
+      const revived = { ...rest, streamUrls: keepUrls, streamMeta: keepMeta }
+      if (blocked.length) revived.domainBlockedLinks = blocked
       restoredFromArchive.push(revived)
-    } else if (!isUnplayableDomain(c.streamUrls?.[0] || '')) {
-      const { unplayableArchived, ...clean } = c
-      restoredFromArchive.push(clean)
     } else {
-      stillArchived.push(c)
+      stillArchived.push({ ...c, streamUrls: [], streamMeta: [], domainBlockedLinks: blocked })
     }
   }
   if (restoredFromArchive.length) {
@@ -163,13 +162,15 @@ async function main() {
 
     let result = { alive: false, needsProxy: false, responseMs: 0 }
     let liveIndex = -1
+    let foundGood = false
     for (let i = 0; i < urls.length; i++) {
       const ref = meta[i]?.referrer  ?? ch.referrer
       const ua  = meta[i]?.userAgent ?? ch.userAgent
       const critical = isCriticalChannel(ch.id, urls[i])
       const r   = critical ? await probeUrlThorough(urls[i], ref, ua) : await probeUrl(urls[i], ref, ua)
       meta[i] = recordLinkResult(meta[i] || {}, r.alive)
-      if (r.alive && !r.browserUnplayable) { result = r; liveIndex = i; break }
+      if (foundGood) continue
+      if (r.alive && !r.browserUnplayable) { result = r; liveIndex = i; foundGood = true; continue }
       if (r.alive && liveIndex === -1)      { result = r; liveIndex = i }
       if (!r.alive && liveIndex === -1)     result = r
     }

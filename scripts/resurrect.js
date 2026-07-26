@@ -67,13 +67,15 @@ async function main() {
 
     let result = { alive: false, needsProxy: false, responseMs: 0 }
     let liveIndex = -1
+    let foundGood = false
     for (let i = 0; i < urls.length; i++) {
       const ref = meta[i]?.referrer  ?? ch.referrer
       const ua  = meta[i]?.userAgent ?? ch.userAgent
       const critical = isCriticalChannel(ch.id, urls[i])
       const r   = critical ? await probeUrlThorough(urls[i], ref, ua) : await probeUrl(urls[i], ref, ua)
       meta[i] = recordLinkResult(meta[i] || {}, r.alive)
-      if (r.alive && !r.browserUnplayable) { result = r; liveIndex = i; break }
+      if (foundGood) continue
+      if (r.alive && !r.browserUnplayable) { result = r; liveIndex = i; foundGood = true; continue }
       if (r.alive && liveIndex === -1)      { result = r; liveIndex = i }
       if (!r.alive && liveIndex === -1)     result = r
     }
