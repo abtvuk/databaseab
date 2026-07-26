@@ -22,8 +22,8 @@ async function corsCheck(url, referrer, userAgent) {
     if (res.status === 405) {
       res.body?.cancel()
       res = await fetch(url, { method: 'GET', signal: ctrl.signal, headers: { ...reqHeaders, 'Range': 'bytes=0-1023' } })
-      res.body?.cancel()
     }
+    res.body?.cancel()
     clearTimeout(timer)
 
     if (res.status === 403 || res.status === 404 || res.status === 410 || res.status === 451) {
@@ -100,12 +100,14 @@ function checkVideoCodec(url, referrer, userAgent) {
       '-of',              'csv=p=0',
       url,
     ]
+    let killer
     const child = execFile('ffprobe', args, { timeout: (TIMEOUT_S + 5) * 1000 }, (err, stdout) => {
+      clearTimeout(killer)
       if (err) return resolve(false)
       const codec = stdout.trim().toLowerCase()
       resolve(bad.includes(codec))
     })
-    setTimeout(() => { try { child.kill('SIGKILL') } catch {} }, (TIMEOUT_S + 6) * 1000)
+    killer = setTimeout(() => { try { child.kill('SIGKILL') } catch {} }, (TIMEOUT_S + 6) * 1000)
   })
 }
 
@@ -280,7 +282,9 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
       url,
     ]
 
+    let killer
     const child = execFile('ffprobe', args, { timeout: (TIMEOUT_S + 5) * 1000 }, (err, stdout, stderr) => {
+      clearTimeout(killer)
       const responseMs = Date.now() - t0
       if (err) {
         const timedOut = responseMs >= (TIMEOUT_S + 4) * 1000
@@ -299,7 +303,7 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
       resolve({ alive, responseMs, timedOut: false, failReason: alive ? undefined : 'no_stream' })
     })
 
-    setTimeout(() => { try { child.kill('SIGKILL') } catch {} }, (TIMEOUT_S + 6) * 1000)
+    killer = setTimeout(() => { try { child.kill('SIGKILL') } catch {} }, (TIMEOUT_S + 6) * 1000)
   })
 }
 
@@ -491,6 +495,9 @@ function checkpoint(data, channels, channelMap, outputPath, label, done, total) 
     execSync('git config user.name "github-actions[bot]"', { stdio: 'ignore' })
     execSync('git config user.email "github-actions[bot]@users.noreply.github.com"', { stdio: 'ignore' })
     execSync(`git add ${outputPath}`, { stdio: 'ignore' })
+    for (const extra of [cfg.output.archive, cfg.output.dead, cfg.output.deadLinks, cfg.output.blocked]) {
+      if (extra && require('fs').existsSync(extra)) execSync(`git add ${extra}`, { stdio: 'ignore' })
+    }
     execSync(`git diff --staged --quiet || git commit -m "chore: ${label} checkpoint [$(date -u '+%Y-%m-%d %H:%M UTC')]"`, { shell: true, stdio: 'ignore' })
     try {
       execSync('git pull --rebase --autostash', { stdio: 'ignore' })
