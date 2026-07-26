@@ -488,24 +488,27 @@ function isDueForResurrect(uptime) {
 
 function checkpoint(data, channels, channelMap, outputPath, label, done, total) {
   const { execSync } = require('child_process')
+  const GIT_TIMEOUT_MS = 60000
+  const run = (cmd, opts = {}) => execSync(cmd, { stdio: 'ignore', timeout: GIT_TIMEOUT_MS, ...opts })
+
   data.channels = channels.map(c => channelMap.get(c.id) || c)
   const json = JSON.stringify({ ...data, generated: new Date().toISOString() }, null, 2)
   require('fs').writeFileSync(outputPath, json)
   try {
-    execSync('git config user.name "github-actions[bot]"', { stdio: 'ignore' })
-    execSync('git config user.email "github-actions[bot]@users.noreply.github.com"', { stdio: 'ignore' })
-    execSync(`git add ${outputPath}`, { stdio: 'ignore' })
+    run('git config user.name "github-actions[bot]"')
+    run('git config user.email "github-actions[bot]@users.noreply.github.com"')
+    run(`git add ${outputPath}`)
     for (const extra of [cfg.output.archive, cfg.output.dead, cfg.output.deadLinks, cfg.output.blocked]) {
-      if (extra && require('fs').existsSync(extra)) execSync(`git add ${extra}`, { stdio: 'ignore' })
+      if (extra && require('fs').existsSync(extra)) run(`git add ${extra}`)
     }
-    execSync(`git diff --staged --quiet || git commit -m "chore: ${label} checkpoint [$(date -u '+%Y-%m-%d %H:%M UTC')]"`, { shell: true, stdio: 'ignore' })
+    run(`git diff --staged --quiet || git commit -m "chore: ${label} checkpoint [$(date -u '+%Y-%m-%d %H:%M UTC')]"`, { shell: true })
     try {
-      execSync('git pull --rebase --autostash', { stdio: 'ignore' })
+      run('git pull --rebase --autostash')
     } catch (e) {
-      execSync('git rebase --abort', { stdio: 'ignore' })
+      try { run('git rebase --abort') } catch {}
       throw e
     }
-    execSync('git push', { stdio: 'ignore' })
+    run('git push')
   } catch (e) {
     console.warn(`  [checkpoint] git error (non-fatal): ${e.message}`)
   }
