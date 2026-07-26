@@ -137,6 +137,19 @@ async function main() {
   const removedLinks    = []
 
   const tasks = candidates.map(ch => async () => {
+    if (isNameBlocked(ch.name) || isManualBlocked(ch.id)) {
+      done++
+      progressBar(done, total)
+      return
+    }
+
+    const { keepUrls, keepMeta, blocked } = stripUnplayableLinks(ch)
+    if (blocked.length) {
+      ch.streamUrls = keepUrls
+      ch.streamMeta = keepMeta
+      ch.domainBlockedLinks = [...(ch.domainBlockedLinks || []), ...blocked]
+    }
+
     const urls = ch.streamUrls || []
     const meta = ch.streamMeta || []
 

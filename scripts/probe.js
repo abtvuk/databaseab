@@ -324,12 +324,13 @@ function isCriticalChannel(id, url) {
 }
 
 async function evaluateUrl(url, referrer, userAgent) {
+  if (isUnplayableDomain(url)) {
+    return { ffAlive: true, responseMs: 0, browserUnplayable: true, failReason: 'unplayable_domain' }
+  }
+
   const ff = await probeWithFallback(url, referrer, userAgent)
   if (!ff.alive) return { ffAlive: false, responseMs: ff.responseMs, failReason: ff.failReason, rawError: ff.rawError }
 
-  if (isUnplayableDomain(url)) {
-    return { ffAlive: true, responseMs: ff.responseMs, browserUnplayable: true, failReason: 'unplayable_domain' }
-  }
   const badCodec = await checkVideoCodec(url, referrer, userAgent)
   if (badCodec) {
     return { ffAlive: true, responseMs: ff.responseMs, browserUnplayable: true, failReason: 'unsupported_codec' }
