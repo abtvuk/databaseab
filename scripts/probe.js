@@ -198,7 +198,7 @@ async function fetchSegmentBytes(segmentUrl, referrer) {
   }
 }
 
-async function segmentProbeOnce(url, referrer, userAgent, depth = 0) {
+async function segmentProbeOnce(url, referrer, userAgent, depth = 0, maxVariants = 2) {
   if (depth > 3) return { playable: false, failReason: 'manifest_too_deep' }
 
   const manifest = await fetchManifest(url, referrer, userAgent)
@@ -208,7 +208,7 @@ async function segmentProbeOnce(url, referrer, userAgent, depth = 0) {
   const isHls = manifest.contentType.includes('mpegurl') || /\.m3u8?(\?|$)/i.test(url)
   if (!isHls) {
     const resolved = await resolveStreamUrl(url, manifest.text)
-    if (resolved && resolved !== url) return segmentProbeOnce(resolved, referrer, userAgent, depth + 1)
+    if (resolved && resolved !== url) return segmentProbeOnce(resolved, referrer, userAgent, depth + 1, maxVariants)
     return { playable: false, failReason: 'unrecognized_manifest' }
   }
 
@@ -218,10 +218,10 @@ async function segmentProbeOnce(url, referrer, userAgent, depth = 0) {
     const variants = extractVariants(lines)
     if (!variants.length) return { playable: false, failReason: 'master_no_variants' }
     let lastReason = 'master_variant_unreachable', lastTransient = false
-    for (const v of variants.slice(0, 2)) {
+    for (const v of variants.slice(0, maxVariants)) {
       const variantUrl = resolveAgainst(v, manifest.finalUrl)
       if (!variantUrl) continue
-      const r = await segmentProbeOnce(variantUrl, referrer, userAgent, depth + 1)
+      const r = await segmentProbeOnce(variantUrl, referrer, userAgent, depth + 1, maxVariants)
       if (r.playable) return r
       lastReason    = r.failReason || lastReason
       lastTransient = !!r.transient
@@ -239,12 +239,13 @@ async function segmentProbeOnce(url, referrer, userAgent, depth = 0) {
   return { playable: seg.ok, failReason: seg.ok ? undefined : seg.failReason, transient: seg.transient }
 }
 
-async function segmentProbe(url, referrer, userAgent) {
+async function segmentProbe(url, referrer, userAgent, { thorough = true } = {}) {
   await acquireSegmentSlot()
   try {
-    const first = await segmentProbeOnce(url, referrer, userAgent)
-    if (first.playable || !first.transient) return { playable: first.playable, failReason: first.failReason }
-    const retry = await segmentProbeOnce(url, referrer, userAgent)
+    const maxVariants = thorough ? 2 : 1
+    const first = await segmentProbeOnce(url, referrer, userAgent, 0, maxVariants)
+    if (!thorough || first.playable || !first.transient) return { playable: first.playable, failReason: first.failReason }
+    const retry = await segmentProbeOnce(url, referrer, userAgent, 0, maxVariants)
     return { playable: retry.playable, failReason: retry.failReason }
   } finally {
     releaseSegmentSlot()
@@ -365,7 +366,7 @@ async function probeUrl(url, referrer, userAgent) {
       if (ev.browserUnplayable) return { alive: true, needsProxy: false, browserUnplayable: true, responseMs: ev.responseMs }
       if (ev.nonHttp || ev.browserOk) return { alive: true, needsProxy: false, responseMs: ev.responseMs }
 
-      const seg = await segmentProbe(url, referrer, userAgent)
+      const seg = await segmentProbe(url, referrer, userAgent, { thorough: false })
       return { alive: true, needsProxy: true, browserUnplayable: false, responseMs: ev.responseMs, segmentFailReason: seg.playable ? undefined : seg.failReason }
     }
 
