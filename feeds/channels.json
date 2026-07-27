@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-27T08:40:11.525Z",
-  "total": 11242,
+  "generated": "2026-07-27T08:49:05.328Z",
+  "total": 11239,
   "channels": [
     {
       "id": "AndorraTV.ad",
@@ -301265,63 +301265,6 @@
         }
       ],
       "hide": false
-    },
-    {
-      "id": "EuronewsItalian.fr",
-      "name": "Euronews Italian",
-      "editName": true,
-      "alive": true,
-      "probe": true,
-      "tv": true,
-      "radio": false,
-      "country": "FR",
-      "channelLogo": "https://i.imgur.com/8t9mdg9.png",
-      "editChannelLogo": true,
-      "languages": [],
-      "categories": [
-        "news"
-      ],
-      "streamUrls": [
-        "https://cdn-euronews.akamaized.net/live/eds/euronews-it/25085/index.m3u8",
-        "https://acb6ca89.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmxheHhUVi1ldV9FdXJvbmV3c0l0YWxpYW5vX0hMUw/playlist.m3u8",
-        "https://jmp2.uk/plu-61b86ea479a4390007c6d5fc.m3u8"
-      ],
-      "referrer": null,
-      "userAgent": null,
-      "needsProxy": false,
-      "ytId": null,
-      "website": "https://it.euronews.com/",
-      "replaced_by": null,
-      "geoBlocked": false,
-      "source": "iptv",
-      "nanoid": null,
-      "uptime": {
-        "aliveCount": 1,
-        "totalCount": 1,
-        "consecutiveAlive": 1,
-        "lastSeen": "2026-07-27T06:59:23.674Z",
-        "lastProbed": "2026-07-27T06:59:23.675Z",
-        "score": 100,
-        "consecutiveFailures": 0,
-        "recentResults": [
-          1
-        ]
-      },
-      "streamMeta": [
-        {
-          "linkTotalCount": 1,
-          "linkAliveCount": 1
-        },
-        {
-          "linkTotalCount": 1,
-          "linkAliveCount": 1
-        },
-        {
-          "linkTotalCount": 1,
-          "linkAliveCount": 1
-        }
-      ],
-      "slow": true
     },
     {
       "id": "EuronewsPortuguese.fr",
@@ -850553,111 +850496,6 @@
       "hide": false
     },
     {
-      "id": "bondirescue.us",
-      "name": "Bondi Rescue",
-      "editName": true,
-      "alive": true,
-      "probe": true,
-      "tv": true,
-      "radio": false,
-      "country": "US",
-      "channelLogo": null,
-      "editChannelLogo": true,
-      "languages": [],
-      "categories": [],
-      "streamUrls": [
-        "https://pb-xcqdiadvt1x0q.akamaized.net/playlist.m3u8"
-      ],
-      "referrer": null,
-      "userAgent": null,
-      "needsProxy": false,
-      "ytId": null,
-      "website": null,
-      "replaced_by": null,
-      "geoBlocked": true,
-      "source": "famelack",
-      "nanoid": "pLvvIHwNvLfbzP",
-      "uptime": {
-        "aliveCount": 78,
-        "totalCount": 90,
-        "consecutiveAlive": 51,
-        "lastSeen": "2026-07-25T11:26:39.009Z",
-        "lastProbed": "2026-07-25T11:26:39.009Z",
-        "score": 100,
-        "recentResults": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1
-        ],
-        "consecutiveFailures": 0
-      },
-      "streamMeta": [
-        {
-          "linkTotalCount": 18,
-          "linkAliveCount": 18
-        }
-      ],
-      "hide": false
-    },
-    {
       "id": "BondiRescue.us",
       "name": "Bondi Rescue",
       "editName": true,
@@ -850673,6 +850511,7 @@
         "entertainment"
       ],
       "streamUrls": [
+        "https://pb-xcqdiadvt1x0q.akamaized.net/playlist.m3u8",
         "https://jmp2.uk/plu-66166989635c7500084105a2.m3u8"
       ],
       "referrer": null,
@@ -859696,6 +859535,7 @@
         "entertainment"
       ],
       "streamUrls": [
+        "https://amg02724-somos-amg02724c1-klowdtv-us-2002.playouts.now.amagi.tv/playlist/amg02724-somosfast-cineenespanol-klowdtvus/playlist.m3u8",
         "https://jmp2.uk/plu-5cf96b1c4f1ca3f0629f4bf0.m3u8"
       ],
       "referrer": null,
@@ -859731,100 +859571,6 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null
-        }
-      ],
-      "hide": false
-    },
-    {
-      "id": "cineenespanol.us",
-      "name": "Cine en Espanol",
-      "editName": true,
-      "alive": true,
-      "probe": true,
-      "tv": true,
-      "radio": false,
-      "country": "US",
-      "channelLogo": null,
-      "editChannelLogo": true,
-      "languages": [],
-      "categories": [],
-      "streamUrls": [
-        "https://amg02724-somos-amg02724c1-klowdtv-us-2002.playouts.now.amagi.tv/playlist/amg02724-somosfast-cineenespanol-klowdtvus/playlist.m3u8"
-      ],
-      "referrer": null,
-      "userAgent": null,
-      "needsProxy": false,
-      "ytId": null,
-      "website": null,
-      "replaced_by": null,
-      "geoBlocked": true,
-      "source": "famelack",
-      "nanoid": "4n72vxWeoWKYL6",
-      "uptime": {
-        "aliveCount": 50,
-        "totalCount": 137,
-        "consecutiveAlive": 50,
-        "lastSeen": "2026-07-25T11:27:07.248Z",
-        "lastProbed": "2026-07-25T11:27:07.248Z",
-        "score": 100,
-        "consecutiveFailures": 0,
-        "recentResults": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1
-        ]
-      },
-      "streamMeta": [
-        {
-          "linkTotalCount": 18,
-          "linkAliveCount": 18
         }
       ],
       "hide": false
