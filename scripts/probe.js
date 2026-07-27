@@ -8,7 +8,13 @@ const ORIGIN     = 'https://abtv.cictehro.space'
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)) }
 
-async function corsCheck(url, referrer, userAgent) {
+function hardTimeout(promise, ms, fallback) {
+  let timer
+  const guard = new Promise(resolve => { timer = setTimeout(() => resolve(fallback), ms) })
+  return Promise.race([promise, guard]).finally(() => clearTimeout(timer))
+}
+
+async function corsCheckCore(url, referrer, userAgent) {
   try {
     const ctrl  = new AbortController()
     const timer = setTimeout(() => ctrl.abort(), 8000)
@@ -41,6 +47,14 @@ async function corsCheck(url, referrer, userAgent) {
   } catch {
     return { browserOk: false, needsProxy: false, corsTimedOut: true }
   }
+}
+
+function corsCheck(url, referrer, userAgent) {
+  return hardTimeout(
+    corsCheckCore(url, referrer, userAgent),
+    12000,
+    { browserOk: false, needsProxy: false, corsTimedOut: true, failReason: 'cors_hard_timeout' }
+  )
 }
 
 function isNameBlocked(name) {
@@ -115,10 +129,11 @@ const SEGMENT_CONCURRENCY = cfg.probe.segmentConcurrency || 8
 let _segmentActive = 0
 const _segmentQueue = []
 function acquireSegmentSlot() {
-  return new Promise(resolve => {
+  const acquire = new Promise(resolve => {
     if (_segmentActive < SEGMENT_CONCURRENCY) { _segmentActive++; resolve() }
     else _segmentQueue.push(resolve)
   })
+  return hardTimeout(acquire, 300000, undefined)
 }
 function releaseSegmentSlot() {
   if (_segmentQueue.length) { _segmentQueue.shift()() }
@@ -154,7 +169,7 @@ function extractVariants(lines) {
   return variants
 }
 
-async function fetchManifest(url, referrer, userAgent) {
+async function fetchManifestCore(url, referrer, userAgent) {
   const ctrl  = new AbortController()
   const timer = setTimeout(() => ctrl.abort(), 10000)
   try {
@@ -176,7 +191,15 @@ async function fetchManifest(url, referrer, userAgent) {
   }
 }
 
-async function fetchSegmentBytes(segmentUrl, referrer) {
+function fetchManifest(url, referrer, userAgent) {
+  return hardTimeout(
+    fetchManifestCore(url, referrer, userAgent),
+    15000,
+    { ok: false, transient: true, failReason: 'manifest_hard_timeout' }
+  )
+}
+
+async function fetchSegmentBytesCore(segmentUrl, referrer) {
   const ctrl  = new AbortController()
   const timer = setTimeout(() => ctrl.abort(), 10000)
   try {
@@ -196,6 +219,14 @@ async function fetchSegmentBytes(segmentUrl, referrer) {
     const timedOut = e.name === 'AbortError'
     return { ok: false, transient: timedOut, failReason: timedOut ? 'segment_timeout' : 'segment_error' }
   }
+}
+
+function fetchSegmentBytes(segmentUrl, referrer) {
+  return hardTimeout(
+    fetchSegmentBytesCore(segmentUrl, referrer),
+    15000,
+    { ok: false, transient: true, failReason: 'segment_hard_timeout' }
+  )
 }
 
 async function segmentProbeOnce(url, referrer, userAgent, depth = 0, maxVariants = 2) {
@@ -283,9 +314,10 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
       url,
     ]
 
-    let killer
+    let killer, hardStop
     const child = execFile('ffprobe', args, { timeout: (TIMEOUT_S + 5) * 1000 }, (err, stdout, stderr) => {
       clearTimeout(killer)
+      clearTimeout(hardStop)
       const responseMs = Date.now() - t0
       if (err) {
         const timedOut = responseMs >= (TIMEOUT_S + 4) * 1000
@@ -305,10 +337,13 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
     })
 
     killer = setTimeout(() => { try { child.kill('SIGKILL') } catch {} }, (TIMEOUT_S + 6) * 1000)
+    hardStop = setTimeout(() => {
+      resolve({ alive: false, responseMs: Date.now() - t0, timedOut: true, failReason: 'ffprobe_hard_timeout' })
+    }, (TIMEOUT_S + 15) * 1000)
   })
 }
 
-const UA_INSENSITIVE_REASONS = new Set(['dns', 'refused', 'timeout', 'invalid', 'http_5xx'])
+const UA_INSENSITIVE_REASONS = new Set(['dns', 'refused', 'timeout', 'invalid', 'http_5xx', 'ffprobe_hard_timeout'])
 
 async function probeWithFallback(url, referrer, userAgent) {
   const r1 = await probeOnce(url, referrer, userAgent, 'v:0')
