@@ -88,6 +88,7 @@ module.exports = {
   unplayableDomains: [
     'ncdn.telewebion.ir',
     'ott.watch',
+    'shd-gcp-live.edgenextcdn.net',
     'srs.unsj.edu.ar',
     'telewebion.com',
     'tglmp04',
