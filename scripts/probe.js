@@ -114,14 +114,16 @@ function checkVideoCodec(url, referrer, userAgent) {
       '-of',              'csv=p=0',
       url,
     ]
-    let killer
+    let killer, hardStop
     const child = execFile('ffprobe', args, { timeout: (TIMEOUT_S + 5) * 1000 }, (err, stdout) => {
       clearTimeout(killer)
+      clearTimeout(hardStop)
       if (err) return resolve(false)
       const codec = stdout.trim().toLowerCase()
       resolve(bad.includes(codec))
     })
     killer = setTimeout(() => { try { child.kill('SIGKILL') } catch {} }, (TIMEOUT_S + 6) * 1000)
+    hardStop = setTimeout(() => resolve(false), (TIMEOUT_S + 15) * 1000)
   })
 }
 
