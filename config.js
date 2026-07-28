@@ -116,6 +116,7 @@ module.exports = {
     'live.elheddaftv.com',
     'livesstream.work.gd',
     'jmp2.uk',
+    'janya-digimix.akamaized.net',
   ],
 
 }
