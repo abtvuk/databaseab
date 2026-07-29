@@ -228,7 +228,7 @@ async function main() {
     if (done % 1000 === 0) checkpoint(data, channels, channelMap, OUTPUT_PATH, 'check-alive', done, total)
   })
 
-  await runWithConcurrency(tasks, cfg.probe.concurrency)
+  await runWithConcurrency(tasks, cfg.probe.concurrency, 2 * 60 * 60 * 1000)
 
   saveDeadLinks(removedLinks)
   if (removedLinks.length) console.log(`links removed: ${removedLinks.length}`)

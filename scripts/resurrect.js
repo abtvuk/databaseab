@@ -116,7 +116,7 @@ async function main() {
     pruneChannelLinks(entry, removedLinks)
   })
 
-  await runWithConcurrency(tasks, cfg.probe.concurrency)
+  await runWithConcurrency(tasks, cfg.probe.concurrency, 2 * 60 * 60 * 1000)
 
   saveDeadLinks(removedLinks)
   if (removedLinks.length) console.log(`links removed: ${removedLinks.length}`)
