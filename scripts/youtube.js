@@ -106,7 +106,7 @@ async function main() {
     }
   })
 
-  await runWithConcurrency(tasks, cfg.probe.youtubeConcurrency || 6)
+  await runWithConcurrency(tasks, cfg.probe.youtubeConcurrency || 6, 2 * 60 * 60 * 1000)
 
   data.channels = channels.map(c => channelMap.get(c.id) || c)
   saveYoutube(data.channels)

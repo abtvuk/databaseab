@@ -11,7 +11,7 @@ concurrency:
 jobs:
   resurrect:
     runs-on: ubuntu-latest
-    timeout-minutes: 220
+    timeout-minutes: 150
     permissions:
       contents: write
     steps:

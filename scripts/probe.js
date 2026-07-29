@@ -436,16 +436,20 @@ async function probeUrlThorough(url, referrer, userAgent) {
   return last
 }
 
-async function runWithConcurrency(tasks, limit) {
+async function runWithConcurrency(tasks, limit, deadlineMs) {
   let i = 0
   const results = new Array(tasks.length)
+  const deadline = deadlineMs ? Date.now() + deadlineMs : Infinity
+  let stoppedEarly = false
   async function worker() {
     while (i < tasks.length) {
+      if (Date.now() >= deadline) { stoppedEarly = true; return }
       const idx = i++
       results[idx] = await tasks[idx]()
     }
   }
   await Promise.all(Array.from({ length: limit }, worker))
+  if (stoppedEarly) console.log(`[deadline] stopped early after ${(deadlineMs / 60000).toFixed(0)} min - ${tasks.length - i} candidates left for next run`)
   return results
 }
 
