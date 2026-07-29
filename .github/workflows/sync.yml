@@ -30,13 +30,13 @@ jobs:
           git add feeds/channels.json feeds/youtube.json
           git diff --staged --quiet || git commit -m "chore: sync channels from iptv-org [$(date -u '+%Y-%m-%d %H:%M UTC')]"
           for i in 1 2 3; do
-            git pull --rebase --autostash && git push && exit 0
+            timeout 60 git pull --rebase --autostash && timeout 60 git push && exit 0
             echo "attempt $i failed, retrying..."
             git rebase --abort 2>/dev/null || true
             sleep $((RANDOM % 10 + 5))
           done
           echo "plain retries exhausted, falling back to conflict-tolerant rebase (keeps already-landed remote data on any conflicting hunk; this run's findings get re-probed next cycle)"
           git rebase --abort 2>/dev/null || true
-          git pull --rebase -X ours --autostash && git push && exit 0
+          timeout 60 git pull --rebase -X ours --autostash && timeout 60 git push && exit 0
           echo "::error::failed to push even with conflict-tolerant fallback"
           exit 1
