@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-30T01:20:47.479Z",
-  "total": 11658,
+  "generated": "2026-07-30T01:25:56.141Z",
+  "total": 11656,
   "channels": [
     {
       "id": "AndorraTV.ad",
@@ -8280,7 +8280,7 @@
       "name": "Armenia TV Satellite",
       "editName": true,
       "alive": true,
-      "probe": true,
+      "probe": false,
       "tv": true,
       "radio": false,
       "country": "AM",
@@ -8291,8 +8291,7 @@
         "general"
       ],
       "streamUrls": [
-        "http://stream.mcquack.net/175/index.m3u8",
-        "https://stream.mcquack.net/175/index.m3u8"
+        "http://stream.mcquack.net/175/index.m3u8"
       ],
       "streamMeta": [
         {
@@ -8330,7 +8329,8 @@
           1,
           1
         ]
-      }
+      },
+      "hide": true
     },
     {
       "id": "ATV.am",
@@ -831054,51 +831054,6 @@
       "hide": false
     },
     {
-      "id": "divisport.ua",
-      "name": "DiviSport",
-      "editName": true,
-      "alive": true,
-      "probe": true,
-      "tv": true,
-      "radio": false,
-      "country": "UA",
-      "channelLogo": null,
-      "editChannelLogo": true,
-      "languages": [],
-      "categories": [],
-      "streamUrls": [
-        "https://stream.mcquack.net/457/index.m3u8"
-      ],
-      "referrer": null,
-      "userAgent": null,
-      "needsProxy": true,
-      "ytId": null,
-      "website": null,
-      "replaced_by": null,
-      "geoBlocked": false,
-      "source": "famelack",
-      "nanoid": "2x7GehaCHXXaXQ",
-      "uptime": {
-        "aliveCount": 1,
-        "totalCount": 1,
-        "consecutiveAlive": 1,
-        "lastSeen": "2026-07-29T21:02:03.308Z",
-        "lastProbed": "2026-07-29T21:02:03.308Z",
-        "score": 100,
-        "recentResults": [
-          1
-        ],
-        "consecutiveFailures": 0
-      },
-      "streamMeta": [
-        {
-          "linkTotalCount": 1,
-          "linkAliveCount": 1
-        }
-      ],
-      "hide": false
-    },
-    {
       "id": "DiviSport.ua",
       "name": "DiviSport",
       "editName": true,
@@ -1094317,51 +1094272,6 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null
-        }
-      ],
-      "hide": false
-    },
-    {
-      "id": "abejalestv.ve",
-      "name": "AbejalesTV",
-      "editName": true,
-      "alive": true,
-      "probe": true,
-      "tv": true,
-      "radio": false,
-      "country": "VE",
-      "channelLogo": null,
-      "editChannelLogo": true,
-      "languages": [],
-      "categories": [],
-      "streamUrls": [
-        "https://183.bozztv.com/giatv/giatv-AbejalesTV/AbejalesTV/playlist.m3u8"
-      ],
-      "referrer": null,
-      "userAgent": null,
-      "needsProxy": false,
-      "ytId": null,
-      "website": null,
-      "replaced_by": null,
-      "geoBlocked": false,
-      "source": "famelack",
-      "nanoid": "k5rLNH9bb5U3R9",
-      "uptime": {
-        "aliveCount": 1,
-        "totalCount": 1,
-        "consecutiveAlive": 1,
-        "lastSeen": "2026-07-29T21:01:39.884Z",
-        "lastProbed": "2026-07-29T21:01:39.884Z",
-        "score": 100,
-        "recentResults": [
-          1
-        ],
-        "consecutiveFailures": 0
-      },
-      "streamMeta": [
-        {
-          "linkTotalCount": 1,
-          "linkAliveCount": 1
         }
       ],
       "hide": false
