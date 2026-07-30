@@ -25,7 +25,7 @@ async function corsCheckCore(url, referrer, userAgent) {
     }
     let res = await fetch(url, { method: 'HEAD', signal: ctrl.signal, headers: reqHeaders })
 
-    if (res.status === 405) {
+    if ([405, 403, 404, 410, 451].includes(res.status)) {
       res.body?.cancel()
       res = await fetch(url, { method: 'GET', signal: ctrl.signal, headers: { ...reqHeaders, 'Range': 'bytes=0-1023' } })
     }
