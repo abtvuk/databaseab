@@ -327,7 +327,7 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
       if (err) {
         const timedOut = responseMs >= (TIMEOUT_S + 4) * 1000
         const failReason = classifyFailure(timedOut, err, stderr)
-        return resolve({ alive: false, responseMs, timedOut, failReason, rawError: (stderr || err.message || '').trim().slice(0, 300) })
+        return resolve({ alive: false, responseMs, timedOut, failReason, rawError: (stderr || err.message || '').trim() })
       }
       const out = stdout.trim()
       if (streamType !== null) {

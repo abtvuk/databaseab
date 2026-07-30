@@ -134,6 +134,7 @@ async function main() {
   const failureCounts   = {}
   const failureBySource = { stream: 0, runner: 0, unknown: 0 }
   const removedLinks    = []
+  const detailLines     = []
 
   const tasks = candidates.map(ch => async () => {
     if (isNameBlocked(ch.name) || isManualBlocked(ch.id)) {
@@ -218,7 +219,7 @@ async function main() {
         flippedDead++
       }
 
-      console.log(`[fail] ${ch.id}  ${urls[0]}  reason=${reason}  ms=${result.responseMs}  ${result.rawError || ''}`)
+      detailLines.push(`[fail] ${ch.id}  ${urls[0]}  reason=${reason}  ms=${result.responseMs}  ${result.rawError || ''}`)
 
       failed++
     }
@@ -249,6 +250,12 @@ async function main() {
       console.log(`  ${reason.padEnd(12)} ${String(count).padStart(5)}  (${((count / failed) * 100).toFixed(1)}%)`)
     }
     console.log(`  stream: ${failureBySource.stream}  runner: ${failureBySource.runner}  unknown: ${failureBySource.unknown}`)
+  }
+
+  if (detailLines.length) {
+    console.log(`::group::Per-channel failure detail (${detailLines.length})`)
+    for (const line of detailLines) console.log(line)
+    console.log('::endgroup::')
   }
 }
 
