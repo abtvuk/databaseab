@@ -111,6 +111,7 @@ function newIptvEntry(c, streamMap, logoMap) {
     website:         c.website     || null,
     replaced_by:     c.replaced_by || null,
     geoBlocked:      false,
+    hide:            false,
     source:          'iptv',
     nanoid:          null,
     uptime:          emptyUptime(),
@@ -153,6 +154,7 @@ function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
   ch.radio = radio
 
   if (!('geoBlocked'      in ch)) ch.geoBlocked      = false
+  if (!('hide'            in ch)) ch.hide            = false
   if (!('source'          in ch)) ch.source           = 'iptv'
   if (!('nanoid'          in ch)) ch.nanoid           = null
   if (!('languages'       in ch)) ch.languages        = []
