@@ -134,6 +134,7 @@ async function main() {
   const failureCounts   = {}
   const failureBySource = { stream: 0, runner: 0, unknown: 0 }
   const removedLinks    = []
+  const passLines       = []
   const detailLines     = []
 
   const tasks = candidates.map(ch => async () => {
@@ -196,6 +197,7 @@ async function main() {
       if (!entry.browserUnplayable) delete entry.browserUnplayable
       entry.slow              = result.responseMs > (cfg.probe.slowThresholdMs || 8000) ? true : undefined
       if (!entry.slow) delete entry.slow
+      passLines.push(`[pass] ${ch.id}  ${entry.streamUrls[0]}  ms=${result.responseMs}${entry.needsProxy ? '  needsProxy' : ''}${entry.browserUnplayable ? '  browserUnplayable' : ''}${entry.slow ? '  slow' : ''}`)
       passed++
     } else {
       if (entry.geoBlocked) {
@@ -250,6 +252,12 @@ async function main() {
       console.log(`  ${reason.padEnd(12)} ${String(count).padStart(5)}  (${((count / failed) * 100).toFixed(1)}%)`)
     }
     console.log(`  stream: ${failureBySource.stream}  runner: ${failureBySource.runner}  unknown: ${failureBySource.unknown}`)
+  }
+
+  if (passLines.length) {
+    console.log(`::group::Per-channel pass detail (${passLines.length})`)
+    for (const line of passLines) console.log(line)
+    console.log('::endgroup::')
   }
 
   if (detailLines.length) {
