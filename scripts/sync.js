@@ -290,9 +290,8 @@ async function main() {
 
   const sorted  = sortChannels(synced)
   saveChannels(sorted)
-  const ytCount = saveYoutube()
 
-  console.log(`done: ${sorted.length} TV channels  ${ytCount} YouTube channels`)
+  console.log(`done: ${sorted.length} TV channels`)
 }
 
 main().catch(err => { console.error(err); process.exit(1) })
