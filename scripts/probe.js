@@ -296,6 +296,9 @@ function classifyFailure(timedOut, err, stderr) {
   if (s.includes('http error 401'))                                  return 'http_401'
   if (/http error 5\d\d/.test(s))                                    return 'http_5xx'
   if (s.includes('http error 4'))                                    return 'http_4xx'
+  if (s.includes('5xx server error'))                                return 'http_5xx'
+  if (s.includes('4xx client error'))                                return 'http_4xx'
+  if (s.includes('error in the pull function'))                      return 'tls_error'
   if (s.includes('invalid data') || s.includes('no such file') || s.includes('moov atom not found')) return 'invalid'
   return 'other'
 }
