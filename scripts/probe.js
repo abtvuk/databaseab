@@ -33,17 +33,14 @@ async function corsCheckCore(url, referrer, userAgent) {
     clearTimeout(timer)
 
     if (res.status === 403 || res.status === 404 || res.status === 410 || res.status === 451) {
-      return { browserOk: false, needsProxy: false, hardBlocked: true, failReason: `cors_http_${res.status}` }
+      return { browserOk: false, needsProxy: false, hardBlocked: true, failReason: `cors_http_${res.status}`, status: res.status }
     }
 
-    const sentOrigin = referrer ? (() => { try { return new URL(referrer).origin } catch { return ORIGIN } })() : ORIGIN
-    const acao = res.headers.get('access-control-allow-origin')
-    const browserOk = acao === '*' || acao === ORIGIN || acao === sentOrigin
+    const acao = res.headers.get('access-control-allow-origin') || null
 
-    if (res.ok && !browserOk) return { browserOk: false, needsProxy: true }
-    if (!res.ok) return { browserOk: false, needsProxy: true }
+    if (!res.ok) return { browserOk: false, needsProxy: true, status: res.status, acao }
 
-    return { browserOk: true, needsProxy: false }
+    return { browserOk: true, needsProxy: false, status: res.status, acao }
   } catch {
     return { browserOk: false, needsProxy: false, corsTimedOut: true }
   }
@@ -391,7 +388,7 @@ async function evaluateUrl(url, referrer, userAgent) {
   if (cors.browserOk) {
     return { ffAlive: true, responseMs: ff.responseMs, browserOk: true }
   }
-  return { ffAlive: true, responseMs: ff.responseMs, browserOk: false, needsProxy: true }
+  return { ffAlive: true, responseMs: ff.responseMs, browserOk: false, needsProxy: true, corsStatus: cors.status, corsAcao: cors.acao }
 }
 
 async function probeUrl(url, referrer, userAgent) {
@@ -407,7 +404,7 @@ async function probeUrl(url, referrer, userAgent) {
       if (ev.nonHttp || ev.browserOk) return { alive: true, needsProxy: false, responseMs: ev.responseMs }
 
       const seg = await segmentProbe(url, referrer, userAgent, { thorough: false })
-      return { alive: true, needsProxy: true, browserUnplayable: false, responseMs: ev.responseMs, segmentFailReason: seg.playable ? undefined : seg.failReason }
+      return { alive: true, needsProxy: true, browserUnplayable: false, responseMs: ev.responseMs, segmentFailReason: seg.playable ? undefined : seg.failReason, corsStatus: ev.corsStatus, corsAcao: ev.corsAcao }
     }
 
     last = { alive: false, needsProxy: false, responseMs: ev.responseMs, failReason: ev.failReason, rawError: ev.rawError }
@@ -432,7 +429,7 @@ async function probeUrlThorough(url, referrer, userAgent) {
     if (ev.nonHttp || ev.browserOk) return { alive: true, needsProxy: false, responseMs: ev.responseMs }
 
     const seg = await segmentProbe(url, referrer, userAgent)
-    if (seg.playable) return { alive: true, needsProxy: true, responseMs: ev.responseMs }
+    if (seg.playable) return { alive: true, needsProxy: true, responseMs: ev.responseMs, corsStatus: ev.corsStatus, corsAcao: ev.corsAcao }
     return { alive: false, needsProxy: false, responseMs: ev.responseMs, failReason: seg.failReason || 'segment_unplayable' }
   }
 

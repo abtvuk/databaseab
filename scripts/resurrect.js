@@ -104,7 +104,7 @@ async function main() {
       const slow = result.responseMs > (cfg.probe.slowThresholdMs || 8000)
       if (slow) entry.slow = true
       else delete entry.slow
-      passLines.push(`[pass] ${ch.id}  ${entry.streamUrls[0]}  ms=${result.responseMs}${entry.needsProxy ? '  needsProxy' : ''}${entry.browserUnplayable ? '  browserUnplayable' : ''}${entry.slow ? '  slow' : ''}${entry.geoBlocked ? '  geoBlocked' : ''}`)
+      passLines.push(`[pass] ${ch.id}  ${entry.streamUrls[0]}  ms=${result.responseMs}${entry.needsProxy ? '  needsProxy' : ''}${result.corsStatus ? `  corsStatus=${result.corsStatus}` : ''}${result.corsAcao ? `  corsAcao=${result.corsAcao}` : ''}${entry.browserUnplayable ? '  browserUnplayable' : ''}${entry.slow ? '  slow' : ''}${entry.geoBlocked ? '  geoBlocked' : ''}`)
       resurrected++
     } else {
       entry.uptime = recordDead(entry.uptime)
