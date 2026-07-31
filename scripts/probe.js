@@ -330,9 +330,10 @@ function probeOnce(url, referrer, userAgent, streamType = 'v:0') {
       if (streamType !== null) {
         const [codecType, frameCount] = out.split(',')
         const hasStream = codecType === 'video' || codecType === 'audio'
-        const hasFrames = parseInt(frameCount, 10) > 0
+        const nFrames   = parseInt(frameCount, 10) || 0
+        const hasFrames = nFrames > 0
         const alive = hasStream && hasFrames
-        return resolve({ alive, responseMs, timedOut: false, failReason: alive ? undefined : (hasStream ? 'no_frames' : 'no_stream') })
+        return resolve({ alive, responseMs, timedOut: false, frameCount: nFrames, failReason: alive ? undefined : (hasStream ? 'no_frames' : 'no_stream') })
       }
       const alive = parseInt(out, 10) > 0
       resolve({ alive, responseMs, timedOut: false, failReason: alive ? undefined : 'no_stream' })
@@ -375,20 +376,20 @@ async function evaluateUrl(url, referrer, userAgent) {
 
   const badCodec = await checkVideoCodec(url, referrer, userAgent)
   if (badCodec) {
-    return { ffAlive: true, responseMs: ff.responseMs, browserUnplayable: true, failReason: 'unsupported_codec' }
+    return { ffAlive: true, responseMs: ff.responseMs, frameCount: ff.frameCount, browserUnplayable: true, failReason: 'unsupported_codec' }
   }
   if (!/^https?:\/\//i.test(url)) {
-    return { ffAlive: true, responseMs: ff.responseMs, nonHttp: true }
+    return { ffAlive: true, responseMs: ff.responseMs, frameCount: ff.frameCount, nonHttp: true }
   }
 
   const cors = await corsCheck(url, referrer, userAgent)
   if (cors.hardBlocked) {
-    return { ffAlive: true, responseMs: ff.responseMs, browserUnplayable: true, failReason: cors.failReason }
+    return { ffAlive: true, responseMs: ff.responseMs, frameCount: ff.frameCount, browserUnplayable: true, failReason: cors.failReason }
   }
   if (cors.browserOk) {
-    return { ffAlive: true, responseMs: ff.responseMs, browserOk: true }
+    return { ffAlive: true, responseMs: ff.responseMs, frameCount: ff.frameCount, browserOk: true }
   }
-  return { ffAlive: true, responseMs: ff.responseMs, browserOk: false, needsProxy: true, corsStatus: cors.status, corsAcao: cors.acao }
+  return { ffAlive: true, responseMs: ff.responseMs, frameCount: ff.frameCount, browserOk: false, needsProxy: true, corsStatus: cors.status, corsAcao: cors.acao }
 }
 
 async function probeUrl(url, referrer, userAgent) {
@@ -400,11 +401,11 @@ async function probeUrl(url, referrer, userAgent) {
     const ev = await evaluateUrl(url, referrer, userAgent)
 
     if (ev.ffAlive) {
-      if (ev.browserUnplayable) return { alive: true, needsProxy: false, browserUnplayable: true, responseMs: ev.responseMs }
-      if (ev.nonHttp || ev.browserOk) return { alive: true, needsProxy: false, responseMs: ev.responseMs }
+      if (ev.browserUnplayable) return { alive: true, needsProxy: false, browserUnplayable: true, responseMs: ev.responseMs, frameCount: ev.frameCount }
+      if (ev.nonHttp || ev.browserOk) return { alive: true, needsProxy: false, responseMs: ev.responseMs, frameCount: ev.frameCount }
 
       const seg = await segmentProbe(url, referrer, userAgent, { thorough: false })
-      return { alive: true, needsProxy: true, browserUnplayable: false, responseMs: ev.responseMs, segmentFailReason: seg.playable ? undefined : seg.failReason, corsStatus: ev.corsStatus, corsAcao: ev.corsAcao }
+      return { alive: true, needsProxy: true, browserUnplayable: false, responseMs: ev.responseMs, frameCount: ev.frameCount, segmentFailReason: seg.playable ? undefined : seg.failReason, corsStatus: ev.corsStatus, corsAcao: ev.corsAcao }
     }
 
     last = { alive: false, needsProxy: false, responseMs: ev.responseMs, failReason: ev.failReason, rawError: ev.rawError }
@@ -426,10 +427,10 @@ async function probeUrlThorough(url, referrer, userAgent) {
       continue
     }
     if (ev.browserUnplayable) return { alive: false, needsProxy: false, responseMs: ev.responseMs, failReason: ev.failReason }
-    if (ev.nonHttp || ev.browserOk) return { alive: true, needsProxy: false, responseMs: ev.responseMs }
+    if (ev.nonHttp || ev.browserOk) return { alive: true, needsProxy: false, responseMs: ev.responseMs, frameCount: ev.frameCount }
 
     const seg = await segmentProbe(url, referrer, userAgent)
-    if (seg.playable) return { alive: true, needsProxy: true, responseMs: ev.responseMs, corsStatus: ev.corsStatus, corsAcao: ev.corsAcao }
+    if (seg.playable) return { alive: true, needsProxy: true, responseMs: ev.responseMs, frameCount: ev.frameCount, corsStatus: ev.corsStatus, corsAcao: ev.corsAcao }
     return { alive: false, needsProxy: false, responseMs: ev.responseMs, failReason: seg.failReason || 'segment_unplayable' }
   }
 
