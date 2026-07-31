@@ -197,7 +197,7 @@ async function main() {
       if (!entry.browserUnplayable) delete entry.browserUnplayable
       entry.slow              = result.responseMs > (cfg.probe.slowThresholdMs || 8000) ? true : undefined
       if (!entry.slow) delete entry.slow
-      passLines.push(`[pass] ${ch.id}  ${entry.streamUrls[0]}  ms=${result.responseMs}${entry.needsProxy ? '  needsProxy' : ''}${entry.browserUnplayable ? '  browserUnplayable' : ''}${entry.slow ? '  slow' : ''}${entry.geoBlocked ? '  geoBlocked' : ''}`)
+      passLines.push(`[pass] ${ch.id}  ${entry.streamUrls[0]}  ms=${result.responseMs}${entry.needsProxy ? '  needsProxy' : ''}${result.corsStatus ? `  corsStatus=${result.corsStatus}` : ''}${result.corsAcao ? `  corsAcao=${result.corsAcao}` : ''}${entry.browserUnplayable ? '  browserUnplayable' : ''}${entry.slow ? '  slow' : ''}${entry.geoBlocked ? '  geoBlocked' : ''}`)
       passed++
     } else {
       if (entry.geoBlocked) {
