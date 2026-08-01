@@ -70,6 +70,7 @@ async function main() {
 
     let result = { alive: false, needsProxy: false, responseMs: 0 }
     let liveIndex = -1
+    let failIndex = 0
     let foundGood = false
     for (let i = 0; i < urls.length; i++) {
       const ref = meta[i]?.referrer  ?? ch.referrer
@@ -81,7 +82,7 @@ async function main() {
       if (foundGood) continue
       if (r.alive && !r.browserUnplayable) { result = r; liveIndex = i; foundGood = true; continue }
       if (r.alive && liveIndex === -1)      { result = r; liveIndex = i }
-      if (!r.alive && liveIndex === -1)     result = r
+      if (!r.alive && liveIndex === -1)     { result = r; failIndex = i }
     }
 
     done++
@@ -118,7 +119,7 @@ async function main() {
       failureCounts[reason] = (failureCounts[reason] || 0) + 1
       const source = classifyFailSource(reason)
       failureBySource[source] = (failureBySource[source] || 0) + 1
-      detailLines.push(`[fail] ${ch.id}  ${urls[0]}  reason=${reason}  ms=${result.responseMs}  ${result.rawError || ''}`)
+      detailLines.push(`[fail] ${ch.id}  ${urls[failIndex]}  reason=${reason}  ms=${result.responseMs}  ${result.rawError || ''}`)
       stillDead++
     }
 
