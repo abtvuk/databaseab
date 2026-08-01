@@ -165,6 +165,7 @@ async function main() {
 
     let result = { alive: false, needsProxy: false, responseMs: 0 }
     let liveIndex = -1
+    let failIndex = 0
     let foundGood = false
     for (let i = 0; i < urls.length; i++) {
       const ref = meta[i]?.referrer  ?? ch.referrer
@@ -176,7 +177,7 @@ async function main() {
       if (foundGood) continue
       if (r.alive && !r.browserUnplayable) { result = r; liveIndex = i; foundGood = true; continue }
       if (r.alive && liveIndex === -1)      { result = r; liveIndex = i }
-      if (!r.alive && liveIndex === -1)     result = r
+      if (!r.alive && liveIndex === -1)     { result = r; failIndex = i }
     }
 
     done++
@@ -210,7 +211,7 @@ async function main() {
         entry.uptime = { ...(entry.uptime || {}), lastProbed: new Date().toISOString(), consecutiveGeoFailures: (entry.uptime?.consecutiveGeoFailures || 0) + 1 }
         geoBlockedFailed++
         failed++
-        detailLines.push(`[geo] ${ch.id}  ${urls[0]}  reason=${result.failReason || 'other'}  ms=${result.responseMs}  ${result.rawError || ''}`)
+        detailLines.push(`[geo] ${ch.id}  ${urls[failIndex]}  reason=${result.failReason || 'other'}  ms=${result.responseMs}  ${result.rawError || ''}`)
         if (done % 1000 === 0) checkpoint(data, channels, channelMap, OUTPUT_PATH, 'check-alive', done, total)
         return
       }
@@ -228,7 +229,7 @@ async function main() {
         flippedDead++
       }
 
-      detailLines.push(`[fail] ${ch.id}  ${urls[0]}  reason=${reason}  ms=${result.responseMs}  ${result.rawError || ''}`)
+      detailLines.push(`[fail] ${ch.id}  ${urls[failIndex]}  reason=${reason}  ms=${result.responseMs}  ${result.rawError || ''}`)
 
       failed++
     }
