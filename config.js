@@ -48,7 +48,7 @@ module.exports = {
     scoreAbove20:       20,
     scoreAbove0:        40,
     scoreZeroFewData:   30,
-    scoreZeroManyData:  60,
+    scoreZeroManyData:  20,
   },
 
   scoreRecencyWindow: 100,
