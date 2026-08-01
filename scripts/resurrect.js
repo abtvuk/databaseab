@@ -100,6 +100,10 @@ async function main() {
       }
       entry.uptime            = recordAlive(entry.uptime)
       entry.alive             = true
+      if (entry.geoBlocked) {
+        entry.geoBlocked = false
+        entry.uptime.consecutiveGeoFailures = 0
+      }
       entry.needsProxy        = result.needsProxy === true
       entry.browserUnplayable = result.browserUnplayable || false
       if (!entry.browserUnplayable) delete entry.browserUnplayable
