@@ -136,6 +136,7 @@ async function main() {
   const removedLinks    = []
   const passLines       = []
   const detailLines     = []
+  const linkLines        = []
 
   const tasks = candidates.map(ch => async () => {
     if (isNameBlocked(ch.name) || isManualBlocked(ch.id)) {
@@ -171,6 +172,7 @@ async function main() {
       const critical = isCriticalChannel(ch.id, urls[i])
       const r   = critical ? await probeUrlThorough(urls[i], ref, ua) : await probeUrl(urls[i], ref, ua)
       meta[i] = recordLinkResult(meta[i] || {}, r.alive)
+      linkLines.push(`[link] ${ch.id}  #${i}  ${urls[i]}  alive=${r.alive}${r.alive ? `  frames=${r.frameCount ?? '?'}${r.needsProxy ? '  needsProxy' : ''}${r.browserUnplayable ? '  browserUnplayable' : ''}` : `  reason=${r.failReason || 'other'}`}  ms=${r.responseMs}${r.rawError ? `  ${r.rawError}` : ''}`)
       if (foundGood) continue
       if (r.alive && !r.browserUnplayable) { result = r; liveIndex = i; foundGood = true; continue }
       if (r.alive && liveIndex === -1)      { result = r; liveIndex = i }
@@ -204,6 +206,7 @@ async function main() {
         entry.uptime = { ...(entry.uptime || {}), lastProbed: new Date().toISOString(), consecutiveGeoFailures: (entry.uptime?.consecutiveGeoFailures || 0) + 1 }
         geoBlockedFailed++
         failed++
+        detailLines.push(`[geo] ${ch.id}  ${urls[0]}  reason=${result.failReason || 'other'}  ms=${result.responseMs}  ${result.rawError || ''}`)
         if (done % 1000 === 0) checkpoint(data, channels, channelMap, OUTPUT_PATH, 'check-alive', done, total)
         return
       }
@@ -254,6 +257,12 @@ async function main() {
     console.log(`  stream: ${failureBySource.stream}  runner: ${failureBySource.runner}  unknown: ${failureBySource.unknown}`)
   }
 
+  if (linkLines.length) {
+    console.log(`::group::Per-link probe detail (${linkLines.length})`)
+    for (const line of linkLines) console.log(line)
+    console.log('::endgroup::')
+  }
+
   if (passLines.length) {
     console.log(`::group::Per-channel pass detail (${passLines.length})`)
     for (const line of passLines) console.log(line)
@@ -267,4 +276,4 @@ async function main() {
   }
 }
 
-main().then(() => process.exit(0)).catch(err => { console.error(err); process.exit(1) })
+main().then(() => process.stdout.write('', () => process.exit(0))).catch(err => { console.error(err); process.exit(1) })
