@@ -529,13 +529,71 @@ function isDueForResurrect(uptime) {
   return hoursSince >= minHours
 }
 
+const CHANNEL_KEY_ORDER = [
+  'id', 'name', 'editName',
+  'country', 'editCountry', 'categories', 'languages', 'tv', 'radio', 'ytId',
+  'channelLogo', 'editChannelLogo',
+  'website', 'source', 'nanoid', 'replaced_by',
+  'streamUrls', 'streamMeta', 'referrer', 'userAgent', 'needsProxy',
+  'alive', 'probe', 'hide', 'geoBlocked', 'browserUnplayable', 'slow', 'domainBlockedLinks',
+  'uptime',
+]
+const UPTIME_KEY_ORDER = [
+  'score', 'aliveCount', 'totalCount',
+  'consecutiveAlive', 'consecutiveFailures', 'consecutiveGeoFailures',
+  'lastSeen', 'lastProbed', 'recentResults',
+]
+const STREAM_META_KEY_ORDER = ['source', 'referrer', 'userAgent', 'linkTotalCount', 'linkAliveCount']
+
+function orderKeys(obj, order) {
+  if (obj == null || typeof obj !== 'object') return obj
+  const out = {}
+  for (const k of order) if (k in obj) out[k] = obj[k]
+  for (const k of Object.keys(obj)) if (!(k in out)) out[k] = obj[k]
+  return out
+}
+
+function formatChannel(c) {
+  const ordered = orderKeys(c, CHANNEL_KEY_ORDER)
+  if (ordered.uptime) ordered.uptime = orderKeys(ordered.uptime, UPTIME_KEY_ORDER)
+  if (Array.isArray(ordered.streamMeta)) ordered.streamMeta = ordered.streamMeta.map(m => orderKeys(m, STREAM_META_KEY_ORDER))
+  return ordered
+}
+
+function stringifyPretty(value, depth = 0) {
+  const pad  = '  '.repeat(depth)
+  const pad1 = '  '.repeat(depth + 1)
+  if (Array.isArray(value)) {
+    if (value.length === 0) return '[]'
+    const allPrimitive = value.every(v => typeof v === 'number' || typeof v === 'boolean' || v === null)
+    if (allPrimitive) return '[' + value.map(v => JSON.stringify(v)).join(', ') + ']'
+    return '[\n' + value.map(v => pad1 + stringifyPretty(v, depth + 1)).join(',\n') + '\n' + pad + ']'
+  }
+  if (value !== null && typeof value === 'object') {
+    const keys = Object.keys(value)
+    if (keys.length === 0) return '{}'
+    return '{\n' + keys.map(k => pad1 + JSON.stringify(k) + ': ' + stringifyPretty(value[k], depth + 1)).join(',\n') + '\n' + pad + '}'
+  }
+  return JSON.stringify(value)
+}
+
+function stringifyFeed(payload) {
+  const ordered = { ...payload, channels: (payload.channels || []).map(formatChannel) }
+  return stringifyPretty(ordered)
+}
+
+function saveFeedFormatted(outputPath, payload) {
+  require('fs').mkdirSync(require('path').dirname(require('path').resolve(outputPath)), { recursive: true })
+  require('fs').writeFileSync(outputPath, stringifyFeed(payload))
+}
+
 function checkpoint(data, channels, channelMap, outputPath, label, done, total) {
   const { execSync } = require('child_process')
   const GIT_TIMEOUT_MS = 60000
   const run = (cmd, opts = {}) => execSync(cmd, { stdio: 'ignore', timeout: GIT_TIMEOUT_MS, ...opts })
 
   data.channels = channels.map(c => channelMap.get(c.id) || c)
-  const json = JSON.stringify({ ...data, generated: new Date().toISOString() }, null, 2)
+  const json = stringifyFeed({ ...data, generated: new Date().toISOString() })
   require('fs').writeFileSync(outputPath, json)
   try {
     run('git config user.name "github-actions[bot]"')
@@ -649,13 +707,11 @@ function loadFeed(outputPath) {
 }
 
 function saveFeed(outputPath, channels) {
-  const p = require('path').resolve(outputPath)
-  require('fs').mkdirSync(require('path').dirname(p), { recursive: true })
-  require('fs').writeFileSync(p, JSON.stringify({
+  saveFeedFormatted(outputPath, {
     generated: new Date().toISOString(),
     total: channels.length,
     channels,
-  }, null, 2))
+  })
 }
 
 function applyRetirementAndPruning(channels) {
@@ -701,4 +757,4 @@ function applyRetirementAndPruning(channels) {
   return { retired: toRetire.length, pruned: toPrune.length }
 }
 
-module.exports = { probeUrl, probeUrlThorough, isCriticalChannel, runWithConcurrency, recordAlive, recordDead, isDueForProbe, isDueForResurrect, checkpoint, progressBar, classifyFailSource, isDueForRetirement, isChannelDeadForever, applyRetirementAndPruning, isUnplayableDomain, stripUnplayableLinks, restoreUnplayableLinks, isNameBlocked, isManualBlocked, loadFeed, saveFeed, recordLinkResult, pruneChannelLinks, saveDeadLinks }
+module.exports = { probeUrl, probeUrlThorough, isCriticalChannel, runWithConcurrency, recordAlive, recordDead, isDueForProbe, isDueForResurrect, checkpoint, progressBar, classifyFailSource, isDueForRetirement, isChannelDeadForever, applyRetirementAndPruning, isUnplayableDomain, stripUnplayableLinks, restoreUnplayableLinks, isNameBlocked, isManualBlocked, loadFeed, saveFeed, recordLinkResult, pruneChannelLinks, saveDeadLinks, saveFeedFormatted, stringifyFeed, formatChannel }

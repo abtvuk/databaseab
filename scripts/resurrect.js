@@ -4,7 +4,7 @@ const fs   = require('fs')
 const { probeUrl, probeUrlThorough, isCriticalChannel, runWithConcurrency, recordAlive, recordDead, isDueForResurrect,
         checkpoint, progressBar, applyRetirementAndPruning, classifyFailSource,
         recordLinkResult, pruneChannelLinks, saveDeadLinks,
-        isNameBlocked, isManualBlocked, stripUnplayableLinks } = require('./probe')
+        isNameBlocked, isManualBlocked, stripUnplayableLinks, saveFeedFormatted } = require('./probe')
 
 const CHECKPOINT_EVERY = 1000
 const OUTPUT_PATH      = path.resolve(cfg.output.channels)
@@ -15,7 +15,7 @@ function loadChannels() {
 }
 
 function saveChannels(data) {
-  fs.writeFileSync(OUTPUT_PATH, JSON.stringify({ ...data, generated: new Date().toISOString() }, null, 2))
+  saveFeedFormatted(OUTPUT_PATH, { ...data, generated: new Date().toISOString() })
 }
 
 async function main() {
