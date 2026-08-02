@@ -82,7 +82,7 @@ module.exports = {
     aliveScoreMax: 10,
   },
 
-  manualBlocklist: [],
+  manualBlocklist: ['206.212.244.63'],
 
   nameBlocklist: ['Pluto TV'],
 
