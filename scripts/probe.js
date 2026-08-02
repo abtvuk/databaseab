@@ -530,12 +530,12 @@ function isDueForResurrect(uptime) {
 }
 
 const CHANNEL_KEY_ORDER = [
-  'id', 'name', 'editName',
-  'country', 'editCountry', 'categories', 'languages', 'tv', 'radio', 'ytId',
-  'channelLogo', 'editChannelLogo',
-  'website', 'source', 'nanoid', 'replaced_by',
-  'streamUrls', 'streamMeta', 'referrer', 'userAgent', 'needsProxy',
-  'alive', 'probe', 'hide', 'geoBlocked', 'browserUnplayable', 'slow', 'domainBlockedLinks',
+  'id', 'name', 'country', 'categories', 'languages', 'channelLogo', 'website',
+  'tv', 'radio', 'ytId',
+  'alive', 'probe', 'hide', 'needsProxy', 'geoBlocked',
+  'editName', 'editCountry', 'editChannelLogo',
+  'source', 'replaced_by',
+  'streamUrls', 'streamMeta', 'referrer', 'userAgent',
   'uptime',
 ]
 const UPTIME_KEY_ORDER = [
