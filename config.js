@@ -57,9 +57,10 @@ module.exports = {
     mirroredFields: ['logo', 'streamUrls', 'country', 'categories', 'website', 'replaced_by'],
     nameField: 'name',
     defaults: {
-      alive:    false,
-      probe:    true,
-      editName: true,
+      alive:       false,
+      probe:       true,
+      editName:    true,
+      editCountry: true,
     },
   },
 

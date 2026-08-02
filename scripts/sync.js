@@ -1,7 +1,7 @@
 const cfg  = require('../config')
 const fs   = require('fs')
 const path = require('path')
-const { loadFeed, saveFeed, saveDeadLinks } = require('./probe')
+const { loadFeed, saveFeed, saveDeadLinks, saveFeedFormatted } = require('./probe')
 
 let deadLinkSet = null
 function isDeadLink(channelId, url) {
@@ -30,13 +30,11 @@ function loadChannels() {
 }
 
 function saveChannels(channels) {
-  const out = path.resolve(cfg.output.channels)
-  fs.mkdirSync(path.dirname(out), { recursive: true })
-  fs.writeFileSync(out, JSON.stringify({
+  saveFeedFormatted(path.resolve(cfg.output.channels), {
     generated: new Date().toISOString(),
     total: channels.length,
     channels,
-  }, null, 2))
+  })
 }
 
 function isNameBlocked(name) {
@@ -98,6 +96,7 @@ function newIptvEntry(c, streamMap, logoMap) {
     tv,
     radio,
     country:         c.country     || '',
+    editCountry:     cfg.sync.defaults.editCountry,
     channelLogo:     c.logo || logoMap[c.id] || null,
     editChannelLogo: true,
     languages:       [],
@@ -144,7 +143,7 @@ function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
   ch.referrer    = streams[0]?.referrer  || existing.referrer  || null
   ch.userAgent   = streams[0]?.userAgent || existing.userAgent || null
   ch.needsProxy  = existing.needsProxy || false
-  ch.country     = iptvCh.country     || existing.country     || ''
+  if (ch.editCountry !== false) ch.country = iptvCh.country || existing.country || ''
   if (!existing.categories?.length) ch.categories = iptvCh.categories || []
   ch.website     = iptvCh.website     || existing.website     || null
   ch.replaced_by = iptvCh.replaced_by || existing.replaced_by || null
@@ -162,6 +161,7 @@ function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
   if (!('userAgent'       in ch)) ch.userAgent        = null
   if (!('needsProxy'      in ch)) ch.needsProxy       = false
   if (!('editChannelLogo' in ch)) ch.editChannelLogo  = true
+  if (!('editCountry'     in ch)) ch.editCountry      = true
 
   return ch
 }

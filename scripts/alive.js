@@ -2,7 +2,7 @@ const cfg = require('../config')
 const { probeUrl, probeUrlThorough, isCriticalChannel, runWithConcurrency, recordAlive, recordDead, isDueForProbe,
         progressBar, applyRetirementAndPruning, classifyFailSource, checkpoint,
         isUnplayableDomain, stripUnplayableLinks, restoreUnplayableLinks, isNameBlocked, isManualBlocked, loadFeed, saveFeed,
-        recordLinkResult, pruneChannelLinks, saveDeadLinks } = require('./probe')
+        recordLinkResult, pruneChannelLinks, saveDeadLinks, saveFeedFormatted } = require('./probe')
 const fs   = require('fs')
 const path = require('path')
 
@@ -14,10 +14,7 @@ function loadChannels() {
 }
 
 function saveChannels(data) {
-  fs.writeFileSync(
-    OUTPUT_PATH,
-    JSON.stringify({ ...data, generated: new Date().toISOString() }, null, 2)
-  )
+  saveFeedFormatted(OUTPUT_PATH, { ...data, generated: new Date().toISOString() })
 }
 
 async function main() {
