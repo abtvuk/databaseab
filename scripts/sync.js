@@ -7,12 +7,13 @@ let deadLinkSet = null
 function isDeadLink(channelId, url) {
   if (!deadLinkSet) {
     const dead = loadFeed(cfg.output.deadLinks)
-    deadLinkSet = new Set((dead.channels || []).map(l => `${l.channelId}|${l.url}`))
+    deadLinkSet = new Set((dead.channels || []).map(l => `${(l.channelId || '').toLowerCase()}|${l.url}`))
   }
-  return deadLinkSet.has(`${channelId}|${url}`)
+  return deadLinkSet.has(`${(channelId || '').toLowerCase()}|${url}`)
 }
 
 const UA = 'abtv-sync/1.0'
+const normId = id => (id || '').toLowerCase()
 
 async function fetchJSON(url) {
   const res = await fetch(url, { headers: { 'User-Agent': UA } })
@@ -128,11 +129,14 @@ function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
   if (!('editChannelLogo' in ch)) ch.editChannelLogo = true
 
   const streams  = streamMap[iptvCh.id] || []
-  const existingUrls = existing.streamUrls || []
+  const removedLinks = existing.removedLinks || []
+  const linkBlocked  = u => (cfg.linkBlocklist || []).includes(u)
+  const existingUrls = (existing.streamUrls || []).filter(u => !linkBlocked(u))
   const newUrls  = streams
     .map(s => s.url)
-    .filter(u => !existingUrls.includes(u) && !isDeadLink(iptvCh.id, u))
+    .filter(u => !existingUrls.includes(u) && !isDeadLink(iptvCh.id, u) && !removedLinks.includes(u) && !linkBlocked(u))
   ch.streamUrls  = [...existingUrls, ...newUrls]
+  if (removedLinks.length) ch.removedLinks = removedLinks
   const existingMeta    = existing.streamMeta || []
   const existingMetaMap = Object.fromEntries(existingUrls.map((u, i) => [u, existingMeta[i] || {}]))
   const metaByUrl       = Object.fromEntries(streams.map(s => [s.url, { source: 'iptv', referrer: s.referrer || null, userAgent: s.userAgent || null }]))
@@ -222,9 +226,9 @@ async function main() {
 
   console.log(`fetched: ${iptvChannels.length} channels  ${streams.length} streams  ${logos.length} logos  (${Date.now() - t1}ms)`)
 
-  const blockedIds = new Set(blocklist.filter(b => b.reason === 'nsfw').map(b => b.channel))
-  const nsfwIds    = new Set(iptvChannels.filter(c => c.is_nsfw).map(c => c.id))
-  const manualIds  = new Set(cfg.manualBlocklist || [])
+  const blockedIds = new Set([...blocklist.filter(b => b.reason === 'nsfw').map(b => b.channel)].map(normId))
+  const nsfwIds    = new Set(iptvChannels.filter(c => c.is_nsfw).map(c => c.id).map(normId))
+  const manualIds  = new Set((cfg.manualBlocklist || []).map(normId))
   const allBlocked = new Set([...blockedIds, ...nsfwIds, ...manualIds])
 
   const streamMap = buildStreamMap(streams, allBlocked)
@@ -232,16 +236,16 @@ async function main() {
 
   const iptvMap = new Map(
     iptvChannels
-      .filter(c => c.id && c.name && !allBlocked.has(c.id) && !isNameBlocked(c.name))
-      .map(c => [c.id, c])
+      .filter(c => c.id && c.name && !allBlocked.has(normId(c.id)) && !isNameBlocked(c.name))
+      .map(c => [normId(c.id), c])
   )
 
   const existing    = loadChannels().filter(c => !c.radio && !c.ytId)
-  const existingMap = new Map(existing.map(c => [c.id, c]))
+  const existingMap = new Map(existing.map(c => [normId(c.id), c]))
   let iptvMirrored  = 0, iptvAdded = 0, iptvRevived = 0
 
   let synced = existing.map(ch => {
-    const iptvCh = iptvMap.get(ch.id)
+    const iptvCh = iptvMap.get(normId(ch.id))
     if (!iptvCh) return ch
     iptvMirrored++
     return mirrorIptvFields(ch, iptvCh, streamMap, logoMap)
@@ -252,8 +256,8 @@ async function main() {
   const blacklistNow = []
 
   for (const deadCh of deadFeed.channels || []) {
-    if (existingMap.has(deadCh.id)) continue
-    const iptvCh = iptvMap.get(deadCh.id)
+    if (existingMap.has(normId(deadCh.id))) continue
+    const iptvCh = iptvMap.get(normId(deadCh.id))
     if (!iptvCh) continue
     const streams = streamMap[deadCh.id] || []
     if (!streams.length) continue
@@ -268,12 +272,12 @@ async function main() {
 
     const revived = newIptvEntry(iptvCh, { [deadCh.id]: freshOnly }, logoMap)
     synced.push(revived)
-    revivedIds.add(deadCh.id)
+    revivedIds.add(normId(deadCh.id))
     iptvRevived++
   }
 
   if (revivedIds.size) {
-    saveFeed(cfg.pruning.output || cfg.output.dead, (deadFeed.channels || []).filter(c => !revivedIds.has(c.id)))
+    saveFeed(cfg.pruning.output || cfg.output.dead, (deadFeed.channels || []).filter(c => !revivedIds.has(normId(c.id))))
   }
   saveDeadLinks(blacklistNow)
 

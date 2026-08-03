@@ -84,6 +84,8 @@ module.exports = {
 
   manualBlocklist: ['206.212.244.63'],
 
+  linkBlocklist: [],
+
   nameBlocklist: ['Pluto TV'],
 
   unplayableDomains: [
