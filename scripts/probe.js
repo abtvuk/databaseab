@@ -535,7 +535,7 @@ const CHANNEL_KEY_ORDER = [
   'alive', 'probe', 'hide', 'needsProxy', 'geoBlocked',
   'editName', 'editCountry', 'editChannelLogo',
   'source', 'replaced_by',
-  'streamUrls', 'streamMeta', 'referrer', 'userAgent',
+  'streamUrls', 'removedLinks', 'streamMeta', 'referrer', 'userAgent',
   'uptime',
 ]
 const UPTIME_KEY_ORDER = [
