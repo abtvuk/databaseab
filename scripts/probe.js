@@ -4,7 +4,7 @@ const { execFile } = require('child_process')
 const TIMEOUT_S  = cfg.probe.timeoutSeconds
 const UA         = 'abtv-probe/1.0'
 const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
-const ORIGIN     = 'https://abtv.cictehro.space'
+const ORIGIN     = 'https://abtv.uk'
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)) }
 
