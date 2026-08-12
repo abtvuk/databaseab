@@ -3,7 +3,9 @@ const fs    = require('fs')
 const path  = require('path')
 const { execFile } = require('child_process')
 
-const LOGO_SIZE      = 48
+const LOGO_SIZE       = 48
+const LOGO_SIZE_2X    = 96
+const LOGO_VERSION    = 2   // bump when output format/sizes change — forces reprocessing of stale manifest entries
 const LOGOS_DIR       = path.resolve('feeds/logos')
 const MANIFEST_PATH   = path.resolve('feeds/logos-manifest.json')
 const CONCURRENCY     = 5
@@ -58,15 +60,15 @@ async function downloadToFile(url, destPath) {
   }
 }
 
-function resizeToWebp(srcPath, destPath) {
+function resizeToWebp(srcPath, destPath, size) {
   return new Promise(resolve => {
     const args = [
       '-y', '-v', 'error',
       '-i', srcPath,
-      '-vf', `scale=${LOGO_SIZE}:${LOGO_SIZE}:force_original_aspect_ratio=decrease,pad=${LOGO_SIZE}:${LOGO_SIZE}:(ow-iw)/2:(oh-ih)/2:color=0x00000000`,
+      '-vf', `scale=${size}:${size}:force_original_aspect_ratio=decrease:flags=lanczos,pad=${size}:${size}:(ow-iw)/2:(oh-ih)/2:color=0x00000000`,
       '-pix_fmt', 'yuva420p',
       '-lossless', '0',
-      '-quality', '80',
+      '-quality', '90',
       destPath,
     ]
     execFile('ffmpeg', args, { timeout: 20000 }, (err) => {
@@ -80,15 +82,18 @@ async function processOne(id, url, tmpDir) {
   const ext = (() => {
     try { return path.extname(new URL(url).pathname).slice(0, 5) || '.img' } catch { return '.img' }
   })()
-  const tmpSrc = path.join(tmpDir, `${id.replace(/[^a-zA-Z0-9._-]/g, '_')}${ext}`)
-  const dest   = path.join(LOGOS_DIR, `${id}.webp`)
+  const tmpSrc  = path.join(tmpDir, `${id.replace(/[^a-zA-Z0-9._-]/g, '_')}${ext}`)
+  const dest1x  = path.join(LOGOS_DIR, `${id}.webp`)
+  const dest2x  = path.join(LOGOS_DIR, `${id}@2x.webp`)
 
   const dl = await downloadToFile(url, tmpSrc)
   if (!dl.ok) return { ok: false, reason: dl.reason }
 
-  const rs = await resizeToWebp(tmpSrc, dest)
+  const rs1x = await resizeToWebp(tmpSrc, dest1x, LOGO_SIZE)
+  const rs2x = rs1x.ok ? await resizeToWebp(tmpSrc, dest2x, LOGO_SIZE_2X) : rs1x
   try { fs.unlinkSync(tmpSrc) } catch {}
-  if (!rs.ok) return { ok: false, reason: rs.reason }
+  if (!rs1x.ok) return { ok: false, reason: rs1x.reason }
+  if (!rs2x.ok) return { ok: false, reason: rs2x.reason }
 
   return { ok: true }
 }
@@ -114,7 +119,7 @@ async function main() {
 
   const pending = []
   for (const [id, url] of current) {
-    if (manifest[id]?.url === url && manifest[id]?.ok) continue
+    if (manifest[id]?.url === url && manifest[id]?.ok && manifest[id]?.v === LOGO_VERSION) continue
     pending.push([id, url])
   }
 
@@ -136,10 +141,10 @@ async function main() {
       process.stdout.write(`\r  [${done}/${total}]`)
     }
     if (result.ok) {
-      manifest[id] = { url, ok: true }
+      manifest[id] = { url, ok: true, v: LOGO_VERSION }
       ok++
     } else {
-      manifest[id] = { url, ok: false, reason: result.reason }
+      manifest[id] = { url, ok: false, v: LOGO_VERSION, reason: result.reason }
       failureCounts[result.reason] = (failureCounts[result.reason] || 0) + 1
       failed++
     }
