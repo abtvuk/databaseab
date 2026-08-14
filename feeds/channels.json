@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-14T17:14:52.145Z",
-  "total": 11444,
+  "generated": "2026-08-14T17:15:22.311Z",
+  "total": 11445,
   "channels": [
     {
       "id": "AndorraTV.ad",
@@ -1371752,6 +1371752,45 @@
       "replaced_by": null,
       "streamUrls": [
         "https://live2.tensila.com/heart-v-1.heartar/hls/live/mystream.m3u8"
+      ],
+      "streamMeta": [],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 0,
+        "consecutiveGeoFailures": 0,
+        "lastSeen": null,
+        "lastProbed": null,
+        "recentResults": []
+      }
+    },
+    {
+      "id": "arubatvplus.aw",
+      "name": "ArubaTV +",
+      "country": "AW",
+      "categories": [],
+      "languages": [],
+      "channelLogo": "",
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "abtv",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://rtmpcontrol.com:1936/atvplus/ngrp:atvplus_all/playlist.m3u8"
       ],
       "streamMeta": [],
       "referrer": null,
