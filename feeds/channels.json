@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-14T17:33:47.861Z",
-  "total": 11445,
+  "generated": "2026-08-14T17:47:20.833Z",
+  "total": 11446,
   "channels": [
     {
       "id": "AndorraTV.ad",
@@ -1371789,6 +1371789,45 @@
       "replaced_by": null,
       "streamUrls": [
         "https://rtmpcontrol.com:1936/atvplus/ngrp:atvplus_all/playlist.m3u8"
+      ],
+      "streamMeta": [],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 0,
+        "consecutiveGeoFailures": 0,
+        "lastSeen": null,
+        "lastProbed": null,
+        "recentResults": []
+      }
+    },
+    {
+      "id": "ebs.et",
+      "name": "EBS",
+      "country": "ET",
+      "categories": [],
+      "languages": [],
+      "channelLogo": "",
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "abtv",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://rpn.bozztv.com/ebstv/ebstv/index.m3u8"
       ],
       "streamMeta": [],
       "referrer": null,
