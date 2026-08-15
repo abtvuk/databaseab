@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-15T12:22:00.832Z",
-  "total": 11447,
+  "generated": "2026-08-15T12:33:41.532Z",
+  "total": 11448,
   "channels": [
     {
       "id": "AndorraTV.ad",
@@ -1384463,6 +1384463,45 @@
       "source": "abtv",
       "replaced_by": null,
       "streamUrls": [],
+      "streamMeta": [],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 0,
+        "consecutiveGeoFailures": 0,
+        "lastSeen": null,
+        "lastProbed": null,
+        "recentResults": []
+      }
+    },
+    {
+      "id": "tdk42.kz",
+      "name": "TDK 42",
+      "country": "KZ",
+      "categories": [],
+      "languages": [],
+      "channelLogo": "",
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "abtv",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://live-tdk42kz.cdnvideo.ru/tdk42kz/tdk42kz_720.smil/playlist.m3u8"
+      ],
       "streamMeta": [],
       "referrer": null,
       "userAgent": null,
