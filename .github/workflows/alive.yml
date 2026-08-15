@@ -24,7 +24,11 @@ jobs:
           install-ffprobe: 'true'
 
       - name: Check alive channels
-        run: node scripts/alive.js
+        run: |
+          b1=$(awk 'NR>2{sub(/:/,"",$1); if($1!="lo"){rx+=$2; tx+=$10}} END{print rx+tx}' /proc/net/dev)
+          node scripts/alive.js
+          b2=$(awk 'NR>2{sub(/:/,"",$1); if($1!="lo"){rx+=$2; tx+=$10}} END{print rx+tx}' /proc/net/dev)
+          echo "network bytes: $((b2-b1))"
 
       - name: Commit results
         run: |
