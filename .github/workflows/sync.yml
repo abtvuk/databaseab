@@ -23,7 +23,11 @@ jobs:
           install-ffprobe: 'true'
 
       - name: Sync from iptv-org
-        run: node scripts/sync.js
+        run: |
+          b1=$(awk 'NR>2{sub(/:/,"",$1); if($1!="lo"){rx+=$2; tx+=$10}} END{print rx+tx}' /proc/net/dev)
+          node scripts/sync.js
+          b2=$(awk 'NR>2{sub(/:/,"",$1); if($1!="lo"){rx+=$2; tx+=$10}} END{print rx+tx}' /proc/net/dev)
+          echo "network bytes: $((b2-b1))"
 
       - name: Commit updated channel list
         run: |
@@ -44,7 +48,11 @@ jobs:
           exit 1
 
       - name: Optimize channel logos
-        run: node scripts/logos.js
+        run: |
+          b1=$(awk 'NR>2{sub(/:/,"",$1); if($1!="lo"){rx+=$2; tx+=$10}} END{print rx+tx}' /proc/net/dev)
+          node scripts/logos.js
+          b2=$(awk 'NR>2{sub(/:/,"",$1); if($1!="lo"){rx+=$2; tx+=$10}} END{print rx+tx}' /proc/net/dev)
+          echo "network bytes: $((b2-b1))"
 
       - name: Commit optimized logos
         run: |
