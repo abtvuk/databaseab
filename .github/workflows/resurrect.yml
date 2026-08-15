@@ -23,10 +23,8 @@ jobs:
         with:
           install-ffprobe: 'true'
 
-      - name: Diagnose SilkWayCinema
-        run: |
-          curl -s ifconfig.me
-          curl -v -A "abtv-probe/1.0" --max-time 12 "https://stream.qazcdn.net/ex6r514/silkwaycinema/index.m3u8"
+      - name: Runner IP
+        run: curl -s ifconfig.me
 
       - name: Resurrect dead channels
         run: node scripts/resurrect.js
