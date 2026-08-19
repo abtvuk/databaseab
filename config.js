@@ -107,6 +107,7 @@ module.exports = {
     '213.91.179.28',
 
     // Geo Blocked
+    'adpnetworkhd-cmd.github.io',
     'zabava-htlive.cdn.ngenix.net',
   ],
 
