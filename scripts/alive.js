@@ -1,7 +1,7 @@
 const cfg = require('../config')
 const { probeUrl, probeUrlThorough, isCriticalChannel, runWithConcurrency, recordAlive, recordDead, isDueForProbe,
         progressBar, applyRetirementAndPruning, classifyFailSource, checkpoint,
-        isUnplayableDomain, stripUnplayableLinks, restoreUnplayableLinks, isNameBlocked, isManualBlocked, loadFeed, saveFeed,
+        isUnplayableDomain, stripUnplayableLinks, restoreUnplayableLinks, mergeBlockedLinks, isNameBlocked, isManualBlocked, loadFeed, saveFeed,
         recordLinkResult, pruneChannelLinks, saveDeadLinks, saveFeedFormatted } = require('./probe')
 const fs   = require('fs')
 const path = require('path')
@@ -58,12 +58,13 @@ async function main() {
     const { keepUrls, keepMeta, blocked } = stripUnplayableLinks({ streamUrls: originalUrls, streamMeta: originalMeta })
 
     if (keepUrls.length) {
-      const { unplayableArchived, domainBlockedLinks, ...rest } = c
+      const { unplayableArchived, domainBlockedLinks: oldBlocked, ...rest } = c
       const revived = { ...rest, streamUrls: keepUrls, streamMeta: keepMeta }
-      if (blocked.length) revived.domainBlockedLinks = blocked
+      const merged = mergeBlockedLinks(oldBlocked, blocked)
+      if (merged.length) revived.domainBlockedLinks = merged
       restoredFromArchive.push(revived)
     } else {
-      stillArchived.push({ ...c, streamUrls: [], streamMeta: [], domainBlockedLinks: blocked })
+      stillArchived.push({ ...c, streamUrls: [], streamMeta: [], domainBlockedLinks: mergeBlockedLinks(c.domainBlockedLinks, blocked) })
     }
   }
   if (restoredFromArchive.length) {
@@ -85,7 +86,7 @@ async function main() {
     if (keepUrls.length) {
       ch.streamUrls = keepUrls
       ch.streamMeta = keepMeta
-      ch.domainBlockedLinks = [...(ch.domainBlockedLinks || []), ...blocked]
+      ch.domainBlockedLinks = mergeBlockedLinks(ch.domainBlockedLinks, blocked)
       trimmedCount++
     } else {
       toArchive.push({ ...ch, streamUrls: [], domainBlockedLinks: [...(ch.domainBlockedLinks || []), ...blocked] })
@@ -146,7 +147,7 @@ async function main() {
     if (blocked.length) {
       ch.streamUrls = keepUrls
       ch.streamMeta = keepMeta
-      ch.domainBlockedLinks = [...(ch.domainBlockedLinks || []), ...blocked]
+      ch.domainBlockedLinks = mergeBlockedLinks(ch.domainBlockedLinks, blocked)
     }
 
     const urls = ch.streamUrls || []

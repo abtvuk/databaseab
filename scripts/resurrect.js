@@ -4,7 +4,7 @@ const fs   = require('fs')
 const { probeUrl, probeUrlThorough, isCriticalChannel, runWithConcurrency, recordAlive, recordDead, isDueForResurrect,
         checkpoint, progressBar, applyRetirementAndPruning, classifyFailSource,
         recordLinkResult, pruneChannelLinks, saveDeadLinks,
-        isNameBlocked, isManualBlocked, stripUnplayableLinks, saveFeedFormatted } = require('./probe')
+        isNameBlocked, isManualBlocked, stripUnplayableLinks, mergeBlockedLinks, saveFeedFormatted } = require('./probe')
 
 const CHECKPOINT_EVERY = 1000
 const OUTPUT_PATH      = path.resolve(cfg.output.channels)
@@ -55,7 +55,7 @@ async function main() {
     if (blocked.length) {
       ch.streamUrls = keepUrls
       ch.streamMeta = keepMeta
-      ch.domainBlockedLinks = [...(ch.domainBlockedLinks || []), ...blocked]
+      ch.domainBlockedLinks = mergeBlockedLinks(ch.domainBlockedLinks, blocked)
     }
 
     const urls = ch.streamUrls || []
