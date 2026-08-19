@@ -106,8 +106,8 @@ module.exports = {
     '212.70.131.37',
     '213.91.179.28',
 
-     // Geo Blocked
-     'zabava-htlive.cdn.ngenix.net',
+    // Geo Blocked
+    'zabava-htlive.cdn.ngenix.net',
   ],
 
   unsupportedVideoCodecs: [
