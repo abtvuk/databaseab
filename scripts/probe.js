@@ -86,6 +86,17 @@ function stripUnplayableLinks(ch) {
   return { keepUrls, keepMeta, blocked }
 }
 
+function mergeBlockedLinks(existing, incoming) {
+  const list = [...(existing || [])]
+  const idxByUrl = new Map(list.map((b, i) => [b.url, i]))
+  for (const b of incoming) {
+    const i = idxByUrl.get(b.url)
+    if (i === undefined) { idxByUrl.set(b.url, list.length); list.push(b) }
+    else list[i] = { ...list[i], blockedAt: b.blockedAt }
+  }
+  return list
+}
+
 function restoreUnplayableLinks(ch) {
   const blocked = ch.domainBlockedLinks || []
   const stillBlocked = [], restored = []
@@ -757,4 +768,4 @@ function applyRetirementAndPruning(channels) {
   return { retired: toRetire.length, pruned: toPrune.length }
 }
 
-module.exports = { probeUrl, probeUrlThorough, isCriticalChannel, runWithConcurrency, recordAlive, recordDead, isDueForProbe, isDueForResurrect, checkpoint, progressBar, classifyFailSource, isDueForRetirement, isChannelDeadForever, applyRetirementAndPruning, isUnplayableDomain, stripUnplayableLinks, restoreUnplayableLinks, isNameBlocked, isManualBlocked, loadFeed, saveFeed, recordLinkResult, pruneChannelLinks, saveDeadLinks, saveFeedFormatted, stringifyFeed, formatChannel }
+module.exports = { probeUrl, probeUrlThorough, isCriticalChannel, runWithConcurrency, recordAlive, recordDead, isDueForProbe, isDueForResurrect, checkpoint, progressBar, classifyFailSource, isDueForRetirement, isChannelDeadForever, applyRetirementAndPruning, isUnplayableDomain, stripUnplayableLinks, restoreUnplayableLinks, mergeBlockedLinks, isNameBlocked, isManualBlocked, loadFeed, saveFeed, recordLinkResult, pruneChannelLinks, saveDeadLinks, saveFeedFormatted, stringifyFeed, formatChannel }
