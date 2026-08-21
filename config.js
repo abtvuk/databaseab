@@ -92,6 +92,7 @@ module.exports = {
     'ncdn.telewebion.ir',
     'ott.watch',
     'shd-gcp-live.edgenextcdn.net',
+    'sra72yz.s.gy',
     'srs.unsj.edu.ar',
     'telewebion.com',
     'tglmp04',
