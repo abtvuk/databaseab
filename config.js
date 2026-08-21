@@ -89,6 +89,7 @@ module.exports = {
   nameBlocklist: ['Pluto TV'],
 
   unplayableDomains: [
+    'cdn.qd.je',
     'ncdn.telewebion.ir',
     'ott.watch',
     'shd-gcp-live.edgenextcdn.net',
