@@ -92,7 +92,6 @@ module.exports = {
     'cdn.qd.je',
     'ncdn.telewebion.ir',
     'ott.watch',
-    'Paradise-91/ParaTV/main/streams/equidia/live2',
     'shd-gcp-live.edgenextcdn.net',
     'sra72yz.s.gy',
     'srs.unsj.edu.ar',
@@ -112,6 +111,9 @@ module.exports = {
     '206.212.244.63',
     '212.70.131.37',
     '213.91.179.28',
+
+
+    'Paradise-91/ParaTV/main/streams/equidia/live2',
 
     // Too flaky
     '181.78.197.59',
