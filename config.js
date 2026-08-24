@@ -92,7 +92,7 @@ module.exports = {
     'cdn.qd.je',
     'ncdn.telewebion.ir',
     'ott.watch',
-    'raw.githubusercontent.com/Paradise-91/ParaTV',
+    'Paradise-91/ParaTV/main/streams/equidia/live2',
     'shd-gcp-live.edgenextcdn.net',
     'sra72yz.s.gy',
     'srs.unsj.edu.ar',
