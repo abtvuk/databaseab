@@ -541,19 +541,20 @@ function isDueForResurrect(uptime) {
 }
 
 const CHANNEL_KEY_ORDER = [
-  'id', 'name', 'country', 'categories', 'languages', 'channelLogo', 'website',
-  'tv', 'radio', 'ytId',
+  'id', 'name', 'country', 'categories', 'languages', 'channelLogo', 'probeLogo', 'website',
+  'tv', 'radio', 'ytId', 'legacyYtId',
   'alive', 'probe', 'hide', 'needsProxy', 'geoBlocked',
   'editName', 'editCountry', 'editChannelLogo',
   'source', 'replaced_by',
   'streamUrls', 'removedLinks', 'streamMeta', 'referrer', 'userAgent',
-  'uptime',
+  'uptime', 'profileCheck',
 ]
 const UPTIME_KEY_ORDER = [
   'score', 'aliveCount', 'totalCount',
   'consecutiveAlive', 'consecutiveFailures', 'consecutiveGeoFailures',
   'lastSeen', 'lastProbed', 'recentResults',
 ]
+const PROFILE_CHECK_KEY_ORDER = ['valid', 'lastChecked']
 const STREAM_META_KEY_ORDER = ['source', 'referrer', 'userAgent', 'linkTotalCount', 'linkAliveCount']
 
 function orderKeys(obj, order) {
@@ -567,6 +568,7 @@ function orderKeys(obj, order) {
 function formatChannel(c) {
   const ordered = orderKeys(c, CHANNEL_KEY_ORDER)
   if (ordered.uptime) ordered.uptime = orderKeys(ordered.uptime, UPTIME_KEY_ORDER)
+  if (ordered.profileCheck) ordered.profileCheck = orderKeys(ordered.profileCheck, PROFILE_CHECK_KEY_ORDER)
   if (Array.isArray(ordered.streamMeta)) ordered.streamMeta = ordered.streamMeta.map(m => orderKeys(m, STREAM_META_KEY_ORDER))
   return ordered
 }
