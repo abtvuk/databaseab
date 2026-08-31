@@ -21,7 +21,7 @@ module.exports = {
     resurrect:    '0 */4 * * *',
     checkAlive:   '0 */5 * * *',
     checkYoutube: '0 */6 * * *',
-    ytProfile:    '0 3 1,15 * *',
+    ytProfile:    '0 3 * * *',
   },
 
   probe: {
@@ -39,6 +39,8 @@ module.exports = {
 
   profileCheck: {
     intervalDays: 14,
+    resolvePaceMs: 350,
+    apiPaceMs: 150,
   },
 
   probeFrequency: {
