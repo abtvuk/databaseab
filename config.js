@@ -21,6 +21,7 @@ module.exports = {
     resurrect:    '0 */4 * * *',
     checkAlive:   '0 */5 * * *',
     checkYoutube: '0 */6 * * *',
+    ytProfile:    '0 3 1,15 * *',
   },
 
   probe: {
@@ -30,8 +31,14 @@ module.exports = {
     concurrency:        24,
     segmentConcurrency: 8,
     youtubeConcurrency: 6,
+    profileConcurrency: 5,
+    resolveConcurrency: 5,
     slowThresholdMs:    8000,
     uptimeScoreMin:     30,
+  },
+
+  profileCheck: {
+    intervalDays: 14,
   },
 
   probeFrequency: {

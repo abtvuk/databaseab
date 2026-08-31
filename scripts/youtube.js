@@ -1,5 +1,5 @@
 const cfg  = require('../config')
-const { runWithConcurrency, recordAlive, isDueForProbe, progressBar, saveFeedFormatted } = require('./probe')
+const { runWithConcurrency, recordAlive, recordDead, isDueForProbe, progressBar, saveFeedFormatted } = require('./probe')
 const fs   = require('fs')
 const path = require('path')
 
@@ -100,6 +100,8 @@ async function main() {
       entry.alive  = true
       passed++
     } else {
+      entry.uptime = recordDead(entry.uptime)
+      entry.alive  = false
       unconfirmed++
     }
   })
