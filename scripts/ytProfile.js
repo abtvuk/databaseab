@@ -18,6 +18,21 @@ function isDue(profileCheck, forceAll) {
   return days >= INTERVAL_DAYS
 }
 
+function makePacer(minIntervalMs) {
+  let next = 0
+  return async function pace() {
+    const now  = Date.now()
+    const wait = Math.max(0, next - now)
+    next = Math.max(now, next) + minIntervalMs
+    if (wait) await new Promise(r => setTimeout(r, wait))
+  }
+}
+
+const paceResolve = makePacer(cfg.profileCheck?.resolvePaceMs || 350)
+const paceApi      = makePacer(cfg.profileCheck?.apiPaceMs || 150)
+
+let quotaExceeded = false
+
 async function fetchWithTimeout(url, opts = {}) {
   const ctrl = new AbortController()
   const t = setTimeout(() => ctrl.abort(), TIMEOUT_MS)
@@ -28,19 +43,20 @@ async function fetchWithTimeout(url, opts = {}) {
   }
 }
 
-async function fetchJson(url) {
+async function fetchApiJson(url) {
+  await paceApi()
   try {
     const res = await fetchWithTimeout(url)
+    if (res.status === 403 || res.status === 429) { quotaExceeded = true; return null }
     if (!res.ok) return null
-    return await res.json()
+    return { items: (await res.json()).items || [] }
   } catch {
     return null
   }
 }
 
-// no Data API quota, no forUsername
 async function resolveVanitySlug(slug) {
-  if (looksLikeVideoId(slug)) return null // refuse anything video-id-shaped, on principle
+  if (looksLikeVideoId(slug)) return null
 
   const candidates = [
     `https://www.youtube.com/${slug}`,
@@ -49,6 +65,7 @@ async function resolveVanitySlug(slug) {
   ]
 
   for (const url of candidates) {
+    await paceResolve()
     try {
       const res = await fetchWithTimeout(url, {
         redirect: 'follow',
@@ -66,7 +83,7 @@ async function resolveVanitySlug(slug) {
       m = html.match(/"channelId":"(UC[a-zA-Z0-9_-]{10,})"/)
         || html.match(/<link rel="canonical" href="https:\/\/www\.youtube\.com\/channel\/(UC[a-zA-Z0-9_-]{10,})"/)
       if (m) return m[1]
-    } catch { /* try next candidate */ }
+    } catch {}
   }
   return null
 }
@@ -76,21 +93,27 @@ function bestThumb(item) {
 }
 
 async function fetchByIds(ids, apiKey) {
-  const out = new Map()
+  const found = new Map()
+  const queriedOk = []
+
   for (let i = 0; i < ids.length; i += 50) {
     const batch = ids.slice(i, i + 50)
-    const json  = await fetchJson(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${batch.join(',')}&key=${apiKey}`)
-    for (const item of json?.items || []) out.set(item.id, bestThumb(item))
-    for (const id of batch) if (!out.has(id)) out.set(id, undefined) // queried, not found -> invalid
+    const result = await fetchApiJson(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${batch.join(',')}&key=${apiKey}`)
+    if (quotaExceeded) return { found, queriedOk }
+    if (result === null) continue
+
+    for (const item of result.items) found.set(item.id, bestThumb(item))
+    queriedOk.push(...batch)
   }
-  return out
+  return { found, queriedOk }
 }
 
 async function fetchByHandle(handle, apiKey) {
-  const json = await fetchJson(`https://www.googleapis.com/youtube/v3/channels?part=snippet&forHandle=${encodeURIComponent(handle)}&key=${apiKey}`)
-  const item = json?.items?.[0]
-  if (!item) return undefined // queried, not found -> invalid
-  return bestThumb(item)
+  const result = await fetchApiJson(`https://www.googleapis.com/youtube/v3/channels?part=snippet&forHandle=${encodeURIComponent(handle)}&key=${apiKey}`)
+  if (quotaExceeded) return { queried: false }
+  if (result === null) return { queried: false }
+  const item = result.items[0]
+  return { queried: true, avatar: item ? bestThumb(item) : undefined }
 }
 
 function loadYoutube() {
@@ -106,7 +129,7 @@ function saveYoutube(channels) {
   })
 }
 
-function applyResult(c, avatar, now) {
+function applyFound(c, avatar, now) {
   if (avatar === undefined) {
     c.profileCheck = { valid: false, lastChecked: now }
     c.alive        = false
@@ -136,7 +159,6 @@ async function main() {
   console.log(`ytProfile: eligible=${eligible.length}  due=${due.length}`)
   if (due.length === 0) return
 
-  // zero-quota resolve pass, mutates ytId in place
   const needsResolve = due.filter(c => !isChannelId(c.ytId) && !isHandle(c.ytId))
   let resolved = 0, unresolved = 0
 
@@ -153,29 +175,37 @@ async function main() {
     })
     await runWithConcurrency(tasks, cfg.probe.resolveConcurrency || 5, 2 * 60 * 60 * 1000)
   }
-  console.log(`ytProfile: resolved legacy slugs=${resolved}  unresolved(left untouched)=${unresolved}`)
+  console.log(`ytProfile: resolved=${resolved}  unresolved=${unresolved}`)
 
   const now = new Date().toISOString()
   const channelIds = due.filter(c => isChannelId(c.ytId))
   const handles     = due.filter(c => isHandle(c.ytId))
 
-  const tally = { filled: 0, updated: 0, unchanged: 0, invalidated: 0 }
+  const tally = { filled: 0, updated: 0, unchanged: 0, invalidated: 0, deferred: 0 }
 
   if (channelIds.length) {
-    const results = await fetchByIds(channelIds.map(c => c.ytId), apiKey)
-    for (const c of channelIds) tally[applyResult(c, results.get(c.ytId), now)]++
+    const { found, queriedOk } = await fetchByIds(channelIds.map(c => c.ytId), apiKey)
+    const queriedSet = new Set(queriedOk)
+    for (const c of channelIds) {
+      if (!queriedSet.has(c.ytId)) { tally.deferred++; continue }
+      tally[applyFound(c, found.get(c.ytId), now)]++
+    }
   }
 
-  if (handles.length) {
+  if (handles.length && !quotaExceeded) {
     const tasks = handles.map(c => async () => {
-      const avatar = await fetchByHandle(c.ytId, apiKey)
-      tally[applyResult(c, avatar, now)]++
+      if (quotaExceeded) { tally.deferred++; return }
+      const { queried, avatar } = await fetchByHandle(c.ytId, apiKey)
+      if (!queried) { tally.deferred++; return }
+      tally[applyFound(c, avatar, now)]++
     })
     await runWithConcurrency(tasks, cfg.probe.profileConcurrency || 5, 2 * 60 * 60 * 1000)
+  } else if (handles.length) {
+    tally.deferred += handles.length
   }
 
   saveYoutube(channels)
-  console.log(`ytProfile: filled=${tally.filled}  updated=${tally.updated}  unchanged=${tally.unchanged}  invalidated=${tally.invalidated}`)
+  console.log(`ytProfile: filled=${tally.filled}  updated=${tally.updated}  unchanged=${tally.unchanged}  invalidated=${tally.invalidated}  deferred=${tally.deferred}${quotaExceeded ? '  (quota/rate limit hit, remainder carries to next run)' : ''}`)
 }
 
 main().catch(err => { console.error(err); process.exit(1) })
