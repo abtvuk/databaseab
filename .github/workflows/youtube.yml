@@ -20,6 +20,12 @@ jobs:
       - name: Setup databaseab
         uses: ./.github/actions/setup-abtv
 
+      - name: Log runner IP
+        run: |
+          IP=$(curl -s --max-time 10 https://api.ipify.org || echo unknown)
+          echo "runner IP: $IP"
+          curl -s --max-time 10 "https://ipinfo.io/$IP/json" || true
+
       - name: Check YouTube channels
         run: node scripts/youtube.js
 
