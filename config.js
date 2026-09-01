@@ -41,6 +41,7 @@ module.exports = {
     intervalDays: 14,
     resolvePaceMs: 350,
     apiPaceMs: 150,
+    dailyUnitAllowance: 500,
   },
 
   probeFrequency: {

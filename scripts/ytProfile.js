@@ -1,10 +1,11 @@
 const cfg  = require('../config')
-const { recordDead, runWithConcurrency, saveFeedFormatted } = require('./probe')
+const { recordDead, runWithConcurrency, saveFeedFormatted, progressBar } = require('./probe')
 const fs   = require('fs')
 const path = require('path')
 
 const TIMEOUT_MS    = (cfg.probe.timeoutSeconds || 12) * 1000
 const INTERVAL_DAYS = cfg.profileCheck?.intervalDays || 14
+const DAILY_UNIT_ALLOWANCE = cfg.profileCheck?.dailyUnitAllowance || 500
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36'
 
 function isChannelId(id)  { return /^UC[a-zA-Z0-9_-]{10,}$/.test(id) }
@@ -31,7 +32,12 @@ function makePacer(minIntervalMs) {
 const paceResolve = makePacer(cfg.profileCheck?.resolvePaceMs || 350)
 const paceApi      = makePacer(cfg.profileCheck?.apiPaceMs || 150)
 
-let quotaExceeded = false
+let unitsUsed = 0
+let stopReason = null
+
+function budgetOk() {
+  return !stopReason && unitsUsed < DAILY_UNIT_ALLOWANCE
+}
 
 async function fetchWithTimeout(url, opts = {}) {
   const ctrl = new AbortController()
@@ -44,10 +50,12 @@ async function fetchWithTimeout(url, opts = {}) {
 }
 
 async function fetchApiJson(url) {
+  if (!budgetOk()) return null
+  unitsUsed++
   await paceApi()
   try {
     const res = await fetchWithTimeout(url)
-    if (res.status === 403 || res.status === 429) { quotaExceeded = true; return null }
+    if (res.status === 403 || res.status === 429) { stopReason = 'api-error'; return null }
     if (!res.ok) return null
     return { items: (await res.json()).items || [] }
   } catch {
@@ -94,23 +102,22 @@ function bestThumb(item) {
 
 async function fetchByIds(ids, apiKey) {
   const found = new Map()
-  const queriedOk = []
+  const queried = new Set()
 
   for (let i = 0; i < ids.length; i += 50) {
+    if (!budgetOk()) break
     const batch = ids.slice(i, i + 50)
     const result = await fetchApiJson(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${batch.join(',')}&key=${apiKey}`)
-    if (quotaExceeded) return { found, queriedOk }
     if (result === null) continue
-
     for (const item of result.items) found.set(item.id, bestThumb(item))
-    queriedOk.push(...batch)
+    for (const id of batch) queried.add(id)
   }
-  return { found, queriedOk }
+  return { found, queried }
 }
 
 async function fetchByHandle(handle, apiKey) {
+  if (!budgetOk()) return { queried: false }
   const result = await fetchApiJson(`https://www.googleapis.com/youtube/v3/channels?part=snippet&forHandle=${encodeURIComponent(handle)}&key=${apiKey}`)
-  if (quotaExceeded) return { queried: false }
   if (result === null) return { queried: false }
   const item = result.items[0]
   return { queried: true, avatar: item ? bestThumb(item) : undefined }
@@ -156,26 +163,24 @@ async function main() {
   const eligible = channels.filter(c => c.ytId && c.probeLogo !== false)
   const due      = eligible.filter(c => isDue(c.profileCheck, forceAll))
 
-  console.log(`ytProfile: eligible=${eligible.length}  due=${due.length}`)
+  console.log(`ytProfile: eligible=${eligible.length}  due=${due.length}  allowance=${DAILY_UNIT_ALLOWANCE}u`)
   if (due.length === 0) return
 
   const needsResolve = due.filter(c => !isChannelId(c.ytId) && !isHandle(c.ytId))
   let resolved = 0, unresolved = 0
 
   if (needsResolve.length) {
+    let done = 0
     const tasks = needsResolve.map(c => async () => {
       const canonical = await resolveVanitySlug(c.ytId)
-      if (canonical) {
-        c.legacyYtId = c.ytId
-        c.ytId       = canonical
-        resolved++
-      } else {
-        unresolved++
-      }
+      if (canonical) { c.legacyYtId = c.ytId; c.ytId = canonical; resolved++ }
+      else unresolved++
+      progressBar(++done, needsResolve.length)
     })
     await runWithConcurrency(tasks, cfg.probe.resolveConcurrency || 5, 2 * 60 * 60 * 1000)
   }
-  console.log(`ytProfile: resolved=${resolved}  unresolved=${unresolved}`)
+  console.log(`resolve: ${'resolved'.padEnd(12)}${resolved}`)
+  console.log(`resolve: ${'unresolved'.padEnd(12)}${unresolved}`)
 
   const now = new Date().toISOString()
   const channelIds = due.filter(c => isChannelId(c.ytId))
@@ -184,28 +189,28 @@ async function main() {
   const tally = { filled: 0, updated: 0, unchanged: 0, invalidated: 0, deferred: 0 }
 
   if (channelIds.length) {
-    const { found, queriedOk } = await fetchByIds(channelIds.map(c => c.ytId), apiKey)
-    const queriedSet = new Set(queriedOk)
+    const { found, queried } = await fetchByIds(channelIds.map(c => c.ytId), apiKey)
     for (const c of channelIds) {
-      if (!queriedSet.has(c.ytId)) { tally.deferred++; continue }
+      if (!queried.has(c.ytId)) { tally.deferred++; continue }
       tally[applyFound(c, found.get(c.ytId), now)]++
     }
   }
 
-  if (handles.length && !quotaExceeded) {
+  if (handles.length) {
+    let done = 0
     const tasks = handles.map(c => async () => {
-      if (quotaExceeded) { tally.deferred++; return }
       const { queried, avatar } = await fetchByHandle(c.ytId, apiKey)
-      if (!queried) { tally.deferred++; return }
-      tally[applyFound(c, avatar, now)]++
+      if (!queried) tally.deferred++
+      else tally[applyFound(c, avatar, now)]++
+      progressBar(++done, handles.length)
     })
     await runWithConcurrency(tasks, cfg.probe.profileConcurrency || 5, 2 * 60 * 60 * 1000)
-  } else if (handles.length) {
-    tally.deferred += handles.length
   }
 
   saveYoutube(channels)
-  console.log(`ytProfile: filled=${tally.filled}  updated=${tally.updated}  unchanged=${tally.unchanged}  invalidated=${tally.invalidated}  deferred=${tally.deferred}${quotaExceeded ? '  (quota/rate limit hit, remainder carries to next run)' : ''}`)
+
+  for (const [label, count] of Object.entries(tally)) console.log(`profile: ${label.padEnd(12)}${count}`)
+  console.log(`quota: used=${unitsUsed}u  allowance=${DAILY_UNIT_ALLOWANCE}u  remaining=${Math.max(0, DAILY_UNIT_ALLOWANCE - unitsUsed)}u${stopReason ? `  stopped(${stopReason})` : ''}`)
 }
 
 main().catch(err => { console.error(err); process.exit(1) })
