@@ -547,7 +547,7 @@ const CHANNEL_KEY_ORDER = [
   'editName', 'editCountry', 'editChannelLogo',
   'source', 'replaced_by',
   'streamUrls', 'removedLinks', 'streamMeta', 'referrer', 'userAgent',
-  'uptime', 'profileCheck',
+  'uptime', 'profileCheck', 'logoCheck',
 ]
 const UPTIME_KEY_ORDER = [
   'score', 'aliveCount', 'totalCount',
@@ -555,6 +555,7 @@ const UPTIME_KEY_ORDER = [
   'lastSeen', 'lastProbed', 'recentResults',
 ]
 const PROFILE_CHECK_KEY_ORDER = ['valid', 'lastChecked']
+const LOGO_CHECK_KEY_ORDER = ['lastChecked']
 const STREAM_META_KEY_ORDER = ['source', 'referrer', 'userAgent', 'linkTotalCount', 'linkAliveCount']
 
 function orderKeys(obj, order) {
@@ -569,6 +570,7 @@ function formatChannel(c) {
   const ordered = orderKeys(c, CHANNEL_KEY_ORDER)
   if (ordered.uptime) ordered.uptime = orderKeys(ordered.uptime, UPTIME_KEY_ORDER)
   if (ordered.profileCheck) ordered.profileCheck = orderKeys(ordered.profileCheck, PROFILE_CHECK_KEY_ORDER)
+  if (ordered.logoCheck) ordered.logoCheck = orderKeys(ordered.logoCheck, LOGO_CHECK_KEY_ORDER)
   if (Array.isArray(ordered.streamMeta)) ordered.streamMeta = ordered.streamMeta.map(m => orderKeys(m, STREAM_META_KEY_ORDER))
   return ordered
 }
