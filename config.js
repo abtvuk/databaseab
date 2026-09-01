@@ -21,7 +21,7 @@ module.exports = {
     resurrect:    '0 */4 * * *',
     checkAlive:   '0 */5 * * *',
     checkYoutube: '0 */6 * * *',
-    ytProfile:    '0 3 * * *',
+    ytProfile:    '0 3 * * 1,4',
   },
 
   probe: {
