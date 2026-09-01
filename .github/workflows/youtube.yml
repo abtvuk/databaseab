@@ -21,8 +21,6 @@ jobs:
         uses: ./.github/actions/setup-abtv
 
       - name: Check YouTube channels
-        env:
-          FORCE_ALL: ${{ github.event_name == 'workflow_dispatch' }}
         run: node scripts/youtube.js
 
       - name: Commit results
