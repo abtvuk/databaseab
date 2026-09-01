@@ -173,7 +173,7 @@ async function main() {
     let done = 0
     const tasks = needsResolve.map(c => async () => {
       const canonical = await resolveVanitySlug(c.ytId)
-      if (canonical) { c.legacyYtId = c.ytId; c.ytId = canonical; resolved++ }
+      if (canonical) { c.ytId = canonical; resolved++ }
       else unresolved++
       progressBar(++done, needsResolve.length)
     })
