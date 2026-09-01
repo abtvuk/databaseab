@@ -542,7 +542,7 @@ function isDueForResurrect(uptime) {
 
 const CHANNEL_KEY_ORDER = [
   'id', 'name', 'country', 'categories', 'languages', 'channelLogo', 'probeLogo', 'website',
-  'tv', 'radio', 'ytId', 'legacyYtId',
+  'tv', 'radio', 'ytId',
   'alive', 'probe', 'hide', 'needsProxy', 'geoBlocked',
   'editName', 'editCountry', 'editChannelLogo',
   'source', 'replaced_by',
