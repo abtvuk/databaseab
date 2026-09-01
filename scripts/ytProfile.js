@@ -115,6 +115,21 @@ async function fetchByIds(ids, apiKey) {
   return { found, queried }
 }
 
+async function fetchVideoOwners(videoIds, apiKey) {
+  const owners = new Map()
+  const queried = new Set()
+
+  for (let i = 0; i < videoIds.length; i += 50) {
+    if (!budgetOk()) break
+    const batch = videoIds.slice(i, i + 50)
+    const result = await fetchApiJson(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${batch.join(',')}&key=${apiKey}`)
+    if (result === null) continue
+    for (const item of result.items) owners.set(item.id, item.snippet?.channelId)
+    for (const id of batch) queried.add(id)
+  }
+  return { owners, queried }
+}
+
 async function fetchByHandle(handle, apiKey) {
   if (!budgetOk()) return { queried: false }
   const result = await fetchApiJson(`https://www.googleapis.com/youtube/v3/channels?part=snippet&forHandle=${encodeURIComponent(handle)}&key=${apiKey}`)
@@ -160,11 +175,14 @@ async function main() {
   const channels = data.channels || []
   const forceAll = process.env.FORCE_ALL === 'true'
 
-  const eligible = channels.filter(c => c.ytId && c.probeLogo !== false)
-  const due      = eligible.filter(c => isDue(c.profileCheck, forceAll))
+  const eligible   = channels.filter(c => c.ytId && c.probeLogo !== false)
+  const videoIdChannels = eligible.filter(c => looksLikeVideoId(c.ytId))
+  const otherChannels    = eligible.filter(c => !looksLikeVideoId(c.ytId))
 
-  console.log(`ytProfile: eligible=${eligible.length}  due=${due.length}  allowance=${DAILY_UNIT_ALLOWANCE}u`)
-  if (due.length === 0) return
+  const due        = otherChannels.filter(c => isDue(c.profileCheck, forceAll))
+  const dueVideoId = videoIdChannels.filter(c => isDue(c.logoCheck, forceAll))
+
+  console.log(`ytProfile: eligible=${eligible.length}  due=${due.length}  videoIdDue=${dueVideoId.length}  allowance=${DAILY_UNIT_ALLOWANCE}u`)
 
   const needsResolve = due.filter(c => !isChannelId(c.ytId) && !isHandle(c.ytId))
   let resolved = 0, unresolved = 0
@@ -179,8 +197,10 @@ async function main() {
     })
     await runWithConcurrency(tasks, cfg.probe.resolveConcurrency || 5, 2 * 60 * 60 * 1000)
   }
-  console.log(`resolve: ${'resolved'.padEnd(12)}${resolved}`)
-  console.log(`resolve: ${'unresolved'.padEnd(12)}${unresolved}`)
+  if (needsResolve.length) {
+    console.log(`resolve: ${'resolved'.padEnd(12)}${resolved}`)
+    console.log(`resolve: ${'unresolved'.padEnd(12)}${unresolved}`)
+  }
 
   const now = new Date().toISOString()
   const channelIds = due.filter(c => isChannelId(c.ytId))
@@ -207,9 +227,34 @@ async function main() {
     await runWithConcurrency(tasks, cfg.probe.profileConcurrency || 5, 2 * 60 * 60 * 1000)
   }
 
+  if (due.length) for (const [label, count] of Object.entries(tally)) console.log(`profile: ${label.padEnd(12)}${count}`)
+
+  const videoTally = { filled: 0, updated: 0, unchanged: 0, deferred: 0 }
+
+  if (dueVideoId.length) {
+    const { owners, queried: videosQueried } = await fetchVideoOwners(dueVideoId.map(c => c.ytId), apiKey)
+    const ownerIds = [...new Set([...owners.values()].filter(Boolean))]
+    const { found: avatars, queried: channelsQueried } = ownerIds.length ? await fetchByIds(ownerIds, apiKey) : { found: new Map(), queried: new Set() }
+
+    for (const c of dueVideoId) {
+      if (!videosQueried.has(c.ytId)) { videoTally.deferred++; continue }
+      const ownerId = owners.get(c.ytId)
+      if (!ownerId || !channelsQueried.has(ownerId)) { videoTally.deferred++; continue }
+      c.logoCheck = { lastChecked: now }
+      const avatar = avatars.get(ownerId)
+      if (avatar && avatar !== c.channelLogo) {
+        videoTally[c.channelLogo ? 'updated' : 'filled']++
+        c.channelLogo = avatar
+      } else {
+        videoTally.unchanged++
+      }
+    }
+  }
+
+  if (dueVideoId.length) for (const [label, count] of Object.entries(videoTally)) console.log(`videoLogo: ${label.padEnd(12)}${count}`)
+
   saveYoutube(channels)
 
-  for (const [label, count] of Object.entries(tally)) console.log(`profile: ${label.padEnd(12)}${count}`)
   console.log(`quota: used=${unitsUsed}u  allowance=${DAILY_UNIT_ALLOWANCE}u  remaining=${Math.max(0, DAILY_UNIT_ALLOWANCE - unitsUsed)}u${stopReason ? `  stopped(${stopReason})` : ''}`)
 }
 
