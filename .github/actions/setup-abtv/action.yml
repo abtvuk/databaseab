@@ -19,5 +19,18 @@ runs:
       if: inputs.install-ffprobe == 'true'
       shell: bash
       run: |
-        sudo apt-get install -y --no-install-recommends ffmpeg
+        success=false
+        for i in 1 2 3; do
+          if sudo apt-get install -y --no-install-recommends ffmpeg; then
+            success=true
+            break
+          fi
+          echo "attempt $i failed, refreshing package index and retrying..."
+          sudo apt-get update
+          sleep $((i * 10))
+        done
+        if [ "$success" != "true" ]; then
+          echo "::error::ffmpeg install failed after 3 attempts, likely a stuck upstream mirror"
+          exit 1
+        fi
         ffprobe -version
