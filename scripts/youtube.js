@@ -7,9 +7,9 @@ const TIMEOUT_MS = (cfg.probe.timeoutSeconds || 10) * 1000
 const UA = 'abtv-probe/1.0'
 
 function liveOembedUrlFor(ytId) {
-  if (ytId.startsWith('UC')) return `https://www.youtube.com/oembed?url=${encodeURIComponent(`https://www.youtube.com/channel/${ytId}/live`)}&format=json`
-  if (ytId.startsWith('@'))  return `https://www.youtube.com/oembed?url=${encodeURIComponent(`https://www.youtube.com/${ytId}/live`)}&format=json`
-  return `https://www.youtube.com/oembed?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${ytId}`)}&format=json`
+  if (ytId.startsWith('UC')) return { url: `https://www.youtube.com/oembed?url=${encodeURIComponent(`https://www.youtube.com/channel/${ytId}/live`)}&format=json`, kind: 'channel' }
+  if (ytId.startsWith('@'))  return { url: `https://www.youtube.com/oembed?url=${encodeURIComponent(`https://www.youtube.com/${ytId}/live`)}&format=json`, kind: 'channel' }
+  return { url: `https://www.youtube.com/oembed?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${ytId}`)}&format=json`, kind: 'video' }
 }
 
 function makePacer(minIntervalMs) {
@@ -48,7 +48,7 @@ async function fetchWithRetry(url, opts, retries) {
 
 async function probeYtId(ytId) {
   await pace()
-  const url  = liveOembedUrlFor(ytId)
+  const { url, kind } = liveOembedUrlFor(ytId)
   const opts = { headers: { 'User-Agent': UA, 'Accept-Language': 'en-US,en;q=0.9' }, redirect: 'follow' }
   const start = Date.now()
 
@@ -61,9 +61,10 @@ async function probeYtId(ytId) {
     }
 
     const durationMs = Date.now() - start
-    if (res.status === 200) return { outcome: 'alive',      status: 200, durationMs }
-    if (res.status === 404) return { outcome: 'dead',       status: 404, durationMs }
-    return                    { outcome: 'ambiguous', status: res.status, durationMs }
+    if (res.status === 200) return { outcome: 'alive', status: 200, durationMs }
+    const deadStatus = kind === 'channel' ? 400 : 404
+    if (res.status === deadStatus) return { outcome: 'dead', status: res.status, durationMs }
+    return { outcome: 'ambiguous', status: res.status, durationMs }
   } catch {
     return { outcome: 'ambiguous', status: 0, durationMs: Date.now() - start }
   }
@@ -134,6 +135,8 @@ async function main() {
       entry.alive  = false
       markedDead++
     } else {
+      entry.uptime = entry.uptime || {}
+      entry.uptime.lastProbed = new Date().toISOString()
       skippedNegative++
     }
   }
