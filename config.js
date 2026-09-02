@@ -31,7 +31,7 @@ module.exports = {
     concurrency:        24,
     segmentConcurrency: 8,
     youtubeConcurrency: 2,
-    youtubePaceMs:      1500,
+    youtubePaceMs:      500,
     youtubeMinMsPerRequest: 40,
     youtubeMaxAmbiguousRate: 0.15,
     profileConcurrency: 5,
