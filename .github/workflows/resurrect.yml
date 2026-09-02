@@ -23,8 +23,11 @@ jobs:
         with:
           install-ffprobe: 'true'
 
-      - name: Runner IP
-        run: curl -s ifconfig.me
+      - name: Log runner IP
+        run: |
+          IP=$(curl -s --max-time 10 https://api.ipify.org || echo unknown)
+          echo "runner IP: $IP"
+          curl -s --max-time 10 "https://ipinfo.io/$IP/json" || true
 
       - name: Resurrect dead channels
         run: |

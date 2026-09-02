@@ -23,6 +23,12 @@ jobs:
         with:
           install-ffprobe: 'true'
 
+      - name: Log runner IP
+        run: |
+          IP=$(curl -s --max-time 10 https://api.ipify.org || echo unknown)
+          echo "runner IP: $IP"
+          curl -s --max-time 10 "https://ipinfo.io/$IP/json" || true
+
       - name: Check alive channels
         run: |
           b1=$(awk 'NR>2{sub(/:/,"",$1); if($1!="lo"){rx+=$2; tx+=$10}} END{print rx+tx}' /proc/net/dev)
