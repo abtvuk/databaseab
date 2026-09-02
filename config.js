@@ -30,7 +30,7 @@ module.exports = {
     retryDelaySeconds:  3,
     concurrency:        24,
     segmentConcurrency: 8,
-    youtubeConcurrency: 6,
+    youtubeConcurrency: 2,
     youtubePaceMs:      1500,
     youtubeMinMsPerRequest: 40,
     youtubeMaxAmbiguousRate: 0.15,
