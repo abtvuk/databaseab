@@ -135,8 +135,7 @@ async function main() {
       entry.alive  = false
       markedDead++
     } else {
-      entry.uptime = entry.uptime || {}
-      entry.uptime.lastProbed = new Date().toISOString()
+      if (entry.uptime) entry.uptime.lastProbed = new Date().toISOString()
       skippedNegative++
     }
   }
