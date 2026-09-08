@@ -61,7 +61,15 @@ async function probeYtId(ytId) {
     }
 
     const durationMs = Date.now() - start
-    if (res.status === 200) return { outcome: 'alive', status: 200, durationMs }
+    if (res.status === 200) {
+      let body = ''
+      try { body = await res.text() } catch {}
+      let parsed = null
+      try { parsed = JSON.parse(body) } catch {}
+      if (parsed && typeof parsed === 'object' && (parsed.title || parsed.type)) return { outcome: 'alive', status: 200, durationMs }
+      if (body.trim() === 'Forbidden') return { outcome: 'dead', status: 200, durationMs }
+      return { outcome: 'ambiguous', status: 200, durationMs }
+    }
     const deadStatus = kind === 'channel' ? 400 : 404
     if (res.status === deadStatus) return { outcome: 'dead', status: res.status, durationMs }
     return { outcome: 'ambiguous', status: res.status, durationMs }
@@ -105,7 +113,7 @@ async function main() {
     const result = await probeYtId(ch.ytId)
     done++
     progressBar(done, total)
-    statusCounts[result.status] = (statusCounts[result.status] || 0) + 1
+    statusCounts[`${result.status} ${result.outcome}`] = (statusCounts[`${result.status} ${result.outcome}`] || 0) + 1
     results.push({ ch, result })
   })
 
@@ -146,9 +154,9 @@ async function main() {
   console.log(`alive: ${passed}  dead: ${markedDead}  deferred: ${skippedNegative}`)
   console.log(`sanity: avgMs=${avgMsPerRequest.toFixed(1)}  ambiguousRate=${(ambiguousRate * 100).toFixed(1)}%  trustNegatives=${trustNegatives}`)
   if (!trustNegatives) console.log(`::warning::suspected systemic failure (rate limit/block) - all negative results this run were discarded, will retry next cycle`)
-  for (const [status, count] of Object.entries(statusCounts).sort((a, b) => b[1] - a[1])) {
-    const label = status === '0' ? 'timeout' : status
-    console.log(`  ${label.padEnd(7)}  ${count}`)
+  for (const [key, count] of Object.entries(statusCounts).sort((a, b) => b[1] - a[1])) {
+    const label = key.startsWith('0 ') ? key.replace('0 ', 'timeout ') : key
+    console.log(`  ${label.padEnd(16)}  ${count}`)
   }
 }
 
