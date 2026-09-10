@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-10T16:07:41.711Z",
+  "generated": "2026-09-10T22:02:12.946Z",
   "total": 11485,
   "channels": [
     {
@@ -4496,7 +4496,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -4504,12 +4504,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:03:00.207Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:07.214Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -8163,7 +8163,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 99,
+          "linkTotalCount": 100,
           "linkAliveCount": 90
         }
       ],
@@ -8172,12 +8172,12 @@
       "uptime": {
         "score": 40,
         "aliveCount": 162,
-        "totalCount": 201,
+        "totalCount": 202,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 3,
+        "consecutiveFailures": 4,
         "lastSeen": "2026-09-08T05:12:30.780Z",
-        "lastProbed": "2026-09-10T00:02:15.989Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:33.563Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0]
       },
       "slow": true
     },
@@ -11220,7 +11220,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -11239,28 +11239,28 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 101,
-          "linkAliveCount": 80
+          "linkTotalCount": 102,
+          "linkAliveCount": 81
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 81,
-          "linkAliveCount": 60
+          "linkTotalCount": 82,
+          "linkAliveCount": 61
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 0,
-        "aliveCount": 141,
-        "totalCount": 166,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 10,
-        "lastSeen": "2026-09-01T10:12:37.073Z",
-        "lastProbed": "2026-09-10T00:02:12.079Z",
-        "recentResults": [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "score": 10,
+        "aliveCount": 142,
+        "totalCount": 167,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T22:00:42.863Z",
+        "lastProbed": "2026-09-10T22:00:42.863Z",
+        "recentResults": [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
       }
     },
     {
@@ -14865,7 +14865,7 @@
       ],
       "streamMeta": [
         {
-          "linkTotalCount": 3
+          "linkTotalCount": 4
         }
       ],
       "referrer": null,
@@ -14873,12 +14873,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:50.742Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:01.338Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -24777,21 +24777,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 74,
+          "linkTotalCount": 75,
           "linkAliveCount": 23
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 20,
+        "score": 10,
         "aliveCount": 23,
-        "totalCount": 76,
+        "totalCount": 77,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 8,
+        "consecutiveFailures": 9,
         "lastSeen": "2026-09-03T05:40:02.496Z",
-        "lastProbed": "2026-09-10T00:01:45.603Z",
-        "recentResults": [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:08.788Z",
+        "recentResults": [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -24917,7 +24917,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -24935,21 +24935,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 33,
-          "linkAliveCount": 21
+          "linkTotalCount": 34,
+          "linkAliveCount": 22
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
         "score": 50,
-        "aliveCount": 21,
-        "totalCount": 33,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
-        "lastSeen": "2026-09-09T20:13:14.820Z",
-        "lastProbed": "2026-09-10T10:13:52.520Z",
-        "recentResults": [0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0]
+        "aliveCount": 22,
+        "totalCount": 34,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T22:00:03.898Z",
+        "lastProbed": "2026-09-10T22:00:03.898Z",
+        "recentResults": [0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1]
       }
     },
     {
@@ -30905,7 +30905,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -30923,21 +30923,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 60,
-          "linkAliveCount": 15
+          "linkTotalCount": 61,
+          "linkAliveCount": 16
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
         "score": 50,
-        "aliveCount": 38,
-        "totalCount": 107,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
-        "lastSeen": "2026-09-09T20:13:09.536Z",
-        "lastProbed": "2026-09-10T10:13:39.602Z",
-        "recentResults": [0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0]
+        "aliveCount": 39,
+        "totalCount": 108,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T21:59:56.848Z",
+        "lastProbed": "2026-09-10T21:59:56.848Z",
+        "recentResults": [1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1]
       }
     },
     {
@@ -31274,7 +31274,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -31292,21 +31292,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 131,
-          "linkAliveCount": 92
+          "linkTotalCount": 132,
+          "linkAliveCount": 93
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 50,
-        "aliveCount": 188,
-        "totalCount": 274,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
-        "lastSeen": "2026-09-09T20:13:18.559Z",
-        "lastProbed": "2026-09-10T10:13:45.243Z",
-        "recentResults": [0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0]
+        "score": 60,
+        "aliveCount": 189,
+        "totalCount": 275,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T22:00:01.788Z",
+        "lastProbed": "2026-09-10T22:00:01.788Z",
+        "recentResults": [1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1]
       }
     },
     {
@@ -32241,21 +32241,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 104,
+          "linkTotalCount": 105,
           "linkAliveCount": 47
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 10,
+        "score": 0,
         "aliveCount": 64,
-        "totalCount": 135,
+        "totalCount": 136,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 9,
+        "consecutiveFailures": 10,
         "lastSeen": "2026-08-29T05:10:25.662Z",
-        "lastProbed": "2026-09-09T04:01:02.151Z",
-        "recentResults": [0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:25.866Z",
+        "recentResults": [1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -32862,7 +32862,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -32880,21 +32880,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 52,
-          "linkAliveCount": 8
+          "linkTotalCount": 53,
+          "linkAliveCount": 9
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 10,
-        "aliveCount": 13,
-        "totalCount": 79,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 5,
-        "lastSeen": "2026-09-05T00:01:54.360Z",
-        "lastProbed": "2026-09-09T04:01:03.223Z",
-        "recentResults": [0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+        "score": 20,
+        "aliveCount": 14,
+        "totalCount": 80,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T22:00:24.954Z",
+        "lastProbed": "2026-09-10T22:00:24.954Z",
+        "recentResults": [0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1]
       }
     },
     {
@@ -33940,7 +33940,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 46,
+          "linkTotalCount": 47,
           "linkAliveCount": 4
         }
       ],
@@ -33949,12 +33949,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 5,
-        "totalCount": 54,
+        "totalCount": 55,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 18,
+        "consecutiveFailures": 19,
         "lastSeen": "2026-08-17T21:00:24.478Z",
-        "lastProbed": "2026-09-10T00:02:28.764Z",
-        "recentResults": [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:36.173Z",
+        "recentResults": [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -34018,7 +34018,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -34029,35 +34029,28 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://video01.brascast.com/juan6318/juan6318/playlist.m3u8",
-        "https://video01.kshost.com.br:4443/juan6318/juan6318/playlist.m3u8"
+        "https://video01.brascast.com/juan6318/juan6318/playlist.m3u8"
       ],
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 101,
-          "linkAliveCount": 94
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 79
+          "linkTotalCount": 102,
+          "linkAliveCount": 95
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
         "score": 50,
-        "aliveCount": 106,
-        "totalCount": 205,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 3,
-        "lastSeen": "2026-09-09T05:12:43.752Z",
-        "lastProbed": "2026-09-10T08:01:36.166Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0]
+        "aliveCount": 107,
+        "totalCount": 206,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T22:00:30.197Z",
+        "lastProbed": "2026-09-10T22:00:30.197Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1]
       }
     },
     {
@@ -38801,7 +38794,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 71,
+          "linkTotalCount": 72,
           "linkAliveCount": 60
         }
       ],
@@ -38810,12 +38803,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 60,
-        "totalCount": 71,
+        "totalCount": 72,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 10,
+        "consecutiveFailures": 11,
         "lastSeen": "2026-09-02T09:37:22.106Z",
-        "lastProbed": "2026-09-10T00:02:08.682Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:48.166Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -41452,7 +41445,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 71,
+          "linkTotalCount": 72,
           "linkAliveCount": 59
         }
       ],
@@ -41461,12 +41454,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 59,
-        "totalCount": 71,
+        "totalCount": 72,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 10,
+        "consecutiveFailures": 11,
         "lastSeen": "2026-09-02T09:37:45.399Z",
-        "lastProbed": "2026-09-10T00:02:09.895Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:49.375Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -41908,7 +41901,7 @@
       ],
       "streamMeta": [
         {
-          "linkTotalCount": 3
+          "linkTotalCount": 4
         }
       ],
       "referrer": null,
@@ -41916,12 +41909,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:28.869Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:37.312Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       },
       "prunedAt": "2026-07-23T06:52:56.379Z"
     },
@@ -43180,7 +43173,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 71,
+          "linkTotalCount": 72,
           "linkAliveCount": 61
         }
       ],
@@ -43189,12 +43182,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 61,
-        "totalCount": 71,
+        "totalCount": 72,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 10,
+        "consecutiveFailures": 11,
         "lastSeen": "2026-09-02T09:37:52.719Z",
-        "lastProbed": "2026-09-10T00:02:12.221Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:53.872Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -46770,7 +46763,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 71,
+          "linkTotalCount": 72,
           "linkAliveCount": 61
         }
       ],
@@ -46779,12 +46772,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 61,
-        "totalCount": 71,
+        "totalCount": 72,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 10,
+        "consecutiveFailures": 11,
         "lastSeen": "2026-09-02T09:38:20.537Z",
-        "lastProbed": "2026-09-10T00:02:14.646Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:54.095Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -47168,7 +47161,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -47186,21 +47179,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 106,
-          "linkAliveCount": 90
+          "linkTotalCount": 107,
+          "linkAliveCount": 91
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
         "score": 60,
-        "aliveCount": 114,
-        "totalCount": 191,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
-        "lastSeen": "2026-09-09T20:13:22.086Z",
-        "lastProbed": "2026-09-10T10:13:49.269Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0]
+        "aliveCount": 115,
+        "totalCount": 192,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T22:00:01.400Z",
+        "lastProbed": "2026-09-10T22:00:01.400Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1]
       }
     },
     {
@@ -49556,21 +49549,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 101,
+          "linkTotalCount": 102,
           "linkAliveCount": 93
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 50,
+        "score": 40,
         "aliveCount": 154,
-        "totalCount": 175,
+        "totalCount": 176,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 5,
+        "consecutiveFailures": 6,
         "lastSeen": "2026-09-07T15:16:27.350Z",
-        "lastProbed": "2026-09-10T08:01:10.190Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:02.292Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -50734,7 +50727,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 71,
+          "linkTotalCount": 72,
           "linkAliveCount": 61
         }
       ],
@@ -50743,12 +50736,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 61,
-        "totalCount": 71,
+        "totalCount": 72,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 10,
+        "consecutiveFailures": 11,
         "lastSeen": "2026-09-02T09:38:50.856Z",
-        "lastProbed": "2026-09-10T00:02:14.948Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:52.618Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -51870,21 +51863,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 100,
+          "linkTotalCount": 101,
           "linkAliveCount": 87
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 30,
+        "score": 20,
         "aliveCount": 148,
-        "totalCount": 177,
+        "totalCount": 178,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 7,
+        "consecutiveFailures": 8,
         "lastSeen": "2026-09-05T20:17:24.101Z",
-        "lastProbed": "2026-09-10T00:01:46.938Z",
-        "recentResults": [1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:09.098Z",
+        "recentResults": [1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -53311,7 +53304,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -53329,21 +53322,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 81,
-          "linkAliveCount": 27
+          "linkTotalCount": 82,
+          "linkAliveCount": 28
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 20,
-        "aliveCount": 69,
-        "totalCount": 203,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
-        "lastSeen": "2026-09-09T05:12:35.201Z",
-        "lastProbed": "2026-09-09T20:13:30.509Z",
-        "recentResults": [0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0]
+        "score": 30,
+        "aliveCount": 70,
+        "totalCount": 204,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T22:00:28.011Z",
+        "lastProbed": "2026-09-10T22:00:28.011Z",
+        "recentResults": [1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1]
       },
       "slow": true
     },
@@ -55464,7 +55457,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -55472,12 +55465,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:28.492Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:40.900Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -56009,7 +56002,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -56017,12 +56010,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:30.314Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:44.473Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -56103,7 +56096,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -56111,12 +56104,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:30.886Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:44.884Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -56197,7 +56190,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -56205,12 +56198,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:31.437Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:46.378Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -56385,7 +56378,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -56393,12 +56386,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:31.780Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:47.210Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -56526,7 +56519,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -56534,12 +56527,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:32.095Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:47.995Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -56620,7 +56613,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -56628,12 +56621,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:32.205Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:48.413Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -56667,7 +56660,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -56675,12 +56668,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:32.766Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:49.633Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -56761,7 +56754,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -56769,12 +56762,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:33.082Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:49.838Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -56945,7 +56938,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -56953,12 +56946,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:33.800Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:50.025Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -57475,7 +57468,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -57483,12 +57476,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:34.204Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:50.769Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -57660,7 +57653,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -57668,12 +57661,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:34.739Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:50.762Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -57707,7 +57700,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -57715,12 +57708,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:35.065Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:50.860Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -60029,7 +60022,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -60037,12 +60030,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:35.511Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:51.833Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -60734,7 +60727,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -60752,21 +60745,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 108,
-          "linkAliveCount": 96
+          "linkTotalCount": 109,
+          "linkAliveCount": 97
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
         "score": 70,
-        "aliveCount": 119,
-        "totalCount": 167,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
-        "lastSeen": "2026-09-09T15:11:00.563Z",
-        "lastProbed": "2026-09-10T10:14:22.181Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0]
+        "aliveCount": 120,
+        "totalCount": 168,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T21:59:55.228Z",
+        "lastProbed": "2026-09-10T21:59:55.228Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1]
       }
     },
     {
@@ -65671,7 +65664,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -65679,12 +65672,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:36.593Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:51.935Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -68131,21 +68124,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 46,
+          "linkTotalCount": 47,
           "linkAliveCount": 5
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 30,
+        "score": 20,
         "aliveCount": 9,
-        "totalCount": 141,
+        "totalCount": 142,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
+        "consecutiveFailures": 3,
         "lastSeen": "2026-09-09T08:01:44.145Z",
-        "lastProbed": "2026-09-09T20:13:32.518Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0]
+        "lastProbed": "2026-09-10T22:00:25.179Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0]
       },
       "slow": true
     },
@@ -70908,7 +70901,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 58,
+          "linkTotalCount": 59,
           "linkAliveCount": 9
         }
       ],
@@ -70917,12 +70910,12 @@
       "uptime": {
         "score": 20,
         "aliveCount": 28,
-        "totalCount": 158,
+        "totalCount": 159,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 5,
+        "consecutiveFailures": 6,
         "lastSeen": "2026-09-06T12:01:21.467Z",
-        "lastProbed": "2026-09-10T00:01:52.008Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:10.168Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -80486,21 +80479,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 98,
+          "linkTotalCount": 99,
           "linkAliveCount": 92
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 70,
+        "score": 60,
         "aliveCount": 127,
-        "totalCount": 137,
+        "totalCount": 138,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
+        "consecutiveFailures": 3,
         "lastSeen": "2026-09-09T10:18:15.297Z",
-        "lastProbed": "2026-09-10T10:14:09.372Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0]
+        "lastProbed": "2026-09-10T21:59:59.344Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
       }
     },
     {
@@ -82979,7 +82972,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -82997,21 +82990,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 93,
-          "linkAliveCount": 64
+          "linkTotalCount": 94,
+          "linkAliveCount": 65
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 0,
-        "aliveCount": 81,
-        "totalCount": 119,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 11,
-        "lastSeen": "2026-08-31T15:06:25.611Z",
-        "lastProbed": "2026-09-10T00:02:39.684Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "score": 10,
+        "aliveCount": 82,
+        "totalCount": 120,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T22:00:56.847Z",
+        "lastProbed": "2026-09-10T22:00:56.847Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
       }
     },
     {
@@ -94987,7 +94980,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 109,
+          "linkTotalCount": 110,
           "linkAliveCount": 76
         }
       ],
@@ -94996,12 +94989,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 78,
-        "totalCount": 113,
+        "totalCount": 114,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 11,
+        "consecutiveFailures": 12,
         "lastSeen": "2026-08-31T20:17:24.021Z",
-        "lastProbed": "2026-09-10T00:02:37.395Z",
-        "recentResults": [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:53.486Z",
+        "recentResults": [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -96872,7 +96865,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 103,
+          "linkTotalCount": 104,
           "linkAliveCount": 78
         }
       ],
@@ -96881,12 +96874,12 @@
       "uptime": {
         "score": 30,
         "aliveCount": 104,
-        "totalCount": 140,
+        "totalCount": 141,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 6,
+        "consecutiveFailures": 7,
         "lastSeen": "2026-09-05T15:10:54.192Z",
-        "lastProbed": "2026-09-10T00:02:24.058Z",
-        "recentResults": [1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:46.317Z",
+        "recentResults": [1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -103224,21 +103217,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 95,
+          "linkTotalCount": 96,
           "linkAliveCount": 90
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 70,
+        "score": 60,
         "aliveCount": 161,
-        "totalCount": 175,
+        "totalCount": 176,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
+        "consecutiveFailures": 3,
         "lastSeen": "2026-09-09T10:20:31.356Z",
-        "lastProbed": "2026-09-10T10:14:24.095Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0]
+        "lastProbed": "2026-09-10T21:59:57.697Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0]
       }
     },
     {
@@ -114330,7 +114323,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -114338,12 +114331,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:03:02.000Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:17.130Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -116050,7 +116043,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -116068,21 +116061,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 111,
-          "linkAliveCount": 84
+          "linkTotalCount": 112,
+          "linkAliveCount": 85
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 20,
-        "aliveCount": 168,
-        "totalCount": 241,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 4,
-        "lastSeen": "2026-09-07T05:11:24.530Z",
-        "lastProbed": "2026-09-10T00:01:50.669Z",
-        "recentResults": [1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+        "score": 30,
+        "aliveCount": 169,
+        "totalCount": 242,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T22:00:16.585Z",
+        "lastProbed": "2026-09-10T22:00:16.585Z",
+        "recentResults": [1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1]
       },
       "browserUnplayable": true
     },
@@ -117860,7 +117853,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -117868,12 +117861,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:58.005Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:14.822Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -119068,7 +119061,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -119076,12 +119069,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:41.373Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:56.146Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -119115,7 +119108,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -119123,12 +119116,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:41.484Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:56.130Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -119332,7 +119325,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -119340,12 +119333,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:41.876Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:56.793Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -119514,7 +119507,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -119522,12 +119515,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:42.308Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:56.797Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -119721,7 +119714,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -119729,12 +119722,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:42.964Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:56.890Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -119768,7 +119761,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -119776,12 +119769,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:43.173Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:57.838Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -120265,7 +120258,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -120273,12 +120266,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:42.898Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:57.082Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -120647,7 +120640,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -120655,12 +120648,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:42.982Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:57.881Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -123878,7 +123871,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -123886,12 +123879,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:45.244Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:58.617Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -123923,7 +123916,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -123931,12 +123924,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:46.812Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:58.576Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -125757,7 +125750,7 @@
       ],
       "streamMeta": [
         {
-          "linkTotalCount": 95,
+          "linkTotalCount": 96,
           "linkAliveCount": 49
         }
       ],
@@ -125766,13 +125759,13 @@
       "uptime": {
         "score": 0,
         "aliveCount": 120,
-        "totalCount": 202,
+        "totalCount": 203,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 18,
+        "consecutiveFailures": 19,
         "consecutiveGeoFailures": 0,
         "lastSeen": "2026-08-22T15:49:50.653Z",
-        "lastProbed": "2026-09-10T00:03:08.159Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:18.246Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       },
       "slow": true
     },
@@ -126090,7 +126083,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -126098,12 +126091,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:47.424Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:59.374Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -126135,7 +126128,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -126143,12 +126136,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:47.859Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:01.416Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -126180,7 +126173,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -126188,12 +126181,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:48.810Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:01.447Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -129320,7 +129313,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -129338,21 +129331,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 95,
-          "linkAliveCount": 91
+          "linkTotalCount": 96,
+          "linkAliveCount": 92
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
         "score": 70,
-        "aliveCount": 173,
-        "totalCount": 198,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
-        "lastSeen": "2026-09-09T10:23:18.293Z",
-        "lastProbed": "2026-09-10T10:14:27.467Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0]
+        "aliveCount": 174,
+        "totalCount": 199,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T21:59:56.545Z",
+        "lastProbed": "2026-09-10T21:59:56.545Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1]
       }
     },
     {
@@ -134007,7 +134000,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -134025,21 +134018,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 134,
-          "linkAliveCount": 81
+          "linkTotalCount": 135,
+          "linkAliveCount": 82
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 50,
-        "aliveCount": 164,
-        "totalCount": 257,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
-        "lastSeen": "2026-09-09T20:13:54.347Z",
-        "lastProbed": "2026-09-10T10:14:27.701Z",
-        "recentResults": [1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0]
+        "score": 60,
+        "aliveCount": 165,
+        "totalCount": 258,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T21:59:56.888Z",
+        "lastProbed": "2026-09-10T21:59:56.888Z",
+        "recentResults": [1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1]
       }
     },
     {
@@ -135336,28 +135329,28 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 27,
+          "linkTotalCount": 28,
           "linkAliveCount": 19
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 88,
+          "linkTotalCount": 89,
           "linkAliveCount": 38
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 50,
+        "score": 40,
         "aliveCount": 114,
-        "totalCount": 151,
+        "totalCount": 152,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 5,
+        "consecutiveFailures": 6,
         "lastSeen": "2026-09-07T15:26:28.501Z",
-        "lastProbed": "2026-09-10T08:01:14.967Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:03.498Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -138879,7 +138872,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -138897,21 +138890,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 129,
-          "linkAliveCount": 89
+          "linkTotalCount": 130,
+          "linkAliveCount": 90
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 50,
-        "aliveCount": 168,
-        "totalCount": 249,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
-        "lastSeen": "2026-09-09T20:13:55.917Z",
-        "lastProbed": "2026-09-10T10:14:30.980Z",
-        "recentResults": [0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0]
+        "score": 60,
+        "aliveCount": 169,
+        "totalCount": 250,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T21:59:56.856Z",
+        "lastProbed": "2026-09-10T21:59:56.856Z",
+        "recentResults": [1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1]
       }
     },
     {
@@ -144348,7 +144341,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 88,
+          "linkTotalCount": 89,
           "linkAliveCount": 70
         }
       ],
@@ -144357,12 +144350,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 131,
-        "totalCount": 160,
+        "totalCount": 161,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 18,
+        "consecutiveFailures": 19,
         "lastSeen": "2026-08-24T08:17:06.138Z",
-        "lastProbed": "2026-09-10T00:02:49.680Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:03.495Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -152795,7 +152788,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 72,
+          "linkTotalCount": 73,
           "linkAliveCount": 22
         }
       ],
@@ -152804,12 +152797,12 @@
       "uptime": {
         "score": 10,
         "aliveCount": 48,
-        "totalCount": 103,
+        "totalCount": 104,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 7,
+        "consecutiveFailures": 8,
         "lastSeen": "2026-08-31T16:01:37.191Z",
-        "lastProbed": "2026-09-09T04:01:09.947Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:00.804Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -153706,21 +153699,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 109,
+          "linkTotalCount": 110,
           "linkAliveCount": 47
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 30,
+        "score": 20,
         "aliveCount": 108,
-        "totalCount": 234,
+        "totalCount": 235,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 4,
+        "consecutiveFailures": 5,
         "lastSeen": "2026-09-07T05:11:23.127Z",
-        "lastProbed": "2026-09-10T00:02:04.419Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:22.622Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -158503,7 +158496,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 60,
+          "linkTotalCount": 61,
           "linkAliveCount": 10
         }
       ],
@@ -158512,12 +158505,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 55,
-        "totalCount": 181,
+        "totalCount": 182,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 10,
+        "consecutiveFailures": 11,
         "lastSeen": "2026-08-28T21:57:15.329Z",
-        "lastProbed": "2026-09-10T00:02:43.340Z",
-        "recentResults": [0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:02.845Z",
+        "recentResults": [0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -159970,7 +159963,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -159978,12 +159971,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:46.356Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:00.566Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -163505,7 +163498,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -163513,12 +163506,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:03:20.193Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:33.909Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -183084,7 +183077,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 106,
+          "linkTotalCount": 107,
           "linkAliveCount": 48
         }
       ],
@@ -183093,12 +183086,12 @@
       "uptime": {
         "score": 40,
         "aliveCount": 95,
-        "totalCount": 237,
+        "totalCount": 238,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 3,
+        "consecutiveFailures": 4,
         "lastSeen": "2026-09-08T05:33:39.003Z",
-        "lastProbed": "2026-09-10T00:01:44.294Z",
-        "recentResults": [1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:01.707Z",
+        "recentResults": [0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0]
       }
     },
     {
@@ -185478,7 +185471,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 90,
+          "linkTotalCount": 91,
           "linkAliveCount": 76
         }
       ],
@@ -185487,12 +185480,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 104,
-        "totalCount": 118,
+        "totalCount": 119,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 11,
+        "consecutiveFailures": 12,
         "lastSeen": "2026-08-31T20:28:38.023Z",
-        "lastProbed": "2026-09-10T00:02:48.453Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:01.654Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -186184,28 +186177,28 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 82,
+          "linkTotalCount": 83,
           "linkAliveCount": 47
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 75,
+          "linkTotalCount": 76,
           "linkAliveCount": 40
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 50,
+        "score": 40,
         "aliveCount": 108,
-        "totalCount": 195,
+        "totalCount": 196,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 5,
+        "consecutiveFailures": 6,
         "lastSeen": "2026-09-07T15:32:59.615Z",
-        "lastProbed": "2026-09-10T08:01:57.026Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:35.295Z",
+        "recentResults": [1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -189255,21 +189248,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 93,
+          "linkTotalCount": 94,
           "linkAliveCount": 41
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 60,
+        "score": 50,
         "aliveCount": 73,
-        "totalCount": 216,
+        "totalCount": 217,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
+        "consecutiveFailures": 3,
         "lastSeen": "2026-09-09T15:11:59.394Z",
-        "lastProbed": "2026-09-10T10:14:40.632Z",
-        "recentResults": [1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0]
+        "lastProbed": "2026-09-10T21:59:58.045Z",
+        "recentResults": [0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0]
       }
     },
     {
@@ -190916,7 +190909,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 86,
+          "linkTotalCount": 87,
           "linkAliveCount": 53
         }
       ],
@@ -190925,12 +190918,12 @@
       "uptime": {
         "score": 60,
         "aliveCount": 62,
-        "totalCount": 124,
+        "totalCount": 125,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 3,
+        "consecutiveFailures": 4,
         "lastSeen": "2026-09-09T00:19:30.621Z",
-        "lastProbed": "2026-09-10T08:01:06.801Z",
-        "recentResults": [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0]
+        "lastProbed": "2026-09-10T21:59:58.041Z",
+        "recentResults": [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0]
       }
     },
     {
@@ -200826,21 +200819,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 135,
+          "linkTotalCount": 136,
           "linkAliveCount": 76
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 30,
+        "score": 20,
         "aliveCount": 162,
-        "totalCount": 272,
+        "totalCount": 273,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 6,
+        "consecutiveFailures": 7,
         "lastSeen": "2026-09-05T05:35:27.021Z",
-        "lastProbed": "2026-09-10T00:01:48.908Z",
-        "recentResults": [1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:07.089Z",
+        "recentResults": [0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -201121,27 +201114,27 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 15,
+          "linkTotalCount": 16,
           "linkAliveCount": 5
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 73,
+          "linkTotalCount": 74,
           "linkAliveCount": 19
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 54
+          "linkTotalCount": 55
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": "Mozilla/5.0 Windows NT 10.0; Win64; x64 AppleWebKit/537.36 KHTML, like Gecko Chrome/144.0.0.0 Safari/537.36",
-          "linkTotalCount": 54
+          "linkTotalCount": 55
         }
       ],
       "referrer": null,
@@ -201149,12 +201142,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 85,
-        "totalCount": 144,
+        "totalCount": 145,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 10,
+        "consecutiveFailures": 11,
         "lastSeen": "2026-09-02T15:17:45.706Z",
-        "lastProbed": "2026-09-10T00:03:30.041Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:02:12.933Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -201475,14 +201468,14 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 88,
+          "linkTotalCount": 89,
           "linkAliveCount": 76
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 71,
+          "linkTotalCount": 72,
           "linkAliveCount": 2
         }
       ],
@@ -201491,12 +201484,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 112,
-        "totalCount": 210,
+        "totalCount": 211,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 11,
+        "consecutiveFailures": 12,
         "lastSeen": "2026-08-31T20:30:47.214Z",
-        "lastProbed": "2026-09-10T00:02:57.576Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:10.624Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       },
       "slow": true
     },
@@ -201520,19 +201513,19 @@
       ],
       "streamMeta": [
         {
-          "linkTotalCount": 90,
+          "linkTotalCount": 91,
           "linkAliveCount": 79
         }
       ],
       "uptime": {
         "score": 0,
         "aliveCount": 109,
-        "totalCount": 120,
+        "totalCount": 121,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 11,
+        "consecutiveFailures": 12,
         "lastSeen": "2026-08-31T20:30:25.228Z",
-        "lastProbed": "2026-09-10T00:02:50.049Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:07.666Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -203448,7 +203441,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -203467,27 +203460,26 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 115,
-          "linkAliveCount": 59
+          "linkTotalCount": 116,
+          "linkAliveCount": 60
         },
         {
-          "linkTotalCount": 86,
-          "linkAliveCount": 43
+          "linkTotalCount": 87,
+          "linkAliveCount": 44
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 20,
-        "aliveCount": 83,
-        "totalCount": 230,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 7,
-        "lastSeen": "2026-09-04T10:13:24.872Z",
-        "lastProbed": "2026-09-10T00:01:59.863Z",
-        "recentResults": [0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
-      },
-      "slow": true
+        "score": 30,
+        "aliveCount": 84,
+        "totalCount": 231,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T22:00:25.029Z",
+        "lastProbed": "2026-09-10T22:00:25.029Z",
+        "recentResults": [1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1]
+      }
     },
     {
       "id": "KilisuciTV.id",
@@ -206619,7 +206611,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 45,
+          "linkTotalCount": 46,
           "linkAliveCount": 1
         }
       ],
@@ -206628,12 +206620,12 @@
       "uptime": {
         "score": 10,
         "aliveCount": 64,
-        "totalCount": 150,
+        "totalCount": 151,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 3,
+        "consecutiveFailures": 4,
         "lastSeen": "2026-09-06T16:14:07.270Z",
-        "lastProbed": "2026-09-09T04:01:09.654Z",
-        "recentResults": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:31.975Z",
+        "recentResults": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]
       }
     },
     {
@@ -206667,20 +206659,20 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 15,
+          "linkTotalCount": 16,
           "linkAliveCount": 5
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 52
+          "linkTotalCount": 53
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 52
+          "linkTotalCount": 53
         }
       ],
       "referrer": null,
@@ -206688,12 +206680,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 5,
-        "totalCount": 146,
+        "totalCount": 147,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 10,
+        "consecutiveFailures": 11,
         "lastSeen": "2026-09-02T15:16:51.679Z",
-        "lastProbed": "2026-09-10T00:02:28.153Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:11.321Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -207448,7 +207440,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -207462,21 +207454,21 @@
       ],
       "streamMeta": [
         {
-          "linkTotalCount": 92,
-          "linkAliveCount": 80
+          "linkTotalCount": 93,
+          "linkAliveCount": 81
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 10,
-        "aliveCount": 154,
-        "totalCount": 212,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 6,
-        "lastSeen": "2026-09-04T20:01:55.953Z",
-        "lastProbed": "2026-09-09T04:01:33.453Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+        "score": 20,
+        "aliveCount": 155,
+        "totalCount": 213,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T22:01:17.435Z",
+        "lastProbed": "2026-09-10T22:01:17.435Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1]
       },
       "slow": true
     },
@@ -208542,7 +208534,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -208556,21 +208548,21 @@
       ],
       "streamMeta": [
         {
-          "linkTotalCount": 101,
-          "linkAliveCount": 81
+          "linkTotalCount": 102,
+          "linkAliveCount": 82
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
         "score": 20,
-        "aliveCount": 161,
-        "totalCount": 225,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 7,
-        "lastSeen": "2026-09-04T15:33:07.128Z",
-        "lastProbed": "2026-09-10T00:02:26.973Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+        "aliveCount": 162,
+        "totalCount": 226,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T22:00:57.300Z",
+        "lastProbed": "2026-09-10T22:00:57.300Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1]
       },
       "slow": true
     },
@@ -208790,21 +208782,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 15,
+          "linkTotalCount": 16,
           "linkAliveCount": 5
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 73,
+          "linkTotalCount": 74,
           "linkAliveCount": 19
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 54
+          "linkTotalCount": 55
         }
       ],
       "referrer": null,
@@ -208812,12 +208804,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 65,
-        "totalCount": 191,
+        "totalCount": 192,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 10,
+        "consecutiveFailures": 11,
         "lastSeen": "2026-09-02T15:17:53.780Z",
-        "lastProbed": "2026-09-10T00:03:03.088Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:49.066Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -214631,7 +214623,7 @@
       ],
       "streamMeta": [
         {
-          "linkTotalCount": 77,
+          "linkTotalCount": 78,
           "linkAliveCount": 21
         }
       ],
@@ -214640,12 +214632,12 @@
       "uptime": {
         "score": 20,
         "aliveCount": 50,
-        "totalCount": 137,
+        "totalCount": 138,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
+        "consecutiveFailures": 3,
         "lastSeen": "2026-09-09T00:19:55.168Z",
-        "lastProbed": "2026-09-09T20:14:52.114Z",
-        "recentResults": [1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0]
+        "lastProbed": "2026-09-10T22:00:46.117Z",
+        "recentResults": [0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0]
       },
       "slow": true
     },
@@ -230231,21 +230223,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 28,
+          "linkTotalCount": 29,
           "linkAliveCount": 21
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 60,
+        "score": 50,
         "aliveCount": 19,
-        "totalCount": 26,
+        "totalCount": 27,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 3,
+        "consecutiveFailures": 4,
         "lastSeen": "2026-09-08T20:39:14.773Z",
-        "lastProbed": "2026-09-10T08:01:10.896Z",
-        "recentResults": [1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:01.658Z",
+        "recentResults": [1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0]
       }
     },
     {
@@ -230751,7 +230743,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -230770,14 +230762,14 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 27,
-          "linkAliveCount": 18
+          "linkTotalCount": 28,
+          "linkAliveCount": 19
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 90,
+          "linkTotalCount": 91,
           "linkAliveCount": 55
         }
       ],
@@ -230785,13 +230777,13 @@
       "userAgent": null,
       "uptime": {
         "score": 40,
-        "aliveCount": 121,
-        "totalCount": 162,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 6,
-        "lastSeen": "2026-09-07T00:46:00.574Z",
-        "lastProbed": "2026-09-10T00:01:51.726Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
+        "aliveCount": 122,
+        "totalCount": 163,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T22:00:24.453Z",
+        "lastProbed": "2026-09-10T22:00:24.453Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1]
       }
     },
     {
@@ -235844,21 +235836,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 28,
+          "linkTotalCount": 29,
           "linkAliveCount": 21
         }
       ],
       "referrer": null,
       "userAgent": "#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
       "uptime": {
-        "score": 40,
+        "score": 30,
         "aliveCount": 21,
-        "totalCount": 28,
+        "totalCount": 29,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 6,
+        "consecutiveFailures": 7,
         "lastSeen": "2026-09-07T00:47:08.590Z",
-        "lastProbed": "2026-09-10T00:01:45.292Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:05.565Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]
       },
       "domainBlockedLinks": [
         {
@@ -236709,7 +236701,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -236717,12 +236709,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:03:22.623Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:36.391Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -236756,7 +236748,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -236764,12 +236756,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:03:23.377Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:37.584Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -241487,25 +241479,25 @@
       ],
       "streamMeta": [
         {
-          "linkTotalCount": 7,
+          "linkTotalCount": 8,
           "linkAliveCount": 4
         },
         {
-          "linkTotalCount": 7,
+          "linkTotalCount": 8,
           "linkAliveCount": 2
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 57,
+        "score": 50,
         "aliveCount": 4,
-        "totalCount": 7,
+        "totalCount": 8,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 3,
+        "consecutiveFailures": 4,
         "lastSeen": "2026-09-08T20:42:45.751Z",
-        "lastProbed": "2026-09-10T08:01:57.192Z",
-        "recentResults": [1, 1, 1, 1, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:47.329Z",
+        "recentResults": [1, 1, 1, 1, 0, 0, 0, 0]
       }
     },
     {
@@ -241536,21 +241528,21 @@
       ],
       "streamMeta": [
         {
-          "linkTotalCount": 6,
+          "linkTotalCount": 7,
           "linkAliveCount": 2
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 33,
+        "score": 29,
         "aliveCount": 2,
-        "totalCount": 6,
+        "totalCount": 7,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 4,
+        "consecutiveFailures": 5,
         "lastSeen": "2026-09-07T15:50:24.405Z",
-        "lastProbed": "2026-09-10T00:02:06.888Z",
-        "recentResults": [1, 1, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:28.535Z",
+        "recentResults": [1, 1, 0, 0, 0, 0, 0]
       },
       "slow": true
     },
@@ -242507,21 +242499,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 106,
+          "linkTotalCount": 107,
           "linkAliveCount": 88
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 50,
+        "score": 40,
         "aliveCount": 148,
-        "totalCount": 178,
+        "totalCount": 179,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 5,
+        "consecutiveFailures": 6,
         "lastSeen": "2026-09-08T00:19:51.899Z",
-        "lastProbed": "2026-09-10T08:01:08.520Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T21:59:59.454Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -245699,17 +245691,17 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
-          "linkTotalCount": 65,
+          "linkTotalCount": 66,
           "linkAliveCount": 36
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 70
+          "linkTotalCount": 71
         },
         {
-          "linkTotalCount": 70
+          "linkTotalCount": 71
         }
       ],
       "referrer": null,
@@ -245717,12 +245709,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 39,
-        "totalCount": 86,
+        "totalCount": 87,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 11,
+        "consecutiveFailures": 12,
         "lastSeen": "2026-08-31T10:15:10.788Z",
-        "lastProbed": "2026-09-10T00:03:01.847Z",
-        "recentResults": [1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:15.146Z",
+        "recentResults": [1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -247919,14 +247911,14 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 37,
+          "linkTotalCount": 38,
           "linkAliveCount": 15
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 50
+          "linkTotalCount": 51
         }
       ],
       "referrer": null,
@@ -247934,12 +247926,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 15,
-        "totalCount": 50,
+        "totalCount": 51,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 16,
+        "consecutiveFailures": 17,
         "lastSeen": "2026-08-22T03:07:55.539Z",
-        "lastProbed": "2026-09-10T00:03:21.533Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:35.924Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       },
       "slow": true
     },
@@ -249192,7 +249184,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 100,
+          "linkTotalCount": 101,
           "linkAliveCount": 78
         }
       ],
@@ -249201,12 +249193,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 95,
-        "totalCount": 120,
+        "totalCount": 121,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 10,
+        "consecutiveFailures": 11,
         "lastSeen": "2026-09-02T10:10:25.527Z",
-        "lastProbed": "2026-09-10T00:02:45.601Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:28.796Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -249479,21 +249471,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 98,
+          "linkTotalCount": 99,
           "linkAliveCount": 86
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 40,
+        "score": 30,
         "aliveCount": 149,
-        "totalCount": 173,
+        "totalCount": 174,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 4,
+        "consecutiveFailures": 5,
         "lastSeen": "2026-09-08T08:01:11.618Z",
-        "lastProbed": "2026-09-10T00:01:44.550Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:04.544Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -260311,7 +260303,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -260319,12 +260311,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:55.204Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:08.653Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -260706,7 +260698,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -260714,12 +260706,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:55.981Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:09.241Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -261242,21 +261234,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 92,
+          "linkTotalCount": 93,
           "linkAliveCount": 61
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 30,
+        "score": 20,
         "aliveCount": 120,
-        "totalCount": 164,
+        "totalCount": 165,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 7,
+        "consecutiveFailures": 8,
         "lastSeen": "2026-09-04T15:49:55.792Z",
-        "lastProbed": "2026-09-10T00:01:47.415Z",
-        "recentResults": [1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:10.514Z",
+        "recentResults": [1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -264245,7 +264237,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -264263,21 +264255,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 101,
-          "linkAliveCount": 58
+          "linkTotalCount": 102,
+          "linkAliveCount": 59
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
         "score": 40,
-        "aliveCount": 96,
-        "totalCount": 207,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
-        "lastSeen": "2026-09-09T00:21:57.604Z",
-        "lastProbed": "2026-09-09T20:15:06.309Z",
-        "recentResults": [0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0]
+        "aliveCount": 97,
+        "totalCount": 208,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T22:00:07.017Z",
+        "lastProbed": "2026-09-10T22:00:07.017Z",
+        "recentResults": [1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1]
       }
     },
     {
@@ -274574,7 +274566,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -274592,21 +274584,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 103,
-          "linkAliveCount": 64
+          "linkTotalCount": 104,
+          "linkAliveCount": 65
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
         "score": 30,
-        "aliveCount": 89,
-        "totalCount": 135,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 7,
-        "lastSeen": "2026-09-06T00:21:54.491Z",
-        "lastProbed": "2026-09-10T00:01:46.170Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+        "aliveCount": 90,
+        "totalCount": 136,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T22:00:09.673Z",
+        "lastProbed": "2026-09-10T22:00:09.673Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1]
       }
     },
     {
@@ -276630,7 +276622,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 88,
+          "linkTotalCount": 89,
           "linkAliveCount": 75
         }
       ],
@@ -276639,12 +276631,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 148,
-        "totalCount": 177,
+        "totalCount": 178,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 12,
+        "consecutiveFailures": 13,
         "lastSeen": "2026-08-30T05:17:18.713Z",
-        "lastProbed": "2026-09-10T00:02:54.777Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:09.640Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -277477,21 +277469,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 108,
+          "linkTotalCount": 109,
           "linkAliveCount": 77
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 40,
+        "score": 30,
         "aliveCount": 141,
-        "totalCount": 221,
+        "totalCount": 222,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 6,
+        "consecutiveFailures": 7,
         "lastSeen": "2026-09-06T20:12:37.432Z",
-        "lastProbed": "2026-09-10T00:01:43.630Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:04.341Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]
       },
       "slow": true
     },
@@ -288408,14 +288400,14 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 19,
+          "linkTotalCount": 20,
           "linkAliveCount": 11
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 52
+          "linkTotalCount": 53
         }
       ],
       "referrer": null,
@@ -288423,12 +288415,12 @@
       "uptime": {
         "score": 20,
         "aliveCount": 11,
-        "totalCount": 52,
+        "totalCount": 53,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
+        "consecutiveFailures": 3,
         "lastSeen": "2026-09-09T00:24:58.984Z",
-        "lastProbed": "2026-09-09T20:15:25.394Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0]
+        "lastProbed": "2026-09-10T22:00:43.695Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0]
       }
     },
     {
@@ -289369,7 +289361,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -289387,21 +289379,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 91,
-          "linkAliveCount": 46
+          "linkTotalCount": 92,
+          "linkAliveCount": 47
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 10,
-        "aliveCount": 120,
-        "totalCount": 213,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
-        "lastSeen": "2026-09-08T12:03:23.843Z",
-        "lastProbed": "2026-09-09T05:14:45.117Z",
-        "recentResults": [1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0]
+        "score": 20,
+        "aliveCount": 121,
+        "totalCount": 214,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T22:01:14.976Z",
+        "lastProbed": "2026-09-10T22:01:14.976Z",
+        "recentResults": [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1]
       },
       "slow": true
     },
@@ -294861,7 +294853,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 111,
+          "linkTotalCount": 112,
           "linkAliveCount": 60
         }
       ],
@@ -294870,12 +294862,12 @@
       "uptime": {
         "score": 30,
         "aliveCount": 114,
-        "totalCount": 223,
+        "totalCount": 224,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
+        "consecutiveFailures": 3,
         "lastSeen": "2026-09-09T05:14:43.196Z",
-        "lastProbed": "2026-09-10T00:59:56.050Z",
-        "recentResults": [1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0]
+        "lastProbed": "2026-09-10T22:00:31.447Z",
+        "recentResults": [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0]
       },
       "slow": true
     },
@@ -294910,7 +294902,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 26,
+          "linkTotalCount": 27,
           "linkAliveCount": 9
         }
       ],
@@ -294919,12 +294911,12 @@
       "uptime": {
         "score": 30,
         "aliveCount": 8,
-        "totalCount": 25,
+        "totalCount": 26,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
+        "consecutiveFailures": 3,
         "lastSeen": "2026-09-09T05:14:44.120Z",
-        "lastProbed": "2026-09-10T01:00:09.951Z",
-        "recentResults": [1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0]
+        "lastProbed": "2026-09-10T22:00:31.812Z",
+        "recentResults": [1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0]
       },
       "slow": true
     },
@@ -297164,27 +297156,27 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 92,
+          "linkTotalCount": 93,
           "linkAliveCount": 83
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
-          "linkTotalCount": 71
+          "linkTotalCount": 72
         }
       ],
       "referrer": null,
       "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
       "uptime": {
-        "score": 10,
+        "score": 0,
         "aliveCount": 100,
-        "totalCount": 200,
+        "totalCount": 201,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 9,
+        "consecutiveFailures": 10,
         "lastSeen": "2026-09-03T00:26:56.466Z",
-        "lastProbed": "2026-09-09T04:01:27.579Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:53.426Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -299614,7 +299606,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 81,
+          "linkTotalCount": 82,
           "linkAliveCount": 28
         }
       ],
@@ -299623,12 +299615,12 @@
       "uptime": {
         "score": 20,
         "aliveCount": 58,
-        "totalCount": 195,
+        "totalCount": 196,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 6,
+        "consecutiveFailures": 7,
         "lastSeen": "2026-09-05T10:16:26.210Z",
-        "lastProbed": "2026-09-10T00:01:55.583Z",
-        "recentResults": [1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:14.531Z",
+        "recentResults": [0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -333074,7 +333066,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -333092,21 +333084,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 93,
-          "linkAliveCount": 77
+          "linkTotalCount": 94,
+          "linkAliveCount": 78
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
         "score": 20,
-        "aliveCount": 159,
-        "totalCount": 197,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 8,
-        "lastSeen": "2026-09-04T05:20:15.148Z",
-        "lastProbed": "2026-09-10T00:01:59.473Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+        "aliveCount": 160,
+        "totalCount": 198,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T22:00:17.010Z",
+        "lastProbed": "2026-09-10T22:00:17.010Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1]
       }
     },
     {
@@ -343016,7 +343008,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -343034,21 +343026,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 110,
-          "linkAliveCount": 71
+          "linkTotalCount": 111,
+          "linkAliveCount": 72
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
         "score": 60,
-        "aliveCount": 73,
-        "totalCount": 112,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 3,
-        "lastSeen": "2026-09-08T20:46:31.385Z",
-        "lastProbed": "2026-09-10T08:01:06.697Z",
-        "recentResults": [1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0]
+        "aliveCount": 74,
+        "totalCount": 113,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T21:59:55.531Z",
+        "lastProbed": "2026-09-10T21:59:55.531Z",
+        "recentResults": [1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1]
       }
     },
     {
@@ -355899,7 +355891,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 85,
+          "linkTotalCount": 86,
           "linkAliveCount": 72
         }
       ],
@@ -355908,12 +355900,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 132,
-        "totalCount": 157,
+        "totalCount": 158,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 11,
+        "consecutiveFailures": 12,
         "lastSeen": "2026-08-31T05:48:59.222Z",
-        "lastProbed": "2026-09-10T00:02:58.109Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:10.114Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -357965,7 +357957,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 110,
+          "linkTotalCount": 111,
           "linkAliveCount": 75
         }
       ],
@@ -357974,12 +357966,12 @@
       "uptime": {
         "score": 50,
         "aliveCount": 153,
-        "totalCount": 219,
+        "totalCount": 220,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
+        "consecutiveFailures": 3,
         "lastSeen": "2026-09-09T15:26:24.820Z",
-        "lastProbed": "2026-09-10T10:16:29.145Z",
-        "recentResults": [1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0]
+        "lastProbed": "2026-09-10T22:00:00.903Z",
+        "recentResults": [1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0]
       }
     },
     {
@@ -360885,21 +360877,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 113,
+          "linkTotalCount": 114,
           "linkAliveCount": 83
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 50,
+        "score": 40,
         "aliveCount": 164,
-        "totalCount": 246,
+        "totalCount": 247,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 3,
+        "consecutiveFailures": 4,
         "lastSeen": "2026-09-09T00:33:09.466Z",
-        "lastProbed": "2026-09-10T08:01:10.143Z",
-        "recentResults": [1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:02.758Z",
+        "recentResults": [1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0]
       }
     },
     {
@@ -361188,7 +361180,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -361207,27 +361199,27 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 29,
-          "linkAliveCount": 23
+          "linkTotalCount": 30,
+          "linkAliveCount": 24
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 56
+          "linkTotalCount": 57
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
         "score": 80,
-        "aliveCount": 23,
-        "totalCount": 56,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
-        "lastSeen": "2026-09-09T05:15:06.105Z",
-        "lastProbed": "2026-09-10T10:16:34.998Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0]
+        "aliveCount": 24,
+        "totalCount": 57,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T22:00:01.880Z",
+        "lastProbed": "2026-09-10T22:00:01.880Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1]
       }
     },
     {
@@ -364092,7 +364084,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 59,
+          "linkTotalCount": 60,
           "linkAliveCount": 10
         }
       ],
@@ -364101,12 +364093,12 @@
       "uptime": {
         "score": 10,
         "aliveCount": 63,
-        "totalCount": 157,
+        "totalCount": 158,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 10,
+        "consecutiveFailures": 11,
         "lastSeen": "2026-08-28T21:58:17.656Z",
-        "lastProbed": "2026-09-09T04:01:08.082Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:33.665Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       },
       "slow": true
     },
@@ -367481,7 +367473,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -367489,12 +367481,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:03:03.186Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:20.103Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -373818,7 +373810,7 @@
       ],
       "streamMeta": [
         {
-          "linkTotalCount": 73,
+          "linkTotalCount": 74,
           "linkAliveCount": 20
         }
       ],
@@ -373827,12 +373819,12 @@
       "uptime": {
         "score": 40,
         "aliveCount": 70,
-        "totalCount": 158,
+        "totalCount": 159,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
+        "consecutiveFailures": 3,
         "lastSeen": "2026-09-09T00:34:44.596Z",
-        "lastProbed": "2026-09-09T20:16:05.268Z",
-        "recentResults": [0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0]
+        "lastProbed": "2026-09-10T22:00:35.729Z",
+        "recentResults": [0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0]
       },
       "slow": true
     },
@@ -394279,21 +394271,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 107,
+          "linkTotalCount": 108,
           "linkAliveCount": 64
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 30,
+        "score": 20,
         "aliveCount": 146,
-        "totalCount": 227,
+        "totalCount": 228,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
+        "consecutiveFailures": 3,
         "lastSeen": "2026-09-09T04:01:47.849Z",
-        "lastProbed": "2026-09-09T20:16:10.452Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0]
+        "lastProbed": "2026-09-10T22:00:41.361Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0]
       },
       "slow": true
     },
@@ -399259,7 +399251,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 82,
+          "linkTotalCount": 83,
           "linkAliveCount": 70
         }
       ],
@@ -399268,12 +399260,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 130,
-        "totalCount": 154,
+        "totalCount": 155,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 12,
+        "consecutiveFailures": 13,
         "lastSeen": "2026-08-30T01:45:31.921Z",
-        "lastProbed": "2026-09-10T00:02:58.073Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:19.784Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -401434,7 +401426,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 82,
+          "linkTotalCount": 83,
           "linkAliveCount": 70
         }
       ],
@@ -401443,12 +401435,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 130,
-        "totalCount": 155,
+        "totalCount": 156,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 12,
+        "consecutiveFailures": 13,
         "lastSeen": "2026-08-30T01:47:33.697Z",
-        "lastProbed": "2026-09-10T00:03:02.856Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:19.461Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -415925,7 +415917,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 55,
+          "linkTotalCount": 56,
           "linkAliveCount": 11
         }
       ],
@@ -415934,12 +415926,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 89,
-        "totalCount": 181,
+        "totalCount": 182,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 15,
+        "consecutiveFailures": 16,
         "lastSeen": "2026-08-23T03:30:09.680Z",
-        "lastProbed": "2026-09-10T00:02:58.459Z",
-        "recentResults": [0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:12.119Z",
+        "recentResults": [0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -419044,7 +419036,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 105,
+          "linkTotalCount": 106,
           "linkAliveCount": 71
         }
       ],
@@ -419053,12 +419045,12 @@
       "uptime": {
         "score": 40,
         "aliveCount": 145,
-        "totalCount": 224,
+        "totalCount": 225,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
+        "consecutiveFailures": 3,
         "lastSeen": "2026-09-09T00:43:29.508Z",
-        "lastProbed": "2026-09-09T20:16:18.875Z",
-        "recentResults": [1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0]
+        "lastProbed": "2026-09-10T22:00:02.820Z",
+        "recentResults": [0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0]
       }
     },
     {
@@ -420450,7 +420442,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -420458,12 +420450,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:02:59.501Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:13.375Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -420497,7 +420489,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -420505,12 +420497,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:03:00.405Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:13.441Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -422297,7 +422289,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 103,
+          "linkTotalCount": 104,
           "linkAliveCount": 44
         }
       ],
@@ -422306,12 +422298,12 @@
       "uptime": {
         "score": 40,
         "aliveCount": 97,
-        "totalCount": 177,
+        "totalCount": 178,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
+        "consecutiveFailures": 3,
         "lastSeen": "2026-09-09T00:44:32.716Z",
-        "lastProbed": "2026-09-09T20:16:13.734Z",
-        "recentResults": [0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0]
+        "lastProbed": "2026-09-10T22:00:31.223Z",
+        "recentResults": [0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0]
       },
       "slow": true
     },
@@ -423622,7 +423614,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -423630,12 +423622,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:03:34.604Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:47.136Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -431638,7 +431630,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -431658,32 +431650,33 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 94,
-          "linkAliveCount": 79
+          "linkTotalCount": 95,
+          "linkAliveCount": 80
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 78
+          "linkTotalCount": 79
         },
         {
-          "linkTotalCount": 74,
-          "linkAliveCount": 61
+          "linkTotalCount": 75,
+          "linkAliveCount": 62
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
         "score": 60,
-        "aliveCount": 119,
-        "totalCount": 213,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
-        "lastSeen": "2026-09-09T15:40:51.494Z",
-        "lastProbed": "2026-09-10T10:17:54.709Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0]
-      }
+        "aliveCount": 120,
+        "totalCount": 214,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T22:00:49.391Z",
+        "lastProbed": "2026-09-10T22:00:49.391Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1]
+      },
+      "slow": true
     },
     {
       "id": "Kanal34.tr",
@@ -439497,11 +439490,11 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 78,
+          "linkTotalCount": 79,
           "linkAliveCount": 67
         },
         {
-          "linkTotalCount": 71
+          "linkTotalCount": 72
         }
       ],
       "referrer": null,
@@ -439509,12 +439502,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 69,
-        "totalCount": 87,
+        "totalCount": 88,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 11,
+        "consecutiveFailures": 12,
         "lastSeen": "2026-09-01T00:40:43.404Z",
-        "lastProbed": "2026-09-10T00:03:04.577Z",
-        "recentResults": [1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:18.150Z",
+        "recentResults": [1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -450469,7 +450462,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 82,
+          "linkTotalCount": 83,
           "linkAliveCount": 52
         }
       ],
@@ -450478,12 +450471,12 @@
       "uptime": {
         "score": 10,
         "aliveCount": 122,
-        "totalCount": 172,
+        "totalCount": 173,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 3,
+        "consecutiveFailures": 4,
         "lastSeen": "2026-09-06T16:26:58.049Z",
-        "lastProbed": "2026-09-09T04:01:41.453Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:05.556Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]
       },
       "slow": true
     },
@@ -451740,7 +451733,7 @@
       ],
       "streamMeta": [
         {
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -451748,12 +451741,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:03:26.077Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:37.375Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       },
       "prunedAt": "2026-08-18T03:26:31.158Z"
     },
@@ -456350,7 +456343,7 @@
       ],
       "streamMeta": [
         {
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -456358,12 +456351,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:03:01.477Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:15.737Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       },
       "prunedAt": "2026-08-18T03:26:31.158Z"
     },
@@ -456632,7 +456625,7 @@
       ],
       "streamMeta": [
         {
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -456640,12 +456633,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:03:23.675Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:39.346Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       },
       "prunedAt": "2026-08-18T03:26:31.158Z"
     },
@@ -458390,27 +458383,27 @@
       ],
       "streamMeta": [
         {
-          "linkTotalCount": 24,
+          "linkTotalCount": 25,
           "linkAliveCount": 16
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 16
+          "linkTotalCount": 17
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 20,
+        "score": 10,
         "aliveCount": 16,
-        "totalCount": 24,
+        "totalCount": 25,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 8,
+        "consecutiveFailures": 9,
         "lastSeen": "2026-09-04T20:43:30.650Z",
-        "lastProbed": "2026-09-10T00:02:18.335Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:47.213Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -459574,21 +459567,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 86,
+          "linkTotalCount": 87,
           "linkAliveCount": 77
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 20,
+        "score": 10,
         "aliveCount": 137,
-        "totalCount": 158,
+        "totalCount": 159,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 8,
+        "consecutiveFailures": 9,
         "lastSeen": "2026-09-04T20:43:18.495Z",
-        "lastProbed": "2026-09-10T00:01:49.911Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:21.849Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -459663,7 +459656,7 @@
       ],
       "streamMeta": [
         {
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -459671,12 +459664,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:03:01.478Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:17.101Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       },
       "prunedAt": "2026-08-18T03:26:31.158Z"
     },
@@ -461447,7 +461440,7 @@
       ],
       "streamMeta": [
         {
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -461455,12 +461448,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:03:24.310Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:39.346Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       },
       "prunedAt": "2026-08-18T03:26:31.158Z"
     },
@@ -461689,7 +461682,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -461697,12 +461690,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:03:02.797Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:17.098Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -462422,7 +462415,7 @@
       ],
       "streamMeta": [
         {
-          "linkTotalCount": 13
+          "linkTotalCount": 14
         }
       ],
       "referrer": null,
@@ -462430,12 +462423,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 0,
-        "totalCount": 13,
+        "totalCount": 14,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 13,
+        "consecutiveFailures": 14,
         "lastSeen": null,
-        "lastProbed": "2026-09-10T00:03:03.507Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:18.415Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       },
       "prunedAt": "2026-08-18T03:26:31.158Z"
     },
@@ -497675,31 +497668,31 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 17,
+          "linkTotalCount": 18,
           "linkAliveCount": 8
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 74,
+          "linkTotalCount": 75,
           "linkAliveCount": 13
         },
         {
-          "linkTotalCount": 61
+          "linkTotalCount": 62
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 20,
+        "score": 10,
         "aliveCount": 23,
-        "totalCount": 77,
+        "totalCount": 78,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 8,
+        "consecutiveFailures": 9,
         "lastSeen": "2026-09-05T10:40:01.136Z",
-        "lastProbed": "2026-09-10T00:01:59.628Z",
-        "recentResults": [0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:29.877Z",
+        "recentResults": [0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       }
     },
     {
@@ -576702,28 +576695,28 @@
       ],
       "streamMeta": [
         {
-          "linkTotalCount": 46,
+          "linkTotalCount": 47,
           "linkAliveCount": 29
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 33,
+          "linkTotalCount": 34,
           "linkAliveCount": 18
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 40,
+        "score": 30,
         "aliveCount": 30,
-        "totalCount": 46,
+        "totalCount": 47,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
+        "consecutiveFailures": 3,
         "lastSeen": "2026-09-09T05:16:43.075Z",
-        "lastProbed": "2026-09-10T01:07:20.157Z",
-        "recentResults": [1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0]
+        "lastProbed": "2026-09-10T22:01:13.491Z",
+        "recentResults": [1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0]
       }
     },
     {
@@ -578916,7 +578909,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -578935,28 +578928,28 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 88,
-          "linkAliveCount": 59
+          "linkTotalCount": 89,
+          "linkAliveCount": 60
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 104,
-          "linkAliveCount": 75
+          "linkTotalCount": 105,
+          "linkAliveCount": 76
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
         "score": 60,
-        "aliveCount": 158,
-        "totalCount": 234,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
-        "lastSeen": "2026-09-09T15:58:11.333Z",
-        "lastProbed": "2026-09-10T10:17:46.303Z",
-        "recentResults": [1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0]
+        "aliveCount": 159,
+        "totalCount": 235,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T21:59:59.104Z",
+        "lastProbed": "2026-09-10T21:59:59.104Z",
+        "recentResults": [1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1]
       }
     },
     {
@@ -581121,7 +581114,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": false,
+      "alive": true,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -581139,21 +581132,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 110,
-          "linkAliveCount": 79
+          "linkTotalCount": 111,
+          "linkAliveCount": 80
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 50,
-        "aliveCount": 154,
-        "totalCount": 238,
-        "consecutiveAlive": 0,
-        "consecutiveFailures": 2,
-        "lastSeen": "2026-09-09T15:58:10.902Z",
-        "lastProbed": "2026-09-10T10:17:44.125Z",
-        "recentResults": [1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0]
+        "score": 60,
+        "aliveCount": 155,
+        "totalCount": 239,
+        "consecutiveAlive": 1,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-10T21:59:58.710Z",
+        "lastProbed": "2026-09-10T21:59:58.710Z",
+        "recentResults": [1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1]
       }
     },
     {
@@ -581187,21 +581180,21 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 96,
+          "linkTotalCount": 97,
           "linkAliveCount": 63
         }
       ],
       "referrer": null,
       "userAgent": null,
       "uptime": {
-        "score": 40,
+        "score": 30,
         "aliveCount": 129,
-        "totalCount": 207,
+        "totalCount": 208,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 3,
+        "consecutiveFailures": 4,
         "lastSeen": "2026-09-08T15:16:12.238Z",
-        "lastProbed": "2026-09-10T00:01:44.210Z",
-        "recentResults": [0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:00:05.655Z",
+        "recentResults": [0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0]
       }
     },
     {
@@ -582861,14 +582854,14 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 14,
+          "linkTotalCount": 15,
           "linkAliveCount": 2
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 67,
+          "linkTotalCount": 68,
           "linkAliveCount": 30
         }
       ],
@@ -582877,12 +582870,12 @@
       "uptime": {
         "score": 10,
         "aliveCount": 49,
-        "totalCount": 166,
+        "totalCount": 167,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 3,
+        "consecutiveFailures": 4,
         "lastSeen": "2026-09-06T16:30:31.414Z",
-        "lastProbed": "2026-09-09T04:01:51.280Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:13.485Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]
       },
       "slow": true
     },
@@ -583090,14 +583083,14 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 13,
+          "linkTotalCount": 14,
           "linkAliveCount": 2
         },
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 67,
+          "linkTotalCount": 68,
           "linkAliveCount": 31
         }
       ],
@@ -583106,12 +583099,12 @@
       "uptime": {
         "score": 0,
         "aliveCount": 50,
-        "totalCount": 166,
+        "totalCount": 167,
         "consecutiveAlive": 0,
-        "consecutiveFailures": 11,
+        "consecutiveFailures": 12,
         "lastSeen": "2026-08-24T10:21:55.048Z",
-        "lastProbed": "2026-09-10T00:03:04.759Z",
-        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        "lastProbed": "2026-09-10T22:01:58.520Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       },
       "slow": true
     },
