@@ -132,10 +132,13 @@ module.exports = {
     '181.78.197.59',
     '190.83.2.182',
 
-    // Geo Blocked
+    // GeoBlocked
     'adpnetworkhd-cmd.github.io',
     'amg12058-c15studio-amg12058c1-lg-us-5787.playouts.now.amagi.tv',
     'zabava-htlive.cdn.ngenix.net',
+
+    // Subscription req
+    'kazmazpaz.ru',
   ],
 
   unsupportedVideoCodecs: [
