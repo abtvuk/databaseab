@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-14T03:36:42.455Z",
-  "total": 339,
+  "generated": "2026-09-15T18:43:47.224Z",
+  "total": 357,
   "channels": [
     {
       "id": "78TV.bg",
@@ -16415,6 +16415,943 @@
         {
           "url": "http://181.78.197.59:8000/play/a07n/index.m3u8",
           "blockedAt": "2026-08-24T17:04:04.253Z"
+        }
+      ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "KinoPolska.pl",
+      "name": "Kino Polska",
+      "country": "PL",
+      "categories": [
+        "movies"
+      ],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/lbl8K23.png",
+      "website": "http://kinopolska.pl/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": true,
+      "probe": true,
+      "hide": false,
+      "needsProxy": true,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 95,
+          "linkAliveCount": 94
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 100,
+        "aliveCount": 104,
+        "totalCount": 136,
+        "consecutiveAlive": 94,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-15T10:43:27.264Z",
+        "lastProbed": "2026-09-15T10:43:27.264Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "http://88b9da48.kazmazpaz.ru/iptv/XVU58NBPX2LUMP/6088/index.m3u8",
+          "blockedAt": "2026-09-15T18:43:47.202Z"
+        }
+      ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "PoloTV.pl",
+      "name": "Polo TV",
+      "country": "PL",
+      "categories": [],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/GEJZjRB.png",
+      "website": "https://www.polotv.pl/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": true,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 92,
+          "linkAliveCount": 90
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 100,
+        "aliveCount": 113,
+        "totalCount": 150,
+        "consecutiveAlive": 90,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-15T10:43:31.613Z",
+        "lastProbed": "2026-09-15T10:43:31.613Z",
+        "recentResults": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "http://88b9da48.kazmazpaz.ru/iptv/XVU58NBPX2LUMP/19170/index.m3u8",
+          "blockedAt": "2026-09-15T18:43:47.202Z"
+        }
+      ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "Polsat.pl",
+      "name": "Polsat",
+      "country": "PL",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/xff6zGN.png",
+      "website": "https://www.polsat.pl/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": true,
+      "probe": true,
+      "hide": false,
+      "needsProxy": true,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 95,
+          "linkAliveCount": 94
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 100,
+        "aliveCount": 106,
+        "totalCount": 204,
+        "consecutiveAlive": 94,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-15T10:44:02.761Z",
+        "lastProbed": "2026-09-15T10:44:02.761Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "http://88b9da48.kazmazpaz.ru/iptv/XVU58NBPX2LUMP/7299/index.m3u8",
+          "blockedAt": "2026-09-15T18:43:47.202Z"
+        }
+      ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "Polsat2.pl",
+      "name": "Polsat 2",
+      "country": "PL",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Polsat_2_2021_gradient.svg/960px-Polsat_2_2021_gradient.svg.png",
+      "website": "https://www.polsat2.pl/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": true,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 95,
+          "linkAliveCount": 94
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 100,
+        "aliveCount": 104,
+        "totalCount": 136,
+        "consecutiveAlive": 94,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-15T10:43:35.918Z",
+        "lastProbed": "2026-09-15T10:43:35.918Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "http://88b9da48.kazmazpaz.ru/iptv/XVU58NBPX2LUMP/6084/index.m3u8",
+          "blockedAt": "2026-09-15T18:43:47.202Z"
+        }
+      ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "PolsatCafe.pl",
+      "name": "Polsat Cafe",
+      "country": "PL",
+      "categories": [],
+      "languages": [],
+      "channelLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Polsat_Caf%C3%A9_2021_gradient.svg/500px-Polsat_Caf%C3%A9_2021_gradient.svg.png",
+      "website": "http://www.polsatcafe.pl/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": true,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 95,
+          "linkAliveCount": 94
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 100,
+        "aliveCount": 104,
+        "totalCount": 136,
+        "consecutiveAlive": 94,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-15T10:43:37.584Z",
+        "lastProbed": "2026-09-15T10:43:37.584Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "http://88b9da48.kazmazpaz.ru/iptv/XVU58NBPX2LUMP/6085/index.m3u8",
+          "blockedAt": "2026-09-15T18:43:47.202Z"
+        }
+      ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "PolsatFilm.pl",
+      "name": "Polsat Film",
+      "country": "PL",
+      "categories": [
+        "movies"
+      ],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/wGH6shZ.png",
+      "website": "https://www.polsatfilm.pl/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": true,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 95,
+          "linkAliveCount": 94
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 100,
+        "aliveCount": 104,
+        "totalCount": 136,
+        "consecutiveAlive": 94,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-15T10:43:42.741Z",
+        "lastProbed": "2026-09-15T10:43:42.741Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "http://88b9da48.kazmazpaz.ru/iptv/XVU58NBPX2LUMP/6086/index.m3u8",
+          "blockedAt": "2026-09-15T18:43:47.202Z"
+        }
+      ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "PolsatGames.pl",
+      "name": "Polsat Games",
+      "country": "PL",
+      "categories": [],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/OSCrBvh.png",
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": true,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 95,
+          "linkAliveCount": 94
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 100,
+        "aliveCount": 104,
+        "totalCount": 136,
+        "consecutiveAlive": 94,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-15T10:43:42.067Z",
+        "lastProbed": "2026-09-15T10:43:42.067Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "http://88b9da48.kazmazpaz.ru/iptv/XVU58NBPX2LUMP/7295/index.m3u8",
+          "blockedAt": "2026-09-15T18:43:47.202Z"
+        }
+      ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "PolsatNews2.pl",
+      "name": "Polsat News 2",
+      "country": "PL",
+      "categories": [
+        "news"
+      ],
+      "languages": [],
+      "channelLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Polsat_News_2_2021_gradient.svg/500px-Polsat_News_2_2021_gradient.svg.png",
+      "website": "http://www.polsatnews.pl/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": true,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 95,
+          "linkAliveCount": 94
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 100,
+        "aliveCount": 106,
+        "totalCount": 204,
+        "consecutiveAlive": 94,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-15T10:44:09.228Z",
+        "lastProbed": "2026-09-15T10:44:09.228Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "http://88b9da48.kazmazpaz.ru/iptv/XVU58NBPX2LUMP/7297/index.m3u8",
+          "blockedAt": "2026-09-15T18:43:47.202Z"
+        }
+      ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "PolsatPlay.pl",
+      "name": "Polsat Play",
+      "country": "PL",
+      "categories": [],
+      "languages": [],
+      "channelLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Polsat_Play_2021_gradient.svg/500px-Polsat_Play_2021_gradient.svg.png",
+      "website": "http://www.polsatplay.pl/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": true,
+      "probe": true,
+      "hide": false,
+      "needsProxy": true,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 95,
+          "linkAliveCount": 94
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 100,
+        "aliveCount": 104,
+        "totalCount": 136,
+        "consecutiveAlive": 94,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-15T10:44:03.964Z",
+        "lastProbed": "2026-09-15T10:44:03.964Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "http://88b9da48.kazmazpaz.ru/iptv/XVU58NBPX2LUMP/6087/index.m3u8",
+          "blockedAt": "2026-09-15T18:43:47.202Z"
+        }
+      ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "PolsatRodzina.pl",
+      "name": "Polsat Rodzina",
+      "country": "PL",
+      "categories": [],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/IS0AW48.png",
+      "website": "https://www.polsat.pl/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": true,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 95,
+          "linkAliveCount": 94
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 100,
+        "aliveCount": 104,
+        "totalCount": 136,
+        "consecutiveAlive": 94,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-15T10:43:52.347Z",
+        "lastProbed": "2026-09-15T10:43:52.347Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "http://88b9da48.kazmazpaz.ru/iptv/XVU58NBPX2LUMP/7301/index.m3u8",
+          "blockedAt": "2026-09-15T18:43:47.202Z"
+        }
+      ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "PolsatSport3.pl",
+      "name": "Polsat Sport 3",
+      "country": "PL",
+      "categories": [],
+      "languages": [],
+      "channelLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Polsat_Sport_3_2024.svg/500px-Polsat_Sport_3_2024.svg.png",
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": true,
+      "probe": true,
+      "hide": false,
+      "needsProxy": true,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 95,
+          "linkAliveCount": 94
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 100,
+        "aliveCount": 104,
+        "totalCount": 136,
+        "consecutiveAlive": 94,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-15T10:44:09.643Z",
+        "lastProbed": "2026-09-15T10:44:09.643Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      },
+      "slow": true,
+      "domainBlockedLinks": [
+        {
+          "url": "http://88b9da48.kazmazpaz.ru/iptv/XVU58NBPX2LUMP/7303/index.m3u8",
+          "blockedAt": "2026-09-15T18:43:47.202Z"
+        }
+      ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "SportKlub.pl",
+      "name": "Sport Klub",
+      "country": "PL",
+      "categories": [
+        "sports"
+      ],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/DpJUrlr.png",
+      "website": "https://sportowefakty.wp.pl/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": true,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 82,
+          "linkAliveCount": 82
+        }
+      ],
+      "referrer": null,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+      "uptime": {
+        "score": 100,
+        "aliveCount": 93,
+        "totalCount": 120,
+        "consecutiveAlive": 83,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-15T10:44:04.763Z",
+        "lastProbed": "2026-09-15T10:44:04.763Z",
+        "recentResults": [0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "http://88b9da48.kazmazpaz.ru/iptv/XVU58NBPX2LUMP/2521/index.m3u8",
+          "blockedAt": "2026-09-15T18:43:47.202Z"
+        }
+      ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "StarsTV.pl",
+      "name": "Stars TV",
+      "country": "PL",
+      "categories": [],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/NdITPCk.png",
+      "website": "http://starstv.eu/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": true,
+      "probe": true,
+      "hide": false,
+      "needsProxy": true,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 95,
+          "linkAliveCount": 94
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 100,
+        "aliveCount": 104,
+        "totalCount": 136,
+        "consecutiveAlive": 94,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-15T10:44:21.950Z",
+        "lastProbed": "2026-09-15T10:44:21.950Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "http://88b9da48.kazmazpaz.ru/iptv/XVU58NBPX2LUMP/19168/index.m3u8",
+          "blockedAt": "2026-09-15T18:43:47.202Z"
+        }
+      ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "SuperPolsat.pl",
+      "name": "Super Polsat",
+      "country": "PL",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/6KXJRHc.png",
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": true,
+      "probe": true,
+      "hide": false,
+      "needsProxy": true,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 92,
+          "linkAliveCount": 90
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 100,
+        "aliveCount": 113,
+        "totalCount": 150,
+        "consecutiveAlive": 90,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-15T10:44:26.436Z",
+        "lastProbed": "2026-09-15T10:44:26.436Z",
+        "recentResults": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "http://88b9da48.kazmazpaz.ru/iptv/XVU58NBPX2LUMP/7312/index.m3u8",
+          "blockedAt": "2026-09-15T18:43:47.202Z"
+        }
+      ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "TVP3Warszawa.pl",
+      "name": "TVP 3 Warszawa",
+      "country": "PL",
+      "categories": [],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/AfZOO8U.jpg",
+      "website": "http://warszawa.tvp.pl/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": true,
+      "probe": true,
+      "hide": false,
+      "needsProxy": true,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 95,
+          "linkAliveCount": 94
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 100,
+        "aliveCount": 104,
+        "totalCount": 136,
+        "consecutiveAlive": 94,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-15T10:45:02.795Z",
+        "lastProbed": "2026-09-15T10:45:02.795Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "http://88b9da48.kazmazpaz.ru/iptv/XVU58NBPX2LUMP/7284/index.m3u8",
+          "blockedAt": "2026-09-15T18:43:47.202Z"
+        }
+      ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "TVPHistoria.pl",
+      "name": "TVP Historia",
+      "country": "PL",
+      "categories": [],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/Bc4QZiy.png",
+      "website": "https://historia.tvp.pl/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": true,
+      "probe": true,
+      "hide": false,
+      "needsProxy": true,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 95,
+          "linkAliveCount": 94
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 100,
+        "aliveCount": 128,
+        "totalCount": 181,
+        "consecutiveAlive": 94,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-15T10:45:07.423Z",
+        "lastProbed": "2026-09-15T10:45:07.423Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "http://88b9da48.kazmazpaz.ru/iptv/XVU58NBPX2LUMP/7283/index.m3u8",
+          "blockedAt": "2026-09-15T18:43:47.202Z"
+        }
+      ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "TVPSeriale.pl",
+      "name": "TVP Seriale",
+      "country": "PL",
+      "categories": [
+        "series"
+      ],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/MuRtvXk.png",
+      "website": "https://seriale.tvp.pl/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": true,
+      "probe": true,
+      "hide": false,
+      "needsProxy": true,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 95,
+          "linkAliveCount": 94
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 100,
+        "aliveCount": 104,
+        "totalCount": 136,
+        "consecutiveAlive": 94,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-15T10:44:57.340Z",
+        "lastProbed": "2026-09-15T10:44:57.340Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "http://88b9da48.kazmazpaz.ru/iptv/XVU58NBPX2LUMP/7281/index.m3u8",
+          "blockedAt": "2026-09-15T18:43:47.203Z"
+        }
+      ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "VOXMusicTV.pl",
+      "name": "VOX Music TV",
+      "country": "PL",
+      "categories": [
+        "music"
+      ],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/N993msF.png",
+      "website": "https://www.eska.tv/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": true,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 93,
+          "linkAliveCount": 92
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 100,
+        "aliveCount": 107,
+        "totalCount": 136,
+        "consecutiveAlive": 92,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-09-15T10:44:48.872Z",
+        "lastProbed": "2026-09-15T10:44:48.872Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "http://88b9da48.kazmazpaz.ru/iptv/XVU58NBPX2LUMP/19171/index.m3u8",
+          "blockedAt": "2026-09-15T18:43:47.203Z"
         }
       ],
       "unplayableArchived": true
