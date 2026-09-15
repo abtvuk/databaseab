@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-15T09:05:02.289Z",
-  "total": 1774,
+  "generated": "2026-09-15T16:13:29.046Z",
+  "total": 1786,
   "channels": [
     {
       "id": "OSNMoviesAction.ae",
@@ -81770,6 +81770,538 @@
         "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0]
       },
       "prunedAt": "2026-09-15T09:05:02.278Z"
+    },
+    {
+      "id": "Canal10MardelPlata.ar",
+      "name": "Canal 10 Mar del Plata",
+      "country": "AR",
+      "categories": [
+        "entertainment"
+      ],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/bq29sfG.png",
+      "website": "https://www.canal10mardelplata.tv/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://g1.mc-hor.transport.edge-access.net/a12/ngrp:canal10mdq-100044_all/Playlist.m3u8?sense=true"
+      ],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 52
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 80,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 59,
+        "lastSeen": null,
+        "lastProbed": "2026-09-15T15:45:28.786Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-09-15T16:13:29.027Z"
+    },
+    {
+      "id": "CanalLuz.ar",
+      "name": "Canal Luz",
+      "country": "AR",
+      "categories": [
+        "religious"
+      ],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/GnY6dNT.png",
+      "website": "http://canalluz.org/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://g4.vxral-hor.transport.edge-access.net/a11/ngrp:canal_luz01-100009_all/Playlist.m3u8"
+      ],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 52
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 80,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 59,
+        "lastSeen": null,
+        "lastProbed": "2026-09-15T15:45:31.661Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-09-15T16:13:29.027Z"
+    },
+    {
+      "id": "cbccomedy.ca",
+      "name": "CBC Comedy",
+      "country": "CA",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": true,
+      "editName": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://amagi-streams.akamaized.net/hls/live/2110963/cbccomedy/master.m3u8"
+      ],
+      "streamMeta": [
+        {
+          "linkTotalCount": 52
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 80,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 59,
+        "lastSeen": null,
+        "lastProbed": "2026-09-15T15:48:45.271Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-09-15T16:13:29.027Z"
+    },
+    {
+      "id": "cbcheartland.ca",
+      "name": "CBC Heartland",
+      "country": "CA",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": true,
+      "editName": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://amagi-streams.akamaized.net/hls/live/2113391/cbcheartland/master.m3u8"
+      ],
+      "streamMeta": [
+        {
+          "linkTotalCount": 52
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 80,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 59,
+        "lastSeen": null,
+        "lastProbed": "2026-09-15T15:48:45.332Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-09-15T16:13:29.027Z"
+    },
+    {
+      "id": "cbcmurdochmysteries.ca",
+      "name": "CBC Murdoch Mysteries",
+      "country": "CA",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": true,
+      "editName": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://amagi-streams.akamaized.net/hls/live/2113390/cbcmurdoch/master.m3u8"
+      ],
+      "streamMeta": [
+        {
+          "linkTotalCount": 52
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 80,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 59,
+        "lastSeen": null,
+        "lastProbed": "2026-09-15T15:48:46.800Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-09-15T16:13:29.027Z"
+    },
+    {
+      "id": "cbcnewsbc.ca",
+      "name": "CBC News BC",
+      "country": "CA",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": true,
+      "editName": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://amagi-streams.akamaized.net/hls/live/2110960/cbcnewsbc/master.m3u8"
+      ],
+      "streamMeta": [
+        {
+          "linkTotalCount": 52
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 80,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 59,
+        "lastSeen": null,
+        "lastProbed": "2026-09-15T15:48:47.545Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-09-15T16:13:29.027Z"
+    },
+    {
+      "id": "cbcnewsexplore.ca",
+      "name": "CBC News Explore",
+      "country": "CA",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": true,
+      "editName": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://amagi-streams.akamaized.net/hls/live/2110962/cbcexplore/master.m3u8"
+      ],
+      "streamMeta": [
+        {
+          "linkTotalCount": 52
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 80,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 59,
+        "lastSeen": null,
+        "lastProbed": "2026-09-15T15:48:58.463Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-09-15T16:13:29.027Z"
+    },
+    {
+      "id": "cbcnewstoronto.ca",
+      "name": "CBC News Toronto",
+      "country": "CA",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": true,
+      "editName": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://amagi-streams.akamaized.net/hls/live/2110961/cbctoronto/master.m3u8"
+      ],
+      "streamMeta": [
+        {
+          "linkTotalCount": 52
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 80,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 59,
+        "lastSeen": null,
+        "lastProbed": "2026-09-15T15:48:47.805Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-09-15T16:13:29.027Z"
+    },
+    {
+      "id": "lovetheplanetes.es",
+      "name": "Love The Planet ES",
+      "country": "ES",
+      "categories": [],
+      "languages": [
+        "spa"
+      ],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": true,
+      "editName": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://amg01821-lovetv-amg01821c9-rlaxx-gb-10458.playouts.now.amagi.tv/playlist.m3u8"
+      ],
+      "streamMeta": [
+        {
+          "linkTotalCount": 52
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 80,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 59,
+        "lastSeen": null,
+        "lastProbed": "2026-09-15T15:53:57.458Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-09-15T16:13:29.028Z"
+    },
+    {
+      "id": "DTV8.gy",
+      "name": "DTV-8",
+      "country": "GY",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/A5r0aZA.png",
+      "website": "https://dtv8.net/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://watch.davestv8.com/hls/stream.m3u8"
+      ],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 52
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 80,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 59,
+        "lastSeen": null,
+        "lastProbed": "2026-09-15T15:55:50.207Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-09-15T16:13:29.028Z"
+    },
+    {
+      "id": "DensKnowledge.id",
+      "name": "Dens Knowledge",
+      "country": "ID",
+      "categories": [
+        "education"
+      ],
+      "languages": [],
+      "channelLogo": "https://picture.dens.tv/wp/img/tvchannels_v1/340x160/1701335417_tvchannels_v1.jpg",
+      "website": "https://www.dens.tv/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": true,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://op-group1-swiftservehd-1.dens.tv/h/h236/index.m3u8"
+      ],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": "Mozilla/5.0 Windows NT 10.0; Win64; x64 AppleWebKit/537.36 KHTML, like Gecko Chrome/144.0.0.0 Safari/537.36",
+          "linkTotalCount": 52
+        }
+      ],
+      "referrer": null,
+      "userAgent": "Mozilla/5.0 Windows NT 10.0; Win64; x64 AppleWebKit/537.36 KHTML, like Gecko Chrome/144.0.0.0 Safari/537.36",
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 80,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 59,
+        "lastSeen": null,
+        "lastProbed": "2026-09-15T15:57:05.600Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-09-15T16:13:29.028Z"
+    },
+    {
+      "id": "lovetheplanetit.it",
+      "name": "Love The Planet IT",
+      "country": "IT",
+      "categories": [],
+      "languages": [
+        "ita"
+      ],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": true,
+      "editName": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://amg01821-amg01821c11-rlaxx-gb-10459.playouts.now.amagi.tv/playlist.m3u8"
+      ],
+      "streamMeta": [
+        {
+          "linkTotalCount": 52
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 80,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 59,
+        "lastSeen": null,
+        "lastProbed": "2026-09-15T15:59:08.811Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-09-15T16:13:29.029Z"
     }
   ]
 }
