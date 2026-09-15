@@ -1,6 +1,6 @@
 {
   "generated": "2026-09-15T03:41:22.857Z",
-  "total": 11781,
+  "total": 11899,
   "channels": [
     {
       "id": "AndorraTV.ad",
@@ -3082,7 +3082,8 @@
       "replaced_by": null,
       "streamUrls": [
         "https://tv.balkanweb.com/news24/livestream/playlist.m3u8",
-        "http://tv.balkanweb.com:8081/news24/livestream/playlist.m3u8"
+        "http://tv.balkanweb.com:8081/news24/livestream/playlist.m3u8",
+        "https://vidcdn.vidgyor.com/news24-origin/liveabr/playlist.m3u8"
       ],
       "streamMeta": [
         {
@@ -3876,9 +3877,7 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://amtv.tulixcdn.com/amtv2/am2abr/index.m3u8",
         "https://dash2.antik.sk/live/test_armenia/playlist.m3u8",
-        "https://amtvusdvr.tulix.tv/am4abr/index.m3u8",
         "https://ifl01eu-new.bozztv.com/am1abr/index.m3u8"
       ],
       "streamMeta": [
@@ -3886,22 +3885,8 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 107,
-          "linkAliveCount": 107
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
           "linkTotalCount": 85,
           "linkAliveCount": 85
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 84,
-          "linkAliveCount": 84
         },
         {
           "source": "iptv",
@@ -15806,9 +15791,7 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://db34cc6127ac459db55cab5f97cd66b9.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-680-WORBAUENFAST-WHALETVPLUS/680/whaletvplus/hls/master/playlist.m3u8",
         "https://jmp2.uk/plu-67813f3162bf016db944c9ab.m3u8",
-        "https://d03ae6b5c6724c24867e97a3dc04934a.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-1026-WORBBRPTFAST-WHALETVPLUS/1026/hls/master/playlist.m3u8",
         "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
         "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_3360.m3u8"
       ],
@@ -15817,21 +15800,7 @@
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 105,
-          "linkAliveCount": 105
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
           "linkTotalCount": 86,
-          "linkAliveCount": 85
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 85,
           "linkAliveCount": 85
         },
         {
@@ -17133,7 +17102,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": true,
+      "alive": false,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -17143,34 +17112,8 @@
       "editChannelLogo": true,
       "source": "iptv",
       "replaced_by": null,
-      "streamUrls": [
-        "https://c.mjh.nz/abc-act.m3u8",
-        "https://c.mjh.nz/abc-nsw.m3u8",
-        "https://c.mjh.nz/abc-nt.m3u8"
-      ],
-      "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 106,
-          "linkAliveCount": 106
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 84,
-          "linkAliveCount": 84
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 84,
-          "linkAliveCount": 84
-        }
-      ],
+      "streamUrls": [],
+      "streamMeta": [],
       "referrer": null,
       "userAgent": null,
       "uptime": {
@@ -19096,7 +19039,8 @@
       "source": "famelack",
       "replaced_by": null,
       "streamUrls": [
-        "https://amg00654-itv-amg00654c4-samsung-au-998.playouts.now.amagi.tv/playlist/amg00654-itvstudiosfast-hotelinspector-samsungau/playlist.m3u8"
+        "https://amg00654-itv-amg00654c4-samsung-au-998.playouts.now.amagi.tv/playlist/amg00654-itvstudiosfast-hotelinspector-samsungau/playlist.m3u8",
+        "https://amg00654-itv-amg00654c4-samsung-gb-8889.playouts.now.amagi.tv/playlist.m3u8"
       ],
       "streamMeta": [
         {
@@ -60364,20 +60308,12 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://pb-ehs1glsha1juy.akamaized.net/Love_Nature_4K.m3u8",
         "https://bamus-klowdtv.amagi.tv/playlist.m3u8",
         "https://aegis-cloudfront-1.tubi.video/6d6d0f24-8445-4b4c-bdf6-44f9e38beaa4/playlist.m3u8",
         "https://jmp2.uk/plu-66df8a29b25d2b0008fc5fe0.m3u8",
         "https://amg01515-amg01515c26-xumo-us-4765.playouts.now.amagi.tv/playlist.m3u8"
       ],
       "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 105,
-          "linkAliveCount": 105
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -61503,8 +61439,7 @@
       "streamUrls": [
         "https://lotus.stingray.com/manifest/qello-qello001-montreal/samsungtvplus/master.m3u8",
         "https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883052",
-        "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/stingray/qello-qello001-montreal/distrotv/master.m3u8?ads.vf=u2vmdOuxEbe",
-        "https://lotus.stingray.com/manifest/ose-455ads-montreal/samsungtvplus/master.m3u8"
+        "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/stingray/qello-qello001-montreal/distrotv/master.m3u8?ads.vf=u2vmdOuxEbe"
       ],
       "streamMeta": [
         {
@@ -61527,10 +61462,6 @@
           "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0",
           "linkTotalCount": 84,
           "linkAliveCount": 12
-        },
-        {
-          "linkTotalCount": 33,
-          "linkAliveCount": 33
         }
       ],
       "referrer": null,
@@ -62817,19 +62748,11 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://lotus.stingray.com/manifest/ose-155ads-montreal/samsungtvplus/master.m3u8",
         "https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883053",
         "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/stingray-greatest-hits/master.m3u8?ads.vf=7XQlh7i26u0",
         "https://lotus.stingray.com/manifest/ose-455ads-montreal/samsungtvplus/master.m3u8"
       ],
       "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 15,
-          "linkAliveCount": 15
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -62929,7 +62852,6 @@
       "replaced_by": null,
       "streamUrls": [
         "https://lotus.stingray.com/manifest/ose-107ads-montreal/samsungtvplus/master.m3u8",
-        "https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883054",
         "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/stingray-hit-list/master.m3u8?ads.vf=oP0urGQi1pG"
       ],
       "streamMeta": [
@@ -62939,13 +62861,6 @@
           "userAgent": null,
           "linkTotalCount": 86,
           "linkAliveCount": 86
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 105,
-          "linkAliveCount": 105
         },
         {
           "source": "iptv",
@@ -101991,48 +101906,6 @@
       }
     },
     {
-      "id": "canal17tvnosara.cr",
-      "name": "Canal 17 TV Nosara",
-      "country": "CR",
-      "categories": [],
-      "languages": [],
-      "channelLogo": "https://image.roku.com/developer_channels/prod/c3b2346b372c7a5d8568b9a6bf31a6c85563465bf6ddfa926dcb0c598e52e720.png",
-      "website": null,
-      "tv": true,
-      "radio": false,
-      "ytId": null,
-      "alive": true,
-      "probe": true,
-      "hide": false,
-      "needsProxy": false,
-      "geoBlocked": false,
-      "editName": true,
-      "editChannelLogo": true,
-      "source": "famelack",
-      "replaced_by": null,
-      "streamUrls": [
-        "https://latamvdo.com:3870/hybrid/play.m3u8"
-      ],
-      "streamMeta": [
-        {
-          "linkTotalCount": 103,
-          "linkAliveCount": 97
-        }
-      ],
-      "referrer": null,
-      "userAgent": null,
-      "uptime": {
-        "score": 90,
-        "aliveCount": 158,
-        "totalCount": 177,
-        "consecutiveAlive": 6,
-        "consecutiveFailures": 0,
-        "lastSeen": "2026-09-14T23:08:32.495Z",
-        "lastProbed": "2026-09-14T23:08:32.495Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1]
-      }
-    },
-    {
       "id": "Canal2.cr",
       "name": "Canal 2",
       "country": "CR",
@@ -112412,7 +112285,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": true,
+      "alive": false,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -112422,26 +112295,8 @@
       "editChannelLogo": true,
       "source": "iptv",
       "replaced_by": null,
-      "streamUrls": [
-        "https://mcdn.br.de/br/fs/bfs_sued/hls/de/master.m3u8",
-        "https://mcdn.br.de/br/fs/bfs_nord/hls/de/master.m3u8"
-      ],
-      "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 89,
-          "linkAliveCount": 76
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 109,
-          "linkAliveCount": 92
-        }
-      ],
+      "streamUrls": [],
+      "streamMeta": [],
       "referrer": null,
       "userAgent": null,
       "uptime": {
@@ -113460,33 +113315,9 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://amg01644-amg01644c1-amgplt0343.playout.now3.amagi.tv/ts-eu-w1-n2/playlist/amg01644-amg01644c1-amgplt0343/playlist.m3u8",
-        "https://dwamdstream103.akamaized.net/hls/live/2015526/dwstream103/master.m3u8",
-        "https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/master.m3u8",
         "https://cdn-7.pishow.tv/live/431/master.m3u8"
       ],
       "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 81,
-          "linkAliveCount": 81
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 103,
-          "linkAliveCount": 102
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 81,
-          "linkAliveCount": 81
-        },
         {
           "linkTotalCount": 77
         }
@@ -116271,7 +116102,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": true,
+      "alive": false,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -116281,36 +116112,8 @@
       "editChannelLogo": true,
       "source": "iptv",
       "replaced_by": null,
-      "streamUrls": [
-        "https://dash4.antik.sk/live/test_mdr_tizen/playlist.m3u8",
-        "https://mdrtvsnhls.akamaized.net/hls/live/2016928/mdrtvsn/index.m3u8",
-        "https://mdrtvsahls.akamaized.net/hls/live/2016879/mdrtvsa/index.m3u8",
-        "https://mdrtvthhls.akamaized.net/hls/live/2016880/mdrtvth/index.m3u8"
-      ],
-      "streamMeta": [
-        {
-          "linkTotalCount": 77,
-          "linkAliveCount": 77
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 2
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 2
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 2
-        }
-      ],
+      "streamUrls": [],
+      "streamMeta": [],
       "referrer": null,
       "userAgent": null,
       "uptime": {
@@ -117658,7 +117461,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": true,
+      "alive": false,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -117668,34 +117471,8 @@
       "editChannelLogo": true,
       "source": "iptv",
       "replaced_by": null,
-      "streamUrls": [
-        "https://mcdn.ndr.de/ndr/hls/ndr_fs/ndr_hh/master.m3u8",
-        "https://mcdn.ndr.de/ndr/hls/ndr_fs/ndr_mv/master.m3u8",
-        "https://mcdn.ndr.de/ndr/hls/ndr_fs/ndr_nds/master.m3u8"
-      ],
-      "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 102,
-          "linkAliveCount": 93
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 84,
-          "linkAliveCount": 75
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 82,
-          "linkAliveCount": 74
-        }
-      ],
+      "streamUrls": [],
+      "streamMeta": [],
       "referrer": null,
       "userAgent": null,
       "uptime": {
@@ -125106,34 +124883,8 @@
       "editChannelLogo": true,
       "source": "iptv",
       "replaced_by": null,
-      "streamUrls": [
-        "https://wdrlokalzeit.akamaized.net/hls/live/2018021-b/wdrlz_bonn/master.m3u8",
-        "https://wdrlokalzeit.akamaized.net/hls/live/2018019-b/wdrlz_aachen/master.m3u8",
-        "https://wdrlokalzeit.akamaized.net/hls/live/2018026-b/wdrlz_bielefeld/master.m3u8"
-      ],
-      "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 103,
-          "linkAliveCount": 45
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 99,
-          "linkAliveCount": 42
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 93,
-          "linkAliveCount": 35
-        }
-      ],
+      "streamUrls": [],
+      "streamMeta": [],
       "referrer": null,
       "userAgent": null,
       "uptime": {
@@ -140278,27 +140029,11 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://dai.google.com/linear/hls/event/GyPkTVDZSXGhpOvxPK7m2g/master.m3u8",
-        "https://redirector.dps.live/hls-video/c54ac2799874375c81c1672abb700870537c5223/ecuavisa/ecuavisa.smil/playlist.m3u8",
         "http://179.60.51.134:8888/ECUAVISA/index.m3u8",
         "http://45.171.108.253:8888/ECUAVISA/index.m3u8",
         "http://45.224.97.181:9999/Ecuavisa/index.m3u8"
       ],
       "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 104,
-          "linkAliveCount": 104
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 82,
-          "linkAliveCount": 82
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -145756,17 +145491,11 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://uni6rtmp.tulix.tv/nrbnetwork/myStream.sdp/playlist.m3u8",
         "https://cloud.streamingconnect.tv/hls/rasdtv2/rasdtv.m3u8",
         "https://stream-us-east-1.getpublica.com/playlist.m3u8?network_id=12830",
-        "https://cloud.streamingconnect.tv/hls/rasdtv/rasdtv.m3u8",
-        "https://yta.unitedteleports.tv/hls/YTA.m3u8"
+        "https://cloud.streamingconnect.tv/hls/rasdtv/rasdtv.m3u8"
       ],
       "streamMeta": [
-        {
-          "linkTotalCount": 33,
-          "linkAliveCount": 33
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -145787,10 +145516,6 @@
           "userAgent": null,
           "linkTotalCount": 95,
           "linkAliveCount": 77
-        },
-        {
-          "linkTotalCount": 33,
-          "linkAliveCount": 33
         }
       ],
       "referrer": null,
@@ -154644,22 +154369,12 @@
       "source": "famelack",
       "replaced_by": null,
       "streamUrls": [
-        "https://amg00090-blueantmedia-naturetime-samsungse-axgcn.amagi.tv/playlist/amg00090-blueantmedia-naturetime-samsungse/playlist.m3u8",
-        "https://amg00090-amgnaturetimeemea-rakuten.amagi.tv/playlist.m3u8",
-        "https://bamusa-naturetime-emea-eng-rakuten.amagi.tv/playlist.m3u8"
+        "https://amg00090-amgnaturetimeemea-rakuten.amagi.tv/playlist.m3u8"
       ],
       "streamMeta": [
         {
-          "linkTotalCount": 77,
-          "linkAliveCount": 77
-        },
-        {
           "linkTotalCount": 103,
           "linkAliveCount": 102
-        },
-        {
-          "linkTotalCount": 77,
-          "linkAliveCount": 77
         }
       ],
       "referrer": null,
@@ -162794,8 +162509,7 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://cdn-euronews.akamaized.net/live/eds/africanews-en/25049/index.m3u8",
-        "https://c3c275b999764df8a2dd55ffe2996818.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6576/bitok/eyJzdGlkIjoiOTU0NDAyODQtOTU0My00Yzc2LThmZjQtNDRhY2YwYmQxYTYwIiwibWt0IjoicGwiLCJjaCI6NjYwNiwicHRmIjo1fQ==/26036/africanews-en.m3u8"
+        "https://cdn-euronews.akamaized.net/live/eds/africanews-en/25049/index.m3u8"
       ],
       "streamMeta": [
         {
@@ -162804,13 +162518,6 @@
           "userAgent": null,
           "linkTotalCount": 83,
           "linkAliveCount": 83
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 102,
-          "linkAliveCount": 102
         }
       ],
       "referrer": null,
@@ -173246,25 +172953,9 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://channels.trace.plus/Traceprod/GOSPEL_ROA_hd/index.m3u8",
-        "https://channels.trace.plus/Traceprod/GOSPEL_FR_hd/index.m3u8",
-        "https://channels.trace.plus/Traceprod/GOSPEL_SA_hd/index.m3u8"
+        "https://channels.trace.plus/Traceprod/GOSPEL_FR_hd/index.m3u8"
       ],
       "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 103,
-          "linkAliveCount": 103
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 81,
-          "linkAliveCount": 81
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -173893,8 +173584,6 @@
       "replaced_by": null,
       "streamUrls": [
         "https://channels.trace.plus/Traceprod/URBAN_FR_hd/index.m3u8",
-        "https://channels.trace.plus/Traceprod/URBAN_AFRIC_FR_hd/index.m3u8",
-        "https://channels.trace.plus/Traceprod/URBAN_DOM_hd/index.m3u8",
         "https://amg01131-tracetv-amg01131c1-rakuten-us-1081.playouts.now.amagi.tv/playlist/amg01131-tracetvfast-traceurban-rakutenus/playlist.m3u8",
         "https://amg01131-tracetv-traceurban-glewed-g705j.amagi.tv/playlist.m3u8",
         "https://amg01131-tracetv-traceurbanse-samsungse-ov22d.amagi.tv/playlist/amg01131-tracetv-traceurbanse-samsungse/playlist.m3u8",
@@ -173907,20 +173596,6 @@
           "userAgent": null,
           "linkTotalCount": 103,
           "linkAliveCount": 103
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 81,
-          "linkAliveCount": 81
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 81,
-          "linkAliveCount": 81
         },
         {
           "linkTotalCount": 77,
@@ -205488,7 +205163,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": true,
+      "alive": false,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -205498,34 +205173,8 @@
       "editChannelLogo": true,
       "source": "iptv",
       "replaced_by": null,
-      "streamUrls": [
-        "https://bandung.staratv.id/hls/0/stream.m3u8",
-        "https://bojonegoro.staratv.id/hls/stream.m3u8",
-        "https://cianjur.staratv.id/hls/0/stream.m3u8"
-      ],
-      "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 88,
-          "linkAliveCount": 87
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 97,
-          "linkAliveCount": 91
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 81,
-          "linkAliveCount": 81
-        }
-      ],
+      "streamUrls": [],
+      "streamMeta": [],
       "referrer": null,
       "userAgent": null,
       "uptime": {
@@ -206550,33 +206199,9 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://ott-balancer.tvri.go.id/live/eds/Aceh/hls/Aceh.m3u8",
-        "https://ott-balancer.tvri.go.id/live/eds/Babel/hls/Babel.m3u8",
-        "https://ott-balancer.tvri.go.id/live/eds/Bali/hls/Bali.m3u8",
         "https://ott-balancer.tvri.go.id/live/eds/Nasional/hls/Nasional.m3u8"
       ],
       "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 86,
-          "linkAliveCount": 71
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 79,
-          "linkAliveCount": 67
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 95,
-          "linkAliveCount": 83
-        },
         {
           "linkTotalCount": 75,
           "linkAliveCount": 62
@@ -213485,34 +213110,8 @@
       "editChannelLogo": true,
       "source": "iptv",
       "replaced_by": null,
-      "streamUrls": [
-        "https://janya-digimix.akamaized.net/vglive-sk-374850/america/ngrp:angelamerica_all/playlist.m3u8",
-        "https://janya-digimix.akamaized.net/vglive-sk-904559/africa/ngrp:angelafrica_all/playlist.m3u8",
-        "https://janya-digimix.akamaized.net/vglive-sk-213167/arabia/ngrp:angelarabia_all/playlist.m3u8"
-      ],
-      "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 103,
-          "linkAliveCount": 23
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 103,
-          "linkAliveCount": 27
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 100,
-          "linkAliveCount": 23
-        }
-      ],
+      "streamUrls": [],
+      "streamMeta": [],
       "referrer": null,
       "userAgent": null,
       "uptime": {
@@ -220176,14 +219775,9 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://livetv.tarangplus.in/otv-origin/live/playlist.m3u8",
         "https://d1msejlow1t3l4.cloudfront.net/fta/dishatv/playlist.m3u8"
       ],
       "streamMeta": [
-        {
-          "linkTotalCount": 34,
-          "linkAliveCount": 34
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -220774,25 +220368,9 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://cc-p1izg43bk7sj5.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-p1izg43bk7sj5/DIYC/PMSL/IN10/Nazara_IN_B/Nazara_IN_B.m3u8",
-        "https://epiconvh.akamaized.net/live/nazara/master.m3u8",
         "https://mumt06.tangotv.in/qYyB8fXVEPICTV/index.m3u8"
       ],
       "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 104,
-          "linkAliveCount": 104
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 35,
-          "linkAliveCount": 35
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -220844,8 +220422,7 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://mumt01.tangotv.in/O5aw8Zn3EPICBHOJPURI/index.m3u8",
-        "https://cc-8hy4a26pz2uos.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-8hy4a26pz2uos/playlist.m3u8"
+        "https://mumt01.tangotv.in/O5aw8Zn3EPICBHOJPURI/index.m3u8"
       ],
       "streamMeta": [
         {
@@ -220854,13 +220431,6 @@
           "userAgent": null,
           "linkTotalCount": 104,
           "linkAliveCount": 102
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 26,
-          "linkAliveCount": 25
         }
       ],
       "referrer": null,
@@ -220999,7 +220569,6 @@
       "replaced_by": null,
       "streamUrls": [
         "https://mumt04.tangotv.in/m18aqlK4EPICMUSIC/index.m3u8",
-        "https://cc-3cyxq80qusspd.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-3cyxq80qusspd/playlist.m3u8",
         "https://streams.tangotv.in/EPICMUSIC/ORIGIN/index.m3u8"
       ],
       "streamMeta": [
@@ -221009,13 +220578,6 @@
           "userAgent": null,
           "linkTotalCount": 104,
           "linkAliveCount": 102
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 35,
-          "linkAliveCount": 34
         },
         {
           "source": "iptv",
@@ -230622,14 +230184,9 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://vidcdn.vidgyor.com/news24-origin/liveabr/playlist.m3u8",
         "https://mumt04.tangotv.in/m18aqlK4NEWS24MPCG/index.m3u8"
       ],
       "streamMeta": [
-        {
-          "linkTotalCount": 35,
-          "linkAliveCount": 35
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -230907,18 +230464,10 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://mumt06.tangotv.in/qYyB8fXVINDRADHANU/index.m3u8",
         "https://cdn-6.pishow.tv/live/10011/master.m3u8",
         "https://prideeast.thelegitpro.in/newslive/newslive/index.m3u8"
       ],
       "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 35,
-          "linkAliveCount": 35
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -232323,8 +231872,7 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://nktv.smartstream.video/smartstream-us/nkbangla/nkbangla/playlist.m3u8",
-        "https://server.livelegitpro.in:9899/tribetv/tribetv/index.m3u8"
+        "https://nktv.smartstream.video/smartstream-us/nkbangla/nkbangla/playlist.m3u8"
       ],
       "streamMeta": [
         {
@@ -232333,10 +231881,6 @@
           "userAgent": null,
           "linkTotalCount": 26,
           "linkAliveCount": 26
-        },
-        {
-          "linkTotalCount": 35,
-          "linkAliveCount": 31
         }
       ],
       "referrer": null,
@@ -236980,9 +236524,7 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://6n3yow8pl9ok-hls-live.5centscdn.com/sadhanalivetv/live.stream/playlist.m3u8",
-        "https://mumt04.tangotv.in/m18aqlK4SADHNEWSPMRAJ/index.m3u8",
-        "https://mumt05.tangotv.in/87NeALx2SADHNATV/index.m3u8"
+        "https://6n3yow8pl9ok-hls-live.5centscdn.com/sadhanalivetv/live.stream/playlist.m3u8"
       ],
       "streamMeta": [
         {
@@ -236991,14 +236533,6 @@
           "userAgent": null,
           "linkTotalCount": 104,
           "linkAliveCount": 104
-        },
-        {
-          "linkTotalCount": 34,
-          "linkAliveCount": 33
-        },
-        {
-          "linkTotalCount": 34,
-          "linkAliveCount": 34
         }
       ],
       "referrer": null,
@@ -237547,14 +237081,9 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://thelegitpro.in/pntv/rplusnews24x7/index.m3u8",
         "https://mumt05.tangotv.in/87NeALx2VERTENTSAMACHARPLUS/index.m3u8"
       ],
       "streamMeta": [
-        {
-          "linkTotalCount": 34,
-          "linkAliveCount": 34
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -238544,7 +238073,6 @@
       "replaced_by": null,
       "streamUrls": [
         "https://d2c4zqo2rb5uf1.cloudfront.net/master.m3u8",
-        "https://d28xtgmk9tfk6b.cloudfront.net/master.m3u8",
         "https://mumt01.tangotv.in/O5aw8Zn3SHALOMTVINDIA/index.m3u8"
       ],
       "streamMeta": [
@@ -238554,13 +238082,6 @@
           "userAgent": null,
           "linkTotalCount": 82,
           "linkAliveCount": 81
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 103,
-          "linkAliveCount": 101
         },
         {
           "source": "iptv",
@@ -243023,8 +242544,7 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://sis-global.prod.samsungtv.plus/v1/tvpprd/sc-mp2ar4ca425xo.m3u8",
-        "https://d3gnyty2vddhsg.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/pb-ytipwjqub3kf8/TMC2_IN.m3u8?ads.ads_cdn=cf&ads.cdn=cf"
+        "https://sis-global.prod.samsungtv.plus/v1/tvpprd/sc-mp2ar4ca425xo.m3u8"
       ],
       "streamMeta": [
         {
@@ -243033,13 +242553,6 @@
           "userAgent": null,
           "linkTotalCount": 102,
           "linkAliveCount": 102
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 82,
-          "linkAliveCount": 82
         }
       ],
       "referrer": null,
@@ -258814,17 +258327,9 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://d3k8wzt41aflvx.cloudfront.net/Mediaset_AU/Live.m3u8",
         "https://d3k8wzt41aflvx.cloudfront.net/MediasetEU/Live.m3u8"
       ],
       "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
-          "linkTotalCount": 102,
-          "linkAliveCount": 101
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -261276,33 +260781,9 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://d3k8wzt41aflvx.cloudfront.net/RAIUSA/Live.m3u8",
-        "https://d3k8wzt41aflvx.cloudfront.net/RAIHD/Live.m3u8",
-        "https://d3k8wzt41aflvx.cloudfront.net/RAIEU/Live.m3u8",
         "http://315e5a5d.ottrast.com/iptv/MM4E93NGF5LADZ/19093/index.m3u8"
       ],
       "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
-          "linkTotalCount": 102,
-          "linkAliveCount": 101
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
-          "linkTotalCount": 81,
-          "linkAliveCount": 80
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
-          "linkTotalCount": 81,
-          "linkAliveCount": 80
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -320079,7 +319560,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": true,
+      "alive": false,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -320089,34 +319570,8 @@
       "editChannelLogo": true,
       "source": "iptv",
       "replaced_by": null,
-      "streamUrls": [
-        "https://d726x48n2pd5h.cloudfront.net/XITE_Hits.m3u8",
-        "https://d726x48n2pd5h.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-skxr1pazhltvp/XITE_Hits.m3u8",
-        "https://amg01243-xitenetworksint-hitsuk-samsunguk-mvovq.amagi.tv/playlist/amg01243-xitenetworksint-hitsuk-samsunguk/playlist.m3u8"
-      ],
-      "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 78,
-          "linkAliveCount": 78
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 97,
-          "linkAliveCount": 97
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 78,
-          "linkAliveCount": 78
-        }
-      ],
+      "streamUrls": [],
+      "streamMeta": [],
       "referrer": null,
       "userAgent": null,
       "uptime": {
@@ -328767,8 +328222,6 @@
         "https://redirector.rudo.video/hls-video/567ffde3fa319fadf3419efda25619456231dfea/latina/latina.smil/playlist.m3u8",
         "http://45.171.108.253:8888/LATINA/index.m3u8",
         "https://live-evg7.tv360.bitel.com.pe/bitel/latina_abr/playlist.m3u8",
-        "https://dai.google.com/linear/hls/event/oYQGDqEGTmGdHE_fz9oLlg/master.m3u8",
-        "https://redirector.rudo.video/hls-video/567ffde3fa319fadf3419efda25619456231dfea/latinanoticias/latinanoticias.smil/playlist.m3u8",
         "http://190.93.224.42/LATINA/index.m3u8",
         "https://cablered.iptvperu.tv:1936/cablered/latina_new/playlist.m3u8"
       ],
@@ -328792,17 +328245,6 @@
           "referrer": null,
           "userAgent": null,
           "linkTotalCount": 77
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 77,
-          "linkAliveCount": 76
-        },
-        {
-          "linkTotalCount": 75,
-          "linkAliveCount": 68
         },
         {
           "source": "iptv",
@@ -338721,7 +338163,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": true,
+      "alive": false,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -338731,39 +338173,8 @@
       "editChannelLogo": true,
       "source": "iptv",
       "replaced_by": null,
-      "streamUrls": [
-        "https://online.godstands.tv:5443/WebRTCApp/streams/KidsChinese.m3u8",
-        "https://online.godstands.tv:5443/WebRTCApp/streams/KidsArabic.m3u8",
-        "https://online.godstands.tv:5443/WebRTCApp/streams/kidsenglish.m3u8",
-        "https://online.godstands.tv:5443/WebRTCApp/streams/KidsUrdu.m3u8"
-      ],
-      "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 88,
-          "linkAliveCount": 76
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 105,
-          "linkAliveCount": 91
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 87,
-          "linkAliveCount": 69
-        },
-        {
-          "linkTotalCount": 35,
-          "linkAliveCount": 31
-        }
-      ],
+      "streamUrls": [],
+      "streamMeta": [],
       "referrer": null,
       "userAgent": null,
       "uptime": {
@@ -338790,7 +338201,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": true,
+      "alive": false,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -338800,34 +338211,8 @@
       "editChannelLogo": true,
       "source": "iptv",
       "replaced_by": null,
-      "streamUrls": [
-        "https://online.godstands.tv:5443/WebRTCApp/streams/EnglishStreaming.m3u8",
-        "https://online.godstands.tv:5443/WebRTCApp/streams/Arabic.m3u8",
-        "https://online.godstands.tv:5443/WebRTCApp/streams/chineselive.m3u8"
-      ],
-      "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 94,
-          "linkAliveCount": 77
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 109,
-          "linkAliveCount": 91
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 94,
-          "linkAliveCount": 74
-        }
-      ],
+      "streamUrls": [],
+      "streamMeta": [],
       "referrer": null,
       "userAgent": null,
       "uptime": {
@@ -353593,33 +352978,9 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://amg01074-fueltv-fueltvau-samsungau-g09kq.amagi.tv/playlist/amg01074-fueltv-fueltvau-samsungau/playlist.m3u8",
-        "https://amg01074-fueltv-fueltvnz-samsungnz-i8ani.amagi.tv/playlist/amg01074-fueltv-fueltvnz-samsungnz/playlist.m3u8",
-        "https://amg01074-fueltv-fueltvemeaen-rakuten-b6j62.amagi.tv/hls/amagi_hls_data_rakutenAA-fueltvemeaen/CDN/master.m3u8",
         "https://amg01074-fueltv-amg01074c1-stirr-us-4214.playouts.now.amagi.tv/playlist.m3u8"
       ],
       "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 96,
-          "linkAliveCount": 96
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 77,
-          "linkAliveCount": 77
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 77,
-          "linkAliveCount": 77
-        },
         {
           "linkTotalCount": 32,
           "linkAliveCount": 32
@@ -374463,7 +373824,6 @@
       "replaced_by": null,
       "streamUrls": [
         "https://stream8.cinerama.uz/1214/tracks-v1a1/mono.m3u8",
-        "https://streaming.thestream.cyou/live/210.m3u8",
         "https://edge1.1internet.tv/dash-live2/streams/1tv-dvr/1tvdash.mpd",
         "https://178.217.49.7/1/index.m3u8"
       ],
@@ -374474,13 +373834,6 @@
           "userAgent": null,
           "linkTotalCount": 79,
           "linkAliveCount": 76
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 97,
-          "linkAliveCount": 91
         },
         {
           "source": "iptv",
@@ -376419,8 +375772,7 @@
         "https://tchaikovsky.af-stream.com:991/s/xzztutfc/dom-kino-hd/video.m3u8",
         "https://streaming.thestream.cyou/live/44.m3u8",
         "http://stream.mcquack.net/236/index.m3u8",
-        "https://stream.mcquack.net/236/index.m3u8",
-        "https://fs.uplink.kz/dom_kino/mono.m3u8?token=onlinetv"
+        "https://stream.mcquack.net/236/index.m3u8"
       ],
       "streamMeta": [
         {
@@ -376453,13 +375805,6 @@
         {
           "linkTotalCount": 75,
           "linkAliveCount": 75
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 13,
-          "linkAliveCount": 13
         }
       ],
       "referrer": null,
@@ -377687,20 +377032,12 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://tntm.mediacdn.ru/cdn/tntmusic/playlist.m3u8",
         "http://hls127.freeott.top:8080/TNT_MUSIC_HD/video.m3u8",
         "https://cdn-01.bonus-tv.ru/tntmusic/playlist.m3u8",
         "https://stream.mcquack.net/317/index.m3u8",
         "https://stream8.cinerama.uz/1272/tracks-v1a1/mono.m3u8"
       ],
       "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 96,
-          "linkAliveCount": 94
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -388267,10 +387604,7 @@
       "streamUrls": [
         "https://stream.smotrim.ru/hls2/planeta_rtr_asia/playlist_4.m3u8",
         "https://player.smotrim.ru/iframe/stream/live_id/683d9649-a96c-4a4d-b468-91c0ee2bf363",
-        "https://streaming.televizor-24-tochka.ru/live/211.m3u8",
-        "https://stream.smotrim.ru/hls/planeta_rtr_asia/playlist.m3u8?entity=channel&id=511&sign=d1fe06cd922b67e412719536998fa43d",
-        "https://stream.smotrim.ru/hls/planeta_rtr_sng/playlist.m3u8?entity=channel&id=512&sign=2abaa592de074d65809a10b6bacc4410",
-        "https://fs.uplink.kz/rtr_planeta/mono.m3u8?token=onlinetv"
+        "https://streaming.televizor-24-tochka.ru/live/211.m3u8"
       ],
       "streamMeta": [
         {
@@ -388292,27 +387626,6 @@
           "userAgent": null,
           "linkTotalCount": 78,
           "linkAliveCount": 73
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 78,
-          "linkAliveCount": 76
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 77,
-          "linkAliveCount": 76
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 13,
-          "linkAliveCount": 13
         }
       ],
       "referrer": null,
@@ -431540,8 +430853,7 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://live.artidijitalmedya.com/artidijital_mavikaradeniz/mavikaradeniz/playlist.m3u8",
-        "https://panel.5gtvhosting.com/hls/karadeniztv/karadeniztv.m3u8"
+        "https://live.artidijitalmedya.com/artidijital_mavikaradeniz/mavikaradeniz/playlist.m3u8"
       ],
       "streamMeta": [
         {
@@ -431550,10 +430862,6 @@
           "userAgent": null,
           "linkTotalCount": 94,
           "linkAliveCount": 94
-        },
-        {
-          "linkTotalCount": 32,
-          "linkAliveCount": 32
         }
       ],
       "referrer": null,
@@ -456546,17 +455854,12 @@
       "source": "famelack",
       "replaced_by": null,
       "streamUrls": [
-        "https://amg00654-itv-amg00654c4-rakuten-uk-5263.playouts.now.amagi.tv/playlist.m3u8",
-        "https://amg00654-itv-amg00654c4-samsung-gb-8889.playouts.now.amagi.tv/playlist.m3u8"
+        "https://amg00654-itv-amg00654c4-rakuten-uk-5263.playouts.now.amagi.tv/playlist.m3u8"
       ],
       "streamMeta": [
         {
           "linkTotalCount": 94,
           "linkAliveCount": 94
-        },
-        {
-          "linkTotalCount": 74,
-          "linkAliveCount": 73
         }
       ],
       "referrer": null,
@@ -459538,20 +458841,12 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://lightning-now70s-rakuten.amagi.tv/hls/amagi_hls_data_rakutenAA-lightning-now70s-rakuten/CDN/playlist.m3u8",
         "https://lightningnow70-samsungau.amagi.tv/playlist.m3u8",
         "https://lightning-now70s-samsungnz.amagi.tv/playlist.m3u8",
         "https://amg01076-amg01076c1-samsung-gb-6682.playouts.now.amagi.tv/playlist.m3u8",
         "https://lightning-now70s-rakuten.amagi.tv/playlist.m3u8"
       ],
       "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 94,
-          "linkAliveCount": 94
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -459612,7 +458907,6 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://lightning-now80s-rakuten.amagi.tv/hls/amagi_hls_data_rakutenAA-lightning-now80s-rakuten/CDN/playlist.m3u8",
         "https://lightningnow80-samsungau.amagi.tv/playlist.m3u8",
         "https://lightning-now80s-samsungnz.amagi.tv/playlist.m3u8",
         "https://lightning-now80s-rakuten.amagi.tv/playlist.m3u8",
@@ -459620,13 +458914,6 @@
         "https://samsunguk-lightning-now80s-samsunguk-n908q.amagi.tv/playlist/samsunguk-lightning-now80s-samsunguk/playlist.m3u8"
       ],
       "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 94,
-          "linkAliveCount": 94
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -474847,8 +474134,7 @@
       "streamUrls": [
         "https://a-cdn.herringnetwork.com/affiliate/awee/playlist.m3u8",
         "https://a-cdn.klowdtv.com/live1/awee/playlist.m3u8",
-        "https://aweencore-vizio.amagi.tv/playlist.m3u8",
-        "https://2-fss-2.streamhoster.com/pl_120/206858-4404552-1/playlist.m3u8"
+        "https://aweencore-vizio.amagi.tv/playlist.m3u8"
       ],
       "streamMeta": [
         {
@@ -474871,11 +474157,6 @@
           "userAgent": null,
           "linkTotalCount": 10,
           "linkAliveCount": 10
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null
         }
       ],
       "referrer": null,
@@ -490027,8 +489308,7 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://create.lls.pbs.org/index.m3u8",
-        "https://2-fss-1.streamhoster.com/pl_122/amlst:201814-2122456/playlist.m3u8"
+        "https://create.lls.pbs.org/index.m3u8"
       ],
       "streamMeta": [
         {
@@ -490037,13 +489317,6 @@
           "userAgent": null,
           "linkTotalCount": 94,
           "linkAliveCount": 94
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 13,
-          "linkAliveCount": 13
         }
       ],
       "referrer": null,
@@ -491863,22 +491136,13 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://aegis-cloudfront-1.tubi.video/5e3aff30-070f-4951-aa59-5ca415acb3c1/playlist.m3u8",
         "http://40.160.24.56/CW_SD/index.m3u8",
         "http://40.160.24.52/CW/index.m3u8",
         "https://gpuserver3.tier1streams.com/CW/index.m3u8",
         "https://messi.damitv.st/papi/ts/cw-usa/playlist.m3u8",
-        "https://linear-710.frequency.stream/dist/stirr/710/hls/master/playlist.m3u8",
-        "https://linear-709.frequency.stream/dist/stirr/709/hls/master/playlist.m3u8"
+        "https://linear-710.frequency.stream/dist/stirr/710/hls/master/playlist.m3u8"
       ],
       "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 15,
-          "linkAliveCount": 15
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -491909,13 +491173,6 @@
           "referrer": null,
           "userAgent": null,
           "linkTotalCount": 15
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 15,
-          "linkAliveCount": 14
         }
       ],
       "referrer": null,
@@ -492615,8 +491872,7 @@
         "http://40.160.24.52/DAYSTAR_TV/index.m3u8",
         "https://gpuserver3.tier1streams.com/DAYSTAR_TV/index.m3u8",
         "http://170.254.17.2:80/DAYSTAR/index.m3u8",
-        "http://170.254.17.2/DAYSTAR/index.m3u8",
-        "https://content.uplynk.com/channel/1992858a34c3423dbdad491d07ae6f75.m3u8"
+        "http://170.254.17.2/DAYSTAR/index.m3u8"
       ],
       "streamMeta": [
         {
@@ -492659,13 +491915,6 @@
           "userAgent": null,
           "linkTotalCount": 51,
           "linkAliveCount": 48
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 13,
-          "linkAliveCount": 13
         }
       ],
       "referrer": null,
@@ -495003,7 +494252,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": true,
+      "alive": false,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -495013,34 +494262,8 @@
       "editChannelLogo": true,
       "source": "iptv",
       "replaced_by": null,
-      "streamUrls": [
-        "https://ef79b15c8c7c46c7a9de9d33001dbd07.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-859-DOCUMENTARYPLUS-DOCUMENTARYPLUS/mt/documentaryplus/859/hls/master/playlist.m3u8",
-        "https://d1kx9y4yhe8h6h.cloudfront.net/playlist.m3u8",
-        "https://1d153317c8db4250b3789601274e2402.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-887-DOCUMENTARYINTERNATIONAL-DOCUMENTARYPLUS/mt/documentaryplus/887/hls/master/playlist.m3u8"
-      ],
-      "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 77,
-          "linkAliveCount": 77
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 77,
-          "linkAliveCount": 76
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 94,
-          "linkAliveCount": 93
-        }
-      ],
+      "streamUrls": [],
+      "streamMeta": [],
       "referrer": null,
       "userAgent": null,
       "uptime": {
@@ -495132,41 +494355,15 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://amg00276-amg00276c11-rakuten-uk-3446.playouts.now.amagi.tv/playlist/amg00276-aetelevisionnetworksfast-dogthebountyhunterall-rakutenuk/playlist.m3u8",
-        "https://jmp2.uk/plu-5f6b535a278bfe000799484a.m3u8",
-        "https://amg00276-amg00276c11-samsung-gb-3484.playouts.now.amagi.tv/playlist.m3u8",
-        "https://aegis-cloudfront-1.tubi.video/ff0ad399-75ed-42ba-8c60-75bb6cb8c929/playlist.m3u8",
-        "https://pb-f3c3g3zxfdxte.akamaized.net/DogTheBountyHunter_US.m3u8"
+        "https://jmp2.uk/plu-5f6b535a278bfe000799484a.m3u8"
       ],
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 94,
-          "linkAliveCount": 94
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
           "linkTotalCount": 76,
           "linkAliveCount": 67
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 76,
-          "linkAliveCount": 75
-        },
-        {
-          "linkTotalCount": 45,
-          "linkAliveCount": 45
-        },
-        {
-          "linkTotalCount": 45,
-          "linkAliveCount": 45
         }
       ],
       "referrer": null,
@@ -497282,48 +496479,6 @@
       }
     },
     {
-      "id": "elevationchurch.us",
-      "name": "Elevation Church",
-      "country": "US",
-      "categories": [],
-      "languages": [],
-      "channelLogo": null,
-      "website": null,
-      "tv": true,
-      "radio": false,
-      "ytId": null,
-      "alive": true,
-      "probe": true,
-      "hide": false,
-      "needsProxy": false,
-      "geoBlocked": false,
-      "editName": true,
-      "editChannelLogo": true,
-      "source": "famelack",
-      "replaced_by": null,
-      "streamUrls": [
-        "https://linear-1066.frequency.stream/dist/stirr/1066/hls/master/playlist.m3u8"
-      ],
-      "streamMeta": [
-        {
-          "linkTotalCount": 94,
-          "linkAliveCount": 94
-        }
-      ],
-      "referrer": null,
-      "userAgent": null,
-      "uptime": {
-        "score": 100,
-        "aliveCount": 154,
-        "totalCount": 166,
-        "consecutiveAlive": 127,
-        "consecutiveFailures": 0,
-        "lastSeen": "2026-09-14T20:25:56.179Z",
-        "lastProbed": "2026-09-14T20:25:56.179Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-      }
-    },
-    {
       "id": "emerillagassechannel.us",
       "name": "Emeril Lagasse Channel",
       "country": "US",
@@ -498299,33 +497454,9 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://cdn3.wowza.com/1/ZVBYYXFLLzE0c3NC/Qk1FMURC/hls/live/playlist.m3u8",
-        "https://cdn3.wowza.com/1/QmVNUVhTNTZSS3Uz/YWQ0aHpi/hls/live/playlist.m3u8",
-        "https://cdn3.wowza.com/1/YW5wSWZiRGd2eFlU/bGV0aVBq/hls/live/playlist.m3u8",
         "https://streams.comclark.com/pknsd/ewtn/playlist.m3u8"
       ],
       "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 94,
-          "linkAliveCount": 94
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 76,
-          "linkAliveCount": 76
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 76,
-          "linkAliveCount": 76
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -500439,8 +499570,7 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://fnx.lls.pbs.org/index.m3u8",
-        "https://castus-vod-dev.s3.amazonaws.com/vod_clients/kvcr/live/ch1/video.m3u8"
+        "https://fnx.lls.pbs.org/index.m3u8"
       ],
       "streamMeta": [
         {
@@ -500449,13 +499579,6 @@
           "userAgent": null,
           "linkTotalCount": 94,
           "linkAliveCount": 94
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 13,
-          "linkAliveCount": 13
         }
       ],
       "referrer": null,
@@ -500650,23 +499773,14 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://live.field59.com/kbsi/kbsi1/playlist.m3u8",
         "http://stream.cammonitorplus.net/1752/index.m3u8",
         "http://stream.cammonitorplus.net/1799/index.m3u8",
         "http://84.17.50.102/fox/index.m3u8",
         "http://40.160.24.52/FOX/index.m3u8",
         "https://messi.damitv.st/papi/ts/fox-usa/playlist.m3u8",
-        "http://40.160.24.56/FOX_SD/index.m3u8",
-        "https://aegis-cloudfront-1.tubi.video/cc394198-7bde-43e8-b186-875bc0eb3037/index.m3u8"
+        "http://40.160.24.56/FOX_SD/index.m3u8"
       ],
       "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 13,
-          "linkAliveCount": 13
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -500706,13 +499820,6 @@
           "userAgent": null,
           "linkTotalCount": 51,
           "linkAliveCount": 4
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 13,
-          "linkAliveCount": 13
         }
       ],
       "referrer": null,
@@ -502805,20 +501912,11 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://streaming-live-fcdn.api.prd.univisionnow.com/galaeast/galaeast.isml/hls/galaeast.m3u8",
         "http://200.39.57.254:8008/play/a00v/index.m3u8",
         "http://108.181.20.255:27347/livehttpplay?channel_id=23090",
-        "http://108.181.20.255:27347/livehttpplay?channel_id=23091",
-        "https://streaming-live-fcdn.api.prd.univisionnow.com/galawest/galawest.isml/hls/galawest.m3u8"
+        "http://108.181.20.255:27347/livehttpplay?channel_id=23091"
       ],
       "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 2,
-          "linkAliveCount": 2
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -502838,13 +501936,6 @@
           "referrer": null,
           "userAgent": null,
           "linkTotalCount": 64
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 2,
-          "linkAliveCount": 2
         }
       ],
       "referrer": null,
@@ -520914,8 +520005,7 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://cdn-unified-hls.streamspot.com/ingest1/0b5c0f18e9/playlist.m3u8?origin=1",
-        "https://faithnow-hls.secdn.net/faithnow-holland-channel/play/FaithTV.smil/playlist.m3u8"
+        "https://cdn-unified-hls.streamspot.com/ingest1/0b5c0f18e9/playlist.m3u8?origin=1"
       ],
       "streamMeta": [
         {
@@ -520924,9 +520014,6 @@
           "userAgent": null,
           "linkTotalCount": 94,
           "linkAliveCount": 94
-        },
-        {
-          "linkTotalCount": 32
         }
       ],
       "referrer": null,
@@ -531489,7 +530576,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": true,
+      "alive": false,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -531499,34 +530586,8 @@
       "editChannelLogo": true,
       "source": "iptv",
       "replaced_by": null,
-      "streamUrls": [
-        "https://nowhls.wns.live/hls/stream.m3u8",
-        "https://live.nowtelly.com/now_arabic/live/playlist.m3u8",
-        "https://live.nowtelly.com/now_spanish/live/playlist.m3u8"
-      ],
-      "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 86,
-          "linkAliveCount": 86
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 76,
-          "linkAliveCount": 76
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 76,
-          "linkAliveCount": 76
-        }
-      ],
+      "streamUrls": [],
+      "streamMeta": [],
       "referrer": null,
       "userAgent": null,
       "uptime": {
@@ -532200,8 +531261,7 @@
         "https://amg00217-newsmax-newsmax-zeasn-022k9.amagi.tv/playlist.m3u8",
         "https://nmxdistro.akamaized.net/hls/live/529965/Live_1/index.m3u8",
         "https://amg00217-newsmax-newsmax-rokuus-dur76.amagi.tv/playlist.m3u8",
-        "https://newsmax-klowdtv.amagi.tv/playlist.m3u8",
-        "https://2-fss-2.streamhoster.com/pl_120/206858-4404556-1/playlist.m3u8"
+        "https://newsmax-klowdtv.amagi.tv/playlist.m3u8"
       ],
       "streamMeta": [
         {
@@ -532232,13 +531292,6 @@
         {
           "linkTotalCount": 74,
           "linkAliveCount": 73
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 13,
-          "linkAliveCount": 12
         }
       ],
       "referrer": null,
@@ -534360,8 +533413,7 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://stream-204968.castr.net/64e0c91d08bff3041638aee3/live_a4243540d4b911f0b624bda5e9a32aa9/index.m3u8",
-        "https://stream-204968.castr.net/64e0c91d08bff3041638aee3/live_a16fa020f4c411f09ddaa1978319689a/index.m3u8"
+        "https://stream-204968.castr.net/64e0c91d08bff3041638aee3/live_a4243540d4b911f0b624bda5e9a32aa9/index.m3u8"
       ],
       "streamMeta": [
         {
@@ -534370,13 +533422,6 @@
           "userAgent": null,
           "linkTotalCount": 94,
           "linkAliveCount": 94
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 76,
-          "linkAliveCount": 76
         }
       ],
       "referrer": null,
@@ -534469,7 +533514,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": true,
+      "alive": false,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -534479,34 +533524,8 @@
       "editChannelLogo": true,
       "source": "iptv",
       "replaced_by": null,
-      "streamUrls": [
-        "https://ntd02.akamaized.net/HD-NY/index.m3u8",
-        "https://live.ntdtv.com/uwlive990/playlist.m3u8",
-        "https://ntd02.akamaized.net/HD-LA/index.m3u8"
-      ],
-      "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 94,
-          "linkAliveCount": 94
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 76,
-          "linkAliveCount": 76
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 32,
-          "linkAliveCount": 32
-        }
-      ],
+      "streamUrls": [],
+      "streamMeta": [],
       "referrer": null,
       "userAgent": null,
       "uptime": {
@@ -534581,7 +533600,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": true,
+      "alive": false,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -534591,26 +533610,8 @@
       "editChannelLogo": true,
       "source": "iptv",
       "replaced_by": null,
-      "streamUrls": [
-        "https://live.ntdtv.com/mllive860/playlist.m3u8",
-        "https://live.ntdtv.com/cwlive220/playlist.m3u8"
-      ],
-      "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 94,
-          "linkAliveCount": 94
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 76,
-          "linkAliveCount": 76
-        }
-      ],
+      "streamUrls": [],
+      "streamMeta": [],
       "referrer": null,
       "userAgent": null,
       "uptime": {
@@ -534686,7 +533687,7 @@
       "tv": true,
       "radio": false,
       "ytId": null,
-      "alive": true,
+      "alive": false,
       "probe": true,
       "hide": false,
       "needsProxy": false,
@@ -534696,39 +533697,8 @@
       "editChannelLogo": true,
       "source": "iptv",
       "replaced_by": null,
-      "streamUrls": [
-        "https://amg17596-ntdtv-amg17596c1-rakuten-gb-6741.playouts.now.amagi.tv/playlist/amg17596-newtangdynastytelevision-ntdtv-rakutengb/playlist.m3u8",
-        "https://ntd02.akamaized.net/NTD-UK/index.m3u8",
-        "https://amg17596-amg17596c1-ntdtv-worldwide-3276.playouts.now.amagi.tv/playlist/amg17596-newtangdynastytelevision-ntdtv-ntdtvworldwide/playlist.m3u8",
-        "https://amg17596-ntdtv-amg17596c1-stirr-us-4738.playouts.now.amagi.tv/ntd.m3u8"
-      ],
-      "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 76,
-          "linkAliveCount": 76
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 94,
-          "linkAliveCount": 86
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 76,
-          "linkAliveCount": 76
-        },
-        {
-          "linkTotalCount": 74,
-          "linkAliveCount": 74
-        }
-      ],
+      "streamUrls": [],
+      "streamMeta": [],
       "referrer": null,
       "userAgent": null,
       "uptime": {
@@ -535061,8 +534031,7 @@
         "https://oan-plus-tcl.amagi.tv/playlist.m3u8",
         "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/oan-encore/playlist.m3u8?ads.vf=SVKVXmuK18W",
         "https://a-cdn.herringnetwork.com/affiliate/oane/playlist.m3u8",
-        "https://a-cdn.klowdtv.com/live1/oane/playlist.m3u8",
-        "https://2-fss-2.streamhoster.com/pl_118/206858-4404458-1/playlist.m3u8"
+        "https://a-cdn.klowdtv.com/live1/oane/playlist.m3u8"
       ],
       "streamMeta": [
         {
@@ -535085,11 +534054,6 @@
           "userAgent": null,
           "linkTotalCount": 10,
           "linkAliveCount": 10
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null
         },
         {
           "source": "iptv",
@@ -541571,8 +540535,7 @@
       "streamUrls": [
         "https://d2jiqiw4g5lj5k.cloudfront.net/AVSamsung/AVSamsung.m3u8",
         "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/real-americas-voice/RAVDistroTV.m3u8?ads.vf=9qzIq8oO5PK",
-        "https://stream.weathernationtv.com/RAVStirr_poekxujeisurekugzezyg/O1/playlistSCTE35.m3u8",
-        "https://2-fss-2.streamhoster.com/pl_118/206858-4404454-1/playlist.m3u8"
+        "https://stream.weathernationtv.com/RAVStirr_poekxujeisurekugzezyg/O1/playlistSCTE35.m3u8"
       ],
       "streamMeta": [
         {
@@ -541595,13 +540558,6 @@
           "userAgent": null,
           "linkTotalCount": 76,
           "linkAliveCount": 76
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 13,
-          "linkAliveCount": 13
         }
       ],
       "referrer": null,
@@ -544647,9 +543603,7 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://stream6.scientology.org/master.m3u8",
-        "https://stream-losangeles.scientology.org/master.m3u8",
-        "https://stream-tampa.scientology.org/master.m3u8"
+        "https://stream6.scientology.org/master.m3u8"
       ],
       "streamMeta": [
         {
@@ -544658,20 +543612,6 @@
           "userAgent": null,
           "linkTotalCount": 94,
           "linkAliveCount": 94
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 13,
-          "linkAliveCount": 13
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 13,
-          "linkAliveCount": 13
         }
       ],
       "referrer": null,
@@ -545687,30 +544627,14 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://broadcaster-1.cclouds.in/srt/channel1_abr/playlist.m3u8",
-        "https://broadcaster-1.cclouds.in/srt-3/channel3_abr/playlist.m3u8",
-        "https://broadcaster-1.cclouds.in/srt-2/channel2_abr/playlist.m3u8"
+        "https://broadcaster-1.cclouds.in/srt-3/channel3_abr/playlist.m3u8"
       ],
       "streamMeta": [
         {
           "source": "iptv",
           "referrer": null,
           "userAgent": null,
-          "linkTotalCount": 94,
-          "linkAliveCount": 94
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
           "linkTotalCount": 76
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 76,
-          "linkAliveCount": 76
         }
       ],
       "referrer": null,
@@ -550786,7 +549710,8 @@
       "streamUrls": [
         "https://a-cdn.klowdtv.com/live3/swervecombat_720p/playlist.m3u8",
         "https://linear-253.frequency.stream/mt/roku/253/hls/master/playlist.m3u8",
-        "https://linear-253.frequency.stream/dist/stirr/253/hls/master/playlist.m3u8"
+        "https://linear-253.frequency.stream/dist/stirr/253/hls/master/playlist.m3u8",
+        "https://linear-253.frequency.stream/dist/xumo/253/hls/master/playlist.m3u8"
       ],
       "streamMeta": [
         {
@@ -550848,20 +549773,10 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://linear-253.frequency.stream/mt/roku/253/hls/master/playlist.m3u8",
         "https://jmp2.uk/plu-683df56f5195c2a60a3f5559.m3u8",
-        "https://a-cdn.klowdtv.com/live3/swervewomenssports_720p/playlist.m3u8",
-        "https://linear-253.frequency.stream/dist/stirr/253/hls/master/playlist.m3u8",
-        "https://linear-253.frequency.stream/dist/xumo/253/hls/master/playlist.m3u8"
+        "https://a-cdn.klowdtv.com/live3/swervewomenssports_720p/playlist.m3u8"
       ],
       "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 94,
-          "linkAliveCount": 94
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -550875,14 +549790,6 @@
           "userAgent": null,
           "linkTotalCount": 76,
           "linkAliveCount": 76
-        },
-        {
-          "linkTotalCount": 74,
-          "linkAliveCount": 74
-        },
-        {
-          "linkTotalCount": 74,
-          "linkAliveCount": 74
         }
       ],
       "referrer": null,
@@ -552584,9 +551491,7 @@
         "http://170.254.17.2:80/TELEMUNDO/index.m3u8",
         "http://200.39.57.254:8008/play/a00y/index.m3u8",
         "http://45.190.13.8/TelemundoHD/index.m3u8",
-        "http://181.119.108.43:9001/play/a044/index.m3u8",
-        "https://nbculocallive.akamaized.net/hls/live/2037098/sandiego/stream1/master.m3u8",
-        "https://streamer1.nexgen.bz/TELEMUNDO/index.m3u8"
+        "http://181.119.108.43:9001/play/a044/index.m3u8"
       ],
       "streamMeta": [
         {
@@ -552644,20 +551549,6 @@
           "userAgent": null,
           "linkTotalCount": 54,
           "linkAliveCount": 43
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 13,
-          "linkAliveCount": 9
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 1,
-          "linkAliveCount": 1
         }
       ],
       "referrer": null,
@@ -558235,8 +557126,7 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://amg00979-amg00979c1-firetv-us-3622.playouts.now.amagi.tv/playlist.m3u8",
-        "https://aegis-cloudfront-1.tubi.video/c2e3094d-ad56-4c5f-9655-cd80df71fbab/playlist.m3u8"
+        "https://amg00979-amg00979c1-firetv-us-3622.playouts.now.amagi.tv/playlist.m3u8"
       ],
       "streamMeta": [
         {
@@ -558245,13 +557135,6 @@
           "userAgent": null,
           "linkTotalCount": 94,
           "linkAliveCount": 93
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 13,
-          "linkAliveCount": 13
         }
       ],
       "referrer": null,
@@ -561090,9 +559973,7 @@
         "http://190.197.41.183/Unimas/mono.m3u8",
         "http://108.181.20.255:27347/livehttpplay?channel_id=23094",
         "http://108.181.20.255:27347/livehttpplay?channel_id=23093",
-        "http://200.39.57.254:8008/play/a003/index.m3u8",
-        "https://streaming-live-fcdn.api.prd.univisionnow.com/kftr/kftr.isml/hls/kftr.m3u8",
-        "https://streaming-live-fcdn.api.prd.univisionnow.com/kuvn/kuvn.isml/hls/kuvn.m3u8"
+        "http://200.39.57.254:8008/play/a003/index.m3u8"
       ],
       "streamMeta": [
         {
@@ -561127,20 +560008,6 @@
           "userAgent": null,
           "linkTotalCount": 72,
           "linkAliveCount": 9
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 13,
-          "linkAliveCount": 13
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 13,
-          "linkAliveCount": 13
         }
       ],
       "referrer": null,
@@ -564415,48 +563282,6 @@
       }
     },
     {
-      "id": "watcharmonygospelmusictv.us",
-      "name": "WATC Harmony Gospel Music TV",
-      "country": "US",
-      "categories": [],
-      "languages": [],
-      "channelLogo": null,
-      "website": null,
-      "tv": true,
-      "radio": false,
-      "ytId": null,
-      "alive": true,
-      "probe": true,
-      "hide": false,
-      "needsProxy": false,
-      "geoBlocked": false,
-      "editName": true,
-      "editChannelLogo": true,
-      "source": "famelack",
-      "replaced_by": null,
-      "streamUrls": [
-        "https://tgn.bozztv.com/watc57/watc57-harmony/watc57-harmony/index.m3u8"
-      ],
-      "streamMeta": [
-        {
-          "linkTotalCount": 73,
-          "linkAliveCount": 73
-        }
-      ],
-      "referrer": null,
-      "userAgent": null,
-      "uptime": {
-        "score": 100,
-        "aliveCount": 73,
-        "totalCount": 73,
-        "consecutiveAlive": 73,
-        "consecutiveFailures": 0,
-        "lastSeen": "2026-09-14T20:33:33.429Z",
-        "lastProbed": "2026-09-14T20:33:33.429Z",
-        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-      }
-    },
-    {
       "id": "WATCDT571.us",
       "name": "WATC-DT 57.1",
       "country": "US",
@@ -564532,17 +563357,9 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://tgn.bozztv.com/watc57/watc57-2/watc57-2/index.m3u8",
         "https://uni01rtmp.tulix.tv/watc57-2/watc57-2/playlist.m3u8"
       ],
       "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 76,
-          "linkAliveCount": 76
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -570941,8 +569758,7 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://world.lls.pbs.org/index.m3u8",
-        "https://wgtvdt3.lls.pbs.org/wgtvdt3-cmaf-hls.m3u8"
+        "https://world.lls.pbs.org/index.m3u8"
       ],
       "streamMeta": [
         {
@@ -570951,13 +569767,6 @@
           "userAgent": null,
           "linkTotalCount": 94,
           "linkAliveCount": 94
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 13,
-          "linkAliveCount": 13
         }
       ],
       "referrer": null,
@@ -573154,14 +571963,9 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://d284aawtm5vi48.cloudfront.net/XITE_90s_Throwback.m3u8",
         "https://d284aawtm5vi48.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-fjdfi2br1jtq7/XITE_90s_Throwback.m3u8"
       ],
       "streamMeta": [
-        {
-          "linkTotalCount": 74,
-          "linkAliveCount": 74
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -579183,27 +577987,11 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://mblenmain01.telesur.ultrabase.net/mblivev3/480p/playlist.m3u8",
-        "https://mblenmain01.telesur.ultrabase.net/mblivev3/hd/playlist.m3u8",
         "https://mblesmain01.telesur.ultrabase.net/mbliveMain/hd/playlist.m3u8",
         "https://45.190.28.50/TELESUR_HD/index.m3u8",
         "https://mblesmain01.telesur.ultrabase.net/mbliveMain/480p/playlist.m3u8"
       ],
       "streamMeta": [
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 93,
-          "linkAliveCount": 93
-        },
-        {
-          "source": "iptv",
-          "referrer": null,
-          "userAgent": null,
-          "linkTotalCount": 76,
-          "linkAliveCount": 76
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -580692,14 +579480,9 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://live.canthotv.vn/live/tv/chunklist.m3u8",
         "https://live.canthotv.vn/cs2/live.stream/playlist.m3u8"
       ],
       "streamMeta": [
-        {
-          "linkTotalCount": 32,
-          "linkAliveCount": 31
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -582179,24 +580962,10 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://vtvgolive-sctvdrm.vtvdigital.vn/manifest/sctv12/master.m3u8",
-        "https://vtvgolive-sctvdrm.vtvdigital.vn/manifest/sctv11/master.m3u8",
         "https://liveh12.vtvprime.vn/hls/SCTV1/index.m3u8",
-        "https://javiptv.s.gy/iptv-m3u-sctv-vn",
-        "https://vtvgolive-sctvdrm.vtvdigital.vn/manifest/sctv13/master.m3u8",
-        "https://vtvgolive-sctvdrm.vtvdigital.vn/manifest/sctv14/master.m3u8",
-        "https://vtvgolive-sctvdrm.vtvdigital.vn/manifest/sctv18/master.m3u8",
-        "https://vtvgolive-sctvdrm.vtvdigital.vn/manifest/sctv19/master.m3u8"
+        "https://javiptv.s.gy/iptv-m3u-sctv-vn"
       ],
       "streamMeta": [
-        {
-          "linkTotalCount": 33,
-          "linkAliveCount": 33
-        },
-        {
-          "linkTotalCount": 33,
-          "linkAliveCount": 30
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -582208,22 +580977,6 @@
           "referrer": null,
           "userAgent": null,
           "linkTotalCount": 46
-        },
-        {
-          "linkTotalCount": 33,
-          "linkAliveCount": 31
-        },
-        {
-          "linkTotalCount": 33,
-          "linkAliveCount": 32
-        },
-        {
-          "linkTotalCount": 33,
-          "linkAliveCount": 31
-        },
-        {
-          "linkTotalCount": 33,
-          "linkAliveCount": 29
         }
       ],
       "referrer": null,
@@ -582354,15 +581107,10 @@
       "source": "iptv",
       "replaced_by": null,
       "streamUrls": [
-        "https://vtvgolive-sctvdrm.vtvdigital.vn/manifest/sctv20/master.m3u8",
         "https://vtvgolive-sctvdrm.vtvdigital.vn/manifest/sctv2/master.m3u8",
         "https://liveh12.vtvprime.vn/hls/SCTV2/index.m3u8"
       ],
       "streamMeta": [
-        {
-          "linkTotalCount": 32,
-          "linkAliveCount": 30
-        },
         {
           "source": "iptv",
           "referrer": null,
@@ -591974,6 +590722,4464 @@
           1,
           1
         ]
+      }
+    },
+    {
+      "id": "Armenia1Sattelite.am",
+      "name": "Armenia 1 Sattelite",
+      "country": "AM",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://amtv.tulixcdn.com/amtv2/am2abr/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "Armenia1America.us",
+      "name": "Armenia 1 America",
+      "country": "US",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://amtvusdvr.tulix.tv/am4abr/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "RedBullTVAU.at",
+      "name": "Red Bull TV AU",
+      "country": "AT",
+      "categories": [
+        "outdoor",
+        "sports"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://db34cc6127ac459db55cab5f97cd66b9.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-680-WORBAUENFAST-WHALETVPLUS/680/whaletvplus/hls/master/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "RedBullTVBR.br",
+      "name": "Red Bull TV BR",
+      "country": "BR",
+      "categories": [
+        "outdoor",
+        "sports"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://d03ae6b5c6724c24867e97a3dc04934a.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-1026-WORBBRPTFAST-WHALETVPLUS/1026/hls/master/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "ABCTVACT.au",
+      "name": "ABC TV ACT",
+      "country": "AU",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://c.mjh.nz/abc-act.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "ABCTVNSW.au",
+      "name": "ABC TV NSW",
+      "country": "AU",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://c.mjh.nz/abc-nsw.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "ABCTVNT.au",
+      "name": "ABC TV NT",
+      "country": "AU",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://c.mjh.nz/abc-nt.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "LoveNature4K.ca",
+      "name": "Love Nature 4K",
+      "country": "CA",
+      "categories": [
+        "outdoor"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://pb-ehs1glsha1juy.akamaized.net/Love_Nature_4K.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "StingrayHitlist2.ca",
+      "name": "Stingray Hitlist",
+      "country": "CA",
+      "categories": [
+        "music"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883054"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "BRFernsehenSud.de",
+      "name": "BR Fernsehen Sud",
+      "country": "DE",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://mcdn.br.de/br/fs/bfs_sued/hls/de/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "BRFernsehenNord.de",
+      "name": "BR Fernsehen Nord",
+      "country": "DE",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://mcdn.br.de/br/fs/bfs_nord/hls/de/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "DWEnglish.de",
+      "name": "DW English",
+      "country": "DE",
+      "categories": [
+        "news",
+        "top-news"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://amg01644-amg01644c1-amgplt0343.playout.now3.amagi.tv/ts-eu-w1-n2/playlist/amg01644-amg01644c1-amgplt0343/playlist.m3u8",
+        "https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "DWArabic.de",
+      "name": "DW Arabic",
+      "country": "DE",
+      "categories": [
+        "news"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://dwamdstream103.akamaized.net/hls/live/2015526/dwstream103/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "MDRFernsehenThringen.de",
+      "name": "MDR Fernsehen Thüringen",
+      "country": "DE",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://dash4.antik.sk/live/test_mdr_tizen/playlist.m3u8",
+        "https://mdrtvthhls.akamaized.net/hls/live/2016880/mdrtvth/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "MDRFernsehenSachsen.de",
+      "name": "MDR Fernsehen Sachsen",
+      "country": "DE",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://mdrtvsnhls.akamaized.net/hls/live/2016928/mdrtvsn/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "MDRFernsehenSachsenAnhalt.de",
+      "name": "MDR Fernsehen Sachsen-Anhalt",
+      "country": "DE",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://mdrtvsahls.akamaized.net/hls/live/2016879/mdrtvsa/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "NDRHamburg.de",
+      "name": "NDR Hamburg",
+      "country": "DE",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://mcdn.ndr.de/ndr/hls/ndr_fs/ndr_hh/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "NDRMecklenburgVorpommern.de",
+      "name": "NDR Mecklenburg-Vorpommern",
+      "country": "DE",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://mcdn.ndr.de/ndr/hls/ndr_fs/ndr_mv/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "NDRNiedersachsen.de",
+      "name": "NDR Niedersachsen",
+      "country": "DE",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://mcdn.ndr.de/ndr/hls/ndr_fs/ndr_nds/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "WDRFernsehenBonn.de",
+      "name": "WDR Fernsehen Bonn",
+      "country": "DE",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://wdrlokalzeit.akamaized.net/hls/live/2018021-b/wdrlz_bonn/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "WDRFernsehenAachen.de",
+      "name": "WDR Fernsehen Aachen",
+      "country": "DE",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://wdrlokalzeit.akamaized.net/hls/live/2018019-b/wdrlz_aachen/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "WDRFernsehenBielefeld.de",
+      "name": "WDR Fernsehen Bielefeld",
+      "country": "DE",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://wdrlokalzeit.akamaized.net/hls/live/2018026-b/wdrlz_bielefeld/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "EcuavisaGuayaquil.ec",
+      "name": "Ecuavisa Guayaquil",
+      "country": "EC",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://dai.google.com/linear/hls/event/GyPkTVDZSXGhpOvxPK7m2g/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "EcuavisaQuito.ec",
+      "name": "Ecuavisa Quito",
+      "country": "EC",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://redirector.dps.live/hls-video/c54ac2799874375c81c1672abb700870537c5223/ecuavisa/ecuavisa.smil/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "NatureTime2.es",
+      "name": "NatureTime",
+      "country": "ES",
+      "categories": [
+        "documentary"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://amg00090-blueantmedia-naturetime-samsungse-axgcn.amagi.tv/playlist/amg00090-blueantmedia-naturetime-samsungse/playlist.m3u8",
+        "https://bamusa-naturetime-emea-eng-rakuten.amagi.tv/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "Africanews.fr",
+      "name": "Africanews",
+      "country": "FR",
+      "categories": [
+        "news"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://c3c275b999764df8a2dd55ffe2996818.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6576/bitok/eyJzdGlkIjoiOTU0NDAyODQtOTU0My00Yzc2LThmZjQtNDRhY2YwYmQxYTYwIiwibWt0IjoicGwiLCJjaCI6NjYwNiwicHRmIjo1fQ==/26036/africanews-en.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "TraceGospelNigeriaandEastAfrica.fr",
+      "name": "Trace Gospel Nigeria and East Africa",
+      "country": "FR",
+      "categories": [
+        "music",
+        "religious"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://channels.trace.plus/Traceprod/GOSPEL_ROA_hd/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "TraceGospelSouthernAfrica.fr",
+      "name": "Trace Gospel Southern Africa",
+      "country": "FR",
+      "categories": [
+        "music",
+        "religious"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://channels.trace.plus/Traceprod/GOSPEL_SA_hd/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "TraceUrbanAfricaFranco.fr",
+      "name": "Trace Urban Africa Franco",
+      "country": "FR",
+      "categories": [
+        "music"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://channels.trace.plus/Traceprod/URBAN_AFRIC_FR_hd/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "TraceUrbanCaribbeanandIndianOcean.fr",
+      "name": "Trace Urban Caribbean and Indian Ocean",
+      "country": "FR",
+      "categories": [
+        "music"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://channels.trace.plus/Traceprod/URBAN_DOM_hd/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "StaraTVBandung.id",
+      "name": "Stara TV Bandung",
+      "country": "ID",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://bandung.staratv.id/hls/0/stream.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "StaraTVBojonegoro.id",
+      "name": "Stara TV Bojonegoro",
+      "country": "ID",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://bojonegoro.staratv.id/hls/stream.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "StaraTVCianjur.id",
+      "name": "Stara TV Cianjur",
+      "country": "ID",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://cianjur.staratv.id/hls/0/stream.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "TVRIAceh.id",
+      "name": "TVRI Aceh",
+      "country": "ID",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://ott-balancer.tvri.go.id/live/eds/Aceh/hls/Aceh.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "TVRIBangkaBelitung.id",
+      "name": "TVRI Bangka Belitung",
+      "country": "ID",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://ott-balancer.tvri.go.id/live/eds/Babel/hls/Babel.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "TVRIBali.id",
+      "name": "TVRI Bali",
+      "country": "ID",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://ott-balancer.tvri.go.id/live/eds/Bali/hls/Bali.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "AngelTVAmerica.in",
+      "name": "Angel TV America",
+      "country": "IN",
+      "categories": [
+        "religious"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://janya-digimix.akamaized.net/vglive-sk-374850/america/ngrp:angelamerica_all/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "AngelTVAfrica.in",
+      "name": "Angel TV Africa",
+      "country": "IN",
+      "categories": [
+        "religious"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://janya-digimix.akamaized.net/vglive-sk-904559/africa/ngrp:angelafrica_all/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "AngelTVArabia.in",
+      "name": "Angel TV Arabia",
+      "country": "IN",
+      "categories": [
+        "religious"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://janya-digimix.akamaized.net/vglive-sk-213167/arabia/ngrp:angelarabia_all/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "EpicBharatDigital.in",
+      "name": "Epic Bharat Digital",
+      "country": "IN",
+      "categories": [
+        "entertainment"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://cc-p1izg43bk7sj5.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-p1izg43bk7sj5/DIYC/PMSL/IN10/Nazara_IN_B/Nazara_IN_B.m3u8",
+        "https://epiconvh.akamaized.net/live/nazara/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "EpicBhojpuriDigital.in",
+      "name": "Epic Bhojpuri Digital",
+      "country": "IN",
+      "categories": [
+        "movies"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://cc-8hy4a26pz2uos.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-8hy4a26pz2uos/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "EpicMusicDigital.in",
+      "name": "Epic Music Digital",
+      "country": "IN",
+      "categories": [
+        "music"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://cc-3cyxq80qusspd.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-3cyxq80qusspd/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "NewsLiveBangla.in",
+      "name": "News Live Bangla",
+      "country": "IN",
+      "categories": [
+        "news"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://mumt06.tangotv.in/qYyB8fXVINDRADHANU/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "SadhnaNewsMadhyaPradeshChhattisgarh.in",
+      "name": "Sadhna News Madhya Pradesh/Chhattisgarh",
+      "country": "IN",
+      "categories": [
+        "news"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://mumt04.tangotv.in/m18aqlK4SADHNEWSPMRAJ/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "SadhnaTV.in",
+      "name": "Sadhna TV",
+      "country": "IN",
+      "categories": [
+        "religious"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://mumt05.tangotv.in/87NeALx2SADHNATV/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "ShalomGlobal.in",
+      "name": "Shalom Global",
+      "country": "IN",
+      "categories": [
+        "religious"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://d28xtgmk9tfk6b.cloudfront.net/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "TheMovieClubPlus2.in",
+      "name": "The Movie Club +2",
+      "country": "IN",
+      "categories": [
+        "movies"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://d3gnyty2vddhsg.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/pb-ytipwjqub3kf8/TMC2_IN.m3u8?ads.ads_cdn=cf&ads.cdn=cf"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "MediasetItaliaAustralia.au",
+      "name": "Mediaset Italia Australia",
+      "country": "AU",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://d3k8wzt41aflvx.cloudfront.net/Mediaset_AU/Live.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "RaiItaliaNorthAmericas.it",
+      "name": "Rai Italia North Americas",
+      "country": "IT",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://d3k8wzt41aflvx.cloudfront.net/RAIUSA/Live.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "RaiItaliaAustralia.au",
+      "name": "Rai Italia Australia",
+      "country": "AU",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://d3k8wzt41aflvx.cloudfront.net/RAIHD/Live.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "RaiItaliaEuropeAfrica.it",
+      "name": "Rai Italia Europe/Africa",
+      "country": "IT",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://d3k8wzt41aflvx.cloudfront.net/RAIEU/Live.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "XITEHitsNetherlands.nl",
+      "name": "XITE Hits Netherlands",
+      "country": "NL",
+      "categories": [
+        "music"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://d726x48n2pd5h.cloudfront.net/XITE_Hits.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "XITEHitsGermany.de",
+      "name": "XITE Hits Germany",
+      "country": "DE",
+      "categories": [
+        "music"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://d726x48n2pd5h.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-skxr1pazhltvp/XITE_Hits.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "XITEHitsUK.uk",
+      "name": "XITE Hits UK",
+      "country": "UK",
+      "categories": [
+        "music"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://amg01243-xitenetworksint-hitsuk-samsunguk-mvovq.amagi.tv/playlist/amg01243-xitenetworksint-hitsuk-samsunguk/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "GodStandsKidsClubTVChinese.pk",
+      "name": "God Stands Kids Club TV Chinese",
+      "country": "PK",
+      "categories": [
+        "kids",
+        "religious"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://online.godstands.tv:5443/WebRTCApp/streams/KidsChinese.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "GodStandsKidsClubTVArabic.pk",
+      "name": "God Stands Kids Club TV Arabic",
+      "country": "PK",
+      "categories": [
+        "kids",
+        "religious"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://online.godstands.tv:5443/WebRTCApp/streams/KidsArabic.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "GodStandsKidsClubTVEnglish.pk",
+      "name": "God Stands Kids Club TV English",
+      "country": "PK",
+      "categories": [
+        "kids",
+        "religious"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://online.godstands.tv:5443/WebRTCApp/streams/kidsenglish.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "GodStandsKidsClubTVUrdu.pk",
+      "name": "God Stands Kids Club TV Urdu",
+      "country": "PK",
+      "categories": [
+        "kids",
+        "religious"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://online.godstands.tv:5443/WebRTCApp/streams/KidsUrdu.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "GodStandsTVEnglish.pk",
+      "name": "God Stands TV English",
+      "country": "PK",
+      "categories": [
+        "religious"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://online.godstands.tv:5443/WebRTCApp/streams/EnglishStreaming.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "GodStandsTVArabic.pk",
+      "name": "God Stands TV Arabic",
+      "country": "PK",
+      "categories": [
+        "religious"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://online.godstands.tv:5443/WebRTCApp/streams/Arabic.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "GodStandsTVChinese.pk",
+      "name": "God Stands TV Chinese",
+      "country": "PK",
+      "categories": [
+        "religious"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://online.godstands.tv:5443/WebRTCApp/streams/chineselive.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "FUELTVAPAC.pt",
+      "name": "FUEL TV APAC",
+      "country": "PT",
+      "categories": [
+        "sports"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://amg01074-fueltv-fueltvau-samsungau-g09kq.amagi.tv/playlist/amg01074-fueltv-fueltvau-samsungau/playlist.m3u8",
+        "https://amg01074-fueltv-fueltvnz-samsungnz-i8ani.amagi.tv/playlist/amg01074-fueltv-fueltvnz-samsungnz/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "FUELTVEurope.pt",
+      "name": "FUEL TV Europe",
+      "country": "PT",
+      "categories": [
+        "sports"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://amg01074-fueltv-fueltvemeaen-rakuten-b6j62.amagi.tv/hls/amagi_hls_data_rakutenAA-fueltvemeaen/CDN/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": ".ru",
+      "name": "Первый канал Европа",
+      "country": "RU",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://streaming.thestream.cyou/live/210.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "DomkinoInternational.ru",
+      "name": "Dom kino International",
+      "country": "RU",
+      "categories": [
+        "movies"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://fs.uplink.kz/dom_kino/mono.m3u8?token=onlinetv"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "FonMusic2.ru",
+      "name": "Fon Music",
+      "country": "RU",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://tntm.mediacdn.ru/cdn/tntmusic/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "RussiaRTRAsia.ru",
+      "name": "Russia RTR Asia",
+      "country": "RU",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://stream.smotrim.ru/hls/planeta_rtr_asia/playlist.m3u8?entity=channel&id=511&sign=d1fe06cd922b67e412719536998fa43d"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "RussiaRTRCIS.ru",
+      "name": "Russia RTR CIS",
+      "country": "RU",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://stream.smotrim.ru/hls/planeta_rtr_sng/playlist.m3u8?entity=channel&id=512&sign=2abaa592de074d65809a10b6bacc4410",
+        "https://fs.uplink.kz/rtr_planeta/mono.m3u8?token=onlinetv"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "KaradenizTV.tr",
+      "name": "Karadeniz TV",
+      "country": "TR",
+      "categories": [
+        "culture"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://panel.5gtvhosting.com/hls/karadeniztv/karadeniztv.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "NOW70s2.uk",
+      "name": "NOW 70s",
+      "country": "UK",
+      "categories": [
+        "music"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://lightning-now70s-rakuten.amagi.tv/hls/amagi_hls_data_rakutenAA-lightning-now70s-rakuten/CDN/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "NOW80s2.uk",
+      "name": "NOW 80s",
+      "country": "UK",
+      "categories": [
+        "music"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://lightning-now80s-rakuten.amagi.tv/hls/amagi_hls_data_rakutenAA-lightning-now80s-rakuten/CDN/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "KPVMAWEPlus.us",
+      "name": "KPVM AWE Plus",
+      "country": "US",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://2-fss-2.streamhoster.com/pl_120/206858-4404552-1/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "WMPTDT2PBSCreate.us",
+      "name": "WMPT-DT2 (PBS Create)",
+      "country": "US",
+      "categories": [
+        "education"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://2-fss-1.streamhoster.com/pl_122/amlst:201814-2122456/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "NBC3SacramentoCAKCRA.us",
+      "name": "NBC 3 Sacramento CA (KCRA)",
+      "country": "US",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://aegis-cloudfront-1.tubi.video/5e3aff30-070f-4951-aa59-5ca415acb3c1/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "ABC4SeattleWAKOMO.us",
+      "name": "ABC 4 Seattle WA (KOMO)",
+      "country": "US",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://linear-709.frequency.stream/dist/stirr/709/hls/master/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "DocumentaryPlusUS.us",
+      "name": "Documentary+ US",
+      "country": "US",
+      "categories": [
+        "documentary"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://ef79b15c8c7c46c7a9de9d33001dbd07.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-859-DOCUMENTARYPLUS-DOCUMENTARYPLUS/mt/documentaryplus/859/hls/master/playlist.m3u8",
+        "https://d1kx9y4yhe8h6h.cloudfront.net/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "DocumentaryPlusInternational.us",
+      "name": "Documentary+ International",
+      "country": "US",
+      "categories": [
+        "documentary"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://1d153317c8db4250b3789601274e2402.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-887-DOCUMENTARYINTERNATIONAL-DOCUMENTARYPLUS/mt/documentaryplus/887/hls/master/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "DogtheBountyHunterUK.uk",
+      "name": "Dog the Bounty Hunter UK",
+      "country": "UK",
+      "categories": [
+        "series"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://amg00276-amg00276c11-rakuten-uk-3446.playouts.now.amagi.tv/playlist/amg00276-aetelevisionnetworksfast-dogthebountyhunterall-rakutenuk/playlist.m3u8",
+        "https://amg00276-amg00276c11-samsung-gb-3484.playouts.now.amagi.tv/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "DogtheBountyHunterUS.us",
+      "name": "Dog the Bounty Hunter US",
+      "country": "US",
+      "categories": [
+        "series"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://aegis-cloudfront-1.tubi.video/ff0ad399-75ed-42ba-8c60-75bb6cb8c929/playlist.m3u8",
+        "https://pb-f3c3g3zxfdxte.akamaized.net/DogTheBountyHunter_US.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "EWTNAfricaAsia.us",
+      "name": "EWTN Africa-Asia",
+      "country": "US",
+      "categories": [
+        "religious"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://cdn3.wowza.com/1/ZVBYYXFLLzE0c3NC/Qk1FMURC/hls/live/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "EWTNAsiaPacific.us",
+      "name": "EWTN Asia-Pacific",
+      "country": "US",
+      "categories": [
+        "religious"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://cdn3.wowza.com/1/QmVNUVhTNTZSS3Uz/YWQ0aHpi/hls/live/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "EWTNCanada.ca",
+      "name": "EWTN Canada",
+      "country": "CA",
+      "categories": [
+        "religious"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://cdn3.wowza.com/1/YW5wSWZiRGd2eFlU/bGV0aVBq/hls/live/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "FNXKVCRDT.us",
+      "name": "FNX KVCR-DT",
+      "country": "US",
+      "categories": [
+        "culture"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://castus-vod-dev.s3.amazonaws.com/vod_clients/kvcr/live/ch1/video.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "FOX23CapeGirardeauMOKBSIDT1.us",
+      "name": "FOX 23 Cape Girardeau MO (KBSI-DT1)",
+      "country": "US",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://live.field59.com/kbsi/kbsi1/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "FOX13SeattleWAKCPQ.us",
+      "name": "FOX 13 Seattle WA (KCPQ)",
+      "country": "US",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://aegis-cloudfront-1.tubi.video/cc394198-7bde-43e8-b186-875bc0eb3037/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "GalavisionEast.us",
+      "name": "Galavision East",
+      "country": "US",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://streaming-live-fcdn.api.prd.univisionnow.com/galaeast/galaeast.isml/hls/galaeast.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "GalavisionWest.us",
+      "name": "Galavision West",
+      "country": "US",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://streaming-live-fcdn.api.prd.univisionnow.com/galawest/galawest.isml/hls/galawest.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "FaithTV.us",
+      "name": "Faith TV",
+      "country": "US",
+      "categories": [
+        "religious"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://faithnow-hls.secdn.net/faithnow-holland-channel/play/FaithTV.smil/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "NOWNewsGlobal.us",
+      "name": "NOW News Global",
+      "country": "US",
+      "categories": [
+        "news"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://nowhls.wns.live/hls/stream.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "NOWNewsArabic.us",
+      "name": "NOW News Arabic",
+      "country": "US",
+      "categories": [
+        "news"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://live.nowtelly.com/now_arabic/live/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "NOWNewsSpanish.us",
+      "name": "NOW News Spanish",
+      "country": "US",
+      "categories": [
+        "news"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://live.nowtelly.com/now_spanish/live/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "KPVMNewsmax2.us",
+      "name": "KPVM Newsmax 2",
+      "country": "US",
+      "categories": [
+        "news"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://2-fss-2.streamhoster.com/pl_120/206858-4404556-1/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "NowMediaTelevisionSpanish.us",
+      "name": "NowMedia Television Spanish",
+      "country": "US",
+      "categories": [
+        "lifestyle",
+        "news"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://stream-204968.castr.net/64e0c91d08bff3041638aee3/live_a16fa020f4c411f09ddaa1978319689a/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "NTDTVEast.us",
+      "name": "NTD TV East",
+      "country": "US",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://ntd02.akamaized.net/HD-NY/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "NTDTVWest.us",
+      "name": "NTD TV West",
+      "country": "US",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://live.ntdtv.com/uwlive990/playlist.m3u8",
+        "https://ntd02.akamaized.net/HD-LA/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "NTDTVCanadaEast.ca",
+      "name": "NTD TV Canada East",
+      "country": "CA",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://live.ntdtv.com/mllive860/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "NTDTVCanadaWest.ca",
+      "name": "NTD TV Canada West",
+      "country": "CA",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://live.ntdtv.com/cwlive220/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "NTDTVEnglishUSA.us",
+      "name": "NTD TV English USA",
+      "country": "US",
+      "categories": [
+        "general",
+        "news"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://amg17596-ntdtv-amg17596c1-rakuten-gb-6741.playouts.now.amagi.tv/playlist/amg17596-newtangdynastytelevision-ntdtv-rakutengb/playlist.m3u8",
+        "https://amg17596-amg17596c1-ntdtv-worldwide-3276.playouts.now.amagi.tv/playlist/amg17596-newtangdynastytelevision-ntdtv-ntdtvworldwide/playlist.m3u8",
+        "https://amg17596-ntdtv-amg17596c1-stirr-us-4738.playouts.now.amagi.tv/ntd.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "NTDTVEnglishUK.uk",
+      "name": "NTD TV English UK",
+      "country": "UK",
+      "categories": [
+        "general",
+        "news"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://ntd02.akamaized.net/NTD-UK/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "OANPlusKPVMLD.us",
+      "name": "OAN Plus KPVM-LD",
+      "country": "US",
+      "categories": [
+        "news"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://2-fss-2.streamhoster.com/pl_118/206858-4404458-1/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "RealAmericasVoiceKPVMLD.us",
+      "name": "Real America's Voice KPVM-LD",
+      "country": "US",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://2-fss-2.streamhoster.com/pl_118/206858-4404454-1/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "ScientologyNetworkKSCNTV.us",
+      "name": "Scientology Network KSCN-TV",
+      "country": "US",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://stream-losangeles.scientology.org/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "ScientologyNetworkWFTTTV.us",
+      "name": "Scientology Network WFTT-TV",
+      "country": "US",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://stream-tampa.scientology.org/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "ShalomWorldEurope.us",
+      "name": "Shalom World Europe",
+      "country": "US",
+      "categories": [
+        "religious"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://broadcaster-1.cclouds.in/srt/channel1_abr/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "ShalomWorldNorthAmerica.us",
+      "name": "Shalom World North America",
+      "country": "US",
+      "categories": [
+        "religious"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://broadcaster-1.cclouds.in/srt-2/channel2_abr/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "NBCWestSanDiego.us",
+      "name": "NBC West (San Diego)",
+      "country": "US",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://nbculocallive.akamaized.net/hls/live/2037098/sandiego/stream1/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "TelemundoEastHD.us",
+      "name": "Telemundo East HD",
+      "country": "US",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://streamer1.nexgen.bz/TELEMUNDO/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "ABC5BostonMAWCVB.us",
+      "name": "ABC 5 Boston MA (WCVB)",
+      "country": "US",
+      "categories": [
+        "series"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://aegis-cloudfront-1.tubi.video/c2e3094d-ad56-4c5f-9655-cd80df71fbab/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "KFTRDT1.us",
+      "name": "KFTR-DT1",
+      "country": "US",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://streaming-live-fcdn.api.prd.univisionnow.com/kftr/kftr.isml/hls/kftr.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "KUVNDT1.us",
+      "name": "KUVN-DT1",
+      "country": "US",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://streaming-live-fcdn.api.prd.univisionnow.com/kuvn/kuvn.isml/hls/kuvn.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "ThePointTelevsionNetwork.us",
+      "name": "The Point Televsion Network",
+      "country": "US",
+      "categories": [
+        "religious"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://tgn.bozztv.com/watc57/watc57-2/watc57-2/index.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "WGTVDT3.us",
+      "name": "WGTV-DT3",
+      "country": "US",
+      "categories": [
+        "education"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://wgtvdt3.lls.pbs.org/wgtvdt3-cmaf-hls.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "XITE90sThrowback2.us",
+      "name": "XITE 90s Throwback",
+      "country": "US",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://d284aawtm5vi48.cloudfront.net/XITE_90s_Throwback.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "TelesurEnglish.ve",
+      "name": "Telesur English",
+      "country": "VE",
+      "categories": [
+        "news"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://mblenmain01.telesur.ultrabase.net/mblivev3/480p/playlist.m3u8",
+        "https://mblenmain01.telesur.ultrabase.net/mblivev3/hd/playlist.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "SCTV12.vn",
+      "name": "SCTV12",
+      "country": "VN",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://vtvgolive-sctvdrm.vtvdigital.vn/manifest/sctv12/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "SCTV11.vn",
+      "name": "SCTV11",
+      "country": "VN",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://vtvgolive-sctvdrm.vtvdigital.vn/manifest/sctv11/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "SCTV13.vn",
+      "name": "SCTV13",
+      "country": "VN",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://vtvgolive-sctvdrm.vtvdigital.vn/manifest/sctv13/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "SCTV14.vn",
+      "name": "SCTV14",
+      "country": "VN",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://vtvgolive-sctvdrm.vtvdigital.vn/manifest/sctv14/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "SCTV18.vn",
+      "name": "SCTV18",
+      "country": "VN",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://vtvgolive-sctvdrm.vtvdigital.vn/manifest/sctv18/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "SCTV19.vn",
+      "name": "SCTV19",
+      "country": "VN",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://vtvgolive-sctvdrm.vtvdigital.vn/manifest/sctv19/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
+      }
+    },
+    {
+      "id": "SCTV20.vn",
+      "name": "SCTV20",
+      "country": "VN",
+      "categories": [],
+      "languages": [],
+      "channelLogo": null,
+      "website": null,
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://vtvgolive-sctvdrm.vtvdigital.vn/manifest/sctv20/master.m3u8"
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": null,
+        "aliveCount": 0,
+        "totalCount": 0,
+        "consecutiveAlive": 0,
+        "lastSeen": null,
+        "lastProbed": null
       }
     }
   ]
