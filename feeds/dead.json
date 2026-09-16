@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-16T10:43:41.467Z",
-  "total": 1831,
+  "generated": "2026-09-16T16:05:59.155Z",
+  "total": 1834,
   "channels": [
     {
       "id": "OSNMoviesAction.ae",
@@ -84444,6 +84444,147 @@
         "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       },
       "prunedAt": "2026-09-16T10:43:41.448Z"
+    },
+    {
+      "id": "TSN3.ca",
+      "name": "TSN3",
+      "country": "CA",
+      "categories": [
+        "sports"
+      ],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/AYza8KO.png",
+      "website": "https://www.tsn.ca/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 0,
+        "aliveCount": 60,
+        "totalCount": 172,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 34,
+        "lastSeen": "2026-08-13T18:09:11.505Z",
+        "lastProbed": "2026-09-16T15:41:34.709Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "http://40.160.24.55/TSN_3/index.m3u8",
+          "blockedAt": "2026-08-21T06:14:33.939Z"
+        },
+        {
+          "url": "https://40.160.24.55/TSN_3/index.m3u8",
+          "blockedAt": "2026-08-21T06:14:33.939Z"
+        }
+      ],
+      "prunedAt": "2026-09-16T16:05:59.137Z"
+    },
+    {
+      "id": "Channel5.ru",
+      "name": "Channel 5",
+      "country": "RU",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/PQhMXOZ.png",
+      "website": "https://www.5-tv.ru/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": true,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [],
+      "referrer": null,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+      "uptime": {
+        "score": 0,
+        "aliveCount": 106,
+        "totalCount": 210,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 29,
+        "lastSeen": "2026-08-18T17:27:45.242Z",
+        "lastProbed": "2026-09-16T15:59:05.735Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "slow": true,
+      "domainBlockedLinks": [
+        {
+          "url": "https://zabava-htlive.cdn.ngenix.net/hls/CH_5TV/variant.m3u8",
+          "blockedAt": "2026-09-14T03:36:42.438Z"
+        }
+      ],
+      "prunedAt": "2026-09-16T16:05:59.140Z"
+    },
+    {
+      "id": "Channel5.uk",
+      "name": "Channel 5",
+      "country": "UK",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": "https://d2n0069hmnqmmx.cloudfront.net/epgdata/1.0/newchanlogos/512/512/skychb1800.png",
+      "website": "https://www.channel5.com/channels/channel-5",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 0,
+        "aliveCount": 37,
+        "totalCount": 181,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 39,
+        "lastSeen": "2026-08-09T20:50:41.753Z",
+        "lastProbed": "2026-09-16T16:02:25.837Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "slow": true,
+      "domainBlockedLinks": [
+        {
+          "url": "https://sra72yz.s.gy/CHANNEL_5_UNITED_KINGDOM",
+          "blockedAt": "2026-08-21T06:14:33.967Z"
+        }
+      ],
+      "prunedAt": "2026-09-16T16:05:59.141Z"
     }
   ]
 }
