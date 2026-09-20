@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-19T15:19:20.525Z",
-  "total": 1858,
+  "generated": "2026-09-20T15:24:04.880Z",
+  "total": 1860,
   "channels": [
     {
       "id": "OSNMoviesAction.ae",
@@ -85678,6 +85678,93 @@
         "recentResults": [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       },
       "prunedAt": "2026-09-19T15:19:20.499Z"
+    },
+    {
+      "id": "Eurochannel.uk",
+      "name": "Eurochannel",
+      "country": "UK",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/yXAtmI6.png",
+      "website": "http://www.eurochannel.com/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://cdn1tlinkgo.tlink.cl/eurochannel/index.m3u8"
+      ],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 26
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 62,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 62,
+        "lastSeen": null,
+        "lastProbed": "2026-09-20T15:21:54.339Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-09-20T15:24:04.860Z"
+    },
+    {
+      "id": "AMCSeriesLatinAmerica.us",
+      "name": "AMC Series Latin America",
+      "country": "US",
+      "categories": [
+        "series"
+      ],
+      "languages": [],
+      "channelLogo": "https://amc-series.s3.amazonaws.com/menu/hbfen1Gom0_k1cyqi7rw4-amc-series-train-w.png",
+      "website": "https://www.amcseries.com/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 62,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 62,
+        "lastSeen": null,
+        "lastProbed": "2026-09-20T15:22:08.370Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-09-20T15:24:04.860Z"
     }
   ]
 }
