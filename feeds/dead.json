@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-25T16:22:27.227Z",
-  "total": 2085,
+  "generated": "2026-09-27T16:14:26.285Z",
+  "total": 2092,
   "channels": [
     {
       "id": "OSNMoviesAction.ae",
@@ -94618,6 +94618,338 @@
         "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       },
       "prunedAt": "2026-09-25T16:22:27.204Z"
+    },
+    {
+      "id": "PrimaTVMoldova.md",
+      "name": "Prima TV Moldova",
+      "country": "MD",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/cX1L2ds.png",
+      "website": "https://www.primatv.ro/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://aes.m3u8simplu.workers.dev/primatvmd/index.m3u8"
+      ],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+          "linkTotalCount": 60
+        }
+      ],
+      "referrer": null,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 60,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 60,
+        "lastSeen": null,
+        "lastProbed": "2026-09-27T16:04:01.811Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-09-27T16:14:26.254Z"
+    },
+    {
+      "id": "HumSitaray.pk",
+      "name": "Hum Sitaray",
+      "country": "PK",
+      "categories": [
+        "entertainment"
+      ],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/D0A0eUJ.png",
+      "website": "http://www.humsitaray.tv/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [
+        "http://103.86.135.164:9981/stream/channelid/2007922618?ticket=A568146B33A8AC741F94DA1630EDF7590877F305&profile=pass"
+      ],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 60
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 60,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 60,
+        "lastSeen": null,
+        "lastProbed": "2026-09-27T16:05:57.359Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-09-27T16:14:26.256Z"
+    },
+    {
+      "id": "DisneyJunior.ro",
+      "name": "Disney Junior Romania ",
+      "country": "RO",
+      "categories": [
+        "kids"
+      ],
+      "languages": [],
+      "channelLogo": "https://upload.wikimedia.org/wikipedia/commons/e/e3/2024_Disney_Jr._Logo.svg",
+      "website": "http://www.disney.ro/disney-junior/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": false,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://atlantida1.aquax1.cfd/disjr/usergendxvoq4rnd.m3u8"
+      ],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 VLC/3.0.18 LibVLC/3.0.18",
+          "linkTotalCount": 27
+        }
+      ],
+      "referrer": null,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 VLC/3.0.18 LibVLC/3.0.18",
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 60,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 60,
+        "lastSeen": null,
+        "lastProbed": "2026-09-27T16:07:14.457Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-09-27T16:14:26.257Z"
+    },
+    {
+      "id": "FavoritTV.ro",
+      "name": "Favorit TV",
+      "country": "RO",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/sTy4FHs.png",
+      "website": "http://www.favorittv.ro/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://aes.m3u8simplu.workers.dev/favorit/index.m3u8"
+      ],
+      "streamMeta": [
+        {
+          "linkTotalCount": 7
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 60,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 60,
+        "lastSeen": null,
+        "lastProbed": "2026-09-27T16:07:13.801Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-09-27T16:14:26.257Z"
+    },
+    {
+      "id": "NickJr.ro",
+      "name": "Nick Jr. Romania ",
+      "country": "RO",
+      "categories": [
+        "kids"
+      ],
+      "languages": [],
+      "channelLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Nick_Jr._logo_2023_(outline).svg/960px-Nick_Jr._logo_2023_(outline).svg.png",
+      "website": "http://www.nickjr.tv/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": false,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://aes.m3u8simplu.workers.dev/nickjr/index.m3u8"
+      ],
+      "streamMeta": [
+        {
+          "referrer": null,
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+          "linkTotalCount": 60
+        }
+      ],
+      "referrer": null,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 60,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 60,
+        "lastSeen": null,
+        "lastProbed": "2026-09-27T16:07:21.007Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-09-27T16:14:26.257Z"
+    },
+    {
+      "id": "PrimaSport5.ro",
+      "name": "Prima Sport 5",
+      "country": "RO",
+      "categories": [
+        "sports"
+      ],
+      "languages": [],
+      "channelLogo": null,
+      "website": "http://primasport.ro/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://aes.m3u8simplu.workers.dev/primasp5/index.m3u8"
+      ],
+      "streamMeta": [
+        {
+          "referrer": null,
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+          "linkTotalCount": 60
+        }
+      ],
+      "referrer": null,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 60,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 60,
+        "lastSeen": null,
+        "lastProbed": "2026-09-27T16:07:23.294Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-09-27T16:14:26.257Z"
+    },
+    {
+      "id": "KidOO.us",
+      "name": "KidOO",
+      "country": "US",
+      "categories": [
+        "animation",
+        "kids"
+      ],
+      "languages": [],
+      "channelLogo": "https://digitaltv.prensariozone.com/wp-content/uploads/2022/11/Logo-KidOO.png",
+      "website": "https://digitaltv.prensariozone.com/2benamed/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [
+        "http://15.204.246.24:8080/KidooHD/index.m3u8"
+      ],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 60
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 60,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 60,
+        "lastSeen": null,
+        "lastProbed": "2026-09-27T16:12:28.111Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-09-27T16:14:26.258Z"
     }
   ]
 }
