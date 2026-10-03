@@ -139,6 +139,7 @@ module.exports = {
     // GeoBlocked
     'adpnetworkhd-cmd.github.io',
     'amg12058-c15studio-amg12058c1-lg-us-5787.playouts.now.amagi.tv',
+    's70378.cdn.ngenix.net',
     'zabava-htlive.cdn.ngenix.net',
 
     // Subscription req
