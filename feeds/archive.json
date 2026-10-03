@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-30T19:51:51.524Z",
-  "total": 411,
+  "generated": "2026-10-03T10:13:06.147Z",
+  "total": 415,
   "channels": [
     {
       "id": "78TV.bg",
@@ -20251,6 +20251,218 @@
         {
           "url": "https://40.160.24.53/MTV2/index.m3u8",
           "blockedAt": "2026-09-30T19:51:51.516Z"
+        }
+      ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "FilmBoxBaltics.nl",
+      "name": "FilmBox Baltics",
+      "country": "NL",
+      "categories": [
+        "movies"
+      ],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/gXu36aD.png",
+      "website": "https://www.filmbox.nl/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": "FILMBOXPlusOne.pl",
+      "streamUrls": [],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 109,
+          "linkAliveCount": 71
+        }
+      ],
+      "referrer": null,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3",
+      "uptime": {
+        "score": 0,
+        "aliveCount": 117,
+        "totalCount": 163,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 38,
+        "lastSeen": "2026-08-26T11:16:57.683Z",
+        "lastProbed": "2026-10-02T16:53:56.852Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "https://s70378.cdn.ngenix.net/filmbox/index.m3u8",
+          "blockedAt": "2026-10-03T10:13:06.129Z"
+        }
+      ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "LenTV24.ru",
+      "name": "LenTV24",
+      "country": "RU",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/d02uxkB.png",
+      "website": "https://lentv24.ru/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": true,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": "WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer",
+          "linkTotalCount": 126,
+          "linkAliveCount": 126
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 100,
+        "aliveCount": 167,
+        "totalCount": 244,
+        "consecutiveAlive": 155,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-10-02T23:43:16.206Z",
+        "lastProbed": "2026-10-02T23:43:16.206Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "https://rt-nw-spb-htlive.cdn.ngenix.net/hls/CH_R02_LENTVSD/variant.m3u8",
+          "blockedAt": "2026-10-03T10:13:06.133Z"
+        }
+      ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "NovgorOblTV.ru",
+      "name": "NovgorOblTV",
+      "country": "RU",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/2JspHVY.png",
+      "website": "https://novgorod-tv.ru/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": true,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": "WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer",
+          "linkTotalCount": 126,
+          "linkAliveCount": 126
+        }
+      ],
+      "referrer": null,
+      "userAgent": "WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer",
+      "uptime": {
+        "score": 100,
+        "aliveCount": 186,
+        "totalCount": 198,
+        "consecutiveAlive": 159,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-10-02T23:44:22.459Z",
+        "lastProbed": "2026-10-02T23:44:22.459Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "https://rt-nw-novg-htlive.cdn.ngenix.net/hls/CH_R02_NOVGORODTV/variant.m3u8",
+          "blockedAt": "2026-10-03T10:13:06.133Z"
+        }
+      ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "NTK21.ru",
+      "name": "NTK 21",
+      "country": "RU",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/W9s1flH.png",
+      "website": "https://riabir.ru",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": true,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "iptv",
+      "replaced_by": null,
+      "streamUrls": [],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": "WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer",
+          "linkTotalCount": 126,
+          "linkAliveCount": 125
+        }
+      ],
+      "referrer": null,
+      "userAgent": "WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer",
+      "uptime": {
+        "score": 100,
+        "aliveCount": 185,
+        "totalCount": 198,
+        "consecutiveAlive": 59,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-10-02T23:44:24.608Z",
+        "lastProbed": "2026-10-02T23:44:24.608Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "https://s97982.cdn.ngenix.net/hls/CH_R79_OTT_DV_HVSK_NTK/variant.m3u8",
+          "blockedAt": "2026-10-03T10:13:06.133Z"
         }
       ],
       "unplayableArchived": true
