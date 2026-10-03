@@ -139,8 +139,13 @@ module.exports = {
     // GeoBlocked
     'adpnetworkhd-cmd.github.io',
     'amg12058-c15studio-amg12058c1-lg-us-5787.playouts.now.amagi.tv',
+    'rt-nw-novg-htlive.cdn.ngenix.net',
+    'rt-nw-spb-htlive.cdn.ngenix.net',
+    'rt-sth-krdar-htlive.cdn.ngenix.net',
     's70378.cdn.ngenix.net',
-    'zabava-htlive.cdn.ngenix.net',
+    's91030.cdn.ngenix.net',
+    's97982.cdn.ngenix.net',
+    'rt-sib-krsk-htlive.cdn.ngenix.net',
 
     // Subscription req
     'kazmazpaz.ru',
