@@ -111,6 +111,7 @@ module.exports = {
     'telewebion.com',
     'tglmp04',
     'tglmp04.akamaized.net',
+    'turnerlive.warnermediacdn.com',
     '40.160.24.53',
     '40.160.24.55',
     '77.46.130.252',
