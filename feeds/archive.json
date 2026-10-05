@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-03T10:13:06.147Z",
-  "total": 415,
+  "generated": "2026-10-05T12:03:52.466Z",
+  "total": 416,
   "channels": [
     {
       "id": "78TV.bg",
@@ -20463,6 +20463,48 @@
         {
           "url": "https://s97982.cdn.ngenix.net/hls/CH_R79_OTT_DV_HVSK_NTK/variant.m3u8",
           "blockedAt": "2026-10-03T10:13:06.133Z"
+        }
+      ],
+      "unplayableArchived": true
+    },
+    {
+      "id": "CNN.usa",
+      "name": "CNN",
+      "country": "US",
+      "categories": [
+        "news",
+        "top-news"
+      ],
+      "languages": [],
+      "channelLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/CNN_Logo_%282014%29.svg/1280px-CNN_Logo_%282014%29.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
+      "tv": true,
+      "radio": false,
+      "alive": true,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "source": "famelack",
+      "streamUrls": [],
+      "streamMeta": [
+        {
+          "linkTotalCount": 126,
+          "linkAliveCount": 124
+        }
+      ],
+      "uptime": {
+        "score": 90,
+        "aliveCount": 158,
+        "totalCount": 162,
+        "consecutiveAlive": 3,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-10-04T18:47:54.890Z",
+        "lastProbed": "2026-10-04T18:47:54.890Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "https://turnerlive.warnermediacdn.com/hls/live/586495/cnngo/cnn_slate/VIDEO_0_3564000.m3u8",
+          "blockedAt": "2026-10-05T12:03:52.454Z"
         }
       ],
       "unplayableArchived": true
