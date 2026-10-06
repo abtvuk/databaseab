@@ -150,6 +150,7 @@ module.exports = {
     'rt-sib-krsk-htlive.cdn.ngenix.net',
 
     // Subscription req
+    '315e5a5d.ottrast.com/iptv/8XFKA8883W9M5K',
     'kazmazpaz.ru',
   ],
 
