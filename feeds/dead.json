@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-19T09:24:19.925Z",
-  "total": 2104,
+  "generated": "2026-10-20T16:07:18.646Z",
+  "total": 2107,
   "channels": [
     {
       "id": "OSNMoviesAction.ae",
@@ -95466,6 +95466,150 @@
         "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       },
       "prunedAt": "2026-10-16T16:11:34.445Z"
+    },
+    {
+      "id": "MBCLoud.sa",
+      "name": "MBC Loud",
+      "country": "SA",
+      "categories": [
+        "music"
+      ],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/mptwwLs.png",
+      "website": "https://mbcloud.fm",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://radio-loud-fm.mbc.net/radio-loud-fm_1.m3u8"
+      ],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 60
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 60,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 60,
+        "lastSeen": null,
+        "lastProbed": "2026-10-20T16:03:11.763Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-10-20T16:07:18.624Z"
+    },
+    {
+      "id": "NBT2HD.th",
+      "name": "NBT 2 HD",
+      "country": "TH",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/IJh6SHb.png",
+      "website": "http://nbt2hd.prd.go.th/",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://cdn-edge.iiptvcdn.com/live_event/smil:f180-054a-38d7-ce66-f7cf.smil/playlist.m3u8"
+      ],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 60
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 60,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 60,
+        "lastSeen": null,
+        "lastProbed": "2026-10-20T16:04:07.909Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-10-20T16:07:18.624Z"
+    },
+    {
+      "id": "NBTWorld.th",
+      "name": "NBT World",
+      "country": "TH",
+      "categories": [
+        "general"
+      ],
+      "languages": [],
+      "channelLogo": "https://i.imgur.com/GUQhLeg.png",
+      "website": "https://thainews.prd.go.th/en/live",
+      "tv": true,
+      "radio": false,
+      "ytId": null,
+      "alive": false,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "geoBlocked": false,
+      "editName": true,
+      "editCountry": true,
+      "editChannelLogo": true,
+      "source": "famelack",
+      "replaced_by": null,
+      "streamUrls": [
+        "https://cdn-edge.iiptvcdn.com/live_event/smil:d36f-93c1-9c58-fdcc-427f.smil/playlist.m3u8"
+      ],
+      "streamMeta": [
+        {
+          "source": "iptv",
+          "referrer": null,
+          "userAgent": null,
+          "linkTotalCount": 60
+        }
+      ],
+      "referrer": null,
+      "userAgent": null,
+      "uptime": {
+        "score": 0,
+        "aliveCount": 0,
+        "totalCount": 60,
+        "consecutiveAlive": 0,
+        "consecutiveFailures": 60,
+        "lastSeen": null,
+        "lastProbed": "2026-10-20T16:04:08.285Z",
+        "recentResults": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "prunedAt": "2026-10-20T16:07:18.624Z"
     }
   ]
 }
