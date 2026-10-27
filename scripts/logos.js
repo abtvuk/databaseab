@@ -28,7 +28,7 @@ function saveManifest(manifest) {
 
 function loadChannelsWithLogos() {
   const seen = new Map()
-  for (const outputKey of ['channels', 'youtube']) {
+  for (const outputKey of ['channels', 'youtubeTv', 'youtubeWebcams']) {
     const p = path.resolve(cfg.output[outputKey])
     let data
     try {

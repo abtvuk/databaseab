@@ -8,12 +8,13 @@ module.exports = {
   },
 
   output: {
-    channels: 'feeds/channels.json',
-    youtube:  'feeds/youtube.json',
-    archive:  'feeds/archive.json',
-    dead:     'feeds/dead.json',
-    blocked:  'feeds/blocked.json',
-    deadLinks: 'feeds/deadLinks.json',
+    channels:       'feeds/hls/channels.json',
+    youtubeTv:      'feeds/youtube/tv.json',
+    youtubeWebcams: 'feeds/youtube/webcams.json',
+    archive:        'feeds/hls/archive.json',
+    dead:           'feeds/hls/dead.json',
+    blocked:        'feeds/hls/blocked.json',
+    deadLinks:      'feeds/hls/deadLinks.json',
   },
 
   schedules: {
@@ -80,13 +81,13 @@ module.exports = {
   retirement: {
     enabled:       true,
     score0DaysMin: 180,
-    output:        'feeds/archive.json',
+    output:        'feeds/hls/archive.json',
   },
 
   pruning: {
     enabled:   true,
     minProbes: 60,
-    output:    'feeds/dead.json',
+    output:    'feeds/hls/dead.json',
   },
 
   linkPruning: {

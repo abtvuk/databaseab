@@ -1,12 +1,11 @@
 const cfg = require('../config')
 const path = require('path')
 const { saveFeedFormatted } = require('./probe')
+const { readYoutube, writeYoutube } = require('./youtubeFeed')
 const fs = require('fs')
 
-const OUTPUT_PATH = path.resolve(cfg.output.youtube)
-
 function main() {
-  const data = JSON.parse(fs.readFileSync(OUTPUT_PATH, 'utf8'))
+  const data = readYoutube()
   let curated = 0, toFill = 0
 
   for (const c of data.channels || []) {
@@ -15,7 +14,7 @@ function main() {
     else               { c.probeLogo = true;  toFill++ }
   }
 
-  saveFeedFormatted(OUTPUT_PATH, { generated: new Date().toISOString(), total: data.channels.length, channels: data.channels })
+  writeYoutube(data.channels)
   console.log(`probeLogo migration: curated (false)=${curated}  toFill (true)=${toFill}`)
 }
 

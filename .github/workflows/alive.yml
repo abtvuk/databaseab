@@ -40,11 +40,11 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add feeds/channels.json
-          [ -f feeds/archive.json ] && git add feeds/archive.json || true
-          [ -f feeds/dead.json ] && git add feeds/dead.json || true
-          [ -f feeds/deadLinks.json ] && git add feeds/deadLinks.json || true
-          [ -f feeds/blocked.json ] && git add feeds/blocked.json || true
+          git add feeds/hls/channels.json
+          [ -f feeds/hls/archive.json ] && git add feeds/hls/archive.json || true
+          [ -f feeds/hls/dead.json ] && git add feeds/hls/dead.json || true
+          [ -f feeds/hls/deadLinks.json ] && git add feeds/hls/deadLinks.json || true
+          [ -f feeds/hls/blocked.json ] && git add feeds/hls/blocked.json || true
           git diff --staged --quiet || git commit -m "chore: check alive channels [$(date -u '+%Y-%m-%d %H:%M UTC')]"
           for i in 1 2 3; do
             timeout 60 git pull --rebase --autostash && timeout 60 git push && exit 0

@@ -1,5 +1,6 @@
 const cfg  = require('../config')
 const { runWithConcurrency, recordAlive, recordDead, isDueForProbe, progressBar, saveFeedFormatted } = require('./probe')
+const { readYoutube, writeYoutube } = require('./youtubeFeed')
 const fs   = require('fs')
 const path = require('path')
 
@@ -79,17 +80,11 @@ async function probeYtId(ytId) {
 }
 
 function loadYoutube() {
-  const raw = fs.readFileSync(path.resolve(cfg.output.youtube), 'utf8')
-  return JSON.parse(raw)
+  return readYoutube()
 }
 
 function saveYoutube(channels) {
-  const ytChannels = channels.filter(c => c.ytId)
-  saveFeedFormatted(path.resolve(cfg.output.youtube), {
-    generated: new Date().toISOString(),
-    total: ytChannels.length,
-    channels: ytChannels,
-  })
+  writeYoutube(channels.filter(c => c.ytId))
 }
 
 async function main() {

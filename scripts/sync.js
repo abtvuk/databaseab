@@ -2,6 +2,7 @@ const cfg  = require('../config')
 const fs   = require('fs')
 const path = require('path')
 const { loadFeed, saveFeed, saveDeadLinks, saveFeedFormatted } = require('./probe')
+const { readYoutube, writeYoutube } = require('./youtubeFeed')
 
 let deadLinkSet = null
 function isDeadLink(channelId, url) {
@@ -171,8 +172,7 @@ function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
 function saveYoutube() {
   let ytChannels = []
   try {
-    const raw = fs.readFileSync(path.resolve(cfg.output.youtube), 'utf8')
-    ytChannels = JSON.parse(raw).channels || []
+    ytChannels = readYoutube().channels || []
   } catch { return 0 }
 
   const clean = ytChannels.map(c => ({
@@ -188,13 +188,10 @@ function saveYoutube() {
     uptime:      c.uptime      || emptyUptime(),
   }))
 
-  const out = path.resolve(cfg.output.youtube)
-  fs.mkdirSync(path.dirname(out), { recursive: true })
-  fs.writeFileSync(out, JSON.stringify({
-    generated: new Date().toISOString(),
-    total: clean.length,
-    channels: clean,
-  }, null, 2))
+  writeYoutube(clean, (out, payload) => {
+    fs.mkdirSync(path.dirname(out), { recursive: true })
+    fs.writeFileSync(out, JSON.stringify(payload, null, 2))
+  })
   return clean.length
 }
 
