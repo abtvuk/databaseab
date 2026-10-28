@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-28T06:38:06.920Z",
-  "total": 10357,
+  "generated": "2026-10-28T06:41:53.374Z",
+  "total": 10358,
   "channels": [
     {
       "id": "AndorraTV.ad",
@@ -439357,6 +439357,46 @@
         {
           "url": "https://206.212.244.63/42/index.m3u8",
           "blockedAt": "2026-08-21T06:14:33.969Z"
+        }
+      ]
+    },
+    {
+      "id": "CNN.usa",
+      "name": "CNN",
+      "country": "US",
+      "categories": [
+        "news",
+        "top-news"
+      ],
+      "languages": [],
+      "channelLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/CNN_Logo_%282014%29.svg/1280px-CNN_Logo_%282014%29.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
+      "tv": true,
+      "radio": false,
+      "alive": true,
+      "probe": true,
+      "hide": false,
+      "needsProxy": false,
+      "source": "famelack",
+      "streamUrls": [
+        "https://tvsen6.aynaott.com/cnn/index.m3u8"
+      ],
+      "streamMeta": [
+        {}
+      ],
+      "uptime": {
+        "score": 90,
+        "aliveCount": 158,
+        "totalCount": 162,
+        "consecutiveAlive": 3,
+        "consecutiveFailures": 0,
+        "lastSeen": "2026-10-04T18:47:54.890Z",
+        "lastProbed": "2026-10-04T18:47:54.890Z",
+        "recentResults": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1]
+      },
+      "domainBlockedLinks": [
+        {
+          "url": "https://turnerlive.warnermediacdn.com/hls/live/586495/cnngo/cnn_slate/VIDEO_0_3564000.m3u8",
+          "blockedAt": "2026-10-28T06:41:53.372Z"
         }
       ]
     },
