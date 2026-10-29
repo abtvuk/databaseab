@@ -2,7 +2,6 @@ const cfg  = require('../config')
 const fs   = require('fs')
 const path = require('path')
 const { loadFeed, saveFeed, saveDeadLinks, saveFeedFormatted } = require('./probe')
-const { readYoutube, writeYoutube } = require('./youtubeFeed')
 
 let deadLinkSet = null
 function isDeadLink(channelId, url) {
@@ -167,32 +166,6 @@ function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
   if (!('editCountry'     in ch)) ch.editCountry      = true
 
   return ch
-}
-
-function saveYoutube() {
-  let ytChannels = []
-  try {
-    ytChannels = readYoutube().channels || []
-  } catch { return 0 }
-
-  const clean = ytChannels.map(c => ({
-    id:          c.id,
-    name:        c.name,
-    country:     c.country     || '',
-    languages:   c.languages   || [],
-    categories:  c.categories  || [],
-    channelLogo: c.channelLogo || null,
-    ytId:        c.ytId,
-    alive:       c.alive       ?? false,
-    probe:       c.probe       ?? true,
-    uptime:      c.uptime      || emptyUptime(),
-  }))
-
-  writeYoutube(clean, (out, payload) => {
-    fs.mkdirSync(path.dirname(out), { recursive: true })
-    fs.writeFileSync(out, JSON.stringify(payload, null, 2))
-  })
-  return clean.length
 }
 
 function sortChannels(channels) {
