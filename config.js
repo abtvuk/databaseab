@@ -151,6 +151,7 @@ module.exports = {
     's91030.cdn.ngenix.net',
     's97982.cdn.ngenix.net',
     'rt-sib-krsk-htlive.cdn.ngenix.net',
+    'zabava-htlive.cdn.ngenix.net',
 
     // Subscription req
     '315e5a5d.ottrast.com/iptv/8XFKA8883W9M5K',
