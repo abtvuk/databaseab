@@ -541,7 +541,7 @@ function isDueForResurrect(uptime) {
 }
 
 const CHANNEL_KEY_ORDER = [
-  'id', 'name', 'country', 'categories', 'languages', 'channelLogo', 'probeLogo', 'website',
+  'id', 'name', 'country', 'categories', 'languages', 'showLanguage', 'channelLogo', 'probeLogo', 'website',
   'tv', 'radio', 'ytId',
   'alive', 'probe', 'hide', 'needsProxy', 'geoBlocked',
   'editName', 'editCountry', 'editChannelLogo',
@@ -566,8 +566,17 @@ function orderKeys(obj, order) {
   return out
 }
 
+function hasLanguages(c) {
+  return Array.isArray(c?.languages) && c.languages.some(l => typeof l === 'string' && l.trim() !== '')
+}
+
+function withShowLanguage(c) {
+  if (c == null || typeof c !== 'object' || !('id' in c)) return c
+  return { ...c, showLanguage: hasLanguages(c) }
+}
+
 function formatChannel(c) {
-  const ordered = orderKeys(c, CHANNEL_KEY_ORDER)
+  const ordered = orderKeys(withShowLanguage(c), CHANNEL_KEY_ORDER)
   if (ordered.uptime) ordered.uptime = orderKeys(ordered.uptime, UPTIME_KEY_ORDER)
   if (ordered.profileCheck) ordered.profileCheck = orderKeys(ordered.profileCheck, PROFILE_CHECK_KEY_ORDER)
   if (ordered.logoCheck) ordered.logoCheck = orderKeys(ordered.logoCheck, LOGO_CHECK_KEY_ORDER)
@@ -772,4 +781,4 @@ function applyRetirementAndPruning(channels) {
   return { retired: toRetire.length, pruned: toPrune.length }
 }
 
-module.exports = { probeUrl, probeUrlThorough, isCriticalChannel, runWithConcurrency, recordAlive, recordDead, isDueForProbe, isDueForResurrect, checkpoint, progressBar, classifyFailSource, isDueForRetirement, isChannelDeadForever, applyRetirementAndPruning, isUnplayableDomain, stripUnplayableLinks, restoreUnplayableLinks, mergeBlockedLinks, isNameBlocked, isManualBlocked, loadFeed, saveFeed, recordLinkResult, pruneChannelLinks, saveDeadLinks, saveFeedFormatted, stringifyFeed, formatChannel }
+module.exports = { probeUrl, probeUrlThorough, isCriticalChannel, runWithConcurrency, recordAlive, recordDead, isDueForProbe, isDueForResurrect, checkpoint, progressBar, classifyFailSource, isDueForRetirement, isChannelDeadForever, applyRetirementAndPruning, isUnplayableDomain, stripUnplayableLinks, restoreUnplayableLinks, mergeBlockedLinks, isNameBlocked, isManualBlocked, loadFeed, saveFeed, recordLinkResult, pruneChannelLinks, saveDeadLinks, saveFeedFormatted, stringifyFeed, formatChannel, hasLanguages, withShowLanguage }

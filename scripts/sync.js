@@ -1,7 +1,7 @@
 const cfg  = require('../config')
 const fs   = require('fs')
 const path = require('path')
-const { loadFeed, saveFeed, saveDeadLinks, saveFeedFormatted } = require('./probe')
+const { loadFeed, saveFeed, saveDeadLinks, saveFeedFormatted, hasLanguages } = require('./probe')
 
 let deadLinkSet = null
 function isDeadLink(channelId, url) {
@@ -101,6 +101,7 @@ function newIptvEntry(c, streamMap, logoMap) {
     channelLogo:     c.logo || logoMap[c.id] || null,
     editChannelLogo: true,
     languages:       [],
+    showLanguage:    false,
     categories:      c.categories  || [],
     streamUrls:      streams.map(s => s.url),
     ...(streams.some(s => s.referrer || s.userAgent) ? { streamMeta: streams.map(s => ({ referrer: s.referrer || null, userAgent: s.userAgent || null })) } : {}),
@@ -159,6 +160,7 @@ function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
   if (!('hide'            in ch)) ch.hide            = false
   if (!('source'          in ch)) ch.source           = 'iptv'
   if (!('languages'       in ch)) ch.languages        = []
+  ch.showLanguage = hasLanguages(ch)
   if (!('referrer'        in ch)) ch.referrer         = null
   if (!('userAgent'       in ch)) ch.userAgent        = null
   if (!('needsProxy'      in ch)) ch.needsProxy       = false
