@@ -243,6 +243,8 @@ async function main() {
     }
 
     const revived = newIptvEntry(iptvCh, { [deadCh.id]: freshOnly }, logoMap)
+    if (hasLanguages(deadCh)) revived.languages = [...deadCh.languages]
+    revived.showLanguage = hasLanguages(revived)
     synced.push(revived)
     revivedIds.add(normId(deadCh.id))
     iptvRevived++
