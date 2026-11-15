@@ -5,7 +5,8 @@ const { execFile } = require('child_process')
 
 const LOGO_SIZE       = 48
 const LOGO_SIZE_2X    = 96
-const LOGO_VERSION    = 2   // bump when output format/sizes change — forces reprocessing of stale manifest entries
+const LOGO_SIZE_3X    = 144
+const LOGO_VERSION    = 3   // bump when output format/sizes change — forces reprocessing of stale manifest entries
 const LOGOS_DIR       = path.resolve('feeds/logos')
 const MANIFEST_PATH   = path.resolve('feeds/logos-manifest.json')
 const CONCURRENCY     = 5
@@ -85,15 +86,20 @@ async function processOne(id, url, tmpDir) {
   const tmpSrc  = path.join(tmpDir, `${id.replace(/[^a-zA-Z0-9._-]/g, '_')}${ext}`)
   const dest1x  = path.join(LOGOS_DIR, `${id}.webp`)
   const dest2x  = path.join(LOGOS_DIR, `${id}@2x.webp`)
+  const dest3x  = path.join(LOGOS_DIR, `${id}@3x.webp`)
 
   const dl = await downloadToFile(url, tmpSrc)
   if (!dl.ok) return { ok: false, reason: dl.reason }
 
-  const rs1x = await resizeToWebp(tmpSrc, dest1x, LOGO_SIZE)
-  const rs2x = rs1x.ok ? await resizeToWebp(tmpSrc, dest2x, LOGO_SIZE_2X) : rs1x
+  const [rs1x, rs2x, rs3x] = await Promise.all([
+    resizeToWebp(tmpSrc, dest1x, LOGO_SIZE),
+    resizeToWebp(tmpSrc, dest2x, LOGO_SIZE_2X),
+    resizeToWebp(tmpSrc, dest3x, LOGO_SIZE_3X),
+  ])
   try { fs.unlinkSync(tmpSrc) } catch {}
   if (!rs1x.ok) return { ok: false, reason: rs1x.reason }
   if (!rs2x.ok) return { ok: false, reason: rs2x.reason }
+  if (!rs3x.ok) return { ok: false, reason: rs3x.reason }
 
   return { ok: true }
 }
