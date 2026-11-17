@@ -115,6 +115,7 @@ function newIptvEntry(c, streamMap, logoMap) {
     hide:            false,
     source:          'iptv',
     uptime:          emptyUptime(),
+    addedAt:         new Date().toISOString(),
   }
 }
 
@@ -245,6 +246,7 @@ async function main() {
     const revived = newIptvEntry(iptvCh, { [deadCh.id]: freshOnly }, logoMap)
     if (hasLanguages(deadCh)) revived.languages = [...deadCh.languages]
     revived.showLanguage = hasLanguages(revived)
+    revived.addedAt = deadCh.addedAt || null // a revival is not a new discovery; keep the original date if known
     synced.push(revived)
     revivedIds.add(normId(deadCh.id))
     iptvRevived++

@@ -545,7 +545,7 @@ const CHANNEL_KEY_ORDER = [
   'tv', 'radio', 'ytId',
   'alive', 'probe', 'hide', 'needsProxy', 'geoBlocked',
   'editName', 'editCountry', 'editChannelLogo',
-  'source', 'replaced_by',
+  'source', 'replaced_by', 'addedAt',
   'streamUrls', 'removedLinks', 'streamMeta', 'referrer', 'userAgent',
   'uptime', 'profileCheck', 'logoCheck',
 ]
