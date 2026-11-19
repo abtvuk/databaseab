@@ -161,7 +161,7 @@ function mirrorIptvFields(existing, iptvCh, streamMap, logoMap) {
   if (!('hide'            in ch)) ch.hide            = false
   if (!('source'          in ch)) ch.source           = 'iptv'
   if (!('languages'       in ch)) ch.languages        = []
-  ch.showLanguage = hasLanguages(ch)
+  if (typeof ch.showLanguage !== 'boolean') ch.showLanguage = hasLanguages(ch)
   if (!('referrer'        in ch)) ch.referrer         = null
   if (!('userAgent'       in ch)) ch.userAgent        = null
   if (!('needsProxy'      in ch)) ch.needsProxy       = false

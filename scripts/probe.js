@@ -572,6 +572,7 @@ function hasLanguages(c) {
 
 function withShowLanguage(c) {
   if (c == null || typeof c !== 'object' || !('id' in c)) return c
+  if (typeof c.showLanguage === 'boolean') return c
   return { ...c, showLanguage: hasLanguages(c) }
 }
 
